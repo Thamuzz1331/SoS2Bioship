@@ -1,0 +1,74 @@
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>ProtienPutty</defName>
+		<label>protien putty</label>
+		<description>A claylike substance that when allowed to harden can guide the growth of shipflesh.  Deteriates quickly when exposed to the elements.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>50</stackLimit>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>10.0</Flammability>
+			<DeteriorationRate>10.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>NutrientPod</defName>
+		<label>superconcentrated nutrient solution</label>
+		<description>A canister of superconcentrated nutrient solution.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>400</stackLimit>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>BioSteel</defName>
+		<label>bioavailable steel solution</label>
+		<description>A canister of bioavailable steel solution.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>400</stackLimit>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+
+</Defs>

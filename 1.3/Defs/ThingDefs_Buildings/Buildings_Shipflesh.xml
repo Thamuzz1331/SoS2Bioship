@@ -1,0 +1,249 @@
+<Defs>
+	<!-- beam -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>Bio_Ship_Beam</defName>
+		<label>Shipflesh</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BioShipBeamModular_east</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<comps>
+			<li Class="CompProperties_RoofMe"/>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+			<ChunkSlagSteel>1</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+	<!-- corners -->
+	<ThingDef ParentName="BuildingBase" Name="BioShipCornerBase" Abstract="True">
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<Flammability>0</Flammability>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+			<ChunkSlagSteel>1</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCornerBase" Name="BioShipCorner" Abstract="True">
+		<description>Angled armor for a ship's outer hull.</description>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCorner">
+		<defName>Bio_Ship_Corner_OneOne</defName>
+		<label>shipflesh  corner (1x1)</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipAngle1x1</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+		</statBases>
+		<costList>
+		</costList>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCorner">
+		<defName>Bio_Ship_Corner_OneOneFlip</defName>
+		<label>shipflesh corner (1x1) flip</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipAngle1x1Flip</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+		</statBases>
+		<costList>
+			<Steel>8</Steel>
+			<Plasteel>2</Plasteel>
+		</costList>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCorner">
+		<defName>Bio_Ship_Corner_OneTwo</defName>
+		<label>shipflesh corner (1x2)</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipAngle1x2</texPath>
+			<drawSize>(1,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<costList>
+		</costList>
+		<size>(1,2)</size>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCorner">
+		<defName>Bio_Ship_Corner_OneTwoFlip</defName>
+		<label>shipflesh corner (1x2) flip</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipAngle1x2Flip</texPath>
+			<drawSize>(1,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+		</statBases>
+		<costList>
+		</costList>
+		<size>(1,2)</size>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCorner">
+		<defName>Bio_Ship_Corner_OneThree</defName>
+		<label>shipflesh corner (1x3)</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipAngle1x3</texPath>
+			<drawSize>(1,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+		</statBases>
+		<costList>
+		</costList>
+		<size>(1,3)</size>
+	</ThingDef>
+	<ThingDef ParentName="BioShipCorner">
+		<defName>Bio_Ship_Corner_OneThreeFlip</defName>
+		<label>hull corner (1x3) flip</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipAngle1x3Flip</texPath>
+			<drawSize>(1,3)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+		</statBases>
+		<costList>
+		</costList>
+		<size>(1,3)</size>
+	</ThingDef>
+	<!-- beam misc -->
+	<!-- hull -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>BioShipHullTile</defName>
+		<label>shipflesh floor</label>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioHullPlate</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<seeThroughFog>true</seeThroughFog>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/BioHullPlateTransparent</texPath>
+			</blueprintGraphicData>
+		</building>
+		<coversFloor>false</coversFloor>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<passability>Standable</passability>
+		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+			<Beauty>1</Beauty>
+		</statBases>
+		<description>Fleshy floors</description>
+		<comps>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_InsideShipRoom</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>		
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<fillPercent>0.0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+</Defs>

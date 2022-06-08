@@ -9,8 +9,6 @@ namespace RimWorld
 {
     class CompProperties_ShipfleshConversion : CompProperties
     {
-        public SimpleCurve radiusPerDayCurve;
-
         public CompProperties_ShipfleshConversion()
         {
             compClass = typeof(CompShipfleshConversion);

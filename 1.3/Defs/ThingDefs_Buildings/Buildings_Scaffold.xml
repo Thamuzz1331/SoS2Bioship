@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<!-- scaffold -->
+	<!-- body scaffold -->
 	<DesignatorDropdownGroupDef>
 		<defName>Protien_Scaffold</defName>
 	</DesignatorDropdownGroupDef>
@@ -261,20 +261,86 @@
 		<fillPercent>0.0</fillPercent>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 	</ThingDef>
-
-	<!-- heart -->
+	
 	<DesignatorDropdownGroupDef>
-		<defName>Ship_Heart</defName>
+		<defName>Scaffold_Airlock</defName>
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
-		<defName>Ship_Heart</defName>
-		<label>ship heart</label>
-		<designatorDropdown>Ship_Heart</designatorDropdown>
-		<thingClass>Building_ShipHeart</thingClass>
+		<defName>ScaffoldAirlock</defName>
+		<label>sphincter scaffold</label>
+		<designatorDropdown>Scaffold_Airlock</designatorDropdown>
+		<description>Framework for growing an airlock sphincter.</description>
+		<category>Building</category>
+		<thingClass>Building_ShipAirlock</thingClass>
+		<designationCategory>Ship</designationCategory>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipHeart</texPath>
+			<texPath>Things/Building/Ship/ScaffoldSphincter</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<!--  no damage marks because they don't move with the door
+        <rect>(0,0.12,1,0.76)</rect>-->
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>5</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<shipPart>true</shipPart>
+			<isInert>true</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+			<soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Door/Door_Blueprint</texPath>
+			</blueprintGraphicData>
+			<blueprintClass>Blueprint_Door</blueprintClass>
+			<roamerCanOpen>false</roamerCanOpen>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<!-- organ -->
+	<!--Engine Scaffolds-->
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Engines</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Engine_Small</defName>
+		<label>small bioengine scaffold</label>
+		<designatorDropdown>Scaffold_Engines</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(7,5.5)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -286,21 +352,68 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A chemfuel-powered organic engine capable of launching a ship into orbit. Not suitable for interplanetary travel.</description>
+		<size>(2,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShipEngine</li>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Engine</defName>
+		<label>medium engine scaffold</label>
+		<designatorDropdown>Scaffold_Engines</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldEngineRocket</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6,5.5)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>15</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>The beating heart of a ship</description>
+		<description>A chemfuel-powered engine capable of launching a ship into orbit. Not suitable for interplanetary travel.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
 		<size>(3,3)</size>
+		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_ShipfleshConversion"/>
 		</comps>
 		<placeWorkers>
+			<li>PlaceWorker_ShipEngine</li>
 		</placeWorkers>
-		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
@@ -308,104 +421,53 @@
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<designationHotKey>Misc3</designationHotKey>
-		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
-
-	<DesignatorDropdownGroupDef>
-		<defName>Ship_Reactors</defName>
-	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
-		<defName>Ship_Reactor</defName>
-		<label>ship fission reactor</label>
-		<designatorDropdown>Ship_Reactors</designatorDropdown>
+		<defName>Scaffold_Engine_Large</defName>
+		<label>large bioengine scaffold</label>
+		<designatorDropdown>Ship_Engines</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipReactorMKII</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(5.3,5.3)</drawSize>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-			</damageData>
+			<texPath>Things/Building/Ship/NuclearEngine</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,7)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
-			<li>ShipReactor</li>
 		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
-		<passability>PassThroughOnly</passability>
+		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>0.9</fillPercent>
-		<blockLight>false</blockLight>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>50000</WorkToBuild>
-			<MaxHitPoints>500</MaxHitPoints>
-			<Flammability>0.1</Flammability>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>25</MaxHitPoints>
+			<Flammability>1.0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A compact, self-contained fission reactor. Burns uranium fuel pods. Vents heat into a heatsink network if available, or into the surrounding room if not.\n\nIts base power production of 10,000W can be boosted with several increasingly risky overdrive modes.</description>
+		<description>A nuclear-powered engine capable of launching a ship into orbit, at the cost of irradiating the surrounding area. Not suitable for interplanetary travel.\n\nProvides six times the speed of small engines.</description>
 		<size>(5,5)</size>
+		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShipEngine</li>
+		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
-			<Steel>500</Steel>
-			<Plasteel>200</Plasteel>
-			<Silver>100</Silver>
-			<ComponentSpacer>20</ComponentSpacer>
 		</costList>
-		<comps>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTraderOverdrivable</compClass>
-				<basePowerConsumption>-10000</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Refuelable">
-				<compClass>CompRefuelableOverdrivable</compClass>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<initialConfigurableTargetFuelLevel>2500</initialConfigurableTargetFuelLevel>
-				<fuelConsumptionRate>10</fuelConsumptionRate>
-				<fuelCapacity>2500</fuelCapacity>
-				<fuelFilter>
-					<thingDefs>
-						<li>ShuttleFuelPods</li>
-					</thingDefs>
-				</fuelFilter>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
-				<heatGeneratedPerTickActive>0.005</heatGeneratedPerTickActive>
-			</li>
-			<li Class="CompProperties_Glower">
-				<glowRadius>8</glowRadius>
-				<glowColor>(222,64,64,0)</glowColor>
-			</li>
-			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_Explosive">
-				<wickTicks>240</wickTicks>
-				<explosiveRadius>12.9</explosiveRadius>
-				<explosiveDamageType>Bomb</explosiveDamageType>
-				<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
-				<postExplosionSpawnThingDef>Filth_SpaceReactorAsh</postExplosionSpawnThingDef>
-				<postExplosionSpawnThingCount>200</postExplosionSpawnThingCount>
-			</li>
-		</comps>
-		<placeWorkers>
-		</placeWorkers>
-		<rotatable>false</rotatable>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<designationHotKey>Misc4</designationHotKey>
-		<constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
 
-	
 </Defs>

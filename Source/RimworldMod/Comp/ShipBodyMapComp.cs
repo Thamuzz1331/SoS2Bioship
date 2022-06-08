@@ -10,19 +10,39 @@ using Verse.AI.Group;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class ShipBodyMapComp : MapComponent
     {
-        public Building_ShipHeart heart = null;
-        public List<Thing> shipFlesh = new List<Thing>();
-        public List<CompShipNutritionConsumer> consumers = new List<CompShipNutritionConsumer>();
-        public List<CompShipNutritionStore> stores = new List<CompShipNutritionStore>();
-        public List<CompShipNutritionSource> source = new List<CompShipNutritionSource>();
+        public Dictionary<String, ShipBody> bodies = new Dictionary<String, ShipBody>();
 
         public ShipBodyMapComp(Map map) : base(map)
         {
         }
+        public void Register(Building_ShipHeart heart)
+        {
+            ShipBody body = bodies.TryGetValue(heart.heartId);
+            if (body == null)
+            {
+                Log.Message("Creating Body " + heart.heartId);
+                body = new ShipBody();
+                bodies.Add(heart.heartId, body);
+            }
+            body.Register(heart);
+        }
+        public void Register(CompShipBodyPart comp)
+        {
+            ShipBody body = bodies.TryGetValue(comp.heartId);
+            if (body == null)
+            {
+                Log.Message("Creating Body " + comp.heartId);
+                body = new ShipBody();
+                bodies.Add(comp.heartId, body);
+            }
+            body.Register(comp);
+        }
         public void Register(CompShipNutrition comp)
         {
+
         }
     }
 }

@@ -11,8 +11,10 @@ namespace RimWorld
 {
 	class CompShipfleshConversion : ThingComp
 	{
+		protected CompProperties_ShipfleshConversion Props => (CompProperties_ShipfleshConversion)props;
+
 		private Queue<Thing> toConvert = new Queue<Thing>();
-		private HashSet<Thing> body = new HashSet<Thing>();
+		private ShipBody body = null;
 
 		private int age;
 
@@ -31,8 +33,6 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToConversion, "ticksToConversion", 0);
 			Scribe_Values.Look(ref ticksToDetectPulse, "ticksToDetectPulse", 0);
 			Scribe_Values.Look(ref conversionWaitLength, "coversionSpeed", 30);
-			Scribe_Values.Look(ref toConvert, "toConvert", new Queue<Thing>());
-			Scribe_Values.Look(ref body, "body", new HashSet<Thing>());
 		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -46,11 +46,19 @@ namespace RimWorld
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneThree"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneThree"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneThreeFlip"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneThreeFlip"), true, false));
 			Conversions.Add(ThingDef.Named("ScaffoldHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShipHullTile"), false, false));
+			Conversions.Add(ThingDef.Named("ScaffoldAirlock"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShipAirlock"), false, false));
+			Conversions.Add(ThingDef.Named("Scaffold_Engine_Small"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Small"), false, false));
+			Conversions.Add(ThingDef.Named("Scaffold_Engine"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine"), false, false));
+			Conversions.Add(ThingDef.Named("Scaffold_Engine_Large"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Large"), false, false));
 		}
 
 		public override void CompTick()
 		{
-			if (!parent.Spawned)
+			if (body == null)
+            {
+				body = ((Building_ShipHeart)parent).body;
+            }
+			if (!parent.Spawned || body == null)
 			{
 				return;
 			}
@@ -75,7 +83,7 @@ namespace RimWorld
             {
 				return;
             }
-			if (body.Count <= 0)
+			if (body.shipFlesh.Count <= 0)
 			{
 				int startSpots = Rand.Range(4, 6);
 				for (int s = 0; s < startSpots; s++)
@@ -93,7 +101,7 @@ namespace RimWorld
 			}
 			else
             {
-				foreach (Thing t in body)
+				foreach (Thing t in body.shipFlesh)
                 {
 					RandEnqueue(t);
 				}
@@ -188,6 +196,9 @@ namespace RimWorld
 				}
 				IntVec3 c = toReplace.Position;
 				Thing replacement = ThingMaker.MakeThing(Conversions[toReplace.def].Item1);
+
+				CompShipBodyPart bodyPart = ((ThingWithComps)replacement).GetComp<CompShipBodyPart>();
+				bodyPart.SetId(((Building_ShipHeart)parent).heartId);
 				replacement.Rotation = Conversions[toReplace.def].Item2 ? toReplace.Rotation.Opposite : toReplace.Rotation;
 				replacement.Position = toReplace.Position + (Conversions[toReplace.def].Item3 ? IntVec3.South.RotatedBy(replacement.Rotation) : IntVec3.Zero);
 				replacement.SetFaction(Faction.OfPlayer);
@@ -195,7 +206,7 @@ namespace RimWorld
 				parent.Map.terrainGrid.RemoveTopLayer(c, false);
 				toReplace.Destroy();
 				replacement.SpawnSetup(parent.Map, false);
-				body.Add(replacement);
+				body.shipFlesh.Add(replacement);
 				RandEnqueue(replacement);
 				if (terrain != CompRoofMe.hullTerrain)
 					parent.Map.terrainGrid.SetTerrain(c, terrain);

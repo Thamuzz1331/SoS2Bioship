@@ -97,11 +97,15 @@
   <ItemGroup>
     <Compile Include="Building_ShipHeart.cs" />
 	<Compile Include="Comp\Comp_ShipfleshConversion.cs" />
-	  <Compile Include="Comp\CompShipNutrition.cs" />
-	  <Compile Include="Comp\CompProperties_ShipNutrition.cs" />
+    <Compile Include="Comp\CompProperties_ShipfleshConversion.cs" />
+    <Compile Include="Comp\Comp_ShipBodyPart.cs" />
+	<Compile Include="Comp\CompProperties_ShipBodyPart.cs" />
+	<Compile Include="Comp\CompShipNutrition.cs" />
+	<Compile Include="Comp\CompProperties_ShipNutrition.cs" />
 	<Compile Include="Comp\CompShipNutritionConsumer.cs" />
 	<Compile Include="Comp\CompShipNutritionSource.cs" />
 	<Compile Include="Comp\CompShipNutritionStore.cs" />
 	<Compile Include="Comp\ShipBodyMapComp.cs" />
+    <Compile Include="ShipBody.cs" />
   </ItemGroup>
 </Project>

@@ -20,14 +20,12 @@ namespace RimWorld
 
         public void Register(Building_ShipHeart _heart)
         {
-            Log.Message("Registering heart" + _heart.heartId);
             heart = _heart;
             heart.body = this;
         }
 
         public void Register(CompShipBodyPart comp)
         {
-            Log.Message("Parent " + comp.parent);
             shipFlesh.Add(comp.parent);
             comp.body = this;
         }

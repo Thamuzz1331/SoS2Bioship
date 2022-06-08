@@ -23,7 +23,6 @@ namespace RimWorld
             ShipBody body = bodies.TryGetValue(heart.heartId);
             if (body == null)
             {
-                Log.Message("Creating Body " + heart.heartId);
                 body = new ShipBody();
                 bodies.Add(heart.heartId, body);
             }
@@ -34,7 +33,6 @@ namespace RimWorld
             ShipBody body = bodies.TryGetValue(comp.heartId);
             if (body == null)
             {
-                Log.Message("Creating Body " + comp.heartId);
                 body = new ShipBody();
                 bodies.Add(comp.heartId, body);
             }

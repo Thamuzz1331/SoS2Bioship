@@ -24,7 +24,6 @@ namespace RimWorld
         public override void PostExposeData()
         {
             Scribe_Values.Look<String>(ref heartId, "heartId", "NA");
-            Log.Message("Comp HeartId" + heartId);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)

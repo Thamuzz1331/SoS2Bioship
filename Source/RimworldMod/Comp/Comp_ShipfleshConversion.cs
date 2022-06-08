@@ -11,14 +11,8 @@ namespace RimWorld
 {
 	class CompShipfleshConversion : ThingComp
 	{
-
-		protected CompProperties_ShipfleshConversion Props => (CompProperties_ShipfleshConversion)props;
-
 		private Queue<Thing> toConvert = new Queue<Thing>();
 		private HashSet<Thing> body = new HashSet<Thing>();
-		private HashSet<CompShipNutritionConsumer> consumers = new HashSet<CompShipNutritionConsumer>();
-		private HashSet<CompShipNutritionStore> fatStore = new HashSet<CompShipNutritionStore>();
-		private HashSet<CompShipNutritionSource> digester = new HashSet<CompShipNutritionSource>();
 
 		private int age;
 
@@ -37,6 +31,8 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToConversion, "ticksToConversion", 0);
 			Scribe_Values.Look(ref ticksToDetectPulse, "ticksToDetectPulse", 0);
 			Scribe_Values.Look(ref conversionWaitLength, "coversionSpeed", 30);
+			Scribe_Values.Look(ref toConvert, "toConvert", new Queue<Thing>());
+			Scribe_Values.Look(ref body, "body", new HashSet<Thing>());
 		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)

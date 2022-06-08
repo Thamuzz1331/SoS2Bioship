@@ -12,5 +12,7 @@ namespace RimWorld
     public class CompShipNutritionConsumer : CompShipNutrition
     {
 
+
+
     }
 }

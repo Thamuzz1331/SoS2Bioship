@@ -268,7 +268,7 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>Ship_Heart</defName>
-		<label>heart of a living ship</label>
+		<label>ship heart</label>
 		<designatorDropdown>Ship_Heart</designatorDropdown>
 		<thingClass>Building_ShipHeart</thingClass>
 		<graphicData>

@@ -11,7 +11,6 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class CompShipNutrition : ThingComp
     {
-        public ShipNutritionNet myNet = null;
 
         public CompProperties_ShipNutrition Props
         {
@@ -20,7 +19,7 @@ namespace RimWorld
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            ((ShipNutrientMapComp)this.parent.Map.components.Where(t => t is ShipNutrientMapComp).FirstOrDefault()).Register(this);
+            ((ShipBodyMapComp)this.parent.Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
         }
     }
 }

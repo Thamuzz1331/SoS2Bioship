@@ -43,6 +43,13 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
 		</comps>
 		<placeWorkers>
 		</placeWorkers>
@@ -292,9 +299,11 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>50</basePowerConsumption>
+				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Forbiddable"/>
@@ -366,10 +375,12 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart"/>
-
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Flickable"/>
@@ -539,4 +550,98 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>BioShip_SensorCluster</defName>
+		<label>bioship sensors</label>
+		<thingClass>Building_ShipAdvSensor</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipSensorCluster</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Basic ship sensors. Capable of detecting nearby craft and observing sites from orbit.</description>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>250</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<Steel>140</Steel>
+			<Gold>4</Gold>
+			<ComponentIndustrial>6</ComponentIndustrial>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
+	<ThingDef>
+		<defName>Maw_Small</defName>
+		<label>small ship maw</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/MawScaffold</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Small shipmaw.</description>
+		<size>(2,2)</size>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
+
 </Defs>

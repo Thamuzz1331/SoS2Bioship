@@ -41,13 +41,22 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipfleshConversion"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
+		<placeWorkers>
+			<li>PlaceWorker_InsideStarship</li>
+		</placeWorkers>
 		<costList>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>

@@ -48,6 +48,7 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
+			
 		</comps>
 		<placeWorkers>
 		</placeWorkers>
@@ -426,7 +427,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scaffold_Engine_Large</defName>
 		<label>large bioengine scaffold</label>
-		<designatorDropdown>Ship_Engines</designatorDropdown>
+		<designatorDropdown>Scaffold_Engines</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -469,5 +470,97 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
+	<DesignatorDropdownGroupDef>
+		<defName>Sensor_Scaffold</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Sensor</defName>
+		<label>sensor scaffold</label>
+		<designatorDropdown>Sensor_Scaffold</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipSensorCluster</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Scaffold for an organic sensor array.</description>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
 
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Maw</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef>
+		<defName>Scaffold_Maw_Small</defName>
+		<label>small ship maw scaffold</label>
+		<designatorDropdown>Scaffold_Maw</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/MawScaffold</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Scaffold for an small shipmaw.</description>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
 </Defs>

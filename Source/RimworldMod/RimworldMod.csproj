@@ -107,5 +107,6 @@
 	<Compile Include="Comp\CompShipNutritionStore.cs" />
 	<Compile Include="Comp\ShipBodyMapComp.cs" />
     <Compile Include="ShipBody.cs" />
+	<Compile Include="BioShipMod.cs" />
   </ItemGroup>
 </Project>

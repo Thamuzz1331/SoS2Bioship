@@ -26,6 +26,7 @@ namespace RimWorld
 		public float AgeDays => (float)age / 60000f;
 
 		Dictionary<ThingDef, Tuple<ThingDef, bool, bool>> Conversions = new Dictionary<ThingDef, Tuple<ThingDef, bool, bool>>();
+		Dictionary<ThingDef, Tuple<List<ThingDef>, bool, bool>> MutableConversions = new Dictionary<ThingDef, Tuple<List<ThingDef>, bool, bool>>();
 
 		public override void PostExposeData()
 		{
@@ -50,6 +51,9 @@ namespace RimWorld
 			Conversions.Add(ThingDef.Named("Scaffold_Engine_Small"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Small"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Engine"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Engine_Large"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Large"), false, false));
+			Building_ShipHeart heart = (Building_ShipHeart)parent;
+			MutableConversions.Add(ThingDef.Named("Scaffold_Maw_Small"), new Tuple<List<ThingDef>, bool, bool>(heart.mawOptions, false, false));
+
 		}
 
 		public override void CompTick()
@@ -91,7 +95,7 @@ namespace RimWorld
 					IntVec3 c = parent.Position + (Rand.InsideUnitCircleVec3 * 3).ToIntVec3();
 					foreach (Thing t in c.GetThingList(parent.Map))
 					{
-						if (Conversions.ContainsKey(t.def))
+						if (Conversions.ContainsKey(t.def) || MutableConversions.ContainsKey(t.def))
 						{
 							toConvert.Enqueue(t);
 							EnqueueSpur(t);
@@ -129,7 +133,7 @@ namespace RimWorld
 			{
 				foreach (Thing adj in c.GetThingList(parent.Map))
 				{
-					if (Conversions.ContainsKey(adj.def))
+					if (Conversions.ContainsKey(adj.def) || MutableConversions.ContainsKey(adj.def))
 					{
 						toConvert.Enqueue(adj);
 					}
@@ -167,8 +171,15 @@ namespace RimWorld
 			}
         }
 
+		private void updateMutableOptions()
+        {
+			Building_ShipHeart heart = (Building_ShipHeart)parent;
+			MutableConversions[ThingDef.Named("Scaffold_Maw_Small")] = new Tuple<List<ThingDef>, bool, bool>(heart.mawOptions, false, false);
+        }
+
 		private void ConvertHullTile()
 		{
+			updateMutableOptions();
 			int numSpawn = Rand.Range(1, 20);
 			if (numSpawn > 16)
             {
@@ -182,36 +193,83 @@ namespace RimWorld
             }
 			for (int i = 0; i < numSpawn; i++)
 			{
-				Thing toReplace = null;
-				bool searching = true;
-				while (searching)
-				{
-					if (toConvert.Count <= 0)
-						return;
-					toReplace = toConvert.Dequeue();
-					if (Conversions.ContainsKey(toReplace.def) && !toReplace.Destroyed)
+				if (((Building_ShipHeart)parent).body.requestNutrition(50)) { 
+					Thing toReplace = null;
+					bool searching = true;
+					bool mutable = false;
+					while (searching)
 					{
-						searching = false;
-					}
-				}
-				IntVec3 c = toReplace.Position;
-				Thing replacement = ThingMaker.MakeThing(Conversions[toReplace.def].Item1);
+						if (toConvert.Count <= 0)
+							return;
+						toReplace = toConvert.Dequeue();
+						if ((Conversions.ContainsKey(toReplace.def) || MutableConversions.ContainsKey(toReplace.def)) && !toReplace.Destroyed)
+						{
+							searching = false;
+							mutable = MutableConversions.ContainsKey(toReplace.def);
 
-				CompShipBodyPart bodyPart = ((ThingWithComps)replacement).GetComp<CompShipBodyPart>();
-				bodyPart.SetId(((Building_ShipHeart)parent).heartId);
-				replacement.Rotation = Conversions[toReplace.def].Item2 ? toReplace.Rotation.Opposite : toReplace.Rotation;
-				replacement.Position = toReplace.Position + (Conversions[toReplace.def].Item3 ? IntVec3.South.RotatedBy(replacement.Rotation) : IntVec3.Zero);
-				replacement.SetFaction(Faction.OfPlayer);
-				TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);
-				parent.Map.terrainGrid.RemoveTopLayer(c, false);
-				toReplace.Destroy();
-				replacement.SpawnSetup(parent.Map, false);
-				body.shipFlesh.Add(replacement);
-				RandEnqueue(replacement);
-				if (terrain != CompRoofMe.hullTerrain)
-					parent.Map.terrainGrid.SetTerrain(c, terrain);
+						}
+					}
+					IntVec3 c = toReplace.Position;
+					Thing replacement = null;
+					bool item2 = false;
+					bool item3 = false;
+					if (mutable) {
+						List<ThingDef> options = MutableConversions[toReplace.def].Item1;
+						int selIndex = Rand.Range(0, options.Count-1);
+						replacement = ThingMaker.MakeThing(options[selIndex]);
+						item2 = MutableConversions[toReplace.def].Item2;
+						item3 = MutableConversions[toReplace.def].Item3;
+					}
+					else {
+						replacement = ThingMaker.MakeThing(Conversions[toReplace.def].Item1);
+						item2 = Conversions[toReplace.def].Item2;
+						item3 = Conversions[toReplace.def].Item3;
+					}
+
+					CompShipBodyPart bodyPart = ((ThingWithComps)replacement).GetComp<CompShipBodyPart>();
+					if(bodyPart != null)
+					{
+						bodyPart.SetId(((Building_ShipHeart)parent).heartId);
+					}
+					CompShipNutrition nutrition = ((ThingWithComps)replacement).GetComp<CompShipNutrition>();
+					if (nutrition != null)
+					{
+						nutrition.SetId(((Building_ShipHeart)parent).heartId);
+					}
+					replacement.Rotation = item2 ? toReplace.Rotation.Opposite : toReplace.Rotation;
+					replacement.Position = toReplace.Position + (item3 ? IntVec3.South.RotatedBy(replacement.Rotation) : IntVec3.Zero);
+					replacement.SetFaction(Faction.OfPlayer);
+					TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);
+					parent.Map.terrainGrid.RemoveTopLayer(c, false);
+					toReplace.Destroy();
+					replacement.SpawnSetup(parent.Map, false);
+					body.shipFlesh.Add(replacement);
+					RandEnqueue(replacement);
+					if (terrain != CompRoofMe.hullTerrain)
+						parent.Map.terrainGrid.SetTerrain(c, terrain);
+					else
+                    {
+						if (((Building_ShipHeart)parent).body.source.Contains < 4)
+                        {
+
+                        }
+                    }
+				}	
 			}
+
 		}
+
+		private void MawSpawn(Thing hull)
+        {
+			Thing newMaw = ThingMaker.MakeThing(ThingDef.Named("Maw_Small"));
+        }
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+			List<Gizmo> newList = new List<Gizmo>();
+			newList.AddRange(base.CompGetGizmosExtra());
+			return newList;
+        }
 	}
 	
 }

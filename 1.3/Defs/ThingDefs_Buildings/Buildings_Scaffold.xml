@@ -514,13 +514,12 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Maw</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef>
+	<ThingDef ParentName="BuildingBase">
 		<defName>Scaffold_Maw_Small</defName>
 		<label>small ship maw scaffold</label>
 		<designatorDropdown>Scaffold_Maw</designatorDropdown>
@@ -528,7 +527,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/MawScaffold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(1,1)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -546,7 +545,7 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>Scaffold for an small shipmaw.</description>
-		<size>(2,2)</size>
+		<size>(1,1)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
@@ -561,6 +560,5 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 </Defs>

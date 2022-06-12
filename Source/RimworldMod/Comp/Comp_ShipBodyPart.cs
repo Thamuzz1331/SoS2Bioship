@@ -41,5 +41,25 @@ namespace RimWorld
             if (body != null)
                 body.DeRegister(this);
         }
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            if (mode == DestroyMode.KillFinalize && Props.regen)
+            {
+                body.Regen(this);
+            }
+            body.DeRegister(this);
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            if (body != null && body.heart != null)
+            {
+                return "Flesh of " + body.heart.ShipName;
+            }
+            return "Orphaned flesh";
+        }
+
     }
 }

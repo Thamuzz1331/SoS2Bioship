@@ -19,6 +19,31 @@ namespace RimWorld
         public ShipBody body = null;
         public String heartId = "NA";
 
+        public Dictionary<string, float> statMultipliers = new Dictionary<string, float>();
+        public Dictionary<ThingDef, Dictionary<string, float>> specStatMultipliers = new Dictionary<ThingDef, Dictionary<string, float>>();
+
+        public List<ThingDef> smallTurretOptions = new List<ThingDef>()
+        {
+
+        };
+        public List<ThingDef> mediumTurretOptions = new List<ThingDef>()
+        {
+
+        };
+        public List<ThingDef> largeTurretOptions = new List<ThingDef>()
+        {
+
+        };
+        public List<ThingDef> spinalTurretOptions = new List<ThingDef>()
+        {
+
+        };
+        public List<ThingDef> mawOptions = new List<ThingDef>()
+        {
+            ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
+            ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
+        };
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -35,7 +60,14 @@ namespace RimWorld
             Scribe_Values.Look<String>(ref heartId, "heartId", "NA");
         }
 
-
+        public float getStatMultiplier(string stat, ThingDef src)
+        {
+            if (src != null)
+            {
+                return statMultipliers.TryGetValue(stat, 1f) * specStatMultipliers.TryGetValue(src, new Dictionary<string, float>()).TryGetValue(stat, 1f);
+            }
+            return statMultipliers.TryGetValue(stat, 1f);
+        }
 
     }
 

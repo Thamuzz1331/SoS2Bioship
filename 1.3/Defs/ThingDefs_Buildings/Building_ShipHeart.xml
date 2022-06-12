@@ -49,6 +49,15 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
+			<li Class="CompProperties_ShipNutritionConsumer">
+				<consumptionPerPulse>
+					15
+				</consumptionPerPulse>
+			</li>
+			<li Class="CompProperties_ShipNutritionStore">
+				<nutrientCapacity>10000</nutrientCapacity>
+				<initialNutrition>10000</initialNutrition>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -63,5 +72,65 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc3</designationHotKey>
 		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase" Name="NerveStaple">
+		<defName>NerveStaple</defName>
+		<label>nerve staple</label>
+		<description>A series of implants that deaden the senses of shipflesh, preventing unwanted growth and aggression.</description>
+		<thingClass>Building_ShipConduit</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/Atlas_NerveStaple</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom4</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshOnly</drawerType>
+		<uiIconPath>Things/Building/Ship/NerveStaple_MenuIcon</uiIconPath>
+		<uiIconScale>0.7</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/Blueprint_Atlas_CoolantConduit</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>Conduits</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>35</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>1</Steel>
+			<Plasteel>1</Plasteel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Neutroamine>2</Neutroamine>
+		</costList>
+		<comps>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Ship</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+		<researchPrerequisites>
+		</researchPrerequisites>
 	</ThingDef>
 </Defs>

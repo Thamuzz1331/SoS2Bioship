@@ -13,6 +13,7 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class ShipBodyMapComp : MapComponent
     {
+        int curTick = 0;
         public Dictionary<String, ShipBody> bodies = new Dictionary<String, ShipBody>();
 
         public ShipBodyMapComp(Map map) : base(map)
@@ -40,7 +41,25 @@ namespace RimWorld
         }
         public void Register(CompShipNutrition comp)
         {
+            ShipBody body = bodies.TryGetValue(comp.heartId);
+            if (body == null)
+            {
+                body = new ShipBody();
+                bodies.Add(comp.heartId, body);
+            }
+            body.Register(comp);
+        }
 
+        public override void MapComponentTick()
+        {
+            base.MapComponentTick();
+            if (curTick % 120 == 0) { 
+                foreach (string b in bodies.Keys)
+                {
+                    bodies.TryGetValue(b).runNutrition();
+                }
+            }
+            curTick++;
         }
     }
 }

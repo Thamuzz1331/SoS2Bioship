@@ -11,15 +11,37 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class CompShipNutrition : ThingComp
     {
+        public String heartId = "NA";
+        public ShipBody body = null;
 
-        public CompProperties_ShipNutrition Props
+        public void SetId(String _id)
         {
-            get { return props as CompProperties_ShipNutrition; }
+            heartId = _id;
         }
-
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             ((ShipBodyMapComp)this.parent.Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
         }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look<String>(ref heartId, "heartId", "NA");
+        }
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            body.DeRegister(this);
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            if (body != null)
+            {
+                return "Nutrition " + (body.nutritionGen - body.passiveConsumption - body.tempHunger) + "/" + body.currentNutrition;
+            }
+            return "";
+        }
+
     }
 }

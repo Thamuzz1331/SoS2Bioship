@@ -19,21 +19,24 @@ namespace RimWorld
 		private int age;
 
 		public int conversionWaitLength = 45;
+		public int regenInterval = 30;
 
 		private int ticksToConversion;
+		private int ticksToRegen;
 		private int ticksToDetectPulse;
 
 		public float AgeDays => (float)age / 60000f;
 
 		Dictionary<ThingDef, Tuple<ThingDef, bool, bool>> Conversions = new Dictionary<ThingDef, Tuple<ThingDef, bool, bool>>();
-		Dictionary<ThingDef, Tuple<List<ThingDef>, bool, bool>> MutableConversions = new Dictionary<ThingDef, Tuple<List<ThingDef>, bool, bool>>();
+		Dictionary<ThingDef, Tuple<ThingDef, bool, bool>> Regenerations = new Dictionary<ThingDef, Tuple<ThingDef, bool, bool>>();
+		Dictionary<ThingDef, Tuple<string, bool, bool>> MutableConversions = new Dictionary<ThingDef, Tuple<string, bool, bool>>();
 
 		public override void PostExposeData()
 		{
 			Scribe_Values.Look(ref age, "age", 0);
 			Scribe_Values.Look(ref ticksToConversion, "ticksToConversion", 0);
 			Scribe_Values.Look(ref ticksToDetectPulse, "ticksToDetectPulse", 0);
-			Scribe_Values.Look(ref conversionWaitLength, "coversionSpeed", 30);
+			Scribe_Values.Look(ref ticksToRegen, "ticks", 0);
 		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -51,8 +54,11 @@ namespace RimWorld
 			Conversions.Add(ThingDef.Named("Scaffold_Engine_Small"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Small"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Engine"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Engine_Large"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Large"), false, false));
-			Building_ShipHeart heart = (Building_ShipHeart)parent;
-			MutableConversions.Add(ThingDef.Named("Scaffold_Maw_Small"), new Tuple<List<ThingDef>, bool, bool>(heart.mawOptions, false, false));
+			
+			Regenerations.Add(ThingDef.Named("Scaffold_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
+			Regenerations.Add(ThingDef.Named("ScaffoldHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShipHullTile"), false, false));
+
+			MutableConversions.Add(ThingDef.Named("Scaffold_Maw_Small"), new Tuple<string, bool, bool>("smallMawOptions", false, false));
 
 		}
 
@@ -69,6 +75,7 @@ namespace RimWorld
 			age++;
 			ticksToDetectPulse--;
 			ticksToConversion--;
+			ticksToRegen--;
 			if (ticksToDetectPulse <= 0)
             {
 				ticksToDetectPulse = 300;
@@ -171,15 +178,14 @@ namespace RimWorld
 			}
         }
 
-		private void updateMutableOptions()
+
+		private void RegenHullTile()
         {
-			Building_ShipHeart heart = (Building_ShipHeart)parent;
-			MutableConversions[ThingDef.Named("Scaffold_Maw_Small")] = new Tuple<List<ThingDef>, bool, bool>(heart.mawOptions, false, false);
+
         }
 
 		private void ConvertHullTile()
 		{
-			updateMutableOptions();
 			int numSpawn = Rand.Range(1, 20);
 			if (numSpawn > 16)
             {
@@ -214,7 +220,7 @@ namespace RimWorld
 					bool item2 = false;
 					bool item3 = false;
 					if (mutable) {
-						List<ThingDef> options = MutableConversions[toReplace.def].Item1;
+						List<ThingDef> options = ((Building_ShipHeart)parent).organOptions[MutableConversions[toReplace.def].Item1];
 						int selIndex = Rand.Range(0, options.Count-1);
 						replacement = ThingMaker.MakeThing(options[selIndex]);
 						item2 = MutableConversions[toReplace.def].Item2;
@@ -243,15 +249,14 @@ namespace RimWorld
 					parent.Map.terrainGrid.RemoveTopLayer(c, false);
 					toReplace.Destroy();
 					replacement.SpawnSetup(parent.Map, false);
-					body.shipFlesh.Add(replacement);
 					RandEnqueue(replacement);
 					if (terrain != CompRoofMe.hullTerrain)
 						parent.Map.terrainGrid.SetTerrain(c, terrain);
 					else
                     {
-						if (((Building_ShipHeart)parent).body.source.Contains < 4)
+						if (((Building_ShipHeart)parent).body.source.Count < 4)
                         {
-
+							MawSpawn(replacement);
                         }
                     }
 				}	
@@ -262,6 +267,12 @@ namespace RimWorld
 		private void MawSpawn(Thing hull)
         {
 			Thing newMaw = ThingMaker.MakeThing(ThingDef.Named("Maw_Small"));
+			newMaw.Position = hull.Position;
+			CompShipBodyPart bodyPart = ((ThingWithComps)newMaw).GetComp<CompShipBodyPart>();
+			CompShipNutrition nutrition = ((ThingWithComps)newMaw).GetComp<CompShipNutrition>();
+			bodyPart.SetId(((Building_ShipHeart)parent).heartId);
+			nutrition.SetId(((Building_ShipHeart)parent).heartId);
+			newMaw.SpawnSetup(parent.Map, false);
         }
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()

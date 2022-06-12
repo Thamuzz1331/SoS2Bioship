@@ -21,28 +21,18 @@ namespace RimWorld
 
         public Dictionary<string, float> statMultipliers = new Dictionary<string, float>();
         public Dictionary<ThingDef, Dictionary<string, float>> specStatMultipliers = new Dictionary<ThingDef, Dictionary<string, float>>();
-
-        public List<ThingDef> smallTurretOptions = new List<ThingDef>()
+        public Dictionary<string, List<ThingDef>> organOptions = new Dictionary<string, List<ThingDef>>()
         {
-
+            {"smallTurretOptions", new List<ThingDef>(){}},
+            {"mediumTurretOptions", new List<ThingDef>(){}},
+            {"largeTurretOptions", new List<ThingDef>(){}},
+            {"spinalTurretOptions", new List<ThingDef>(){}},
+            {"smallMawOptions", new List<ThingDef>(){
+                ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
+                ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
+            }}
         };
-        public List<ThingDef> mediumTurretOptions = new List<ThingDef>()
-        {
-
-        };
-        public List<ThingDef> largeTurretOptions = new List<ThingDef>()
-        {
-
-        };
-        public List<ThingDef> spinalTurretOptions = new List<ThingDef>()
-        {
-
-        };
-        public List<ThingDef> mawOptions = new List<ThingDef>()
-        {
-            ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
-            ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
-        };
+  
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {

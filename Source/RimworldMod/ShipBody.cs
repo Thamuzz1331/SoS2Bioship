@@ -14,7 +14,6 @@ namespace RimWorld
     {
         public Building_ShipHeart heart = null;
         public HashSet<Thing> shipFlesh = new HashSet<Thing>();
-        public Stack<Thing> toRegen = new Stack<Thing>();
         public HashSet<CompShipNutritionConsumer> consumers = new HashSet<CompShipNutritionConsumer>();
         public HashSet<CompShipNutritionStore> stores = new HashSet<CompShipNutritionStore>();
         public HashSet<CompShipNutritionSource> source = new HashSet<CompShipNutritionSource>();
@@ -29,6 +28,8 @@ namespace RimWorld
         {
             heart = _heart;
             heart.body = this;
+            Register(heart.GetComp<CompShipNutritionConsumer>());
+            Register(heart.GetComp<CompShipNutritionStore>());
         }
 
         public void Register(CompShipBodyPart comp)
@@ -82,7 +83,10 @@ namespace RimWorld
 
         public void Regen(CompShipBodyPart _toRegen)
         {
-
+            if (heart != null)
+            {
+                ((ThingWithComps)heart).TryGetComp<CompShipfleshConversion>().toRegen.Push(_toRegen.parent);
+            }
         }
 
         public void UpdateNutritionGeneration()
@@ -111,29 +115,30 @@ namespace RimWorld
         }
         public void UpdatePassiveConsumption()
         {
-            passiveConsumption = 0;
+            passiveConsumption = 1*shipFlesh.Count;
             foreach (CompShipNutritionConsumer c in consumers)
             {
                 passiveConsumption += c.getConsumptionPerPulse();
             }
         }
-        public bool requestNutrition(float qty)
+        public bool RequestNutrition(float qty)
         {
             float available = nutritionGen + currentNutrition - passiveConsumption - tempHunger;
             if (qty > available)
                 return false;
-            
-            tempHunger += qty;
+
+            ExtractNutrition(stores, qty, 0);
+            currentNutrition -= qty;
             return true;
         }
-        public float consumeNutrition(float qty)
+        public float ConsumeNutrition(float qty)
         {
             tempHunger += qty;
 
             return qty;
         }
 
-        public void runNutrition()
+        public void RunNutrition()
         {
             UpdatePassiveConsumption();
             UpdateNutritionGeneration();
@@ -161,7 +166,7 @@ namespace RimWorld
                     }
                 } else
                 {
-                    leftover = storeNutrition(stores, toStore, 0);
+                    leftover = StoreNutrition(stores, toStore, 0);
                 }
             }
             if (net < 0)
@@ -180,7 +185,7 @@ namespace RimWorld
                     {
                         int hurtIndex = Rand.Range(0, shipFlesh.Count - 1);
                         Building b = ((Building)shipFlesh.ElementAt(hurtIndex));
-                        b.HitPoints -= 1;
+                        b.HitPoints -= 100;
                         if (b.HitPoints <= 0)
                         {
                             b.Destroy(DestroyMode.KillFinalize);
@@ -191,13 +196,13 @@ namespace RimWorld
                 }
                 else
                 {
-                    extractNutrition(stores, net, 0);
+                    ExtractNutrition(stores, net, 0);
                 }
             }
             tempHunger = 0;
         }
 
-        public float storeNutrition(HashSet<CompShipNutritionStore> _stores, float toStore, int depth)
+        public float StoreNutrition(HashSet<CompShipNutritionStore> _stores, float toStore, int depth)
         {
             if (_stores.Count == 0 || depth > maxDepth)
             {
@@ -221,10 +226,10 @@ namespace RimWorld
             } 
             else
             {
-                return storeNutrition(retainCapactiy, leftOver, depth+1);
+                return StoreNutrition(retainCapactiy, leftOver, depth+1);
             }
         }
-        public float extractNutrition(HashSet<CompShipNutritionStore> _stores, float toExtract, int depth)
+        public float ExtractNutrition(HashSet<CompShipNutritionStore> _stores, float toExtract, int depth)
         {
             if (_stores.Count <= 0 || depth > maxDepth)
             {
@@ -246,7 +251,7 @@ namespace RimWorld
                 return 0;
             } else
             {
-                return extractNutrition(retainNutrition, remainingHunger, depth+1);
+                return ExtractNutrition(retainNutrition, remainingHunger, depth+1);
             }
         }
     }

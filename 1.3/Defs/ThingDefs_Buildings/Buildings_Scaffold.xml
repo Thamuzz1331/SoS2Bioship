@@ -561,4 +561,216 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Turret</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>LargeWeaponScaffold</defName>
+		<label>large weapon scaffold</label>
+		<designatorDropdown>Scaffold_Turret</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldTorpedo</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6,3)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Scaffold for an small shipmaw.</description>
+		<size>(6,3)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Fat</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>FatStoreSmallScaffold</defName>
+		<label>fat store scaffold</label>
+		<designatorDropdown>Scaffold_Fat</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldFatSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Base for the growth a fat deposite.</description>
+		<size>(1,2)</size>
+		<costList>
+		</costList>
+		<comps>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Radiator</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldInside_PassiveCooler</defName>
+		<label>radiator fin scaffold</label>
+		<description>Scaffold for a radiator fin.</description>
+		<designatorDropdown>Scaffold_Radiator</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/ScaffoldBeam_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BeamRadiatorUI</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<holdsRoof>true</holdsRoof>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<castEdgeShadows>true</castEdgeShadows>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>5</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+			<li>PlaceWorker_Radiator</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_RoofMe"/>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Shield</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldShieldGenerator</defName>
+		<label>psi shield scaffold</label>
+		<description>The heart will convert this to a shield ganglia.</description>
+		<size>(3,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designatorDropdown>Scaffold_Shield</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldShieldGenerator</texPath>
+			<graphicClass>Graphic_SingleOnOff</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(2.6, 0.8, 2.6)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.2, 0.2, 2.8, 2.8)</rect>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<placeWorkers>
+			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
+		</placeWorkers>
+		<comps>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<tickerType>Normal</tickerType>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+		</costList>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+	
 </Defs>

@@ -1,0 +1,135 @@
+<Defs>
+	<ThingDef ParentName="BaseShipArtilleryWeapon" Name="BaseBioTorpedo" Abstract="True">
+		<description>Spine launcher.  Hurls volleys of bio-plasma propelled bone spikes.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+		</graphicData>
+		<weaponTags>
+			<li>Artillery_BaseDestroyer</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+				<warmupTime>4.0</warmupTime>
+				<requireLineOfSight>false</requireLineOfSight>
+				<range>500</range>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Mortar_LaunchA</soundCast>
+				<muzzleFlashScale>16</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<building>
+			<fixedStorageSettings>
+				<filter>
+					<categories>
+					</categories>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<filter>
+					<categories>
+					</categories>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBioTorpedo">
+		<defName>Artillery_BioShipTorpedo_Two</defName>
+		<label>torpedo tubes (2)</label>
+		<comps>
+			<li Class="CompProperties_ChangeableProjectilePlural">
+				<maxTorpedoes>2</maxTorpedoes>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="BaseBioTorpedo">
+		<defName>Artillery_BioShipTorpedo_Six</defName>
+		<label>torpedo tubes (6)</label>
+		<comps>
+			<li Class="CompProperties_ChangeableProjectilePlural">
+				<maxTorpedoes>6</maxTorpedoes>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseShipTorpedoBuilding">
+		<defName>HeavySpineLauncher</defName>
+		<label>heavy spine launcher</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioTorpedoHeavy</texPath>
+			<drawSize>(6,3)</drawSize>
+		</graphicData>
+		<size>(6,3)</size>
+		<comps>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSource</compClass>
+				<heatPerPulse>1</heatPerPulse>
+				<energyToFire>0</energyToFire>
+				<maxRange>200</maxRange>
+				<projectileSpeed>0.25</projectileSpeed>
+				<threat>45</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>0</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+			</li>
+			<li Class="CompProperties_NutritionLoader">
+				<ammoCat>Spine_Heavy</ammoCat>
+				<reloadInterval>18</reloadInterval>
+				<reloadCost>180</reloadCost>
+			</li>
+		</comps>
+		<building>
+			<turretGunDef>Artillery_BioShipTorpedo_Two</turretGunDef>
+		</building>
+		<costList>
+		</costList>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseShipTorpedoBuilding">
+		<defName>LightSpineLauncher</defName>
+		<label>light spine launcher</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
+			<drawSize>(6,3)</drawSize>
+		</graphicData>
+		<size>(6,3)</size>
+		<comps>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSource</compClass>
+				<heatPerPulse>1</heatPerPulse>
+				<energyToFire>0</energyToFire>
+				<maxRange>200</maxRange>
+				<projectileSpeed>0.25</projectileSpeed>
+				<threat>45</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>0</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+			</li>
+			<li Class="CompProperties_NutritionLoader">
+				<ammoCat>Spine_Light</ammoCat>
+				<reloadInterval>6</reloadInterval>
+				<reloadCost>60</reloadCost>
+			</li>
+
+		</comps>
+		<building>
+			<turretGunDef>Artillery_BioShipTorpedo_Six</turretGunDef>
+		</building>
+		<uiIconPath>Things/Building/Ship/TorpedoTubes_small</uiIconPath>
+		<costList>
+		</costList>
+	</ThingDef>
+</Defs>

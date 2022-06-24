@@ -15,6 +15,5 @@ namespace RimWorld
         {
             compClass = typeof(CompShipNutritionStore);
         }
-
     }
 }

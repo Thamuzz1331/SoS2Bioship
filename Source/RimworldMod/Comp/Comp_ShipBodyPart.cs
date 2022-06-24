@@ -54,11 +54,7 @@ namespace RimWorld
 
         public override string CompInspectStringExtra()
         {
-            if (body != null && body.heart != null)
-            {
-                return "Flesh of " + body.heart.ShipName;
-            }
-            return "Orphaned flesh";
+            return "Flesh of " + heartId;
         }
 
     }

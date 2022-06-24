@@ -13,13 +13,15 @@ namespace RimWorld
 	{
 		protected CompProperties_ShipfleshConversion Props => (CompProperties_ShipfleshConversion)props;
 
-		private Queue<Thing> toConvert = new Queue<Thing>();
+		public Queue<Thing> toConvert = new Queue<Thing>();
+		public Stack<Thing> toRegen = new Stack<Thing>();
+
 		private ShipBody body = null;
 
 		private int age;
 
 		public int conversionWaitLength = 45;
-		public int regenInterval = 30;
+		public int regenInterval = 45;
 
 		private int ticksToConversion;
 		private int ticksToRegen;
@@ -37,6 +39,7 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToConversion, "ticksToConversion", 0);
 			Scribe_Values.Look(ref ticksToDetectPulse, "ticksToDetectPulse", 0);
 			Scribe_Values.Look(ref ticksToRegen, "ticks", 0);
+//			Scribe_Collections.Look<Thing>(ref toRegen, "toRegen");
 		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -54,20 +57,24 @@ namespace RimWorld
 			Conversions.Add(ThingDef.Named("Scaffold_Engine_Small"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Small"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Engine"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Engine_Large"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShip_Engine_Large"), false, false));
+			Conversions.Add(ThingDef.Named("FatStoreSmallScaffold"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("FatStoreSmall"), false, false));
+			Conversions.Add(ThingDef.Named("ScaffoldInside_PassiveCooler"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShipInside_PassiveCooler"), false, false));
+			Conversions.Add(ThingDef.Named("ScaffoldShieldGenerator"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShieldGenerator"), false, false));
 			
-			Regenerations.Add(ThingDef.Named("Scaffold_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
-			Regenerations.Add(ThingDef.Named("ScaffoldHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShipHullTile"), false, false));
+			Regenerations.Add(ThingDef.Named("Bio_Ship_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
+			Regenerations.Add(ThingDef.Named("BioShipHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("ScarHullTile"), false, false));
+			Regenerations.Add(ThingDef.Named("Scar_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
+			Regenerations.Add(ThingDef.Named("ScarHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("ScarHullTile"), false, false));
 
 			MutableConversions.Add(ThingDef.Named("Scaffold_Maw_Small"), new Tuple<string, bool, bool>("smallMawOptions", false, false));
+			MutableConversions.Add(ThingDef.Named("LargeWeaponScaffold"), new Tuple<string, bool, bool>("largeTurretOptions", false, false));
 
 		}
 
 		public override void CompTick()
 		{
 			if (body == null)
-            {
 				body = ((Building_ShipHeart)parent).body;
-            }
 			if (!parent.Spawned || body == null)
 			{
 				return;
@@ -86,6 +93,11 @@ namespace RimWorld
 				ticksToConversion = conversionWaitLength;
 				ConvertHullTile();
 			}
+			if (ticksToRegen <= 0)
+            {
+				ticksToRegen = regenInterval;
+				DoRegen();
+            }
 		}
 
 		private void DetectionPulse()
@@ -114,6 +126,10 @@ namespace RimWorld
             {
 				foreach (Thing t in body.shipFlesh)
                 {
+					if (toConvert.Count > 250)
+		            {
+						return;
+					}
 					RandEnqueue(t);
 				}
             }
@@ -121,9 +137,16 @@ namespace RimWorld
 
 		private void RandEnqueue(Thing t)
         {
-			int sel = Rand.Range(1, 5);
+			if (toConvert.Count > 250)
+            {
+				return;
+            }
+			int sel = Rand.Range(1, 6);
 			switch(sel)
             {
+				case 5:
+					EnqueueSpur(t);
+					break;
 				case 4:
 					EnqueueSpur(t);
 					break;
@@ -178,28 +201,16 @@ namespace RimWorld
 			}
         }
 
-
-		private void RegenHullTile()
-        {
-
-        }
-
 		private void ConvertHullTile()
 		{
-			int numSpawn = Rand.Range(1, 20);
-			if (numSpawn > 16)
+			if (toConvert.Count <= 0)
             {
-				numSpawn = 3;
-            } else if (numSpawn > 12)
-            {
-				numSpawn = 2;
-            } else
-            {
-				numSpawn = 1;
+				return;
             }
+			int numSpawn = GetNum();
 			for (int i = 0; i < numSpawn; i++)
 			{
-				if (((Building_ShipHeart)parent).body.requestNutrition(50)) { 
+				if (body.RequestNutrition(50)) { 
 					Thing toReplace = null;
 					bool searching = true;
 					bool mutable = false;
@@ -215,6 +226,7 @@ namespace RimWorld
 
 						}
 					}
+
 					IntVec3 c = toReplace.Position;
 					Thing replacement = null;
 					bool item2 = false;
@@ -236,11 +248,13 @@ namespace RimWorld
 					if(bodyPart != null)
 					{
 						bodyPart.SetId(((Building_ShipHeart)parent).heartId);
+						body.Register(bodyPart);
 					}
 					CompShipNutrition nutrition = ((ThingWithComps)replacement).GetComp<CompShipNutrition>();
 					if (nutrition != null)
 					{
 						nutrition.SetId(((Building_ShipHeart)parent).heartId);
+						body.Register(nutrition);
 					}
 					replacement.Rotation = item2 ? toReplace.Rotation.Opposite : toReplace.Rotation;
 					replacement.Position = toReplace.Position + (item3 ? IntVec3.South.RotatedBy(replacement.Rotation) : IntVec3.Zero);
@@ -252,12 +266,11 @@ namespace RimWorld
 					RandEnqueue(replacement);
 					if (terrain != CompRoofMe.hullTerrain)
 						parent.Map.terrainGrid.SetTerrain(c, terrain);
-					else
+					if (replacement.def == ThingDef.Named("BioShipHullTile") 
+						&& ((Building_ShipHeart)parent).body.source.Count < 4
+						&& replacement.Position.GetThingList(parent.Map).Count < 2)
                     {
-						if (((Building_ShipHeart)parent).body.source.Count < 4)
-                        {
-							MawSpawn(replacement);
-                        }
+						MawSpawn(replacement);
                     }
 				}	
 			}
@@ -272,7 +285,62 @@ namespace RimWorld
 			CompShipNutrition nutrition = ((ThingWithComps)newMaw).GetComp<CompShipNutrition>();
 			bodyPart.SetId(((Building_ShipHeart)parent).heartId);
 			nutrition.SetId(((Building_ShipHeart)parent).heartId);
+			body.Register(bodyPart);
+			body.Register(nutrition);
 			newMaw.SpawnSetup(parent.Map, false);
+        }
+
+		private void DoRegen()
+        {
+			if (toRegen.Count > 0)
+            {
+				int numHeal = GetNum();
+				if (numHeal > toRegen.Count)
+                {
+					numHeal = toRegen.Count;
+                }
+				for (int i = 0; i < numHeal; i++)
+                {
+					if (body.RequestNutrition(100)) {
+						Thing toReplace = toRegen.Pop();
+						if (Regenerations.ContainsKey(toReplace.def))
+						{
+							IntVec3 c = toReplace.Position;
+							Thing replacement = ThingMaker.MakeThing(Regenerations[toReplace.def].Item1);
+							CompShipBodyPart bodyPart = ((ThingWithComps)replacement).GetComp<CompShipBodyPart>();
+							if(bodyPart != null)
+							{
+								bodyPart.SetId(((Building_ShipHeart)parent).heartId);
+								body.Register(bodyPart);
+							}
+							replacement.Rotation = Regenerations[toReplace.def].Item2 ? toReplace.Rotation.Opposite : toReplace.Rotation;
+							replacement.Position = toReplace.Position + (Regenerations[toReplace.def].Item3 ? IntVec3.South.RotatedBy(replacement.Rotation) : IntVec3.Zero);
+							replacement.SetFaction(Faction.OfPlayer);
+							TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);
+												parent.Map.terrainGrid.RemoveTopLayer(c, false);
+							replacement.SpawnSetup(parent.Map, false);
+							if (terrain != CompRoofMe.hullTerrain)
+								parent.Map.terrainGrid.SetTerrain(c, terrain);
+						}
+                    }
+                }
+            }
+        }
+
+		private int GetNum()
+        {
+			int ret = Rand.Range(1, 20);
+			if (ret > 16)
+            {
+				ret = 3;
+            } else if (ret > 12)
+            {
+				ret = 2;
+            } else
+            {
+				ret = 1;
+            }
+			return ret;
         }
 
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()

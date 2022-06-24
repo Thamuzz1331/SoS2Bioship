@@ -13,6 +13,7 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class ShipBodyMapComp : MapComponent
     {
+        string id = Guid.NewGuid().ToString(); 
         int curTick = 0;
         public Dictionary<String, ShipBody> bodies = new Dictionary<String, ShipBody>();
 
@@ -56,7 +57,7 @@ namespace RimWorld
             if (curTick % 120 == 0) { 
                 foreach (string b in bodies.Keys)
                 {
-                    bodies.TryGetValue(b).runNutrition();
+                    bodies.TryGetValue(b).RunNutrition();
                 }
             }
             curTick++;

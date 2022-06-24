@@ -18,9 +18,13 @@ namespace RimWorld
         {
             heartId = _id;
         }
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            ((ShipBodyMapComp)this.parent.Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
+            if(respawningAfterLoad)
+            {
+                ((ShipBodyMapComp)this.parent.Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
+            }
         }
 
         public override void PostExposeData()
@@ -38,7 +42,8 @@ namespace RimWorld
         {
             if (body != null)
             {
-                return "Nutrition " + (body.nutritionGen - body.passiveConsumption - body.tempHunger) + "/" + body.currentNutrition;
+                return "Nutrition " + body.nutritionGen + "/" + body.passiveConsumption + "/" + body.tempHunger + "\n" + 
+                    body.currentNutrition + "/" + body.nutritionCapacity;
             }
             return "";
         }

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>Spine_Heavy</defName>
+		<label>heavy bone spike</label>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.5</DeteriorationRate>
+		</statBases>
+		<description>A bio-plasma propelled bone spike</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShipTorpedoExplosive</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<projectileWhenLoaded>Bullet_Fake_Spine_Heavy</projectileWhenLoaded>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_Spine_Heavy</defName>
+		<label>heavy bone spike</label>
+		<graphicData>
+			<texPath>Things/Projectile/HeavySpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<!-- damage amount is the damage def default -->
+			<speed>60</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<interactionCellIcon>Bullet_Spine_Heavy</interactionCellIcon>
+		<!-- This is such a horrible kludge, but it's a way to attach a ThingDef to another ThingDef!-->
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Bullet_Spine_Heavy</defName>
+		<label>heavy bone spike</label>
+		<thingClass>Projectile_TorpedoShipCombat</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/HeavySpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>3.9</explosionRadius>
+			<damageDef>HeavySpikeBomb</damageDef>
+			<speed>150</speed>
+		</projectile>
+	</ThingDef>
+
+	<DamageDef ParentName="BombKineticLarge">
+		<defName>HeavySpikeBomb</defName>
+		<defaultDamage>380</defaultDamage>
+		<defaultStoppingPower>2.0</defaultStoppingPower>
+		<defaultArmorPenetration>0.60</defaultArmorPenetration>
+	</DamageDef>
+
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>Spine_Light</defName>
+		<label>light bone spike</label>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.5</DeteriorationRate>
+		</statBases>
+		<description>A bio-plasma propelled bone spike</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShipTorpedoEMP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<projectileWhenLoaded>Bullet_Fake_Spine_Light</projectileWhenLoaded>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_Spine_Light</defName>
+		<label>light bone spike</label>
+		<graphicData>
+			<texPath>Things/Projectile/LightSpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<!-- damage amount is the damage def default -->
+			<speed>60</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<interactionCellIcon>Bullet_Spine_Light</interactionCellIcon>
+		<!-- This is such a horrible kludge, but it's a way to attach a ThingDef to another ThingDef!-->
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Bullet_Spine_Light</defName>
+		<label>light bone spike</label>
+		<thingClass>Projectile_TorpedoShipCombat</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/LightSpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>4</explosionRadius>
+			<damageDef>LightSpikeBomb</damageDef>
+			<speed>150</speed>
+		</projectile>
+	</ThingDef>
+
+	<DamageDef ParentName="BombKinetic">
+		<defName>LightSpikeBomb</defName>
+		<defaultDamage>185</defaultDamage>
+	</DamageDef>
+</Defs>

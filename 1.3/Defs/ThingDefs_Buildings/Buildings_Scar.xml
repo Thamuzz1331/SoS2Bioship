@@ -5,7 +5,7 @@
 		<label>scar</label>
 		<thingClass>Building</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Linked/ScarBeam/ScarBeam_Atlas</texPath>
+			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>Basic</linkType>
 			<linkFlags>
@@ -23,7 +23,7 @@
 				<edgeRight>Damage/Edge</edgeRight>
 			</damageData>
 		</graphicData>
-		<uiIconPath>Things/Building/Scar/BioShipBeamModular_east</uiIconPath>
+		<uiIconPath>Things/Building/Scar/ScarBeamModular_east</uiIconPath>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -40,6 +40,9 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -80,7 +83,7 @@
 		</killedLeavings>
 	</ThingDef>
 	<!-- corners -->
-	<ThingDef ParentName="BuildingBase" Name="BioShipCornerBase" Abstract="True">
+	<ThingDef ParentName="BuildingBase" Name="ScarCornerBase" Abstract="True">
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -120,7 +123,7 @@
 			<ChunkSlagSteel>1</ChunkSlagSteel>
 		</killedLeavings>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCornerBase" Name="BioShipCorner" Abstract="True">
+	<ThingDef ParentName="ScarCornerBase" Name="ScarCorner" Abstract="True">
 		<description>Angled armor for a ship's outer hull.</description>
 		<comps>
 			<li>
@@ -130,14 +133,18 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCorner">
+	<ThingDef ParentName="ScarCorner">
 		<defName>Scar_Corner_OneOne</defName>
 		<label>scar  corner (1x1)</label>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipAngle1x1</texPath>
+			<texPath>Things/Building/Scar/ScarAngle1x1</texPath>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 		</comps>
 		<statBases>
 			<MaxHitPoints>375</MaxHitPoints>
@@ -145,14 +152,18 @@
 		<costList>
 		</costList>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCorner">
+	<ThingDef ParentName="ScarCorner">
 		<defName>Scar_Corner_OneOneFlip</defName>
 		<label>scar corner (1x1) flip</label>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipAngle1x1Flip</texPath>
+			<texPath>Things/Building/Scar/ScarAngle1x1Flip</texPath>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 		</comps>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
@@ -160,15 +171,19 @@
 		<costList>
 		</costList>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCorner">
+	<ThingDef ParentName="ScarCorner">
 		<defName>Scar_Corner_OneTwo</defName>
 		<label>scar corner (1x2)</label>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipAngle1x2</texPath>
+			<texPath>Things/Building/Scar/ScarAngle1x2</texPath>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
@@ -177,15 +192,19 @@
 		</costList>
 		<size>(1,2)</size>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCorner">
+	<ThingDef ParentName="ScarCorner">
 		<defName>Scar_Corner_OneTwoFlip</defName>
 		<label>scar corner (1x2) flip</label>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipAngle1x2Flip</texPath>
+			<texPath>Things/Building/Scar/ScarAngle1x2Flip</texPath>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
@@ -194,15 +213,19 @@
 		</costList>
 		<size>(1,2)</size>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCorner">
+	<ThingDef ParentName="ScarCorner">
 		<defName>Scar_Corner_OneThree</defName>
 		<label>scar corner (1x3)</label>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipAngle1x3</texPath>
+			<texPath>Things/Building/Scar/ScarAngle1x3</texPath>
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 		</comps>
 		<statBases>
 			<MaxHitPoints>1125</MaxHitPoints>
@@ -211,15 +234,19 @@
 		</costList>
 		<size>(1,3)</size>
 	</ThingDef>
-	<ThingDef ParentName="BioShipCorner">
+	<ThingDef ParentName="ScarCorner">
 		<defName>Scar_Corner_OneThreeFlip</defName>
 		<label>hull corner (1x3) flip</label>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipAngle1x3Flip</texPath>
+			<texPath>Things/Building/Scar/ScarAngle1x3Flip</texPath>
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 		</comps>
 		<statBases>
 			<MaxHitPoints>1125</MaxHitPoints>
@@ -237,7 +264,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioHullPlate</texPath>
+			<texPath>Things/Building/Scar/ScarHullPlate</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<seeThroughFog>true</seeThroughFog>
@@ -246,9 +273,6 @@
 			<isInert>true</isInert>
 			<isEdifice>false</isEdifice>
 			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Scar/BioHullPlateTransparent</texPath>
-			</blueprintGraphicData>
 		</building>
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
@@ -261,7 +285,11 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
 			<li Class="CompProperties_RoofMe"/>
 		</comps>
 		<placeWorkers>
@@ -279,8 +307,8 @@
 	</ThingDef>
 	<!-- airlock-->
 	<ThingDef ParentName="BuildingBase">
-		<defName>BioShipAirlock</defName>
-		<label>bioship sphintcer</label>
+		<defName>ScarAirlock</defName>
+		<label>Scar sphintcer</label>
 		<description>Allows access to a ship or divides rooms inside it.  A permiable mucus layer prevents the loss of gasses.</description>
 		<category>Building</category>
 		<thingClass>Building_ShipAirlock</thingClass>
@@ -289,7 +317,7 @@
 		<fillPercent>1</fillPercent>
 		<useHitPoints>true</useHitPoints>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipSphincter</texPath>
+			<texPath>Things/Building/Scar/ScarSphincter</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<damageData>
 				<!--  no damage marks because they don't move with the door
@@ -299,9 +327,6 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
 		<costList>
-			<Steel>40</Steel>
-			<ComponentSpacer>1</ComponentSpacer>
-			<Plasteel>25</Plasteel>
 		</costList>
 		<comps>
 			<li Class="CompProperties_Power">
@@ -355,12 +380,12 @@
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
-		<defName>BioShip_Engine_Small</defName>
-		<label>small biorocket engine</label>
+		<defName>Scar_Engine_Small</defName>
+		<label>scar where an engine was</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipEngineRocket_Single</texPath>
+			<texPath>Things/Building/Scar/ScarEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(7,5.5)</drawSize>
 		</graphicData>
@@ -376,7 +401,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A chemfuel-powered engine capable of launching a ship into orbit. Not suitable for interplanetary travel.</description>
+		<description>scar where an engine was.</description>
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
@@ -422,12 +447,12 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
-		<defName>BioShip_Engine</defName>
+		<defName>Scar_Engine</defName>
 		<label>biorocket engine</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipEngineRocket</texPath>
+			<texPath>Things/Building/Scar/ScarEngineRocket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(6,5.5)</drawSize>
 		</graphicData>
@@ -445,7 +470,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A chemfuel-powered engine capable of launching a ship into orbit. Not suitable for interplanetary travel.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
+		<description>scar where an engine was.</description>
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
@@ -455,26 +480,7 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>1000.0</fuelCapacity>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<fuelFilter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<autoRefuelPercent>1</autoRefuelPercent>
-				<showFuelGizmo>false</showFuelGizmo>
-				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_EngineTrail">
-				<thrust>2</thrust>
-			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -489,12 +495,12 @@
 		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
-		<defName>BioShip_Engine_Large</defName>
+		<defName>Scar_Engine_Large</defName>
 		<label>nuclear bioengine</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Scar/BioShipEngineLarge</texPath>
+			<texPath>Things/Building/Scar/ScarEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(5,7)</drawSize>
 		</graphicData>
@@ -522,27 +528,8 @@
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>2000.0</fuelCapacity>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<fuelFilter>
-					<thingDefs>
-						<li>ShuttleFuelPods</li>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<autoRefuelPercent>1</autoRefuelPercent>
-				<showFuelGizmo>false</showFuelGizmo>
-				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_EngineTrail">
-				<thrust>6</thrust>
-			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -555,116 +542,6 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
-	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
-		<defName>BioShip_SensorCluster</defName>
-		<label>bioship sensors</label>
-		<thingClass>Building_ShipAdvSensor</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Scar/ShipSensorCluster</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(1,1)</drawSize>
-		</graphicData>
-		<researchPrerequisites>
-		</researchPrerequisites>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
-		<statBases>
-			<WorkToBuild>0</WorkToBuild>
-			<MaxHitPoints>1</MaxHitPoints>
-			<Flammability>0</Flammability>
-		</statBases>
-		<tickerType>Normal</tickerType>
-		<description>Basic ship sensors. Capable of detecting nearby craft and observing sites from orbit.</description>
-		<size>(1,1)</size>
-		<designationCategory>Ship</designationCategory>
-		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>250</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Flickable"/>
-		</comps>
-		<rotatable>false</rotatable>
-		<building>
-			<shipPart>true</shipPart>
-		</building>
-		<costList>
-			<Steel>140</Steel>
-			<Gold>4</Gold>
-			<ComponentIndustrial>6</ComponentIndustrial>
-			<ComponentSpacer>6</ComponentSpacer>
-		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<designationHotKey>Misc5</designationHotKey>
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
-		<defName>Maw_Small</defName>
-		<label>small ship maw</label>
-		<thingClass>Building</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Scar/ShipMaw</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(2,2)</drawSize>
-		</graphicData>
-		<researchPrerequisites>
-		</researchPrerequisites>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
-		<statBases>
-			<WorkToBuild>0</WorkToBuild>
-			<MaxHitPoints>250</MaxHitPoints>
-			<Flammability>0</Flammability>
-		</statBases>
-		<tickerType>Normal</tickerType>
-		<description>Small shipmaw.</description>
-		<size>(2,2)</size>
-		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
-			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Refuelable">
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
-				<fuelConsumptionRate>10</fuelConsumptionRate>
-				<fuelCapacity>500</fuelCapacity>
-				<fuelFilter>
-					<categories>
-						<li>MeatRaw</li>
-					</categories>
-				</fuelFilter>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
-			<li Class="CompProperties_ShipNutritionSource">
-				<nutrientPerPulse>1000</nutrientPerPulse>
-			</li>
-		</comps>
-		<rotatable>false</rotatable>
-		<building>
-			<shipPart>true</shipPart>
-		</building>
-		<costList>
-		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<designationHotKey>Misc5</designationHotKey>
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
 
 </Defs>

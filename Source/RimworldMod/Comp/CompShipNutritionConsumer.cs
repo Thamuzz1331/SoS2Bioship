@@ -12,7 +12,7 @@ namespace RimWorld
     public class CompShipNutritionConsumer : CompShipNutrition
     {
         private CompProperties_ShipNutritionConsumer Props => (CompProperties_ShipNutritionConsumer)props;
-        public float getConsumptionPerPulse()
+        public virtual float getConsumptionPerPulse()
         {
             if (body != null && body.heart != null)
             {

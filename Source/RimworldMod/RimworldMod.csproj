@@ -97,7 +97,8 @@
   <ItemGroup>
     <Compile Include="Building_ShipHeart.cs" />
 	  <Compile Include="Building_NerveStaple.cs" />
-	  <Compile Include="Building_Scaffold.cs" />
+	  <Compile Include="Comp\CompProperties_Scaffold.cs" />
+	  <Compile Include="Comp\CompScaffold.cs" />
 	  <Compile Include="Comp\Comp_ShipfleshConversion.cs" />
     <Compile Include="Comp\CompProperties_ShipfleshConversion.cs" />
     <Compile Include="Comp\Comp_ShipBodyPart.cs" />

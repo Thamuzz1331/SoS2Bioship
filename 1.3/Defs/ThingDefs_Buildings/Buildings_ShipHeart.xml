@@ -64,7 +64,6 @@
 			<shipPart>true</shipPart>
 		</building>
 		<placeWorkers>
-			<li>PlaceWorker_InsideStarship</li>
 		</placeWorkers>
 		<costList>
 		</costList>

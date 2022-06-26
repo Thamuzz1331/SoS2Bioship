@@ -70,6 +70,7 @@ namespace RimWorld
 
 			MutableConversions.Add(ThingDef.Named("Scaffold_Maw_Small"), new Tuple<string, bool, bool>("smallMawOptions", false, false));
 			MutableConversions.Add(ThingDef.Named("SmallWeaponScaffold"), new Tuple<string, bool, bool>("smallTurretOptions", false, false));
+			MutableConversions.Add(ThingDef.Named("MediumWeaponScaffold"), new Tuple<string, bool, bool>("mediumTurretOptions", false, false));
 			MutableConversions.Add(ThingDef.Named("LargeWeaponScaffold"), new Tuple<string, bool, bool>("largeTurretOptions", false, false));
 		}
 
@@ -88,7 +89,7 @@ namespace RimWorld
 			if (ticksToDetectPulse <= 0)
             {
 				ticksToDetectPulse = 300;
-//				DetectionPulse();
+				DetectionPulse();
 			}
 			if (ticksToConversion <= 0)
 			{
@@ -124,6 +125,7 @@ namespace RimWorld
 					}
 				}
 			}
+			/*
 			else
             {
 				foreach (Thing t in body.shipFlesh)
@@ -135,6 +137,7 @@ namespace RimWorld
 					RandEnqueue(t);
 				}
             }
+			*/
 		}
 
 		private void RandEnqueue(Thing t)

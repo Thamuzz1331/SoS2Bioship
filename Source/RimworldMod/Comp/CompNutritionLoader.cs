@@ -15,6 +15,9 @@ namespace RimWorld
 
         private CompChangeableProjectilePlural toReload = null;
         private float ticksTillLoad = 0;
+        public List<int> torpSpawn = new List<int>() { 
+            1, 1,
+        };
 
         public override void PostExposeData()
         {
@@ -35,7 +38,7 @@ namespace RimWorld
                 {
                     toReload = ((Building_ShipTurret)parent).gun.TryGetComp<CompChangeableProjectilePlural>();
                 }
-                if (toReload != null && !toReload.FullyLoaded)
+                if (toReload != null && !toReload.FullyLoaded && body != null && body.heart != null)
                 {
                     float cost = Props.reloadCost;
                     if (body != null && body.heart != null)
@@ -43,9 +46,16 @@ namespace RimWorld
                         cost = cost * body.heart.getStatMultiplier("spineReloadCost", parent.def);
                         if (body.RequestNutrition(cost))
                         {
-                            toReload.LoadShell(ThingDef.Named(Props.ammoCat), 1);
+                            ThingDef torpDef = body.heart.GetThingDef(parent.def);
+                            int countIndex = Rand.Range(0, torpSpawn.Count);
+                            int loadCount = torpSpawn[countIndex];
+                            for (int i = 0; i < loadCount; i++)
+                            {
+                                toReload.LoadShell(torpDef, 1);
+                            }
                         }
                         ticksTillLoad = Props.reloadInterval.SecondsToTicks() * body.heart.getStatMultiplier("spineReloadInterval", parent.def);
+                        ticksTillLoad *= 1.0f + (Rand.Range(-15, 15) / 100.0f);
                     }
                 }
             }

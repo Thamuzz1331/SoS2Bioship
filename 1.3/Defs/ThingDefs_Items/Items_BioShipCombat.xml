@@ -59,12 +59,77 @@
 
 	<DamageDef ParentName="BombKineticLarge">
 		<defName>HeavySpikeBomb</defName>
-		<defaultDamage>380</defaultDamage>
+		<defaultDamage>420</defaultDamage>
+		<defaultStoppingPower>2.0</defaultStoppingPower>
+		<defaultArmorPenetration>0.60</defaultArmorPenetration>
+	</DamageDef>
+	
+	<!-- Dense Spike-->
+	<ThingDef ParentName="ResourceBase">
+		<defName>Spine_HeavyDense</defName>
+		<label>ultradense bone spike</label>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<Mass>25</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.5</DeteriorationRate>
+		</statBases>
+		<description>A bio-plasma propelled bone spike</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShipTorpedoExplosive</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<projectileWhenLoaded>Bullet_Fake_Spine_Heavy</projectileWhenLoaded>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_Spine_Dense</defName>
+		<label>dense bone spike</label>
+		<graphicData>
+			<texPath>Things/Projectile/HeavySpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<!-- damage amount is the damage def default -->
+			<speed>60</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<interactionCellIcon>Bullet_Spine_Dense</interactionCellIcon>
+		<!-- This is such a horrible kludge, but it's a way to attach a ThingDef to another ThingDef!-->
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Bullet_Spine_Dense</defName>
+		<label>dense bone spike</label>
+		<thingClass>Projectile_TorpedoShipCombat</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/HeavySpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>5.1</explosionRadius>
+			<damageDef>DenseSpikeBomb</damageDef>
+			<speed>150</speed>
+		</projectile>
+	</ThingDef>
+
+	<DamageDef ParentName="BombKineticLarge">
+		<defName>DenseSpikeBomb</defName>
+		<defaultDamage>600</defaultDamage>
 		<defaultStoppingPower>2.0</defaultStoppingPower>
 		<defaultArmorPenetration>0.60</defaultArmorPenetration>
 	</DamageDef>
 
-	
+
+	<!-- Light Spike-->
 	<ThingDef ParentName="ResourceBase">
 		<defName>Spine_Light</defName>
 		<label>light bone spike</label>
@@ -123,6 +188,6 @@
 
 	<DamageDef ParentName="BombKinetic">
 		<defName>LightSpikeBomb</defName>
-		<defaultDamage>185</defaultDamage>
+		<defaultDamage>210</defaultDamage>
 	</DamageDef>
 </Defs>

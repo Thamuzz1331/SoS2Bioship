@@ -32,6 +32,7 @@ namespace RimWorld
             base.PostExposeData();
             Scribe_Values.Look<String>(ref heartId, "heartId", "NA");
         }
+
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);

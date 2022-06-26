@@ -13,6 +13,7 @@ namespace RimWorld
     public class CompShipBodyPart : ThingComp
     {
         private CompProperties_ShipBodyPart Props => (CompProperties_ShipBodyPart)props;
+        private List<Thing> scaffolds = new List<Thing>();
 
         public String heartId = "NA";
         public ShipBody body = null;
@@ -57,5 +58,26 @@ namespace RimWorld
             return "Flesh of " + heartId;
         }
 
+        public void AddScaff(Thing scaff)
+        {
+            if (this.body != null && this.body.heart != null)
+            {
+                CompShipfleshConversion converter = body.heart.TryGetComp<CompShipfleshConversion>();
+                if (converter != null)
+                {
+                    converter.toConvert.Enqueue(scaff);
+                    return;
+                }
+            }
+            scaffolds.Add(scaff);
+        }
+        public List<Thing> GetScaff()
+        {
+            return scaffolds;
+        }
+        public void ClearScaff()
+        {
+            scaffolds.Clear();
+        }
     }
 }

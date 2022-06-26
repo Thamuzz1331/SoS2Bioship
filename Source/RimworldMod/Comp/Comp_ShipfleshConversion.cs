@@ -46,6 +46,7 @@ namespace RimWorld
 		{
 			base.PostPostMake();
 			Conversions.Add(ThingDef.Named("Scaffold_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Beam"), false, false));
+			Conversions.Add(ThingDef.Named("Scaffold_Beam_Unpowered"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scaffold_Beam_Unpowered"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneOne"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneOne"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneOneFlip"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneOneFlip"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneTwo"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneTwo"), false, false));
@@ -62,13 +63,14 @@ namespace RimWorld
 			Conversions.Add(ThingDef.Named("ScaffoldShieldGenerator"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShieldGenerator"), false, false));
 			
 			Regenerations.Add(ThingDef.Named("Bio_Ship_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
+			Regenerations.Add(ThingDef.Named("Bio_Ship_Beam_Unpowered"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam_Unpowered"), false, false));
 			Regenerations.Add(ThingDef.Named("BioShipHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("ScarHullTile"), false, false));
 			Regenerations.Add(ThingDef.Named("Scar_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
 			Regenerations.Add(ThingDef.Named("ScarHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("ScarHullTile"), false, false));
 
 			MutableConversions.Add(ThingDef.Named("Scaffold_Maw_Small"), new Tuple<string, bool, bool>("smallMawOptions", false, false));
+			MutableConversions.Add(ThingDef.Named("SmallWeaponScaffold"), new Tuple<string, bool, bool>("smallTurretOptions", false, false));
 			MutableConversions.Add(ThingDef.Named("LargeWeaponScaffold"), new Tuple<string, bool, bool>("largeTurretOptions", false, false));
-
 		}
 
 		public override void CompTick()
@@ -86,7 +88,7 @@ namespace RimWorld
 			if (ticksToDetectPulse <= 0)
             {
 				ticksToDetectPulse = 300;
-				DetectionPulse();
+//				DetectionPulse();
 			}
 			if (ticksToConversion <= 0)
 			{
@@ -180,7 +182,8 @@ namespace RimWorld
 				int spurDepth = Rand.Range(3, 7);
 				Vector3 vec = Rand.InsideUnitCircleVec3;
 				bool cont = true;
-				for (int j = 2; j < spurDepth && cont; j++)
+				bool staple = false;
+				for (int j = 2; j < spurDepth && cont && !staple; j++)
                 {
 					cont = false;
 					IntVec3 c = t.Position + (vec * j).ToIntVec3();
@@ -192,6 +195,10 @@ namespace RimWorld
 							cont = true;
 							foundSomething = true;
 						}
+						if (adj.def == ThingDef.Named("NerveStaple"))
+                        {
+							staple = true;
+                        }
 					}
 				}
 			}
@@ -223,26 +230,38 @@ namespace RimWorld
 						{
 							searching = false;
 							mutable = MutableConversions.ContainsKey(toReplace.def);
-
 						}
 					}
-
+					bool spaceStapled = false;
 					IntVec3 c = toReplace.Position;
-					Thing replacement = null;
+					foreach (Thing t in toReplace.Position.GetThingList(parent.Map))
+					{
+		                if (t.def == ThingDef.Named("NerveStaple")) {
+							spaceStapled = true;
+							Log.Message("Staple found");
+                        }
+					}
+					ThingDef replacementDef = null;
 					bool item2 = false;
 					bool item3 = false;
 					if (mutable) {
 						List<ThingDef> options = ((Building_ShipHeart)parent).organOptions[MutableConversions[toReplace.def].Item1];
-						int selIndex = Rand.Range(0, options.Count-1);
-						replacement = ThingMaker.MakeThing(options[selIndex]);
+						int selIndex = Rand.Range(0, options.Count);
+						replacementDef = options[selIndex];
 						item2 = MutableConversions[toReplace.def].Item2;
 						item3 = MutableConversions[toReplace.def].Item3;
 					}
 					else {
-						replacement = ThingMaker.MakeThing(Conversions[toReplace.def].Item1);
+						replacementDef = Conversions[toReplace.def].Item1;
 						item2 = Conversions[toReplace.def].Item2;
 						item3 = Conversions[toReplace.def].Item3;
 					}
+
+					if (spaceStapled && Building_NerveStaple.Conversions.ContainsKey(replacementDef))
+                    {
+						replacementDef = Building_NerveStaple.Conversions[replacementDef];
+                    }
+					Thing replacement = ThingMaker.MakeThing(replacementDef);
 
 					CompShipBodyPart bodyPart = ((ThingWithComps)replacement).GetComp<CompShipBodyPart>();
 					if(bodyPart != null)
@@ -263,7 +282,10 @@ namespace RimWorld
 					parent.Map.terrainGrid.RemoveTopLayer(c, false);
 					toReplace.Destroy();
 					replacement.SpawnSetup(parent.Map, false);
-					RandEnqueue(replacement);
+					if (!spaceStapled)
+                    {
+						RandEnqueue(replacement);
+                    }
 					if (terrain != CompRoofMe.hullTerrain)
 						parent.Map.terrainGrid.SetTerrain(c, terrain);
 					if (replacement.def == ThingDef.Named("BioShipHullTile") 
@@ -281,6 +303,7 @@ namespace RimWorld
         {
 			Thing newMaw = ThingMaker.MakeThing(ThingDef.Named("Maw_Small"));
 			newMaw.Position = hull.Position;
+			newMaw.SetFaction(Faction.OfPlayer);
 			CompShipBodyPart bodyPart = ((ThingWithComps)newMaw).GetComp<CompShipBodyPart>();
 			CompShipNutrition nutrition = ((ThingWithComps)newMaw).GetComp<CompShipNutrition>();
 			bodyPart.SetId(((Building_ShipHeart)parent).heartId);

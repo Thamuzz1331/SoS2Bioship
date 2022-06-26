@@ -20,7 +20,9 @@ namespace RimWorld
         public String heartId = "NA";
         public bool mutationsDone = false;
 
-        public List<IMutation> mutations = new List<IMutation>();
+        public List<IMutation> mutations = new List<IMutation>() {
+            new DenseSpines(), new EfficientSpines()
+        };
 
         public Dictionary<string, int> mutationThemes = new Dictionary<string, int>()
         {
@@ -29,14 +31,14 @@ namespace RimWorld
             {"humors", 3},
             {"misc", 2}
         };
-        public Dictionary<string, Dictionary<string, List<IMutation>>> mutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
+        public Dictionary<string, Dictionary<string, List<IMutation>>> goodMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
         {
             {"offense", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
 
                 }},
                 { "bone", new List<IMutation>(){
-
+                    new DenseSpines(), new EfficientSpines(),
                 }},
                 { "humors", new List<IMutation>(){
 
@@ -80,22 +82,30 @@ namespace RimWorld
         public Dictionary<ThingDef, Dictionary<string, float>> specStatMultipliers = new Dictionary<ThingDef, Dictionary<string, float>>();
         public Dictionary<string, List<ThingDef>> organOptions = new Dictionary<string, List<ThingDef>>()
         {
-            {"smallTurretOptions", new List<ThingDef>(){}},
-            {"mediumTurretOptions", new List<ThingDef>(){}},
+            {"smallTurretOptions", new List<ThingDef>(){
+                ThingDef.Named("ShipTurret_Tentacle")
+            }},
+            {"mediumTurretOptions", new List<ThingDef>(){
+                ThingDef.Named("ShipTurret_BioPlasma")
+            }},
             {"largeTurretOptions", new List<ThingDef>(){
                 ThingDef.Named("HeavySpineLauncher"), ThingDef.Named("HeavySpineLauncher"),
-                ThingDef.Named("HeavySpineLauncher"), ThingDef.Named("HeavySpineLauncher"),
-                ThingDef.Named("LightSpineLauncher"), ThingDef.Named("LightSpineLauncher"),
                 ThingDef.Named("LightSpineLauncher"), ThingDef.Named("LightSpineLauncher"),
             }},
             {"spinalTurretOptions", new List<ThingDef>(){}},
             {"smallMawOptions", new List<ThingDef>(){
                 ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
-                ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
-            }}
+            }},
         };
-  
-
+        public Dictionary<ThingDef, List<ThingDef>> defOptions = new Dictionary<ThingDef, List<ThingDef>>()
+        {
+            {ThingDef.Named("HeavySpineLauncher"), new List<ThingDef>(){
+                ThingDef.Named("Spine_Heavy")
+            }},
+            {ThingDef.Named("LightSpineLauncher"), new List<ThingDef>(){
+                ThingDef.Named("Spine_Light")
+            }},
+        };
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -153,6 +163,17 @@ namespace RimWorld
         public virtual int GetChanceModifier(string theme)
         {
             return 0;
+        }
+
+        public virtual ThingDef GetThingDef(ThingDef def)
+        {
+            List<ThingDef> defs = defOptions.TryGetValue(def, null);
+            if (defs != null)
+            {
+                return defs[Rand.Range(0, defs.Count)];
+            }
+
+            return null;
         }
     }
 

@@ -28,6 +28,24 @@ namespace RimWorld
         {
             heart = _heart;
             heart.body = this;
+            CompShipfleshConversion converter = ((ThingWithComps)_heart).TryGetComp<CompShipfleshConversion>();
+            foreach (Thing flesh in shipFlesh)
+            {
+                CompShipBodyPart bodyComp = ((ThingWithComps)flesh).TryGetComp<CompShipBodyPart>();
+                foreach(Thing t in bodyComp.GetScaff())
+                {
+                    converter.toConvert.Enqueue(t);
+                }
+                bodyComp.ClearScaff();
+            }
+            foreach (IMutation mutation in heart.mutations)
+            {
+                if (mutation.RunOnBodyParts())
+                {
+                    ApplyMutationToAll(mutation);
+                }
+            }
+
             Register(heart.GetComp<CompShipNutritionConsumer>());
             Register(heart.GetComp<CompShipNutritionStore>());
         }
@@ -36,6 +54,10 @@ namespace RimWorld
         {
             shipFlesh.Add(comp.parent);
             comp.body = this;
+            if (heart != null)
+            {
+                ApplyMutations(comp.parent);
+            }
         }
         public void Register(CompShipNutrition comp)
         {
@@ -57,6 +79,26 @@ namespace RimWorld
             }
             comp.body = this;
         }
+
+        public void ApplyMutationToAll(IMutation mutation)
+        {
+            foreach (Thing bodypart in shipFlesh)
+            {
+                mutation.Apply(bodypart);
+            }
+        }
+
+        public void ApplyMutations(Thing target)
+        {
+            foreach (IMutation mutation in heart.mutations)
+            {
+                if (mutation.RunOnBodyParts())
+                {
+                    mutation.Apply(target);
+                }
+            }
+        }
+
         public void DeRegister(CompShipBodyPart comp)
         {
             shipFlesh.Remove(comp.parent);
@@ -183,7 +225,7 @@ namespace RimWorld
                     }
                     while (deficit > 0 && shipFlesh.Count > 0)
                     {
-                        int hurtIndex = Rand.Range(0, shipFlesh.Count - 1);
+                        int hurtIndex = Rand.Range(0, shipFlesh.Count);
                         Building b = ((Building)shipFlesh.ElementAt(hurtIndex));
                         b.HitPoints -= 100;
                         if (b.HitPoints <= 0)

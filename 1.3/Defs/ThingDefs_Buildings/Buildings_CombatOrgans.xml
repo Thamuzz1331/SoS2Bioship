@@ -1,4 +1,303 @@
 <Defs>
+
+	<!-- Tentacles-->
+	<ThingDef ParentName="BaseShipArtilleryBuilding" Name="ShipTurret_Tentacle">
+		<defName>ShipTurret_Tentacle</defName>
+		<label>tentacle</label>
+		<description>An elastic muscular tentacle, capable of battering rival ships and swatting incoming missiles..</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+		</graphicData>
+		<designationCategory></designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSource</compClass>
+				<heatPerPulse>10</heatPerPulse>
+				<energyToFire>80</energyToFire>
+				<maxRange>25</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<pointDefense>true</pointDefense>
+				<singleFireSound>ShipCombatLaser</singleFireSound>
+				<threat>10</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_TentacleTop</turretGunDef>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
+		</building>
+		<costList>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_TentacleTop</defName>
+		<label>tentacle</label>
+		<description>Tentacle.  Can deliver powerful blows at close range.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<warmupTime>0</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>12</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Bullet_Fake_Tentacle</defaultProjectile>
+				<spawnDef>Proj_ShipTurretTentacle</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="ShipTurret_Tentacle">
+		<defName>ShipTurret_LashingTentacle</defName>
+		<label>tentacle</label>
+		<description>An elastic muscular tentacle, capable of battering rival ships and swatting incoming missiles..</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+		</graphicData>
+		<building>
+			<turretGunDef>ShipTurret_LashingTentacleTop</turretGunDef>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
+		</building>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_LashingTentacleTop</defName>
+		<label>tentacle</label>
+		<description>Tentacle.  Can deliver powerful blows at close range.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<warmupTime>0</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>18</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Bullet_Fake_Tentacle</defaultProjectile>
+				<spawnDef>Proj_ShipTurretTentacle</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_Tentacle</defName>
+		<label>tentacle</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>100</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_ShipTurretTentacle</defName>
+		<label>laser beam</label>
+		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>ShipLaserTentacleSmall</damageDef>
+			<speed>200</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef Name="ShipLaserTentacleSmall">
+		<defName>ShipLaserTentacleSmall</defName>
+		<label>laser</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<isExplosive>true</isExplosive>
+		<deathMessage>{0} has been battered to death.</deathMessage>
+		<hediff>Burn</hediff>
+		<hediffSolid>Burn</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Blunt</impactSoundType>
+		<armorCategory>Heat</armorCategory>
+		<minDamageToFragment>15</minDamageToFragment>
+		<defaultDamage>15</defaultDamage>
+		<defaultStoppingPower>0.5</defaultStoppingPower>
+		<defaultArmorPenetration>0.10</defaultArmorPenetration>
+		<buildingDamageFactor>4</buildingDamageFactor>
+		<plantDamageFactor>4</plantDamageFactor>
+		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastLaserSoS</explosionCellFleck>
+		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+		<soundExplosion>Explosion_Bomb</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+
+	<!-- Medium Weapons-->
+	<ThingDef ParentName="BaseShipArtilleryBuilding">
+		<defName>ShipTurret_BioPlasma</defName>
+		<label>bioplasma maw</label>
+		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSource</compClass>
+				<heatPerPulse>45</heatPerPulse>
+				<energyToFire>150</energyToFire>
+				<maxRange>125</maxRange>
+				<projectileSpeed>3</projectileSpeed>
+				<threat>30</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_BioPlasmaTop</turretGunDef>
+			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+			<turretTopDrawSize>4</turretTopDrawSize>
+		</building>
+		<costList>
+		</costList>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<size>(3,3)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_BioPlasmaTop</defName>
+		<label>bioplasma</label>
+		<description>Bioplasma cannon. Medium-range with large aoe.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretPlasma</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>fire bioplasma</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<warmupTime>1.5</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ShipCombatPlasmaLarge</soundCast>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Bullet_Fake_BioPlasma</defaultProjectile>
+				<spawnDef>Proj_BioPlasma</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+				<burstShotCount>2</burstShotCount>
+			</li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_BioPlasma</defName>
+		<label>plasma toroid</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>100</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_BioPlasma</defName>
+		<label>bioplasma glob</label>
+		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>8.9</explosionRadius>
+			<damageDef>ShipBioPlasma</damageDef>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef Name="ShipBioPlasma">
+		<defName>ShipBioPlasma</defName>
+		<label>plasma</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<isExplosive>true</isExplosive>
+		<deathMessage>{0} has been vaporized by plasma.</deathMessage>
+		<hediff>Burn</hediff>
+		<hediffSolid>Burn</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Blunt</impactSoundType>
+		<armorCategory>Heat</armorCategory>
+		<minDamageToFragment>15</minDamageToFragment>
+		<defaultDamage>160</defaultDamage>
+		<defaultStoppingPower>0.5</defaultStoppingPower>
+		<defaultArmorPenetration>0.10</defaultArmorPenetration>
+		<buildingDamageFactor>4</buildingDamageFactor>
+		<plantDamageFactor>4</plantDamageFactor>
+		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastPlasma</explosionCellFleck>
+		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+		<soundExplosion>Explosion_Bomb</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+
+	<!-- Spike Launchers-->
 	<ThingDef ParentName="BaseShipArtilleryWeapon" Name="BaseBioTorpedo" Abstract="True">
 		<description>Spine launcher.  Hurls volleys of bio-plasma propelled bone spikes.</description>
 		<graphicData>
@@ -72,7 +371,7 @@
 				<energyToFire>0</energyToFire>
 				<maxRange>200</maxRange>
 				<projectileSpeed>0.25</projectileSpeed>
-				<threat>45</threat>
+				<threat>30</threat>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -109,7 +408,7 @@
 				<energyToFire>0</energyToFire>
 				<maxRange>200</maxRange>
 				<projectileSpeed>0.25</projectileSpeed>
-				<threat>45</threat>
+				<threat>30</threat>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>

@@ -12,6 +12,8 @@ namespace RimWorld
 {
     public interface IMutation
     {
+        bool RunOnBodyParts();
         void Apply(Building_ShipHeart target);
+        void Apply(Thing target);
     }
 }

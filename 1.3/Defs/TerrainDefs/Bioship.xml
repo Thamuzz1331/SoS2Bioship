@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TerrainDef>
+		<defName>FakeFloorInsideShip</defName>
+		<layerable>true</layerable>
+		<label>ship</label>
+		<texturePath>Terrain/Surfaces/TileHull</texturePath>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>70</renderPrecedence>
+		<fertility>0</fertility>
+		<holdSnow>false</holdSnow>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+		<tags>
+			<li>Ship</li>
+		</tags>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+		</affordances>
+	</TerrainDef>
+</Defs>

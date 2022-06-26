@@ -54,10 +54,75 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
-			<li Class="CompProperties_ShipNutritionConsumer">
-				<consumptionPerPulse>
-					5
-				</consumptionPerPulse>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+			<ChunkSlagSteel>1</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scar_Beam_Unpowered</defName>
+		<label>scar</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Scar/ScarBeamModular_east</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A scar.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<comps>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
 		<placeWorkers>

@@ -76,6 +76,75 @@
 		<killedLeavings>
 		</killedLeavings>
 	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Bio_Ship_Beam_Unpowered</defName>
+		<label>shipflesh</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BioShipBeamModular_east</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<comps>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
+	</ThingDef>
 	<!-- corners -->
 	<ThingDef ParentName="BuildingBase" Name="BioShipCornerBase" Abstract="True">
 		<thingClass>Building</thingClass>

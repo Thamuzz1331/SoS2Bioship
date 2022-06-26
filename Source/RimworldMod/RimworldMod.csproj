@@ -96,7 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building_ShipHeart.cs" />
-	<Compile Include="Comp\Comp_ShipfleshConversion.cs" />
+	  <Compile Include="Building_NerveStaple.cs" />
+	  <Compile Include="Building_Scaffold.cs" />
+	  <Compile Include="Comp\Comp_ShipfleshConversion.cs" />
     <Compile Include="Comp\CompProperties_ShipfleshConversion.cs" />
     <Compile Include="Comp\Comp_ShipBodyPart.cs" />
 	<Compile Include="Comp\CompProperties_ShipBodyPart.cs" />
@@ -111,8 +113,11 @@
 	<Compile Include="Comp\CompNutritionLoader.cs" />
 	<Compile Include="Comp\ShipBodyMapComp.cs" />
     <Compile Include="ShipBody.cs" />
-	<Compile Include="BioShipMod.cs" />
-    <Compile Include="Mutations/IMutation.cs" />
+	  <Compile Include="BioShipMod.cs" />
+    <Compile Include="Mutations\IMutation.cs" />
+    <Compile Include="Mutations\Bone\DenseSpines.cs" />
+	  <Compile Include="Mutations\Bone\EfficientSpines.cs" />
+	  <Compile Include="Mutations\Bone\ReinforcedBone.cs" />
 
 
   </ItemGroup>

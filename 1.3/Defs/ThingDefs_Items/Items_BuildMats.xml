@@ -10,7 +10,7 @@
 		</graphicData>
 		<stackLimit>50</stackLimit>
 		<statBases>
-			<MaxHitPoints>50</MaxHitPoints>
+			<MaxHitPoints>5</MaxHitPoints>
 			<MarketValue>0.33</MarketValue>
 			<Mass>0.05</Mass>
 			<Flammability>10.0</Flammability>

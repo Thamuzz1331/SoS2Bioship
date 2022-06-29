@@ -392,6 +392,7 @@
 		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
 		<costList>
 			<ProtienPutty>2</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
@@ -482,6 +483,9 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -530,6 +534,9 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>12</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -578,6 +585,9 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>16</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -625,12 +635,14 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>6</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
 	</ThingDef>
-
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Maw</defName>
 	</DesignatorDropdownGroupDef>
@@ -673,6 +685,8 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>2</ProtienPutty>
+			<Neutroamine>4</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -717,6 +731,9 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -744,6 +761,9 @@
 			<li Class="CompProperties_Scaffold"/>
 		</comps>
 		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
 		<researchPrerequisites>
@@ -772,6 +792,9 @@
 		<building>
 		</building>
 		<costList>
+			<ProtienPutty>12</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretPlasma_MenuIcon</uiIconPath>
 		<researchPrerequisites>
@@ -819,6 +842,9 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ProtienPutty>16</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -859,6 +885,8 @@
 		<description>Base for the growth a fat deposite.</description>
 		<size>(1,2)</size>
 		<costList>
+			<ProtienPutty>4</ProtienPutty>
+			<Neutroamine>1</Neutroamine>
 		</costList>
 		<comps>
 			<li Class="CompProperties_Scaffold"/>
@@ -921,6 +949,8 @@
 		</statBases>
 		<selectable>true</selectable>
 		<costList>
+			<ProtienPutty>4</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
 		</costList>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
@@ -995,6 +1025,9 @@
 			<li>AdvancedGangliaClusterScaffold</li>
 		</researchPrerequisites>
 		<costList>
+			<OrganSeed>1</OrganSeed>
+			<ProtienPutty>12</ProtienPutty>
+			<Neutroamine>100</Neutroamine>
 		</costList>
 		<seeThroughFog>true</seeThroughFog>
 	</ThingDef>

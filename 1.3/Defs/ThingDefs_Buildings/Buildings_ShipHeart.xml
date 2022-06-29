@@ -58,6 +58,7 @@
 				<nutrientCapacity>10000</nutrientCapacity>
 				<initialNutrition>10000</initialNutrition>
 			</li>
+			<li Class="CompProperties_Aggression"/>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -72,6 +73,65 @@
 		<designationHotKey>Misc3</designationHotKey>
 		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
 	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ShipfleshAnalysisStation</defName>
+		<label>flesh codex</label>
+		<description>An analysis station where the secrets of the abomination seed can be unraveled.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/FleshCodex</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.46875</drawSize>
+		</graphicData>
+		<uiIconScale>0.85</uiIconScale>
+		<size>(2,2)</size>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<designationHotKey>Misc4</designationHotKey>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<costList>
+			<Uranium>40</Uranium>
+			<Plasteel>250</Plasteel>
+			<Gold>100</Gold>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<ResearchSpeedFactor>0.2</ResearchSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+
 	<ThingDef ParentName="BuildingBase" Name="NerveStaple">
 		<defName>NerveStaple</defName>
 		<label>nerve staple</label>

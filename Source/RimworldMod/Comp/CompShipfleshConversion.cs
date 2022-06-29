@@ -61,7 +61,8 @@ namespace RimWorld
 			Conversions.Add(ThingDef.Named("FatStoreSmallScaffold"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("FatStoreSmall"), false, false));
 			Conversions.Add(ThingDef.Named("ScaffoldInside_PassiveCooler"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShipInside_PassiveCooler"), false, false));
 			Conversions.Add(ThingDef.Named("ScaffoldShieldGenerator"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("BioShieldGenerator"), false, false));
-			
+			Conversions.Add(ThingDef.Named("Scaffold_Maw_Corpse"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Maw_Corpse"), false, false));
+
 			Regenerations.Add(ThingDef.Named("Bio_Ship_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam"), false, false));
 			Regenerations.Add(ThingDef.Named("Bio_Ship_Beam_Unpowered"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scar_Beam_Unpowered"), false, false));
 			Regenerations.Add(ThingDef.Named("BioShipHullTile"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("ScarHullTile"), false, false));
@@ -142,10 +143,6 @@ namespace RimWorld
 
 		private void RandEnqueue(Thing t)
         {
-			if (toConvert.Count > 250)
-            {
-				return;
-            }
 			int sel = Rand.Range(1, 6);
 			switch(sel)
             {

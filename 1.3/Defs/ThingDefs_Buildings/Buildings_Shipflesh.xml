@@ -716,11 +716,11 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<blockWind>true</blockWind>
+		<passability>Standable</passability>
+		<blockWind>false</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
+		<blockLight>false</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<WorkToBuild>0</WorkToBuild>
@@ -757,7 +757,62 @@
 		<costList>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Maw_Corpse</defName>
+		<label>corpse maw</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipMaw</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Standable</passability>
+		<blockWind>false</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>false</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Small shipmaw.</description>
+		<size>(2,2)</size>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_Refuelable">
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>5</initialConfigurableTargetFuelLevel>
+				<fuelConsumptionRate>1</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelFilter>
+					<categories>
+						<li>Corpses</li>
+					</categories>
+				</fuelFilter>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_ShipNutritionSource">
+				<nutrientPerPulse>1000</nutrientPerPulse>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<designationHotKey>Misc5</designationHotKey>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
@@ -905,7 +960,45 @@
 		<killedLeavings>
 		</killedLeavings>
 	</ThingDef>
-
+	<ThingDef ParentName="ShipHeatsinkBase">
+		<defName>BioShipHeatsink</defName>
+		<label>organic heatsink</label>
+		<description>A liquid-cooled heatsink for storing excess heat. Slowly bleeds heat into the surrounding room; will not function in vacuum.\n\nHeat capacity: 115\nHeat released: 0.5/s</description>
+		<size>(2,2)</size>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/Heatsink</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2.1,4.7)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<Steel>100</Steel>
+			<Plasteel>25</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSink</compClass>
+				<heatCapacity>115</heatCapacity>
+				<heatVentTick>120</heatVentTick>
+				<threat>2</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+	
 	<ThingDef ParentName="BuildingBase">
 		<defName>BioShieldGenerator</defName>
 		<label>psi shield ganglia</label>

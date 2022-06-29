@@ -19,9 +19,9 @@ namespace RimWorld
         public ShipBody body = null;
         public String heartId = "NA";
         public bool mutationsDone = false;
+        private int aggressionLevel = 1;
 
         public List<IMutation> mutations = new List<IMutation>() {
-            new DenseSpines(), new EfficientSpines()
         };
 
         public Dictionary<string, int> mutationThemes = new Dictionary<string, int>()
@@ -83,10 +83,11 @@ namespace RimWorld
         public Dictionary<string, List<ThingDef>> organOptions = new Dictionary<string, List<ThingDef>>()
         {
             {"smallTurretOptions", new List<ThingDef>(){
-                ThingDef.Named("ShipTurret_Tentacle")
+                ThingDef.Named("ShipTurret_Nematocyst")
             }},
             {"mediumTurretOptions", new List<ThingDef>(){
-                ThingDef.Named("ShipTurret_BioPlasma")
+                ThingDef.Named("ShipTurret_BioPlasma"), ThingDef.Named("ShipTurret_BioAcid"),
+                ThingDef.Named("ShipTurret_BioPlasma"), ThingDef.Named("ShipTurret_BioAcid"),
             }},
             {"largeTurretOptions", new List<ThingDef>(){
                 ThingDef.Named("HeavySpineLauncher"), ThingDef.Named("HeavySpineLauncher"),
@@ -174,6 +175,11 @@ namespace RimWorld
             }
 
             return null;
+        }
+
+        public virtual int GetAggressionLevel()
+        {
+            return aggressionLevel;
         }
     }
 

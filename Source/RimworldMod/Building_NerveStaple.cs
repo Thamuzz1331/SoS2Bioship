@@ -13,7 +13,6 @@ using RimworldMod;
 
 namespace RimWorld
 {
-    [StaticConstructorOnStartup]
     public class Building_NerveStaple : Building
     {
         public static Dictionary<ThingDef, ThingDef> Conversions = new Dictionary<ThingDef, ThingDef>() {
@@ -32,23 +31,26 @@ namespace RimWorld
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            List<Thing> toDestroy = new List<Thing>();
             foreach (Thing t in this.Position.GetThingList(map))
             {
                 if (Conversions.ContainsKey(t.def))
                 {
-                    Thing replacement = ThingMaker.MakeThing(Conversions[t.def]);
-                    Log.Message("toReplace " + t + " replace " + replacement);
-                    replacement.Position = t.Position;
-                    replacement.Rotation = t.Rotation;
-                    replacement.SetFaction(Faction.OfPlayer);
-                    TerrainDef terrain = map.terrainGrid.TerrainAt(t.Position);
-                    map.terrainGrid.RemoveTopLayer(t.Position, false);
-
-                    t.Destroy();
-                    replacement.SpawnSetup(map, false);
-                    if (terrain != CompRoofMe.hullTerrain)
-                        map.terrainGrid.SetTerrain(replacement.Position, terrain);
+                    toDestroy.Add(t);
                 }
+            }
+            foreach (Thing t in toDestroy)
+            {
+                Thing replacement = ThingMaker.MakeThing(Conversions[t.def]);
+                replacement.Position = t.Position;
+                replacement.Rotation = t.Rotation;
+                replacement.SetFaction(Faction.OfPlayer);
+                TerrainDef terrain = map.terrainGrid.TerrainAt(t.Position);
+                map.terrainGrid.RemoveTopLayer(t.Position, false);
+                t.Destroy();
+                replacement.SpawnSetup(map, false);
+                if (terrain != CompRoofMe.hullTerrain)
+                    map.terrainGrid.SetTerrain(replacement.Position, terrain);
             }
 
         }

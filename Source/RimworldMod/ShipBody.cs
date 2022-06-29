@@ -14,6 +14,8 @@ namespace RimWorld
     {
         public Building_ShipHeart heart = null;
         public HashSet<Thing> shipFlesh = new HashSet<Thing>();
+        public HashSet<Thing> otherFlesh = new HashSet<Thing>();
+        public HashSet<Thing> adjacentMechanicals = new HashSet<Thing>();
         public HashSet<CompShipNutritionConsumer> consumers = new HashSet<CompShipNutritionConsumer>();
         public HashSet<CompShipNutritionStore> stores = new HashSet<CompShipNutritionStore>();
         public HashSet<CompShipNutritionSource> source = new HashSet<CompShipNutritionSource>();
@@ -58,6 +60,16 @@ namespace RimWorld
             {
                 ApplyMutations(comp.parent);
             }
+            foreach (Thing t in comp.adjBodypart)
+            {
+                otherFlesh.Add(t);
+            }
+            comp.adjBodypart.Clear();
+            foreach (Thing t in comp.adjMechs)
+            {
+                adjacentMechanicals.Add(t);
+            }
+            comp.adjMechs.Clear();
         }
         public void Register(CompShipNutrition comp)
         {

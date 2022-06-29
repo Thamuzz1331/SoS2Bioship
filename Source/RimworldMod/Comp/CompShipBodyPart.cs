@@ -14,6 +14,8 @@ namespace RimWorld
     {
         private CompProperties_ShipBodyPart Props => (CompProperties_ShipBodyPart)props;
         private List<Thing> scaffolds = new List<Thing>();
+        public HashSet<Thing> adjMechs = new HashSet<Thing>();
+        public HashSet<Thing> adjBodypart = new HashSet<Thing>();
 
         public String heartId = "NA";
         public ShipBody body = null;
@@ -33,6 +35,36 @@ namespace RimWorld
             if(respawningAfterLoad)
             {
                 ((ShipBodyMapComp)this.parent.Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
+            }
+            foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
+            {
+                foreach (Thing adj in c.GetThingList(parent.Map))
+                {
+                    if (adj is ThingWithComps)
+                    {
+                        CompScaffold scaff = ((ThingWithComps)adj).TryGetComp<CompScaffold>();
+                        if (scaff != null)
+                        {
+                            AddScaff(scaff.parent);
+                        }
+                        CompEatMe eatMe = ((ThingWithComps)adj).TryGetComp<CompEatMe>();
+                        if (eatMe != null)
+                        {
+                            CompShipBodyPart bodyPart = ((ThingWithComps)adj).TryGetComp<CompShipBodyPart>();
+                            if (bodyPart != null)
+                            {
+                                if (bodyPart.heartId != heartId)
+                                {
+                                    body.otherFlesh.Add(adj);
+                                }
+                            }
+                            else
+                            {
+                                body.adjacentMechanicals.Add(adj);
+                            }
+                        }
+                    }
+                }
             }
         }
 

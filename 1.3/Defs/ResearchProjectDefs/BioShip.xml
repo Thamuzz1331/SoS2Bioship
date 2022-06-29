@@ -1,0 +1,189 @@
+<Defs>
+	<ResearchTabDef>
+		<defName>ResearchTabBioShip</defName>
+		<label>BioShip</label>
+	</ResearchTabDef>
+	<ResearchProjectDef Name="BioShipProjectBase" Abstract="True">
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>ShipfleshAnalysisStation</li>
+		</requiredResearchFacilities>
+		<tab>ResearchTabBioShip</tab>
+		<techLevel>Ultra</techLevel>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>ProtienRendering</defName>
+		<label>protien rendering</label>
+		<description>A bioship is not a natural organism that contains the pattern of its ultimate developement.  Its growth must be guided and shaped, and it is by this clay that it shall know its ultimate form.</description>
+		<baseCost>1500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+		</prerequisites>
+		<researchViewX>1.00</researchViewX>
+		<researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>StructuralScaffold</defName>
+		<label>structural scaffolds</label>
+		<description>First we shall lay the ribs and bones, that the fledgling should know its outline.\nClinician Notes: Simple configurations of the clay result in the formation of bone, muscle, and structural tissues.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>ProtienRendering</li>
+		</prerequisites>
+		<researchViewX>2.00</researchViewX>
+		<researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>NerveStapling</defName>
+		<label>nerve staples</label>
+		<description>Unchecked growth could lead to undesired outcomes.  By these means we shall numb the beast's senses and shape it to our design.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>StructuralScaffold</li>
+		</prerequisites>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>MutationInduction</defName>
+		<label>mutation inducers</label>
+		<description>The explosive cell growth experienced when the seed expands into being a proper ship heart results in a raft of mutations.  It should be possible to induce this process to our own ends..</description>
+		<baseCost>3000</baseCost>
+		<prerequisites>
+			<li>NerveStapling</li>
+		</prerequisites>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>4.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>MutationControl</defName>
+		<label>gene expression influcers</label>
+		<description>While the outcome of the creature's mutations will always be up to chance, with these tools we can put our fingers on the scales of probability.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MutationInduction</li>
+		</prerequisites>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>4.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>MetabolicScaffoldSimple</defName>
+		<label>simple metabolc scaffolds</label>
+		<description>Hunger shall guide the first growth, but direction and discretion will be required beyond that point.  It would not do to clog your halls and aterties with glistening fat and glutonous maws, now would it little one?</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>StructuralScaffold</li>
+		</prerequisites>
+		<researchViewX>3.00</researchViewX>
+		<researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>MetabolicScaffoldAdvanced</defName>
+		<label>advanced metabolic scaffolds</label>
+		<description>You have tasted the simple joys of sweet flesh little one, but there are more rarified palates to consider.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</prerequisites>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>ThermoregulatoryScaffolds</defName>
+		<label>thermoregulatory scaffolds</label>
+		<description>Battle has you beset by fever and boiling blood little one, let me show you how to cool yourself.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</prerequisites>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>2.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>SmallWeaponScaffold</defName>
+		<label>small weapon scaffolds</label>
+		<description>Here now little one, accept our gift: Flicking darts to deter the unwary predator and subdue your prey.</description>
+		<baseCost>2000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</prerequisites>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>MediumWeaponScaffold</defName>
+		<label>medium weapon scaffolds</label>
+		<description>Chemistry to corrode and to ignite little one, to pit and shatter the hides of your prey.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>SmallWeaponScaffold</li>
+		</prerequisites>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>LargeWeaponScaffold</defName>
+		<label>large weapon scaffolds</label>
+		<description>Barbs to fling at the far ranging foe that thinks you helpless at a distance.  Punish them for their temerity little one.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MediumWeaponScaffold</li>
+		</prerequisites>
+		<researchViewX>6.00</researchViewX>
+		<researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>SpinalWeaponScaffold</defName>
+		<label>spinal weapon scaffolds</label>
+		<description>Jaws to crush, little one.  It is time to feast.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>LargeWeaponScaffold</li>
+		</prerequisites>
+		<researchViewX>7.00</researchViewX>
+		<researchViewY>3.00</researchViewY>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>GangliaClusterScaffold</defName>
+		<label>ganglic cluster scaffold</label>
+		<description>Quicken your thoughts little one, and with that speed free yourself from gravity's smothering embrace.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</prerequisites>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>AdvancedGangliaClusterScaffold</defName>
+		<label>advanced ganglic cluster scaffold</label>
+		<description>Let your will be as steel little one, their blandishments shall break upon it before ever touching your flesh.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+			<li>GangliaClusterScaffold</li>
+		</prerequisites>
+		<researchViewX>5.00</researchViewX>
+		<researchViewY>1.00</researchViewY>
+	</ResearchProjectDef>
+
+
+</Defs>

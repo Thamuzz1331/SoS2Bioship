@@ -302,7 +302,11 @@
 		<defName>ShipTurret_BioAcid</defName>
 		<label>acid spitter</label>
 		<description>Spits a ball of caustic mucus clings to a hull on impact.  A medium ranged weapon that deals linger damage.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
-		<designationCategory></designationCategory>
+
+		
+		<designationCategory>Ship</designationCategory>
+
+
 		<graphicData>
 			<texPath>Things/Building/Ship/HardpointGreen</texPath>
 			<drawSize>(3,3)</drawSize>
@@ -394,7 +398,7 @@
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<projectile>
-			<explosionRadius>8.9</explosionRadius>
+			<explosionRadius>5.9</explosionRadius>
 			<damageDef>ShipBioAcid</damageDef>
 			<speed>100</speed>
 		</projectile>
@@ -402,17 +406,17 @@
 	<DamageDef Name="ShipBioAcid">
 		<defName>ShipBioAcid</defName>
 		<label>acid</label>
-		<workerClass>DamageWorker_AddInjury</workerClass>
+		<workerClass>DamageWorker_Acid</workerClass>
 		<externalViolence>true</externalViolence>
 		<isExplosive>true</isExplosive>
 		<deathMessage>{0} has been disolved by acid.</deathMessage>
-		<hediff>Burn</hediff>
-		<hediffSolid>Burn</hediffSolid>
+		<hediff>ChemicalBurn</hediff>
+		<hediffSolid>ChemicalBurn</hediffSolid>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<impactSoundType>Blunt</impactSoundType>
 		<armorCategory>Heat</armorCategory>
 		<minDamageToFragment>15</minDamageToFragment>
-		<defaultDamage>160</defaultDamage>
+		<defaultDamage>120</defaultDamage>
 		<defaultStoppingPower>0.5</defaultStoppingPower>
 		<defaultArmorPenetration>0.10</defaultArmorPenetration>
 		<buildingDamageFactor>4</buildingDamageFactor>

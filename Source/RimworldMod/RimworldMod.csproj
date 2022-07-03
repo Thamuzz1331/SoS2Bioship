@@ -123,7 +123,12 @@
     <Compile Include="Mutations\IMutation.cs" />
     <Compile Include="Mutations\Bone\DenseSpines.cs" />
 	  <Compile Include="Mutations\Bone\EfficientSpines.cs" />
-	  <Compile Include="Mutations\Bone\ReinforcedBone.cs" />
+	  <Compile Include="Damage\AcidWorker.cs"/>
+	  <Compile Include="Damage\Damage_AcidGlob.cs"/>
+	  <Compile Include="Damage\ShipDamageDefOf.cs"/>
+
+	  <Compile Include="Comp\CompRoofMeBio.cs" />
+	  <Compile Include="Comp\CompProperties_RoofMeBio.cs" />
 
 
   </ItemGroup>

@@ -46,6 +46,7 @@ namespace RimWorld
                         if (scaff != null)
                         {
                             AddScaff(scaff.parent);
+                            return;
                         }
                         CompEatMe eatMe = ((ThingWithComps)adj).TryGetComp<CompEatMe>();
                         if (eatMe != null)

@@ -38,14 +38,12 @@ namespace RimWorld
 
 		public virtual void DoAttack()
         {
-			Log.Message("In do attack");
 			int numAttack = Rand.Range(1, 2);
 			for (int i = 0; i < numAttack; i++)
 			{
 				switch (((Building_ShipHeart)parent).GetAggressionLevel())
 				{
 					case 1:
-						Log.Message("Basic aggression found");
 						BasicAggress(((Building_ShipHeart)parent).body.adjacentMechanicals);
 						break;
 					case 2:
@@ -59,7 +57,6 @@ namespace RimWorld
 
 		private void BasicAggress(HashSet<Thing> targetList)
         {
-			Log.Message("NumTargets: " + targetList.Count);
 			if (targetList.Count > 0)
             {
 				Thing target = targetList.ElementAt(Rand.Range(0, targetList.Count));

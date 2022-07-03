@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<TerrainDef>
-		<defName>FakeFloorInsideShip</defName>
+		<defName>FakeFloorShipflesh</defName>
 		<layerable>true</layerable>
 		<label>ship</label>
-		<texturePath>Terrain/Surfaces/TileHull</texturePath>
+		<texturePath>Terrain/Surfaces/FleshFloor</texturePath>
 		<edgeType>Hard</edgeType>
 		<renderPrecedence>70</renderPrecedence>
 		<fertility>0</fertility>

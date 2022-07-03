@@ -236,7 +236,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
 		<graphicData>
-			<texPath>Things/Building/Ship/BioHullPlate</texPath>
+			<texPath>Things/Building/Ship/BioHullPlateTransparent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<seeThroughFog>true</seeThroughFog>
@@ -260,7 +260,9 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 		</comps>
 		<placeWorkers>
 		</placeWorkers>

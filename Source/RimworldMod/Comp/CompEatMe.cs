@@ -19,7 +19,9 @@ namespace RimWorld
         {
             base.PostSpawnSetup(respawningAfterLoad);
             CompShipBodyPart bodyPart = ((ThingWithComps)parent).TryGetComp<CompShipBodyPart>();
-
+            if (((ThingWithComps)parent).TryGetComp<CompScaffold>() != null) {
+                return;
+            }
             foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
             {
                 foreach (Thing adj in c.GetThingList(parent.Map))

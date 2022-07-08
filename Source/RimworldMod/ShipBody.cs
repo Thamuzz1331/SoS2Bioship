@@ -47,9 +47,7 @@ namespace RimWorld
                     ApplyMutationToAll(mutation);
                 }
             }
-
-            Register(heart.GetComp<CompShipNutritionConsumer>());
-            Register(heart.GetComp<CompShipNutritionStore>());
+            passiveConsumption += 150;
         }
 
         public void Register(CompShipBodyPart comp)
@@ -169,7 +167,7 @@ namespace RimWorld
         }
         public void UpdatePassiveConsumption()
         {
-            passiveConsumption = 1*shipFlesh.Count;
+            passiveConsumption = 1*shipFlesh.Count + 150;
             foreach (CompShipNutritionConsumer c in consumers)
             {
                 passiveConsumption += c.getConsumptionPerPulse();
@@ -177,19 +175,12 @@ namespace RimWorld
         }
         public bool RequestNutrition(float qty)
         {
-            float available = nutritionGen + currentNutrition - passiveConsumption - tempHunger;
-            if (qty > available)
+            if (qty > currentNutrition)
                 return false;
 
             ExtractNutrition(stores, qty, 0);
             currentNutrition -= qty;
             return true;
-        }
-        public float ConsumeNutrition(float qty)
-        {
-            tempHunger += qty;
-
-            return qty;
         }
 
         public void RunNutrition()
@@ -198,6 +189,7 @@ namespace RimWorld
             UpdateNutritionGeneration();
             UpdateCurrentNutrition();
             float net = nutritionGen - passiveConsumption - tempHunger;
+            net = net / (60000f/120f);
             if (net > 0)
             {
                 float toStore = net * 0.5f;

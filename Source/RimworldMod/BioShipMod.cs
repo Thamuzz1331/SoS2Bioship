@@ -29,18 +29,27 @@ namespace BioShip
 	[StaticConstructorOnStartup]
 	public class BioShip : ModBase
 	{
+		public static Texture2D NutrientTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.5f, 0.5f, 0.1f));
+
+		public override string ModIdentifier
+		{
+			get { return "BioShip"; }
+		}
+
+
 		public override void Initialize()
 		{
 			base.Initialize();
+			var original = typeof(ShipUtility).GetMethod("LaunchFailReasons");
+			HarmonyInst.Unpatch(original, HarmonyPatchType.All, "ShipInteriorMod2");
 		}
 	}
 
-
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
-	public static class FindLaunchFailReasons
+	public static class FindLaunchFailReasonsBioship
 	{
 		[HarmonyPostfix]
-		public static void FindLaunchFailReasonsReally(Building rootBuilding, ref IEnumerable<string> __result)
+		public static void FindLaunchFailReasonsReallyBioship(Building rootBuilding, ref IEnumerable<string> __result)
 		{
 			List<string> newResult = new List<string>();
 			List<Building> shipParts = ShipUtility.ShipBuildingsAttachedTo(rootBuilding);
@@ -58,12 +67,12 @@ namespace BioShip
 					bool flag = huntingEngines;
 					if (flag)
 					{
-						huntingEngines = !FindLaunchFailReasons.engines.Any((ThingDef d) => d == part.def);
+						huntingEngines = !FindLaunchFailReasonsBioship.engines.Any((ThingDef d) => d == part.def);
 					}
 					bool flag2 = huntingCockpit;
 					if (flag2)
 					{
-						huntingCockpit = !FindLaunchFailReasons.pilots.Any((ThingDef d) => d == part.def);
+						huntingCockpit = !FindLaunchFailReasonsBioship.pilots.Any((ThingDef d) => d == part.def);
 						bool flag3 = !huntingCockpit;
 						if (flag3)
 						{
@@ -85,15 +94,15 @@ namespace BioShip
 					bool flag6 = huntingSensors;
 					if (flag6)
 					{
-						huntingSensors = !FindLaunchFailReasons.engines.Any((ThingDef d) => d == part.def);
+						huntingSensors = !FindLaunchFailReasonsBioship.engines.Any((ThingDef d) => d == part.def);
 					}
-					int fuelMult = FindLaunchFailReasons.liftoffPower.TryGetValue(part.def, 0);
+					int fuelMult = FindLaunchFailReasonsBioship.liftoffPower.TryGetValue(part.def, 0);
 					bool flag7 = part.TryGetComp<CompRefuelable>() != null;
 					if (flag7)
 					{
 						fuelHad += part.TryGetComp<CompRefuelable>().Fuel * (float)fuelMult;
 					}
-					bool flag8 = !FindLaunchFailReasons.hullPlates.Any((ThingDef d) => d == part.def);
+					bool flag8 = !FindLaunchFailReasonsBioship.hullPlates.Any((ThingDef d) => d == part.def);
 					if (flag8)
 					{
 						fuelNeeded += (float)(part.def.size.x * part.def.size.z) * 3f;
@@ -207,4 +216,51 @@ namespace BioShip
 		}
 	}
 
+
+	[HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
+	public static class BioshipInterstellarFailReasons
+    {
+
+		[HarmonyPrefix]
+		public static bool BioshipFailReasons(Building_ShipBridge __instance, ref List<string> __result)
+        {
+			__result = new List<string>();
+			if (__instance is Building_ShipHeart)
+            {
+				__result.Add("Bioship FTL Pending");
+				return false;
+            } 
+			return true;
+        }
+    }
+
+	[HarmonyPatch(typeof(ShipCombatOnGUI), "DrawShipRange")]
+	public static class BioShipCombatOnGUI
+	{
+		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
+
+		[HarmonyPostfix]
+		public static void DrawNutritionBars(ref float baseY)
+		{
+			if(Traverse.Create(shipCombatManagerType).Field("InCombat").GetValue<bool>())
+            {
+				Map playerShip = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
+				foreach(Building_ShipHeart heart in playerShip.listerBuildings.allBuildingsColonist.Where(b => b is Building_ShipHeart)) {
+					Rect rect = new Rect(UI.screenWidth - 255, baseY - 40, 250, 40);
+					Verse.Widgets.DrawMenuSection(rect);
+					Widgets.FillableBar(rect.ContractedBy(6), heart.body.currentNutrition / heart.body.nutritionCapacity,
+					BioShip.NutrientTex);
+
+					rect.y += 10;
+					rect.x = UI.screenWidth - 200;
+					rect.height = Text.LineHeight;
+
+					Widgets.Label(rect, "Nutrition: " + Mathf.Round(heart.body.currentNutrition));
+
+					baseY -= 50;
+                    
+                }
+            }
+		}
+	}
 }

@@ -96,10 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building_ShipHeart.cs" />
-	  <Compile Include="Building_NerveStaple.cs" />
-	  <Compile Include="Comp\CompProperties_Scaffold.cs" />
-	  <Compile Include="Comp\CompScaffold.cs" />
-	  <Compile Include="Comp\CompShipfleshConversion.cs" />
+    <Compile Include="Building_NerveStaple.cs" />
+    <Compile Include="Comp\CompProperties_Scaffold.cs" />
+    <Compile Include="Comp\CompScaffold.cs" />
+    <Compile Include="Comp\CompShipfleshConversion.cs" />
     <Compile Include="Comp\CompProperties_ShipfleshConversion.cs" />
     <Compile Include="Comp\CompShipBodyPart.cs" />
 	<Compile Include="Comp\CompProperties_ShipBodyPart.cs" />
@@ -113,23 +113,29 @@
 	<Compile Include="Comp\CompShipNutritionStore.cs" />
 	<Compile Include="Comp\CompNutritionLoader.cs" />
 	<Compile Include="Comp\ShipBodyMapComp.cs" />
-	  <Compile Include="Comp\CompProperties_EatMe.cs" />
-	  <Compile Include="Comp\CompEatMe.cs" />
-	  <Compile Include="Comp\CompProperties_Aggression.cs" />
-	  <Compile Include="Comp\CompAggression.cs" />
+    <Compile Include="Comp\CompProperties_EatMe.cs" />
+    <Compile Include="Comp\CompEatMe.cs" />
+    <Compile Include="Comp\CompProperties_Aggression.cs" />
+    <Compile Include="Comp\CompAggression.cs" />
 
-	  <Compile Include="ShipBody.cs" />
-	  <Compile Include="BioShipMod.cs" />
+    <Compile Include="ShipBody.cs" />
+    <Compile Include="BioShipMod.cs" />
     <Compile Include="Mutations\IMutation.cs" />
     <Compile Include="Mutations\Bone\DenseSpines.cs" />
-	  <Compile Include="Mutations\Bone\EfficientSpines.cs" />
+    <Compile Include="Mutations\Bone\EfficientSpines.cs" />
+    <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />
+	  <Compile Include="Mutations\Flesh\SparseNematocysts.cs" />
+	  <Compile Include="Mutations\Fluids\FastRegeneration.cs" />
+	  <Compile Include="Mutations\Fluids\EfficientRegeneration.cs" />
+	  <Compile Include="Mutations\Misc\EfficientFatStorage.cs" />
 	  <Compile Include="Damage\AcidWorker.cs"/>
-	  <Compile Include="Damage\Damage_AcidGlob.cs"/>
-	  <Compile Include="Damage\ShipDamageDefOf.cs"/>
+    <Compile Include="Damage\Damage_AcidGlob.cs"/>
+    <Compile Include="Damage\ShipDamageDefOf.cs"/>
 
-	  <Compile Include="Comp\CompRoofMeBio.cs" />
-	  <Compile Include="Comp\CompProperties_RoofMeBio.cs" />
+    <Compile Include="Comp\CompRoofMeBio.cs" />
+    <Compile Include="Comp\CompProperties_RoofMeBio.cs" />
 
+    <Compile Include="Graphics\Graphic_256_Bio.cs" />
 
   </ItemGroup>
 </Project>

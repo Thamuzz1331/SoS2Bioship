@@ -76,6 +76,37 @@ namespace RimWorld
             Scribe_Values.Look<float>(ref currentNutrition, "currentNutrition", 0f);
         }
 
-
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+	        foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+	        {
+		        yield return gizmo;
+	        }
+	        if (Prefs.DevMode)
+	        {
+		        if ((this.getNutrientCapacity() - this.getCurrentNutrition()) > 0f)
+		        {
+			        yield return new Command_Action
+			        {
+				        defaultLabel = "DEBUG: Fill",
+				        action = delegate()
+				        {
+					        this.currentNutrition = this.getNutrientCapacity();
+				        }
+			        };
+		        }
+		        if (this.currentNutrition > 0f)
+		        {
+			        yield return new Command_Action
+			        {
+				        defaultLabel = "DEBUG: Empty",
+				        action = delegate()
+				        {
+					        this.consumeNutrition(this.currentNutrition);
+				        }
+			        };
+		        }
+	        }
+        }
     }
 }

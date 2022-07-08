@@ -2,10 +2,10 @@
 <Defs>
 
 	<RecipeDef>
-		<defName>MakeProtienCLay</defName>
-		<label>make protien clay</label>
-		<description>Craft 1 protien clay.</description>
-		<jobString>Making uranium fuel pods.</jobString>
+		<defName>MakeProteinCLay</defName>
+		<label>make protein clay</label>
+		<description>Craft 1 protein clay.</description>
+		<jobString>Making protein clay.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>

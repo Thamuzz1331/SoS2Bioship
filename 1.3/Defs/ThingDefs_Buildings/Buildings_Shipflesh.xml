@@ -713,7 +713,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipMaw</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(1,1)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -749,7 +749,7 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_ShipNutritionSource">
-				<nutrientPerPulse>250</nutrientPerPulse>
+				<nutrientPerPulse>500</nutrientPerPulse>
 			</li>
 		</comps>
 		<rotatable>false</rotatable>
@@ -769,14 +769,14 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipMaw</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4,4)</drawSize>
+			<drawSize>(2,2)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Standable</passability>
 		<blockWind>false</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
+		<castEdgeShadows>false</castEdgeShadows>
 		<fillPercent>1</fillPercent>
 		<blockLight>false</blockLight>
 		<canOverlapZones>false</canOverlapZones>
@@ -805,7 +805,7 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_ShipNutritionSource">
-				<nutrientPerPulse>1000</nutrientPerPulse>
+				<nutrientPerPulse>3000</nutrientPerPulse>
 			</li>
 		</comps>
 		<rotatable>false</rotatable>
@@ -825,7 +825,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(1,2)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -969,7 +969,7 @@
 		<size>(2,2)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/Heatsink</texPath>
+			<texPath>Things/Building/Ship/BioShipHeatsink</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2.1,4.7)</drawSize>
 		</graphicData>

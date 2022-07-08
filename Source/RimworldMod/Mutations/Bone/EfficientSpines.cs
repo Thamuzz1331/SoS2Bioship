@@ -18,12 +18,10 @@ namespace RimWorld
         }
         void IMutation.Apply(Building_ShipHeart target)
         {
-            List<IMutation> mutations = target.goodMutationOptions.TryGetValue("offense", new Dictionary<string, List<IMutation>>())
-                .TryGetValue("bone", new List<IMutation>());
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("LightSpineLauncher"));
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("LightSpineLauncher"));
-            target.goodMutationOptions
-                .TryGetValue("offense", new Dictionary<string, List<IMutation>>())["bone"] = mutations.FindAll(e => !(e is EfficientSpines));
+
+            target.RemoveMutation<EfficientSpines>("offense", "bone", true);
             target.mutationThemes["bone"] += 1;
             return;
         }

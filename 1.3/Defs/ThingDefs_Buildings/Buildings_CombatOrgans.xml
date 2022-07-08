@@ -6,7 +6,7 @@
 		<label>nematocyst</label>
 		<description>A barbed thread that can be launched against enemy ships or torpedos.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 		</graphicData>
 		<designationCategory></designationCategory>
 		<comps>
@@ -44,7 +44,7 @@
 		<label>Nematocyst</label>
 		<description>Nematocyst.  Can deliver powerful blows at close range.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
+			<texPath>Things/Building/Ship/TurretNematocyst</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -71,9 +71,6 @@
 		<defName>ShipTurret_ClusteredNematocyst</defName>
 		<label>Nematocyst</label>
 		<description>A barbed thread capable of damaging enemy hulls and shooting down torpedos.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
-		</graphicData>
 		<building>
 			<turretGunDef>ShipTurret_ClusteredNematocystTop</turretGunDef>
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
@@ -85,7 +82,7 @@
 		<label>Nematocyst</label>
 		<description>Nematocyst.  Can deliver powerful a sting at close range.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
+			<texPath>Things/Building/Ship/TurretClusteredNematocyst</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -96,6 +93,44 @@
 				<warmupTime>0</warmupTime>
 				<noiseRadius>4</noiseRadius>
 				<burstShotCount>18</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Bullet_Fake_Nematocyst</defaultProjectile>
+				<spawnDef>Proj_ShipTurretNematocyst</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="ShipTurret_Nematocyst">
+		<defName>ShipTurret_SparseNematocyst</defName>
+		<label>sparse nematocyst</label>
+		<description>A barbed thread capable of damaging enemy hulls and shooting down torpedos.</description>
+		<building>
+			<turretGunDef>ShipTurret_ClusteredNematocystTop</turretGunDef>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
+		</building>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_SparseNematocystTop</defName>
+		<label>Nematocyst</label>
+		<description>Nematocyst.  Can deliver powerful a sting at close range.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretSparseNematocyst</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<warmupTime>0</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>6</burstShotCount>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 				<requireLineOfSight>false</requireLineOfSight>
 				<targetParams>
@@ -128,7 +163,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_ShipTurretNematocyst</defName>
-		<label>laser beam</label>
+		<label>nematocyst</label>
 		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
@@ -137,17 +172,17 @@
 		</graphicData>
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
-			<damageDef>ShipLaserNematocystSmall</damageDef>
+			<damageDef>ShipNematocyst</damageDef>
 			<speed>200</speed>
 		</projectile>
 	</ThingDef>
-	<DamageDef Name="ShipLaserNematocystSmall">
-		<defName>ShipLaserNematocystSmall</defName>
-		<label>laser</label>
+	<DamageDef Name="ShipNematocyst">
+		<defName>ShipNematocyst</defName>
+		<label>nematocyst</label>
 		<workerClass>DamageWorker_AddInjury</workerClass>
 		<externalViolence>true</externalViolence>
 		<isExplosive>true</isExplosive>
-		<deathMessage>{0} has been battered to death.</deathMessage>
+		<deathMessage>{0} has been lacerated to death.</deathMessage>
 		<hediff>Burn</hediff>
 		<hediffSolid>Burn</hediffSolid>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
@@ -175,7 +210,7 @@
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<comps>
@@ -212,7 +247,7 @@
 		<label>bioplasma</label>
 		<description>Bioplasma cannon. Medium-range with large aoe.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretPlasma</texPath>
+			<texPath>Things/Building/Ship/TurretBioPlasma</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -302,13 +337,8 @@
 		<defName>ShipTurret_BioAcid</defName>
 		<label>acid spitter</label>
 		<description>Spits a ball of caustic mucus clings to a hull on impact.  A medium ranged weapon that deals linger damage.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
-
-		
-		<designationCategory>Ship</designationCategory>
-
-
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<comps>
@@ -345,7 +375,7 @@
 		<label>bioplasma</label>
 		<description>Acid cannon. Medium-range with damage over time.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretPlasma</texPath>
+			<texPath>Things/Building/Ship/TurretAcid</texPath>
 		</graphicData>
 		<verbs>
 			<li>

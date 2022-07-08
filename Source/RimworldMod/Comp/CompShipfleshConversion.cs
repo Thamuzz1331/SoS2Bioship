@@ -20,12 +20,12 @@ namespace RimWorld
 
 		private int age;
 
-		public int conversionWaitLength = 45;
-		public int regenInterval = 45;
+		public float conversionWaitLength = 45f;
+		public float regenInterval = 45f;
 
-		private int ticksToConversion;
-		private int ticksToRegen;
-		private int ticksToDetectPulse;
+		private float ticksToConversion;
+		private float ticksToRegen;
+		private float ticksToDetectPulse;
 
 		public float AgeDays => (float)age / 60000f;
 
@@ -46,7 +46,7 @@ namespace RimWorld
 		{
 			base.PostPostMake();
 			Conversions.Add(ThingDef.Named("Scaffold_Beam"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Beam"), false, false));
-			Conversions.Add(ThingDef.Named("Scaffold_Beam_Unpowered"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Scaffold_Beam_Unpowered"), false, false));
+			Conversions.Add(ThingDef.Named("Scaffold_Beam_Unpowered"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Beam_Unpowered"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneOne"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneOne"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneOneFlip"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneOneFlip"), false, false));
 			Conversions.Add(ThingDef.Named("Scaffold_Corner_OneTwo"), new Tuple<ThingDef, bool, bool>(ThingDef.Named("Bio_Ship_Corner_OneTwo"), false, false));
@@ -99,13 +99,14 @@ namespace RimWorld
 			}
 			if (ticksToRegen <= 0)
             {
-				ticksToRegen = regenInterval;
+				ticksToRegen = regenInterval * ((Building_ShipHeart)parent).getStatMultiplier("regenInterval", null);
 				DoRegen();
             }
 		}
 
 		private void DetectionPulse()
 		{
+
 			if (toConvert.Count > 0)
             {
 				return;
@@ -217,7 +218,7 @@ namespace RimWorld
 			int numSpawn = GetNum();
 			for (int i = 0; i < numSpawn; i++)
 			{
-				if (body.RequestNutrition(50)) { 
+				if (body.RequestNutrition(15)) { 
 					Thing toReplace = null;
 					bool searching = true;
 					bool mutable = false;
@@ -238,7 +239,6 @@ namespace RimWorld
 					{
 		                if (t.def == ThingDef.Named("NerveStaple")) {
 							spaceStapled = true;
-							Log.Message("Staple found");
                         }
 					}
 					ThingDef replacementDef = null;
@@ -256,11 +256,10 @@ namespace RimWorld
 						item2 = Conversions[toReplace.def].Item2;
 						item3 = Conversions[toReplace.def].Item3;
 					}
-
 					if (spaceStapled && Building_NerveStaple.Conversions.ContainsKey(replacementDef))
                     {
 						replacementDef = Building_NerveStaple.Conversions[replacementDef];
-                    }
+					}
 					Thing replacement = ThingMaker.MakeThing(replacementDef);
 
 					CompShipBodyPart bodyPart = ((ThingWithComps)replacement).GetComp<CompShipBodyPart>();
@@ -324,7 +323,7 @@ namespace RimWorld
                 }
 				for (int i = 0; i < numHeal; i++)
                 {
-					if (body.RequestNutrition(100)) {
+					if (body.RequestNutrition(50 * ((Building_ShipHeart)parent).getStatMultiplier("regenCost", null))) {
 						Thing toReplace = toRegen.Pop();
 						if (Regenerations.ContainsKey(toReplace.def))
 						{

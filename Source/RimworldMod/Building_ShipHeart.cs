@@ -20,6 +20,8 @@ namespace RimWorld
         public String heartId = "NA";
         public bool mutationsDone = false;
         private int aggressionLevel = 1;
+        StatDef inducers = StatDef.Named("MutationInducers");
+
 
         public List<IMutation> mutations = new List<IMutation>() {
         };
@@ -31,11 +33,23 @@ namespace RimWorld
             {"humors", 3},
             {"misc", 2}
         };
+        public Dictionary<string, int> categoryOdds = new Dictionary<string, int>()
+        {
+            {"offense", 3},
+            {"defense", 3},
+            {"utility", 2},
+            {"quirk", 1}
+        };
+        public List<IMutation> quirkPossibilities = new List<IMutation>()
+        {
+
+        };
+
         public Dictionary<string, Dictionary<string, List<IMutation>>> goodMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
         {
             {"offense", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
-
+                    new ClusteredNematocysts(),
                 }},
                 { "bone", new List<IMutation>(){
                     new DenseSpines(), new EfficientSpines(),
@@ -55,7 +69,51 @@ namespace RimWorld
 
                 }},
                 { "humors", new List<IMutation>(){
+                    new FastRegeneration(), new EfficientRegeneration(),
+                }},
+                { "misc", new List<IMutation>(){
 
+                }}
+            }},
+            {"utility", new Dictionary<string, List<IMutation>>(){
+                { "flesh", new List<IMutation>(){
+
+                }},
+                { "bone", new List<IMutation>(){
+
+                }},
+                { "humors", new List<IMutation>(){
+
+                }},
+                { "misc", new List<IMutation>(){
+                    new EfficientFatStorage(), 
+                }}
+            }}
+        };
+
+        public Dictionary<string, Dictionary<string, List<IMutation>>> badMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
+        {
+            {"offense", new Dictionary<string, List<IMutation>>(){
+                { "flesh", new List<IMutation>(){
+                    new SparseNematocysts(),
+                }},
+                { "bone", new List<IMutation>(){
+                }},
+                { "humors", new List<IMutation>(){
+
+                }},
+                { "misc", new List<IMutation>(){
+
+                }}
+            }},
+            {"defense", new Dictionary<string, List<IMutation>>(){
+                { "flesh", new List<IMutation>(){
+
+                }},
+                { "bone", new List<IMutation>(){
+
+                }},
+                { "humors", new List<IMutation>(){
                 }},
                 { "misc", new List<IMutation>(){
 
@@ -119,7 +177,32 @@ namespace RimWorld
             {
                 mutation.Apply(this);
             }
+            if (!respawningAfterLoad)
+            {
+                IMutation offMutation = RollMutation("offense", GetRandomTheme(mutationThemes, goodMutationOptions["offense"]), goodMutationOptions);
+                if (offMutation != null)
+                {
+                    offMutation.Apply(this);
+                    mutations.Add(offMutation);
+                }
+                IMutation defMutation = RollMutation("defense", GetRandomTheme(mutationThemes, goodMutationOptions["defense"]), goodMutationOptions);
+                if (defMutation != null)
+                {
+                    defMutation.Apply(this);
+                    mutations.Add(defMutation);
+                }
+                IMutation utlMutation =RollMutation("utility", GetRandomTheme(mutationThemes, goodMutationOptions["utility"]), goodMutationOptions);
+                if (utlMutation != null)
+                {
+                    defMutation.Apply(this);
+                    mutations.Add(offMutation);
+                }
+            }            
             ((ShipBodyMapComp)Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
+            if (!respawningAfterLoad)
+            {
+                ((ShipBodyMapComp)Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this.TryGetComp<CompShipNutritionStore>());
+            }
         }
         public override void ExposeData()
         {
@@ -136,29 +219,9 @@ namespace RimWorld
             return statMultipliers.TryGetValue(stat, 1f);
         }
 
-        public string GetRandomTheme(Dictionary<string, int> themeOdds, Dictionary<string, List<IMutation>> mutationTables)
+        public virtual int GetAggressionLevel()
         {
-            int lower = 0;
-            int upper = 0;
-            Dictionary<string, Tuple<int, int>> ranges = new Dictionary<string, Tuple<int, int>>();
-            foreach(string t in themeOdds.Keys)
-            {
-                if (mutationTables.TryGetValue(t, new List<IMutation>()).Count > 0)
-                {
-                    lower = upper + 1;
-                    upper = lower + themeOdds[t] + GetChanceModifier(t);
-                    ranges.Add(t, new Tuple<int, int>(lower, upper));
-                }
-            }
-            int index = Rand.Range(1, upper);
-            foreach(string t in ranges.Keys)
-            {
-                if (index >= ranges[t].Item1 && index <= ranges[t].Item2)
-                {
-                    return t;
-                }
-            }
-            return "NA";
+            return aggressionLevel;
         }
 
         public virtual int GetChanceModifier(string theme)
@@ -177,9 +240,150 @@ namespace RimWorld
             return null;
         }
 
-        public virtual int GetAggressionLevel()
+        public virtual string RollCategory()
         {
-            return aggressionLevel;
+            int lower = 0;
+            int upper = 0;
+            Dictionary<string, Tuple<int, int>> ranges = new Dictionary<string, Tuple<int, int>>();
+            foreach(string t in categoryOdds.Keys)
+            {
+                lower = upper + 1;
+                upper = lower + categoryOdds[t] + GetChanceModifier(t);
+                ranges.Add(t, new Tuple<int, int>(lower, upper));
+            }
+            int index = Rand.RangeInclusive(1, upper);
+            foreach(string t in ranges.Keys)
+            {
+                if (index >= ranges[t].Item1 && index <= ranges[t].Item2)
+                {
+                    return t;
+                }
+            }
+            return null;
+        }
+
+        public string GetRandomTheme(Dictionary<string, int> themeOdds, Dictionary<string, List<IMutation>> mutationTables)
+        {
+            int lower = 0;
+            int upper = 0;
+            Dictionary<string, Tuple<int, int>> ranges = new Dictionary<string, Tuple<int, int>>();
+            foreach(string t in themeOdds.Keys)
+            {
+                if (mutationTables.TryGetValue(t, new List<IMutation>()).Count > 0)
+                {
+                    lower = upper + 1;
+                    upper = lower + themeOdds[t] + GetChanceModifier(t);
+                    ranges.Add(t, new Tuple<int, int>(lower, upper));
+                }
+            }
+            int index = Rand.RangeInclusive(1, upper);
+            foreach(string t in ranges.Keys)
+            {
+                if (index >= ranges[t].Item1 && index <= ranges[t].Item2)
+                {
+                    return t;
+                }
+            }
+            return null;
+        }
+
+        public virtual IMutation RollMutation(string cat, string theme, Dictionary<string, Dictionary<string, List<IMutation>>> mutationOptions)
+        {
+            List<IMutation> _mutations = mutationOptions[cat][theme];
+            return _mutations[Rand.Range(0, mutations.Count)];
+        }
+
+        public virtual IMutation RollQuirk()
+        {
+            return quirkPossibilities[Rand.Range(0, quirkPossibilities.Count)];
+        }
+
+        public virtual void AddMutation(string cat, string theme, IMutation toAdd, bool positive)
+        {
+            if (positive)
+            {
+                goodMutationOptions[cat][theme].Add(toAdd);
+            } else
+            {
+                badMutationOptions[cat][theme].Add(toAdd);
+            }
+        }
+
+        public virtual void RemoveMutation<t>(string cat, string theme, bool positive)
+        {
+            if (positive)
+            {
+                goodMutationOptions[cat][theme] = goodMutationOptions[cat][theme].FindAll(e => !(e is t));
+                foreach (IMutation option in goodMutationOptions[cat][theme])
+                {
+                    Log.Message(option.ToString());
+                }
+            } else
+            {
+                badMutationOptions[cat][theme] = badMutationOptions[cat][theme].FindAll(e => !(e is t));
+                foreach (IMutation option in badMutationOptions[cat][theme])
+                {
+                    Log.Message(option.ToString());
+                }
+
+            }
+        }
+
+        public virtual void AdjustThemeChance(string theme, int adj)
+        {
+
+        }
+
+        public virtual void InduceMutation()
+        {
+            string cat = RollCategory();
+            if (cat == "quirk")
+            {
+
+            } else
+            {
+                string theme = GetRandomTheme(mutationThemes, goodMutationOptions[cat]);
+                IMutation mut = RollMutation(cat, theme, goodMutationOptions);
+                if (mut != null)
+                {
+                    mut.Apply(this);
+                    if (mut.RunOnBodyParts())
+                    {
+                        body.ApplyMutationToAll(mut);
+                    }
+                }
+            }
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach(Gizmo gizmo in base.GetGizmos())
+            {
+                yield return gizmo;
+            }
+            if((int)this.GetStatValue(inducers) > 0)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "Induce Mutation",
+				    action = delegate()
+				    {
+					    this.InduceMutation();
+				    }
+                };
+            }
+        }
+
+        public override string GetInspectString()
+        {
+            string ret = base.GetInspectString();
+            ret += "\nMutations:";
+            foreach (IMutation m in mutations)
+            {
+                ret += "\n" + m;
+            }
+
+            return ret;
         }
     }
 

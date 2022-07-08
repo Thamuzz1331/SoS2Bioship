@@ -75,7 +75,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scaffold_Beam_Unpowered</defName>
-		<label>Protien Wall Scaffold</label>
+		<label>unpowered protien wall Scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
@@ -370,13 +370,10 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>ScaffoldAirlock</defName>
-		<label>sphincter scaffold</label>
-		<thingClass>Building</thingClass>
-		<passability>PassThroughOnly</passability>
-		<designatorDropdown>Scaffold_Airlock</designatorDropdown>
-		<description>Framework for growing an airlock sphincter.</description>
+		<label>bioship sphintcer scaffold</label>
+		<description>Scaffold to grow a sphincter.</description>
 		<category>Building</category>
-		<designationCategory>Ship</designationCategory>
+		<thingClass>Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
 		<useHitPoints>true</useHitPoints>
@@ -391,22 +388,40 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
 		<costList>
-			<ProtienPutty>2</ProtienPutty>
-			<Neutroamine>15</Neutroamine>
+			<ProtienPutty>1</ProtienPutty>
+			<Neutroamine>5</Neutroamine>
 		</costList>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regen>
+					true
+				</regen>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
 			<li>StructuralScaffold</li>
 		</researchPrerequisites>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
-			<MaxHitPoints>5</MaxHitPoints>
-			<Flammability>1.0</Flammability>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0.0</Flammability>
 		</statBases>
 		<selectable>true</selectable>
 		<tickerType>Normal</tickerType>
@@ -911,7 +926,7 @@
 		<designatorDropdown>Scaffold_Thermoregulation</designatorDropdown>
 		<designationCategory>Ship</designationCategory>
 		<thingClass>Building</thingClass>
-		<passability>PassThroughOnly</passability>
+		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/ScaffoldBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1030,6 +1045,39 @@
 			<Neutroamine>100</Neutroamine>
 		</costList>
 		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Heatsink</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="ShipHeatsinkBase">
+		<defName>ScaffoldHeatsink</defName>
+		<label>organic heatsink scaffold</label>
+		<description>Scaffold for a bio heatsink</description>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldHeatsink</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2.1,4.7)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>350</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>25</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold"/>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
 	</ThingDef>
 	
 </Defs>

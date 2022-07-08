@@ -32,6 +32,7 @@
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Flammability>0</Flammability>
+			<MutationInducers>0</MutationInducers>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>The beating heart of a ship</description>
@@ -43,22 +44,22 @@
 			<li Class="CompProperties_ShipfleshConversion"/>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>100</basePowerConsumption>
+				<basePowerConsumption>0</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
-			</li>
-			<li Class="CompProperties_ShipNutritionConsumer">
-				<consumptionPerPulse>
-					15
-				</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_ShipNutritionStore">
 				<nutrientCapacity>10000</nutrientCapacity>
 				<initialNutrition>10000</initialNutrition>
 			</li>
 			<li Class="CompProperties_Aggression"/>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>MutationInducer</li>
+				</linkableFacilities>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -67,12 +68,15 @@
 		<placeWorkers>
 		</placeWorkers>
 		<costList>
+			<HeartSeed>1</HeartSeed>
+			<ProtienPutty>100</ProtienPutty>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc3</designationHotKey>
 		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
 	</ThingDef>
+	
 	<ThingDef ParentName="BuildingBase">
 		<defName>ShipfleshAnalysisStation</defName>
 		<label>flesh codex</label>
@@ -191,4 +195,59 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Mutation_Controls</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef>
+		<defName>MutationInducer</defName>
+		<label>mutation inducer</label>
+		<designatorDropdown>Mutation_Controls</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Ship/MawScaffold</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MutationInduction</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>Mutation inducer.</description>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<MutationInducers>1</MutationInducers>
+				</statOffsets>
+				<maxSimultaneous>4</maxSimultaneous>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>2</ProtienPutty>
+			<Neutroamine>4</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+
+
 </Defs>

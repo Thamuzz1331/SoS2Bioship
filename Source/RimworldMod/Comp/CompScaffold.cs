@@ -14,16 +14,19 @@ namespace RimWorld
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
+            foreach (IntVec3 r in GenAdj.CellsOccupiedBy(parent))
             {
-                foreach (Thing adj in c.GetThingList(parent.Map))
+                foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(r))
                 {
-                    if (adj is ThingWithComps)
+                    foreach (Thing adj in c.GetThingList(parent.Map))
                     {
-                        CompShipBodyPart flesh = ((ThingWithComps)adj).TryGetComp<CompShipBodyPart>();
-                        if (flesh != null)
+                        if (adj is ThingWithComps)
                         {
-                            flesh.AddScaff(parent);
+                            CompShipBodyPart flesh = ((ThingWithComps)adj).TryGetComp<CompShipBodyPart>();
+                            if (flesh != null)
+                            {
+                                flesh.AddScaff(parent);
+                            }
                         }
                     }
                 }

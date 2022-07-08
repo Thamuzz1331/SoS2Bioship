@@ -19,12 +19,11 @@ namespace RimWorld
         void IMutation.Apply(Building_ShipHeart target)
         {
             target.defOptions.TryGetValue(ThingDef.Named("HeavySpineLauncher"), new List<ThingDef>()).Add(ThingDef.Named("Spine_HeavyDense"));
+
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("HeavySpineLauncher"));
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("HeavySpineLauncher"));
-            List<IMutation> mutations = target.goodMutationOptions.TryGetValue("offense", new Dictionary<string, List<IMutation>>())
-                .TryGetValue("bone",  new List <IMutation>());
-            target.goodMutationOptions
-                .TryGetValue("offense", new Dictionary<string, List<IMutation>>())["bone"] = mutations.FindAll(e => !(e is DenseSpines));
+
+            target.RemoveMutation<DenseSpines>("offense", "bones", true);
             target.mutationThemes["bone"] += 1;
             return;
         }

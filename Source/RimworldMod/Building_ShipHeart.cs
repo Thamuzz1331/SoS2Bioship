@@ -19,7 +19,9 @@ namespace RimWorld
         public ShipBody body = null;
         public String heartId = "NA";
         public bool mutationsDone = false;
+        public float hungerDuration = 0;
         private int aggressionLevel = 1;
+        public ThingDef armorClass = null;
         StatDef inducers = StatDef.Named("MutationInducers");
 
 
@@ -66,7 +68,7 @@ namespace RimWorld
 
                 }},
                 { "bone", new List<IMutation>(){
-
+                    new BoneArmor(),
                 }},
                 { "humors", new List<IMutation>(){
                     new FastRegeneration(), new EfficientRegeneration(),
@@ -86,7 +88,7 @@ namespace RimWorld
 
                 }},
                 { "misc", new List<IMutation>(){
-                    new EfficientFatStorage(), 
+                    new EfficientFatStorage(), new EfficientGrowth(),
                 }}
             }}
         };
@@ -191,23 +193,29 @@ namespace RimWorld
                     defMutation.Apply(this);
                     mutations.Add(defMutation);
                 }
-                IMutation utlMutation =RollMutation("utility", GetRandomTheme(mutationThemes, goodMutationOptions["utility"]), goodMutationOptions);
+                IMutation utlMutation = RollMutation("utility", GetRandomTheme(mutationThemes, goodMutationOptions["utility"]), goodMutationOptions);
                 if (utlMutation != null)
                 {
-                    defMutation.Apply(this);
-                    mutations.Add(offMutation);
+                    utlMutation.Apply(this);
+                    mutations.Add(utlMutation);
                 }
             }            
             ((ShipBodyMapComp)Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this);
             if (!respawningAfterLoad)
             {
-                ((ShipBodyMapComp)Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this.TryGetComp<CompShipNutritionStore>());
+                if(this.TryGetComp<CompShipNutritionStore>() != null)
+                {
+                    this.TryGetComp<CompShipNutritionStore>().SetId(this.heartId);
+                    ((ShipBodyMapComp)Map.components.Where(t => t is ShipBodyMapComp).FirstOrDefault()).Register(this.TryGetComp<CompShipNutritionStore>());
+                }
             }
         }
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look<String>(ref heartId, "heartId", "NA");
+            Scribe_Values.Look<float>(ref hungerDuration, "hungerDuration", 0f);
+            Scribe_Collections.Look<IMutation>(ref mutations, "mutations", LookMode.Deep);
         }
 
         public float getStatMultiplier(string stat, ThingDef src)
@@ -290,7 +298,11 @@ namespace RimWorld
         public virtual IMutation RollMutation(string cat, string theme, Dictionary<string, Dictionary<string, List<IMutation>>> mutationOptions)
         {
             List<IMutation> _mutations = mutationOptions[cat][theme];
-            return _mutations[Rand.Range(0, mutations.Count)];
+            if (_mutations.Count > 0)
+            {
+                return _mutations[Rand.Range(0, _mutations.Count)];
+            }
+            return null;
         }
 
         public virtual IMutation RollQuirk()
@@ -314,17 +326,9 @@ namespace RimWorld
             if (positive)
             {
                 goodMutationOptions[cat][theme] = goodMutationOptions[cat][theme].FindAll(e => !(e is t));
-                foreach (IMutation option in goodMutationOptions[cat][theme])
-                {
-                    Log.Message(option.ToString());
-                }
             } else
             {
                 badMutationOptions[cat][theme] = badMutationOptions[cat][theme].FindAll(e => !(e is t));
-                foreach (IMutation option in badMutationOptions[cat][theme])
-                {
-                    Log.Message(option.ToString());
-                }
 
             }
         }
@@ -343,6 +347,10 @@ namespace RimWorld
             } else
             {
                 string theme = GetRandomTheme(mutationThemes, goodMutationOptions[cat]);
+                if (theme == null)
+                {
+                    return;
+                }
                 IMutation mut = RollMutation(cat, theme, goodMutationOptions);
                 if (mut != null)
                 {
@@ -351,6 +359,7 @@ namespace RimWorld
                     {
                         body.ApplyMutationToAll(mut);
                     }
+                    mutations.Add(mut);
                 }
             }
         }
@@ -370,6 +379,25 @@ namespace RimWorld
 				    {
 					    this.InduceMutation();
 				    }
+                };
+            }
+            if (this.armorClass != null)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "Grow Armor",
+                    action = delegate()
+                    {
+                        body.GrowArmor();
+                    }
+                };
+                yield return new Command_Action
+                {
+                    defaultLabel = "Shed Armor",
+                    action = delegate()
+                    {
+                        body.ShedArmor();
+                    }
                 };
             }
         }

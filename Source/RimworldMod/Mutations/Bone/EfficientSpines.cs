@@ -37,5 +37,9 @@ namespace RimWorld
             }
             return;
         }
+        void IExposable.ExposeData()
+        {
+
+        }
     }
 }

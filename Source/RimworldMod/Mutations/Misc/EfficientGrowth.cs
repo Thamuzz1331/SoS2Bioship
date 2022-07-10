@@ -18,8 +18,22 @@ namespace RimWorld
         }
         void IMutation.Apply(Building_ShipHeart target)
         {
-            target.statMultipliers.Add("growthCost", 0.75f);
-
+            if (target.statMultipliers.ContainsKey("growthCost"))
+            {
+                target.statMultipliers["growthCost"] *= 0.75f;
+            }
+            else
+            {
+                target.statMultipliers.Add("growthCost", 0.75f);
+            }
+            if (target.statMultipliers.ContainsKey("regenCost"))
+            {
+                target.statMultipliers["regenCost"] *= 0.85f;
+            }
+            else
+            {
+                target.statMultipliers.Add("regenCost", 0.85f);
+            }
             target.RemoveMutation<EfficientGrowth>("utility", "misc", true);
 
             return;
@@ -27,6 +41,10 @@ namespace RimWorld
         void IMutation.Apply(Thing target)
         {
             return;
+        }
+        void IExposable.ExposeData()
+        {
+
         }
     }
 }

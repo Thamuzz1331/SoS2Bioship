@@ -107,7 +107,10 @@
 	<Compile Include="Comp\CompProperties_ShipNutritionSource.cs" />
     <Compile Include="Comp\CompProperties_ShipNutritionStore.cs" />
 	<Compile Include="Comp\CompProperties_NutritionLoader.cs" />
-    <Compile Include="Comp\CompShipNutrition.cs" />
+	  <Compile Include="Comp\CompProperties_ArmorGrower.cs" />
+	  <Compile Include="Comp\CompArmorGrower.cs" />
+
+	  <Compile Include="Comp\CompShipNutrition.cs" />
 	<Compile Include="Comp\CompShipNutritionConsumer.cs" />
 	<Compile Include="Comp\CompShipNutritionSource.cs" />
 	<Compile Include="Comp\CompShipNutritionStore.cs" />
@@ -123,11 +126,13 @@
     <Compile Include="Mutations\IMutation.cs" />
     <Compile Include="Mutations\Bone\DenseSpines.cs" />
     <Compile Include="Mutations\Bone\EfficientSpines.cs" />
-    <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />
+	  <Compile Include="Mutations\Bone\BoneArmor.cs" />
+	  <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />
 	  <Compile Include="Mutations\Flesh\SparseNematocysts.cs" />
 	  <Compile Include="Mutations\Fluids\FastRegeneration.cs" />
 	  <Compile Include="Mutations\Fluids\EfficientRegeneration.cs" />
 	  <Compile Include="Mutations\Misc\EfficientFatStorage.cs" />
+	  <Compile Include="Mutations\Misc\EfficientGrowth.cs" />
 	  <Compile Include="Damage\AcidWorker.cs"/>
     <Compile Include="Damage\Damage_AcidGlob.cs"/>
     <Compile Include="Damage\ShipDamageDefOf.cs"/>

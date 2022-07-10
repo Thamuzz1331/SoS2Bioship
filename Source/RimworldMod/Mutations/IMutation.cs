@@ -10,7 +10,7 @@ using Verse.AI.Group;
 
 namespace RimWorld
 {
-    public interface IMutation
+    public interface IMutation: IExposable
     {
         bool RunOnBodyParts();
         void Apply(Building_ShipHeart target);

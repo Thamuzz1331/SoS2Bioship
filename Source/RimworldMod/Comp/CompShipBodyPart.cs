@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class CompShipBodyPart : ThingComp
     {
-        private CompProperties_ShipBodyPart Props => (CompProperties_ShipBodyPart)props;
+        CompProperties_ShipBodyPart Props => (CompProperties_ShipBodyPart)props;
         private List<Thing> scaffolds = new List<Thing>();
         public HashSet<Thing> adjMechs = new HashSet<Thing>();
         public HashSet<Thing> adjBodypart = new HashSet<Thing>();
@@ -111,6 +111,10 @@ namespace RimWorld
         public void ClearScaff()
         {
             scaffolds.Clear();
+        }
+        public bool IsArmor()
+        {
+            return Props.isArmor;
         }
     }
 }

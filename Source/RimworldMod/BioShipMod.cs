@@ -244,6 +244,7 @@ namespace BioShip
 		{
 			if(Traverse.Create(shipCombatManagerType).Field("InCombat").GetValue<bool>())
             {
+				Log.Message("Drawing nutritio bars");
 				Map playerShip = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
 				foreach(Building_ShipHeart heart in playerShip.listerBuildings.allBuildingsColonist.Where(b => b is Building_ShipHeart)) {
 					Rect rect = new Rect(UI.screenWidth - 255, baseY - 40, 250, 40);
@@ -263,4 +264,5 @@ namespace BioShip
             }
 		}
 	}
+
 }

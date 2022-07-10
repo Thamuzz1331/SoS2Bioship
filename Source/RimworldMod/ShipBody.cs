@@ -176,7 +176,9 @@ namespace RimWorld
         public bool RequestNutrition(float qty)
         {
             if (qty > currentNutrition)
+            {
                 return false;
+            }
 
             ExtractNutrition(stores, qty, 0);
             currentNutrition -= qty;
@@ -185,6 +187,10 @@ namespace RimWorld
 
         public void RunNutrition()
         {
+            if (heart.hungerDuration > 200)
+            {
+
+            }
             UpdatePassiveConsumption();
             UpdateNutritionGeneration();
             UpdateCurrentNutrition();
@@ -227,18 +233,10 @@ namespace RimWorld
                     {
                         store.currentNutrition = 0;
                     }
-                    while (deficit > 0 && shipFlesh.Count > 0)
+                    if (deficit > 0 && shipFlesh.Count > 0)
                     {
-                        int hurtIndex = Rand.Range(0, shipFlesh.Count);
-                        Building b = ((Building)shipFlesh.ElementAt(hurtIndex));
-                        b.HitPoints -= 100;
-                        if (b.HitPoints <= 0)
-                        {
-                            b.Destroy(DestroyMode.KillFinalize);
-                        }
-                        deficit -= 100;
-                    }
-
+                        heart.hungerDuration++;
+                    } 
                 }
                 else
                 {
@@ -298,6 +296,37 @@ namespace RimWorld
             } else
             {
                 return ExtractNutrition(retainNutrition, remainingHunger, depth+1);
+            }
+        }
+        public void GrowArmor()
+        {
+            if (heart == null)
+            {
+                return;
+            }
+            foreach (Thing b in shipFlesh.Where<Thing>(e => 
+                (e.def == ThingDef.Named("Bio_Ship_Beam") || 
+                e.def == ThingDef.Named("Bio_Ship_Beam_Unpowered") ||
+                e.def == ThingDef.Named("Scar_Beam") ||
+                e.def == ThingDef.Named("Scar_Beam_Unpowered"))))
+            {
+                foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(b.Position))
+                {
+                    if (c.GetThingList(heart.Map).Count <= 0)
+                    {
+                        heart.TryGetComp<CompArmorGrower>().toGrow.Add(c);
+                    }
+                }
+            }
+        }
+        public void ShedArmor()
+        {
+            foreach(Thing t in shipFlesh)
+            {
+                if (t.TryGetComp<CompShipBodyPart>().IsArmor())
+                {
+                    heart.TryGetComp<CompArmorGrower>().toShed.Add(t);
+                }
             }
         }
     }

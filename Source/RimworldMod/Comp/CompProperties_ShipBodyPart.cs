@@ -10,6 +10,7 @@ namespace RimWorld
     class CompProperties_ShipBodyPart : CompProperties
     {
         public bool regen = false;
+        public bool isArmor = false;
         public CompProperties_ShipBodyPart()
         {
             compClass = typeof(CompShipBodyPart);

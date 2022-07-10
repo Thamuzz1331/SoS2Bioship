@@ -39,7 +39,7 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToConversion, "ticksToConversion", 0);
 			Scribe_Values.Look(ref ticksToDetectPulse, "ticksToDetectPulse", 0);
 			Scribe_Values.Look(ref ticksToRegen, "ticks", 0);
-//			Scribe_Collections.Look<Thing>(ref toRegen, "toRegen");
+			Scribe_Collections.Look<Thing>(ref toRegen, "toRegen", LookMode.Deep);
 		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -106,7 +106,6 @@ namespace RimWorld
 
 		private void DetectionPulse()
 		{
-
 			if (toConvert.Count > 0)
             {
 				return;
@@ -127,19 +126,6 @@ namespace RimWorld
 					}
 				}
 			}
-			/*
-			else
-            {
-				foreach (Thing t in body.shipFlesh)
-                {
-					if (toConvert.Count > 250)
-		            {
-						return;
-					}
-					RandEnqueue(t);
-				}
-            }
-			*/
 		}
 
 		private void RandEnqueue(Thing t)
@@ -218,7 +204,7 @@ namespace RimWorld
 			int numSpawn = GetNum();
 			for (int i = 0; i < numSpawn; i++)
 			{
-				if (body.RequestNutrition(15)) { 
+				if (body.RequestNutrition(15 * ((Building_ShipHeart)parent).getStatMultiplier("growthCost", null))) { 
 					Thing toReplace = null;
 					bool searching = true;
 					bool mutable = false;

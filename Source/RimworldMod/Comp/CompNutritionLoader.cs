@@ -16,7 +16,7 @@ namespace RimWorld
         private CompChangeableProjectilePlural toReload = null;
         private float ticksTillLoad = 0;
         public List<int> torpSpawn = new List<int>() { 
-            1, 1,
+            1,
         };
 
         public override void PostExposeData()

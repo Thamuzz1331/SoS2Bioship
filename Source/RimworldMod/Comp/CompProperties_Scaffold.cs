@@ -9,6 +9,8 @@ namespace RimWorld
 {
     class CompProperties_Scaffold : CompProperties
     {
+        public string transformString = "";
+        public bool mutable = false;
         public CompProperties_Scaffold()
         {
             compClass = typeof(CompScaffold);

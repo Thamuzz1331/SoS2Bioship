@@ -23,7 +23,7 @@ namespace RimWorld
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("HeavySpineLauncher"));
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("HeavySpineLauncher"));
 
-            target.RemoveMutation<DenseSpines>("offense", "bones", true);
+            target.RemoveMutation<DenseSpines>("offense", "bone", true);
             target.mutationThemes["bone"] += 1;
             return;
         }
@@ -31,5 +31,10 @@ namespace RimWorld
         {
             return;
         }
+        void IExposable.ExposeData()
+        {
+
+        }
+
     }
 }

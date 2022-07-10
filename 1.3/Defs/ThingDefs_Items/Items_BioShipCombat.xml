@@ -123,7 +123,7 @@
 
 	<DamageDef ParentName="BombKineticLarge">
 		<defName>DenseSpikeBomb</defName>
-		<defaultDamage>600</defaultDamage>
+		<defaultDamage>840</defaultDamage>
 		<defaultStoppingPower>2.0</defaultStoppingPower>
 		<defaultArmorPenetration>0.60</defaultArmorPenetration>
 	</DamageDef>

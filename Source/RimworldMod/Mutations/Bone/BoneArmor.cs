@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientRegeneration : IMutation
+    public class BoneArmor : IMutation
     {
         bool IMutation.RunOnBodyParts()
         {
@@ -18,18 +18,10 @@ namespace RimWorld
         }
         void IMutation.Apply(Building_ShipHeart target)
         {
-            if (target.statMultipliers.ContainsKey("regenCost"))
-            {
-                target.statMultipliers["regenCost"] *= 0.75f;
-            }
-            else
-            {
-                target.statMultipliers.Add("regenCost", 0.75f);
-            }
+            target.armorClass = ThingDef.Named("BoneArmor");
 
-            target.RemoveMutation<EfficientRegeneration>("defense", "humors", true);
+            target.RemoveMutation<BoneArmor>("defense", "bone", true);
 
-            target.mutationThemes["humors"] += 1;
             return;
         }
         void IMutation.Apply(Thing target)
@@ -41,4 +33,5 @@ namespace RimWorld
 
         }
     }
+
 }

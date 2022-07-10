@@ -42,6 +42,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipfleshConversion"/>
+			<li Class="CompProperties_ArmorGrower"/>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>0</basePowerConsumption>
@@ -75,6 +76,12 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc3</designationHotKey>
 		<resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<killedLeavings>
+			<HeartSeed>1</HeartSeed>
+			<OrganSeed>1</OrganSeed>
+		</killedLeavings>
+
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">
@@ -107,10 +114,9 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<costList>
-			<Uranium>40</Uranium>
 			<Plasteel>250</Plasteel>
-			<Gold>100</Gold>
 			<ComponentSpacer>8</ComponentSpacer>
+			<OrganSeed>1</OrganSeed>
 		</costList>
 		<building>
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
@@ -199,55 +205,64 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Mutation_Controls</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef>
+	<ThingDef ParentName="BuildingBase">
 		<defName>MutationInducer</defName>
 		<label>mutation inducer</label>
 		<designatorDropdown>Mutation_Controls</designatorDropdown>
-		<thingClass>Building</thingClass>
-		<passability>PassThroughOnly</passability>
+		<description>Can be used to force a heart to undergo mutation.  This is an invasive procedure that has a risk of negative side effects.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/MawScaffold</texPath>
+			<texPath>Things/Building/Misc/ToolCabinet</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1,1)</drawSize>
+			<color>(96,114,95)</color>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
 		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(2,1)</size>
+		<costList>
+			<Steel>200</Steel>
+		</costList>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
 		<researchPrerequisites>
 			<li>MutationInduction</li>
 		</researchPrerequisites>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
-		<statBases>
-			<WorkToBuild>0</WorkToBuild>
-			<MaxHitPoints>10</MaxHitPoints>
-			<Flammability>0</Flammability>
-		</statBases>
-		<tickerType>Normal</tickerType>
-		<description>Mutation inducer.</description>
-		<size>(1,1)</size>
 		<designationCategory>Ship</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
 		<comps>
 			<li Class="CompProperties_Facility">
 				<statOffsets>
 					<MutationInducers>1</MutationInducers>
 				</statOffsets>
-				<maxSimultaneous>4</maxSimultaneous>
+				<maxSimultaneous>1</maxSimultaneous>
 			</li>
 		</comps>
-		<rotatable>false</rotatable>
-		<building>
-			<shipPart>true</shipPart>
-		</building>
-		<costList>
-			<ProtienPutty>2</ProtienPutty>
-			<Neutroamine>4</Neutroamine>
-		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<designationHotKey>Misc5</designationHotKey>
+		<designationHotKey>Misc6</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
 	</ThingDef>
-
 
 </Defs>

@@ -40,9 +40,7 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regen>true</regen>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>

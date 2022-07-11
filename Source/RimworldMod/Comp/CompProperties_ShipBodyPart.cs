@@ -11,6 +11,8 @@ namespace RimWorld
     {
         public bool regen = false;
         public bool isArmor = false;
+        public string witherTo = "";
+
         public CompProperties_ShipBodyPart()
         {
             compClass = typeof(CompShipBodyPart);

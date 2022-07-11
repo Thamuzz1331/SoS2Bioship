@@ -32,5 +32,10 @@ namespace RimWorld
                 }
             }
         }
+
+        public void Convert(Building_ShipHeart heart, bool stapled)
+        {
+
+        }
     }
 }

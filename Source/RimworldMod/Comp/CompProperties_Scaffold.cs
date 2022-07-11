@@ -9,7 +9,8 @@ namespace RimWorld
 {
     class CompProperties_Scaffold : CompProperties
     {
-        public string transformString = "";
+        public string transformString = null;
+        public string stapledTransform = null;
         public bool mutable = false;
         public CompProperties_Scaffold()
         {

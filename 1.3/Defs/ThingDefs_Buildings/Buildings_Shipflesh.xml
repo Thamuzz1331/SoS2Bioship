@@ -43,6 +43,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>Whithered_Beam</witherTo>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -115,13 +116,14 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regen>
 					true
 				</regen>
-			</li>
-			<li>
-				<compClass>CompColorable</compClass>
+				<witherTo>Whithered_Beam_Unpowered</witherTo>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -206,6 +208,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>Whithered_Corner_OneOne</witherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -225,6 +228,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>Whithered_Corner_OneOneFlip</witherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -245,6 +249,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>Whithered_Corner_OneTwo</witherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -267,6 +272,7 @@
 					true
 				</regen>
 			</li>
+			<witherTo>Whithered_Corner_OneTwoFlip</witherTo>
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
@@ -287,6 +293,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>Whithered_Corner_OneThree</witherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -308,6 +315,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>Whithered_Corner_OneThreeFlip</witherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -354,6 +362,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>WhitheredHullTile</witherTo>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
@@ -412,6 +421,7 @@
 				<regen>
 					true
 				</regen>
+				<witherTo>WhitheredAirlock</witherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -478,7 +488,9 @@
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>Whithered_Engine_Small</witherTo>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
@@ -547,7 +559,9 @@
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>Whithered_Engine</witherTo>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
@@ -615,7 +629,9 @@
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>Whithered_Engine_Large</witherTo>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
@@ -681,7 +697,9 @@
 		<description>Basic ship sensors. Capable of detecting nearby craft and observing sites from orbit.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>Whithered_Sensor</witherTo>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>250</basePowerConsumption>
@@ -733,7 +751,9 @@
 		<description>Small shipmaw.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>Whithered_Maw_Small</witherTo>
+			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Refuelable">
@@ -789,7 +809,9 @@
 		<description>Small shipmaw.</description>
 		<size>(2,2)</size>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>Whithered_Maw_Corpse</witherTo>
+			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Refuelable">
@@ -852,7 +874,9 @@
 			<li Class="CompProperties_ShipNutritionStore">
 				<nutrientCapacity>1000</nutrientCapacity>
 			</li>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>FatStoreSmallWhithered</witherTo>
+			</li>
 		</comps>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
@@ -915,7 +939,9 @@
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>WhitheredInside_PassiveCooler</witherTo>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>0</basePowerConsumption>
@@ -962,45 +988,7 @@
 		<killedLeavings>
 		</killedLeavings>
 	</ThingDef>
-	<ThingDef ParentName="ShipHeatsinkBase">
-		<defName>BioShipHeatsink</defName>
-		<label>organic heatsink</label>
-		<description>A liquid-cooled heatsink for storing excess heat. Slowly bleeds heat into the surrounding room; will not function in vacuum.\n\nHeat capacity: 115\nHeat released: 0.5/s</description>
-		<size>(2,2)</size>
-		<designationCategory></designationCategory>
-		<graphicData>
-			<texPath>Things/Building/Ship/BioShipHeatsink</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(2.1,4.7)</drawSize>
-		</graphicData>
-		<statBases>
-			<MaxHitPoints>800</MaxHitPoints>
-			<WorkToBuild>3500</WorkToBuild>
-			<Flammability>0.7</Flammability>
-			<Beauty>-2</Beauty>
-		</statBases>
-		<costList>
-			<Steel>100</Steel>
-			<Plasteel>25</Plasteel>
-			<ComponentSpacer>2</ComponentSpacer>
-			<ComponentIndustrial>2</ComponentIndustrial>
-		</costList>
-		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
-				<heatCapacity>115</heatCapacity>
-				<heatVentTick>120</heatVentTick>
-				<threat>2</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTransmitter</compClass>
-				<transmitsPower>true</transmitsPower>
-			</li>
-		</comps>
-		<researchPrerequisites>
-		</researchPrerequisites>
-	</ThingDef>
-	
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>BioShieldGenerator</defName>
 		<label>psi shield ganglia</label>
@@ -1027,6 +1015,9 @@
 			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
 		</placeWorkers>
 		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>WhitheredShieldGenerator</witherTo>
+			</li>
 			<li Class="CompProperties_ShipCombatShield">
 				<radius>40</radius>
 			</li>
@@ -1053,5 +1044,46 @@
 		</costList>
 		<seeThroughFog>true</seeThroughFog>
 	</ThingDef>
-
+	
+	<ThingDef ParentName="ShipHeatsinkBase">
+		<defName>BioShipHeatsink</defName>
+		<label>organic heatsink</label>
+		<description>A liquid-cooled heatsink for storing excess heat. Slowly bleeds heat into the surrounding room; will not function in vacuum.\n\nHeat capacity: 115\nHeat released: 0.5/s</description>
+		<size>(2,2)</size>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipHeatsink</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2.1,4.7)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<Steel>100</Steel>
+			<Plasteel>25</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<witherTo>WhitheredHeatsink</witherTo>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSink</compClass>
+				<heatCapacity>115</heatCapacity>
+				<heatVentTick>120</heatVentTick>
+				<threat>2</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
 </Defs>

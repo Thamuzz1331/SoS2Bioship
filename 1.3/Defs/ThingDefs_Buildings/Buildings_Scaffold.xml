@@ -45,7 +45,10 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Beam</transformString>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -114,8 +117,10 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
-
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Beam_Unpowered</transformString>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -186,8 +191,6 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
-			<li Class="CompProperties_Scaffold"/>
-
 		</comps>
 		<designationCategory>Ship</designationCategory>
 		<researchPrerequisites>
@@ -198,9 +201,14 @@
 		<defName>Scaffold_Corner_OneOne</defName>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
-
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
-			<label>scaffold  corner (1x1)</label>
+		<label>scaffold  corner (1x1)</label>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Corner_OneOne</transformString>
+			</li>
+		</comps>
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldAngle1x1</texPath>
 		</graphicData>
@@ -221,6 +229,12 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldAngle1x1Flip</texPath>
 		</graphicData>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Corner_OneOneFlip</transformString>
+			</li>
+		</comps>
 		<statBases>
 			<MaxHitPoints>2</MaxHitPoints>
 		</statBases>
@@ -232,13 +246,18 @@
 		<defName>Scaffold_Corner_OneTwo</defName>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
-
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x2)</label>
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldAngle1x2</texPath>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Corner_OneTwo</transformString>
+			</li>
+		</comps>
 		<statBases>
 			<MaxHitPoints>5</MaxHitPoints>
 		</statBases>
@@ -251,13 +270,18 @@
 		<defName>Scaffold_Corner_OneTwoFlip</defName>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
-
 		<label>scaffold corner (1x2) flip</label>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldAngle1x2Flip</texPath>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Corner_OneTwoFlip</transformString>
+			</li>
+		</comps>
 		<statBases>
 			<MaxHitPoints>5</MaxHitPoints>
 		</statBases>
@@ -270,13 +294,18 @@
 		<defName>Scaffold_Corner_OneThree</defName>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
-
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x3)</label>
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldAngle1x3</texPath>
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Corner_OneThree</transformString>
+			</li>
+		</comps>
 		<statBases>
 			<MaxHitPoints>7</MaxHitPoints>
 		</statBases>
@@ -290,12 +319,17 @@
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
-
 		<label>scaffold corner (1x3) flip</label>
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldAngle1x3Flip</texPath>
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Bio_Ship_Corner_OneThreeFlip</transformString>
+			</li>
+		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
 		</statBases>
@@ -342,7 +376,10 @@
 		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShipHullTile</transformString>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_InsideShipRoom</li>
@@ -393,7 +430,10 @@
 			<Neutroamine>5</Neutroamine>
 		</costList>
 		<comps>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShipAirlock</transformString>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
@@ -489,8 +529,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
-
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShip_Engine_Small</transformString>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -511,7 +553,6 @@
 		<label>medium engine scaffold</label>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
-
 		<designatorDropdown>Scaffold_Engines</designatorDropdown>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -541,7 +582,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShip_Engine</transformString>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -592,7 +636,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShip_Engine_Large</transformString>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -644,7 +691,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShip_SensorCluster</transformString>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -694,7 +744,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>true</mutable>
+				<transformString>smallMawOptions</transformString>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -740,7 +793,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>Maw_Corpse</transformString>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -774,7 +830,10 @@
 		</graphicData>
 		<size>(2,2)</size>
 		<comps>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>true</mutable>
+				<transformString>smallTurretOptions</transformString>
+			</li>
 		</comps>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
@@ -803,7 +862,12 @@
 		</graphicData>
 		<size>(3,3)</size>
 		<comps>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>true</mutable>
+				<transformString>mediumTurretOptions</transformString>
+			</li>
 		</comps>
 		<building>
 		</building>
@@ -851,7 +915,10 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>true</mutable>
+				<transformString>largeTurretOptions</transformString>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -905,7 +972,10 @@
 			<Neutroamine>1</Neutroamine>
 		</costList>
 		<comps>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>FatStoreSmall</transformString>
+			</li>
 		</comps>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
@@ -979,7 +1049,10 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShipInside_PassiveCooler</transformString>
+			</li>
 		</comps>
 		<designationHotKey>Misc2</designationHotKey>
 		<researchPrerequisites>
@@ -1029,7 +1102,10 @@
 			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
 		</placeWorkers>
 		<comps>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShieldGenerator</transformString>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<selectable>true</selectable>
@@ -1074,7 +1150,10 @@
 			<Neutroamine>25</Neutroamine>
 		</costList>
 		<comps>
-			<li Class="CompProperties_Scaffold"/>
+			<li Class="CompProperties_Scaffold">
+				<mutable>false</mutable>
+				<transformString>BioShipHeatsink</transformString>
+			</li>
 		</comps>
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>

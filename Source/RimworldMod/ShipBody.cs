@@ -187,6 +187,10 @@ namespace RimWorld
 
         public void RunNutrition()
         {
+            if (heart == null)
+            {
+                return;
+            }
             if (heart.hungerDuration > 200)
             {
 

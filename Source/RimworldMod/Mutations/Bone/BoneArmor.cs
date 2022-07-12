@@ -10,13 +10,13 @@ using Verse;
 
 namespace RimWorld
 {
-    public class BoneArmor : IMutation
+    public class BoneArmor : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.RunOnBodyParts()
         {
             return false;
         }
-        void IMutation.Apply(Building_ShipHeart target)
+        void IHediff.Apply(Building_ShipHeart target)
         {
             target.armorClass = ThingDef.Named("BoneArmor");
 
@@ -24,7 +24,7 @@ namespace RimWorld
 
             return;
         }
-        void IMutation.Apply(Thing target)
+        void IHediff.Apply(Thing target)
         {
             return;
         }

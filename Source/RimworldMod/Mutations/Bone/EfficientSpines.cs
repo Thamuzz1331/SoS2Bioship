@@ -10,13 +10,23 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientSpines : IMutation
+    public class EfficientSpines : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.RunOnBodyParts()
         {
             return true;
         }
-        void IMutation.Apply(Building_ShipHeart target)
+
+        void IHediff.Apply(CompBuildingBodyPart target)
+        {
+
+        }
+        void IHediff.Remove(CompBuildingBodyPart target)
+        {
+
+        }
+
+        void Apply(CompShipHeart target)
         {
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("LightSpineLauncher"));
             target.organOptions["largeTurretOptions"].Add(ThingDef.Named("LightSpineLauncher"));
@@ -25,7 +35,7 @@ namespace RimWorld
             target.mutationThemes["bone"] += 1;
             return;
         }
-        void IMutation.Apply(Thing target)
+        void IHediff.Apply(Thing target)
         {
             if (target.def == ThingDef.Named("LightSpineLauncher"))
             {

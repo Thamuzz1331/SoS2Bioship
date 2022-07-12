@@ -10,13 +10,13 @@ using Verse;
 
 namespace RimWorld
 {
-    public class DenseSpines : IMutation
+    public class DenseSpines : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.RunOnBodyParts()
         {
             return false;
         }
-        void IMutation.Apply(Building_ShipHeart target)
+        void IHediff.Apply(Building_ShipHeart target)
         {
             target.defOptions.TryGetValue(ThingDef.Named("HeavySpineLauncher"), new List<ThingDef>()).Add(ThingDef.Named("Spine_HeavyDense"));
 
@@ -27,7 +27,7 @@ namespace RimWorld
             target.mutationThemes["bone"] += 1;
             return;
         }
-        void IMutation.Apply(Thing target)
+        void IHediff.Apply(Thing target)
         {
             return;
         }

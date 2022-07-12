@@ -9,7 +9,7 @@ using SaveOurShip2;
 
 namespace RimWorld
 {
-    public class CompNutritionLoader : CompShipNutritionConsumer
+    public class CompNutritionLoader : CompNutritionConsumer
     {
         private CompProperties_NutritionLoader Props => (CompProperties_NutritionLoader)props;
 

@@ -97,5 +97,30 @@ namespace RimWorld
         {
             return ShipProps.isArmor;
         }
+
+        public void Whither()
+        {
+            if (this.ShipProps.isArmor)
+            {
+                this.parent.Destroy();
+            } else if 
+            (this.ShipProps.whitherTo != null)
+            {
+                Thing replacement = ThingMaker.MakeThing(ThingDef.Named(this.ShipProps.whitherTo));
+                replacement.Rotation = parent.Rotation;
+                replacement.Position = parent.Position;
+                replacement.SetFaction(Faction.OfPlayer);
+                if (replacement.TryGetComp<CompColorable>() != null)
+                {
+                    replacement.TryGetComp<CompColorable>().SetColor(Color.red);
+                }
+                IntVec3 c = parent.Position;
+                TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);
+                parent.Map.terrainGrid.RemoveTopLayer(c, false);
+                Map m = parent.Map;
+                parent.Destroy();
+                replacement.SpawnSetup(m, false);
+            }
+        }
     }
 }

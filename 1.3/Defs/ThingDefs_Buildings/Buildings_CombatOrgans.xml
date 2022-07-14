@@ -27,6 +27,7 @@
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>SmallWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
@@ -236,6 +237,7 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>MediumWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
@@ -344,6 +346,8 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>MediumWeaponWhithered</whitherTo>
+
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
@@ -479,6 +483,7 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>MediumWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
@@ -671,6 +676,7 @@
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>LargeWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Heavy</ammoCat>
@@ -709,6 +715,7 @@
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>LargeWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Light</ammoCat>

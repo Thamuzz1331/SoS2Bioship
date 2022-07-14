@@ -12,7 +12,7 @@ namespace RimWorld
         public string regenDef = null;
         public bool isArmor = false;
         public bool growsArmor = false;
-        public string witherTo = null;
+        public string whitherTo = null;
 
         public CompProperties_ShipBodyPart()
         {

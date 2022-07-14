@@ -240,15 +240,11 @@ namespace RimWorld
         {
             if (positive)
             {
-                Log.Message("!" + goodMutationOptions[cat][theme].Count);
                 goodMutationOptions[cat][theme] = goodMutationOptions[cat][theme].FindAll(e => !(e is t));
-                Log.Message("!!" + goodMutationOptions[cat][theme].Count);
             }
             else
             {
-                Log.Message("!!!" + badMutationOptions[cat][theme].Count);
                 badMutationOptions[cat][theme] = badMutationOptions[cat][theme].FindAll(e => !(e is t));
-                Log.Message("!!!!" + badMutationOptions[cat][theme].Count);
             }
         }
 

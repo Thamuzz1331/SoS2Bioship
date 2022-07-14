@@ -336,10 +336,15 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShipHullTile</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -464,6 +469,10 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
@@ -515,6 +524,9 @@
 				<species>bioship</species>
 				<transformString>BioShip_Engine</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -563,6 +575,9 @@
 				<species>bioship</species>
 				<transformString>BioShip_Engine_Large</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -609,6 +624,9 @@
 				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -652,6 +670,9 @@
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>smallMawOptions</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
 		<rotatable>false</rotatable>
@@ -697,6 +718,9 @@
 				<species>bioship</species>
 				<transformString>Maw_Corpse</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -726,6 +750,9 @@
 				<species>bioship</species>
 				<transformString>smallTurretOptions</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<costList>
 		</costList>
@@ -753,6 +780,9 @@
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>mediumTurretOptions</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
 		<building>
@@ -793,6 +823,9 @@
 				<species>bioship</species>
 				<transformString>largeTurretOptions</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -812,7 +845,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(1,2)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -839,6 +872,9 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>FatStoreSmall</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -956,6 +992,10 @@
 				<species>bioship</species>
 				<transformString>BioShieldGenerator</transformString>
 			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+
 		</comps>
 		<rotatable>false</rotatable>
 		<selectable>true</selectable>
@@ -992,6 +1032,9 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShipHeatsink</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
 		<researchPrerequisites>

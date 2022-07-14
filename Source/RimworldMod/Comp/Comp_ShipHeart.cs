@@ -102,6 +102,33 @@ namespace RimWorld
             }
         }
 
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            if (body != null)
+            {
+                List<Thing> toWhither = new List<Thing>();
+                foreach (Thing t in body.bodyParts)
+                {
+                    toWhither.Add(t);
+                }
+                foreach (Thing t in toWhither)
+                {
+                    t.TryGetComp<CompShipBodyPart>().Whither();
+                }
+            }
+            base.PostDestroy(mode, previousMap);
+        }
+
+
+        public override void DoHunger()
+        {
+            if (this.body.bodyParts.Count > 0)
+            {
+                this.body.bodyParts.ElementAt(Rand.Range(0, this.body.bodyParts.Count)).TryGetComp<CompShipBodyPart>().Whither();
+            }
+            this.hungerDuration = 0;
+        }
+
         public override string GetSpecies()
         {
             return HeartProps.shipspecies;

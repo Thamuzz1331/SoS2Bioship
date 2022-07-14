@@ -225,7 +225,7 @@ namespace BioShip
 		public static bool BioshipFailReasons(Building_ShipBridge __instance, ref List<string> __result)
         {
 			__result = new List<string>();
-			if (__instance is Building_ShipHeart)
+			if (__instance.TryGetComp<CompShipHeart>() != null)
             {
 				__result.Add("Bioship FTL Pending");
 				return false;
@@ -244,9 +244,9 @@ namespace BioShip
 		{
 			if(Traverse.Create(shipCombatManagerType).Field("InCombat").GetValue<bool>())
             {
-				Log.Message("Drawing nutritio bars");
 				Map playerShip = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
-				foreach(Building_ShipHeart heart in playerShip.listerBuildings.allBuildingsColonist.Where(b => b is Building_ShipHeart)) {
+				foreach(Thing h in playerShip.listerBuildings.allBuildingsColonist.Where(b => b.TryGetComp<CompShipHeart>() != null)) {
+					CompShipHeart heart = h.TryGetComp<CompShipHeart>();
 					Rect rect = new Rect(UI.screenWidth - 255, baseY - 40, 250, 40);
 					Verse.Widgets.DrawMenuSection(rect);
 					Widgets.FillableBar(rect.ContractedBy(6), heart.body.currentNutrition / heart.body.nutritionCapacity,

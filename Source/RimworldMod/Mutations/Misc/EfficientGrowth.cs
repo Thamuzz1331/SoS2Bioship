@@ -10,38 +10,44 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientGrowth : IMutation
+    public class EfficientGrowth : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
-            return false;
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
         }
-        void IMutation.Apply(Building_ShipHeart target)
+        void IHediff.Apply(CompBuildingBodyPart target)
         {
-            if (target.statMultipliers.ContainsKey("growthCost"))
+                        if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                target.statMultipliers["growthCost"] *= 0.75f;
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                if (!heart.multipliers.ContainsKey("regenCost"))
+                {
+                    heart.multipliers.Add("regenCost", 0.85f);
+                    if (!heart.stats.ContainsKey("conversionCost"))
+                    {
+                        heart.stats.Add("conversionCost", 15f);
+                    } 
+                    heart.stats["conversionCost"] *= 0.75f;
+                } else
+                {
+                    heart.multipliers["regenCost"] *= 0.85f;
+                }
             }
-            else
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.statMultipliers.Add("growthCost", 0.75f);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc", true);
             }
-            if (target.statMultipliers.ContainsKey("regenCost"))
-            {
-                target.statMultipliers["regenCost"] *= 0.85f;
-            }
-            else
-            {
-                target.statMultipliers.Add("regenCost", 0.85f);
-            }
-            target.RemoveMutation<EfficientGrowth>("utility", "misc", true);
 
-            return;
         }
-        void IMutation.Apply(Thing target)
+        void IHediff.Remove(CompBuildingBodyPart target)
         {
-            return;
+
         }
+
         void IExposable.ExposeData()
         {
 

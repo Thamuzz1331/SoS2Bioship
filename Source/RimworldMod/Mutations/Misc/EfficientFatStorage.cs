@@ -10,12 +10,33 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientFatStorage : IMutation
+    public class EfficientFatStorage : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
-            return false;
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompShipNutritionStore>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
         }
+        void IHediff.Apply(CompBuildingBodyPart target)
+        {
+            if (target.parent.TryGetComp<CompShipNutritionStore>() != null)
+            {
+                target.parent.TryGetComp<CompShipNutritionStore>().efficiency = 1.5f;
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                                Log.Message("!!!!");
+
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientFatStorage>("utility", "misc", true);
+            }
+        }
+        void IHediff.Remove(CompBuildingBodyPart target)
+        {
+
+        }
+        /*
         void IMutation.Apply(Building_ShipHeart target)
         {
             target.statMultipliers.Add("storageEfficiency", 1.25f);
@@ -28,6 +49,7 @@ namespace RimWorld
         {
             return;
         }
+        */
         void IExposable.ExposeData()
         {
 

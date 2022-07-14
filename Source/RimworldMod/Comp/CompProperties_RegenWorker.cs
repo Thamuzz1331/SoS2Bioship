@@ -7,8 +7,10 @@ using Verse;
 
 namespace RimWorld
 {
-    class CompProperties_RegenWorker : CompProperties
+    public class CompProperties_RegenWorker : CompProperties
     {
+        public float regenCost = 0;
+        public float regenInterval = 0;
         public CompProperties_RegenWorker()
         {
             compClass = typeof(CompRegenWorker);

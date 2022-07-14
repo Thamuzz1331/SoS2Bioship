@@ -12,33 +12,66 @@ namespace RimWorld
 {
     public class CompShipBodyPart : CompBuildingBodyPart
     {
-        CompProperties_ShipBodyPart ShipProps => (CompProperties_ShipBodyPart)props;
+        public CompProperties_ShipBodyPart ShipProps => (CompProperties_ShipBodyPart)props;
         public HashSet<Thing> adjMechs = new HashSet<Thing>();
         public HashSet<Thing> adjBodypart = new HashSet<Thing>();
+
+        public List<string> woundIds = new List<string>();
+        public bool initialized = false;
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Collections.Look<string>(ref woundIds, "woundIds");
+            Scribe_Values.Look<bool>(ref initialized, "initialized", false);
+        }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+            if (!respawningAfterLoad && !initialized)
+            {
+                foreach (IHediff mut in ((CompShipHeart)body.heart).mutator.mutations)
+                {
+                    if (mut.ShouldAddTo(this))
+                    {
+                        mut.Apply(this);
+                        this.hediffs.Add(mut);
+                    }
+                }
+                initialized = true;
+            }
             foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
             {
                 foreach (Thing adj in c.GetThingList(parent.Map))
                 {
-                    if (adj is ThingWithComps)
+                    CompEatMe eatMe = adj.TryGetComp<CompEatMe>();
+                    if (eatMe != null && adj.TryGetComp<CompScaffold>() == null)
                     {
-                        CompEatMe eatMe = ((ThingWithComps)adj).TryGetComp<CompEatMe>();
-                        if (eatMe != null)
+                        CompBuildingBodyPart bodyPart = adj.TryGetComp<CompBuildingBodyPart>();
+                        if (bodyPart != null)
                         {
-                            CompShipBodyPart bodyPart = ((ThingWithComps)adj).TryGetComp<CompShipBodyPart>();
-                            if (bodyPart != null)
+                            if (bodyPart.bodyId != this.bodyId)
                             {
-                                if (bodyPart.bodyId != bodyId)
+                                if (body.heart != null)
                                 {
-                                    body.otherFlesh.Add(adj);
+                                    ((CompShipHeart)body.heart).AggressionTarget(adj, false);
                                 }
+                                else
+                                {
+                                    adjBodypart.Add(adj);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (body.heart != null)
+                            {
+                                ((CompShipHeart)body.heart).AggressionTarget(adj, true);
                             }
                             else
                             {
-                                body.adjacentMechanicals.Add(adj);
+                                adjMechs.Add(adj);
                             }
                         }
                     }
@@ -49,7 +82,7 @@ namespace RimWorld
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            if (mode == DestroyMode.KillFinalize && Props.regen)
+            if (mode == DestroyMode.KillFinalize && ShipProps.regenDef != null)
             {
                 ((CompShipHeart)body.heart).Regen(parent);
             }
@@ -57,12 +90,12 @@ namespace RimWorld
 
         public override string CompInspectStringExtra()
         {
-            return "Flesh of " + heartId;
+            return "Flesh of " + bodyId;
         }
 
         public bool IsArmor()
         {
-            return Props.isArmor;
+            return ShipProps.isArmor;
         }
     }
 }

@@ -9,15 +9,20 @@ using Verse;
 
 namespace RimWorld
 {
-	class CompAggression : ThingComp
+	public class CompAggression : ThingComp
 	{
-		protected CompProperties_Aggression Props => (CompProperties_Aggression)props;
+		public CompProperties_Aggression Props => (CompProperties_Aggression)props;
 
 		private float ticksToAttack = 0;
 		public float attackInterval = 120;
+		public int modifiedAggression = 0;
+
+		public HashSet<Thing> otherFlesh = new HashSet<Thing>();
+		public HashSet<Thing> adjacentMechanicals = new HashSet<Thing>();
 
 		public override void PostExposeData()
 		{
+			base.PostExposeData();
 			Scribe_Values.Look(ref ticksToAttack, "ticksToAttack", 0);
 		}
 
@@ -41,13 +46,12 @@ namespace RimWorld
 			int numAttack = Rand.Range(1, 2);
 			for (int i = 0; i < numAttack; i++)
 			{
-				switch (((Building_ShipHeart)parent).GetAggressionLevel())
+				switch ((modifiedAggression + Props.baseAggression))
 				{
 					case 1:
-						BasicAggress(((Building_ShipHeart)parent).body.adjacentMechanicals);
+						BasicAggress(adjacentMechanicals);
 						break;
 					case 2:
-						Aggress();
 						break;
 					default:
 						return;
@@ -60,6 +64,11 @@ namespace RimWorld
 			if (targetList.Count > 0)
             {
 				Thing target = targetList.ElementAt(Rand.Range(0, targetList.Count));
+				if (target.Destroyed)
+                {
+					targetList.Remove(target);
+					return;
+                }
 				if (target is Building)
                 {
 					Building t = ((Building)target);
@@ -75,26 +84,24 @@ namespace RimWorld
 
 		private void Aggress()
         {
-			ShipBody body = ((Building_ShipHeart)parent).body;
-			int targetType = Rand.Range(0, 2);
-			if (targetType == 1)
+			if (Rand.Chance(0.5f))
             {
-				if (body.adjacentMechanicals.Count > 0)
+				if (adjacentMechanicals.Count > 0)
                 {
-					BasicAggress(body.adjacentMechanicals);
+					BasicAggress(adjacentMechanicals);
 				} else
                 {
-					BasicAggress(body.otherFlesh);
+					BasicAggress(otherFlesh);
                 }
-            } else if (targetType == 0)
+            } else
             {
-				if (body.otherFlesh.Count > 0)
+				if (otherFlesh.Count > 0)
 				{
-					BasicAggress(body.otherFlesh);
+					BasicAggress(otherFlesh);
 				}
 				else
 				{
-					BasicAggress(body.adjacentMechanicals);
+					BasicAggress(adjacentMechanicals);
 				}
 			}
 		}

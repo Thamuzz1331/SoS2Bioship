@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
 	  <Compile Include="BioShipMod.cs" />
+	  <Compile Include="Building_NerveStaple.cs"/>
+	  <Compile Include="Wound.cs"/>
 
 	  <Compile Include="Comp\Comp_Aggression.cs"/>
 	  <Compile Include="Comp\CompProperties_Aggression.cs"/>
@@ -115,9 +117,18 @@
 	  <Compile Include="Comp\CompProperties_ShipBodyPart.cs"/>
 	  <Compile Include="Comp\Comp_ShipHeart.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipHeart.cs"/>
+	  <Compile Include="Comp\Comp_RegenWorker.cs"/>
+	  <Compile Include="Comp\CompProperties_RegenWorker.cs"/>
+	  <Compile Include="Comp\Comp_MutationWorker.cs"/>
+	  <Compile Include="Comp\CompProperties_MutationWorker.cs"/>
+	  <Compile Include="Comp\Comp_MutableScaffold.cs"/>
+	  <Compile Include="Comp\CompProperties_MutableScaffold.cs"/>
+	  <Compile Include="Comp\Comp_ShipNutritionStore.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipNutritionStore.cs"/>
+	  <Compile Include="Comp\Comp_StapleableScaffold.cs"/>
+	  <Compile Include="Comp\CompProperties_StapleableScaffold.cs"/>
 
-	  <Compile Include="Mutations\IMutation.cs" />
-      <Compile Include="Mutations\Bone\DenseSpines.cs" />
+	  <Compile Include="Mutations\Bone\DenseSpines.cs" />
       <Compile Include="Mutations\Bone\EfficientSpines.cs" />
 	  <Compile Include="Mutations\Bone\BoneArmor.cs" />
 	  <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />

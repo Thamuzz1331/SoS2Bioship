@@ -7,8 +7,9 @@ using Verse;
 
 namespace RimWorld
 {
-    class CompProperties_Aggression : CompProperties
+    public class CompProperties_Aggression : CompProperties
     {
+        public int baseAggression = 0;
         public CompProperties_Aggression()
         {
             compClass = typeof(CompAggression);

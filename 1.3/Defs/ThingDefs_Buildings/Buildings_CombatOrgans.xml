@@ -25,8 +25,10 @@
 				<basePowerConsumption>150</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipBodyPart"></li>
-			<li Class="CompProperties_ShipNutritionConsumer">
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_Flickable"/>
@@ -232,8 +234,10 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_ShipBodyPart"></li>
-			<li Class="CompProperties_ShipNutritionConsumer">
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
 			</li>
 		</comps>
@@ -338,8 +342,10 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_ShipBodyPart"></li>
-			<li Class="CompProperties_ShipNutritionConsumer">
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
 			</li>
 		</comps>
@@ -471,8 +477,10 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_ShipBodyPart"></li>
-			<li Class="CompProperties_ShipNutritionConsumer">
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>50</consumptionPerPulse>
 			</li>
 		</comps>
@@ -662,6 +670,7 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Heavy</ammoCat>
@@ -699,6 +708,7 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Light</ammoCat>

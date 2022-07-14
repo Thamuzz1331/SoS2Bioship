@@ -9,7 +9,7 @@ namespace RimWorld
 {
     public class CompProperties_ShipHeart : CompProperties_BuildingCore
     {
-        public string species = null;
+        public string shipspecies = null;
         public CompProperties_ShipHeart()
         {
             compClass = typeof(CompShipHeart);

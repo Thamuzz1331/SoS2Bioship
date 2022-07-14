@@ -9,18 +9,22 @@ using Verse;
 
 namespace RimWorld
 {
-	class CompArmorGrower : ThingComp
+	public class CompArmorGrower : ThingComp
 	{
-		protected CompProperties_ArmorGrower Props => (CompProperties_ArmorGrower)props;
+		public CompProperties_ArmorGrower Props => (CompProperties_ArmorGrower)props;
 
 		public HashSet<IntVec3> toGrow = new HashSet<IntVec3>();
 		public HashSet<Thing> toShed = new HashSet<Thing>();
+		public BuildingBody body = null;
+
+		public ThingDef armorClass = null;
 
 		private float ticksToGrow = 0f;
 		private float ticksToShed = 0f;
 
 		public override void PostExposeData()
 		{
+			base.PostExposeData();
 			Scribe_Collections.Look<IntVec3>(ref toGrow, "toGrow", LookMode.Deep);
 			Scribe_Collections.Look<Thing>(ref toShed, "toShed", LookMode.Deep);
 			Scribe_Values.Look(ref ticksToGrow, "ticksToGrow", 0f);
@@ -43,9 +47,8 @@ namespace RimWorld
 				if (ticksToGrow <= 0)
                 {
 					GrowArmor();
-					ticksToGrow = 10;
+					ticksToGrow = 35;
 				}
-				ticksToGrow--;
             }
 			if (toShed.Count > 0)
             {
@@ -54,7 +57,73 @@ namespace RimWorld
 					ShedArmor();
 					ticksToShed = 5;
 				}
-				ticksToShed--;
+			}
+			ticksToGrow--;
+			ticksToShed--;
+		}
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+			{
+				yield return gizmo;
+			}
+			if (this.armorClass != null)
+			{
+				yield return new Command_Action
+				{
+					defaultLabel = "Grow Armor",
+					action = delegate ()
+					{
+						this.ScheduleGrowArmor();
+					}
+				};
+				yield return new Command_Action
+				{
+					defaultLabel = "Shed Armor",
+					action = delegate ()
+					{
+						this.ScheduleShedArmor();
+					}
+				};
+			}
+		}
+
+
+		public virtual void ScheduleGrowArmor()
+        {
+			CompShipBodyPart bp = parent.TryGetComp<CompShipBodyPart>();
+			if (this.body != null)
+            {
+				foreach(Thing t in this.body.bodyParts)
+                {
+					CompShipBodyPart tbp = t.TryGetComp<CompShipBodyPart>();
+					if (tbp != null && tbp.ShipProps.growsArmor)
+					{
+						foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(t.Position))
+						{
+							if(c.GetThingList(t.Map).Count <= 0)
+							{
+								toGrow.Add(c);
+							}
+						}
+					}
+				}
+			}
+        }
+
+		public virtual void ScheduleShedArmor()
+		{
+			if (this.body != null)
+			{
+				foreach (Thing t in this.body.bodyParts)
+				{
+					CompShipBodyPart tbp = t.TryGetComp<CompShipBodyPart>();
+					if (tbp != null && tbp.ShipProps.isArmor)
+                    {
+						toShed.Add(t);
+                    }
+				}
 			}
 		}
 
@@ -64,13 +133,14 @@ namespace RimWorld
 			IEnumerable<IntVec3> batch = toGrow.Take(Rand.RangeInclusive(1, 3));
 			foreach (IntVec3 c in batch)
             {
-				if(((Building_ShipHeart)parent).body.RequestNutrition(55 * ((Building_ShipHeart)parent).getStatMultiplier("growthCost", null)))
+				CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
+				if(heart != null && heart.body.RequestNutrition(55 * heart.GetMultiplier("growthCost")))
                 {
-					Thing armor = ThingMaker.MakeThing(((Building_ShipHeart)parent).armorClass);
+					Thing armor = ThingMaker.MakeThing(armorClass);
 					armor.Position = c;
 					armor.SetFaction(Faction.OfPlayer);
-					armor.TryGetComp<CompShipBodyPart>().SetId(((Building_ShipHeart)parent).heartId);
-					armor.SpawnSetup(((Building_ShipHeart)parent).Map, false);
+					armor.TryGetComp<CompShipBodyPart>().SetId(heart.bodyId);
+					armor.SpawnSetup(parent.Map, false);
 					toRemove.Add(c);
 				}
 			}

@@ -40,9 +40,9 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Beam</regenDef>
+				<growsArmor>true</growsArmor>
+				<species>bioship</species>
 				<witherTo>Whithered_Beam</witherTo>
 			</li>
 			<li>
@@ -120,9 +120,9 @@
 				<compClass>CompColorable</compClass>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Beam_Unpowered</regenDef>
+				<growsArmor>true</growsArmor>
+				<species>bioship</species>
 				<witherTo>Whithered_Beam_Unpowered</witherTo>
 			</li>
 		</comps>
@@ -205,9 +205,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneOne</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Corner_OneOne</witherTo>
 			</li>
 		</comps>
@@ -225,9 +224,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneOneFlip</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Corner_OneOneFlip</witherTo>
 			</li>
 		</comps>
@@ -246,9 +244,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneTwo</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Corner_OneTwo</witherTo>
 			</li>
 		</comps>
@@ -268,11 +265,10 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneTwoFlip</regenDef>
+				<species>bioship</species>
+				<witherTo>Whithered_Corner_OneTwoFlip</witherTo>
 			</li>
-			<witherTo>Whithered_Corner_OneTwoFlip</witherTo>
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
@@ -290,9 +286,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneThree</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Corner_OneThree</witherTo>
 			</li>
 		</comps>
@@ -312,9 +307,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneThreeFlip</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Corner_OneThreeFlip</witherTo>
 			</li>
 		</comps>
@@ -359,9 +353,8 @@
 		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>ScarHullTile</regenDef>
+				<species>bioship</species>
 				<witherTo>WhitheredHullTile</witherTo>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
@@ -418,9 +411,8 @@
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>ScarAirlock</regenDef>
+				<species>bioship</species>
 				<witherTo>WhitheredAirlock</witherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
@@ -489,6 +481,8 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Engine_Small</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Engine_Small</witherTo>
 			</li>
 			<li Class="CompProperties_Power">
@@ -560,6 +554,8 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Engine</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Engine</witherTo>
 			</li>
 			<li Class="CompProperties_Power">
@@ -630,6 +626,8 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Engine_Large</regenDef>
+				<species>bioship</species>
 				<witherTo>Whithered_Engine_Large</witherTo>
 			</li>
 			<li Class="CompProperties_Power">
@@ -698,6 +696,7 @@
 		<size>(1,1)</size>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>Whithered_Sensor</witherTo>
 			</li>
 			<li Class="CompProperties_Power">
@@ -752,6 +751,7 @@
 		<size>(1,1)</size>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>Whithered_Maw_Small</witherTo>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
@@ -768,7 +768,7 @@
 				</fuelFilter>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_ShipNutritionSource">
+			<li Class="CompProperties_NutritionSource">
 				<nutrientPerPulse>500</nutrientPerPulse>
 			</li>
 		</comps>
@@ -810,6 +810,7 @@
 		<size>(2,2)</size>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>Whithered_Maw_Corpse</witherTo>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
@@ -826,7 +827,7 @@
 				</fuelFilter>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_ShipNutritionSource">
+			<li Class="CompProperties_NutritionSource">
 				<nutrientPerPulse>3000</nutrientPerPulse>
 			</li>
 		</comps>
@@ -875,6 +876,7 @@
 				<nutrientCapacity>1000</nutrientCapacity>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>FatStoreSmallWhithered</witherTo>
 			</li>
 		</comps>
@@ -940,6 +942,7 @@
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>WhitheredInside_PassiveCooler</witherTo>
 			</li>
 			<li Class="CompProperties_Power">
@@ -1016,6 +1019,7 @@
 		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>WhitheredShieldGenerator</witherTo>
 			</li>
 			<li Class="CompProperties_ShipCombatShield">
@@ -1070,6 +1074,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
 				<witherTo>WhitheredHeatsink</witherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">

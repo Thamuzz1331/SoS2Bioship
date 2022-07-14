@@ -12,11 +12,43 @@ namespace RimWorld
 {
     public class DenseSpines : IHediff
     {
-        bool IHediff.RunOnBodyParts()
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
-            return false;
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
         }
-        void IHediff.Apply(Building_ShipHeart target)
+
+        void IHediff.Apply(CompBuildingBodyPart target)
+        {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
+                    .Add(ThingDef.Named("Spine_HeavyDense"));
+                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
+                    .Add(ThingDef.Named("Spine_HeavyDense"));
+
+                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("HeavySpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("HeavySpineLauncher"));
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseSpines>("offense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
+
+            }
+
+        }
+        void IHediff.Remove(CompBuildingBodyPart target)
+        {
+
+        }
+        /*
+        void Apply(CompShipHeart target)
         {
             target.defOptions.TryGetValue(ThingDef.Named("HeavySpineLauncher"), new List<ThingDef>()).Add(ThingDef.Named("Spine_HeavyDense"));
 
@@ -26,11 +58,7 @@ namespace RimWorld
             target.RemoveMutation<DenseSpines>("offense", "bone", true);
             target.mutationThemes["bone"] += 1;
             return;
-        }
-        void IHediff.Apply(Thing target)
-        {
-            return;
-        }
+        }*/
         void IExposable.ExposeData()
         {
 

@@ -40,7 +40,8 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>true</regen>
+				<regenDef>Scar_Beam</regenDef>
+				<species>bioship</species>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -114,9 +115,8 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Beam_Unpowered</regenDef>
+				<species>bioship</species>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -201,9 +201,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneOne</regenDef>
+				<species>bioship</species>
 			</li>
 		</comps>
 		<statBases>
@@ -220,9 +219,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneOneFlip</regenDef>
+				<species>bioship</species>
 			</li>
 		</comps>
 		<statBases>
@@ -240,9 +238,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneTwo</regenDef>
+				<species>bioship</species>
 			</li>
 		</comps>
 		<statBases>
@@ -261,9 +258,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneTwoFlip</regenDef>
+				<species>bioship</species>
 			</li>
 		</comps>
 		<statBases>
@@ -282,9 +278,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneThree</regenDef>
+				<species>bioship</species>
 			</li>
 		</comps>
 		<statBases>
@@ -303,9 +298,8 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneThreeFlip</regenDef>
+				<species>bioship</species>
 			</li>
 		</comps>
 		<statBases>
@@ -346,9 +340,8 @@
 		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>ScarHullTile</regenDef>
+				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_RoofMe"/>
 		</comps>
@@ -399,7 +392,10 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_ShipBodyPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>ScarHullTile</regenDef>
+				<species>bioship</species>
+			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
@@ -465,35 +461,12 @@
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Engine_Small</regenDef>
+				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>500.0</fuelCapacity>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<fuelFilter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<autoRefuelPercent>1</autoRefuelPercent>
-				<showFuelGizmo>false</showFuelGizmo>
-				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_EngineTrail">
-				<thrust>1</thrust>
-			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -534,10 +507,9 @@
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<transmitsPower>true</transmitsPower>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Engine</regenDef>
+				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
@@ -583,10 +555,9 @@
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart"/>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<transmitsPower>true</transmitsPower>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Engine_Large</regenDef>
+				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>

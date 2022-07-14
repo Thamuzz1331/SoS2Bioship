@@ -40,7 +40,7 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Beam</transformString>
 			</li>
 			<li>
@@ -106,7 +106,7 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Beam_Unpowered</transformString>
 			</li>
 			<li>
@@ -185,7 +185,7 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Corner_OneOne</transformString>
 			</li>
 		</comps>
@@ -205,7 +205,7 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Corner_OneOneFlip</transformString>
 			</li>
 		</comps>
@@ -226,7 +226,7 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Corner_OneTwo</transformString>
 			</li>
 		</comps>
@@ -248,7 +248,7 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Corner_OneTwoFlip</transformString>
 			</li>
 		</comps>
@@ -270,7 +270,7 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Corner_OneThree</transformString>
 			</li>
 		</comps>
@@ -292,7 +292,7 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Bio_Ship_Corner_OneThreeFlip</transformString>
 			</li>
 		</comps>
@@ -338,7 +338,7 @@
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShipHullTile</transformString>
 			</li>
 		</comps>
@@ -383,7 +383,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShipAirlock</transformString>
 			</li>
 			<li Class="CompProperties_Power">
@@ -466,7 +466,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShip_Engine_Small</transformString>
 			</li>
 		</comps>
@@ -512,7 +512,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShip_Engine</transformString>
 			</li>
 		</comps>
@@ -560,7 +560,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShip_Engine_Large</transformString>
 			</li>
 		</comps>
@@ -606,7 +606,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
 			</li>
 		</comps>
@@ -649,8 +649,8 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold">
-				<mutable>true</mutable>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
 				<transformString>smallMawOptions</transformString>
 			</li>
 		</comps>
@@ -694,7 +694,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>Maw_Corpse</transformString>
 			</li>
 		</comps>
@@ -722,8 +722,8 @@
 		</graphicData>
 		<size>(2,2)</size>
 		<comps>
-			<li Class="CompProperties_Scaffold">
-				<mutable>true</mutable>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
 				<transformString>smallTurretOptions</transformString>
 			</li>
 		</comps>
@@ -750,8 +750,8 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold">
-				<mutable>true</mutable>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
 				<transformString>mediumTurretOptions</transformString>
 			</li>
 		</comps>
@@ -789,8 +789,8 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold">
-				<mutable>true</mutable>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
 				<transformString>largeTurretOptions</transformString>
 			</li>
 		</comps>
@@ -837,7 +837,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>FatStoreSmall</transformString>
 			</li>
 		</comps>
@@ -906,7 +906,7 @@
 				<compClass>CompColorable</compClass>
 			</li>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShipInside_PassiveCooler</transformString>
 			</li>
 		</comps>
@@ -953,7 +953,7 @@
 		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShieldGenerator</transformString>
 			</li>
 		</comps>
@@ -990,7 +990,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Scaffold">
-				<mutable>false</mutable>
+				<species>bioship</species>
 				<transformString>BioShipHeatsink</transformString>
 			</li>
 		</comps>

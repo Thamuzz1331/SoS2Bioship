@@ -111,6 +111,8 @@
 	  <Compile Include="Comp\CompProperties_EatMe.cs"/>
 	  <Compile Include="Comp\Comp_NutritionLoader.cs"/>
 	  <Compile Include="Comp\CompProperties_NutritionLoader.cs"/>
+	  <Compile Include="Comp\Comp_NutritionRefueler.cs"/>
+	  <Compile Include="Comp\CompProperties_NutritionRefueler.cs"/>
 	  <Compile Include="Comp\Comp_RoofMeBio.cs"/>
 	  <Compile Include="Comp\CompProperties_RoofMeBio.cs"/>
 	  <Compile Include="Comp\Comp_ShipBodyPart.cs"/>
@@ -128,6 +130,8 @@
 	  <Compile Include="Comp\Comp_StapleableScaffold.cs"/>
 	  <Compile Include="Comp\CompProperties_StapleableScaffold.cs"/>
 
+	  <Compile Include="Defs\BioShipDef.cs"/>
+
 	  <Compile Include="Mutations\Bone\DenseSpines.cs" />
       <Compile Include="Mutations\Bone\EfficientSpines.cs" />
 	  <Compile Include="Mutations\Bone\BoneArmor.cs" />
@@ -137,6 +141,7 @@
 	  <Compile Include="Mutations\Fluids\EfficientRegeneration.cs" />
 	  <Compile Include="Mutations\Misc\EfficientFatStorage.cs" />
 	  <Compile Include="Mutations\Misc\EfficientGrowth.cs" />
+	  <Compile Include="Mutations\Ocular\OcularPerk.cs" />
 	  <Compile Include="Damage\AcidWorker.cs"/>
       <Compile Include="Damage\Damage_AcidGlob.cs"/>
       <Compile Include="Damage\ShipDamageDefOf.cs"/>

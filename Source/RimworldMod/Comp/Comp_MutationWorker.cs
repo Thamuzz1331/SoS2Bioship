@@ -30,11 +30,11 @@ namespace RimWorld
             {"offense", 3},
             {"defense", 3},
             {"utility", 2},
-            {"quirk", 1}
+//            {"quirk", 1}
         };
         public List<IHediff> quirkPossibilities = new List<IHediff>()
         {
-
+            new OcularPerk(),
         };
         public Dictionary<string, Dictionary<string, List<IHediff>>> goodMutationOptions = new Dictionary<string, Dictionary<string, List<IHediff>>>()
         {
@@ -154,8 +154,6 @@ namespace RimWorld
             }
 
         }
-
-
 
         public virtual int GetChanceModifier(string theme)
         {

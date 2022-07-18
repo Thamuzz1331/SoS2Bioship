@@ -27,8 +27,6 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                                Log.Message("!!!!");
-
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientFatStorage>("utility", "misc", true);
             }
         }

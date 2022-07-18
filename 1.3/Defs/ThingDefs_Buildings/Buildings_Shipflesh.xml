@@ -38,7 +38,9 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
 				<growsArmor>true</growsArmor>
@@ -115,7 +117,9 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -409,7 +413,9 @@
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarAirlock</regenDef>
 				<species>bioship</species>
@@ -509,7 +515,9 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>EmptySpace</TerrainId>
+			</li>
 			<li Class="CompProperties_EngineTrail">
 				<thrust>1</thrust>
 			</li>
@@ -579,7 +587,9 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>EmptySpace</TerrainId>
+			</li>
 			<li Class="CompProperties_EngineTrail">
 				<thrust>2</thrust>
 			</li>
@@ -651,7 +661,9 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>EmptySpace</TerrainId>
+			</li>
 			<li Class="CompProperties_EngineTrail">
 				<thrust>6</thrust>
 			</li>
@@ -705,7 +717,9 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 		<rotatable>false</rotatable>
@@ -755,7 +769,6 @@
 				<whitherTo>Whithered_Maw_Small</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
@@ -814,7 +827,6 @@
 				<whitherTo>Whithered_Maw_Corpse</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>5</initialConfigurableTargetFuelLevel>
@@ -966,7 +978,9 @@
 				<graphicPath>Things/Building/Ship/RadiatorVent</graphicPath>
 				<size>(1,1,1)</size>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
 				<heatCapacity>10</heatCapacity>
@@ -1064,7 +1078,7 @@
 			<MaxHitPoints>800</MaxHitPoints>
 			<WorkToBuild>3500</WorkToBuild>
 			<Flammability>0.7</Flammability>
-			<Beauty>-2</Beauty>
+			<Beauty>0</Beauty>
 		</statBases>
 		<costList>
 			<Steel>100</Steel>
@@ -1090,5 +1104,72 @@
 		</comps>
 		<researchPrerequisites>
 		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>Giant_Mitochondira</defName>
+		<label>giant mitochondria</label>
+		<thingClass>Building</thingClass>
+		<passability>Impassable</passability>
+		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipGiantMitochondria</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,6)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<size>(4,6)</size>
+		<receivesSignals>true</receivesSignals>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>Whithered_Giant_Mitochondira</whitherTo>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelConsumptionRate>100</fuelConsumptionRate>
+				<fuelCapacity>500</fuelCapacity>
+				<fuelFilter>
+				</fuelFilter>
+				<showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>-5000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>120</refuelInterval>
+				<refuelCost>100</refuelCost>
+				<refuelAmmount>10</refuelAmmount>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	</ThingDef>
 </Defs>

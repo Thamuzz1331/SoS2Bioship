@@ -8,7 +8,7 @@
 		<defName>Ship_Heart</defName>
 		<label>ship heart</label>
 		<designatorDropdown>Ship_Heart</designatorDropdown>
-		<thingClass>Building_ShipHeart</thingClass>
+		<thingClass>Building_ShipBridge</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipHeart</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -41,8 +41,24 @@
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_ShipfleshConversion"/>
+			<li Class="CompProperties_ShipHeart">
+				<species>bioship</species>
+				<shipspecies>bioship</shipspecies>
+			</li>
 			<li Class="CompProperties_ArmorGrower"/>
+			<li Class="CompProperties_Aggression">
+				<baseAggression>1</baseAggression>
+			</li>
+			<li Class="CompProperties_RegenWorker">
+				<regenCost>35</regenCost>
+				<regenInterval>30</regenInterval>
+			</li>
+			<li Class="CompProperties_MutationWorker"/>
+			<li Class="CompProperties_ScaffoldConverter"/>
+			<li Class="CompProperties_ShipNutritionStore">
+				<nutrientCapacity>10000</nutrientCapacity>
+				<initialNutrition>10000</initialNutrition>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>0</basePowerConsumption>
@@ -51,11 +67,6 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
-			<li Class="CompProperties_ShipNutritionStore">
-				<nutrientCapacity>10000</nutrientCapacity>
-				<initialNutrition>10000</initialNutrition>
-			</li>
-			<li Class="CompProperties_Aggression"/>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>MutationInducer</li>
@@ -235,7 +246,7 @@
 			<Mass>20</Mass>
 			<Flammability>0.5</Flammability>
 		</statBases>
-		<size>(2,1)</size>
+		<size>(1,1)</size>
 		<costList>
 			<Steel>200</Steel>
 		</costList>

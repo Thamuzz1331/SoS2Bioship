@@ -7,11 +7,11 @@ using Verse;
 
 namespace RimWorld
 {
-    public class CompProperties_ArmorGrower : CompProperties
+    public class CompProperties_MutationWorker : CompProperties
     {
-        public CompProperties_ArmorGrower()
+        public CompProperties_MutationWorker()
         {
-            compClass = typeof(CompArmorGrower);
+            compClass = typeof(CompMutationWorker);
         }
     }
 

@@ -10,12 +10,40 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientRegeneration : IMutation
+    public class EfficientRegeneration : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
-            return false;
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
         }
+
+        void IHediff.Apply(CompBuildingBodyPart target)
+        {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                if (!heart.multipliers.ContainsKey("regenCost"))
+                {
+                    heart.multipliers.Add("regenCost", 0.75f);
+                } else
+                {
+                    heart.multipliers["regenCost"] *= 0.75f;
+                }
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientRegeneration>("defense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
+            }
+        }
+        void IHediff.Remove(CompBuildingBodyPart target)
+        {
+
+        }
+        /*
         void IMutation.Apply(Building_ShipHeart target)
         {
             if (target.statMultipliers.ContainsKey("regenCost"))
@@ -35,7 +63,7 @@ namespace RimWorld
         void IMutation.Apply(Thing target)
         {
             return;
-        }
+        }*/
         void IExposable.ExposeData()
         {
 

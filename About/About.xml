@@ -18,7 +18,12 @@
     <displayName>HugsLib</displayName>
     <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
   </li>
-  <li>
+	<li>
+		<packageId>thamuzz.livingBuildingFramework</packageId>
+		<displayName>Living Building Framework</displayName>
+		<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=1909914131</steamWorkshopUrl>
+	</li>
+	<li>
 	 <packageId>kentington.saveourship2</packageId>
 	  <displayName>Save our Ship 2</displayName>
 	  <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=1909914131</steamWorkshopUrl>

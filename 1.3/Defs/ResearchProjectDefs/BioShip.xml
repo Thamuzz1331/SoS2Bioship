@@ -152,7 +152,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>SpinalWeaponScaffold</defName>
 		<label>spinal weapon scaffolds</label>
-		<description>Jaws to crush, little one.  It is time to feast.</description>
+		<description>What shape your mightiest weapon will take I can only guess little one.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 			<li>LargeWeaponScaffold</li>

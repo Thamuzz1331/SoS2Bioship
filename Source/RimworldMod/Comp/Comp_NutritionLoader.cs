@@ -9,7 +9,7 @@ using SaveOurShip2;
 
 namespace RimWorld
 {
-    public class CompNutritionLoader : CompShipNutritionConsumer
+    public class CompNutritionLoader : CompNutritionConsumer
     {
         private CompProperties_NutritionLoader Props => (CompProperties_NutritionLoader)props;
 
@@ -43,10 +43,10 @@ namespace RimWorld
                     float cost = Props.reloadCost;
                     if (body != null && body.heart != null)
                     {
-                        cost = cost * body.heart.getStatMultiplier("spineReloadCost", parent.def);
+                        cost = cost * body.heart.GetMultiplier("spineReloadCost");
                         if (body.RequestNutrition(cost))
                         {
-                            ThingDef torpDef = body.heart.GetThingDef(parent.def);
+                            ThingDef torpDef = ((CompShipHeart)body.heart).GetThingDef(parent.def.defName);
                             int countIndex = Rand.Range(0, torpSpawn.Count);
                             int loadCount = torpSpawn[countIndex];
                             for (int i = 0; i < loadCount; i++)
@@ -54,8 +54,8 @@ namespace RimWorld
                                 toReload.LoadShell(torpDef, 1);
                             }
                         }
-                        ticksTillLoad = Props.reloadInterval.SecondsToTicks() * body.heart.getStatMultiplier("spineReloadInterval", parent.def);
-                        ticksTillLoad *= 1.0f + (Rand.Range(-15, 15) / 100.0f);
+                        ticksTillLoad = Props.reloadInterval.SecondsToTicks() * body.heart.GetMultiplier("spineReloadInterval");
+                        ticksTillLoad *= (1.0f + (Rand.Range(-15, 15) / 100.0f));
                     }
                 }
             }

@@ -38,7 +38,6 @@ namespace RimWorld
 				}
 				else
                 {
-					Log.Message("Starting spread");
 					List<IntVec3> adjacentTargets = new List<IntVec3>();
 					List<AcidGlob> adjAcid = new List<AcidGlob>();
 					foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(this.Position))
@@ -59,16 +58,13 @@ namespace RimWorld
 					}
 					int totalAdj = adjacentTargets.Count + adjAcid.Count;
 					if (totalAdj > 0) {
-						Log.Message("Acid spreading");
 						float shareDamage = damageRemaining / (2*totalAdj);
 						foreach(AcidGlob g in adjAcid)
                         {
-							Log.Message("Acid added");
 							g.damageRemaining += shareDamage;
                         }
 						foreach(IntVec3 c in adjacentTargets)
                         {
-							Log.Message("Acid spawned " + c);
 							AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(ThingDef.Named("AcidGlob"));
 							obj.damageRemaining = shareDamage;
 							obj.damageCountdown = Rand.RangeInclusive(1, 90);

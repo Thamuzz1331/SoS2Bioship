@@ -10,24 +10,37 @@ using Verse;
 
 namespace RimWorld
 {
-    public class BoneArmor : IMutation
+    public class BoneArmor : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
-            return false;
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompArmorGrower>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
         }
-        void IMutation.Apply(Building_ShipHeart target)
+       
+        void IHediff.Apply(CompBuildingBodyPart target)
         {
-            target.armorClass = ThingDef.Named("BoneArmor");
+            if (target.parent.TryGetComp<CompArmorGrower>() != null)
+            {
+                target.parent.TryGetComp<CompArmorGrower>().armorClass = ThingDef.Named("BoneArmor");
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<BoneArmor>("defense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
+            }
+        }
+        void IHediff.Remove(CompBuildingBodyPart target)
+        {
+            if (target.parent.TryGetComp<CompArmorGrower>() != null && 
+                target.parent.TryGetComp<CompArmorGrower>().armorClass == ThingDef.Named("BoneArmor"))
+            {
+                target.parent.TryGetComp<CompArmorGrower>().armorClass = null;
+            }
+        }
 
-            target.RemoveMutation<BoneArmor>("defense", "bone", true);
-
-            return;
-        }
-        void IMutation.Apply(Thing target)
-        {
-            return;
-        }
         void IExposable.ExposeData()
         {
 

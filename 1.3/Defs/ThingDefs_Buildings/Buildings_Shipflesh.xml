@@ -38,12 +38,14 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Beam</witherTo>
+				<regenDef>Scar_Beam</regenDef>
+				<growsArmor>true</growsArmor>
+				<species>bioship</species>
+				<whitherTo>Whithered_Beam</whitherTo>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -115,15 +117,17 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Beam_Unpowered</witherTo>
+				<regenDef>Scar_Beam_Unpowered</regenDef>
+				<growsArmor>true</growsArmor>
+				<species>bioship</species>
+				<whitherTo>Whithered_Beam_Unpowered</whitherTo>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -205,10 +209,9 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Corner_OneOne</witherTo>
+				<regenDef>Scar_Corner_OneOne</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Corner_OneOne</whitherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -225,10 +228,9 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Corner_OneOneFlip</witherTo>
+				<regenDef>Scar_Corner_OneOneFlip</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Corner_OneOneFlip</whitherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -246,10 +248,9 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Corner_OneTwo</witherTo>
+				<regenDef>Scar_Corner_OneTwo</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Corner_OneTwo</whitherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -268,11 +269,10 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
+				<regenDef>Scar_Corner_OneTwoFlip</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Corner_OneTwoFlip</whitherTo>
 			</li>
-			<witherTo>Whithered_Corner_OneTwoFlip</witherTo>
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
@@ -290,10 +290,9 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Corner_OneThree</witherTo>
+				<regenDef>Scar_Corner_OneThree</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Corner_OneThree</whitherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -312,10 +311,9 @@
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>Whithered_Corner_OneThreeFlip</witherTo>
+				<regenDef>Scar_Corner_OneThreeFlip</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Corner_OneThreeFlip</whitherTo>
 			</li>
 		</comps>
 		<statBases>
@@ -359,10 +357,9 @@
 		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>WhitheredHullTile</witherTo>
+				<regenDef>ScarHullTile</regenDef>
+				<species>bioship</species>
+				<whitherTo>WhitheredHullTile</whitherTo>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
@@ -416,12 +413,13 @@
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<regen>
-					true
-				</regen>
-				<witherTo>WhitheredAirlock</witherTo>
+				<regenDef>ScarAirlock</regenDef>
+				<species>bioship</species>
+				<whitherTo>WhitheredAirlock</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -489,7 +487,9 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>Whithered_Engine_Small</witherTo>
+				<regenDef>Scar_Engine_Small</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Engine_Small</whitherTo>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -515,7 +515,9 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>EmptySpace</TerrainId>
+			</li>
 			<li Class="CompProperties_EngineTrail">
 				<thrust>1</thrust>
 			</li>
@@ -560,7 +562,9 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>Whithered_Engine</witherTo>
+				<regenDef>Scar_Engine</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Engine</whitherTo>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -583,7 +587,9 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>EmptySpace</TerrainId>
+			</li>
 			<li Class="CompProperties_EngineTrail">
 				<thrust>2</thrust>
 			</li>
@@ -630,7 +636,9 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>Whithered_Engine_Large</witherTo>
+				<regenDef>Scar_Engine_Large</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_Engine_Large</whitherTo>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -653,7 +661,9 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>EmptySpace</TerrainId>
+			</li>
 			<li Class="CompProperties_EngineTrail">
 				<thrust>6</thrust>
 			</li>
@@ -698,7 +708,8 @@
 		<size>(1,1)</size>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>Whithered_Sensor</witherTo>
+				<species>bioship</species>
+				<whitherTo>Whithered_Sensor</whitherTo>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -706,7 +717,9 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 		<rotatable>false</rotatable>
@@ -752,10 +765,10 @@
 		<size>(1,1)</size>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>Whithered_Maw_Small</witherTo>
+				<species>bioship</species>
+				<whitherTo>Whithered_Maw_Small</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
@@ -768,7 +781,7 @@
 				</fuelFilter>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_ShipNutritionSource">
+			<li Class="CompProperties_RefuelableNutritionSource">
 				<nutrientPerPulse>500</nutrientPerPulse>
 			</li>
 		</comps>
@@ -810,10 +823,10 @@
 		<size>(2,2)</size>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>Whithered_Maw_Corpse</witherTo>
+				<species>bioship</species>
+				<whitherTo>Whithered_Maw_Corpse</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>5</initialConfigurableTargetFuelLevel>
@@ -826,7 +839,7 @@
 				</fuelFilter>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_ShipNutritionSource">
+			<li Class="CompProperties_RefuelableNutritionSource">
 				<nutrientPerPulse>3000</nutrientPerPulse>
 			</li>
 		</comps>
@@ -875,7 +888,8 @@
 				<nutrientCapacity>1000</nutrientCapacity>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>FatStoreSmallWhithered</witherTo>
+				<species>bioship</species>
+				<whitherTo>FatStoreSmallWhithered</whitherTo>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -940,7 +954,8 @@
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>WhitheredInside_PassiveCooler</witherTo>
+				<species>bioship</species>
+				<whitherTo>WhitheredInside_PassiveCooler</whitherTo>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -963,7 +978,9 @@
 				<graphicPath>Things/Building/Ship/RadiatorVent</graphicPath>
 				<size>(1,1,1)</size>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
 				<heatCapacity>10</heatCapacity>
@@ -1016,7 +1033,8 @@
 		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>WhitheredShieldGenerator</witherTo>
+				<species>bioship</species>
+				<whitherTo>WhitheredShieldGenerator</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipCombatShield">
 				<radius>40</radius>
@@ -1060,7 +1078,7 @@
 			<MaxHitPoints>800</MaxHitPoints>
 			<WorkToBuild>3500</WorkToBuild>
 			<Flammability>0.7</Flammability>
-			<Beauty>-2</Beauty>
+			<Beauty>0</Beauty>
 		</statBases>
 		<costList>
 			<Steel>100</Steel>
@@ -1070,7 +1088,8 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<witherTo>WhitheredHeatsink</witherTo>
+				<species>bioship</species>
+				<whitherTo>WhitheredHeatsink</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
@@ -1085,5 +1104,72 @@
 		</comps>
 		<researchPrerequisites>
 		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>Giant_Mitochondira</defName>
+		<label>giant mitochondria</label>
+		<thingClass>Building</thingClass>
+		<passability>Impassable</passability>
+		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipGiantMitochondria</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,6)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<size>(4,6)</size>
+		<receivesSignals>true</receivesSignals>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>Whithered_Giant_Mitochondira</whitherTo>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+				<fuelConsumptionRate>100</fuelConsumptionRate>
+				<fuelCapacity>500</fuelCapacity>
+				<fuelFilter>
+				</fuelFilter>
+				<showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>-5000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>120</refuelInterval>
+				<refuelCost>100</refuelCost>
+				<refuelAmmount>10</refuelAmmount>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	</ThingDef>
 </Defs>

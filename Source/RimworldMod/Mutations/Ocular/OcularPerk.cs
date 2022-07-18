@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class DenseSpines : IHediff
+    public class OcularPerk : IHediff
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -25,21 +25,13 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
-                    .Add(ThingDef.Named("Spine_HeavyDense"));
-                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
-                    .Add(ThingDef.Named("Spine_HeavyDense"));
-
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("HeavySpineLauncher"));
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("HeavySpineLauncher"));
+                heart.defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("GiantEyeLaser"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseSpines>("offense", "bone", true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
-
+                CompMutationWorker mut = target.parent.TryGetComp<CompMutationWorker>();
+                mut.quirkPossibilities.Remove(this);
             }
 
         }

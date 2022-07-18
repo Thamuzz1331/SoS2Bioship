@@ -67,6 +67,10 @@
 		  <HintPath>..\..\..\..\..\..\workshop\content\294100\1909914131\1.3\Assemblies\ShipsHaveInsides.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
+	  <Reference Include="LivingBuildingFramework">
+		  <HintPath>E:\Steam\steamapps\common\RimWorld\Mods\LivingBuildingFramework\1.3\Assemblies\LivingBuildingFramework.dll</HintPath>
+		  <Private>False</Private>
+	  </Reference>
 	  <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
@@ -95,37 +99,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_ShipHeart.cs" />
-    <Compile Include="Building_NerveStaple.cs" />
-    <Compile Include="Comp\CompProperties_Scaffold.cs" />
-    <Compile Include="Comp\CompScaffold.cs" />
-    <Compile Include="Comp\CompShipfleshConversion.cs" />
-    <Compile Include="Comp\CompProperties_ShipfleshConversion.cs" />
-    <Compile Include="Comp\CompShipBodyPart.cs" />
-	<Compile Include="Comp\CompProperties_ShipBodyPart.cs" />
-	<Compile Include="Comp\CompProperties_ShipNutritionConsumer.cs" />
-	<Compile Include="Comp\CompProperties_ShipNutritionSource.cs" />
-    <Compile Include="Comp\CompProperties_ShipNutritionStore.cs" />
-	<Compile Include="Comp\CompProperties_NutritionLoader.cs" />
-	  <Compile Include="Comp\CompProperties_ArmorGrower.cs" />
-	  <Compile Include="Comp\CompArmorGrower.cs" />
+	  <Compile Include="BioShipMod.cs" />
+	  <Compile Include="Building_NerveStaple.cs"/>
+	  <Compile Include="Wound.cs"/>
 
-	  <Compile Include="Comp\CompShipNutrition.cs" />
-	<Compile Include="Comp\CompShipNutritionConsumer.cs" />
-	<Compile Include="Comp\CompShipNutritionSource.cs" />
-	<Compile Include="Comp\CompShipNutritionStore.cs" />
-	<Compile Include="Comp\CompNutritionLoader.cs" />
-	<Compile Include="Comp\ShipBodyMapComp.cs" />
-    <Compile Include="Comp\CompProperties_EatMe.cs" />
-    <Compile Include="Comp\CompEatMe.cs" />
-    <Compile Include="Comp\CompProperties_Aggression.cs" />
-    <Compile Include="Comp\CompAggression.cs" />
+	  <Compile Include="Comp\Comp_Aggression.cs"/>
+	  <Compile Include="Comp\CompProperties_Aggression.cs"/>
+	  <Compile Include="Comp\Comp_ArmorGrower.cs"/>
+	  <Compile Include="Comp\CompProperties_ArmorGrower.cs"/>
+	  <Compile Include="Comp\Comp_EatMe.cs"/>
+	  <Compile Include="Comp\CompProperties_EatMe.cs"/>
+	  <Compile Include="Comp\Comp_NutritionLoader.cs"/>
+	  <Compile Include="Comp\CompProperties_NutritionLoader.cs"/>
+	  <Compile Include="Comp\Comp_NutritionRefueler.cs"/>
+	  <Compile Include="Comp\CompProperties_NutritionRefueler.cs"/>
+	  <Compile Include="Comp\Comp_RoofMeBio.cs"/>
+	  <Compile Include="Comp\CompProperties_RoofMeBio.cs"/>
+	  <Compile Include="Comp\Comp_ShipBodyPart.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipBodyPart.cs"/>
+	  <Compile Include="Comp\Comp_ShipHeart.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipHeart.cs"/>
+	  <Compile Include="Comp\Comp_RegenWorker.cs"/>
+	  <Compile Include="Comp\CompProperties_RegenWorker.cs"/>
+	  <Compile Include="Comp\Comp_MutationWorker.cs"/>
+	  <Compile Include="Comp\CompProperties_MutationWorker.cs"/>
+	  <Compile Include="Comp\Comp_MutableScaffold.cs"/>
+	  <Compile Include="Comp\CompProperties_MutableScaffold.cs"/>
+	  <Compile Include="Comp\Comp_ShipNutritionStore.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipNutritionStore.cs"/>
+	  <Compile Include="Comp\Comp_StapleableScaffold.cs"/>
+	  <Compile Include="Comp\CompProperties_StapleableScaffold.cs"/>
 
-    <Compile Include="ShipBody.cs" />
-    <Compile Include="BioShipMod.cs" />
-    <Compile Include="Mutations\IMutation.cs" />
-    <Compile Include="Mutations\Bone\DenseSpines.cs" />
-    <Compile Include="Mutations\Bone\EfficientSpines.cs" />
+	  <Compile Include="Defs\BioShipDef.cs"/>
+
+	  <Compile Include="Mutations\Bone\DenseSpines.cs" />
+      <Compile Include="Mutations\Bone\EfficientSpines.cs" />
 	  <Compile Include="Mutations\Bone\BoneArmor.cs" />
 	  <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />
 	  <Compile Include="Mutations\Flesh\SparseNematocysts.cs" />
@@ -133,12 +141,10 @@
 	  <Compile Include="Mutations\Fluids\EfficientRegeneration.cs" />
 	  <Compile Include="Mutations\Misc\EfficientFatStorage.cs" />
 	  <Compile Include="Mutations\Misc\EfficientGrowth.cs" />
+	  <Compile Include="Mutations\Ocular\OcularPerk.cs" />
 	  <Compile Include="Damage\AcidWorker.cs"/>
-    <Compile Include="Damage\Damage_AcidGlob.cs"/>
-    <Compile Include="Damage\ShipDamageDefOf.cs"/>
-
-    <Compile Include="Comp\CompRoofMeBio.cs" />
-    <Compile Include="Comp\CompProperties_RoofMeBio.cs" />
+      <Compile Include="Damage\Damage_AcidGlob.cs"/>
+      <Compile Include="Damage\ShipDamageDefOf.cs"/>
 
     <Compile Include="Graphics\Graphic_256_Bio.cs" />
 

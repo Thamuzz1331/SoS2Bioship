@@ -10,13 +10,40 @@ using Verse;
 
 namespace RimWorld
 {
-    public class ClusteredNematocysts : IMutation
+    public class ClusteredNematocysts : IHediff
     {
-        bool IMutation.RunOnBodyParts()
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
-            return false;
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
         }
-        void IMutation.Apply(Building_ShipHeart target)
+
+        void IHediff.Apply(CompBuildingBodyPart target)
+        {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ClusteredNematocysts>("offense", "flesh", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<SparseNematocysts>("offense", "flesh", false);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["flesh"]++;
+            }
+        }
+        void IHediff.Remove(CompBuildingBodyPart target)
+        {
+
+        }
+        /*
+        void Apply(CompShipHeart target)
         {
             target.organOptions["smallTurretOptions"] = target.organOptions["smallTurretOptions"].FindAll(e => e != ThingDef.Named("ShipTurret_Nematocyst"));
             target.organOptions["smallTurretOptions"].Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
@@ -26,11 +53,7 @@ namespace RimWorld
 
             target.mutationThemes["flesh"] += 1;
             return;
-        }
-        void IMutation.Apply(Thing target)
-        {
-            return;
-        }
+        }*/
         void IExposable.ExposeData()
         {
 

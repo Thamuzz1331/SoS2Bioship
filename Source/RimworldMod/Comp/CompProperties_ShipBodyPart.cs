@@ -7,11 +7,12 @@ using Verse;
 
 namespace RimWorld
 {
-    class CompProperties_ShipBodyPart : CompProperties
+    public class CompProperties_ShipBodyPart : CompProperties_BuildingBodyPart
     {
-        public bool regen = false;
+        public string regenDef = null;
         public bool isArmor = false;
-        public string witherTo = "";
+        public bool growsArmor = false;
+        public string whitherTo = null;
 
         public CompProperties_ShipBodyPart()
         {

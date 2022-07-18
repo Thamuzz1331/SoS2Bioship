@@ -6,11 +6,8 @@ using Verse;
 
 namespace RimWorld
 {
-    [StaticConstructorOnStartup]
-    public class CompProperties_ShipNutritionStore : CompProperties
+    public class CompProperties_ShipNutritionStore : CompProperties_NutritionStore
     {
-        public float nutrientCapacity;
-        public float initialNutrition;
         public CompProperties_ShipNutritionStore()
         {
             compClass = typeof(CompShipNutritionStore);

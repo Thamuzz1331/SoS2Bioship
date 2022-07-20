@@ -82,7 +82,7 @@
 		<label>unpowered protien wall Scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building</thingClass>
-		<passability>PassThroughOnly</passability>
+		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/ScaffoldBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -531,7 +531,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine_Small</transformString>
@@ -584,7 +583,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine</transformString>
@@ -638,7 +636,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine_Large</transformString>
@@ -1029,7 +1026,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_NeedsSpinalMountPort</li>
+			<li>PlaceWorker_BioShipNeedsSpinalMountPort</li>
 			<li>PlaceWorker_SpinalMountPort</li>
 		</placeWorkers>
 		<researchPrerequisites>
@@ -1038,10 +1035,11 @@
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<uiIconScale>0.65</uiIconScale>
 	</ThingDef>
-	<ThingDef ParentName="BaseShipArtilleryBuilding">
+	<ThingDef ParentName="BuildingBase">
 		<defName>SpinalWeaponScaffold</defName>
 		<label>spinal weapon scaffold</label>
 		<designatorDropdown>Scaffold_Spinal</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
 		<description>The final segment of a spinal-mount weapon. Should be placed outside the ship, unless you want a new hole in your hull.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
@@ -1078,7 +1076,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_NeedsSpinalMountPort</li>
+			<li>PlaceWorker_BioShipNeedsSpinalMountPort</li>
 		</placeWorkers>
 		<researchPrerequisites>
 			<li>SpinalWeaponScaffold</li>
@@ -1185,7 +1183,7 @@
 		<castEdgeShadows>true</castEdgeShadows>
 		<tickerType>Normal</tickerType>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
+			<WorkToBuild>100</WorkToBuild>
 			<MaxHitPoints>5</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -1283,7 +1281,7 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Heatsink</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="ShipHeatsinkBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>ScaffoldHeatsink</defName>
 		<label>organic heatsink scaffold</label>
 		<description>Scaffold for a bio heatsink</description>
@@ -1315,6 +1313,38 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldHeatsinkLarge</defName>
+		<label>organic heatsink scaffold</label>
+		<description>Scaffold for a bio heatsink</description>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/HeatsinkLarge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>350</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<ProtienPutty>24</ProtienPutty>
+			<Neutroamine>100</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipHeatsinkLarge</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
 
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Mitochondira</defName>
@@ -1322,6 +1352,57 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scaffold_Giant_Mitochondira</defName>
 		<label>giant mitochondria scaffold</label>
+		<thingClass>Building</thingClass>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldGiantMitochondria</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,3)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<size>(2,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>Giant_Mitochondira</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<OrganSeed>1</OrganSeed>
+			<Neutroamine>7</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Colossal_Mitochondira</defName>
+		<label>colossal mitochondria scaffold</label>
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
@@ -1354,7 +1435,7 @@
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
-				<transformString>Giant_Mitochondira</transformString>
+				<transformString>Colossal_Mitochondira</transformString>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -1370,5 +1451,61 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	</ThingDef>
-	
+
+	<DesignatorDropdownGroupDef>
+		<defName>Bio_Capacitor</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>BioCapacitorSmallScaffold</defName>
+		<label>bio ship</label>
+		<designatorDropdown>Bio_Capacitor</designatorDropdown>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/CapacitorSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>0.40</fillPercent>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>1</MaxHitPoints>
+			<WorkToBuild>400</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Efficiently stores up to 1,000Wd of energy.</description>
+		<size>(1,2)</size>
+		<costList>
+			<Steel>2</Steel>
+			<Plasteel>7</Plasteel>
+			<ComponentSpacer>1</ComponentSpacer>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioCapacitorSmall</transformString>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Ship</designationCategory>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+
 </Defs>

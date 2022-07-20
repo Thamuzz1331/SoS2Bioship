@@ -32,7 +32,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
 				<heatPerPulse>120</heatPerPulse>
-				<energyToFire>720</energyToFire>
+				<energyToFire>360</energyToFire>
 				<maxRange>50</maxRange>
 				<projectileSpeed>10</projectileSpeed>
 				<singleFireSound>ShipCombatLaser</singleFireSound>

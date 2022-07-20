@@ -13,7 +13,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
 				<heatPerPulse>10</heatPerPulse>
-				<energyToFire>80</energyToFire>
+				<energyToFire>40</energyToFire>
 				<maxRange>25</maxRange>
 				<projectileSpeed>10</projectileSpeed>
 				<pointDefense>true</pointDefense>
@@ -224,7 +224,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
 				<heatPerPulse>45</heatPerPulse>
-				<energyToFire>150</energyToFire>
+				<energyToFire>75</energyToFire>
 				<maxRange>125</maxRange>
 				<projectileSpeed>3</projectileSpeed>
 				<threat>30</threat>
@@ -320,7 +320,7 @@
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseShipArtilleryBuilding">
+	<ThingDef ParentName="BioPlasmaBase">
 		<defName>ShipTurret_BioPlasmaEnergetic</defName>
 		<label>energetic bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
@@ -329,42 +329,13 @@
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
-		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
-				<heatPerPulse>45</heatPerPulse>
-				<energyToFire>150</energyToFire>
-				<maxRange>125</maxRange>
-				<projectileSpeed>3</projectileSpeed>
-				<threat>30</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>150</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_ShipBodyPart">
-				<species>bioship</species>
-				<whitherTo>MediumWeaponWhithered</whitherTo>
-
-			</li>
-			<li Class="CompProperties_NutritionConsumer">
-				<consumptionPerPulse>50</consumptionPerPulse>
-			</li>
-		</comps>
 		<building>
 			<turretGunDef>ShipTurret_BioPlasmaEnergeticTop</turretGunDef>
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>3</turretTopDrawSize>
 		</building>
-		<costList>
-		</costList>
-		<researchPrerequisites>
-		</researchPrerequisites>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<size>(3,3)</size>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_BioPlasmaEnergeticTop</defName>
@@ -470,7 +441,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
 				<heatPerPulse>45</heatPerPulse>
-				<energyToFire>150</energyToFire>
+				<energyToFire>75</energyToFire>
 				<maxRange>125</maxRange>
 				<projectileSpeed>3</projectileSpeed>
 				<threat>30</threat>
@@ -664,7 +635,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
 				<heatPerPulse>1</heatPerPulse>
-				<energyToFire>0</energyToFire>
+				<energyToFire>10</energyToFire>
 				<maxRange>200</maxRange>
 				<projectileSpeed>0.25</projectileSpeed>
 				<threat>30</threat>
@@ -703,7 +674,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
 				<heatPerPulse>1</heatPerPulse>
-				<energyToFire>0</energyToFire>
+				<energyToFire>10</energyToFire>
 				<maxRange>200</maxRange>
 				<projectileSpeed>0.25</projectileSpeed>
 				<threat>30</threat>

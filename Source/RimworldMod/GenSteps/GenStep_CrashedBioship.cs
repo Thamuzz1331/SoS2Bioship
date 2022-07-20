@@ -27,6 +27,7 @@ namespace RimWorld
 
         protected override void ScatterAt(IntVec3 c, Map map, GenStepParams stepparams, int stackCount = 1)
         {
+            /*
             Building core = null;
             try
             {
@@ -72,6 +73,7 @@ namespace RimWorld
             foreach (Pawn pawn in map.mapPawns.PawnsInFaction(Faction.OfMechanoids))
                 HealthUtility.DamageUntilDowned(pawn);
             map.Parent.GetComponent<TimedDetectionRaids>().alertRaidsArrivingIn = true;
+            */
         }
     }
 }

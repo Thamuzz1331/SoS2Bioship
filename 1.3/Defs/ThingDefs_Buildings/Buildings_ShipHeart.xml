@@ -10,9 +10,9 @@
 		<designatorDropdown>Ship_Heart</designatorDropdown>
 		<thingClass>Building_ShipBridge</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipHeart</texPath>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(5,5)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -36,7 +36,7 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>The beating heart of a ship</description>
-		<size>(3,3)</size>
+		<size>(5,5)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
@@ -50,14 +50,17 @@
 				<baseAggression>1</baseAggression>
 			</li>
 			<li Class="CompProperties_RegenWorker">
-				<regenCost>35</regenCost>
+				<regenCost>1.75</regenCost>
 				<regenInterval>30</regenInterval>
 			</li>
 			<li Class="CompProperties_MutationWorker"/>
-			<li Class="CompProperties_ScaffoldConverter"/>
+			<li Class="CompProperties_ShipScaffoldConverter">
+				<conversionInterval>45</conversionInterval>
+				<conversionCost>0.75</conversionCost>
+			</li>
 			<li Class="CompProperties_ShipNutritionStore">
-				<nutrientCapacity>10000</nutrientCapacity>
-				<initialNutrition>10000</initialNutrition>
+				<nutrientCapacity>50</nutrientCapacity>
+				<initialNutrition>50</initialNutrition>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>

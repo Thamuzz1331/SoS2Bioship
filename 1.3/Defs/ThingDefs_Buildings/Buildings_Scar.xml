@@ -466,7 +466,6 @@
 				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -512,7 +511,6 @@
 				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>
@@ -560,7 +558,6 @@
 				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_ShipEngine</li>

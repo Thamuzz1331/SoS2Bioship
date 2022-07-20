@@ -129,7 +129,7 @@ namespace RimWorld
 
 		public virtual float GetRegenCost()
         {
-			float cost = Props.regenCost * body.heart.GetMultiplier("regenCost");
+			float cost = Props.regenCost / body.heart.GetStat("regenEfficiency");
 			if (parent.Map.Biome != ShipInteriorMod2.OuterSpaceBiome)
             {
 				cost *= 8f;
@@ -139,7 +139,7 @@ namespace RimWorld
 
 		public virtual float GetRegenInterval()
         {
-			float interval = Props.regenInterval * body.heart.GetMultiplier("regenInterval");
+			float interval = Props.regenInterval / body.heart.GetStat("regenSpeed");
 			if (parent.Map.Biome != ShipInteriorMod2.OuterSpaceBiome)
             {
 				interval *= 8f;

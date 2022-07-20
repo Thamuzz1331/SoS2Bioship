@@ -34,20 +34,14 @@ namespace RimWorld
         public override void CompTick()
         {
             base.CompTick();
-            Log.Message("!");
             if (refuelable == null)
             {
-                Log.Message("!!");
                 refuelable = parent.TryGetComp<CompRefuelable>();
             }
-            Log.Message("!!#");
             if (refuelable != null && ticksTillRefuel <= 0 && refuelable.FuelPercentOfTarget < 1.0f)
             {
-                Log.Message("!!##");
                 refuelable.Refuel(Props.refuelAmmount);
-                Log.Message("!!#!");
                 ticksTillRefuel = Props.refuelInterval;
-                Log.Message("!!****");
             }
             ticksTillRefuel--;
         }

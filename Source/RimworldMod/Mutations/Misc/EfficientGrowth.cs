@@ -21,31 +21,31 @@ namespace RimWorld
         }
         void IHediff.Apply(CompBuildingBodyPart target)
         {
-                        if (target.parent.TryGetComp<CompShipHeart>() != null)
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                if (!heart.multipliers.ContainsKey("regenCost"))
-                {
-                    heart.multipliers.Add("regenCost", 0.85f);
-                    if (!heart.stats.ContainsKey("conversionCost"))
-                    {
-                        heart.stats.Add("conversionCost", 15f);
-                    } 
-                    heart.stats["conversionCost"] *= 0.75f;
-                } else
-                {
-                    heart.multipliers["regenCost"] *= 0.85f;
-                }
+                heart.stats["growthEfficiency"] *= 1.25f;
+                heart.stats["metabolicEfficiency"] *= 1.15f;
+
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc", true);
             }
-
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.stats["growthEfficiency"] *= 1/1.25f;
+                heart.stats["metabolicEfficiency"] *= 1/1.15f;
 
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth(), true);
+            }
         }
 
         void IExposable.ExposeData()

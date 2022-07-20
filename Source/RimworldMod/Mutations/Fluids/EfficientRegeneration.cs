@@ -25,13 +25,8 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                if (!heart.multipliers.ContainsKey("regenCost"))
-                {
-                    heart.multipliers.Add("regenCost", 0.75f);
-                } else
-                {
-                    heart.multipliers["regenCost"] *= 0.75f;
-                }
+                heart.stats["regenEfficiency"] *= 1.25f;
+                heart.stats["metabolicEfficiency"] *= 1.05f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -41,29 +36,19 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-
-        }
-        /*
-        void IMutation.Apply(Building_ShipHeart target)
-        {
-            if (target.statMultipliers.ContainsKey("regenCost"))
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                target.statMultipliers["regenCost"] *= 0.75f;
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.stats["regenSregenEfficiencypeed"] *= 1f/1.25f;
+                heart.stats["metabolicEfficiency"] *= 1f/1.05f;
             }
-            else
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.statMultipliers.Add("regenCost", 0.75f);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new EfficientRegeneration(), true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
-
-            target.RemoveMutation<EfficientRegeneration>("defense", "humors", true);
-
-            target.mutationThemes["humors"] += 1;
-            return;
         }
-        void IMutation.Apply(Thing target)
-        {
-            return;
-        }*/
+
         void IExposable.ExposeData()
         {
 

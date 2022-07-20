@@ -265,4 +265,28 @@ namespace BioShip
 		}
 	}
 
+	[HarmonyPatch(typeof(CompRefuelable), "Refuel", new Type[] {typeof(List<Thing>)})]
+	public static class ButcherableScalingRefuel
+    {
+		[HarmonyPrefix]
+		public static bool RefuelPrefix(CompRefuelable __instance, List<Thing> fuelThings)
+        {
+			if (!(__instance is CompButcherableScallingRefuelable))
+            {
+				return true;
+            }
+			foreach(Thing t in fuelThings)
+            {
+				if(t is Corpse)
+                {
+					foreach(Thing bt in ((Corpse)t).InnerPawn.ButcherProducts(null, 1.25f))
+					{
+						__instance.Refuel(bt.stackCount);
+					}
+				}
+				t.Destroy(DestroyMode.Vanish);
+            }
+			return false;
+        }
+    }
 }

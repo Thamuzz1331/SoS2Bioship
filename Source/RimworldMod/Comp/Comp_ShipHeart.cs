@@ -20,7 +20,6 @@ namespace RimWorld
         public CompArmorGrower armorGrower;
         public bool initialized = false;
 
-
         public Dictionary<string, List<ThingDef>> defs = new Dictionary<string, List<ThingDef>>()
         {
             {"smallTurretOptions", new List<ThingDef>(){
@@ -54,6 +53,8 @@ namespace RimWorld
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
+            stats.Add("regenEfficiency", 1f);
+            stats.Add("regenSpeed", 1f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             mutator = parent.TryGetComp<CompMutationWorker>();
             aggression = parent.TryGetComp<CompAggression>();
@@ -158,6 +159,19 @@ namespace RimWorld
             } else
             {
                 aggression.otherFlesh.Add(target);
+            }
+        }
+
+        public override float GetStat(string stat)
+        {
+            switch (stat)
+            {
+                case "regenEfficiency": 
+                    return stats.TryGetValue(stat, 1f) * stats.TryGetValue("metabolicEfficiency", 1f);
+                case "regenSpeed":
+                    return stats.TryGetValue(stat, 1f) * stats.TryGetValue("metabolicSpeed", 1f);
+                default:
+                    return base.GetStat(stat);
             }
         }
     }

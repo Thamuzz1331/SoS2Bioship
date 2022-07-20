@@ -25,13 +25,8 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                if (!heart.multipliers.ContainsKey("regenInterval"))
-                {
-                    heart.multipliers.Add("regenInterval", 0.75f);
-                } else
-                {
-                    heart.multipliers["regenInterval"] *= 0.75f;
-                }
+                heart.stats["regenSpeed"] *= 1.25f;
+                heart.stats["metabolicSpeed"] *= 1.05f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -41,21 +36,19 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.stats["regenSpeed"] *= 1f/1.25f;
+                heart.stats["metabolicSpeed"] *= 1f/1.05f;
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration(), true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
+            }
         }
-/*        void Apply(CompShipHeart target)
-        {
-            target.statMultipliers.Add("regenInterval", 0.85f);
 
-            target.RemoveMutation<FastRegeneration>("defense", "humors", true);
-
-            target.mutationThemes["humors"] += 1;
-            return;
-        }
-        void IMutation.Apply(Thing target)
-        {
-            return;
-        }*/
         void IExposable.ExposeData()
         {
 

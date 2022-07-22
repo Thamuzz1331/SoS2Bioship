@@ -515,9 +515,7 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-			</li>
-			<li Class="CompProperties_EngineTrail">
+			<li Class="CompProperties_PsiEngine">
 				<thrust>1</thrust>
 			</li>
 		</comps>
@@ -586,7 +584,7 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_EngineTrail">
+			<li Class="CompProperties_PsiEngine">
 				<thrust>2</thrust>
 			</li>
 		</comps>
@@ -657,7 +655,7 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_EngineTrail">
+			<li Class="CompProperties_PsiEngine">
 				<thrust>6</thrust>
 			</li>
 		</comps>
@@ -953,6 +951,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>WhitheredInside_PassiveCooler</whitherTo>
+				<regenDef>RadiatorScar</regenDef>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>

@@ -152,8 +152,6 @@ namespace RimWorld
                     }
                 };
             }
-
-
         }
 
         public virtual int GetChanceModifier(string theme)
@@ -290,6 +288,11 @@ namespace RimWorld
                     t.TryGetComp<CompShipBodyPart>().hediffs.Add(mut);
                 }
             }
+        }
+
+        public virtual void RemoveMutation(Building b, IHediff mut)
+        {
+
         }
     }
 }

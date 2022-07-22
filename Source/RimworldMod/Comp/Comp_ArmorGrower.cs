@@ -134,7 +134,7 @@ namespace RimWorld
 			foreach (IntVec3 c in batch)
             {
 				CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
-				if(heart != null && heart.body.RequestNutrition(55 * heart.GetMultiplier("growthCost")))
+				if(heart != null && heart.body.RequestNutrition(2 / heart.GetStat("growthEfficiency")))
                 {
 					Thing armor = ThingMaker.MakeThing(armorClass);
 					armor.Position = c;

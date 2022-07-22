@@ -116,7 +116,7 @@ namespace RimWorld
 						foreach (Thing adj in c.GetThingList(replacement.Map))
 						{
 							CompShipBodyPart abp = adj.TryGetComp<CompShipBodyPart>();
-							if (!adj.Destroyed && abp != null)
+							if (!adj.Destroyed && abp != null && bp.woundIds.Count > 0)
 							{
 								abp.woundIds.Remove(bp.woundIds[0]);
 							}

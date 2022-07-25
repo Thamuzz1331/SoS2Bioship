@@ -23,7 +23,7 @@ namespace RimWorld
         public override void PostDeSpawn(Map map)
         {
             base.PostDeSpawn(map);
-            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).corpseMaws.Remove(parent);
+            ((CorpseMawTracker)map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).corpseMaws.Remove(parent);
         }
 
         public override void PostExposeData()

@@ -43,8 +43,16 @@ namespace RimWorld
                 if (base.Props.roof)
                     parent.Map.roofGrid.SetRoof(pos, roof);
                 TerrainDef currentTerrain = parent.Map.terrainGrid.TerrainAt(pos);
-                parent.Map.terrainGrid.SetTerrain(pos, hullTerrain);
+                if (currentTerrain != hullTerrain)
+                {
+                    parent.Map.terrainGrid.SetTerrain(pos, hullTerrain);
+                }
             }
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
         }
 
         public override void PostDraw()

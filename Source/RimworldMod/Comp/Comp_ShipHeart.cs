@@ -53,7 +53,6 @@ namespace RimWorld
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            Log.Message("!");
             if (!stats.ContainsKey("regenEfficiency"))
                 stats.Add("regenEfficiency", 1f);
             if (!stats.ContainsKey("regenSpeed"))
@@ -63,7 +62,6 @@ namespace RimWorld
             aggression = parent.TryGetComp<CompAggression>();
             armorGrower = parent.TryGetComp<CompArmorGrower>();
             base.PostSpawnSetup(respawningAfterLoad);
-            Log.Message(respawningAfterLoad + " Spawning heart " + this + " on map " + parent.Map + " body " + body + " bodyId " + bodyId);
             regenWorker.body = this.body;
             mutator.body = this.body;
             armorGrower.body = this.body;
@@ -107,16 +105,6 @@ namespace RimWorld
 
             }
         }
-        /*
-        public override void CompTick()
-        {
-            base.CompTick();
-            if (this.body == null)
-            {
-                ((MapCompBuildingTracker)this.parent.Map.components.Where(t => t is MapCompBuildingTracker).FirstOrDefault()).Register(this);
-            }
-        }
-        */
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             if (body != null)

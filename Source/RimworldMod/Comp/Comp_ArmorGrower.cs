@@ -38,7 +38,7 @@ namespace RimWorld
 
 		public override void CompTick()
 		{
-			if (!parent.Spawned)
+			if (!parent.Spawned || body == null || body.heart == null)
             {
 				return;
             }
@@ -47,7 +47,7 @@ namespace RimWorld
 				if (ticksToGrow <= 0)
                 {
 					GrowArmor();
-					ticksToGrow = 35;
+					ticksToGrow = Props.growInterval / (body.heart.GetStat("metabolicSpeed") * body.heart.GetStat("armorGrowthSpeed"));
 				}
             }
 			if (toShed.Count > 0)
@@ -55,7 +55,7 @@ namespace RimWorld
 				if (ticksToShed <= 0)
                 {
 					ShedArmor();
-					ticksToShed = 5;
+					ticksToShed = Props.shedInterval / (body.heart.GetStat("metabolicSpeed") * body.heart.GetStat("armorGrowthSpeed"));
 				}
 			}
 			ticksToGrow--;

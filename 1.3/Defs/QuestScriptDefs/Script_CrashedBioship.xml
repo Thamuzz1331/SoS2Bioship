@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<QuestScriptDef>
-		<defName>CrashedBioship</defName>
+		<defName>BurrowingBioship</defName>
 		<rootSelectionWeight>1.0</rootSelectionWeight>
 		<rootMinPoints>100</rootMinPoints>
 		<autoAccept>true</autoAccept>
@@ -42,7 +42,7 @@
 					<storeFactionAs>siteFaction</storeFactionAs>
 					<sitePartsTags>
 						<li>
-							<tag>BioshipDown</tag>
+							<tag>BurrowingBioship</tag>
 						</li>
 					</sitePartsTags>
 				</li>

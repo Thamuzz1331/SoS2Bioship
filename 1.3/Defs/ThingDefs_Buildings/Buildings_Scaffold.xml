@@ -44,7 +44,6 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
 				<transformString>Bio_Ship_Beam</transformString>
@@ -117,7 +116,6 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
 				<species>bioship</species>
@@ -382,7 +380,6 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>BioShipHullTile_Insensate</stapleDef>
 				<species>bioship</species>
@@ -452,7 +449,6 @@
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
@@ -544,7 +540,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -596,7 +591,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>12</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -649,7 +643,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>16</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -690,7 +683,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
@@ -702,7 +694,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>6</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -743,7 +734,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>smallMawOptions</transformString>
@@ -792,7 +782,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Maw_Corpse</transformString>
@@ -804,7 +793,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -837,7 +825,6 @@
 		</comps>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
@@ -863,7 +850,6 @@
 		<size>(3,3)</size>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>mediumTurretOptions</transformString>
@@ -873,7 +859,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>12</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretPlasma_MenuIcon</uiIconPath>
@@ -914,7 +899,6 @@
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>largeTurretOptions</transformString>
@@ -926,7 +910,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>16</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -964,7 +947,6 @@
 		</statBases>
 		<costList>
 			<ProtienPutty>12</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<comps>
@@ -1063,7 +1045,6 @@
 		</statBases>
 		<costList>
 			<ProtienPutty>20</ProtienPutty>
-			<OrganSeed>2</OrganSeed>
 			<Neutroamine>100</Neutroamine>
 		</costList>
 		<comps>
@@ -1100,7 +1081,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(1,2)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -1199,7 +1180,6 @@
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -1271,7 +1251,6 @@
 			<li>AdvancedGangliaClusterScaffold</li>
 		</researchPrerequisites>
 		<costList>
-			<OrganSeed>1</OrganSeed>
 			<ProtienPutty>12</ProtienPutty>
 			<Neutroamine>100</Neutroamine>
 		</costList>
@@ -1394,7 +1373,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
-			<OrganSeed>1</OrganSeed>
 			<Neutroamine>7</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -1445,7 +1423,6 @@
 		</building>
 		<costList>
 			<ProtienPutty>16</ProtienPutty>
-			<OrganSeed>2</OrganSeed>
 			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>

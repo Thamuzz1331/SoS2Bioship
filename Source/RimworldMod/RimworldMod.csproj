@@ -141,7 +141,7 @@
 
 	  <Compile Include="Comp\MapComp_CorpseMawTracker.cs"/>
 	  <Compile Include="PlaceWorkers\PlaceWorker_BioShipNeedsSpinalMountPort.cs"/>
-	  <Compile Include="GenSteps\GenStep_CrashedBioship.cs"/>
+	  <Compile Include="GenSteps\GenStep_BurrowingBioship.cs"/>
 	  <Compile Include="Defs\BioShipDef.cs"/>
 	  <Compile Include="Jobs\BioShipJobDefs.cs"/>
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>

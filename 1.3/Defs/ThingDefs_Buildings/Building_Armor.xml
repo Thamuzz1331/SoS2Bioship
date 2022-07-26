@@ -43,6 +43,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<isArmor>true</isArmor>
 				<species>bioship</species>
+				<growsArmor>true</growsArmor>
 			</li>
 		</comps>
 		<placeWorkers>

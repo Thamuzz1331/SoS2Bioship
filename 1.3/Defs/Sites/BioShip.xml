@@ -1,0 +1,23 @@
+<Defs>
+	<SitePartDef>
+		<defName>BurrowingBioship</defName>
+		<label>mysterious signal</label>
+		<description>Flesh and blood and bone haunt your dreams.</description>
+		<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+		<expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
+		<handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+		<tags>
+			<li>BurrowingBioship</li>
+		</tags>
+	</SitePartDef>
+
+	<GenStepDef>
+		<defName>BurrowingBioship</defName>
+		<linkWithSite>BurrowingBioship</linkWithSite>
+		<order>420</order>
+		<genStep Class="GenStep_BurrowingBioship">
+			<count>1</count>
+			<nearMapCenter>true</nearMapCenter>
+		</genStep>
+	</GenStepDef>
+</Defs>

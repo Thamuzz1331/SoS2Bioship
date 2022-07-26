@@ -468,12 +468,12 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(7,5.5)</drawSize>
+			<drawSize>(2,3)</drawSize>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
+		<castEdgeShadows>false</castEdgeShadows>
 		<fillPercent>1</fillPercent>
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>

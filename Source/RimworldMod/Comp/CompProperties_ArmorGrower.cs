@@ -9,6 +9,8 @@ namespace RimWorld
 {
     public class CompProperties_ArmorGrower : CompProperties
     {
+        public float growInterval = 120f;
+        public float shedInterval = 15f;
         public CompProperties_ArmorGrower()
         {
             compClass = typeof(CompArmorGrower);

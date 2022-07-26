@@ -15,6 +15,7 @@ namespace RimWorld
         public CompProperties_ShipBodyPart ShipProps => (CompProperties_ShipBodyPart)props;
         public HashSet<Thing> adjMechs = new HashSet<Thing>();
         public HashSet<Thing> adjBodypart = new HashSet<Thing>();
+        public float armorGrowthMult = 1f;
 
         public List<string> woundIds = new List<string>();
         public bool initialized = false;
@@ -81,11 +82,11 @@ namespace RimWorld
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            base.PostDestroy(mode, previousMap);
             if (mode == DestroyMode.KillFinalize && ShipProps.regenDef != null)
             {
                 ((CompShipHeart)body.heart).Regen(parent);
             }
+            base.PostDestroy(mode, previousMap);
         }
 
         public override string CompInspectStringExtra()

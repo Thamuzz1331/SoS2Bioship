@@ -41,6 +41,21 @@ namespace RimWorld
 
 			return ret;
 		}
+
+		public override List<TerrainDef> GetTerrains()
+        {
+			return new List<TerrainDef>() {
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorShipflesh"),
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorShipscar"),
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorShipwhithered"),
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShip"),
+				DefDatabase<TerrainDef>.GetNamed("ShipWreckageTerrain"),
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipMech"),
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipArchotech"),
+				DefDatabase<TerrainDef>.GetNamed("SoilShip"),
+				DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipFoam"),
+			};
+        }
 	}
 
 }

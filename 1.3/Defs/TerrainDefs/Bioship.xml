@@ -3,7 +3,51 @@
 	<TerrainDef>
 		<defName>FakeFloorShipflesh</defName>
 		<layerable>true</layerable>
-		<label>ship</label>
+		<label>shipflesh</label>
+		<texturePath>Terrain/Surfaces/FleshFloor</texturePath>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>70</renderPrecedence>
+		<fertility>0</fertility>
+		<holdSnow>false</holdSnow>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+		<tags>
+			<li>Ship</li>
+		</tags>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+		</affordances>
+	</TerrainDef>
+	<TerrainDef>
+		<defName>FakeFloorShipscar</defName>
+		<layerable>true</layerable>
+		<label>shipflesh</label>
+		<texturePath>Terrain/Surfaces/FleshFloor</texturePath>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>70</renderPrecedence>
+		<fertility>0</fertility>
+		<holdSnow>false</holdSnow>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+		<tags>
+			<li>Ship</li>
+		</tags>
+		<affordances>
+			<li>Light</li>
+			<li>Medium</li>
+			<li>Heavy</li>
+		</affordances>
+	</TerrainDef>
+	<TerrainDef>
+		<defName>FakeFloorShipwhithered</defName>
+		<layerable>true</layerable>
+		<label>shipflesh</label>
 		<texturePath>Terrain/Surfaces/FleshFloor</texturePath>
 		<edgeType>Hard</edgeType>
 		<renderPrecedence>70</renderPrecedence>

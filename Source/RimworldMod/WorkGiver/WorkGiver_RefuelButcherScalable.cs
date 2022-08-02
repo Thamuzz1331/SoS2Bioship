@@ -9,7 +9,7 @@ using UnityEngine;
 
 using Verse.AI;
 
-namespace Rimworld
+namespace RimWorld
 {
 	internal class WorkGiver_RefuelButcherScalable : WorkGiver_Scanner
 	{

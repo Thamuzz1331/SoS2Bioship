@@ -43,7 +43,26 @@ namespace BioShip
 			var original = typeof(ShipUtility).GetMethod("LaunchFailReasons");
 			HarmonyInst.Unpatch(original, HarmonyPatchType.All, "ShipInteriorMod2");
 		}
+
+		public static List<TerrainDef> shipTerrainDefs = new List<TerrainDef>()
+		{
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipflesh"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipscar"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipwhithered"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShip"),
+			DefDatabase<TerrainDef>.GetNamed("ShipWreckageTerrain"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipMech"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipArchotech"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipFoam"),
+		};
+
+		public static bool IsShipTerrain(TerrainDef tDef)
+		{
+			return (tDef.layerable && !shipTerrainDefs.Contains(tDef));
+		}
 	}
+
+
 
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
 	public static class FindLaunchFailReasonsBioship
@@ -205,15 +224,6 @@ namespace BioShip
 				2
 			}
 		};
-
-		[HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
-		public static class BioShipInterstellarFail
-		{
-			[HarmonyPrefix]
-			public static void ReasonsNotToFly(ref List<string> __result)
-			{
-			}
-		}
 	}
 
 
@@ -288,5 +298,43 @@ namespace BioShip
             }
 			return false;
         }
+    }
+
+	[HarmonyPatch(typeof(SaveShip), "MoveShip")]
+	public static class ExpandFloorListPatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			bool replacementMade = false;
+			Log.Message("In Transpiler");
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (replacementMade)
+                {
+					if (codes[i].opcode == OpCodes.Ldloc_3)
+                    {
+						return codes;
+                    } else
+                    {
+						codes[i].opcode = OpCodes.Nop;
+                    }
+                } else
+                {
+					LocalBuilder operandString = codes[i].operand as LocalBuilder;
+					if(codes.Count > i+8)
+					{
+						if (codes[i].opcode == OpCodes.Ldloc_S && operandString.LocalType == typeof(Building) && codes[i+7].opcode == OpCodes.Brfalse)
+						{
+							codes[i+6] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BioShip), "IsShipTerrain", new Type[]{typeof(TerrainDef)}));
+							replacementMade = true;
+							i = i+7;
+						}
+					}
+				}
+            }
+
+			return codes;
+		}
     }
 }

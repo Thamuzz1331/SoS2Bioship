@@ -27,6 +27,8 @@ namespace RimWorld
 
 		public override void CompTick()
 		{
+			if (!parent.Spawned || body == null)
+				return;
 			if (ticksToRegen <= 0)
             {
 				HealWounds();

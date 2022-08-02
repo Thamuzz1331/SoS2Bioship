@@ -1,8 +1,10 @@
 using SaveOurShip2;
+using BioShip;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using HarmonyLib;
 using Verse;
 
 namespace RimWorld
@@ -28,31 +30,44 @@ namespace RimWorld
             roofTileBio = new Graphic_256_Bio(bioRoofedData.Graphic);
         }
 
-        List<IntVec3> positions = new List<IntVec3>();
+
+        private static Type compRoofMeType = AccessTools.TypeByName("CompRoofMe");
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            base.PostSpawnSetup(respawningAfterLoad);
+            //base.PostSpawnSetup(respawningAfterLoad);
+            
             TerrainDef hullTerrain = DefDatabase<TerrainDef>.GetNamed(BioProps.TerrainId);
-
+            List<IntVec3> positions = new List<IntVec3>();
             foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(parent))
             {
                 positions.Add(pos);
             }
+            Log.Message("!" + Traverse.Create(this).Field("positions").GetValue<List<IntVec3>>().Count);
+            Traverse.Create(this).Field("positions").SetValue(positions);
+            Traverse.Create(this).Field("map").SetValue(parent.Map);
+            Log.Message("#" + Traverse.Create(this).Field("positions").GetValue<List<IntVec3>>().Count);
             foreach (IntVec3 pos in positions)
             {
+                if(Props.roof)
+                    parent.Map.roofGrid.SetRoof(pos, CompRoofMe.roof);
+                TerrainDef currentTerrain = parent.Map.terrainGrid.TerrainAt(pos);
+                if (parent.Map.terrainGrid.TerrainAt(pos) == CompRoofMe.hullTerrain)
+                {
+                    parent.Map.terrainGrid.RemoveTopLayer(pos, false);
+                }
                 if (base.Props.roof)
                     parent.Map.roofGrid.SetRoof(pos, roof);
-                TerrainDef currentTerrain = parent.Map.terrainGrid.TerrainAt(pos);
-                if (currentTerrain != hullTerrain)
+                if (!CompRoofMeBio.IsShipTerrain(currentTerrain) && currentTerrain != hullTerrain)
                 {
                     parent.Map.terrainGrid.SetTerrain(pos, hullTerrain);
                 }
             }
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDestroy(DestroyMode m, Map previousMap)
         {
-            base.PostDeSpawn(map);
+            base.PostDestroy(m, previousMap);
         }
 
         public override void PostDraw()
@@ -64,5 +79,23 @@ namespace RimWorld
             }
         }
 
+
+
+        public static List<TerrainDef> shipTerrainDefs = new List<TerrainDef>()
+		{
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipflesh"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipscar"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipwhithered"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShip"),
+			DefDatabase<TerrainDef>.GetNamed("ShipWreckageTerrain"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipMech"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipArchotech"),
+			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipFoam"),
+		};
+
+		public static bool IsShipTerrain(TerrainDef tDef)
+		{
+			return (tDef.layerable && !shipTerrainDefs.Contains(tDef));
+		}
     }
 }

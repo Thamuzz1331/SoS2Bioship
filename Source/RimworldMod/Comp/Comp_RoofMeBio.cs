@@ -43,10 +43,8 @@ namespace RimWorld
             {
                 positions.Add(pos);
             }
-            Log.Message("!" + Traverse.Create(this).Field("positions").GetValue<List<IntVec3>>().Count);
             Traverse.Create(this).Field("positions").SetValue(positions);
             Traverse.Create(this).Field("map").SetValue(parent.Map);
-            Log.Message("#" + Traverse.Create(this).Field("positions").GetValue<List<IntVec3>>().Count);
             foreach (IntVec3 pos in positions)
             {
                 if(Props.roof)

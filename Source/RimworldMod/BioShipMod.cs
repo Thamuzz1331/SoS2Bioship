@@ -306,7 +306,6 @@ namespace BioShip
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
 		{
 			bool replacementMade = false;
-			Log.Message("In Transpiler");
 			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
 			for (int i = 0; i < codes.Count; i++)
             {

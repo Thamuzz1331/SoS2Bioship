@@ -46,15 +46,19 @@ namespace RimWorld
         {
 
         }
-        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<IMutation>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Efficient Spines\nAdds a chance that a light spine thrower will grow two spines for the price of one.\nIncreases likelyhood of large weapon scaffolds maturing into light spine throwers.";
+        }
+        public override String ToString()
+        {
+            return "Efficient Spines";
         }
         Texture2D IMutation.GetIcon()
         {

@@ -47,16 +47,21 @@ namespace RimWorld
         {
 
         }
-        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<IMutation>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Dense Spines\nAdds a chance that, when growing a spine, a heavy spine launcher will grow a dense spine that deals double damage.\nIncreases likelyhood of large weapon scaffolds maturing into heavy spine throwers.";
         }
+        public override String ToString()
+        {
+            return "Dense Spines";
+        }
+
         Texture2D IMutation.GetIcon()
         {
             return null;

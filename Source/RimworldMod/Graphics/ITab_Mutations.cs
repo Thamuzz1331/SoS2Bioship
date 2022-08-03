@@ -44,10 +44,11 @@ namespace RimWorld
 		private void ShowMutations(Rect mutationBar, string label, List<IMutation> muts, int slots)
         {
 			Widgets.Label(mutationBar.TopPartPixels(30f), label);
-			float xIncrement = mutationBar.width / (slots);
+			float xIncrement = mutationBar.width / slots;
+			float initialOffset = (xIncrement/2)-40f;
 			for (int i = 0; i < slots; i++)
             {
-				Rect mutSlot = new Rect(mutationBar.x + xIncrement * (float)(i), mutationBar.y + 15f, 80f, 80f);
+				Rect mutSlot = new Rect(mutationBar.x + initialOffset + xIncrement * (float)(i), mutationBar.y + 25f, 80f, 80f);
 				this.DoEmptyRect(mutSlot, i < muts.Count);
 				if (i < muts.Count)
                 {
@@ -81,6 +82,8 @@ namespace RimWorld
 		public void DrawMutationIcon(Rect inRect, IMutation mut)
         {
 			Widgets.Label(inRect.TopPartPixels(30f), mut.ToString());
+			TooltipHandler.TipRegion(inRect, new TipSignal(string.Format("{0}", mut.GetDescription())));
+
         }
 	}
 }

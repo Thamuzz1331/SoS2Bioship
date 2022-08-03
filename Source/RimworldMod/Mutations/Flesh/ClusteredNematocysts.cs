@@ -42,15 +42,19 @@ namespace RimWorld
         {
 
         }
-        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<IMutation>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Clustered Nematocysts\nSmall weapon scaffolds now grow into clustered nematocysts, which fire larger volleys.";
+        }
+        public override String ToString()
+        {
+            return "Clustered Nematocysts";
         }
         Texture2D IMutation.GetIcon()
         {

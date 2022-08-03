@@ -10,7 +10,7 @@ namespace RimWorld
 {
     public interface IMutation : IHediff
     {
-        List<IMutation> GetMutationsForTier(string tier, List<IMutation> existingMutations);
+        List<Tuple<IMutation, string, string>> GetMutationsForTier(string tier, List<IMutation> existingMutations);
         String GetTier();
         String GetDescription();
         Texture2D GetIcon();

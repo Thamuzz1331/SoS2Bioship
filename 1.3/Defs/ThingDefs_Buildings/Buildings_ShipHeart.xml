@@ -21,6 +21,7 @@
 			</damageData>
 		</graphicData>
 		<researchPrerequisites>
+			<li>StructuralScaffold</li>
 		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
@@ -215,6 +216,7 @@
 		<constructEffect>ConstructMetal</constructEffect>
 		<clearBuildingArea>false</clearBuildingArea>
 		<researchPrerequisites>
+			<li>NerveStapling</li>
 		</researchPrerequisites>
 	</ThingDef>
 

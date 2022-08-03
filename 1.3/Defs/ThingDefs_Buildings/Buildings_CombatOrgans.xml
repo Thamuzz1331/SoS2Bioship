@@ -428,6 +428,33 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 
+	<DamageDef Name="ShipEnergizedBioPlasma">
+		<defName>ShipEnergizedBioPlasma</defName>
+		<label>energized plasma</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<isExplosive>true</isExplosive>
+		<deathMessage>{0} has been vaporized by plasma.</deathMessage>
+		<hediff>Burn</hediff>
+		<hediffSolid>Burn</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Blunt</impactSoundType>
+		<armorCategory>Heat</armorCategory>
+		<minDamageToFragment>15</minDamageToFragment>
+		<defaultDamage>160</defaultDamage>
+		<defaultStoppingPower>0.5</defaultStoppingPower>
+		<defaultArmorPenetration>0.10</defaultArmorPenetration>
+		<buildingDamageFactor>4</buildingDamageFactor>
+		<plantDamageFactor>4</plantDamageFactor>
+		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastPlasma</explosionCellFleck>
+		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+		<soundExplosion>Explosion_Bomb</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+
 	<!-- Acid weapons-->
 	<ThingDef ParentName="BaseShipArtilleryBuilding">
 		<defName>ShipTurret_BioAcid</defName>
@@ -468,6 +495,8 @@
 		</building>
 		<costList>
 		</costList>
+		<designationCategory>
+		</designationCategory>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<altitudeLayer>WorldClipper</altitudeLayer>
@@ -626,6 +655,7 @@
 	<ThingDef ParentName="BaseShipTorpedoBuilding">
 		<defName>HeavySpineLauncher</defName>
 		<label>heavy spine launcher</label>
+		<thingClass>Building_BioTorpTurret</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioTorpedoHeavy</texPath>
 			<drawSize>(6,3)</drawSize>
@@ -652,7 +682,7 @@
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Heavy</ammoCat>
 				<reloadInterval>18</reloadInterval>
-				<reloadCost>180</reloadCost>
+				<reloadCost>0.3</reloadCost>
 			</li>
 		</comps>
 		<building>
@@ -665,6 +695,7 @@
 	<ThingDef ParentName="BaseShipTorpedoBuilding">
 		<defName>LightSpineLauncher</defName>
 		<label>light spine launcher</label>
+		<thingClass>Building_BioTorpTurret</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
 			<drawSize>(6,3)</drawSize>
@@ -691,9 +722,8 @@
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Light</ammoCat>
 				<reloadInterval>6</reloadInterval>
-				<reloadCost>60</reloadCost>
+				<reloadCost>0.15</reloadCost>
 			</li>
-
 		</comps>
 		<building>
 			<turretGunDef>Artillery_BioShipTorpedo_Six</turretGunDef>

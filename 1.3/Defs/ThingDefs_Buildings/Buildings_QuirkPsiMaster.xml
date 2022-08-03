@@ -12,6 +12,7 @@
 		<size>(5,4)</size>
 		<rotatable>true</rotatable>
 		<tickerType>Normal</tickerType>
+		<designationCategory></designationCategory>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>Impassable</passability>
 		<castEdgeShadows>false</castEdgeShadows>

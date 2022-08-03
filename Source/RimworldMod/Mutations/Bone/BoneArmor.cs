@@ -41,16 +41,21 @@ namespace RimWorld
             }
         }
 
-        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<IMutation>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Bone Armor\nAllows the bioship to grow a layer of bone armor";
         }
+        public override String ToString()
+        {
+            return "Bone Armor";
+        }
+
         Texture2D IMutation.GetIcon()
         {
             return null;

@@ -48,8 +48,8 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
         }
-        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<IMutation>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier1";

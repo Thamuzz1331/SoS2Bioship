@@ -991,7 +991,6 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
-
 		</comps>
 		<rotatable>false</rotatable>
 		<selectable>true</selectable>
@@ -1008,9 +1007,10 @@
 
 	<ThingDef ParentName="ShipHeatsinkBase">
 		<defName>WhitheredHeatsink</defName>
-		<label>organic heatsink Whithered</label>
+		<label>organic heatsink whithered</label>
 		<description>Whithered for a bio heatsink</description>
 		<size>(2,2)</size>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipHeatsink</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1078,9 +1078,6 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(4,6)</drawSize>
 		</graphicData>
-		<researchPrerequisites>
-			<li>MetabolicScaffoldAdvanced</li>
-		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
@@ -1096,7 +1093,6 @@
 		<description>A giant mitochondira, the powerhouse of the beast.</description>
 		<size>(4,6)</size>
 		<receivesSignals>true</receivesSignals>
-		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Scaffold">
@@ -1131,9 +1127,6 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(4,6)</drawSize>
 		</graphicData>
-		<researchPrerequisites>
-			<li>MetabolicScaffoldAdvanced</li>
-		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
@@ -1149,7 +1142,6 @@
 		<description>A whithered colossal mitochondira.  Connect to a well fed heart to revitalize.</description>
 		<size>(4,6)</size>
 		<receivesSignals>true</receivesSignals>
-		<designationCategory>Ship</designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Scaffold">

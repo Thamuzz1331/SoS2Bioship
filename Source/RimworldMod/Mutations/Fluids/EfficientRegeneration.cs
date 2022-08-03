@@ -48,16 +48,21 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
         }
-        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<IMutation>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Efficient Regeneration\nImproves regen efficiency by 25%.";
         }
+        public override String ToString()
+        {
+            return "Efficient Regeneration";
+        }
+
         Texture2D IMutation.GetIcon()
         {
             return null;

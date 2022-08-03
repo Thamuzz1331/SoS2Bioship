@@ -43,7 +43,7 @@ namespace RimWorld
                     float cost = Props.reloadCost;
                     if (body != null && body.heart != null)
                     {
-                        cost = cost * body.heart.GetMultiplier("spineReloadCost");
+                        cost = cost / body.heart.GetStat("metabolicEfficiency");
                         if (body.RequestNutrition(cost))
                         {
                             ThingDef torpDef = ((CompShipHeart)body.heart).GetThingDef(parent.def.defName);

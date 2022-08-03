@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class OcularPerk : IHediff
+    public class OcularPerk : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -39,18 +39,20 @@ namespace RimWorld
         {
 
         }
-        /*
-        void Apply(CompShipHeart target)
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
+        }
+        String IMutation.GetTier() {
+            return "tier1";
+        }
+        String IMutation.GetDescription()
         {
-            target.defOptions.TryGetValue(ThingDef.Named("HeavySpineLauncher"), new List<ThingDef>()).Add(ThingDef.Named("Spine_HeavyDense"));
-
-            target.organOptions["largeTurretOptions"].Add(ThingDef.Named("HeavySpineLauncher"));
-            target.organOptions["largeTurretOptions"].Add(ThingDef.Named("HeavySpineLauncher"));
-
-            target.RemoveMutation<DenseSpines>("offense", "bone", true);
-            target.mutationThemes["bone"] += 1;
-            return;
-        }*/
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
+        }
         void IExposable.ExposeData()
         {
 

@@ -147,6 +147,7 @@
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>
 	  <Compile Include="WorkGiver\WorkGiver_RefuelButcherScalable.cs"/>
 
+	  <Compile Include="Mutations\IMutation.cs" />
 	  <Compile Include="Mutations\Bone\DenseSpines.cs" />
       <Compile Include="Mutations\Bone\EfficientSpines.cs" />
 	  <Compile Include="Mutations\Bone\BoneArmor.cs" />

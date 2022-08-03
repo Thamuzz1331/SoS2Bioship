@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class FastRegeneration : IHediff
+    public class FastRegeneration : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -47,6 +47,20 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration(), true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
+        }
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
+        }
+        String IMutation.GetTier() {
+            return "tier1";
+        }
+        String IMutation.GetDescription()
+        {
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
         }
 
         void IExposable.ExposeData()

@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientFatStorage : IHediff
+    public class EfficientFatStorage : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -34,20 +34,20 @@ namespace RimWorld
         {
 
         }
-        /*
-        void IMutation.Apply(Building_ShipHeart target)
-        {
-            target.statMultipliers.Add("storageEfficiency", 1.25f);
-
-            target.RemoveMutation<EfficientFatStorage>("utility", "misc", true);
-
-            return;
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
         }
-        void IMutation.Apply(Thing target)
-        {
-            return;
+        String IMutation.GetTier() {
+            return "tier1";
         }
-        */
+        String IMutation.GetDescription()
+        {
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
+        }
         void IExposable.ExposeData()
         {
 

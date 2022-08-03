@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class ClusteredNematocysts : IHediff
+    public class ClusteredNematocysts : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -42,18 +42,20 @@ namespace RimWorld
         {
 
         }
-        /*
-        void Apply(CompShipHeart target)
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
+        }
+        String IMutation.GetTier() {
+            return "tier1";
+        }
+        String IMutation.GetDescription()
         {
-            target.organOptions["smallTurretOptions"] = target.organOptions["smallTurretOptions"].FindAll(e => e != ThingDef.Named("ShipTurret_Nematocyst"));
-            target.organOptions["smallTurretOptions"].Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
-
-            target.RemoveMutation<ClusteredNematocysts>("offense", "flesh", true);
-            target.RemoveMutation<SparseNematocysts>("offense", "flesh", false);
-
-            target.mutationThemes["flesh"] += 1;
-            return;
-        }*/
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
+        }
         void IExposable.ExposeData()
         {
 

@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class BoneArmor : IHediff
+    public class BoneArmor : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -41,6 +41,20 @@ namespace RimWorld
             }
         }
 
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
+        }
+        String IMutation.GetTier() {
+            return "tier1";
+        }
+        String IMutation.GetDescription()
+        {
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
+        }
         void IExposable.ExposeData()
         {
 

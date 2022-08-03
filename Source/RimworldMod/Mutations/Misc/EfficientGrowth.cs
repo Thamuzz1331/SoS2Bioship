@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientGrowth : IHediff
+    public class EfficientGrowth : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -46,6 +46,20 @@ namespace RimWorld
             {
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth(), true);
             }
+        }
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
+        }
+        String IMutation.GetTier() {
+            return "tier1";
+        }
+        String IMutation.GetDescription()
+        {
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
         }
 
         void IExposable.ExposeData()

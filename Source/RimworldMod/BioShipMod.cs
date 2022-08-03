@@ -30,6 +30,7 @@ namespace BioShip
 	public class BioShip : ModBase
 	{
 		public static Texture2D NutrientTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.5f, 0.5f, 0.1f));
+		public static Texture2D MutationBackground = SolidColorMaterials.NewSolidColorTexture(new Color(0.5f, 0.5f, 0.1f));
 
 		public override string ModIdentifier
 		{

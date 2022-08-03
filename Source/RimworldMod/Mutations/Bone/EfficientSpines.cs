@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientSpines : IHediff
+    public class EfficientSpines : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -46,29 +46,22 @@ namespace RimWorld
         {
 
         }
-        /*
-        void Apply(CompShipHeart heart)
-        {
-
-            target.organOptions["largeTurretOptions"].Add(ThingDef.Named("LightSpineLauncher"));
-            target.organOptions["largeTurretOptions"].Add(ThingDef.Named("LightSpineLauncher"));
-
-            target.RemoveMutation<EfficientSpines>("offense", "bone", true);
-            target.mutationThemes["bone"] += 1;
-            return;
+        List<IMutation> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            return new List<IMutation>() { };
         }
-        void IHediff.Apply(Thing target)
+        String IMutation.GetTier() {
+            return "tier1";
+        }
+        String IMutation.GetDescription()
         {
-            if (target.def == ThingDef.Named("LightSpineLauncher"))
-            {
-                CompNutritionLoader loader = ((ThingWithComps)target).TryGetComp<CompNutritionLoader>();
-                if (loader != null)
-                {
-                    loader.torpSpawn.Add(2);
-                }
-            }
-            return;
-        }*/
+            return "";
+        }
+        Texture2D IMutation.GetIcon()
+        {
+            return null;
+        }
+
+
         void IExposable.ExposeData()
         {
 

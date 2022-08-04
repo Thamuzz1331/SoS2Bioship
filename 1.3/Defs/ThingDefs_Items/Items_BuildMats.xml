@@ -1,4 +1,49 @@
 <Defs>
+		<!--  Bases  -->
+	<ThingDef Name="ShipMeatBase" Abstract="True" ParentName="OrganicProductBase">
+		<label>Base meat properties</label>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>True</rotDestroys>
+			</li>
+		</comps>
+		<statBases>
+			<Nutrition>0.05</Nutrition>
+			<Flammability>0.5</Flammability>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<foodType>Meat</foodType>
+			<preferability>DesperateOnly</preferability>
+			<ingestEffect>EatMeat</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>		
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<!--  Processed meat  -->
+
+	<ThingDef ParentName="ShipMeatBase">
+		<defName>ShipMeat</defName>
+		<label>shipflesh</label>
+		<description>The butchered flesh of a living ship.  Disconcertingly, even when cooked it still feels like its trying to eat you back.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/Meat_Muffalo</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+	</ThingDef>
+		
+	
 	<ThingDef ParentName="ResourceBase">
 		<defName>ProtienPutty</defName>
 		<label>protien putty</label>

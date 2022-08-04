@@ -41,8 +41,8 @@ namespace BioShip
 		public override void Initialize()
 		{
 			base.Initialize();
-			var original = typeof(ShipUtility).GetMethod("LaunchFailReasons");
-			HarmonyInst.Unpatch(original, HarmonyPatchType.All, "ShipInteriorMod2");
+			//var original = typeof(ShipUtility).GetMethod("LaunchFailReasons");
+			//HarmonyInst.Unpatch(original, HarmonyPatchType.All, "ShipInteriorMod2");
 		}
 
 		public static List<TerrainDef> shipTerrainDefs = new List<TerrainDef>()
@@ -84,46 +84,38 @@ namespace BioShip
 				while (enumerator.MoveNext())
 				{
 					Building part = enumerator.Current;
-					bool flag = huntingEngines;
-					if (flag)
+					CompEngineTrail engineTrail = part.TryGetComp<CompEngineTrail>();
+					if (engineTrail != null)
 					{
-						huntingEngines = !FindLaunchFailReasonsBioship.engines.Any((ThingDef d) => d == part.def);
+						if (part.TryGetComp<CompRefuelable>() != null)
+                        {
+							fuelHad += part.TryGetComp<CompRefuelable>().Fuel;
+                        }
+						huntingEngines = false;
 					}
-					bool flag2 = huntingCockpit;
-					if (flag2)
+					if (huntingCockpit)
 					{
-						huntingCockpit = !FindLaunchFailReasonsBioship.pilots.Any((ThingDef d) => d == part.def);
-						bool flag3 = !huntingCockpit;
-						if (flag3)
-						{
+						if (part is Building_ShipBridge)
+                        {
+							bool functioning = true;
 							CompMannable manable = part.TryGetComp<CompMannable>();
-							bool flag4 = manable != null;
-							if (flag4)
-							{
-								huntingCockpit = (huntingCockpit || !manable.MannedNow);
-							}
-							CompPowerTrader powerTrader = part.TryGetComp<CompPowerTrader>();
-							bool flag5 = powerTrader != null;
-							if (flag5)
-							{
-								huntingCockpit = (huntingCockpit || !powerTrader.PowerOn);
-							}
-						}
-						hasPilot = !huntingCockpit;
+							if (manable != null)
+                            {
+								functioning = functioning && manable.MannedNow;
+                            }
+							if (part.TryGetComp<CompPowerTrader>() != null)
+                            {
+								functioning = functioning && part.TryGetComp<CompPowerTrader>().PowerOn;
+                            }
+							huntingCockpit = !functioning;
+							hasPilot = functioning;
+                        }
 					}
-					bool flag6 = huntingSensors;
-					if (flag6)
+					if (huntingSensors)
 					{
-						huntingSensors = !FindLaunchFailReasonsBioship.engines.Any((ThingDef d) => d == part.def);
+						huntingSensors = !FindLaunchFailReasonsBioship.sensors.Any((ThingDef d) => d == part.def);
 					}
-					int fuelMult = FindLaunchFailReasonsBioship.liftoffPower.TryGetValue(part.def, 0);
-					bool flag7 = part.TryGetComp<CompRefuelable>() != null;
-					if (flag7)
-					{
-						fuelHad += part.TryGetComp<CompRefuelable>().Fuel * (float)fuelMult;
-					}
-					bool flag8 = !FindLaunchFailReasonsBioship.hullPlates.Any((ThingDef d) => d == part.def);
-					if (flag8)
+					if (!FindLaunchFailReasonsBioship.hullPlates.Any((ThingDef d) => d == part.def))
 					{
 						fuelNeeded += (float)(part.def.size.x * part.def.size.z) * 3f;
 					}
@@ -133,46 +125,31 @@ namespace BioShip
 					}
 				}
 			}
-			bool flag9 = huntingEngines;
-			if (flag9)
+			if (huntingEngines)
 			{
 				newResult.Add("ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": " + ThingDefOf.Ship_Engine.label);
 			}
-			bool flag10 = huntingCockpit;
-			if (flag10)
+			if (huntingCockpit)
 			{
 				List<string> list = newResult;
 				string str = "ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": ";
 				ThingDef thingDef = ThingDef.Named("ShipPilotSeat");
 				list.Add(str + ((thingDef != null) ? thingDef.ToString() : null));
 			}
-			bool flag11 = huntingSensors;
-			if (flag11)
+			if (huntingSensors)
 			{
 				newResult.Add("ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": " + ThingDefOf.Ship_SensorCluster.label);
 			}
-			bool flag12 = fuelHad < fuelNeeded;
-			if (flag12)
+			if (fuelHad < fuelNeeded)
 			{
 				newResult.Add("ShipNeedsMoreChemfuel".Translate(fuelHad, fuelNeeded));
 			}
-			bool flag13 = !hasPilot;
-			if (flag13)
+			if (!hasPilot)
 			{
 				newResult.Add("ShipReportNeedPilot".Translate(Array.Empty<NamedArgument>()));
 			}
 			__result = newResult;
 		}
-
-		private static List<ThingDef> engines = new List<ThingDef>
-		{
-			ThingDefOf.Ship_Engine,
-			ThingDef.Named("Ship_Engine_Small"),
-			ThingDef.Named("Ship_Engine_Large"),
-			ThingDef.Named("BioShip_Engine"),
-			ThingDef.Named("BioShip_Engine_Small"),
-			ThingDef.Named("BioShip_Engine_Large")
-		};
 
 		private static List<ThingDef> sensors = new List<ThingDef>
 		{
@@ -181,49 +158,12 @@ namespace BioShip
 			ThingDef.Named("BioShip_SensorCluster")
 		};
 
-		private static List<ThingDef> pilots = new List<ThingDef>
-		{
-			ThingDef.Named("ShipPilotSeat"),
-			ThingDef.Named("ShipPilotSeatMini"),
-			ThingDefOf.Ship_ComputerCore,
-			ThingDef.Named("ShipArchotechSpore"),
-			ThingDef.Named("Ship_Heart")
-		};
-
 		private static List<ThingDef> hullPlates = new List<ThingDef>
 		{
 			ThingDef.Named("ShipHullTile"),
 			ThingDef.Named("ShipHullTileMech"),
 			ThingDef.Named("ShipHullTileArchotech"),
 			ThingDef.Named("BioShipHullTile")
-		};
-
-		private static Dictionary<ThingDef, int> liftoffPower = new Dictionary<ThingDef, int>
-		{
-			{
-				ThingDefOf.Ship_Engine,
-				1
-			},
-			{
-				ThingDef.Named("Ship_Engine_Small"),
-				1
-			},
-			{
-				ThingDef.Named("BioShip_Engine"),
-				1
-			},
-			{
-				ThingDef.Named("BioShip_Engine_Small"),
-				1
-			},
-			{
-				ThingDef.Named("Ship_Engine_Large"),
-				2
-			},
-			{
-				ThingDef.Named("BioShip_Engine_Large"),
-				2
-			}
 		};
 	}
 

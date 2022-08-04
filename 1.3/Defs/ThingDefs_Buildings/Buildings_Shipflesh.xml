@@ -68,14 +68,17 @@
 			</blueprintGraphicData>
 		</building>
 		<costList>
+			<ShipMeat>45</ShipMeat>
+			<Steel>2</Steel>
+			<Plasteel>1</Plasteel>
 		</costList>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<designationHotKey>Misc1</designationHotKey>
 		<holdsRoof>true</holdsRoof>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<killedLeavings>
 		</killedLeavings>
 	</ThingDef>
@@ -140,14 +143,15 @@
 			</blueprintGraphicData>
 		</building>
 		<costList>
+			<ShipMeat>45</ShipMeat>
 		</costList>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<designationHotKey>Misc1</designationHotKey>
 		<holdsRoof>true</holdsRoof>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<killedLeavings>
 		</killedLeavings>
 	</ThingDef>
@@ -218,6 +222,7 @@
 			<MaxHitPoints>250</MaxHitPoints>
 		</statBases>
 		<costList>
+			<ShipMeat>30</ShipMeat>
 		</costList>
 	</ThingDef>
 	<ThingDef ParentName="BioShipCorner">
@@ -237,6 +242,7 @@
 			<MaxHitPoints>250</MaxHitPoints>
 		</statBases>
 		<costList>
+			<ShipMeat>30</ShipMeat>
 		</costList>
 	</ThingDef>
 	<ThingDef ParentName="BioShipCorner">
@@ -257,6 +263,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 		</statBases>
 		<costList>
+			<ShipMeat>45</ShipMeat>
 		</costList>
 		<size>(1,2)</size>
 	</ThingDef>
@@ -278,6 +285,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 		</statBases>
 		<costList>
+			<ShipMeat>45</ShipMeat>
 		</costList>
 		<size>(1,2)</size>
 	</ThingDef>
@@ -299,6 +307,7 @@
 			<MaxHitPoints>750</MaxHitPoints>
 		</statBases>
 		<costList>
+			<ShipMeat>60</ShipMeat>
 		</costList>
 		<size>(1,3)</size>
 	</ThingDef>
@@ -320,6 +329,7 @@
 			<MaxHitPoints>750</MaxHitPoints>
 		</statBases>
 		<costList>
+			<ShipMeat>60</ShipMeat>
 		</costList>
 		<size>(1,3)</size>
 	</ThingDef>
@@ -345,6 +355,9 @@
 				<texPath>Things/Building/Ship/BioHullPlateTransparent</texPath>
 			</blueprintGraphicData>
 		</building>
+		<costList>
+			<ShipMeat>15</ShipMeat>
+		</costList>
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
@@ -399,9 +412,7 @@
 		</graphicData>
 		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
 		<costList>
-			<Steel>40</Steel>
-			<ComponentSpacer>1</ComponentSpacer>
-			<Plasteel>25</Plasteel>
+			<ShipMeat>30</ShipMeat>
 		</costList>
 		<comps>
 			<li Class="CompProperties_Power">

@@ -34,8 +34,6 @@ namespace RimWorld
             try
             {
                 EnemyShipDef d = DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.core.shapeOrDef == "Ship_Heart_Hostile").RandomElement();
-                Log.Message("! Generating fallen ship");
-                Log.Message("!" + d.ToString());
                 object[] parameters = new object[]{
                     d,
                     map,

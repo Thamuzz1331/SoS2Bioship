@@ -36,7 +36,11 @@ namespace RimWorld
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             //base.PostSpawnSetup(respawningAfterLoad);
-            
+            if (parent.Destroyed || parent.TryGetComp<CompShipBodyPart>() != null && parent.TryGetComp<CompShipBodyPart>().bodyId == "NA")
+            {
+                return;
+            }
+
             TerrainDef hullTerrain = DefDatabase<TerrainDef>.GetNamed(BioProps.TerrainId);
             List<IntVec3> positions = new List<IntVec3>();
             foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(parent))

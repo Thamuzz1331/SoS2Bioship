@@ -30,7 +30,7 @@
 				<whitherTo>SmallWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
-				<consumptionPerPulse>50</consumptionPerPulse>
+				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
@@ -154,9 +154,10 @@
 		<defName>Bullet_Fake_Nematocyst</defName>
 		<label>Nematocyst</label>
 		<graphicData>
-			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<thingClass>Projectile_SoSFake</thingClass>
 		<projectile>
@@ -171,16 +172,17 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_ShipTurretNematocyst</defName>
 		<label>nematocyst</label>
-		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>ShipNematocyst</damageDef>
-			<speed>200</speed>
+			<speed>100</speed>
 		</projectile>
 	</ThingDef>
 	<DamageDef Name="ShipNematocyst">
@@ -240,7 +242,7 @@
 				<whitherTo>MediumWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
-				<consumptionPerPulse>50</consumptionPerPulse>
+				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 		</comps>
 		<building>
@@ -484,7 +486,7 @@
 				<whitherTo>MediumWeaponWhithered</whitherTo>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
-				<consumptionPerPulse>50</consumptionPerPulse>
+				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 		</comps>
 		<building>

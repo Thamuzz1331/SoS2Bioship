@@ -33,18 +33,20 @@ namespace RimWorld
             ref Building coreRef = ref core;
             try
             {
+                EnemyShipDef d = DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.core.shapeOrDef == "Ship_Heart_Hostile").RandomElement();
                 Log.Message("! Generating fallen ship");
-                Log.Message("!" + DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.spaceSite).RandomElement());
-                Traverse.Create(shipCombatManagerType).Method("GenerateShip", 
-                    DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.spaceSite).RandomElement(), 
-                    map, 
-                    null, 
-                    Faction.OfAncients, 
-                    null, 
-                    coreRef, 
-                    true, 
-                    true).GetValue();
-                Log.Message("core " + core);
+                Log.Message("!" + d.ToString());
+                object[] parameters = new object[]{
+                    d,
+                    map,
+                    null,
+                    Faction.OfInsects,
+                    null,
+                    coreRef,
+                    true,
+                    true
+                };
+                AccessTools.Method(shipCombatManagerType, "GenerateShip").Invoke(null, parameters);
             }
             catch(Exception e)
             {

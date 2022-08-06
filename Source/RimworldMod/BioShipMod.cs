@@ -63,8 +63,6 @@ namespace BioShip
 		}
 	}
 
-
-
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
 	public static class FindLaunchFailReasonsBioship
 	{
@@ -131,10 +129,9 @@ namespace BioShip
 			}
 			if (huntingCockpit)
 			{
-				List<string> list = newResult;
 				string str = "ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": ";
 				ThingDef thingDef = ThingDef.Named("ShipPilotSeat");
-				list.Add(str + ((thingDef != null) ? thingDef.ToString() : null));
+				newResult.Add(str + ((thingDef != null) ? thingDef.ToString() : null));
 			}
 			if (huntingSensors)
 			{
@@ -277,4 +274,6 @@ namespace BioShip
 			return codes;
 		}
     }
+
+
 }

@@ -121,6 +121,10 @@ namespace RimWorld
             }
             base.PostDestroy(mode, previousMap);
         }
+        public override string CompInspectStringExtra()
+        {
+            return String.Format("Heart of of {0}", this.bodyName);
+        }
 
 
         public override void DoHunger()

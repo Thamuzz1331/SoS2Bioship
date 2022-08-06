@@ -17,6 +17,9 @@ namespace RimWorld
         public BuildingBody body = null;
 
         public List<IMutation> mutations = new List<IMutation>();
+        public float mutationCountdown = 0f;
+        public bool mutating = false;
+        public string tier = "tier1";
 
         public Dictionary<string, int> mutationThemes = new Dictionary<string, int>()
         {
@@ -129,10 +132,27 @@ namespace RimWorld
 		{
             base.PostExposeData();
             Scribe_Collections.Look<IMutation>(ref mutations, "mutations", LookMode.Deep);
+            Scribe_Values.Look(ref mutationCountdown, "mutationCountdown", 0f);
+            Scribe_Values.Look(ref mutating, "mutating", false);
+            Scribe_Values.Look(ref tier, "tier", "tier1");
 		}
 
         public override void PostSpawnSetup(bool b) {
             base.PostSpawnSetup(b);
+        }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (mutating)
+            {
+                if (mutationCountdown <= 0)
+                {
+                    InduceMutation();
+                    mutating = false;
+                }
+                mutationCountdown--;
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -141,18 +161,43 @@ namespace RimWorld
             {
                 yield return gizmo;
             }
-            if ((int)parent.GetStatValue(inducers) > 0)
+            if ((int)parent.GetStatValue(inducers) > 0 && !mutating)
             {
                 yield return new Command_Action
                 {
                     defaultLabel = "Induce Mutation",
                     action = delegate ()
                     {
-                        this.InduceMutation();
+                        this.mutationCountdown = 60000 * 3;
+                        this.mutating = true;
                     }
                 };
             }
+	        if (Prefs.DevMode)
+	        {
+                if (mutating)
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = "DEBUG: Finish Mutating",
+                        action = delegate ()
+                        {
+                            this.mutationCountdown = 0;
+                        }
+                    };
+                }
+            }
         }
+
+        public override string CompInspectStringExtra()
+        {
+            if (mutating)
+            {
+                return String.Format("Mutating: {0:0.##} days left", (mutationCountdown/60000));
+            }
+            return "";
+        }
+
 
         public virtual int GetChanceModifier(string theme)
         {

@@ -31,7 +31,7 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<MaxHitPoints>150</MaxHitPoints>
+			<MaxHitPoints>1500</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<MutationInducers>0</MutationInducers>
 		</statBases>

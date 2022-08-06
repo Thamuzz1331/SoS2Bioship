@@ -10,7 +10,7 @@ namespace RimWorld
 {
 	public class ITab_Mutations : ITab
 	{
-		private Vector2 scrollPos;
+//		private Vector2 scrollPos;
 
 		public ITab_Mutations()
 		{

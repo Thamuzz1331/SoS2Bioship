@@ -30,7 +30,7 @@ namespace RimWorld
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (!respawningAfterLoad && !initialized)
+            if (!respawningAfterLoad && !initialized && body != null && body.heart != null)
             {
                 foreach (IHediff mut in ((CompShipHeart)body.heart).mutator.mutations)
                 {

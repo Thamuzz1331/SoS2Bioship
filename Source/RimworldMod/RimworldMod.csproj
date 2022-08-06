@@ -134,6 +134,8 @@
 
 	  <Compile Include="Comp\Comp_ShipScaffoldConverter.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipScaffoldConverter.cs"/>
+	  <Compile Include="Comp\Comp_ShipScaffoldConverterInstant.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipScaffoldConverterInstant.cs"/>
 
 	  <Compile Include="Comp\Comp_ButcherableScallingRefuelable.cs"/>
 	  <Compile Include="Comp\CompProperties_ButcherableScallingRefuelable.cs"/>
@@ -163,7 +165,9 @@
 	  <Compile Include="Damage\AcidWorker.cs"/>
       <Compile Include="Damage\Damage_AcidGlob.cs"/>
       <Compile Include="Damage\ShipDamageDefOf.cs"/>
-      
+
+	  <Compile Include="Projectiles\Projectile_ShieldBatteringProjectile.cs"/>
+
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_Mutations.cs" />
   </ItemGroup>

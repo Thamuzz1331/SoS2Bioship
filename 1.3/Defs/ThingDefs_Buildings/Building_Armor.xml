@@ -1,8 +1,35 @@
 <Defs>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" Name="ArmorBase" Abstract="True">
+		<thingClass>Building</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
+	</ThingDef>
+
+	<ThingDef ParentName="ArmorBase">
 		<defName>BoneArmor</defName>
 		<label>bone armor</label>
-		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -22,20 +49,12 @@
 				<edgeRight>Damage/Edge</edgeRight>
 			</damageData>
 		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>Impassable</passability>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>1000</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<WorkToBuild>0</WorkToBuild>
 		</statBases>
 		<description>A layer of bone plate.</description>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -46,25 +65,45 @@
 				<growsArmor>true</growsArmor>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
-		<rotatable>false</rotatable>
-		<building>
-			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-			</blueprintGraphicData>
-		</building>
-		<costList>
-		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
-		<researchPrerequisites>
-		</researchPrerequisites>
-		<designationHotKey>Misc1</designationHotKey>
-		<holdsRoof>true</holdsRoof>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<killedLeavings>
-		</killedLeavings>
 	</ThingDef>
+	<ThingDef ParentName="ArmorBase">
+		<defName>PlasteelCarapace</defName>
+		<label>plasteel carapace</label>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/PlasteelCarapaceAtlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>0</WorkToBuild>
+		</statBases>
+		<description>A layer of plasteel carapace.</description>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<isArmor>true</isArmor>
+				<species>bioship</species>
+				<growsArmor>true</growsArmor>
+			</li>
+		</comps>
+	</ThingDef>
+
 </Defs>

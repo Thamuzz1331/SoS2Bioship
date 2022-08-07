@@ -549,7 +549,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6,5.5)</drawSize>
+			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -619,7 +619,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(5,7)</drawSize>
+			<drawSize>(5,5)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>

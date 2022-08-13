@@ -49,7 +49,7 @@ namespace RimWorld
                     new DenseSpines(), new EfficientSpines(),
                 }},
                 { "humors", new List<IMutation>(){
-
+                    new EnergizedPlasma(),
                 }},
                 { "misc", new List<IMutation>(){
 
@@ -297,6 +297,17 @@ namespace RimWorld
 
         public virtual void InduceMutation()
         {
+            if (this.tier == "tier1" && this.GetMutationsForTier("tier1").Count >= 6)
+            {
+                UpgradeMutationTier("tier2");
+            } else if (this.tier == "tier2" && this.GetMutationsForTier("tier2").Count >= 4)
+            {
+                UpgradeMutationTier("tier3");
+            } else if (this.tier == "tier3" && this.GetMutationsForTier("tier3").Count >= 2)
+            {
+                return;
+            }
+
             string cat = RollCategory();
             if (cat == "quirk")
             {
@@ -343,6 +354,11 @@ namespace RimWorld
         public virtual List<IMutation> GetMutationsForTier(String tier)
         {
             return mutations.FindAll((IMutation m) => m.GetTier() == tier);
+        }
+
+        public virtual void UpgradeMutationTier(string newTier)
+        {
+
         }
     }
 }

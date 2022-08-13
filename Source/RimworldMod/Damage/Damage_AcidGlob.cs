@@ -51,14 +51,13 @@ namespace RimWorld
 						{
 							if (GetValidTarget(c) != null)
 							{
-								
 								adjacentTargets.Add(c);
 							}
 						}
 					}
 					int totalAdj = adjacentTargets.Count + adjAcid.Count;
 					if (totalAdj > 0) {
-						float shareDamage = damageRemaining / (2*totalAdj);
+						float shareDamage = damageRemaining / (1.15*totalAdj);
 						foreach(AcidGlob g in adjAcid)
                         {
 							g.damageRemaining += shareDamage;
@@ -103,12 +102,17 @@ namespace RimWorld
 		public Thing GetValidTarget(IntVec3 pos)
         {
 			List<Thing> targets = pos.GetThingList(this.Map);
+			List<Thing> rets = new List<Thing>();
 			foreach(Thing t in targets)
             {
 				if(t.def.useHitPoints && t.def != ThingDef.Named("ChunkSlagSteel"))
                 {
-					return t;
+					rets.Add(t);
                 }
+            }
+			if (rets.Count > 0)
+            {
+				return rets.RandomElement();
             }
 			return null;
         }

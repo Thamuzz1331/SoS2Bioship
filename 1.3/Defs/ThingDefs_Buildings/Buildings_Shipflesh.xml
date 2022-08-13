@@ -72,7 +72,7 @@
 			<Steel>2</Steel>
 			<Plasteel>1</Plasteel>
 		</costList>
-		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
@@ -145,7 +145,7 @@
 		<costList>
 			<ShipMeat>45</ShipMeat>
 		</costList>
-		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
@@ -498,7 +498,6 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regenDef>Scar_Engine_Small</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Engine_Small</whitherTo>
 			</li>
@@ -570,7 +569,6 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regenDef>Scar_Engine</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Engine</whitherTo>
 			</li>
@@ -641,7 +639,6 @@
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
-				<regenDef>Scar_Engine_Large</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Engine_Large</whitherTo>
 			</li>
@@ -744,7 +741,7 @@
 		<label>small ship maw</label>
 		<thingClass>Building</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipMaw</texPath>
+			<texPath>Things/Building/Ship/Maw_1x1</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1,1)</drawSize>
 		</graphicData>
@@ -804,7 +801,7 @@
 		<label>corpse maw</label>
 		<thingClass>Building</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipMaw</texPath>
+			<texPath>Things/Building/Ship/Maw_2x2</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -979,10 +976,10 @@
 				<extendDirection>(0,0,-1)</extendDirection>
 				<startOffset>0.5</startOffset>
 				<length>3.0</length>
-				<graphicPath>Things/Building/Ship/Radiator</graphicPath>
+				<graphicPath>Things/Building/Ship/BioRadiatorFin</graphicPath>
 			</li>
 			<li Class="CompProperties_Overlay">
-				<graphicPath>Things/Building/Ship/RadiatorVent</graphicPath>
+				<graphicPath>Things/Building/Ship/BioRadiatorBase2</graphicPath>
 				<size>(1,1,1)</size>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
@@ -1079,7 +1076,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipHeatsink</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(2.1,4.7)</drawSize>
+			<drawSize>(2,2)</drawSize>
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>800</MaxHitPoints>
@@ -1111,7 +1108,7 @@
 		<size>(4,4)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/HeatsinkLarge</texPath>
+			<texPath>Things/Building/Ship/BioShipHeatSink_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>

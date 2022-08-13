@@ -67,7 +67,8 @@ namespace RimWorld
             armorGrower.body = this.body;
             if (!respawningAfterLoad && !initialized)
             {
-                mutator.SpreadMutation(this.body, mutator.quirkPossibilities[Rand.Range(0, mutator.quirkPossibilities.Count)]);
+
+                mutator.SpreadMutation(this.body, mutator.quirkPossibilities.RandomElement());
                 mutator.SpreadMutation(this.body, mutator.RollMutation("offense", mutator.GetRandomTheme(mutator.mutationThemes, mutator.goodMutationOptions.TryGetValue("offense")), mutator.goodMutationOptions));
                 mutator.SpreadMutation(this.body, mutator.RollMutation("defense", mutator.GetRandomTheme(mutator.mutationThemes, mutator.goodMutationOptions.TryGetValue("defense")), mutator.goodMutationOptions));
                 mutator.SpreadMutation(this.body, mutator.RollMutation("utility", mutator.GetRandomTheme(mutator.mutationThemes, mutator.goodMutationOptions.TryGetValue("utility")), mutator.goodMutationOptions));
@@ -131,7 +132,7 @@ namespace RimWorld
         {
             if (this.body.bodyParts.Count > 0)
             {
-                this.body.bodyParts.ElementAt(Rand.Range(0, this.body.bodyParts.Count)).TryGetComp<CompShipBodyPart>().Whither();
+                this.body.bodyParts.RandomElement().TryGetComp<CompShipBodyPart>().Whither();
             }
             this.hungerDuration = 0;
         }

@@ -1,8 +1,5 @@
 <Defs>
 	<!-- heart -->
-	<DesignatorDropdownGroupDef>
-		<defName>Ship_Heart</defName>
-	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>Ship_Heart_Hostile</defName>
 		<label>ship heart (hostile)</label>

@@ -502,9 +502,9 @@
 		<designatorDropdown>Scaffold_Engines</designatorDropdown>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipEngineRocket_Single</texPath>
+			<texPath>Things/Building/Scaffold/EngineScaffold_Small</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(7,5.5)</drawSize>
+			<drawSize>(2,3)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 			<li>GangliaClusterScaffold</li>
@@ -553,9 +553,9 @@
 		<designatorDropdown>Scaffold_Engines</designatorDropdown>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldEngineRocket</texPath>
+			<texPath>Things/Building/Scaffold/EngineScaffold_Medium</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6,5.5)</drawSize>
+			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 			<li>GangliaClusterScaffold</li>
@@ -605,9 +605,9 @@
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/NuclearEngine</texPath>
+			<texPath>Things/Building/Scaffold/EngineScaffold_Large</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(5,7)</drawSize>
+			<drawSize>(5,5)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 			<li>GangliaClusterScaffold</li>
@@ -710,7 +710,7 @@
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
-			<texPath>Things/Building/Ship/MawScaffold</texPath>
+			<texPath>Things/Building/Scaffold/MawScaffold_1x1</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1,1)</drawSize>
 		</graphicData>
@@ -758,7 +758,7 @@
 		<thingClass>Building</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
-			<texPath>Things/Building/Ship/MawScaffold</texPath>
+			<texPath>Things/Building/Scaffold/MawScaffold_2x2</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -1134,13 +1134,8 @@
 		<thingClass>Building</thingClass>
 		<passability>Impassable</passability>
 		<graphicData>
-			<texPath>Things/Building/Linked/ShipBeam/ScaffoldBeam_Atlas</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
-			<linkFlags>
-				<li>Wall</li>
-				<li>Rock</li>
-			</linkFlags>
+			<texPath>Things/Building/Scaffold/RadiatorBaseScaffold</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -1152,7 +1147,7 @@
 				<edgeRight>Damage/Edge</edgeRight>
 			</damageData>
 		</graphicData>
-		<uiIconPath>Things/Building/Ship/BeamRadiatorUI</uiIconPath>
+		<uiIconPath>Things/Building/Ship/BioRadiatorBase</uiIconPath>
 		<size>(1,1)</size>
 		<rotatable>true</rotatable>
 		<altitudeLayer>Building</altitudeLayer>
@@ -1268,9 +1263,9 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldHeatsink</texPath>
+			<texPath>Things/Building/Scaffold/HeatSinkScaffold_Small</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(2.1,4.7)</drawSize>
+			<drawSize>(2,2)</drawSize>
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>8</MaxHitPoints>
@@ -1300,7 +1295,7 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Ship/HeatsinkLarge</texPath>
+			<texPath>Things/Building/Scaffold/HeatSinkScaffold_Big</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>

@@ -131,6 +131,8 @@
 	  <Compile Include="Comp\CompProperties_ShipNutritionStore.cs"/>
 	  <Compile Include="Comp\Comp_StapleableScaffold.cs"/>
 	  <Compile Include="Comp\CompProperties_StapleableScaffold.cs"/>
+	  <Compile Include="Comp\Comp_MutableAmmo.cs"/>
+	  <Compile Include="Comp\CompProperties_MutableAmmo.cs"/>
 
 	  <Compile Include="Comp\Comp_ShipScaffoldConverter.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipScaffoldConverter.cs"/>
@@ -155,8 +157,10 @@
 	  <Compile Include="Mutations\Bone\DenseSpines.cs" />
       <Compile Include="Mutations\Bone\EfficientSpines.cs" />
 	  <Compile Include="Mutations\Bone\BoneArmor.cs" />
+	  <Compile Include="Mutations\Bone\PlasteelArmor.cs" />
 	  <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />
 	  <Compile Include="Mutations\Flesh\SparseNematocysts.cs" />
+	  <Compile Include="Mutations\Fluids\EnergizedPlasma.cs" />
 	  <Compile Include="Mutations\Fluids\FastRegeneration.cs" />
 	  <Compile Include="Mutations\Fluids\EfficientRegeneration.cs" />
 	  <Compile Include="Mutations\Misc\EfficientFatStorage.cs" />

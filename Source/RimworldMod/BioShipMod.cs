@@ -61,6 +61,51 @@ namespace BioShip
 		{
 			return (tDef.layerable && !shipTerrainDefs.Contains(tDef));
 		}
+
+		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
+
+		public static ThingDef GetAndRegisterProjectile(Building_ShipTurret turret, Verb_Shoot verb)
+        {
+			if (turret == null)
+            {
+				return null;
+            }
+			ThingDef projectileDef = null;
+			object[] parameters;
+			if (turret.gun.TryGetComp<CompChangeableProjectilePlural>() != null) {
+				parameters = new object[]{
+					turret,
+					Traverse.Create(verb).Field("shipTarget").GetValue<LocalTargetInfo>(),
+					turret.gun.TryGetComp<CompChangeableProjectilePlural>().Projectile.interactionCellIcon,
+					0f,
+					turret.SynchronizedBurstLocation
+				};
+				projectileDef = turret.gun.TryGetComp<CompChangeableProjectilePlural>().Projectile;
+            } else if (turret.TryGetComp<CompMutableAmmo>() != null)
+            {
+				parameters = new object[]{
+					turret,
+					Traverse.Create(verb).Field("shipTarget").GetValue<LocalTargetInfo>(),
+					turret.TryGetComp<CompMutableAmmo>().GetProjectileDef(),
+					1.9f,
+					turret.SynchronizedBurstLocation
+				};
+				projectileDef = turret.TryGetComp<CompMutableAmmo>().GetFakeProjectileDef();
+            }
+			else
+            {
+				parameters = new object[]{
+					turret,
+					Traverse.Create(verb).Field("shipTarget").GetValue<LocalTargetInfo>(),
+					verb.verbProps.spawnDef,
+					1.9f,
+					turret.SynchronizedBurstLocation
+				};
+				projectileDef = verb.verbProps.defaultProjectile;
+            }
+			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
+			return projectileDef;
+        }
 	}
 
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
@@ -274,6 +319,39 @@ namespace BioShip
 			return codes;
 		}
     }
+	[HarmonyPatch("Verb_LaunchProjectileShip", "TryCastShot")]
+	public static class AddVariableLaunchPatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			bool replacementMade = false;
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (replacementMade)
+                {
+					if (codes[i].opcode == OpCodes.Stloc_1)
+                    {
+						return codes;
+                    } else
+                    {
+						codes[i].opcode = OpCodes.Nop;
+                    }
+                } else
+                {
+					if (codes[i].opcode == OpCodes.Isinst && (codes[i].operand.ToString() == "RimWorld.Building_ShipTurret")) //&& operandString.LocalType == typeof(Building_ShipTurret))
+					{
+						codes[i+4] = new CodeInstruction(OpCodes.Ldloc_0);
+						codes[i+5] = new CodeInstruction(OpCodes.Ldarg_0);
+						codes[i+6] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BioShip), "GetAndRegisterProjectile", new Type[]{typeof(Building_ShipTurret), typeof(Verb_Shoot)}));
+						replacementMade = true;
+						i=i+6;
+					}
+				}
+            }
 
+			return codes;
+		}
+    }
 
 }

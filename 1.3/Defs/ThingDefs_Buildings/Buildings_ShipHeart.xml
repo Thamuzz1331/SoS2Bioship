@@ -54,7 +54,7 @@
 			</li>
 			<li Class="CompProperties_RegenWorker">
 				<regenCost>1.75</regenCost>
-				<regenInterval>30</regenInterval>
+				<regenInterval>90</regenInterval>
 			</li>
 			<li Class="CompProperties_MutationWorker"/>
 			<li Class="CompProperties_ShipScaffoldConverter">

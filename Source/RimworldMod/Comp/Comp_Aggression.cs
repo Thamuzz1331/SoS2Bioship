@@ -63,7 +63,7 @@ namespace RimWorld
         {
 			if (targetList.Count > 0)
             {
-				Thing target = targetList.ElementAt(Rand.Range(0, targetList.Count));
+				Thing target = targetList.RandomElement();
 				if (target.Destroyed)
                 {
 					targetList.Remove(target);

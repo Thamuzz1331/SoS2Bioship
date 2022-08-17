@@ -47,8 +47,7 @@ namespace RimWorld
                         if (body.RequestNutrition(cost))
                         {
                             ThingDef torpDef = ((CompShipHeart)body.heart).GetThingDef(parent.def.defName);
-                            int countIndex = Rand.Range(0, torpSpawn.Count);
-                            int loadCount = torpSpawn[countIndex];
+                            int loadCount = torpSpawn.RandomElement();
                             for (int i = 0; i < loadCount; i++)
                             {
                                 toReload.LoadShell(torpDef, 1);

@@ -12,7 +12,7 @@ namespace RimWorld
 	{
 		public float damageRemaining = 0f;
 		public int damageCountdown = 0;
-		private int damageInterval = 90;
+		private int damageInterval = 9;
 
 		public override void ExposeData()
 		{
@@ -28,7 +28,7 @@ namespace RimWorld
 				if (t != null)
                 {
 					AcidBurn(t);
-					damageRemaining -= 10f;
+					damageRemaining -= 1f;
 					damageCountdown = damageInterval;
 					if (damageRemaining <= 0)
 					{
@@ -57,7 +57,7 @@ namespace RimWorld
 					}
 					int totalAdj = adjacentTargets.Count + adjAcid.Count;
 					if (totalAdj > 0) {
-						float shareDamage = damageRemaining / (1.15*totalAdj);
+						float shareDamage = damageRemaining / (1.15f*totalAdj);
 						foreach(AcidGlob g in adjAcid)
                         {
 							g.damageRemaining += shareDamage;
@@ -66,7 +66,7 @@ namespace RimWorld
                         {
 							AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(ThingDef.Named("AcidGlob"));
 							obj.damageRemaining = shareDamage;
-							obj.damageCountdown = Rand.RangeInclusive(1, 90);
+							obj.damageCountdown = Rand.RangeInclusive(1, 9);
 							GenSpawn.Spawn(obj, c, this.Map, Rot4.North);
 						}
 					}
@@ -85,17 +85,17 @@ namespace RimWorld
 			{
 				BattleLogEntry_DamageTaken battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(pawn, RulePackDefOf.DamageEvent_Fire);
 				Find.BattleLog.Add(battleLogEntry_DamageTaken);
-				DamageInfo dinfo = new DamageInfo(ShipDamageDefOf.ShipAcid, 10, 0f, -1f, this);
+				DamageInfo dinfo = new DamageInfo(ShipDamageDefOf.ShipAcid, 1, 0f, -1f, this);
 				dinfo.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
 				targ.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_DamageTaken);
 				if (pawn.apparel != null && pawn.apparel.WornApparel.TryRandomElement(out Apparel result))
 				{
-					result.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 10, 0f, -1f, this));
+					result.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 1, 0f, -1f, this));
 				}
 			}
 			else
 			{
-				targ.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 10, 0f, -1f, this));
+				targ.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 1, 0f, -1f, this));
 			}
 		}
 

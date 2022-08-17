@@ -147,7 +147,7 @@ namespace RimWorld
             List<ThingDef> def = defs.TryGetValue(cat, null);
             if (def != null)
             {
-                return def[Rand.Range(0, def.Count)];
+                return def.RandomElement();
             }
             return null;
         }

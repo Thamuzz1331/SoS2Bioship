@@ -7,7 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
-	class DamageWorker_Acid : DamageWorker_AddInjury
+	class DamageWorker_PotentAcid : DamageWorker_AddInjury
 	{
 		public override void ExplosionAffectCell(Explosion explosion, IntVec3 c, List<Thing> damagedThings, List<Thing> ignoredThings, bool canThrowMotes)
 		{
@@ -15,12 +15,12 @@ namespace RimWorld
 			AcidGlob g = c.GetFirstThing<AcidGlob>(explosion.Map);
 			if (g != null)
             {
-				g.damageRemaining += 80;
+				g.damageRemaining += 120;
 				return;
             }
 				AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(ThingDef.Named("AcidGlob"));
 				obj.damageRemaining = 120;
-				obj.damageCountdown = Rand.RangeInclusive(1, 90);
+				obj.damageCountdown = Rand.RangeInclusive(1, 9);
 				GenSpawn.Spawn(obj, c, explosion.Map, Rot4.North);
 		}
 	}

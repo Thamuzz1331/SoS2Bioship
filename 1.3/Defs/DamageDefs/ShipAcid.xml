@@ -41,5 +41,32 @@
 		<altitudeLayer>PawnState</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
 	</ThingDef>
-
+	<ThingDef>
+		<defName>MotileAcidGlob</defName>
+		<label>acid glob</label>
+		<thingClass>MotileAcidGlob</thingClass>
+		<category>Attachment</category>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Special/AcidGlob</texPath>
+			<graphicClass>Graphic_Flicker</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<altitudeLayer>PawnState</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+	</ThingDef>
+	<ThingDef>
+		<defName>AnimateAcidGlob</defName>
+		<label>acid glob</label>
+		<thingClass>AnimateAcidGlob</thingClass>
+		<category>Attachment</category>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Special/AcidGlob</texPath>
+			<graphicClass>Graphic_Flicker</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<altitudeLayer>PawnState</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+	</ThingDef>
 </Defs>

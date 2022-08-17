@@ -133,6 +133,8 @@
 	  <Compile Include="Comp\CompProperties_StapleableScaffold.cs"/>
 	  <Compile Include="Comp\Comp_MutableAmmo.cs"/>
 	  <Compile Include="Comp\CompProperties_MutableAmmo.cs"/>
+	  <Compile Include="Comp\Comp_UnfoldTwitch.cs"/>
+	  <Compile Include="Comp\CompProperties_UnfoldTwitch.cs"/>
 
 	  <Compile Include="Comp\Comp_ShipScaffoldConverter.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipScaffoldConverter.cs"/>
@@ -161,14 +163,20 @@
 	  <Compile Include="Mutations\Flesh\ClusteredNematocysts.cs" />
 	  <Compile Include="Mutations\Flesh\SparseNematocysts.cs" />
 	  <Compile Include="Mutations\Fluids\EnergizedPlasma.cs" />
+	  <Compile Include="Mutations\Fluids\ShieldbusterPlasma.cs" />
 	  <Compile Include="Mutations\Fluids\FastRegeneration.cs" />
 	  <Compile Include="Mutations\Fluids\EfficientRegeneration.cs" />
 	  <Compile Include="Mutations\Misc\EfficientFatStorage.cs" />
 	  <Compile Include="Mutations\Misc\EfficientGrowth.cs" />
 	  <Compile Include="Mutations\Ocular\OcularPerk.cs" />
-	  <Compile Include="Damage\AcidWorker.cs"/>
-      <Compile Include="Damage\Damage_AcidGlob.cs"/>
-      <Compile Include="Damage\ShipDamageDefOf.cs"/>
+	  <Compile Include="Damage\DamageWorker_Acid.cs"/>
+	  <Compile Include="Damage\DamageWorker_PotentAcid.cs"/>
+	  <Compile Include="Damage\DamageWorker_MotileAcid.cs"/>
+	  <Compile Include="Damage\DamageWorker_AnimateAcid.cs"/>
+	  <Compile Include="Damage\Damage_AcidGlob.cs"/>
+	  <Compile Include="Damage\Damage_MotileAcidGlob.cs"/>
+	  <Compile Include="Damage\Damage_AnimateAcidGlob.cs"/>
+	  <Compile Include="Damage\ShipDamageDefOf.cs"/>
 
 	  <Compile Include="Projectiles\Projectile_ShieldBatteringProjectile.cs"/>
 

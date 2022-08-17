@@ -969,7 +969,7 @@
 			<li Class="CompProperties_TempControl">
 				<energyPerSecond>-21</energyPerSecond>
 			</li>
-			<li Class="CompProperties_Unfold">
+			<li Class="CompProperties_UnfoldTwitch">
 				<extendRate>0.005</extendRate>
 				<retractRate>0.0025</retractRate>
 				<retractTime>350</retractTime>

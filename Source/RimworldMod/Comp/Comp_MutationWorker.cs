@@ -256,14 +256,14 @@ namespace RimWorld
             List<IMutation> _mutations = mutationOptions[cat][theme];
             if (_mutations.Count > 0)
             {
-                return _mutations[Rand.Range(0, _mutations.Count)];
+                return _mutations.RandomElement();
             }
             return null;
         }
 
         public virtual IMutation RollQuirk()
         {
-            return quirkPossibilities[Rand.Range(0, quirkPossibilities.Count)];
+            return quirkPossibilities.RandomElement();
         }
 
         public virtual void AddMutation(string cat, string theme, IMutation toAdd, bool positive)
@@ -358,7 +358,27 @@ namespace RimWorld
 
         public virtual void UpgradeMutationTier(string newTier)
         {
-
+            goodMutationOptions.Clear();
+            foreach(IMutation mut in mutations)
+            {
+                foreach(Tuple<IMutation, string, string> newMutation in mut.GetMutationsForTier(newTier, mutations)) {
+                    if (!goodMutationOptions.ContainsKey(newMutation.Item2))
+                    {
+                        goodMutationOptions.Add(newMutation.Item2, new Dictionary<string, List<IMutation>>());
+                    }
+                    if (!goodMutationOptions
+                        .TryGetValue(newMutation.Item2, new Dictionary<string, List<IMutation>>())
+                        .ContainsKey(newMutation.Item3))
+                    {
+                        goodMutationOptions
+                            .TryGetValue(newMutation.Item2, new Dictionary<string, List<IMutation>>())
+                            .Add(newMutation.Item3, new List<IMutation>());
+                    }
+                    goodMutationOptions
+                            .TryGetValue(newMutation.Item2, new Dictionary<string, List<IMutation>>())
+                            .TryGetValue(newMutation.Item3, new List<IMutation>()).Add(newMutation.Item1);
+                }
+            }
         }
     }
 }

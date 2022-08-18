@@ -15,11 +15,11 @@ namespace RimWorld
 			AcidGlob g = c.GetFirstThing<AcidGlob>(explosion.Map);
 			if (g != null)
             {
-				g.damageRemaining += 180;
+				g.damageRemaining += 240;
 				return;
             }
 			MotileAcidGlob obj = (MotileAcidGlob)ThingMaker.MakeThing(ThingDef.Named("MotileAcidGlob"));
-			obj.damageRemaining = 180;
+			obj.damageRemaining = 240;
 			obj.damageAmount = 2f;
 			obj.spreadDef = ThingDef.Named("MotileAcidGlob");
 			obj.damageCountdown = Rand.RangeInclusive(1, 9);

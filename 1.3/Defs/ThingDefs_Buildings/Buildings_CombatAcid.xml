@@ -107,7 +107,7 @@
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<projectile>
-			<explosionRadius>5.9</explosionRadius>
+			<explosionRadius>6.9</explosionRadius>
 			<damageDef>ShipBioAcid</damageDef>
 			<speed>100</speed>
 		</projectile>
@@ -127,7 +127,7 @@
 		<minDamageToFragment>15</minDamageToFragment>
 		<defaultDamage>120</defaultDamage>
 		<defaultStoppingPower>0.5</defaultStoppingPower>
-		<defaultArmorPenetration>0.10</defaultArmorPenetration>
+		<defaultArmorPenetration>0.50</defaultArmorPenetration>
 		<buildingDamageFactor>4</buildingDamageFactor>
 		<plantDamageFactor>4</plantDamageFactor>
 		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
@@ -158,7 +158,7 @@
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<projectile>
-			<explosionRadius>5.9</explosionRadius>
+			<explosionRadius>7.9</explosionRadius>
 			<damageDef>ShipPotentAcid</damageDef>
 			<speed>100</speed>
 		</projectile>
@@ -166,7 +166,7 @@
 	<DamageDef ParentName="ShipBioAcid"  Name="ShipPotentAcid">
 		<defName>ShipPotentAcid</defName>
 		<workerClass>DamageWorker_PotentAcid</workerClass>
-		<defaultDamage>120</defaultDamage>
+		<defaultDamage>140</defaultDamage>
 	</DamageDef>
 
 	<ThingDef ParentName="PotentAcidFake" Name="MotileAcidFake">
@@ -189,7 +189,7 @@
 		</graphicData>
 
 		<projectile>
-			<explosionRadius>5.9</explosionRadius>
+			<explosionRadius>7.9</explosionRadius>
 			<damageDef>ShipMotileAcid</damageDef>
 			<speed>100</speed>
 		</projectile>
@@ -197,7 +197,7 @@
 	<DamageDef ParentName="ShipPotentAcid"  Name="ShipMotileAcid">
 		<defName>ShipMotileAcid</defName>
 		<workerClass>DamageWorker_MotileAcid</workerClass>
-		<defaultDamage>120</defaultDamage>
+		<defaultDamage>140</defaultDamage>
 	</DamageDef>
 	
 	<ThingDef ParentName="MotileAcidFake" Name="AnimateAcidFake">
@@ -219,7 +219,7 @@
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<projectile>
-			<explosionRadius>5.9</explosionRadius>
+			<explosionRadius>7.9</explosionRadius>
 			<damageDef>ShipAnimateAcid</damageDef>
 			<speed>100</speed>
 		</projectile>
@@ -227,6 +227,6 @@
 	<DamageDef ParentName="ShipMotileAcid"  Name="ShipAnimateAcid">
 		<defName>ShipAnimateAcid</defName>
 		<workerClass>DamageWorker_AnimateAcid</workerClass>
-		<defaultDamage>120</defaultDamage>
+		<defaultDamage>140</defaultDamage>
 	</DamageDef>
 </Defs>

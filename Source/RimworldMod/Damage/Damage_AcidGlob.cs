@@ -91,17 +91,17 @@ namespace RimWorld
 			{
 				BattleLogEntry_DamageTaken battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(pawn, RulePackDefOf.DamageEvent_Fire);
 				Find.BattleLog.Add(battleLogEntry_DamageTaken);
-				DamageInfo dinfo = new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0f, -1f, this);
+				DamageInfo dinfo = new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0.5f, -1f, this);
 				dinfo.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
 				targ.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_DamageTaken);
 				if (pawn.apparel != null && pawn.apparel.WornApparel.TryRandomElement(out Apparel result))
 				{
-					result.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0f, -1f, this));
+					result.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0.5f, -1f, this));
 				}
 			}
 			else
 			{
-				targ.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0f, -1f, this));
+				targ.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0.5f, -1f, this));
 			}
 		}
 

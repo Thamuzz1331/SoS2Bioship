@@ -31,8 +31,8 @@
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_MutableAmmo">
-				<defaultAmmo>Proj_Fake_BioPlasma</defaultAmmo>
-				<defaultFakeAmmo>Proj_BioPlasma</defaultFakeAmmo>
+				<defaultAmmo>Proj_BioPlasma</defaultAmmo>
+				<defaultFakeAmmo>Proj_Fake_BioPlasma</defaultFakeAmmo>
 			</li>
 		</comps>
 		<building>

@@ -46,7 +46,7 @@ namespace RimWorld
 		bool CanSpreadToLocation(IntVec3 c)
         {
 			AcidGlob g = c.GetFirstThing<AcidGlob>(this.Map);
-			return (c.GetFirstThing<AcidGlob>(this.Map) == null && !c.Filled(this.Map) && c.GetThingList(this.Map).Count > 0);
+			return (c.GetFirstThing<AcidGlob>(this.Map) == null && !c.Filled(this.Map) && GetValidTarget(c).Count > 0);
         }
 
 		public virtual void ForceOpening(MotileAcidGlob origin)

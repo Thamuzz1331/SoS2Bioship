@@ -18,10 +18,12 @@ namespace RimWorld
 				g.damageRemaining += 120;
 				return;
             }
-				AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(ThingDef.Named("AnimateAcidGlob"));
-				obj.damageRemaining = 120;
-				obj.damageCountdown = Rand.RangeInclusive(1, 9);
-				GenSpawn.Spawn(obj, c, explosion.Map, Rot4.North);
+			AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(ThingDef.Named("AnimateAcidGlob"));
+			obj.damageRemaining = 120;
+			obj.damageAmount = 2f;
+			obj.spreadDef = ThingDef.Named("AnimateAcid");
+			obj.damageCountdown = Rand.RangeInclusive(1, 9);
+			GenSpawn.Spawn(obj, c, explosion.Map, Rot4.North);
 		}
 	}
 }

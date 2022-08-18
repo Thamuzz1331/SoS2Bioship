@@ -12,7 +12,9 @@ namespace RimWorld
 	{
 		public float damageRemaining = 0f;
 		public int damageCountdown = 0;
+		public float damageAmount = 1f;
 		private int damageInterval = 9;
+		public ThingDef spreadDef = ThingDef.Named("AcidGlob");
 
 		public override void ExposeData()
 		{
@@ -24,11 +26,14 @@ namespace RimWorld
         {
 			if (damageCountdown <= 0)
             {
-				Thing t = GetValidTarget(this.Position);
-				if (t != null)
+				List<Thing> targs = GetValidTarget(this.Position);
+				if (targs != null)
                 {
-					AcidBurn(t);
-					damageRemaining -= 1f;
+					foreach(Thing t in targs)
+                    {
+						AcidBurn(t);
+					}
+					damageRemaining -= damageAmount;
 					damageCountdown = damageInterval;
 					if (damageRemaining <= 0)
 					{
@@ -64,8 +69,9 @@ namespace RimWorld
                         }
 						foreach(IntVec3 c in adjacentTargets)
                         {
-							AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(ThingDef.Named("AcidGlob"));
+							AcidGlob obj = (AcidGlob)ThingMaker.MakeThing(this.spreadDef);
 							obj.damageRemaining = shareDamage;
+							obj.damageAmount = this.damageAmount;
 							obj.damageCountdown = Rand.RangeInclusive(1, 9);
 							GenSpawn.Spawn(obj, c, this.Map, Rot4.North);
 						}
@@ -85,21 +91,21 @@ namespace RimWorld
 			{
 				BattleLogEntry_DamageTaken battleLogEntry_DamageTaken = new BattleLogEntry_DamageTaken(pawn, RulePackDefOf.DamageEvent_Fire);
 				Find.BattleLog.Add(battleLogEntry_DamageTaken);
-				DamageInfo dinfo = new DamageInfo(ShipDamageDefOf.ShipAcid, 1, 0f, -1f, this);
+				DamageInfo dinfo = new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0f, -1f, this);
 				dinfo.SetBodyRegion(BodyPartHeight.Undefined, BodyPartDepth.Outside);
 				targ.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_DamageTaken);
 				if (pawn.apparel != null && pawn.apparel.WornApparel.TryRandomElement(out Apparel result))
 				{
-					result.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 1, 0f, -1f, this));
+					result.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0f, -1f, this));
 				}
 			}
 			else
 			{
-				targ.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 1, 0f, -1f, this));
+				targ.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, damageAmount, 0f, -1f, this));
 			}
 		}
 
-		public Thing GetValidTarget(IntVec3 pos)
+		public List<Thing> GetValidTarget(IntVec3 pos)
         {
 			List<Thing> targets = pos.GetThingList(this.Map);
 			List<Thing> rets = new List<Thing>();
@@ -112,9 +118,21 @@ namespace RimWorld
             }
 			if (rets.Count > 0)
             {
-				return rets.RandomElement();
+				return rets;
             }
 			return null;
         }
+
+		public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+		{
+			if (dinfo.Def == ShipDamageDefOf.ShipAcid)
+			{
+				damageRemaining += totalDamageDealt;
+			}
+			else
+			{
+				base.PostApplyDamage(dinfo, totalDamageDealt);
+			}
+		}
 	}
 }

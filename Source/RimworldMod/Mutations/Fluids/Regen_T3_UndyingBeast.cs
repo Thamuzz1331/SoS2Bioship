@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientGrowth : IMutation
+    public class UndyingBeast : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -19,18 +19,21 @@ namespace RimWorld
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
+
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["growthEfficiency"] *= 1.25f;
-                heart.stats["metabolicEfficiency"] *= 1.15f;
-
+                heart.stats["regenSpeed"] *= 1.25f;
+                heart.stats["metabolicSpeed"] *= 1.05f;
+                heart.stats["regenEfficiency"] *= 1.25f;
+                heart.stats["metabolicEfficiency"] *= 1.05f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<FastRegeneration>("defense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
         void IHediff.Remove(CompBuildingBodyPart target)
@@ -38,24 +41,30 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["growthEfficiency"] *= 1/1.25f;
-                heart.stats["metabolicEfficiency"] *= 1/1.15f;
-
+                heart.stats["regenSpeed"] *= 1f/1.25f;
+                heart.stats["metabolicSpeed"] *= 1f/1.05f;
+                heart.stats["regenEfficiency"] *= 1f/1.25f;
+                heart.stats["metabolicEfficiency"] *= 1f/1.05f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth(), true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration(), true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<Tuple<IMutation, string, string>>() { };
+            return new List<Tuple<IMutation, string, string>>();
         }
         String IMutation.GetTier() {
-            return "tier1";
+            return "tier3";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Undying Beast\nThe body heals almost faster than it can be injured and with a fraction of the nutrition cost.";
+        }
+        public override String ToString()
+        {
+            return "Undying Beast";
         }
         Texture2D IMutation.GetIcon()
         {

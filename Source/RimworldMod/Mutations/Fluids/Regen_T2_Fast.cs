@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientRegeneration : IMutation
+    public class FastRegeneration : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -25,12 +25,12 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["regenEfficiency"] *= 1.25f;
-                heart.stats["metabolicEfficiency"] *= 1.05f;
+                heart.stats["regenSpeed"] *= 1.25f;
+                heart.stats["metabolicSpeed"] *= 1.05f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientRegeneration>("defense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<FastRegeneration>("defense", "humors", true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
@@ -39,30 +39,35 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["regenSregenEfficiencypeed"] *= 1f/1.25f;
-                heart.stats["metabolicEfficiency"] *= 1f/1.05f;
+                heart.stats["regenSpeed"] *= 1f/1.25f;
+                heart.stats["metabolicSpeed"] *= 1f/1.05f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new EfficientRegeneration(), true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration(), true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<Tuple<IMutation, string, string>>() { };
+            if (tier == "tier3")
+            {
+                return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
+                    new UndyingBeast(),
+                    "defense",
+                    "humors") };
+            }
+            else
+            {
+                return new List<Tuple<IMutation, string, string>>();
+            }
         }
         String IMutation.GetTier() {
-            return "tier1";
+            return "tier2";
         }
         String IMutation.GetDescription()
         {
-            return "Efficient Regeneration\nImproves regen efficiency by 25%.";
+            return "Fast Regeneration\nIncreases the speed with which damaged body parts regenerate.";
         }
-        public override String ToString()
-        {
-            return "Efficient Regeneration";
-        }
-
         Texture2D IMutation.GetIcon()
         {
             return null;

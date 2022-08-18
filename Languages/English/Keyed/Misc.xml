@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<Bioship.TabMutations>Mutations</Bioship.TabMutations>
-	<Bioship.TierOne>Tier 1</Bioship.TierOne>
-	<Bioship.TierTwo>Tier 2</Bioship.TierTwo>
-	<Bioship.TierThree>Tier 3</Bioship.TierThree>
+	<tier1>Tier 1</tier1>
+	<tier2>Tier 2</tier2>
+	<tier3>Tier 3</tier3>
 </LanguageData>

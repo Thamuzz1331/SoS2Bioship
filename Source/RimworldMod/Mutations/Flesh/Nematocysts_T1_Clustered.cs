@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class FastRegeneration : IMutation
+    public class ClusteredNematocysts : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -25,28 +25,21 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["regenSpeed"] *= 1.25f;
-                heart.stats["metabolicSpeed"] *= 1.05f;
+                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<FastRegeneration>("defense", "humors", true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ClusteredNematocysts>("offense", "flesh", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["flesh"]++;
             }
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["regenSpeed"] *= 1f/1.25f;
-                heart.stats["metabolicSpeed"] *= 1f/1.05f;
-            }
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
-            {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration(), true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
-            }
+
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
             return new List<Tuple<IMutation, string, string>>() { };
@@ -56,16 +49,20 @@ namespace RimWorld
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Clustered Nematocysts\nSmall weapon scaffolds now grow into clustered nematocysts, which fire larger volleys.";
+        }
+        public override String ToString()
+        {
+            return "Clustered Nematocysts";
         }
         Texture2D IMutation.GetIcon()
         {
             return null;
         }
-
         void IExposable.ExposeData()
         {
 
         }
+
     }
 }

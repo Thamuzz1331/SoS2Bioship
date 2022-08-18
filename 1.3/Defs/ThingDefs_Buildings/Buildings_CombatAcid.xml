@@ -30,8 +30,8 @@
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_MutableAmmo">
-				<defaultAmmo>Bullet_Fake_BioAcid</defaultAmmo>
-				<defaultFakeAmmo>Proj_BioAcid</defaultFakeAmmo>
+				<defaultAmmo>Proj_BioAcid</defaultAmmo>
+				<defaultFakeAmmo>Bullet_Fake_BioAcid</defaultFakeAmmo>
 			</li>
 		</comps>
 		<building>

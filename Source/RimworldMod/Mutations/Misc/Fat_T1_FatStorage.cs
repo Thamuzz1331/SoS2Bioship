@@ -35,14 +35,26 @@ namespace RimWorld
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<Tuple<IMutation, string, string>>() { };
+            if (tier == "tier2")
+            {
+                return new List<Tuple<IMutation, string, string>>() { };
+            }
+            else
+            {
+                return new List<Tuple<IMutation, string, string>>();
+            }
         }
+        
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Efficient Fat Storage\nIncreases the fat stored per excess nutrition significantly.";
+        }
+        public override string ToString()
+        {
+            return "Efficient Fat Storage";
         }
         Texture2D IMutation.GetIcon()
         {

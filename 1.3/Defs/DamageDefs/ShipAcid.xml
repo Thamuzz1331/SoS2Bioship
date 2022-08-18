@@ -24,7 +24,7 @@
 		<explosionColorEdge>(100, 152, 100)</explosionColorEdge>
 		<soundExplosion>DeathAcidifier</soundExplosion>
 		<combatLogRules>Damage_Flame</combatLogRules>
-		<buildingDamageFactor>4</buildingDamageFactor>
+		<buildingDamageFactor>2</buildingDamageFactor>
 	</DamageDef>
 
 	<ThingDef>

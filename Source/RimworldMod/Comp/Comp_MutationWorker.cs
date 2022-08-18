@@ -33,7 +33,6 @@ namespace RimWorld
             {"offense", 3},
             {"defense", 3},
             {"utility", 2},
-//            {"quirk", 1}
         };
         public List<IMutation> quirkPossibilities = new List<IMutation>()
         {
@@ -49,7 +48,7 @@ namespace RimWorld
                     new DenseSpines(), new EfficientSpines(),
                 }},
                 { "humors", new List<IMutation>(){
-                    new EnergizedPlasma(),
+                    new PotentAcid(), new EnergizedPlasma(), 
                 }},
                 { "misc", new List<IMutation>(){
 
@@ -63,7 +62,7 @@ namespace RimWorld
                     new BoneArmor(),
                 }},
                 { "humors", new List<IMutation>(){
-                    new FastRegeneration(), new EfficientRegeneration(),
+                    new EfficientRegeneration(),
                 }},
                 { "misc", new List<IMutation>(){
 
@@ -88,9 +87,10 @@ namespace RimWorld
         {
             {"offense", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
-                    new SparseNematocysts(),
+
                 }},
                 { "bone", new List<IMutation>(){
+
                 }},
                 { "humors", new List<IMutation>(){
 
@@ -141,6 +141,14 @@ namespace RimWorld
             base.PostSpawnSetup(b);
         }
 
+        public virtual void GetInitialMutations(BuildingBody body)
+        {
+            this.SpreadMutation(body, this.quirkPossibilities.RandomElement());
+            this.SpreadMutation(body, this.RollMutation("offense", this.GetRandomTheme(this.mutationThemes, this.goodMutationOptions.TryGetValue("offense")), this.goodMutationOptions));
+            this.SpreadMutation(body, this.RollMutation("defense", this.GetRandomTheme(this.mutationThemes, this.goodMutationOptions.TryGetValue("defense")), this.goodMutationOptions));
+            this.SpreadMutation(body, this.RollMutation("utility", this.GetRandomTheme(this.mutationThemes, this.goodMutationOptions.TryGetValue("utility")), this.goodMutationOptions));
+        }
+
         public override void CompTick()
         {
             base.CompTick();
@@ -161,7 +169,7 @@ namespace RimWorld
             {
                 yield return gizmo;
             }
-            if ((int)parent.GetStatValue(inducers) > 0 && !mutating)
+            if ((int)parent.GetStatValue(inducers) > 0 && !mutating && !(this.tier == "tier3" && this.GetMutationsForTier("tier3").Count >= 2))
             {
                 yield return new Command_Action
                 {
@@ -297,17 +305,6 @@ namespace RimWorld
 
         public virtual void InduceMutation()
         {
-            if (this.tier == "tier1" && this.GetMutationsForTier("tier1").Count >= 6)
-            {
-                UpgradeMutationTier("tier2");
-            } else if (this.tier == "tier2" && this.GetMutationsForTier("tier2").Count >= 4)
-            {
-                UpgradeMutationTier("tier3");
-            } else if (this.tier == "tier3" && this.GetMutationsForTier("tier3").Count >= 2)
-            {
-                return;
-            }
-
             string cat = RollCategory();
             if (cat == "quirk")
             {
@@ -344,9 +341,19 @@ namespace RimWorld
                     t.TryGetComp<CompShipBodyPart>().hediffs.Add(mut);
                 }
             }
+            if (this.tier == "tier1" && this.GetMutationsForTier("tier1").Count >= 6)
+            {
+                UpgradeMutationTier("tier2");
+            } else if (this.tier == "tier2" && this.GetMutationsForTier("tier2").Count >= 4)
+            {
+                UpgradeMutationTier("tier3");
+            } else if (this.tier == "tier3" && this.GetMutationsForTier("tier3").Count >= 2)
+            {
+                return;
+            }
         }
 
-        public virtual void RemoveMutation(Building b, IMutation mut)
+        public virtual void RemoveMutationFromOrgan(Building b, IMutation mut)
         {
 
         }
@@ -356,9 +363,31 @@ namespace RimWorld
             return mutations.FindAll((IMutation m) => m.GetTier() == tier);
         }
 
+        public virtual List<IMutation> GetMutationOptionsForTeir(String tier)
+        {
+            List<IMutation> mutationOptions = new List<IMutation>();
+            foreach(Dictionary<String, List<IMutation>> category in goodMutationOptions.Values)
+            {
+                foreach(List<IMutation> theme in category.Values)
+                {
+                    foreach(IMutation mut in theme)
+                    {
+                        if(mut.GetTier() == tier)
+                        {
+                            mutationOptions.Add(mut);
+                        }
+                    }
+                }
+            }
+            return mutationOptions;
+        }
+
         public virtual void UpgradeMutationTier(string newTier)
         {
-            goodMutationOptions.Clear();
+            foreach(String cat in goodMutationOptions.Keys)
+            {
+                goodMutationOptions[cat].Clear();
+            }
             foreach(IMutation mut in mutations)
             {
                 foreach(Tuple<IMutation, string, string> newMutation in mut.GetMutationsForTier(newTier, mutations)) {

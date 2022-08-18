@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class SparseNematocysts : IMutation
+    public class EfficientGrowth : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -19,28 +19,33 @@ namespace RimWorld
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
-
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_SparseNematocyst"));
-                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_SparseNematocyst"));
+                heart.stats["growthEfficiency"] *= 1.25f;
+                heart.stats["metabolicEfficiency"] *= 1.15f;
 
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ClusteredNematocysts>("offense", "flesh", true);
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<SparseNematocysts>("offense", "flesh", false);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc", true);
             }
-
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.stats["growthEfficiency"] *= 1/1.25f;
+                heart.stats["metabolicEfficiency"] *= 1/1.15f;
 
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth(), true);
+            }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
             return new List<Tuple<IMutation, string, string>>() { };
@@ -50,16 +55,20 @@ namespace RimWorld
         }
         String IMutation.GetDescription()
         {
-            return "";
+            return "Efficient Growth\nHeart is particularly efficient in converting scaffolds to flesh, and gains a small bonus to universal metobolic efficiency.";
+        }
+        public override string ToString()
+        {
+            return "Efficient Growth";
         }
         Texture2D IMutation.GetIcon()
         {
             return null;
         }
+
         void IExposable.ExposeData()
         {
 
         }
-
     }
 }

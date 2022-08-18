@@ -27,29 +27,29 @@ namespace RimWorld
 				return (mutationWorker != null);
 			}
 		}
-
+		private CompMutationWorker mutationWorker;
 		protected override void FillTab()
 		{
 			Thing sel = base.SelThing;
-			CompMutationWorker mutationWorker = sel.TryGetComp<CompMutationWorker>();
+			mutationWorker = sel.TryGetComp<CompMutationWorker>();
 
 			Rect rect = new Rect(0f, 0f, this.size.x, this.size.y).ContractedBy(10f);
 			//Widgets.BeginScrollView(rect, ref this.scrollPos, new Rect(0f, 0f, 600f, rect.height - 20f), true);
-			ShowMutations(rect.TopHalf().BottomHalf(), "BioShip.TierThree", mutationWorker.GetMutationsForTier("tier3"), 2);
-			ShowMutations(rect.BottomHalf().TopHalf(), "BioShip.TierTwo", mutationWorker.GetMutationsForTier("tier2"), 4);
-			ShowMutations(rect.BottomHalf().BottomHalf(), "BioShip.TierOne", mutationWorker.GetMutationsForTier("tier1"), 6);
+			ShowMutations(rect.TopHalf().BottomHalf(), "tier3", mutationWorker.GetMutationsForTier("tier3"), 2);
+			ShowMutations(rect.BottomHalf().TopHalf(), "tier2", mutationWorker.GetMutationsForTier("tier2"), 4);
+			ShowMutations(rect.BottomHalf().BottomHalf(), "tier1", mutationWorker.GetMutationsForTier("tier1"), 6);
 			//Widgets.EndScrollView();
 		}
 
 		private void ShowMutations(Rect mutationBar, string label, List<IMutation> muts, int slots)
         {
-			Widgets.Label(mutationBar.TopPartPixels(30f), label);
+			Widgets.Label(mutationBar.TopPartPixels(30f), label.Translate());
 			float xIncrement = mutationBar.width / slots;
 			float initialOffset = (xIncrement/2)-40f;
 			for (int i = 0; i < slots; i++)
             {
 				Rect mutSlot = new Rect(mutationBar.x + initialOffset + xIncrement * (float)(i), mutationBar.y + 25f, 80f, 80f);
-				this.DoEmptyRect(mutSlot, i < muts.Count);
+				this.DoEmptyRect(mutSlot, label, i < muts.Count);
 				if (i < muts.Count)
                 {
 					DrawMutationIcon(mutSlot, muts[i]);
@@ -57,26 +57,37 @@ namespace RimWorld
             }
         }
 
-		public void DoEmptyRect(Rect inRect, bool filled = false)
+		public void DoEmptyRect(Rect inRect, string tier, bool filled = false)
 		{
 			GUI.DrawTexture(inRect, BioShip.BioShip.MutationBackground);
 			
-/*
-			if (!this.EditMode || filled)
+			if (Prefs.DevMode)
 			{
-				return;
+				if (filled)
+                {
+
+                } else
+                {
+					if (Widgets.ButtonInvisible(inRect, true))
+					{
+						List<FloatMenuOption> options = new List<FloatMenuOption>();
+						foreach(IMutation mut in mutationWorker.GetMutationOptionsForTeir(tier))
+                        {
+							options.Add(new FloatMenuOption(mut.ToString(),
+								delegate() {
+									mutationWorker.SpreadMutation(mutationWorker.body, mut);
+								},
+								MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
+                        }
+						if (options.Count > 0)
+                        {
+							FloatMenu menu = new FloatMenu(options);
+							Find.WindowStack.Add(menu);
+                        }
+					}
+                }
 			}
 			Widgets.DrawHighlightIfMouseover(inRect);
-			if (Widgets.ButtonInvisible(inRect, true))
-			{
-				Find.WindowStack.Add(new FloatMenu((from power in DefDatabase<PowerDef>.AllDefs
-				where power.powerType == type
-				select new FloatMenuOption(power.LabelCap, delegate()
-				{
-					this.SelPowerTracker.AddPower(power);
-				}, MenuOptionPriority.Default, null, null, 0f, null, null, true, 0)).ToList<FloatMenuOption>()));
-			}
-*/
 		}
 
 		public void DrawMutationIcon(Rect inRect, IMutation mut)

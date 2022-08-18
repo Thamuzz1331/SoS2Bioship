@@ -13,6 +13,7 @@ namespace RimWorld
         public CompProperties_ShipNutritionStore ShipProps => (CompProperties_ShipNutritionStore)props;
 
         public float efficiency = 1f;
+        public float capacityModifier = 1f;
 
         public override void PostExposeData()
         {
@@ -39,5 +40,9 @@ namespace RimWorld
             return overflow;
         }
 
+        public override float getNutrientCapacity()
+        {
+            return base.getNutrientCapacity() * capacityModifier;
+        }
     }
 }

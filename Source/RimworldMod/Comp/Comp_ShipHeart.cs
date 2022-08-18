@@ -57,6 +57,8 @@ namespace RimWorld
                 stats.Add("regenEfficiency", 1f);
             if (!stats.ContainsKey("regenSpeed"))
                 stats.Add("regenSpeed", 1f);
+            if (!stats.ContainsKey("conciousness"))
+                stats.Add("conciousness", 1f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             mutator = parent.TryGetComp<CompMutationWorker>();
             aggression = parent.TryGetComp<CompAggression>();
@@ -67,11 +69,7 @@ namespace RimWorld
             armorGrower.body = this.body;
             if (!respawningAfterLoad && !initialized)
             {
-
-                mutator.SpreadMutation(this.body, mutator.quirkPossibilities.RandomElement());
-                mutator.SpreadMutation(this.body, mutator.RollMutation("offense", mutator.GetRandomTheme(mutator.mutationThemes, mutator.goodMutationOptions.TryGetValue("offense")), mutator.goodMutationOptions));
-                mutator.SpreadMutation(this.body, mutator.RollMutation("defense", mutator.GetRandomTheme(mutator.mutationThemes, mutator.goodMutationOptions.TryGetValue("defense")), mutator.goodMutationOptions));
-                mutator.SpreadMutation(this.body, mutator.RollMutation("utility", mutator.GetRandomTheme(mutator.mutationThemes, mutator.goodMutationOptions.TryGetValue("utility")), mutator.goodMutationOptions));
+                mutator.GetInitialMutations(this.body);
                 initialized = true; //When the ship takes off the comps get regenerated.  This ensures that the initial mutations will only proc once.
             }
             if (!respawningAfterLoad)

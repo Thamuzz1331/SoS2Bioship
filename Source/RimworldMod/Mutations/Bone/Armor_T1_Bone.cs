@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class PlasteelArmor : IMutation
+    public class BoneArmor : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -19,43 +19,50 @@ namespace RimWorld
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
-
+       
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompArmorGrower>() != null)
             {
-                target.parent.TryGetComp<CompArmorGrower>().armorClass = ThingDef.Named("PlasteelArmor");
+                target.parent.TryGetComp<CompArmorGrower>().armorClass = ThingDef.Named("BoneArmor");
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<PlasteelArmor>("defense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<BoneArmor>("defense", "bone", true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
             }
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompArmorGrower>() != null &&
-                target.parent.TryGetComp<CompArmorGrower>().armorClass == ThingDef.Named("PlasteelArmor"))
+            if (target.parent.TryGetComp<CompArmorGrower>() != null && 
+                target.parent.TryGetComp<CompArmorGrower>().armorClass == ThingDef.Named("BoneArmor"))
             {
                 target.parent.TryGetComp<CompArmorGrower>().armorClass = null;
             }
         }
 
-        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations)
-        {
-            return new List<Tuple<IMutation, string, string>>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+            if (tier == "tier2")
+            {
+                return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
+                    new PlasteelArmor(),
+                    "defense",
+                    "bone") };
+            } else
+            {
+                return new List<Tuple<IMutation, string, string>>();
+            }
         }
-        String IMutation.GetTier()
-        {
-            return "tier2";
+        String IMutation.GetTier() {
+            return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "Plasteeel Armor\nAllows the bioship to grow a layer of plasteel armor";
+            return "Bone Armor\nAllows the bioship to grow a layer of bone armor";
         }
         public override String ToString()
         {
-            return "Plasteeel Armor";
+            return "Bone Armor";
         }
 
         Texture2D IMutation.GetIcon()

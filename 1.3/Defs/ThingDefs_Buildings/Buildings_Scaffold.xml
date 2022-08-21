@@ -1121,7 +1121,55 @@
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
 	</ThingDef>
-
+	<ThingDef ParentName="BuildingBase">
+		<defName>FatStoreLargeScaffold</defName>
+		<label>fat store scaffold</label>
+		<designatorDropdown>Scaffold_Fat</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldFatSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Base for the growth a fat deposite.</description>
+		<size>(3,5)</size>
+		<costList>
+			<ProtienPutty>20</ProtienPutty>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>FatStoreLarge</transformString>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</researchPrerequisites>
+	</ThingDef>
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Thermoregulation</defName>
 	</DesignatorDropdownGroupDef>

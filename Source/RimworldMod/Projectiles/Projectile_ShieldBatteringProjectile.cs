@@ -21,9 +21,10 @@ namespace RimWorld
                 {
                     if (!shield.shutDown && Position.DistanceTo(shield.parent.Position) <= shield.radius)
                     {
-                        if (shield.radius >= 20f)
+                        if (shield.radius >= 15f)
                         {
-                            shield.radius -= 1f;
+                            Log.Message("Shrinking shield");
+                            shield.radius -= 0.2f;
                         }
                         break;
                     }

@@ -127,6 +127,8 @@
 	  <Compile Include="Comp\CompProperties_MutationWorker.cs"/>
 	  <Compile Include="Comp\Comp_MutableScaffold.cs"/>
 	  <Compile Include="Comp\CompProperties_MutableScaffold.cs"/>
+	  <Compile Include="Comp\Comp_ShipNutritionSource.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipNutritionSource.cs"/>
 	  <Compile Include="Comp\Comp_ShipNutritionStore.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipNutritionStore.cs"/>
 	  <Compile Include="Comp\Comp_StapleableScaffold.cs"/>
@@ -166,11 +168,14 @@
 	  <Compile Include="Mutations\Fluids\Acid_T3_Animate.cs" />
 	  <Compile Include="Mutations\Fluids\Plasma_T1_Energized.cs" />
 	  <Compile Include="Mutations\Fluids\Plasma_T2_Shieldbuster.cs" />
+	  <Compile Include="Mutations\Fluids\Plasma_T3_Shieldcrusher.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T1_Efficient.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T2_Fast.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T3_UndyingBeast.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T1_FatStorage.cs" />
+	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
+	  <Compile Include="Mutations\Misc\Metabolic_T2_EfficientDigestion.cs" />
 	  <Compile Include="Mutations\Ocular\OcularPerk.cs" />
 	  <Compile Include="Damage\DamageWorker_Acid.cs"/>
 	  <Compile Include="Damage\DamageWorker_PotentAcid.cs"/>

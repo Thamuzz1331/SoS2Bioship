@@ -510,12 +510,16 @@
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>60</refuelInterval>
+				<refuelCost>7</refuelCost>
+				<refuelAmmount>0.14</refuelAmmount>
+			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>500.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>
-						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -578,12 +582,16 @@
 			</li>
 			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>60</refuelInterval>
+				<refuelCost>7</refuelCost>
+				<refuelAmmount>0.14</refuelAmmount>
+			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>1000.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>
-						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -647,12 +655,16 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>60</refuelInterval>
+				<refuelCost>14</refuelCost>
+				<refuelAmmount>.28</refuelAmmount>
+			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>2000.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>
-						<li>ShuttleFuelPods</li>
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -765,6 +777,7 @@
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>Whithered_Maw_Small</whitherTo>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
@@ -825,6 +838,7 @@
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
+				<whitherTo>Whithered_Maw_Corpse</whitherTo>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
@@ -903,7 +917,55 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 	</ThingDef>
-		
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>FatStoreLarge</defName>
+		<label>fat store</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Stores 250 nutrition units worth of fat.</description>
+		<size>(3,5)</size>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipNutritionStore">
+				<nutrientCapacity>250</nutrientCapacity>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>FatStoreLargeWhithered</whitherTo>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>BioShipInside_PassiveCooler</defName>
 		<label>radiator fin</label>
@@ -1091,7 +1153,7 @@
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
-				<heatCapacity>115</heatCapacity>
+				<heatCapacity>150</heatCapacity>
 				<heatVentTick>120</heatVentTick>
 				<threat>1</threat>
 			</li>
@@ -1125,7 +1187,7 @@
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
-				<heatCapacity>575</heatCapacity>
+				<heatCapacity>750</heatCapacity>
 				<heatVentTick>120</heatVentTick>
 				<threat>8</threat>
 			</li>

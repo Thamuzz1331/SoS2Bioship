@@ -139,6 +139,10 @@ namespace RimWorld
 
         public override void PostSpawnSetup(bool b) {
             base.PostSpawnSetup(b);
+            if (tier != "tier1")
+            {
+                this.UpgradeMutationTier(tier);
+            }
         }
 
         public virtual void GetInitialMutations(BuildingBody body)

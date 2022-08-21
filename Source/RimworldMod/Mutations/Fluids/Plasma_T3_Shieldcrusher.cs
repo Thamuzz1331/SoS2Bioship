@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EfficientGrowth : IMutation
+    public class ShieldcrushingPlasma : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -19,66 +19,56 @@ namespace RimWorld
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
+
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["growthEfficiency"] *= 1.50f;
-                heart.stats["metabolicEfficiency"] *= 1.15f;
-
+                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
+                    .Add(ThingDef.Named("BatteringPlasmaMaw"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ShieldcrushingPlasma>("offense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["growthEfficiency"] *= 1/1.50f;
-                heart.stats["metabolicEfficiency"] *= 1/1.15f;
-
+                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
+                    .Remove(ThingDef.Named("BatteringPlasmaMaw"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth(), true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EnergizedPlasma>("offense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
+
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            if (tier == "tier2")
-            {
-                return new List<Tuple<IMutation, string, string>>() { new Tuple<IMutation, string, string>(
-                    new EfficientDigestion(),
-                    "utility",
-                    "misc") };
-            }
-            else
-            {
-                return new List<Tuple<IMutation, string, string>>();
-            }
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
             return "tier2";
         }
         String IMutation.GetDescription()
         {
-            return "Efficient Growth\nHeart is particularly efficient in converting scaffolds to flesh, and gains a small bonus to universal metobolic efficiency.";
+            return "Shieldbuster Plasma\nPlasma Maws significatly increase the damage they do to shields.";
         }
-        public override string ToString()
+        public override String ToString()
         {
-            return "Efficient Growth";
+            return "Shieldbuster Plasma";
         }
         Texture2D IMutation.GetIcon()
         {
             return null;
         }
-
         void IExposable.ExposeData()
         {
 
         }
+
     }
 }

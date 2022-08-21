@@ -32,12 +32,23 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipNutritionStore>() != null)
+            {
+                target.parent.TryGetComp<CompShipNutritionStore>().efficiency = 1.0f;
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", this, true);
+            }
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
             if (tier == "tier2")
             {
-                return new List<Tuple<IMutation, string, string>>() { };
+                return new List<Tuple<IMutation, string, string>>() { new Tuple<IMutation, string, string>(
+                    new DenseFat(),
+                    "utility",
+                    "misc") };
             }
             else
             {

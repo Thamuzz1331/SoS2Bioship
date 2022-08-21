@@ -882,7 +882,51 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 	</ThingDef>
-
+	<ThingDef ParentName="BuildingBase">
+		<defName>FatStoreLargeWhithered</defName>
+		<label>fat store scaffold</label>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Whithered fat deposite.</description>
+		<size>(3,5)</size>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>FatStoreLarge</transformString>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</researchPrerequisites>
+	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>WhitheredInside_PassiveCooler</defName>
 		<label>radiator fin Whithered</label>

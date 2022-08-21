@@ -106,6 +106,39 @@ namespace BioShip
 			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
 			return projectileDef;
         }
+
+		public static void RoundShield(CompShipCombatShield shield)
+        {
+			float absDiff = Math.Abs(shield.radius - shield.radiusSet);
+			if (absDiff > 0 && absDiff < 1)
+            {
+				Log.Message("Rounding shield");
+				shield.radius = shield.radiusSet;
+            }
+			else if (shield.radiusSet > shield.radius)
+                shield.radius+=1f;
+            else if (shield.radiusSet < shield.radius)
+                shield.radius-=1f;
+        }
+
+		public static float HeatMultiplier(CompShipCombatShield shield, Projectile_ExplosiveShipCombat proj)
+        {
+			float ret = 1f;
+			if (shield.Props.archotech)
+            {
+				ret *= 0.75f;
+            }
+			CompBuildingBodyPart bodyPart = shield.parent.TryGetComp<CompBuildingBodyPart>();
+			if (bodyPart != null && bodyPart.body != null && bodyPart.body.heart != null)
+            {
+				ret = ret/(0.75f * bodyPart.body.heart.GetStat("conciousness"));
+            }
+			if (proj is Projectile_ShieldBatteringProjectile)
+            {
+				ret *=  2f;
+            }
+			return ret;
+        }
 	}
 
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
@@ -354,4 +387,65 @@ namespace BioShip
 		}
     }
 
+	[HarmonyPatch(typeof(CompShipCombatShield), "CompTick")]
+	public static class FractionalShieldPatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			bool replacementMade = false;
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (replacementMade)
+                {
+					if (codes[i].opcode == OpCodes.Sub)
+                    {
+						codes[i].opcode = OpCodes.Nop;
+						codes[i+1].opcode = OpCodes.Nop;
+						return codes;
+                    } else
+                    {
+						codes[i].opcode = OpCodes.Nop;
+                    }
+                } else
+                {
+
+					if (codes[i].opcode == OpCodes.Ble_Un_S)
+					{
+						codes[i-3] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BioShip), "RoundShield", new Type[]{typeof(CompShipCombatShield)}));
+						replacementMade = true;
+						i=i-3;
+					}
+				}
+            }
+
+			return codes;
+		}
+    }
+
+	[HarmonyPatch(typeof(CompShipCombatShield), "HitShield")]
+	public static class ShieldThermalMultPatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (codes[i].opcode == OpCodes.Ldc_R4 && codes[i].operand.ToString() == "0.75")
+				{
+					codes[i-5].opcode = OpCodes.Ldarg_0;
+					codes[i-4].opcode = OpCodes.Ldarg_1;
+					codes[i-3] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BioShip), "HeatMultiplier", new Type[]{typeof(CompShipCombatShield), typeof(Projectile_ExplosiveShipCombat)}));
+					codes[i-2].opcode = OpCodes.Ldloc_0;
+					codes[i-1].opcode = OpCodes.Mul;
+					codes[i].opcode = OpCodes.Stloc_0;
+					codes[i+1].opcode = OpCodes.Nop;
+					codes[i+2].opcode = OpCodes.Nop;
+					return codes;
+				}
+            }
+
+			return codes;
+		}
+    }
 }

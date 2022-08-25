@@ -71,6 +71,10 @@
 		  <HintPath>E:\Steam\steamapps\common\RimWorld\Mods\LivingBuildingFramework\1.3\Assemblies\LivingBuildingFramework.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
+	  <Reference Include="VFECore">
+		  <HintPath>E:\Steam\steamapps\workshop\content\294100\2023507013\1.3\Assemblies\VFECore.dll</HintPath>
+		  <Private>False</Private>
+	  </Reference>
 	  <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
@@ -149,13 +153,18 @@
 	  <Compile Include="Comp\Comp_PsiEngine.cs"/>
 	  <Compile Include="Comp\CompProperties_PsiEngine.cs"/>
 
+	  <Compile Include="CritterComps\Comp_BuildingHunter.cs"/>
+	  <Compile Include="CritterComps\CompProperties_BuildingHunter.cs"/>
+
 	  <Compile Include="Comp\MapComp_CorpseMawTracker.cs"/>
 	  <Compile Include="PlaceWorkers\PlaceWorker_BioShipNeedsSpinalMountPort.cs"/>
 	  <Compile Include="GenSteps\GenStep_BurrowingBioship.cs"/>
 	  <Compile Include="Defs\BioShipDef.cs"/>
+	  
 	  <Compile Include="Jobs\BioShipJobDefs.cs"/>
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>
 	  <Compile Include="WorkGiver\WorkGiver_RefuelButcherScalable.cs"/>
+	  <Compile Include="Jobs\JobGiver_DestroyBuildings.cs"/>
 
 	  <Compile Include="Mutations\IMutation.cs" />
 	  <Compile Include="Mutations\Bone\Heavy_T1_DenseSpines.cs" />
@@ -176,7 +185,7 @@
 	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T2_EfficientDigestion.cs" />
-	  <Compile Include="Mutations\Ocular\OcularPerk.cs" />
+	  <Compile Include="Mutations\Ocular\T1_OcularPerk.cs" />
 	  <Compile Include="Damage\DamageWorker_Acid.cs"/>
 	  <Compile Include="Damage\DamageWorker_PotentAcid.cs"/>
 	  <Compile Include="Damage\DamageWorker_MotileAcid.cs"/>

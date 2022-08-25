@@ -44,7 +44,7 @@ namespace RimWorld
                 Thing replacement = ThingMaker.MakeThing(Conversions[t.def]);
                 replacement.Position = t.Position;
                 replacement.Rotation = t.Rotation;
-                replacement.SetFaction(Faction.OfPlayer);
+                replacement.SetFaction(t.Faction);
                 TerrainDef terrain = map.terrainGrid.TerrainAt(t.Position);
                 map.terrainGrid.RemoveTopLayer(t.Position, false);
                 t.Destroy();

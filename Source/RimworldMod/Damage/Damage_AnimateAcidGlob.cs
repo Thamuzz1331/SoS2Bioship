@@ -10,10 +10,27 @@ namespace RimWorld
 {
 	class AnimateAcidGlob : AcidGlob
 	{
-
+		bool canSpawn = true;
 		public override void Tick()
         {
 			base.Tick();
+			if (canSpawn && this.damageRemaining > 240f)
+            {
+				PawnGenerationRequest req = new PawnGenerationRequest(
+					PawnKindDef.Named("AcidBlob_Small"), 
+					Faction.OfPlayer, 
+					PawnGenerationContext.NonPlayer, 
+					-1, 
+					false, 
+					true, 
+					false, 
+					false, 
+					false, true, 0, false, false, false, false, false, false, false, true, 0, 0, forceNoIdeo: true, forbidAnyTitle: true);
+				Pawn blob = PawnGenerator.GeneratePawn(req);
+				GenSpawn.Spawn(blob, this.Position, this.Map, Rot4.North);
+				this.damageRemaining -= 240f;
+				canSpawn = false;
+			}
         }
 	}
 }

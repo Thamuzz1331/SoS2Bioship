@@ -28,6 +28,11 @@
 	  <displayName>Save our Ship 2</displayName>
 	  <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=1909914131</steamWorkshopUrl>
   </li>
+	<li>
+		<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+		<displayName>Vanilla Expanded Framework</displayName>
+		<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
+	</li>
 </modDependencies>
 <packageId>thamuzz.sos2bioship</packageId>
 <description>

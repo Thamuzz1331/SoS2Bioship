@@ -23,6 +23,7 @@ namespace RimWorld
 			obj.damageAmount = 2f;
 			obj.spreadDef = ThingDef.Named("AnimateAcid");
 			obj.damageCountdown = Rand.RangeInclusive(1, 9);
+			obj.SetFaction(explosion.Faction);
 			GenSpawn.Spawn(obj, c, explosion.Map, Rot4.North);
 		}
 	}

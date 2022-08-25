@@ -26,6 +26,7 @@ namespace RimWorld
             {"flesh", 3},
             {"bone", 3},
             {"humors", 3},
+            {"psi", 1},
             {"misc", 2}
         };
         public Dictionary<string, int> categoryOdds = new Dictionary<string, int>()

@@ -91,7 +91,7 @@ namespace RimWorld
 
         public override string CompInspectStringExtra()
         {
-            return "Flesh of " + bodyId;
+            return "Flesh of " + body.GetName();
         }
 
         public bool IsArmor()
@@ -110,10 +110,10 @@ namespace RimWorld
                 Thing replacement = ThingMaker.MakeThing(ThingDef.Named(this.ShipProps.whitherTo));
                 replacement.Rotation = parent.Rotation;
                 replacement.Position = parent.Position;
-                replacement.SetFaction(Faction.OfPlayer);
+                replacement.SetFaction(parent.Faction);
                 if (replacement.TryGetComp<CompColorable>() != null)
                 {
-                    replacement.TryGetComp<CompColorable>().SetColor(Color.red);
+                    replacement.TryGetComp<CompColorable>().SetColor(Color.white);
                 }
                 IntVec3 c = parent.Position;
                 TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);

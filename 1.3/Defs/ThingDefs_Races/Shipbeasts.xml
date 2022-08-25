@@ -25,18 +25,20 @@
 		</tools>
 		<tickerType>Normal</tickerType>
 		<comps>
+			<li Class="CompProperties_BuildingHunter"></li>
 			
 		</comps>
 		<race>
+			<thinkTreeMain>Bioship_BuildingHunterJobNode</thinkTreeMain>
 			<executionRange>4</executionRange>
 			<herdAnimal>false</herdAnimal>
 			<body>Shipbeast_GooBody</body>
 			<baseBodySize>0.2</baseBodySize>
 			<canBePredatorPrey>false</canBePredatorPrey>
-			<baseHealthScale>0.75</baseHealthScale>
-			<baseHungerRate>0.5</baseHungerRate>
+			<baseHealthScale>1</baseHealthScale>
+			<baseHungerRate>2</baseHungerRate>
 			<hasGenders>false</hasGenders>
-			<foodType>VegetarianRoughAnimal</foodType>
+			<foodType></foodType>
 			<wildness>0.42</wildness>
 			<trainability>None</trainability>
 			<useMeatFrom>Pig</useMeatFrom>
@@ -54,6 +56,7 @@
 			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
 		</race>
 		<tradeTags>
+			<li>AnimalInsectSpace</li>
 		</tradeTags>
 	</ThingDef>
 	<ToolCapacityDef>
@@ -74,4 +77,22 @@
 		<combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
 	</ManeuverDef>
 
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>AcidBlob_Small</defName>
+		<label>acid blob</label>
+		<race>AcidBlob_Small</race>
+		<combatPower>50</combatPower>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Special/AcidGlob</texPath>
+					<graphicClass>Graphic_Flicker</graphicClass>
+					<shaderType>TransparentPostLight</shaderType>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
 </Defs>

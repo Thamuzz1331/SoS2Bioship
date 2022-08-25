@@ -33,7 +33,7 @@ namespace RimWorld
 
 						newMaw.Rotation = t.Rotation;
 						newMaw.Position = t.Position;
-						newMaw.SetFaction(Faction.OfPlayer);
+						newMaw.SetFaction(t.Faction);
 						newMaw.SpawnSetup(parent.Map, false);
 					}
 				}

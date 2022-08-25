@@ -138,7 +138,7 @@ namespace RimWorld
                 {
 					Thing armor = ThingMaker.MakeThing(armorClass);
 					armor.Position = c;
-					armor.SetFaction(Faction.OfPlayer);
+					armor.SetFaction(parent.Faction);
 					armor.TryGetComp<CompShipBodyPart>().SetId(heart.bodyId);
 					armor.SpawnSetup(parent.Map, false);
 					toRemove.Add(c);

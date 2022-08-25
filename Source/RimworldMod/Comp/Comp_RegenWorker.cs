@@ -108,7 +108,7 @@ namespace RimWorld
 				}
 				replacement.Rotation = w.Rotation;
 				replacement.Position = w.Position;
-				replacement.SetFaction(Faction.OfPlayer);
+				replacement.SetFaction(w.Faction);
 				replacement.SpawnSetup(parent.Map, false);
 				if (bodyPart != null)
 				{

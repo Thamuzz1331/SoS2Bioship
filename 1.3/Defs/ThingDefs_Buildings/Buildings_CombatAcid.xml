@@ -32,6 +32,7 @@
 			<li Class="CompProperties_MutableAmmo">
 				<defaultAmmo>Proj_BioAcid</defaultAmmo>
 				<defaultFakeAmmo>Bullet_Fake_BioAcid</defaultFakeAmmo>
+				<defaultAmmoName>Acid</defaultAmmoName>
 			</li>
 		</comps>
 		<building>

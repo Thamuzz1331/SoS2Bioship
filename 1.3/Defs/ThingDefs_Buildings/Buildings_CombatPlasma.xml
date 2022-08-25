@@ -33,6 +33,7 @@
 			<li Class="CompProperties_MutableAmmo">
 				<defaultAmmo>Proj_BioPlasma</defaultAmmo>
 				<defaultFakeAmmo>Proj_Fake_BioPlasma</defaultFakeAmmo>
+				<defaultAmmoName>Plasma</defaultAmmoName>
 			</li>
 		</comps>
 		<building>

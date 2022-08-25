@@ -13,8 +13,7 @@ namespace RimWorld
 		bool canSpawn = true;
 		public override void Tick()
         {
-			base.Tick();
-			if (canSpawn && this.damageRemaining > 240f)
+			if (damageCountdown <= 0 && canSpawn && this.damageRemaining > 240f)
             {
 				PawnGenerationRequest req = new PawnGenerationRequest(
 					PawnKindDef.Named("AcidBlob_Small"), 
@@ -31,6 +30,7 @@ namespace RimWorld
 				this.damageRemaining -= 240f;
 				canSpawn = false;
 			}
-        }
+			base.Tick();
+		}
 	}
 }

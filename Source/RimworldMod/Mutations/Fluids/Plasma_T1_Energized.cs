@@ -32,8 +32,13 @@ namespace RimWorld
             }
             if (target.parent.def == ThingDef.Named("ShipTurret_BioPlasma"))
             {
-                target.parent.TryGetComp<CompMutableAmmo>().projectileDef = ThingDef.Named("Proj_BioPlasmaEnergetic");
-                target.parent.TryGetComp<CompMutableAmmo>().fakeProjectileDef= ThingDef.Named("Bullet_Fake_BioPlasmaEnergetic");
+                target.parent.TryGetComp<CompMutableAmmo>()
+                    .ammoTypes.Add("Energetic",
+                    new Tuple<ThingDef, ThingDef>(
+                        ThingDef.Named("Proj_BioPlasmaEnergetic"),
+                        ThingDef.Named("Bullet_Fake_BioPlasmaEnergetic")));
+                target.parent.TryGetComp<CompMutableAmmo>().currentlySelected = "Energetic";
+
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -52,8 +57,8 @@ namespace RimWorld
             }
             if (target.parent.def == ThingDef.Named("ShipTurret_BioPlasma"))
             {
-                target.parent.TryGetComp<CompMutableAmmo>().projectileDef = null;
-                target.parent.TryGetComp<CompMutableAmmo>().fakeProjectileDef = null;
+                target.parent.TryGetComp<CompMutableAmmo>()
+                    .ammoTypes.Remove("Energetic");
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {

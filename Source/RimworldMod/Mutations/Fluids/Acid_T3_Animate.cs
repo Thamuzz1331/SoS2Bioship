@@ -32,8 +32,13 @@ namespace RimWorld
             }
             if (target.parent.def == ThingDef.Named("ShipTurret_BioAcid"))
             {
-                target.parent.TryGetComp<CompMutableAmmo>().projectileDef = ThingDef.Named("Proj_MotileAcid");
-                target.parent.TryGetComp<CompMutableAmmo>().fakeProjectileDef= ThingDef.Named("Bullet_Fake_MotileAcid");
+                target.parent.TryGetComp<CompMutableAmmo>()
+                   .ammoTypes.Add("Animate",
+                   new Tuple<ThingDef, ThingDef>(
+                       ThingDef.Named("Proj_AnimateAcid"),
+                       ThingDef.Named("Bullet_Fake_AnimateAcid")));
+                target.parent.TryGetComp<CompMutableAmmo>().currentlySelected = "Animate";
+
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -52,8 +57,8 @@ namespace RimWorld
             }
             if (target.parent.def == ThingDef.Named("ShipTurret_BioAcid"))
             {
-                target.parent.TryGetComp<CompMutableAmmo>().projectileDef = null;
-                target.parent.TryGetComp<CompMutableAmmo>().fakeProjectileDef = null;
+                target.parent.TryGetComp<CompMutableAmmo>()
+                    .ammoTypes.Remove("Animate");
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {

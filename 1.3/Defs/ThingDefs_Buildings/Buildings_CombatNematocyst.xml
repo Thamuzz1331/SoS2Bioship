@@ -35,6 +35,8 @@
 			<li Class="CompProperties_MutableAmmo">
 				<defaultAmmo>Proj_ShipTurretNematocyst</defaultAmmo>
 				<defaultFakeAmmo>Proj_ShipTurretNematocyst</defaultFakeAmmo>
+				<defaultAmmoName>Nematocyst</defaultAmmoName>
+
 			</li>
 		</comps>
 		<building>

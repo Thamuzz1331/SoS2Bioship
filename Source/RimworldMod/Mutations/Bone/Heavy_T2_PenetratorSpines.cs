@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class DenseSpines : IMutation
+    public class PenetratorSpines : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -28,7 +28,7 @@ namespace RimWorld
                 heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
                     .Add(ThingDef.Named("Spine_HeavyDense"));
                 heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
-                    .Add(ThingDef.Named("Spine_HeavyDense"));
+                    .Add(ThingDef.Named("Spine_Penetrator"));
 
                 heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
                     .Add(ThingDef.Named("HeavySpineLauncher"));
@@ -37,39 +37,44 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseSpines>("offense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<PenetratorSpines>("offense", "bone", true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
-
             }
-
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
+                    .Remove(ThingDef.Named("Spine_HeavyDense"));
+                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
+                    .Remove(ThingDef.Named("Spine_Penetrator"));
 
+                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
+                    .Remove(ThingDef.Named("HeavySpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
+                    .Remove(ThingDef.Named("HeavySpineLauncher"));
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseSpines>("offense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]--;
+            }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            if (tier == "tier2")
-            {
-                return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
-                    new PenetratorSpines(),
-                    "offense",
-                    "bone") };
-            }
-            else
-            {
-                return new List<Tuple<IMutation, string, string>>();
-            }
+            return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
-            return "tier1";
+            return "tier2";
         }
         String IMutation.GetDescription()
         {
-            return "Dense Spines\nAdds a chance that, when growing a spine, a heavy spine launcher will grow a dense spine that deals double damage.\nIncreases likelyhood of large weapon scaffolds maturing into heavy spine throwers.";
+            return "Penetrator Spines\nHeavy spine launchers have a chance to spawn a penetrator spine, a two stage projectile which can punch through ship armor.";
         }
         public override String ToString()
         {
-            return "Dense Spines";
+            return "Penetrator Spines";
         }
 
         Texture2D IMutation.GetIcon()

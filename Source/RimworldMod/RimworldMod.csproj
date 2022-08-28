@@ -168,7 +168,9 @@
 
 	  <Compile Include="Mutations\IMutation.cs" />
 	  <Compile Include="Mutations\Bone\Heavy_T1_DenseSpines.cs" />
-      <Compile Include="Mutations\Bone\Light_T1_EfficientSpines.cs" />
+	  <Compile Include="Mutations\Bone\Heavy_T2_PenetratorSpines.cs" />
+	  <Compile Include="Mutations\Bone\Light_T1_EfficientSpines.cs" />
+	  <Compile Include="Mutations\Bone\Light_T2_SpineStorm.cs" />
 	  <Compile Include="Mutations\Bone\Armor_T1_Bone.cs" />
 	  <Compile Include="Mutations\Bone\Armor_T2_Plasteel.cs" />
 	  <Compile Include="Mutations\Flesh\Nematocysts_T1_Clustered.cs" />
@@ -196,6 +198,7 @@
 	  <Compile Include="Damage\ShipDamageDefOf.cs"/>
 
 	  <Compile Include="Projectiles\Projectile_ShieldBatteringProjectile.cs"/>
+	  <Compile Include="Projectiles\Projectile_Penetrator.cs"/>
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_Mutations.cs" />

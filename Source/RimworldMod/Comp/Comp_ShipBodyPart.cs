@@ -17,13 +17,11 @@ namespace RimWorld
         public HashSet<Thing> adjBodypart = new HashSet<Thing>();
         public float armorGrowthMult = 1f;
 
-        public List<string> woundIds = new List<string>();
         public bool initialized = false;
 
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Collections.Look<string>(ref woundIds, "woundIds");
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
         }
 
@@ -84,7 +82,14 @@ namespace RimWorld
         {
             if (mode == DestroyMode.KillFinalize && ShipProps.regenDef != null)
             {
-                ((CompShipHeart)body.heart).Regen(parent);
+                Thing replacement = ThingMaker.MakeThing(ThingDef.Named("Wound"));
+                CompRegenSpot regenDetails = replacement.TryGetComp<CompRegenSpot>();
+                regenDetails.regenDef = ThingDef.Named(ShipProps.regenDef);
+                regenDetails.regenWorker = ((CompShipHeart)body.heart).regenWorker;
+                replacement.Position = parent.Position;
+                replacement.Rotation = parent.Rotation;
+                replacement.SetFaction(parent.Faction);
+                replacement.SpawnSetup(previousMap, false);
             }
             base.PostDestroy(mode, previousMap);
         }

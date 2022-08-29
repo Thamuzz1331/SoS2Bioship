@@ -150,11 +150,6 @@ namespace RimWorld
             return null;
         }
 
-        public virtual void Regen(Thing toRegen)
-        {
-            regenWorker.RegisterWound(toRegen);
-        }
-
         public virtual void AggressionTarget(Thing target, bool mechanical)
         {
             if (mechanical)

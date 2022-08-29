@@ -3,3 +3,4 @@
 .vs/slnx.sqlite-journal
 .vs/*
 *.sqlite
+.vs/slnx.sqlite

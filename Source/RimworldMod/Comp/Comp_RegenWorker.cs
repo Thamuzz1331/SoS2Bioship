@@ -15,7 +15,6 @@ namespace RimWorld
 
 		public BuildingBody body = null;
 
-
 		public override void PostExposeData()
 		{
 			base.PostExposeData();
@@ -38,6 +37,7 @@ namespace RimWorld
             {
 				interval *= 8f;
             }
+			interval *= (1 + (float)(Rand.RangeInclusive(-15, 15)/100));
 			return interval;
         }
 	}

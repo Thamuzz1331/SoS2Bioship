@@ -84,8 +84,9 @@ namespace RimWorld
             {
                 Thing replacement = ThingMaker.MakeThing(ThingDef.Named("Wound"));
                 CompRegenSpot regenDetails = replacement.TryGetComp<CompRegenSpot>();
+                regenDetails.regenCountdown = ((CompShipHeart)body.heart).regenWorker.GetRegenInterval();
                 regenDetails.regenDef = ThingDef.Named(ShipProps.regenDef);
-                regenDetails.regenWorker = ((CompShipHeart)body.heart).regenWorker;
+                regenDetails.heart = body.heart.parent;
                 replacement.Position = parent.Position;
                 replacement.Rotation = parent.Rotation;
                 replacement.SetFaction(parent.Faction);

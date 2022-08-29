@@ -152,6 +152,10 @@ namespace RimWorld
 
         public virtual void AggressionTarget(Thing target, bool mechanical)
         {
+            if (target.TryGetComp<CompRegenSpot>() != null)
+            {
+                return;
+            }
             if (mechanical)
             {
                 aggression.adjacentMechanicals.Add(target);

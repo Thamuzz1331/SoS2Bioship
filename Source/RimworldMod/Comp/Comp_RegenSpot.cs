@@ -15,18 +15,18 @@ namespace RimWorld
     {
         private CompProperties_RegenSpot Props => (CompProperties_RegenSpot)props;
         public ThingDef regenDef;
-        public CompRegenWorker regenWorker;
+        public Thing heart;
 
-        private float regenCountdown;
+        public float regenCountdown;
         private int lifetimeLeft = 100;
 
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref regenCountdown, "regenCountdown", 0);
-            Scribe_Values.Look(ref lifetimeLeft, "lifetimeLeft", 0);
-            Scribe_Values.Look(ref regenDef, "regenDef", null);
-            Scribe_Values.Look(ref regenWorker, "regenWorker", null);
+            Scribe_Values.Look(ref regenCountdown, "regenCountdown", 0f);
+            Scribe_Values.Look(ref lifetimeLeft, "lifetimeLeft", 100);
+            Scribe_Defs.Look(ref regenDef, "regenDef");
+            Scribe_References.Look(ref heart, "heart", false);
         }
 
         public override void CompTick()
@@ -34,41 +34,56 @@ namespace RimWorld
             base.CompTick();
             if (regenCountdown <= 0f)
             {
-                if (lifetimeLeft <= 0 || regenWorker.parent.Destroyed || regenWorker.body == null || regenWorker.body.heart == null)
+                if (lifetimeLeft <= 0 || heart == null || heart.Destroyed)
                 {
                     parent.Destroy();
                     return;
                 }
                 lifetimeLeft--;
-                foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
+                bool didRegen = false;
+                List<CompRegenSpot> adjRegen = new List<CompRegenSpot>();
+                Thing replacement = null;
+                foreach (IntVec3 c in GenAdjFast.AdjacentCellsCardinal(parent.Position))
                 {
                     foreach (Thing adj in c.GetThingList(parent.Map))
                     {
-                        if (adj.TryGetComp<CompShipBodyPart>() != null && 
-                            adj.TryGetComp<CompShipBodyPart>().bodyId == this.regenWorker.body.heart.bodyId &&
-                            regenWorker.body.RequestNutrition(regenWorker.GetRegenCost()))
+                        if (adj.TryGetComp<CompRegenSpot>() != null)
                         {
-                            Thing replacement = ThingMaker.MakeThing(regenDef);
+                            adjRegen.Add(adj.TryGetComp<CompRegenSpot>());
+                        }
+                        if (!didRegen && 
+                            adj.TryGetComp<CompShipBodyPart>() != null && 
+                            adj.TryGetComp<CompShipBodyPart>().bodyId == heart.TryGetComp<CompShipHeart>().bodyId &&
+                            heart.TryGetComp<CompShipHeart>().body.RequestNutrition(heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenCost()))
+                        {
+                            replacement = ThingMaker.MakeThing(regenDef);
                             CompShipBodyPart bodyPart = replacement.TryGetComp<CompShipBodyPart>();
                             if (bodyPart != null)
                             {
-                                bodyPart.SetId(regenWorker.body.heart.bodyId);
+                                bodyPart.SetId(heart.TryGetComp<CompShipHeart>().bodyId);
                             }
                             CompNutrition nutrition = replacement.TryGetComp<CompNutrition>();
                             if (nutrition != null)
                             {
-                                nutrition.SetId(regenWorker.body.heart.bodyId);
+                                nutrition.SetId(heart.TryGetComp<CompShipHeart>().bodyId);
                             }
                             replacement.Rotation = parent.Rotation;
                             replacement.Position = parent.Position;
                             replacement.SetFaction(parent.Faction);
-                            replacement.SpawnSetup(parent.Map, false);
-                            parent.Destroy();
-                            return;
+                            didRegen = true;
                         }
                     }
                 }
-                regenCountdown = regenWorker.GetRegenInterval();
+                if (didRegen)
+                {
+                    foreach(CompRegenSpot adj in adjRegen)
+                    {
+                        adj.regenCountdown = heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenInterval();
+                    }
+                    replacement.SpawnSetup(parent.Map, false);
+                    parent.Destroy();
+                }
+                regenCountdown += (heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenInterval()/2);
             }
             regenCountdown--;
         }

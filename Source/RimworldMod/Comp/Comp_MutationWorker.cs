@@ -53,7 +53,11 @@ namespace RimWorld
                 }},
                 { "misc", new List<IMutation>(){
 
+                }},
+                { "psi", new List<IMutation>(){
+
                 }}
+
             }},
             {"defense", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
@@ -67,7 +71,11 @@ namespace RimWorld
                 }},
                 { "misc", new List<IMutation>(){
 
+                }},
+                { "psi", new List<IMutation>(){
+                    new IronWill()
                 }}
+
             }},
             {"utility", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
@@ -81,7 +89,11 @@ namespace RimWorld
                 }},
                 { "misc", new List<IMutation>(){
                     new EfficientFatStorage(), new EfficientGrowth(),
+                }},
+                { "psi", new List<IMutation>(){
+
                 }}
+
             }}
         };
         public Dictionary<string, Dictionary<string, List<IMutation>>> badMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()

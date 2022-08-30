@@ -20,6 +20,8 @@ namespace RimWorld
         public CompArmorGrower armorGrower;
         public bool initialized = false;
 
+        public List<Gizmo> mutationActions = new List<Gizmo>();
+
         public Dictionary<string, List<ThingDef>> defs = new Dictionary<string, List<ThingDef>>()
         {
             {"smallTurretOptions", new List<ThingDef>(){
@@ -178,5 +180,18 @@ namespace RimWorld
                     return base.GetStat(stat);
             }
         }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+			{
+				yield return gizmo;
+			}
+            foreach (Gizmo gizmo in mutationActions)
+            {
+                yield return gizmo;
+            }
+		}
+
     }
 }

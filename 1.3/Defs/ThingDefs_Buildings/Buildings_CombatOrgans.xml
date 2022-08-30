@@ -1,6 +1,71 @@
 <Defs>
-	<!-- Plasma Weapons-->
-	<!-- Acid weapons-->
+	<ThingDef ParentName="BaseShipArtilleryBuilding">
+		<defName>Phantom_Turret</defName>
+		<label>phantom</label>
+		<description>Phantom</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSource</compClass>
+				<heatPerPulse>25</heatPerPulse>
+				<energyToFire>25</energyToFire>
+				<maxRange>500</maxRange>
+				<projectileSpeed>3</projectileSpeed>
+				<threat>30</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_Phantom</turretGunDef>
+			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+			<turretTopDrawSize>3</turretTopDrawSize>
+		</building>
+		<costList>
+		</costList>
+		<designationCategory>
+		</designationCategory>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<size>(3,3)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_Phantom</defName>
+		<label>phantom</label>
+		<description>Phantom</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>firenothing</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>12.9</range>
+				<warmupTime>1.5</warmupTime>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ShipCombatPlasmaLarge</soundCast>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Bullet_Fake_BioAcid</defaultProjectile>
+				<spawnDef>Proj_BioAcid</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+				<burstShotCount>2</burstShotCount>
+			</li>
+		</verbs>
+	</ThingDef>
 
 
 

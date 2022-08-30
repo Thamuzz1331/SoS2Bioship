@@ -183,6 +183,8 @@
 	  <Compile Include="Mutations\Fluids\Regen_T1_Efficient.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T2_Fast.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T3_UndyingBeast.cs" />
+	  <Compile Include="Mutations\Psi\Will_T1_IronWill.cs" />
+	  <Compile Include="Mutations\Psi\Will_T2_Reflect.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T1_FatStorage.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />

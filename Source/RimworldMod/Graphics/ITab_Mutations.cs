@@ -35,6 +35,11 @@ namespace RimWorld
 
 			Rect rect = new Rect(0f, 0f, this.size.x, this.size.y).ContractedBy(10f);
 			//Widgets.BeginScrollView(rect, ref this.scrollPos, new Rect(0f, 0f, 600f, rect.height - 20f), true);
+			ShowMutations(rect.TopHalf().TopHalf(), "", mutationWorker.GetMutationsForTier("quirk"), 1);
+			if (mutationWorker.GetMutationsForTier("archo").Count > 0)
+            {
+				ShowMutations(rect.TopHalf().TopHalf(), "", mutationWorker.GetMutationsForTier("archo"), 2);
+            }
 			ShowMutations(rect.TopHalf().BottomHalf(), "tier3", mutationWorker.GetMutationsForTier("tier3"), 2);
 			ShowMutations(rect.BottomHalf().TopHalf(), "tier2", mutationWorker.GetMutationsForTier("tier2"), 4);
 			ShowMutations(rect.BottomHalf().BottomHalf(), "tier1", mutationWorker.GetMutationsForTier("tier1"), 6);

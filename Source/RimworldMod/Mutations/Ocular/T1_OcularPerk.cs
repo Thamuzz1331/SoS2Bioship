@@ -43,15 +43,15 @@ namespace RimWorld
             return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
-            return "perk";
+            return "quirk";
         }
         String IMutation.GetDescription()
         {
-            return "Occular\nThis beast belongs to the occular family, possessing a powerful eye laser.";
+            return "Occular Lineage\nThis beast belongs to the occular family, possessing a powerful eye laser.";
         }
         public override string ToString()
         {
-            return "Occular";
+            return "Occular Lineage";
         }
         Texture2D IMutation.GetIcon()
         {

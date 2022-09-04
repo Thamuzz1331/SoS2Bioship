@@ -48,20 +48,10 @@ namespace RimWorld
             }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            if (tier == "tier2")
-            {
-                return new List<Tuple<IMutation, string, string>>() { new Tuple<IMutation, string, string>(
-                    new EfficientDigestion(),
-                    "utility",
-                    "misc") };
-            }
-            else
-            {
-                return new List<Tuple<IMutation, string, string>>();
-            }
+            return new List<Tuple<IMutation, string, string>>();
         }
         String IMutation.GetTier() {
-            return "tier2";
+            return "tier1";
         }
         String IMutation.GetDescription()
         {

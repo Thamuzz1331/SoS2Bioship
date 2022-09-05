@@ -343,7 +343,6 @@
 						<li>Luciferium</li>
 					</thingDefs>
 				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
 				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>

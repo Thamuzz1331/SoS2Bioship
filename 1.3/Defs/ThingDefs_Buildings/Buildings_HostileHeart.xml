@@ -90,7 +90,7 @@
 		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		<killedLeavings>
 			<HeartSeed>1</HeartSeed>
-			<OrganSeed>1</OrganSeed>
+			<OrganSeed>3</OrganSeed>
 		</killedLeavings>
 
 	</ThingDef>

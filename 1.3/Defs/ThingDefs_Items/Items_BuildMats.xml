@@ -124,7 +124,7 @@
 		<description>A node of flesh from which a ship organ will grow.</description>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>Things/Item/Resource/HeartSeed</texPath>
+			<texPath>Things/Item/Resource/OrganSeed</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<stackLimit>15</stackLimit>

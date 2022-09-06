@@ -160,6 +160,9 @@
 		</placeWorkers>
 		<constructionSkillPrerequisite>15</constructionSkillPrerequisite>
 		<designationCategory>Ship</designationCategory>
+		<researchPrerequisites>
+			<li>MicroelectronicsBasics</li>
+		</researchPrerequisites>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase" Name="NerveStaple">

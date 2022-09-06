@@ -50,8 +50,8 @@
 		<description>A claylike substance that when allowed to harden can guide the growth of shipflesh.  Deteriates quickly when exposed to the elements.</description>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Resource/ProteinBlocks</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<stackLimit>50</stackLimit>
 		<statBases>

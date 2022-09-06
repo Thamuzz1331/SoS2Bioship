@@ -78,7 +78,7 @@
 			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<stackLimit>400</stackLimit>
+		<stackLimit>10</stackLimit>
 		<statBases>
 			<MaxHitPoints>50</MaxHitPoints>
 			<MarketValue>0.33</MarketValue>

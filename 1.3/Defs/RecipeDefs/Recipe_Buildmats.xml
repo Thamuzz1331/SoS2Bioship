@@ -9,7 +9,7 @@
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
-		<workAmount>120</workAmount>
+		<workAmount>500</workAmount>
 		<targetCountAdjustment>5</targetCountAdjustment>
 		<ingredients>
 			<li>
@@ -30,9 +30,9 @@
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Chemfuel</li>
-			</thingDefs>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
 		</fixedIngredientFilter>
 		<products>
 			<ProtienPutty>1</ProtienPutty>
@@ -47,15 +47,53 @@
 	</RecipeDef>
 
 	<RecipeDef>
+		<defName>NutrientSolution</defName>
+		<label>create hyperdense nutrient solution</label>
+		<description>Create hyperdense nutrient solution</description>
+		<jobString>Rendering hyperdense nutrient solution</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>500</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>FoodRaw</li>
+					</categories>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<products>
+			<NutrientPod>1</NutrientPod>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+
+	<RecipeDef>
 		<defName>MakeOrganSeed</defName>
 		<label>breed organ seed</label>
-		<description>Breeds an organ seed into 2.</description>
+		<description>Breeds an organ seed into two.</description>
 		<jobString>Making protein clay.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
-		<workAmount>1200</workAmount>
+		<workAmount>4000</workAmount>
 		<targetCountAdjustment>5</targetCountAdjustment>
 		<ingredients>
 			<li>
@@ -84,9 +122,9 @@
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
-			<thingDefs>
-				<li>Chemfuel</li>
-			</thingDefs>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
 		</fixedIngredientFilter>
 		<products>
 			<OrganSeed>2</OrganSeed>

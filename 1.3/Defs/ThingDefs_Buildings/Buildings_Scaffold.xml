@@ -1074,7 +1074,7 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>FatStoreSmallScaffold</defName>
-		<label>fat store scaffold</label>
+		<label>small fat store scaffold</label>
 		<designatorDropdown>Scaffold_Fat</designatorDropdown>
 		<designationCategory>Ship</designationCategory>
 		<thingClass>Building</thingClass>
@@ -1123,7 +1123,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>FatStoreLargeScaffold</defName>
-		<label>fat store scaffold</label>
+		<label>large fat store scaffold</label>
 		<designatorDropdown>Scaffold_Fat</designatorDropdown>
 		<designationCategory>Ship</designationCategory>
 		<thingClass>Building</thingClass>
@@ -1305,7 +1305,7 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>ScaffoldHeatsink</defName>
-		<label>organic heatsink scaffold</label>
+		<label>small heatsink scaffold</label>
 		<description>Scaffold for a bio heatsink</description>
 		<size>(2,2)</size>
 		<designationCategory>Ship</designationCategory>
@@ -1337,7 +1337,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>ScaffoldHeatsinkLarge</defName>
-		<label>organic heatsink scaffold</label>
+		<label>large heatsink scaffold</label>
 		<description>Scaffold for a bio heatsink</description>
 		<size>(4,4)</size>
 		<designationCategory>Ship</designationCategory>

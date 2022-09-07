@@ -68,6 +68,10 @@ namespace RimWorld
         {
             return "Fast Regeneration\nIncreases the speed with which damaged body parts regenerate.";
         }
+        public override string ToString()
+        {
+            return "Fast Regeneration";
+        }
         Texture2D IMutation.GetIcon()
         {
             return null;

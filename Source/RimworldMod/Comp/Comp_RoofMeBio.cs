@@ -75,7 +75,9 @@ namespace RimWorld
         public override void PostDraw()
         {
             base.PostDraw();
-            if ((Find.PlaySettings.showRoofOverlay || parent.Map.fogGrid.fogGrid[parent.Map.cellIndices.CellToIndex(parent.Position)]) && parent.Position.GetFirstThing<Building_ShipTurret>(parent.Map) == null)
+            if ((Find.PlaySettings.showRoofOverlay || 
+                parent.Map.fogGrid.fogGrid[parent.Map.cellIndices.CellToIndex(parent.Position)]) && 
+                parent.Position.GetFirstThing<Building_ShipTurret>(parent.Map) == null)
             {
                 Graphics.DrawMesh(material: roofTileBio.MatSingleFor(parent), mesh: roofTileBio.MeshAt(parent.Rotation), position: new UnityEngine.Vector3(parent.DrawPos.x, 0, parent.DrawPos.z), rotation: Quaternion.identity, layer: 0);
             }

@@ -46,7 +46,7 @@ namespace RimWorld
 					t.TryGetComp<CompRefuelable>().Refuel(t.TryGetComp<CompRefuelable>().Props.fuelCapacity);
 				}
 				if (t.TryGetComp<CompNutritionStore>() != null) {
-					t.TryGetComp<CompNutritionStore>().storeNutrition(t.TryGetComp<CompNutritionStore>().getNutrientCapacity());
+					t.TryGetComp<CompNutritionStore>().currentNutrition = t.TryGetComp<CompNutritionStore>().getNutrientCapacity();
 				}
             }
 

@@ -53,7 +53,11 @@ namespace RimWorld
                 }},
                 { "misc", new List<IMutation>(){
 
+                }},
+                { "psi", new List<IMutation>(){
+
                 }}
+
             }},
             {"defense", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
@@ -67,7 +71,11 @@ namespace RimWorld
                 }},
                 { "misc", new List<IMutation>(){
 
+                }},
+                { "psi", new List<IMutation>(){
+                    new IronWill()
                 }}
+
             }},
             {"utility", new Dictionary<string, List<IMutation>>(){
                 { "flesh", new List<IMutation>(){
@@ -81,7 +89,11 @@ namespace RimWorld
                 }},
                 { "misc", new List<IMutation>(){
                     new EfficientFatStorage(), new EfficientGrowth(),
+                }},
+                { "psi", new List<IMutation>(){
+
                 }}
+
             }}
         };
         public Dictionary<string, Dictionary<string, List<IMutation>>> badMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
@@ -137,7 +149,7 @@ namespace RimWorld
             Scribe_Values.Look(ref mutating, "mutating", false);
             Scribe_Values.Look(ref tier, "tier", "tier1");
 		}
-
+/*
         public override void PostSpawnSetup(bool b) {
             base.PostSpawnSetup(b);
             if (tier != "tier1")
@@ -145,7 +157,7 @@ namespace RimWorld
                 this.UpgradeMutationTier(tier);
             }
         }
-
+*/
         public virtual void GetInitialMutations(BuildingBody body)
         {
             this.SpreadMutation(body, this.quirkPossibilities.RandomElement());

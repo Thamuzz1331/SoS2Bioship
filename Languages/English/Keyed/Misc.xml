@@ -4,4 +4,7 @@
 	<tier1>Tier 1</tier1>
 	<tier2>Tier 2</tier2>
 	<tier3>Tier 3</tier3>
+	<regenEfficiency>Regen Efficiency</regenEfficiency>
+	<regenSpeed>Regen Speed</regenSpeed>
+	<conciousness>Conciousness</conciousness>
 </LanguageData>

@@ -50,8 +50,8 @@
 		<description>A claylike substance that when allowed to harden can guide the growth of shipflesh.  Deteriates quickly when exposed to the elements.</description>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Resource/ProteinBlocks</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<stackLimit>50</stackLimit>
 		<statBases>
@@ -78,7 +78,7 @@
 			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<stackLimit>400</stackLimit>
+		<stackLimit>10</stackLimit>
 		<statBases>
 			<MaxHitPoints>50</MaxHitPoints>
 			<MarketValue>0.33</MarketValue>
@@ -124,7 +124,7 @@
 		<description>A node of flesh from which a ship organ will grow.</description>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>Things/Item/Resource/HeartSeed</texPath>
+			<texPath>Things/Item/Resource/OrganSeed</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<stackLimit>15</stackLimit>

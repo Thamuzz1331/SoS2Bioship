@@ -130,6 +130,8 @@
 	  <Compile Include="Comp\CompProperties_RegenSpot.cs"/>
 	  <Compile Include="Comp\Comp_MutationWorker.cs"/>
 	  <Compile Include="Comp\CompProperties_MutationWorker.cs"/>
+	  <Compile Include="Comp\Comp_FixedMutationWorker.cs"/>
+	  <Compile Include="Comp\CompProperties_FixedMutationWorker.cs"/>
 	  <Compile Include="Comp\Comp_MutableScaffold.cs"/>
 	  <Compile Include="Comp\CompProperties_MutableScaffold.cs"/>
 	  <Compile Include="Comp\Comp_ShipNutritionSource.cs"/>
@@ -142,6 +144,11 @@
 	  <Compile Include="Comp\CompProperties_MutableAmmo.cs"/>
 	  <Compile Include="Comp\Comp_UnfoldTwitch.cs"/>
 	  <Compile Include="Comp\CompProperties_UnfoldTwitch.cs"/>
+	  <Compile Include="Comp\Comp_FueledFacility.cs"/>
+	  <Compile Include="Comp\CompProperties_FueledFacility.cs"/>
+
+	  <Compile Include="Comp\Comp_BioshipSpawner.cs"/>
+	  <Compile Include="Comp\CompProperties_BioshipSpawner.cs"/>
 
 	  <Compile Include="Comp\Comp_ShipScaffoldConverter.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipScaffoldConverter.cs"/>
@@ -184,11 +191,15 @@
 	  <Compile Include="Mutations\Fluids\Regen_T1_Efficient.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T2_Fast.cs" />
 	  <Compile Include="Mutations\Fluids\Regen_T3_UndyingBeast.cs" />
+	  <Compile Include="Mutations\Psi\Will_T1_IronWill.cs" />
+	  <Compile Include="Mutations\Psi\Will_T2_Reflect.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T1_FatStorage.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
-	  <Compile Include="Mutations\Misc\Metabolic_T2_EfficientDigestion.cs" />
 	  <Compile Include="Mutations\Ocular\T1_OcularPerk.cs" />
+
+  	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
+
 	  <Compile Include="Damage\DamageWorker_Acid.cs"/>
 	  <Compile Include="Damage\DamageWorker_PotentAcid.cs"/>
 	  <Compile Include="Damage\DamageWorker_MotileAcid.cs"/>

@@ -16,14 +16,19 @@ namespace RimWorld
 		private float ticksToAttack = 0;
 		public float attackInterval = 120;
 		public int modifiedAggression = 0;
+		public float extremeAggressionDetection = 0f;
+		public float extremeAggressionInterval = 600f;
 
 		public HashSet<Thing> otherFlesh = new HashSet<Thing>();
 		public HashSet<Thing> adjacentMechanicals = new HashSet<Thing>();
+		public HashSet<Thing> targets = new HashSet<Thing>();
 
 		public override void PostExposeData()
 		{
 			base.PostExposeData();
 			Scribe_Values.Look(ref ticksToAttack, "ticksToAttack", 0);
+			Scribe_Values.Look(ref extremeAggressionDetection, "extremeAggressionDetection", 0);
+			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
 		}
 
 		public override void CompTick()
@@ -39,19 +44,44 @@ namespace RimWorld
 				ticksToAttack = attackInterval;
             }
 			ticksToAttack--;
+			if (extremeAggressionDetection <= 0)
+            {
+				OmniAggressionPulse();
+				extremeAggressionDetection = extremeAggressionInterval;
+            }
+			extremeAggressionDetection--;
 		}
+
+		public virtual int GetAggression()
+        {
+			CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
+			if (heart.luciferiumAddiction && !heart.luciferiumSupplied)
+            {
+				return 3;
+            }
+			return (modifiedAggression + Props.baseAggression);
+        }
 
 		public virtual void DoAttack()
         {
-			int numAttack = Rand.Range(1, 2);
+			int numAttack = Rand.RangeInclusive(1, 3);
 			for (int i = 0; i < numAttack; i++)
 			{
-				switch ((modifiedAggression + Props.baseAggression))
+				//I probably should update this to use enums that are set by hediffs or something to that effect.
+				switch (GetAggression())
 				{
 					case 1:
 						BasicAggress(adjacentMechanicals);
 						break;
 					case 2:
+						BasicAggress(adjacentMechanicals);
+						BasicAggress(otherFlesh);
+						break;
+					case 3:
+						Log.Message("Case3");
+						BasicAggress(adjacentMechanicals);
+						BasicAggress(otherFlesh);
+						BasicAggress(targets);
 						break;
 					default:
 						return;
@@ -61,50 +91,53 @@ namespace RimWorld
 
 		private void BasicAggress(HashSet<Thing> targetList)
         {
+			Log.Message("Inaggress");
 			if (targetList.Count > 0)
             {
 				Thing target = targetList.RandomElement();
-				if (target.Destroyed)
+				bool stillViable = !target.Destroyed;
+				if (stillViable)
+                {
+					foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(target.Position))
+					{
+						Thing bbp = c.GetFirstThingWithComp<CompBuildingBodyPart>(parent.Map);
+						stillViable = stillViable && !(bbp == null || bbp.TryGetComp<CompBuildingBodyPart>().bodyId != this.parent.TryGetComp<CompShipHeart>().bodyId);
+					}
+                }
+				if (!stillViable)
                 {
 					targetList.Remove(target);
+					BasicAggress(targetList);
 					return;
                 }
-				if (target is Building)
-                {
-					Building t = ((Building)target);
-					t.HitPoints -= 50;
-					if (t.HitPoints <= 0)
-                    {
-						t.Destroy(DestroyMode.KillFinalize);
-						targetList.Remove(t);
-					}
-				}
+				Log.Message("Attacking " + target);
+				target.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 25f, 0.5f, -1f, this.parent));
             }
         }
 
-		private void Aggress()
+		private void OmniAggressionPulse()
         {
-			if (Rand.Chance(0.5f))
+			Log.Message("Doing omniaggression");
+			if (GetAggression() == 3 && targets.Count <= 0)
             {
-				if (adjacentMechanicals.Count > 0)
-                {
-					BasicAggress(adjacentMechanicals);
-				} else
-                {
-					BasicAggress(otherFlesh);
-                }
-            } else
-            {
-				if (otherFlesh.Count > 0)
+				Log.Message("In omniaggression");
+
+				CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
+				if (heart != null && heart.body != null)
 				{
-					BasicAggress(otherFlesh);
-				}
-				else
-				{
-					BasicAggress(adjacentMechanicals);
+					foreach(Thing bodypart in heart.body.bodyParts)
+					{
+						foreach (Thing adj in bodypart.Position.GetThingList(parent.Map))
+						{
+							CompBuildingBodyPart bp = adj.TryGetComp<CompBuildingBodyPart>();
+							if ((adj is Building || adj is Pawn) && adj.def != ThingDef.Named("LuciferiumInjector") && (bp == null || bp.bodyId != heart.bodyId))
+                            {
+								targets.Add(adj);
+                            }
+						}
+					}
 				}
 			}
-		}
-
+        }
 	}
 }

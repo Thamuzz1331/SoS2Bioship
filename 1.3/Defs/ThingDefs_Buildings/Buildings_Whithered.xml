@@ -1203,9 +1203,6 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
-			<ProtienPutty>16</ProtienPutty>
-			<OrganSeed>2</OrganSeed>
-			<Neutroamine>15</Neutroamine>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>

@@ -1,3 +1,6 @@
 
 .vs/slnx.sqlite
 .vs/slnx.sqlite-journal
+.vs/*
+*.sqlite
+.vs/slnx.sqlite

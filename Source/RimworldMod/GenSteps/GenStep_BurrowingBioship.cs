@@ -33,7 +33,7 @@ namespace RimWorld
             ref Building coreRef = ref core;
             try
             {
-                EnemyShipDef d = DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.core.shapeOrDef == "Ship_Heart_Hostile").RandomElement();
+                EnemyShipDef d = DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.core.shapeOrDef == "Ship_Heart_Quest").RandomElement();
                 object[] parameters = new object[]{
                     d,
                     map,

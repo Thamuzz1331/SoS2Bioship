@@ -55,11 +55,11 @@ namespace RimWorld
         }
         String IMutation.GetDescription()
         {
-            return "Shieldbuster Plasma\nPlasma Maws significatly increase the damage they do to shields.";
+            return "Shieldcrusher Plasma\nSpinal weapon scaffolds have a chance to develop into a shieldcrusher maw.  The projectiles of this terrible weapon can force enemy shields to contract under its onslaught.";
         }
         public override String ToString()
         {
-            return "Shieldbuster Plasma";
+            return "Shieldcrusher Plasma";
         }
         Texture2D IMutation.GetIcon()
         {

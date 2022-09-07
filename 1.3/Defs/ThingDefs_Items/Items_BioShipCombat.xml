@@ -177,17 +177,34 @@
 		</graphicData>
 		<projectile>
 			<explosionRadius>5.1</explosionRadius>
-			<damageDef>PenetratorSpikeBomb</damageDef>
+			<damageDef>DenseSpikeBomb</damageDef>
 			<speed>150</speed>
 		</projectile>
 	</ThingDef>
 
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Bullet_Spine_Penetrator_StageTwo</defName>
+		<label>dense bone spike</label>
+		<thingClass>Projectile_Penetrator</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/HeavySpine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>2.1</explosionRadius>
+			<damageDef>PenetratorSpikeBomb</damageDef>
+			<speed>150</speed>
+		</projectile>
+	</ThingDef>
 	<DamageDef ParentName="BombKineticLarge">
 		<defName>PenetratorSpikeBomb</defName>
-		<defaultDamage>840</defaultDamage>
+		<defaultDamage>210</defaultDamage>
 		<defaultStoppingPower>2.0</defaultStoppingPower>
 		<defaultArmorPenetration>0.60</defaultArmorPenetration>
 	</DamageDef>
+
 	<!-- Light Spike-->
 	<ThingDef ParentName="ResourceBase">
 		<defName>Spine_Light</defName>

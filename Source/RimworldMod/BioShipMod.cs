@@ -132,6 +132,13 @@ namespace BioShip
 			if (bodyPart != null && bodyPart.body != null && bodyPart.body.heart != null)
             {
 				ret = ret/(0.75f * bodyPart.body.heart.GetStat("conciousness"));
+				if (bodyPart.body.heart.hediffs.Any(mut => (mut.ToString() == "Reflect")))
+                {
+					if(Rand.Chance(0.1f))
+                    {
+						ReflectShot(shield, proj);
+					}
+				}
             }
 			if (proj is Projectile_ShieldBatteringProjectile)
             {
@@ -139,6 +146,54 @@ namespace BioShip
             }
 			return ret;
         }
+
+		public static IntVec3 FindBurstLocation(CompShipCombatShield shield, LocalTargetInfo target)
+        {
+			Map sourceMap = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
+			if (shield.parent.Map == sourceMap)
+            {
+				return (IntVec3)AccessTools.Method(shipCombatManagerType, "FindClosestEdgeCell").Invoke(null, new object[] {
+					Traverse.Create(shipCombatManagerType).Field("EnemyShip").GetValue<Map>(),
+					(object)target.Cell
+				});
+			}
+			else
+            {
+				return (IntVec3)AccessTools.Method(shipCombatManagerType, "FindClosestEdgeCell").Invoke(null, new object[] {
+					sourceMap,
+					(object)target.Cell
+				});
+
+			}
+		}
+
+		public static void ReflectShot(CompShipCombatShield shield, Projectile_ExplosiveShipCombat proj)
+        {
+			Vector3 origin = Traverse.Create(proj).Field("origin").GetValue<Vector3>();
+			int ticksToImpact = Traverse.Create(proj).Field("ticksToImpact").GetValue<int>();
+			Traverse.Create(proj).Field("ticksToImpact").SetValue(ticksToImpact + 2);
+			Vector3 returnPoint = proj.ExactPosition;
+			LocalTargetInfo localTarget = new LocalTargetInfo(origin.ToIntVec3());
+
+			Building_ShipTurret fakeTurret = (Building_ShipTurret)GenSpawn.Spawn(ThingDef.Named("Phantom_Turret"), returnPoint.ToIntVec3(), proj.Map);
+			Projectile returnFire = (Projectile)GenSpawn.Spawn(proj.def, returnPoint.ToIntVec3(), proj.Map);
+			returnFire.Launch(proj.Launcher,
+				returnPoint,
+				localTarget,
+				localTarget,
+				ProjectileHitFlags.All,
+				equipment: proj.Launcher);
+
+			object[] parameters = new object[]{
+					fakeTurret,
+					new LocalTargetInfo(proj.Launcher.Position),
+					proj.def,
+					0f,
+					FindBurstLocation(shield, new LocalTargetInfo(proj.Launcher.Position))
+				};
+			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
+			fakeTurret.Destroy();
+		}
 	}
 
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]

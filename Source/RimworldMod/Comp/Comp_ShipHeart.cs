@@ -14,11 +14,17 @@ namespace RimWorld
     {
         public CompProperties_ShipHeart HeartProps => (CompProperties_ShipHeart)props;
 
+        StatDef injectors = StatDef.Named("LuciferInjectors");
+
+        public bool luciferiumAddiction = false;
+        public bool luciferiumSupplied = false;
         public CompRegenWorker regenWorker;
         public CompMutationWorker mutator;
         public CompAggression aggression;
         public CompArmorGrower armorGrower;
         public bool initialized = false;
+
+        public List<Gizmo> mutationActions = new List<Gizmo>();
 
         public Dictionary<string, List<ThingDef>> defs = new Dictionary<string, List<ThingDef>>()
         {
@@ -49,6 +55,8 @@ namespace RimWorld
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
+            Scribe_Values.Look<bool>(ref luciferiumAddiction, "luciferiumAddiction", false);
+            Scribe_Values.Look<bool>(ref luciferiumSupplied, "luciferiumSupplied", false);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -61,6 +69,10 @@ namespace RimWorld
                 stats.Add("conciousness", 1f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             mutator = parent.TryGetComp<CompMutationWorker>();
+            if (mutator.tier != "tier1")
+            {
+                mutator.UpgradeMutationTier(mutator.tier);
+            }
             aggression = parent.TryGetComp<CompAggression>();
             armorGrower = parent.TryGetComp<CompArmorGrower>();
             base.PostSpawnSetup(respawningAfterLoad);
@@ -99,9 +111,6 @@ namespace RimWorld
                         bp.adjBodypart.Clear();
                     }
                 }
-            } else
-            {
-
             }
         }
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -167,15 +176,37 @@ namespace RimWorld
 
         public override float GetStat(string stat)
         {
+            float luciferMult = 1f;
+            if (luciferiumAddiction && luciferiumSupplied)
+            {
+                luciferMult = 1.5f;
+            }
             switch (stat)
             {
+                case "metabolicEfficiency":
+                    return base.GetStat("metabolicEfficiency") * luciferMult;
+                case "metabolicSpeed":
+                    return base.GetStat("metabolicSpeed") * luciferMult;
                 case "regenEfficiency": 
-                    return stats.TryGetValue(stat, 1f) * stats.TryGetValue("metabolicEfficiency", 1f);
+                    return stats.TryGetValue(stat, 1f) * GetStat("metabolicEfficiency");
                 case "regenSpeed":
-                    return stats.TryGetValue(stat, 1f) * stats.TryGetValue("metabolicSpeed", 1f);
+                    return stats.TryGetValue(stat, 1f) * GetStat("metabolicSpeed");
                 default:
                     return base.GetStat(stat);
             }
         }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+			{
+				yield return gizmo;
+			}
+            foreach (Gizmo gizmo in mutationActions)
+            {
+                yield return gizmo;
+            }
+		}
+
     }
 }

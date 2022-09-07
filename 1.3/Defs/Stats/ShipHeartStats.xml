@@ -13,4 +13,18 @@
 		</parts>
 		<displayPriorityInCategory>1000</displayPriorityInCategory>
 	</StatDef>
+	<StatDef>
+		<defName>LuciferInjectors</defName>
+		<label>luciferium injector</label>
+		<description>The number of luciferium injectors connected to this heart.</description>
+		<category>Building</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<minValue>0</minValue>
+		<toStringStyle>Integer</toStringStyle>
+		<showIfUndefined>false</showIfUndefined>
+		<parts>
+		</parts>
+		<displayPriorityInCategory>1000</displayPriorityInCategory>
+	</StatDef>
+
 </Defs>

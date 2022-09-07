@@ -119,7 +119,7 @@ namespace RimWorld
                 replacement.SetFaction(parent.Faction);
                 if (replacement.TryGetComp<CompColorable>() != null)
                 {
-                    replacement.TryGetComp<CompColorable>().SetColor(Color.white);
+                    replacement.TryGetComp<CompColorable>().SetColor(Color.gray);
                 }
                 IntVec3 c = parent.Position;
                 TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);

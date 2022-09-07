@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class OcularPerk : IMutation
+    public class Reflect : IMutation
     {
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -19,39 +19,48 @@ namespace RimWorld
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
-
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("GiantEyeLaser"));
+                heart.stats["conciousness"] *= 1.33f;
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                CompMutationWorker mut = target.parent.TryGetComp<CompMutationWorker>();
-                mut.quirkPossibilities.Remove(this);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<Reflect>("defense", "psi", true);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["psi"] += 2;
             }
-
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.stats["conciousness"] *= (1f/1.33f);
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "psi", this, true);
+            }
 
         }
-        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<Tuple<IMutation, string, string>>() { };
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations)
+        {
+            return new List<Tuple<IMutation, string, string>>();
         }
-        String IMutation.GetTier() {
-            return "quirk";
+
+        String IMutation.GetTier()
+        {
+            return "tier2";
         }
         String IMutation.GetDescription()
         {
-            return "Occular Lineage\nThis beast belongs to the occular family, possessing a powerful eye laser.";
+            return "Reflect\nThe bioship's psi shields gain a small chance to reflect attacks back on their source.";
         }
         public override string ToString()
         {
-            return "Occular Lineage";
+            return "Reflect";
         }
         Texture2D IMutation.GetIcon()
         {
@@ -61,6 +70,5 @@ namespace RimWorld
         {
 
         }
-
     }
 }

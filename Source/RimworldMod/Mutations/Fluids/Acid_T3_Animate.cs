@@ -42,10 +42,11 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EnergizedPlasma>("offense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<AnimateAcid>("offense", "humors", true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
+        
         void IHediff.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
@@ -62,33 +63,24 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EnergizedPlasma>("offense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "humors", this, true);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            if (tier == "tier2")
-            {
-                return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
-                    new MotileAcid(),
-                    "offense",
-                    "humors") };
-            } else
-            {
-                return new List<Tuple<IMutation, string, string>>();
-            }
+            return new List<Tuple<IMutation, string, string>>();
         }
         String IMutation.GetTier() {
             return "tier1";
         }
         String IMutation.GetDescription()
         {
-            return "Potent Acid\nLingering acid from acid spitters deal more damage.";
+            return "Animate Acid\nSufficiently potent concentrations of acid mucus can animate into ameoba like creatures.";
         }
         public override String ToString()
         {
-            return "Potent Acid";
+            return "Animate Acid";
         }
         Texture2D IMutation.GetIcon()
         {

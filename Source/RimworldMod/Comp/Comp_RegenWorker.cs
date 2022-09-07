@@ -13,7 +13,10 @@ namespace RimWorld
 	{
 		public CompProperties_RegenWorker Props => (CompProperties_RegenWorker)props;
 
-		private float ticksToRegen = 0;
+		public float venomOffset = 1f;
+
+		private float ticksToRegen = 0f;
+		private float ticksToVenomDec = 0f;
 		public BuildingBody body = null;
 
 		public Dictionary<string, Wound> wounds = new Dictionary<string, Wound>();
@@ -29,6 +32,15 @@ namespace RimWorld
 		{
 			if (!parent.Spawned || body == null)
 				return;
+			if (ticksToVenomDec <= 0)
+            {
+				if (venomOffset > 1f)
+                {
+					venomOffset -= 0.001f;
+                }
+				ticksToVenomDec = 20f;
+            }
+			ticksToVenomDec--;
 			if (ticksToRegen <= 0)
             {
 				HealWounds();
@@ -139,6 +151,14 @@ namespace RimWorld
 			return cost;
         }
 
+		public virtual void RaiseVenom(float inc)
+        {
+			if (venomOffset < 2.0f)
+            {
+				venomOffset += inc;
+            }
+        }
+
 		public virtual float GetRegenInterval()
         {
 			float interval = Props.regenInterval / body.heart.GetStat("regenSpeed");
@@ -146,7 +166,17 @@ namespace RimWorld
             {
 				interval *= 8f;
             }
-			return interval;
+			return interval * venomOffset;
         }
+
+		public override string CompInspectStringExtra()
+        {
+            if (body != null)
+            {
+                return String.Format("Venom Offset {0:0.##}", venomOffset);
+            }
+            return "";
+        }
+
 	}
 }

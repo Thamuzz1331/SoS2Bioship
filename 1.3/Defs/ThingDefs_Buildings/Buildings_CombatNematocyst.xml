@@ -155,12 +155,12 @@
 	<DamageDef Name="ShipNematocyst">
 		<defName>ShipNematocyst</defName>
 		<label>nematocyst</label>
-		<workerClass>DamageWorker_AddInjury</workerClass>
+		<workerClass>DamageWorker_Nematocyst</workerClass>
 		<externalViolence>true</externalViolence>
 		<isExplosive>true</isExplosive>
 		<deathMessage>{0} has been lacerated to death.</deathMessage>
-		<hediff>Burn</hediff>
-		<hediffSolid>Burn</hediffSolid>
+		<hediff>Cut</hediff>
+		<hediffSolid>Cut</hediffSolid>
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<impactSoundType>Blunt</impactSoundType>
 		<armorCategory>Sharp</armorCategory>
@@ -179,30 +179,8 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 	
-	<DamageDef Name="ShipInjectingNematocyst">
+	<DamageDef ParentName="ShipNematocyst" Name="ShipInjectingNematocyst">
 		<defName>ShipInjectingNematocyst</defName>
-		<label>nematocyst</label>
 		<workerClass>DamageWorker_AddInjury</workerClass>
-		<externalViolence>true</externalViolence>
-		<isExplosive>true</isExplosive>
-		<deathMessage>{0} has been lacerated to death.</deathMessage>
-		<hediff>Burn</hediff>
-		<hediffSolid>Burn</hediffSolid>
-		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
-		<impactSoundType>Blunt</impactSoundType>
-		<armorCategory>Sharp</armorCategory>
-		<minDamageToFragment>15</minDamageToFragment>
-		<defaultDamage>15</defaultDamage>
-		<defaultStoppingPower>0.5</defaultStoppingPower>
-		<defaultArmorPenetration>0.10</defaultArmorPenetration>
-		<buildingDamageFactor>4</buildingDamageFactor>
-		<plantDamageFactor>4</plantDamageFactor>
-		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
-		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
-		<explosionCellFleck>BlastLaserSoS</explosionCellFleck>
-		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
-		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
-		<soundExplosion>Explosion_Bomb</soundExplosion>
-		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 </Defs>

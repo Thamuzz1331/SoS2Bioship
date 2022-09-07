@@ -149,7 +149,7 @@ namespace RimWorld
             Scribe_Values.Look(ref mutating, "mutating", false);
             Scribe_Values.Look(ref tier, "tier", "tier1");
 		}
-
+/*
         public override void PostSpawnSetup(bool b) {
             base.PostSpawnSetup(b);
             if (tier != "tier1")
@@ -157,7 +157,7 @@ namespace RimWorld
                 this.UpgradeMutationTier(tier);
             }
         }
-
+*/
         public virtual void GetInitialMutations(BuildingBody body)
         {
             this.SpreadMutation(body, this.quirkPossibilities.RandomElement());

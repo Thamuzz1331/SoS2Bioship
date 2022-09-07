@@ -69,6 +69,10 @@ namespace RimWorld
                 stats.Add("conciousness", 1f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             mutator = parent.TryGetComp<CompMutationWorker>();
+            if (mutator.tier != "tier1")
+            {
+                mutator.UpgradeMutationTier(mutator.tier);
+            }
             aggression = parent.TryGetComp<CompAggression>();
             armorGrower = parent.TryGetComp<CompArmorGrower>();
             base.PostSpawnSetup(respawningAfterLoad);
@@ -107,9 +111,6 @@ namespace RimWorld
                         bp.adjBodypart.Clear();
                     }
                 }
-            } else
-            {
-
             }
         }
         public override void PostDestroy(DestroyMode mode, Map previousMap)

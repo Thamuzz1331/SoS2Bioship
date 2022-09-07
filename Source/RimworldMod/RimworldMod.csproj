@@ -196,6 +196,9 @@
 	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
 	  <Compile Include="Mutations\Ocular\T1_OcularPerk.cs" />
+
+  	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
+
 	  <Compile Include="Damage\DamageWorker_Acid.cs"/>
 	  <Compile Include="Damage\DamageWorker_PotentAcid.cs"/>
 	  <Compile Include="Damage\DamageWorker_MotileAcid.cs"/>

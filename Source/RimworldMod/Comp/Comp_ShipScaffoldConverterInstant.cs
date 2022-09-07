@@ -12,16 +12,28 @@ namespace RimWorld
 	{
 		public override float GetConversionWaitLength()
 		{
+			if (parent.Faction == Faction.OfPlayer)
+            {
+				return base.GetConversionWaitLength();
+            }
 			return 0f;
 		}
 
 		public override float GetConversionCost()
 		{
+			if (parent.Faction == Faction.OfPlayer)
+            {
+				return base.GetConversionCost();
+            }
 			return 0f;
 		}
 
 		public override List<Thing> ConvertScaffold()
 		{
+			if (parent.Faction == Faction.OfPlayer)
+            {
+				return base.ConvertScaffold();
+            }
 			List<Thing> ret = new List<Thing>();
 			for (int i = 0; i < 10; i++)
 			{

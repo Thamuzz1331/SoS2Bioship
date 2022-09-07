@@ -21,8 +21,8 @@
 		<passability>Standable</passability>
 		<placingDraggableDimensions>2</placingDraggableDimensions>
 		<statBases>
-			<MaxHitPoints>9999999</MaxHitPoints>
 		</statBases>
+		<useHitPoints>false</useHitPoints>
 		<tickerType>Normal</tickerType>
 		<description>There was flesh here.  There will be again.</description>
 		<comps>

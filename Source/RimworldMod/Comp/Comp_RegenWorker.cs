@@ -13,9 +13,9 @@ namespace RimWorld
 	{
 		public CompProperties_RegenWorker Props => (CompProperties_RegenWorker)props;
 
-		public float venomOffset = 1f;
+		public float venomOffset = 0f;
 
-		private float ticksToRegen = 0f;
+//		private float ticksToRegen = 0f;
 		private float ticksToVenomDec = 0f;
 		public BuildingBody body = null;
 
@@ -30,21 +30,21 @@ namespace RimWorld
 				return;
 			if (ticksToVenomDec <= 0)
             {
-				if (venomOffset > 1f)
+				if (venomOffset > 0f)
                 {
 					venomOffset -= 0.001f;
                 }
 				ticksToVenomDec = 20f;
             }
 			ticksToVenomDec--;
-			if (ticksToRegen <= 0)
-            {
-				HealWounds();
-				ticksToRegen = GetRegenInterval();
-			}
-			ticksToRegen--;
+//			if (ticksToRegen <= 0)
+//            {
+//				HealWounds();
+//				ticksToRegen = GetRegenInterval();
+//			}
+//			ticksToRegen--;
 		}
-
+/*
 		public virtual void RegisterWound(Thing target)
         {
 			CompShipBodyPart bp = target.TryGetComp<CompShipBodyPart>();
@@ -86,7 +86,6 @@ namespace RimWorld
 				//wounds.Remove(s);
             }
         }
-
 		public virtual bool TryHealWound(Wound wound)
         {
 			if (wound.wounds.Count <= 0)
@@ -136,7 +135,7 @@ namespace RimWorld
 			}
 			return false;
         }
-
+*/
 		public virtual float GetRegenCost()
         {
 			float cost = Props.regenCost / body.heart.GetStat("regenEfficiency");
@@ -144,7 +143,7 @@ namespace RimWorld
             {
 				cost *= 8f;
 			}
-			return cost;
+			return cost  * (1f+(venomOffset/4));
         }
 
 		public virtual void RaiseVenom(float inc)
@@ -163,7 +162,7 @@ namespace RimWorld
 				interval *= 8f;
             }
 //			interval *= (1 + (float)(Rand.RangeInclusive(-15, 15)/100));
-			return interval * venomOffset;
+			return interval * (1f + venomOffset);
         }
 
 		public override string CompInspectStringExtra()

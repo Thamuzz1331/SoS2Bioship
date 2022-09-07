@@ -23,7 +23,6 @@ namespace RimWorld
                     {
                         if (shield.radius >= 15f)
                         {
-                            Log.Message("Shrinking shield");
                             shield.radius -= 0.2f;
                         }
                         break;

@@ -78,7 +78,6 @@ namespace RimWorld
 						BasicAggress(otherFlesh);
 						break;
 					case 3:
-						Log.Message("Case3");
 						BasicAggress(adjacentMechanicals);
 						BasicAggress(otherFlesh);
 						BasicAggress(targets);
@@ -91,7 +90,6 @@ namespace RimWorld
 
 		private void BasicAggress(HashSet<Thing> targetList)
         {
-			Log.Message("Inaggress");
 			if (targetList.Count > 0)
             {
 				Thing target = targetList.RandomElement();
@@ -110,17 +108,14 @@ namespace RimWorld
 					BasicAggress(targetList);
 					return;
                 }
-				Log.Message("Attacking " + target);
 				target.TakeDamage(new DamageInfo(ShipDamageDefOf.ShipAcid, 25f, 0.5f, -1f, this.parent));
             }
         }
 
 		private void OmniAggressionPulse()
         {
-			Log.Message("Doing omniaggression");
 			if (GetAggression() == 3 && targets.Count <= 0)
             {
-				Log.Message("In omniaggression");
 
 				CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
 				if (heart != null && heart.body != null)

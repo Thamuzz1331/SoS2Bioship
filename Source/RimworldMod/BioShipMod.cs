@@ -112,7 +112,6 @@ namespace BioShip
 			float absDiff = Math.Abs(shield.radius - shield.radiusSet);
 			if (absDiff > 0 && absDiff < 1)
             {
-				Log.Message("Rounding shield");
 				shield.radius = shield.radiusSet;
             }
 			else if (shield.radiusSet > shield.radius)

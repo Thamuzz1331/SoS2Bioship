@@ -449,7 +449,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(7,5.5)</drawSize>
+			<drawSize>(2,3)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -497,7 +497,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6,5.5)</drawSize>
+			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -545,7 +545,7 @@
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/NuclearEngine</texPath>
+			<texPath>Things/Building/Ship/BioShipEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(5,7)</drawSize>
 		</graphicData>
@@ -1121,7 +1121,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipGiantMitochondria</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(4,6)</drawSize>
+			<drawSize>(2,3)</drawSize>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
 		<blockWind>true</blockWind>
@@ -1136,7 +1136,7 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>A giant mitochondira, the powerhouse of the beast.</description>
-		<size>(4,6)</size>
+		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
 			<li Class="CompProperties_ShipPart"/>

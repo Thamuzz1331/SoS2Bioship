@@ -86,6 +86,11 @@ namespace RimWorld
                 CompRegenSpot regenDetails = replacement.TryGetComp<CompRegenSpot>();
                 regenDetails.regenCountdown = ((CompShipHeart)body.heart).regenWorker.GetRegenInterval();
                 regenDetails.regenDef = ThingDef.Named(ShipProps.regenDef);
+                ThingDef heartDef = ((CompShipHeart)body.heart).GetThingDef(ShipProps.regenDef);
+                if (heartDef != null)
+                {
+                    regenDetails.regenDef = heartDef;
+                }
                 regenDetails.heart = body.heart.parent;
                 replacement.Position = parent.Position;
                 replacement.Rotation = parent.Rotation;

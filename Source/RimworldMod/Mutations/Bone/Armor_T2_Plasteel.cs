@@ -28,7 +28,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<PlasteelArmor>("defense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<PlasteelArmor>("defense", "bone");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
             }
         }

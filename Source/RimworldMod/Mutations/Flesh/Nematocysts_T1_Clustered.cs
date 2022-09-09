@@ -33,7 +33,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ClusteredNematocysts>("offense", "flesh", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ClusteredNematocysts>("offense", "flesh");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["flesh"]++;
             }
         }

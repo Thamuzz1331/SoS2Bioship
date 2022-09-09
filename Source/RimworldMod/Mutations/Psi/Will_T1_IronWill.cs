@@ -28,7 +28,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<IronWill>("defense", "psi", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<IronWill>("defense", "psi");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["psi"] += 2;
             }
         }
@@ -41,7 +41,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "psi", this, true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "psi", this);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"] -= 2;
             }
 

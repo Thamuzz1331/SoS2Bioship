@@ -188,21 +188,21 @@ namespace RimWorld
             return quirkPossibilities.RandomElement();
         }
 
-        public virtual void AddMutation(string cat, string theme, IMutation toAdd, bool positive)
+        public virtual void AddMutation(string cat, string theme, IMutation toAdd)
         {
-            if (positive)
-            {
-                mutationOptions[cat][theme].Add(toAdd);
-            }
+            mutationOptions[cat][theme].Add(toAdd);
         }
 
-        public virtual void RemoveMutation<t>(string cat, string theme, bool positive)
+        public virtual void RemoveMutation<t>(string cat, string theme)
         {
-            if (positive)
-            {
-                mutationOptions[cat][theme] = mutationOptions[cat][theme].FindAll(e => !(e is t));
-            }
+            mutationOptions[cat][theme] = mutationOptions[cat][theme].FindAll(e => !(e is t));
         }
+
+        public virtual void RemoveMutation(string cat, string theme, IMutation mut)
+        {
+            mutationOptions[cat][theme].Remove(mut);
+        }
+
 
         public virtual void AdjustThemeChance(string theme, int adj)
         {

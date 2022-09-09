@@ -10,6 +10,14 @@ namespace RimWorld
 {
     public struct AmmoMutationTurretDetails
     {
+        public AmmoMutationTurretDetails(ThingDef _turretDef, Tuple<string, ThingDef, ThingDef> _ammoDef, string _addTable, int _addWeight)
+        {
+            turretDef = _turretDef;
+            ammoDef = _ammoDef;
+            addTable = _addTable;
+            addWeight = _addWeight;
+        }
+
         public ThingDef turretDef;
         public Tuple<string, ThingDef, ThingDef> ammoDef;
         public string addTable;
@@ -22,6 +30,20 @@ namespace RimWorld
         public string tier;
         public string name;
         public string desc;
+        public string cat;
+        public string theme;
+        public Texture2D icon;
+
+        public AmmoMutation(List<AmmoMutationTurretDetails> _turretsToApplyTo, string _tier, string _name, string _desc, string _cat, string _theme, Texture2D _icon)
+        {
+            turretsToApplyTo = _turretsToApplyTo;
+            tier = _tier;
+            name = _name;
+            desc = _desc;
+            cat = _cat;
+            theme = _theme;
+            icon = _icon;
+        }
 
         bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -61,13 +83,12 @@ namespace RimWorld
                         .currentlySelected = det.ammoDef.Item1;
                 }
             }
-/*
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<PotentAcid>("offense", "humors", true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation(cat, theme, this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes[theme]++;
             }
-*/
+
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
@@ -93,25 +114,21 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "humors", this, true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation(cat, theme, this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes[theme]--;
             }
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations)
         {
-            if (tier == "tier2")
-            {
-                return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
-                    new MotileAcid(),
-                    "offense",
-                    "humors") };
-            }
-            else
-            {
-                return new List<Tuple<IMutation, string, string>>();
-            }
+            return UpgradeTier(tier, existingMutations);
         }
+
+        public virtual List<Tuple<IMutation, string, string>> UpgradeTier(string tier, List<IMutation> existingMutations)
+        {
+                return new List<Tuple<IMutation, string, string>>();
+        }
+
         String IMutation.GetTier()
         {
             return tier;

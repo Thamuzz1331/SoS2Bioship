@@ -983,7 +983,7 @@
 	</ThingDef>
 
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" Name="BioRadiator">
 		<defName>BioShipInside_PassiveCooler</defName>
 		<label>radiator fin</label>
 		<description>Radiates heat into the void, cooling a ship's interior. Also provides a small amount of heat capacity to weapons and shields. Cannot vent heat while shields or cloaking devices are active.</description>
@@ -1089,6 +1089,17 @@
 		</killedLeavings>
 	</ThingDef>
 
+	<ThingDef ParentName="BioRadiator">
+		<defName>BioShipInside_AutotropicPassiveCooler</defName>
+		<label>autotropic radiator fin</label>
+		<description>Radiates heat into the void, cooling a ship's interior. Also provides a small amount of heat capacity to weapons and shields. Cannot vent heat while shields or cloaking devices are active.</description>
+		<comps>
+			<li Class="CompProperties_NutritionSource">
+				<nutrientPerPulse>0.25</nutrientPerPulse>
+			</li>
+		</comps>
+	</ThingDef>
+	
 	<ThingDef ParentName="BuildingBase">
 		<defName>BioShieldGenerator</defName>
 		<label>psi shield ganglia</label>

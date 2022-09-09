@@ -30,7 +30,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc");
             }
         }
         void IHediff.Remove(CompBuildingBodyPart target)
@@ -44,7 +44,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth(), true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth());
             }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {

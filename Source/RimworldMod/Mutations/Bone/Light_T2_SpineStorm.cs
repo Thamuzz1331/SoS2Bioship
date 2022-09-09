@@ -43,7 +43,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<SpineStorm>("offense", "bone", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<SpineStorm>("offense", "bone");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
             }
         }

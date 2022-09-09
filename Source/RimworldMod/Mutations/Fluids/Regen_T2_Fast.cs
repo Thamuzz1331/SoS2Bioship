@@ -30,7 +30,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<FastRegeneration>("defense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<FastRegeneration>("defense", "humors");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
@@ -44,7 +44,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration(), true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration());
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
         }

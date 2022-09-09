@@ -10,68 +10,30 @@ using Verse;
 
 namespace RimWorld
 {
-    public class PotentAcid : IMutation
+    public class PotentAcid : AmmoMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        public PotentAcid() : base(new List<AmmoMutationTurretDetails>() {
+                    new AmmoMutationTurretDetails(
+                            ThingDef.Named("ShipTurret_BioAcid"),
+                            new Tuple<string, ThingDef, ThingDef>(
+                                "Potent",
+                                ThingDef.Named("Bullet_Fake_PotentAcid"),
+                                ThingDef.Named("Proj_PotentAcid")
+                                ),
+                            "mediumTurretOptions",
+                            2
+                        )
+                },
+                "tier1",
+                "Potent Acid",
+                "Potent Acid\nLingering acid from acid spitters deal more damage.",
+                "offense",
+                "humors",
+                null)
         {
-            bool ret = false;
-            ret = ret || (target.parent.def == ThingDef.Named("ShipTurret_BioAcid"));
-            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
-            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
-            return ret;
         }
-
-        void IHediff.Apply(CompBuildingBodyPart target)
+        public override List<Tuple<IMutation, string, string>> UpgradeTier(string tier, List<IMutation> existingMutations)
         {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_BioAcid"));
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_BioAcid"));
-            }
-            if (target.parent.def == ThingDef.Named("ShipTurret_BioAcid"))
-            {
-                target.parent.TryGetComp<CompMutableAmmo>()
-                    .ammoTypes.Add("Potent", 
-                    new Tuple<ThingDef, ThingDef>(
-                        ThingDef.Named("Proj_PotentAcid"), 
-                        ThingDef.Named("Bullet_Fake_PotentAcid")));
-                target.parent.TryGetComp<CompMutableAmmo>().currentlySelected = "Potent";
-            }
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
-            {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<PotentAcid>("offense", "humors", true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
-            }
-        }
-        void IHediff.Remove(CompBuildingBodyPart target)
-        {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("ShipTurret_BioAcid"));
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("ShipTurret_BioAcid"));
-            }
-            if (target.parent.def == ThingDef.Named("ShipTurret_BioAcid"))
-            {
-                target.parent.TryGetComp<CompMutableAmmo>()
-                    .ammoTypes.Remove("Potent Acid");
-                if (target.parent.TryGetComp<CompMutableAmmo>().currentlySelected == "Potent")
-                {
-                    target.parent.TryGetComp<CompMutableAmmo>().currentlySelected = target.parent.TryGetComp<CompMutableAmmo>()
-                        .ammoTypes.Keys.RandomElement();
-                }
-            }
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
-            {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "humors", this, true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
-            }
-
-        }
-        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
             if (tier == "tier2")
             {
                 return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
@@ -80,27 +42,8 @@ namespace RimWorld
                     "humors") };
             } else
             {
-                return new List<Tuple<IMutation, string, string>>();
+                return base.UpgradeTier(tier, existingMutations);
             }
-        }
-        String IMutation.GetTier() {
-            return "tier1";
-        }
-        String IMutation.GetDescription()
-        {
-            return "Potent Acid\nLingering acid from acid spitters deal more damage.";
-        }
-        public override String ToString()
-        {
-            return "Potent Acid";
-        }
-        Texture2D IMutation.GetIcon()
-        {
-            return null;
-        }
-        void IExposable.ExposeData()
-        {
-
         }
 
     }

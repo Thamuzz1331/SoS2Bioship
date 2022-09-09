@@ -12,14 +12,6 @@ namespace RimWorld
 {
     public class ShieldcrushingPlasma : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
-        {
-            bool ret = false;
-            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
-            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
-            return ret;
-        }
-
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
@@ -29,7 +21,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ShieldcrushingPlasma>("offense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<ShieldcrushingPlasma>("offense", "humors");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
@@ -42,7 +34,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EnergizedPlasma>("offense", "humors", true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "humors", this);
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
             }
 
@@ -51,7 +43,7 @@ namespace RimWorld
             return new List<Tuple<IMutation, string, string>>() { };
         }
         String IMutation.GetTier() {
-            return "tier2";
+            return "tier3";
         }
         String IMutation.GetDescription()
         {

@@ -27,7 +27,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseFat>("utility", "misc", true);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseFat>("utility", "misc");
             }
         }
         void IHediff.Remove(CompBuildingBodyPart target)
@@ -38,7 +38,7 @@ namespace RimWorld
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", this, true);
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", this);
             }
 
         }

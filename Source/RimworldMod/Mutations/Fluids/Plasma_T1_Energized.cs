@@ -10,64 +10,30 @@ using Verse;
 
 namespace RimWorld
 {
-    public class EnergizedPlasma : IMutation
+    public class EnergizedPlasma : AmmoMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        public EnergizedPlasma() : base(new List<AmmoMutationTurretDetails>() {
+                    new AmmoMutationTurretDetails(
+                            ThingDef.Named("ShipTurret_BioPlasma"),
+                            new Tuple<string, ThingDef, ThingDef>(
+                                "Energized",
+                                ThingDef.Named("Bullet_Fake_BioPlasmaEnergetic"),
+                                ThingDef.Named("Proj_BioPlasmaEnergetic")
+                                ),
+                            "mediumTurretOptions",
+                            2
+                        )
+                },
+                "tier1",
+                "Energized Plasma",
+                "Energized Plasma\nPlasma Maws deal additional damage.",
+                "offense",
+                "humors",
+                null)
         {
-            bool ret = false;
-            ret = ret || (target.parent.def == ThingDef.Named("ShipTurret_BioPlasma"));
-            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
-            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
-            return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
-        {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_BioPlasma"));
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_BioPlasma"));
-            }
-            if (target.parent.def == ThingDef.Named("ShipTurret_BioPlasma"))
-            {
-                target.parent.TryGetComp<CompMutableAmmo>()
-                    .ammoTypes.Add("Energetic",
-                    new Tuple<ThingDef, ThingDef>(
-                        ThingDef.Named("Proj_BioPlasmaEnergetic"),
-                        ThingDef.Named("Bullet_Fake_BioPlasmaEnergetic")));
-                target.parent.TryGetComp<CompMutableAmmo>().currentlySelected = "Energetic";
-
-            }
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
-            {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EnergizedPlasma>("offense", "humors", true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
-            }
-        }
-        void IHediff.Remove(CompBuildingBodyPart target)
-        {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("ShipTurret_BioPlasma"));
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("mediumTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("ShipTurret_BioPlasma"));
-            }
-            if (target.parent.def == ThingDef.Named("ShipTurret_BioPlasma"))
-            {
-                target.parent.TryGetComp<CompMutableAmmo>()
-                    .ammoTypes.Remove("Energetic");
-            }
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
-            {
-                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EnergizedPlasma>("offense", "humors", true);
-                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
-            }
-
-        }
-        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+         public override List<Tuple<IMutation, string, string>> UpgradeTier(string tier, List<IMutation> existingMutations) { 
             if (tier == "tier2")
             {
                 return new List<Tuple<IMutation, string, string>>() {new Tuple<IMutation, string, string>(
@@ -76,28 +42,8 @@ namespace RimWorld
                     "humors") };
             } else
             {
-                return new List<Tuple<IMutation, string, string>>();
+                return base.UpgradeTier(tier, existingMutations);
             }
         }
-        String IMutation.GetTier() {
-            return "tier1";
-        }
-        String IMutation.GetDescription()
-        {
-            return "Energized Plasma\nPlasma Maws deal additional damage.";
-        }
-        public override String ToString()
-        {
-            return "Energized Plasma";
-        }
-        Texture2D IMutation.GetIcon()
-        {
-            return null;
-        }
-        void IExposable.ExposeData()
-        {
-
-        }
-
     }
 }

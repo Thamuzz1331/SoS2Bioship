@@ -12,7 +12,6 @@
 			<Nutrition>0.05</Nutrition>
 			<Flammability>0.5</Flammability>
 			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
-			<HitPoints>50</HitPoints>
 		</statBases>
 		<ingestible>
 			<foodType>Meat</foodType>

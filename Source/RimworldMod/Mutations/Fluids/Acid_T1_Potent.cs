@@ -58,6 +58,11 @@ namespace RimWorld
             {
                 target.parent.TryGetComp<CompMutableAmmo>()
                     .ammoTypes.Remove("Potent Acid");
+                if (target.parent.TryGetComp<CompMutableAmmo>().currentlySelected == "Potent")
+                {
+                    target.parent.TryGetComp<CompMutableAmmo>().currentlySelected = target.parent.TryGetComp<CompMutableAmmo>()
+                        .ammoTypes.Keys.RandomElement();
+                }
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {

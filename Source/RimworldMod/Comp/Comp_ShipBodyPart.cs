@@ -100,6 +100,12 @@ namespace RimWorld
             base.PostDestroy(mode, previousMap);
         }
 
+        public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+        {
+            base.PostPostApplyDamage(dinfo, totalDamageDealt);
+            ((CompShipHeart)body.heart).regenWorker.RegisterWound((Building)parent);
+        }
+
         public override string CompInspectStringExtra()
         {
             return "Flesh of " + body.GetName();

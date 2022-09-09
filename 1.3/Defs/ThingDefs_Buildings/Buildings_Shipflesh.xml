@@ -216,6 +216,8 @@
 				<regenDef>Scar_Corner_OneOne</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneOne</whitherTo>
+				<growsArmor>true</growsArmor>
+				<isCorner>true</isCorner>
 			</li>
 		</comps>
 		<statBases>
@@ -236,6 +238,9 @@
 				<regenDef>Scar_Corner_OneOneFlip</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneOneFlip</whitherTo>
+				<growsArmor>true</growsArmor>
+				<isCorner>true</isCorner>
+				<isFlip>true</isFlip>
 			</li>
 		</comps>
 		<statBases>
@@ -257,6 +262,9 @@
 				<regenDef>Scar_Corner_OneTwo</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneTwo</whitherTo>
+				<growsArmor>true</growsArmor>
+				<isCorner>true</isCorner>
+				<isFlip>false</isFlip>
 			</li>
 		</comps>
 		<statBases>
@@ -279,6 +287,9 @@
 				<regenDef>Scar_Corner_OneTwoFlip</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneTwoFlip</whitherTo>
+				<growsArmor>true</growsArmor>
+				<isCorner>true</isCorner>
+				<isFlip>true</isFlip>
 			</li>
 		</comps>
 		<statBases>
@@ -301,6 +312,9 @@
 				<regenDef>Scar_Corner_OneThree</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneThree</whitherTo>
+				<growsArmor>true</growsArmor>
+				<isCorner>true</isCorner>
+				<isFlip>false</isFlip>
 			</li>
 		</comps>
 		<statBases>
@@ -323,6 +337,9 @@
 				<regenDef>Scar_Corner_OneThreeFlip</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneThreeFlip</whitherTo>
+				<growsArmor>true</growsArmor>
+				<isCorner>true</isCorner>
+				<isFlip>true</isFlip>
 			</li>
 		</comps>
 		<statBases>

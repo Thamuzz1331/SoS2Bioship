@@ -24,7 +24,7 @@ namespace RimWorld
         {
             if (target.parent.TryGetComp<CompArmorGrower>() != null)
             {
-                target.parent.TryGetComp<CompArmorGrower>().armorClass = ThingDef.Named("BoneArmor");
+                target.parent.TryGetComp<CompArmorGrower>().armorClass.Add(ThingDef.Named("BoneArmor"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -34,10 +34,9 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompArmorGrower>() != null && 
-                target.parent.TryGetComp<CompArmorGrower>().armorClass == ThingDef.Named("BoneArmor"))
+            if (target.parent.TryGetComp<CompArmorGrower>() != null)
             {
-                target.parent.TryGetComp<CompArmorGrower>().armorClass = null;
+                target.parent.TryGetComp<CompArmorGrower>().armorClass.Remove(ThingDef.Named("BoneArmor"));
             }
         }
 

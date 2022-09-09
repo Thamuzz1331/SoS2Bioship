@@ -39,107 +39,7 @@ namespace RimWorld
         {
             new OcularPerk(),
         };
-        public Dictionary<string, Dictionary<string, List<IMutation>>> goodMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
-        {
-            {"offense", new Dictionary<string, List<IMutation>>(){
-                { "flesh", new List<IMutation>(){
-                    new ClusteredNematocysts(),
-                }},
-                { "bone", new List<IMutation>(){
-                    new DenseSpines(), new EfficientSpines(),
-                }},
-                { "humors", new List<IMutation>(){
-                    new PotentAcid(), new EnergizedPlasma(), 
-                }},
-                { "misc", new List<IMutation>(){
-
-                }},
-                { "psi", new List<IMutation>(){
-
-                }}
-
-            }},
-            {"defense", new Dictionary<string, List<IMutation>>(){
-                { "flesh", new List<IMutation>(){
-
-                }},
-                { "bone", new List<IMutation>(){
-                    new BoneArmor(),
-                }},
-                { "humors", new List<IMutation>(){
-                    new EfficientRegeneration(),
-                }},
-                { "misc", new List<IMutation>(){
-
-                }},
-                { "psi", new List<IMutation>(){
-                    new IronWill()
-                }}
-
-            }},
-            {"utility", new Dictionary<string, List<IMutation>>(){
-                { "flesh", new List<IMutation>(){
-
-                }},
-                { "bone", new List<IMutation>(){
-
-                }},
-                { "humors", new List<IMutation>(){
-
-                }},
-                { "misc", new List<IMutation>(){
-                    new EfficientFatStorage(), new EfficientGrowth(),
-                }},
-                { "psi", new List<IMutation>(){
-
-                }}
-
-            }}
-        };
-        public Dictionary<string, Dictionary<string, List<IMutation>>> badMutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>()
-        {
-            {"offense", new Dictionary<string, List<IMutation>>(){
-                { "flesh", new List<IMutation>(){
-
-                }},
-                { "bone", new List<IMutation>(){
-
-                }},
-                { "humors", new List<IMutation>(){
-
-                }},
-                { "misc", new List<IMutation>(){
-
-                }}
-            }},
-            {"defense", new Dictionary<string, List<IMutation>>(){
-                { "flesh", new List<IMutation>(){
-
-                }},
-                { "bone", new List<IMutation>(){
-
-                }},
-                { "humors", new List<IMutation>(){
-                }},
-                { "misc", new List<IMutation>(){
-
-                }}
-            }},
-            {"utility", new Dictionary<string, List<IMutation>>(){
-                { "flesh", new List<IMutation>(){
-
-                }},
-                { "bone", new List<IMutation>(){
-
-                }},
-                { "humors", new List<IMutation>(){
-
-                }},
-                { "misc", new List<IMutation>(){
-
-                }}
-            }}
-        };
+        public Dictionary<string, Dictionary<string, List<IMutation>>> mutationOptions = null;
 
         public override void PostExposeData()
 		{
@@ -148,22 +48,19 @@ namespace RimWorld
             Scribe_Values.Look(ref mutationCountdown, "mutationCountdown", 0f);
             Scribe_Values.Look(ref mutating, "mutating", false);
             Scribe_Values.Look(ref tier, "tier", "tier1");
+            mutationOptions = stockMutations[tier];
 		}
-/*
-        public override void PostSpawnSetup(bool b) {
-            base.PostSpawnSetup(b);
-            if (tier != "tier1")
-            {
-                this.UpgradeMutationTier(tier);
-            }
-        }
-*/
+
         public virtual void GetInitialMutations(BuildingBody body)
         {
+            if (this.mutationOptions == null)
+            {
+                mutationOptions = stockMutations["tier1"];
+            }
             this.SpreadMutation(body, this.quirkPossibilities.RandomElement());
-            this.SpreadMutation(body, this.RollMutation("offense", this.GetRandomTheme(this.mutationThemes, this.goodMutationOptions.TryGetValue("offense")), this.goodMutationOptions));
-            this.SpreadMutation(body, this.RollMutation("defense", this.GetRandomTheme(this.mutationThemes, this.goodMutationOptions.TryGetValue("defense")), this.goodMutationOptions));
-            this.SpreadMutation(body, this.RollMutation("utility", this.GetRandomTheme(this.mutationThemes, this.goodMutationOptions.TryGetValue("utility")), this.goodMutationOptions));
+            this.SpreadMutation(body, this.RollMutation("offense", this.GetRandomTheme(this.mutationThemes, this.mutationOptions.TryGetValue("offense")), this.mutationOptions));
+            this.SpreadMutation(body, this.RollMutation("defense", this.GetRandomTheme(this.mutationThemes, this.mutationOptions.TryGetValue("defense")), this.mutationOptions));
+            this.SpreadMutation(body, this.RollMutation("utility", this.GetRandomTheme(this.mutationThemes, this.mutationOptions.TryGetValue("utility")), this.mutationOptions));
         }
 
         public override void CompTick()
@@ -295,11 +192,7 @@ namespace RimWorld
         {
             if (positive)
             {
-                goodMutationOptions[cat][theme].Add(toAdd);
-            }
-            else
-            {
-                badMutationOptions[cat][theme].Add(toAdd);
+                mutationOptions[cat][theme].Add(toAdd);
             }
         }
 
@@ -307,11 +200,7 @@ namespace RimWorld
         {
             if (positive)
             {
-                goodMutationOptions[cat][theme] = goodMutationOptions[cat][theme].FindAll(e => !(e is t));
-            }
-            else
-            {
-                badMutationOptions[cat][theme] = badMutationOptions[cat][theme].FindAll(e => !(e is t));
+                mutationOptions[cat][theme] = mutationOptions[cat][theme].FindAll(e => !(e is t));
             }
         }
 
@@ -329,12 +218,12 @@ namespace RimWorld
             }
             else
             {
-                string theme = GetRandomTheme(mutationThemes, goodMutationOptions[cat]);
+                string theme = GetRandomTheme(mutationThemes, mutationOptions[cat]);
                 if (theme == null)
                 {
                     return;
                 }
-                IMutation mut = RollMutation(cat, theme, goodMutationOptions);
+                IMutation mut = RollMutation(cat, theme, mutationOptions);
                 CompShipBodyPart bp = parent.TryGetComp<CompShipBodyPart>();
                 if (mut != null && body != null)
                 {
@@ -370,9 +259,22 @@ namespace RimWorld
             }
         }
 
-        public virtual void RemoveMutationFromOrgan(Building b, IMutation mut)
+        public virtual void RemoveMutationFromBody(BuildingBody b, IMutation mut)
         {
-
+            mutations.Remove(mut);
+            if (b.heart.hediffs.Contains(mut))
+            {
+                mut.Remove(b.heart);
+                b.heart.hediffs.Remove(mut);
+            }
+            foreach (Thing t in b.bodyParts)
+            {
+                if (t.TryGetComp<CompShipBodyPart>().hediffs.Contains(mut))
+                {
+                    mut.Remove(t.TryGetComp<CompShipBodyPart>());
+                    t.TryGetComp<CompShipBodyPart>().hediffs.Remove(mut);
+                }
+            }
         }
 
         public virtual List<IMutation> GetMutationsForTier(String tier)
@@ -382,8 +284,8 @@ namespace RimWorld
 
         public virtual List<IMutation> GetMutationOptionsForTeir(String tier)
         {
-            List<IMutation> mutationOptions = new List<IMutation>();
-            foreach(Dictionary<String, List<IMutation>> category in goodMutationOptions.Values)
+            List<IMutation> ret = new List<IMutation>();
+            foreach(Dictionary<String, List<IMutation>> category in mutationOptions.Values)
             {
                 foreach(List<IMutation> theme in category.Values)
                 {
@@ -391,40 +293,197 @@ namespace RimWorld
                     {
                         if(mut.GetTier() == tier)
                         {
-                            mutationOptions.Add(mut);
+                            ret.Add(mut);
                         }
                     }
                 }
             }
-            return mutationOptions;
+            return ret;
         }
 
         public virtual void UpgradeMutationTier(string newTier)
         {
-            foreach(String cat in goodMutationOptions.Keys)
-            {
-                goodMutationOptions[cat].Clear();
-            }
+            this.tier = newTier;
+            mutationOptions = new Dictionary<string, Dictionary<string, List<IMutation>>>(stockMutations[newTier]);
             foreach(IMutation mut in mutations)
             {
                 foreach(Tuple<IMutation, string, string> newMutation in mut.GetMutationsForTier(newTier, mutations)) {
-                    if (!goodMutationOptions.ContainsKey(newMutation.Item2))
+                    if (!mutationOptions.ContainsKey(newMutation.Item2))
                     {
-                        goodMutationOptions.Add(newMutation.Item2, new Dictionary<string, List<IMutation>>());
+                        mutationOptions.Add(newMutation.Item2, new Dictionary<string, List<IMutation>>());
                     }
-                    if (!goodMutationOptions
+                    if (!mutationOptions
                         .TryGetValue(newMutation.Item2, new Dictionary<string, List<IMutation>>())
                         .ContainsKey(newMutation.Item3))
                     {
-                        goodMutationOptions
+                        mutationOptions
                             .TryGetValue(newMutation.Item2, new Dictionary<string, List<IMutation>>())
                             .Add(newMutation.Item3, new List<IMutation>());
                     }
-                    goodMutationOptions
+                    mutationOptions
                             .TryGetValue(newMutation.Item2, new Dictionary<string, List<IMutation>>())
                             .TryGetValue(newMutation.Item3, new List<IMutation>()).Add(newMutation.Item1);
                 }
             }
         }
+
+        public virtual void DowngradeMutationTier(string newTier)
+        {
+            this.tier = newTier;
+            mutationOptions = stockMutations[newTier];
+        }
+
+        public Dictionary<string, Dictionary<string, Dictionary<string, List<IMutation>>>> stockMutations = new Dictionary<string, Dictionary<string, Dictionary<string, List<IMutation>>>>()
+        {
+            {"tier1", new Dictionary<string, Dictionary<string, List<IMutation>>>(){
+                {"offense", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+                        new ClusteredNematocysts(),
+                    }},
+                    { "bone", new List<IMutation>(){
+                        new DenseSpines(), new EfficientSpines(),
+                    }},
+                    { "humors", new List<IMutation>(){
+                        new PotentAcid(), new EnergizedPlasma(), 
+                    }},
+                    { "misc", new List<IMutation>(){
+
+                    }},
+                    { "psi", new List<IMutation>(){
+
+                    }}
+
+                }},
+                {"defense", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+
+                    }},
+                    { "bone", new List<IMutation>(){
+                        new BoneArmor(),
+                    }},
+                    { "humors", new List<IMutation>(){
+                        new EfficientRegeneration(),
+                    }},
+                    { "misc", new List<IMutation>(){
+
+                    }},
+                    { "psi", new List<IMutation>(){
+                        new IronWill()
+                    }}
+
+                }},
+                {"utility", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+
+                    }},
+                    { "bone", new List<IMutation>(){
+
+                    }},
+                    { "humors", new List<IMutation>(){
+
+                    }},
+                    { "misc", new List<IMutation>(){
+                        new EfficientFatStorage(), new EfficientGrowth(),
+                    }},
+                    { "psi", new List<IMutation>(){
+
+                    }}
+
+                }}
+            }},
+            {"tier2", new Dictionary<string, Dictionary<string, List<IMutation>>>(){
+                {"offense", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+                    }},
+                    { "bone", new List<IMutation>(){
+                    }},
+                    { "humors", new List<IMutation>(){
+                    }},
+                    { "misc", new List<IMutation>(){
+
+                    }},
+                    { "psi", new List<IMutation>(){
+                    }}
+                }},
+                {"defense", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+                    }},
+                    { "bone", new List<IMutation>(){
+                    }},
+                    { "humors", new List<IMutation>(){
+                    }},
+                    { "misc", new List<IMutation>(){
+
+                    }},
+                    { "psi", new List<IMutation>(){
+                    }}
+                }},
+                {"utility", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+
+                    }},
+                    { "bone", new List<IMutation>(){
+
+                    }},
+                    { "humors", new List<IMutation>(){
+
+                    }},
+                    { "misc", new List<IMutation>(){
+                    }},
+                    { "psi", new List<IMutation>(){
+
+                    }}
+
+                }}
+            }},
+            {"tier3", new Dictionary<string, Dictionary<string, List<IMutation>>>(){
+                {"offense", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+                    }},
+                    { "bone", new List<IMutation>(){
+                    }},
+                    { "humors", new List<IMutation>(){
+                    }},
+                    { "misc", new List<IMutation>(){
+
+                    }},
+                    { "psi", new List<IMutation>(){
+                    }}
+                }},
+                {"defense", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+                    }},
+                    { "bone", new List<IMutation>(){
+                    }},
+                    { "humors", new List<IMutation>(){
+                    }},
+                    { "misc", new List<IMutation>(){
+
+                    }},
+                    { "psi", new List<IMutation>(){
+                    }}
+                }},
+                {"utility", new Dictionary<string, List<IMutation>>(){
+                    { "flesh", new List<IMutation>(){
+
+                    }},
+                    { "bone", new List<IMutation>(){
+
+                    }},
+                    { "humors", new List<IMutation>(){
+
+                    }},
+                    { "misc", new List<IMutation>(){
+                    }},
+                    { "psi", new List<IMutation>(){
+
+                    }}
+
+                }}
+            }},
+
+        };
+
+
     }
 }

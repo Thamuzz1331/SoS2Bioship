@@ -57,7 +57,9 @@
 			</blueprintGraphicData>
 		</building>
 		<costList>
-			
+			<ShipMeat>15</ShipMeat>
+			<Steel>2</Steel>
+			<Plasteel>1</Plasteel>		
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -121,6 +123,7 @@
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
+			<ShipMeat>45</ShipMeat>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -547,7 +550,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(5,7)</drawSize>
+			<drawSize>(5,5)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 		</researchPrerequisites>

@@ -175,6 +175,7 @@
 	  <Compile Include="Jobs\JobGiver_DestroyBuildings.cs"/>
 
 	  <Compile Include="Mutations\IMutation.cs" />
+	  <Compile Include="Mutations\AmmoMutation.cs" />
 	  <Compile Include="Mutations\Bone\Heavy_T1_DenseSpines.cs" />
 	  <Compile Include="Mutations\Bone\Heavy_T2_PenetratorSpines.cs" />
 	  <Compile Include="Mutations\Bone\Light_T1_EfficientSpines.cs" />

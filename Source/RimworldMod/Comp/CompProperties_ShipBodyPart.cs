@@ -11,6 +11,8 @@ namespace RimWorld
     {
         public string regenDef = null;
         public bool isArmor = false;
+        public bool isCorner = false;
+        public bool isFlip = false;
         public bool growsArmor = false;
         public string whitherTo = null;
 

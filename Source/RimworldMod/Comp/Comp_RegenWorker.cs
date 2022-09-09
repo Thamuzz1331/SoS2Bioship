@@ -15,13 +15,20 @@ namespace RimWorld
 
 		public float venomOffset = 0f;
 
-//		private float ticksToRegen = 0f;
+		private float ticksToRegen = 0f;
 		private float ticksToVenomDec = 0f;
+		
+		public HashSet<Building> wounds = new HashSet<Building>();
+
 		public BuildingBody body = null;
 
 		public override void PostExposeData()
 		{
 			base.PostExposeData();
+			Scribe_Values.Look(ref ticksToRegen, "ticksToRegen", 0f);
+			Scribe_Values.Look(ref ticksToVenomDec, "ticksToVenomDec", 0f);
+			Scribe_Values.Look(ref venomOffset, "venomOffset", 0f);
+			Scribe_Collections.Look(ref wounds, "wounds", LookMode.Reference);
 		}
 
 		public override void CompTick()
@@ -37,105 +44,47 @@ namespace RimWorld
 				ticksToVenomDec = 20f;
             }
 			ticksToVenomDec--;
-//			if (ticksToRegen <= 0)
-//            {
-//				HealWounds();
-//				ticksToRegen = GetRegenInterval();
-//			}
-//			ticksToRegen--;
-		}
-/*
-		public virtual void RegisterWound(Thing target)
-        {
-			CompShipBodyPart bp = target.TryGetComp<CompShipBodyPart>();
-			if (bp.woundIds.Count <= 0)
+			if (ticksToRegen <= 0)
             {
-				string newWound = Guid.NewGuid().ToString();
-				bp.woundIds.Add(newWound);
-				wounds.Add(newWound, new Wound());
+				HealWounds();
+				ticksToRegen = GetRegenInterval();
 			}
-			wounds[bp.woundIds[0]].wounds.Push(target);
-			foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(target.Position))
-			{
-				foreach(Thing adj in c.GetThingList(body.heart.parent.Map))
-                {
-					CompShipBodyPart abp = adj.TryGetComp<CompShipBodyPart>();
-					if (abp != null)
-                    {
-						abp.woundIds.Add(bp.woundIds[0]);
-                    }
-				}
-			}
+			ticksToRegen--;
+		}
+
+		public virtual void RegisterWound(Building target)
+        {
+			wounds.Add(target);
 		}
 
 		public virtual void HealWounds()
         {
-			List<string> healedWounds = new List<string>();
-			if (wounds.Keys.Count > 0)
+			List<Building> healedWounds = new List<Building>();
+			if (wounds.Count > 0 && parent.Map.Biome == ShipInteriorMod2.OuterSpaceBiome)
             {
-				foreach(string wId in wounds.Keys)
+				foreach(Building wounded in wounds)
                 {
-					if(TryHealWound(wounds[wId]))
+					if (wounded == null || wounded.Destroyed)
                     {
-						healedWounds.Add(wId);
-					}
+						healedWounds.Add(wounded);
+                    } else
+                    {
+						if (wounded.HitPoints < wounded.MaxHitPoints)
+                        {
+							wounded.HitPoints += (int)(wounded.MaxHitPoints/50);
+                        } else
+                        {
+							healedWounds.Add(wounded);
+                        }
+                    }
                 }
             }
-			foreach(string s in healedWounds)
+			foreach(Building s in healedWounds)
             {
-				//wounds.Remove(s);
+				wounds.Remove(s);
             }
         }
-		public virtual bool TryHealWound(Wound wound)
-        {
-			if (wound.wounds.Count <= 0)
-            {
-				return true;
-            }
-			if (body.RequestNutrition(GetRegenCost()))
-            {
-				Thing w = wound.wounds.Pop();
-				CompShipBodyPart bp = w.TryGetComp<CompShipBodyPart>();
-				ThingDef scardef = ((CompShipHeart)body.heart).GetThingDef(bp.ShipProps.regenDef);
-				if (scardef == null)
-                {
-					scardef = ThingDef.Named(bp.ShipProps.regenDef);
-                }
-				Thing replacement = ThingMaker.MakeThing(scardef);
-				CompShipBodyPart bodyPart = replacement.TryGetComp<CompShipBodyPart>();
-				if (bodyPart != null)
-				{
-					bodyPart.SetId(bp.bodyId);
-					bodyPart.woundIds = bp.woundIds;
-				}
-				CompNutrition nutrition = replacement.TryGetComp<CompNutrition>();
-				if (nutrition != null)
-				{
-					nutrition.SetId(bp.bodyId);
-				}
-				replacement.Rotation = w.Rotation;
-				replacement.Position = w.Position;
-				replacement.SetFaction(w.Faction);
-				replacement.SpawnSetup(parent.Map, false);
-				if (bodyPart != null)
-				{
-					bodyPart.woundIds = bp.woundIds;
-					foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(replacement.Position))
-                    {
-						foreach (Thing adj in c.GetThingList(replacement.Map))
-						{
-							CompShipBodyPart abp = adj.TryGetComp<CompShipBodyPart>();
-							if (!adj.Destroyed && abp != null && bp.woundIds.Count > 0)
-							{
-								abp.woundIds.Remove(bp.woundIds[0]);
-							}
-						}
-					}
-				}
-			}
-			return false;
-        }
-*/
+
 		public virtual float GetRegenCost()
         {
 			float cost = Props.regenCost / body.heart.GetStat("regenEfficiency");
@@ -161,17 +110,8 @@ namespace RimWorld
             {
 				interval *= 8f;
             }
-//			interval *= (1 + (float)(Rand.RangeInclusive(-15, 15)/100));
+			interval *= (1 + (float)(Rand.RangeInclusive(-15, 15)/100));
 			return interval * (1f + venomOffset);
-        }
-
-		public override string CompInspectStringExtra()
-        {
-            if (body != null)
-            {
-                return String.Format("Venom Offset {0:0.##}", venomOffset);
-            }
-            return "";
         }
 
 	}

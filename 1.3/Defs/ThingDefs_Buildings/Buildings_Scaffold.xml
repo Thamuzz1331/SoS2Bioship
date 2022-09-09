@@ -211,7 +211,7 @@
 			</li>
 		</comps>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldAngle1x1</texPath>
+			<texPath>Things/Building/Scaffold/1x1_Scaffold</texPath>
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>2</MaxHitPoints>
@@ -227,7 +227,7 @@
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x1) flip</label>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldAngle1x1Flip</texPath>
+			<texPath>Things/Building/Scaffold/1x1_ScaffoldFlip</texPath>
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_StaplebleScaffold">
@@ -250,7 +250,7 @@
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x2)</label>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldAngle1x2</texPath>
+			<texPath>Things/Building/Scaffold/1x2_Scaffold</texPath>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
 		<comps>
@@ -275,7 +275,7 @@
 		<label>scaffold corner (1x2) flip</label>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldAngle1x2Flip</texPath>
+			<texPath>Things/Building/Scaffold/1x2_ScaffoldFlip</texPath>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
 		<comps>
@@ -300,7 +300,7 @@
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x3)</label>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldAngle1x3</texPath>
+			<texPath>Things/Building/Scaffold/1x3_Scaffold</texPath>
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
 		<comps>
@@ -325,7 +325,7 @@
 		<passability>PassThroughOnly</passability>
 		<label>scaffold corner (1x3) flip</label>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldAngle1x3Flip</texPath>
+			<texPath>Things/Building/Scaffold/1x3_ScaffoldFlip</texPath>
 			<drawSize>(1,3)</drawSize>
 		</graphicData>
 		<comps>

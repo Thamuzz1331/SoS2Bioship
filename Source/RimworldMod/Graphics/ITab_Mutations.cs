@@ -57,7 +57,7 @@ namespace RimWorld
 				this.DoEmptyRect(mutSlot, label, i < muts.Count);
 				if (i < muts.Count)
                 {
-					DrawMutationIcon(mutSlot, muts[i]);
+					DrawMutationIcon(mutSlot, muts[i], label);
                 }
             }
         }
@@ -68,10 +68,7 @@ namespace RimWorld
 			
 			if (Prefs.DevMode)
 			{
-				if (filled)
-                {
-
-                } else
+				if (!filled)
                 {
 					if (Widgets.ButtonInvisible(inRect, true))
 					{
@@ -95,11 +92,33 @@ namespace RimWorld
 			Widgets.DrawHighlightIfMouseover(inRect);
 		}
 
-		public void DrawMutationIcon(Rect inRect, IMutation mut)
+		public void DrawMutationIcon(Rect inRect, IMutation mut, string tier)
         {
 			Widgets.Label(inRect.TopPartPixels(30f), mut.ToString());
 			TooltipHandler.TipRegion(inRect, new TipSignal(string.Format("{0}", mut.GetDescription())));
+			bool tierAccessible = (tier == mutationWorker.tier) ||
+				(tier == "tier1" && mutationWorker.GetMutationsForTier("tier2").Count == 0) ||
+				(tier == "tier2" && mutationWorker.GetMutationsForTier("tier3").Count == 0);
 
+			if (Prefs.DevMode && tierAccessible)
+            {
+				if (Widgets.ButtonInvisible(inRect, true))
+				{
+					List<FloatMenuOption> options = new List<FloatMenuOption>(){
+						new FloatMenuOption("Remove",
+							delegate() {
+								mutationWorker.RemoveMutationFromBody(mutationWorker.body, mut);
+								if (mutationWorker.tier != tier)
+                                {
+									mutationWorker.DowngradeMutationTier(tier);
+                                }
+							},
+							MenuOptionPriority.Default, null, null, 0f, null, null, true, 0)
+					};
+					FloatMenu menu = new FloatMenu(options);
+					Find.WindowStack.Add(menu);
+				}
+            }
         }
 	}
 }

@@ -49,7 +49,29 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.def == ThingDef.Named("LightSpineLauncher") && target.parent.TryGetComp<CompNutritionLoader>() != null)
+            {
+                target.parent.TryGetComp<CompNutritionLoader>().torpSpawn.Remove(1);
+                target.parent.TryGetComp<CompNutritionLoader>().torpSpawn.Remove(1);
+                target.parent.TryGetComp<CompNutritionLoader>().torpSpawn.Remove(2);
+                target.parent.TryGetComp<CompNutritionLoader>().torpSpawn.Remove(2);
+                target.parent.TryGetComp<CompNutritionLoader>().torpSpawn.Remove(2);
+                target.parent.TryGetComp<CompNutritionLoader>().torpSpawn.Remove(6);
+            }
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
 
+                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
+                    .Remove(ThingDef.Named("LightSpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
+                    .Remove(ThingDef.Named("LightSpineLauncher"));
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "bone", this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
+            }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
             return new List<Tuple<IMutation, string, string>>() { };

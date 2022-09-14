@@ -45,11 +45,11 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scar_Beam</defName>
 		<label>scar</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -84,6 +84,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -120,11 +121,11 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scar_Beam_Unpowered</defName>
 		<label>scar</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -159,6 +160,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam_Unpowered</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -187,7 +189,7 @@
 	</ThingDef>
 	<!-- corners -->
 	<ThingDef ParentName="BuildingBase" Name="ScarCornerBase" Abstract="True">
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 			<damageData>
@@ -245,6 +247,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Corner_OneOne</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -282,6 +285,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Corner_OneTwo</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -302,6 +306,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Corner_OneTwoFlip</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -322,6 +327,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Corner_OneThree</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -342,6 +348,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Corner_OneThreeFlip</regenDef>
 				<species>bioship</species>
+				<baseArmor>0.1</baseArmor>
 			</li>
 		</comps>
 		<statBases>

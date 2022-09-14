@@ -145,6 +145,18 @@ namespace BioShip
             }
 			return ret;
         }
+		private static Type salvageDialogType = AccessTools.TypeByName("Dialog_SalvageShip");
+
+		public static void OpenSalvageWindow()
+        {
+			object[] parameters = new object[]
+            {
+				((Map)AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)).spawnedThings.Where(t=>(t.def.defName.Equals("ShipSalvageBay"))).Count(),
+				AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)
+            };
+			Window salvageWindow = (Window)AccessTools.Constructor(salvageDialogType, new Type[]{typeof(int), typeof(Map)}).Invoke(parameters);
+			Find.WindowStack.Add(salvageWindow);
+        }
 
 		public static IntVec3 FindBurstLocation(CompShipCombatShield shield, LocalTargetInfo target)
         {
@@ -502,4 +514,31 @@ namespace BioShip
 			return codes;
 		}
     }
+
+	[HarmonyPatch("ShipCombatManager", "SalvageEverything")]
+	public static class SalvageBayPatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (codes[i].opcode == OpCodes.Call && codes[i].operand.ToString() == "Verse.WindowStack get_WindowStack()")
+				{
+					codes[i] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BioShip), "OpenSalvageWindow"));
+					for (int j = i+1; j < codes.Count; j++)
+                    {
+						if (codes[j].opcode == OpCodes.Ret)
+                        {
+							return codes;
+                        }
+						codes[j].opcode = OpCodes.Nop;
+                    }
+				}
+            }
+
+			return codes;
+		}
+    }
+
 }

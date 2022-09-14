@@ -107,6 +107,7 @@
 	  <Compile Include="Building_NerveStaple.cs"/>
 
 	  <Compile Include="Buildings\Building_BioTorpTurret.cs"/>
+	  <Compile Include="Buildings\Building_Armor.cs"/>
 
 	  <Compile Include="Comp\Comp_Aggression.cs"/>
 	  <Compile Include="Comp\CompProperties_Aggression.cs"/>

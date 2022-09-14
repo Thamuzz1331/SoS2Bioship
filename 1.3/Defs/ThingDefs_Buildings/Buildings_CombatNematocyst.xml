@@ -178,9 +178,45 @@
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
-	
-	<DamageDef ParentName="ShipNematocyst" Name="ShipInjectingNematocyst">
-		<defName>ShipInjectingNematocyst</defName>
-		<workerClass>DamageWorker_AddInjury</workerClass>
+
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_NematocystAcid</defName>
+		<label>Nematocyst</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>100</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_ShipTurretNematocystAcid</defName>
+		<label>nematocyst</label>
+		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>ShipNematocystAcid</damageDef>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef ParentName="ShipNematocyst" Name="ShipNematocystAcid">
+		<defName>ShipNematocystAcid</defName>
+		<workerClass>DamageWorker_Acid</workerClass>
 	</DamageDef>
 </Defs>

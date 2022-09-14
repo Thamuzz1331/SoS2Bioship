@@ -3,11 +3,11 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Bio_Ship_Beam</defName>
 		<label>Shipflesh</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -46,6 +46,7 @@
 				<growsArmor>true</growsArmor>
 				<species>bioship</species>
 				<whitherTo>Whithered_Beam</whitherTo>
+				<baseArmor>0.05</baseArmor>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -85,11 +86,11 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Bio_Ship_Beam_Unpowered</defName>
 		<label>shipflesh</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -131,6 +132,7 @@
 				<growsArmor>true</growsArmor>
 				<species>bioship</species>
 				<whitherTo>Whithered_Beam_Unpowered</whitherTo>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -157,7 +159,7 @@
 	</ThingDef>
 	<!-- corners -->
 	<ThingDef ParentName="BuildingBase" Name="BioShipCornerBase" Abstract="True">
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 			<damageData>
@@ -210,6 +212,11 @@
 		<label>shipflesh  corner (1x1)</label>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipAngle1x1</texPath>
+			<linkType>CornerFiller</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
@@ -218,6 +225,7 @@
 				<whitherTo>Whithered_Corner_OneOne</whitherTo>
 				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -241,6 +249,7 @@
 				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>true</isFlip>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -255,7 +264,7 @@
 		<label>shipflesh corner (1x2)</label>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipAngle1x2</texPath>
-			<drawSize>(1,2)</drawSize>
+			<drawSize>(1.1,2.2)</drawSize>
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
@@ -265,6 +274,7 @@
 				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>false</isFlip>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -290,6 +300,7 @@
 				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>true</isFlip>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -315,6 +326,7 @@
 				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>false</isFlip>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -340,6 +352,7 @@
 				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>true</isFlip>
+				<baseArmor>0.05</baseArmor>
 			</li>
 		</comps>
 		<statBases>
@@ -1087,17 +1100,6 @@
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<killedLeavings>
 		</killedLeavings>
-	</ThingDef>
-
-	<ThingDef ParentName="BioRadiator">
-		<defName>BioShipInside_AutotropicPassiveCooler</defName>
-		<label>autotropic radiator fin</label>
-		<description>Radiates heat into the void, cooling a ship's interior. Also provides a small amount of heat capacity to weapons and shields. Cannot vent heat while shields or cloaking devices are active.</description>
-		<comps>
-			<li Class="CompProperties_NutritionSource">
-				<nutrientPerPulse>0.25</nutrientPerPulse>
-			</li>
-		</comps>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">

@@ -16,6 +16,7 @@ namespace RimWorld
         private CompProperties_RegenSpot Props => (CompProperties_RegenSpot)props;
         public ThingDef regenDef;
         public Thing heart;
+        public Dictionary<DamageDef, float> armorLevels = new Dictionary<DamageDef, float>();
 
         public float regenCountdown;
         private int lifetimeLeft = 100;

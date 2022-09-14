@@ -12,6 +12,14 @@ namespace RimWorld
 {
     public class ShieldcrushingPlasma : IMutation
     {
+        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        {
+            bool ret = false;
+            ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
+            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
+            return ret;
+        }
+
         void IHediff.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)

@@ -1,6 +1,6 @@
 <Defs>
 	<ThingDef ParentName="BuildingBase" Name="ArmorBase" Abstract="True">
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Armor</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -33,7 +33,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -72,7 +72,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/PlasteelCarapaceAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>

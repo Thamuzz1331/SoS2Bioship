@@ -140,5 +140,10 @@ namespace RimWorld
                 replacement.SpawnSetup(m, false);
             }
         }
+
+        public virtual float GetDamageMult(DamageDef def)
+        {
+            return 1f - ShipProps.baseArmor;
+        }
     }
 }

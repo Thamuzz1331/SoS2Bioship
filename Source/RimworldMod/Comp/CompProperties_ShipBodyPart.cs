@@ -15,6 +15,9 @@ namespace RimWorld
         public bool isFlip = false;
         public bool growsArmor = false;
         public string whitherTo = null;
+        public float baseArmor = 0.05f;
+        public bool adaptiveArmor = false;
+        public bool globalAdaptation = false;
 
         public CompProperties_ShipBodyPart()
         {

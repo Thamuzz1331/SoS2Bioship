@@ -176,6 +176,7 @@ namespace RimWorld
 
         public override float GetStat(string stat)
         {
+            float ret = base.GetStat(stat);
             float luciferMult = 1f;
             if (luciferiumAddiction && luciferiumSupplied)
             {
@@ -183,14 +184,15 @@ namespace RimWorld
             }
             switch (stat)
             {
+
                 case "metabolicEfficiency":
-                    return base.GetStat("metabolicEfficiency") * luciferMult;
+                    return ret * luciferMult;
                 case "metabolicSpeed":
-                    return base.GetStat("metabolicSpeed") * luciferMult;
+                    return ret * luciferMult;
                 case "regenEfficiency": 
-                    return stats.TryGetValue(stat, 1f) * GetStat("metabolicEfficiency");
+                    return ret * GetStat("metabolicEfficiency");
                 case "regenSpeed":
-                    return stats.TryGetValue(stat, 1f) * GetStat("metabolicSpeed");
+                    return ret * GetStat("metabolicSpeed");
                 default:
                     return base.GetStat(stat);
             }

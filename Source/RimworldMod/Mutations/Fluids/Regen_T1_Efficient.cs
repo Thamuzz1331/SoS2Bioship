@@ -22,12 +22,6 @@ namespace RimWorld
 
         void IHediff.Apply(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["regenEfficiency"] *= 1.25f;
-                heart.stats["metabolicEfficiency"] *= 1.05f;
-            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientRegeneration>("defense", "humors");
@@ -36,12 +30,6 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["regenSregenEfficiencypeed"] *= 1f/1.25f;
-                heart.stats["metabolicEfficiency"] *= 1f/1.05f;
-            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", this);
@@ -81,6 +69,17 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
+        }
+
+        Dictionary<string, float> statMults = new Dictionary<string, float>()
+        {
+            {"regenEfficiency", 1.25f},
+            {"metabolicEfficiency", 1.05f}
+        };
+
+        float IHediff.StatMult(string stat)
+        {
+            return statMults.TryGetValue(stat, 1f);
         }
     }
 }

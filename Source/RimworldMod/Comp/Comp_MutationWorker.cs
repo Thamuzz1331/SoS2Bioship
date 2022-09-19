@@ -261,18 +261,19 @@ namespace RimWorld
 
         public virtual void RemoveMutationFromBody(BuildingBody b, IMutation mut)
         {
+            Log.Message("Removing X from Y");
             mutations.Remove(mut);
-            if (b.heart.hediffs.Contains(mut))
+            if (b.heart.hediffs.Any(lMut => lMut.ToString() == mut.ToString()))
             {
                 mut.Remove(b.heart);
-                b.heart.hediffs.Remove(mut);
+                b.heart.hediffs.RemoveAll(lMut=>lMut.ToString() == mut.ToString());
             }
             foreach (Thing t in b.bodyParts)
             {
-                if (t.TryGetComp<CompShipBodyPart>().hediffs.Contains(mut))
+                if (t.TryGetComp<CompShipBodyPart>().hediffs.Any(lMut => lMut.ToString() == mut.ToString()))
                 {
                     mut.Remove(t.TryGetComp<CompShipBodyPart>());
-                    t.TryGetComp<CompShipBodyPart>().hediffs.Remove(mut);
+                    t.TryGetComp<CompShipBodyPart>().hediffs.RemoveAll(lMut=>lMut.ToString() == mut.ToString());
                 }
             }
         }

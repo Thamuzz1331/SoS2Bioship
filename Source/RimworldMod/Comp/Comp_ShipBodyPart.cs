@@ -143,7 +143,8 @@ namespace RimWorld
 
         public virtual float GetDamageMult(DamageDef def)
         {
-            return 1f - ShipProps.baseArmor;
+            float res = ShipProps.baseArmor;
+            return 1f - res;
         }
     }
 }

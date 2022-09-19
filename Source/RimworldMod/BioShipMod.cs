@@ -151,7 +151,7 @@ namespace BioShip
         {
 			object[] parameters = new object[]
             {
-				((Map)AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)).spawnedThings.Where(t=>(t.def.defName.Equals("ShipSalvageBay"))).Count(),
+				((Map)AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)).spawnedThings.Where(t=>(t.def.defName.Equals("ShipSalvageBay") || t.def.defName.Equals("SalvageMaw"))).Count(),
 				AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)
             };
 			Window salvageWindow = (Window)AccessTools.Constructor(salvageDialogType, new Type[]{typeof(int), typeof(Map)}).Invoke(parameters);

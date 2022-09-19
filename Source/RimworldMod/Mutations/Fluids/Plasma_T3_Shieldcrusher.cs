@@ -69,6 +69,10 @@ namespace RimWorld
         {
 
         }
+        float IHediff.StatMult(string stat)
+        {
+            return 1f;
+        }
 
     }
 }

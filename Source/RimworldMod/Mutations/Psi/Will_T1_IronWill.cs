@@ -21,11 +21,6 @@ namespace RimWorld
         }
         void IHediff.Apply(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["conciousness"] *= 1.33f;
-            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<IronWill>("defense", "psi");
@@ -34,11 +29,6 @@ namespace RimWorld
         }
         void IHediff.Remove(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompShipHeart>() != null)
-            {
-                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.stats["conciousness"] *= (1f/1.33f);
-            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "psi", this);
@@ -80,6 +70,15 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
+        }
+        Dictionary<string, float> statMults = new Dictionary<string, float>()
+        {
+            {"conciousness", 1.33f},
+        };
+
+        float IHediff.StatMult(string stat)
+        {
+            return statMults.TryGetValue(stat, 1f);
         }
     }
 }

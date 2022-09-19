@@ -1418,4 +1418,48 @@
 		</researchPrerequisites>
 	</ThingDef>
 
+	<ThingDef ParentName="BuildingBase">
+		<defName>SalvageMaw</defName>
+		<label>salvage maw</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/Maw_2x2</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<passability>Standable</passability>
+		<fillPercent>0.1</fillPercent>
+		<statBases>
+			<WorkToBuild>5000</WorkToBuild>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Harvests the remains of enemy ships after a battle. Each salvage bay can retrieve up to 1,000kg of material from a ship.</description>
+		<size>(5,5)</size>
+		<building>
+			<shipPart>true</shipPart>
+			<isEdifice>false</isEdifice>
+		</building>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>SalvageMawWhithered</whitherTo>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
+	
+	
 </Defs>

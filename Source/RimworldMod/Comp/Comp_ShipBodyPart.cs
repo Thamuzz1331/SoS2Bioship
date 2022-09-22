@@ -104,6 +104,7 @@ namespace RimWorld
         {
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
             ((CompShipHeart)body.heart).regenWorker.RegisterWound((Building)parent);
+            ((CompShipHeart)body.heart).GainResistance(dinfo);
         }
 
         public override string CompInspectStringExtra()
@@ -141,9 +142,10 @@ namespace RimWorld
             }
         }
 
-        public virtual float GetDamageMult(DamageDef def)
+        public virtual float GetDamageMult(DamageInfo dinfo)
         {
-            float res = ShipProps.baseArmor;
+            float res = ShipProps.baseArmor + ((CompShipHeart)body.heart).GetDamageMult(dinfo);
+            res = res / (1f + ((((CompShipHeart)body.heart).regenWorker.venomOffset)/2));
             return 1f - res;
         }
     }

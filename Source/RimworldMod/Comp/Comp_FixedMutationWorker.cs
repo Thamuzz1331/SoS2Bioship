@@ -26,6 +26,9 @@ namespace RimWorld
 
             {"Clustered Nematocysts", new ClusteredNematocysts()},
 
+            {"Adaptive Scars", new AdaptiveScars() },
+            {"Greater Adaptive Scars", new MoreAdaptiveScars() },
+            {"Learned In War", new LearnedInWar() },
 
             {"Potent Acid", new PotentAcid()},
             {"Semi-Motile Acid", new MotileAcid()},

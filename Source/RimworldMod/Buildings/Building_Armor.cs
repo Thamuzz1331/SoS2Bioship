@@ -21,7 +21,7 @@ namespace RimWorld
             }
             if (bp != null)
             {
-                dinfo.SetAmount(dinfo.Amount * bp.GetDamageMult(dinfo.Def));
+                dinfo.SetAmount(dinfo.Amount * bp.GetDamageMult(dinfo));
             }
             base.PreApplyDamage(ref dinfo, out absorbed);
         }

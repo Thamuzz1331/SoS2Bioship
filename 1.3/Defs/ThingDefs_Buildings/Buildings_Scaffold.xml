@@ -1530,6 +1530,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>SalvageMawScafold</defName>
 		<label>salvage maw scafold</label>
+		<designationCategory>Ship</designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Scaffold/MawScaffold_2x2</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -77,8 +77,8 @@ namespace RimWorld
                     target.parent.TryGetComp<CompMutableAmmo>()
                         .ammoTypes.Add(det.ammoDef.Item1,
                             new Tuple<ThingDef, ThingDef>(
-                                det.ammoDef.Item2,
-                                det.ammoDef.Item3));
+                                det.ammoDef.Item3,
+                                det.ammoDef.Item2));
                     target.parent.TryGetComp<CompMutableAmmo>()
                         .currentlySelected = det.ammoDef.Item1;
                 }

@@ -57,10 +57,25 @@ namespace BioShip
 			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipFoam"),
 		};
 
+		public static List<ThingDef> shipHullDefs = new List<ThingDef>()
+        {
+			ThingDef.Named("ShipHullTile"),
+			ThingDef.Named("ShipHullTileMech"),
+			ThingDef.Named("ShipHullTileArchotech"),
+			ThingDef.Named("ScarHullTile"),
+			ThingDef.Named("ScaffoldHullTile"),
+			ThingDef.Named("BioShipHullTile"),
+        };
+
 		public static bool IsShipTerrain(TerrainDef tDef)
 		{
 			return (tDef.layerable && !shipTerrainDefs.Contains(tDef));
 		}
+
+		public static bool ShouldExplode(Projectile_ExplosiveShipCombat proj)
+        {
+			return proj.Spawned && proj.ExactPosition.ToIntVec3().GetThingList(proj.Map).Any(t => shipHullDefs.Any(hDef => hDef == t.def));
+        }
 
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
 
@@ -539,6 +554,94 @@ namespace BioShip
 
 			return codes;
 		}
+    }
+
+	[HarmonyPatch(typeof(Projectile_ExplosiveShipCombat), "Tick")]
+	public static class ProjExplodePatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (codes[i].opcode == OpCodes.Isinst && codes[i].operand.ToString() == "RimWorld.Projectile_ExplosiveShipCombatPsychic")
+				{
+					codes[i+3] = new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(BioShip), "ShouldExplode"));
+					for (int j = i+6; j < codes.Count; j++)
+                    {
+						if (codes[j].opcode == OpCodes.Callvirt && j != i+6)
+                        {
+							return codes;
+                        }
+						codes[j].opcode = OpCodes.Nop;
+                    }
+				}
+            }
+
+			return codes;
+		}
+    }
+
+	[HarmonyPatch(typeof(Building_ShipBridge), "RecalcStats")]
+	public static class CalcStats
+    {
+		[HarmonyPrefix]
+		public static bool BioshipFailReasons(Building_ShipBridge __instance)
+        {
+            __instance.ShipThreat = 0;
+            __instance.ShipMass = 0;
+            __instance.ShipMaxTakeoff = 0;
+            __instance.ShipThrust = 0;
+            foreach (Building b in (List<Building>)AccessTools.Field(typeof(Building_ShipBridge), "cachedShipParts").GetValue(__instance))
+            {
+				bool bodyPartWithHeart = (b.TryGetComp<CompShipBodyPart>() != null && b.TryGetComp<CompShipBodyPart>().body != null
+						&& b.TryGetComp<CompShipBodyPart>().body.heart != null);
+                if (BioShip.shipHullDefs.Any(bDef => bDef == b.def))
+                {
+                    __instance.ShipMass += 1;
+                } else 
+                {
+                    __instance.ShipMass += (b.def.size.x * b.def.size.z) * 3;
+                    if (b.TryGetComp<CompShipHeat>() != null)
+                        __instance.ShipThreat += b.TryGetComp<CompShipHeat>().Props.threat;
+                    else if (b.def == ThingDef.Named("ShipSpinalAmplifier"))
+                        __instance.ShipThreat += 5;
+                    if (b.TryGetComp<CompEngineTrail>() != null)
+                    {
+						if (bodyPartWithHeart)
+                        {
+							 __instance.ShipThrust += b.TryGetComp<CompEngineTrail>().Props.thrust * b.TryGetComp<CompShipBodyPart>().body.heart.GetStat("movementSpeed");
+                        } else
+                        {
+	                        __instance.ShipThrust += b.TryGetComp<CompEngineTrail>().Props.thrust;
+                        }
+                        __instance.ShipMaxTakeoff += b.TryGetComp<CompRefuelable>().Props.fuelCapacity;
+                        //nuclear counts x2
+                        if (b.TryGetComp<CompRefuelable>().Props.fuelFilter.AllowedThingDefs.Contains(ThingDef.Named("ShuttleFuelPods")))
+                        {
+                            __instance.ShipMaxTakeoff += b.TryGetComp<CompRefuelable>().Props.fuelCapacity;
+                        }
+                    }
+					if (b.TryGetComp<CompShipCombatShield>() != null 
+						&& b.TryGetComp<CompShipBodyPart>() != null
+						&& b.TryGetComp<CompShipBodyPart>().body != null
+						&& b.TryGetComp<CompShipBodyPart>().body.heart != null)
+                    {
+                        __instance.ShipThrust += (1f * b.TryGetComp<CompShipBodyPart>().body.heart.GetStat("movementSpeed"));
+                    }
+                }
+            }
+            __instance.ShipThrust *= 500f / Mathf.Pow(((List<Building>)AccessTools.Field(typeof(Building_ShipBridge), "cachedShipParts").GetValue(__instance)).Count, 1.1f);
+            __instance.ShipThreat += __instance.ShipMass / 100;
+            if(__instance.TryGetComp<CompShipHeat>()!=null)
+            {
+                ShipHeatNet net = __instance.TryGetComp<CompShipHeat>().myNet;
+                __instance.ShipHeat = net.StorageUsed;
+                __instance.ShipHeatCap = net.StorageCapacity;
+            }			
+			return false;
+        }
+
     }
 
 }

@@ -42,7 +42,36 @@ namespace RimWorld
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
-            return new List<Tuple<IMutation, string, string>>() { };
+            if (tier == "tier2")
+            {
+                List<Tuple<IMutation, string, string>> ret = new List<Tuple<IMutation, string, string>>();
+                if (existingMutations.Any(mut => mut is PotentAcid)) {
+                    ret.Add(new Tuple<IMutation, string, string>(
+                        new AcidNematocysts(),
+                        "offense",
+                        "flesh"));
+                }
+                if (existingMutations.Any(mut => mut is DenseSpines))
+                {
+                    ret.Add(new Tuple<IMutation, string, string>(
+                        new BatteringNematocysts(),
+                        "offense",
+                        "flesh"));
+                }
+                if (existingMutations.Any(mut => mut is EfficientSpines))
+                {
+                    ret.Add(new Tuple<IMutation, string, string>(
+                        new SplinteringNematocysts(),
+                        "offense",
+                        "flesh"));
+                }
+
+                return ret;
+            }
+            else
+            {
+                return new List<Tuple<IMutation, string, string>>();
+            }
         }
         String IMutation.GetTier() {
             return "tier1";

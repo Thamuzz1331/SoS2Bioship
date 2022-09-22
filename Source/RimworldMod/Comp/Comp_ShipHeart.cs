@@ -23,6 +23,9 @@ namespace RimWorld
         public CompAggression aggression;
         public CompArmorGrower armorGrower;
         public bool initialized = false;
+        public float maxResistence = 0.15f;
+
+        public Dictionary<DamageDef, float> resistances = new Dictionary<DamageDef, float>();
 
         public List<Gizmo> mutationActions = new List<Gizmo>();
 
@@ -57,6 +60,7 @@ namespace RimWorld
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
             Scribe_Values.Look<bool>(ref luciferiumAddiction, "luciferiumAddiction", false);
             Scribe_Values.Look<bool>(ref luciferiumSupplied, "luciferiumSupplied", false);
+            Scribe_Collections.Look(ref resistances, "resistences", LookMode.Deep);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -67,6 +71,8 @@ namespace RimWorld
                 stats.Add("regenSpeed", 1f);
             if (!stats.ContainsKey("conciousness"))
                 stats.Add("conciousness", 1f);
+            if (!stats.ContainsKey("movementSpeed"))
+                stats.Add("movementSpeed", 1f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             mutator = parent.TryGetComp<CompMutationWorker>();
             if (mutator.tier != "tier1")
@@ -174,6 +180,31 @@ namespace RimWorld
             }
         }
 
+        public float GetDamageMult(DamageInfo dinfo)
+        {
+            if (resistances == null)
+            {
+                resistances = new Dictionary<DamageDef, float>();
+            }
+            return resistances.TryGetValue(dinfo.Def, 0f);
+        }
+
+        public void GainResistance(DamageInfo dinfo)
+        {
+            if (resistances == null)
+            {
+                resistances = new Dictionary<DamageDef, float>();
+            }
+            if (resistances.TryGetValue(dinfo.Def, 0f) < maxResistence)
+            {
+                if (!resistances.ContainsKey(dinfo.Def))
+                {
+                    resistances.Add(dinfo.Def, 0f);
+                }
+                resistances[dinfo.Def] += 0.0025f;
+            }
+        }
+
         public override float GetStat(string stat)
         {
             float ret = base.GetStat(stat);
@@ -193,6 +224,8 @@ namespace RimWorld
                     return ret * GetStat("metabolicEfficiency");
                 case "regenSpeed":
                     return ret * GetStat("metabolicSpeed");
+                case "movementSpeed":
+                    return ret * GetStat("conciousness");
                 default:
                     return base.GetStat(stat);
             }

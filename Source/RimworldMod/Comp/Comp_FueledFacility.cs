@@ -33,6 +33,12 @@ namespace RimWorld
                 refuelRate += heart.TryGetComp<CompShipHeart>().body.bodyParts.Count * 0.01f;
                 if (refuelable.HasFuel)
                 {
+//                    if (!heart.TryGetComp<CompShipHeart>().hediffs.Any(lMut => lMut is Luciferium))
+//                    {
+//                        Luciferium l = new Luciferium();
+//                        l.heart = heart.TryGetComp<CompShipHeart>();
+//                        heart.TryGetComp<CompShipHeart>().hediffs.Add(new Luciferium());
+//                    }
                     heart.TryGetComp<CompShipHeart>().luciferiumAddiction = true;
                     heart.TryGetComp<CompShipHeart>().luciferiumSupplied = true;
                 }

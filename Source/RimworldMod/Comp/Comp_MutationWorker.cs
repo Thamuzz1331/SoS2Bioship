@@ -340,6 +340,7 @@ namespace RimWorld
                 {"offense", new Dictionary<string, List<IMutation>>(){
                     { "flesh", new List<IMutation>(){
                         new ClusteredNematocysts(),
+                        new AdaptiveScars(),
                     }},
                     { "bone", new List<IMutation>(){
                         new DenseSpines(), new EfficientSpines(),

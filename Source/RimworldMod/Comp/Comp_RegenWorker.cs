@@ -47,7 +47,7 @@ namespace RimWorld
 			if (ticksToRegen <= 0)
             {
 				HealWounds();
-				ticksToRegen = GetRegenInterval();
+				ticksToRegen = GetRegenInterval() * 5;
 			}
 			ticksToRegen--;
 		}
@@ -97,7 +97,7 @@ namespace RimWorld
 
 		public virtual void RaiseVenom(float inc)
         {
-			if (venomOffset < 2.0f)
+			if (venomOffset < 3.0f)
             {
 				venomOffset += inc;
             }
@@ -114,5 +114,10 @@ namespace RimWorld
 			return interval * (1f + venomOffset);
         }
 
+
+	    public override string CompInspectStringExtra()
+        {
+			return "Venom level " + venomOffset;
+        }
 	}
 }

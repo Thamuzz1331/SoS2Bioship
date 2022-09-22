@@ -10,15 +10,15 @@ using Verse;
 
 namespace RimWorld
 {
-    public class BatteringNematocysts : AmmoMutation
+    public class SplinteringNematocysts : AmmoMutation
     {
-        public BatteringNematocysts() : base(new List<AmmoMutationTurretDetails>() {
+        public SplinteringNematocysts() : base(new List<AmmoMutationTurretDetails>() {
                     new AmmoMutationTurretDetails(
                             ThingDef.Named("ShipTurret_Nematocyst"),
                             new Tuple<string, ThingDef, ThingDef>(
-                                "Battering",
-                                ThingDef.Named("Bullet_Fake_NematocystBattering"),
-                                ThingDef.Named("Proj_ShipTurretNematocystBattering")
+                                "Splintering",
+                                ThingDef.Named("Bullet_Fake_NematocystSplintering"),
+                                ThingDef.Named("Proj_ShipTurretNematocystSplintering")
                                 ),
                             "smallTurretOptions",
                             0
@@ -26,9 +26,9 @@ namespace RimWorld
                         new AmmoMutationTurretDetails(
                             ThingDef.Named("ShipTurret_ClusteredNematocyst"),
                             new Tuple<string, ThingDef, ThingDef>(
-                                "Battering",
-                                ThingDef.Named("Bullet_Fake_NematocystBattering"),
-                                ThingDef.Named("Proj_ShipTurretNematocystBattering")
+                                "Splintering",
+                                ThingDef.Named("Bullet_Fake_NematocystSplintering"),
+                                ThingDef.Named("Proj_ShipTurretNematocystSplintering")
                                 ),
                             "smallTurretOptions",
                             0
@@ -36,8 +36,8 @@ namespace RimWorld
 
                 },
                 "tier2",
-                "Battering Nematocysts",
-                "Battering Nematocysts\nBattering Nematocysts deal increased damage, but lack venom.\nBetter suited for taking on inorganic targets.",
+                "Splintering Nematocysts",
+                "Splintering Nematocysts\nSplintering Nematocysts shatter on impact, creating a cloud of shrapnel.",
                 "offense",
                 "flesh",
                 null)

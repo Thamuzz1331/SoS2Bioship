@@ -9,13 +9,12 @@
 		<label>Protien Wall Scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>Impassable</passability>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/ScaffoldBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -84,12 +83,11 @@
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/ScaffoldBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
+			<linkType>CornerFiller</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -205,7 +203,6 @@
 		<defName>Scaffold_Corner_OneOne</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold  corner (1x1)</label>
@@ -230,7 +227,6 @@
 		<defName>Scaffold_Corner_OneOneFlip</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x1) flip</label>
@@ -255,7 +251,6 @@
 		<defName>Scaffold_Corner_OneTwo</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x2)</label>
@@ -282,7 +277,6 @@
 		<defName>Scaffold_Corner_OneTwoFlip</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<label>scaffold corner (1x2) flip</label>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
@@ -309,7 +303,6 @@
 		<defName>Scaffold_Corner_OneThree</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<label>scaffold corner (1x3)</label>
@@ -337,7 +330,6 @@
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<label>scaffold corner (1x3) flip</label>
 		<graphicData>
@@ -370,7 +362,6 @@
 		<label>scaffold floor</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<category>Building</category>
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldHullPlate</texPath>
@@ -516,7 +507,6 @@
 		<label>small bioengine scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Scaffold_Engines</designatorDropdown>
 		<graphicData>
@@ -567,7 +557,6 @@
 		<label>medium engine scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Scaffold_Engines</designatorDropdown>
 		<graphicData>
@@ -640,7 +629,6 @@
 			<MaxHitPoints>25</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>A nuclear-powered engine capable of launching a ship into orbit, at the cost of irradiating the surrounding area. Not suitable for interplanetary travel.\n\nProvides six times the speed of small engines.</description>
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
@@ -695,7 +683,6 @@
 			<MaxHitPoints>1</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>Scaffold for an organic sensor array.</description>
 		<size>(1,1)</size>
 		<designationCategory>Ship</designationCategory>
@@ -747,7 +734,6 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>Scaffold for an small shipmaw.</description>
 		<size>(1,1)</size>
 		<designationCategory>Ship</designationCategory>
@@ -796,7 +782,6 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>Scaffold for an small shipmaw.</description>
 		<size>(2,2)</size>
 		<designationCategory>Ship</designationCategory>
@@ -829,7 +814,6 @@
 		<description>A scaffold from a which small weapon turret will grow.</description>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Turret</designatorDropdown>
@@ -864,7 +848,6 @@
 		<description>The scaffold from which a medium turret will grow.</description>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/HardpointGreen</texPath>
@@ -918,7 +901,6 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>Scaffold for an small shipmaw.</description>
 		<size>(6,3)</size>
 		<designationCategory>Ship</designationCategory>
@@ -950,7 +932,6 @@
 		<label>spinal weapon root scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<description>Scaffold for the primary attachment point of a bioship spinal weapon.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountEmitter</texPath>
@@ -1011,7 +992,6 @@
 		</graphicData>
 		<size>(5,1)</size>
 		<rotatable>true</rotatable>
-		<tickerType>Normal</tickerType>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<castEdgeShadows>false</castEdgeShadows>
@@ -1063,7 +1043,6 @@
 		</graphicData>
 		<size>(5,4)</size>
 		<rotatable>true</rotatable>
-		<tickerType>Normal</tickerType>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>Impassable</passability>
 		<castEdgeShadows>false</castEdgeShadows>
@@ -1128,7 +1107,6 @@
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>0.40</fillPercent>
-		<tickerType>Normal</tickerType>
 		<statBases>
 			<MaxHitPoints>1</MaxHitPoints>
 			<Flammability>0</Flammability>
@@ -1178,7 +1156,6 @@
 		<blockWind>true</blockWind>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>0.40</fillPercent>
-		<tickerType>Normal</tickerType>
 		<statBases>
 			<MaxHitPoints>1</MaxHitPoints>
 			<Flammability>0</Flammability>
@@ -1240,7 +1217,6 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<castEdgeShadows>true</castEdgeShadows>
-		<tickerType>Normal</tickerType>
 		<statBases>
 			<WorkToBuild>100</WorkToBuild>
 			<MaxHitPoints>5</MaxHitPoints>
@@ -1324,7 +1300,6 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructEffect>ConstructMetal</constructEffect>
-		<tickerType>Normal</tickerType>
 		<researchPrerequisites>
 			<li>AdvancedGangliaClusterScaffold</li>
 		</researchPrerequisites>
@@ -1342,7 +1317,6 @@
 		<defName>ScaffoldHeatsink</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<label>small heatsink scaffold</label>
 		<description>Scaffold for a bio heatsink</description>
 		<size>(2,2)</size>
@@ -1380,7 +1354,6 @@
 		<size>(4,4)</size>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
@@ -1438,7 +1411,6 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>A giant mitochondira, the powerhouse of the beast.</description>
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
@@ -1488,7 +1460,6 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<tickerType>Normal</tickerType>
 		<description>A giant mitochondira, the powerhouse of the beast.</description>
 		<size>(4,6)</size>
 		<receivesSignals>true</receivesSignals>
@@ -1538,7 +1509,6 @@
 		<pathCost>70</pathCost>
 		<blockWind>true</blockWind>
 		<fillPercent>0.40</fillPercent>
-		<tickerType>Normal</tickerType>
 		<statBases>
 			<MaxHitPoints>1</MaxHitPoints>
 			<WorkToBuild>400</WorkToBuild>
@@ -1574,7 +1544,6 @@
 		<label>salvage maw scafold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<tickerType>Normal</tickerType>
 		<designationCategory>Ship</designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Scaffold/MawScaffold_2x2</texPath>

@@ -10,6 +10,25 @@ using Verse;
 
 namespace RimWorld
 {
+    public class DefOptions : IExposable
+    {
+        public List<ThingDef> defs = new List<ThingDef>();
+
+        public DefOptions()
+        {
+
+        }
+
+        public DefOptions(List<ThingDef> _defs)
+        {
+            defs = _defs;
+        }
+
+        void IExposable.ExposeData() {
+            Scribe_Collections.Look<ThingDef>(ref defs, "defs", LookMode.Def);
+        }
+    }
+
     public class CompShipHeart : CompBuildingCore
     {
         public CompProperties_ShipHeart HeartProps => (CompProperties_ShipHeart)props;
@@ -27,31 +46,29 @@ namespace RimWorld
 
         public Dictionary<DamageDef, float> resistances = new Dictionary<DamageDef, float>();
 
-        public List<Gizmo> mutationActions = new List<Gizmo>();
-
-        public Dictionary<string, List<ThingDef>> defs = new Dictionary<string, List<ThingDef>>()
+        public Dictionary<string, DefOptions> defs = new Dictionary<string, DefOptions>()
         {
-            {"smallTurretOptions", new List<ThingDef>(){
+            {"smallTurretOptions", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("ShipTurret_Nematocyst")
-            }},
-            {"mediumTurretOptions", new List<ThingDef>(){
+            })},
+            {"mediumTurretOptions", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("ShipTurret_BioPlasma"), ThingDef.Named("ShipTurret_BioAcid"),
                 ThingDef.Named("ShipTurret_BioPlasma"), ThingDef.Named("ShipTurret_BioAcid"),
-            }},
-            {"largeTurretOptions", new List<ThingDef>(){
+            })},
+            {"largeTurretOptions", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("HeavySpineLauncher"), ThingDef.Named("HeavySpineLauncher"),
                 ThingDef.Named("LightSpineLauncher"), ThingDef.Named("LightSpineLauncher"),
-            }},
-            {"spinalTurretOptions", new List<ThingDef>(){}},
-            {"smallMawOptions", new List<ThingDef>(){
+            })},
+            {"spinalTurretOptions", new DefOptions(new List<ThingDef>(){})},
+            {"smallMawOptions", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
-            }},
-            {"HeavySpineLauncher", new List<ThingDef>(){
+            })},
+            {"HeavySpineLauncher", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Spine_Heavy")
-            }},
-            {"LightSpineLauncher", new List<ThingDef>(){
+            })},
+            {"LightSpineLauncher", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Spine_Light")
-            }},
+            })},
         };
 
         public override void PostExposeData()
@@ -60,7 +77,8 @@ namespace RimWorld
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
             Scribe_Values.Look<bool>(ref luciferiumAddiction, "luciferiumAddiction", false);
             Scribe_Values.Look<bool>(ref luciferiumSupplied, "luciferiumSupplied", false);
-            Scribe_Collections.Look(ref resistances, "resistences", LookMode.Deep);
+            Scribe_Collections.Look<DamageDef, float>(ref resistances, "resistences", LookMode.Def, LookMode.Value);
+            Scribe_Collections.Look<string, DefOptions>(ref defs, "defs", LookMode.Value, LookMode.Deep);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -73,6 +91,8 @@ namespace RimWorld
                 stats.Add("conciousness", 1f);
             if (!stats.ContainsKey("movementSpeed"))
                 stats.Add("movementSpeed", 1f);
+            if (!stats.ContainsKey("shieldStrength"))
+                stats.Add("shieldStrength", 0.75f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             mutator = parent.TryGetComp<CompMutationWorker>();
             if (mutator.tier != "tier1")
@@ -155,9 +175,11 @@ namespace RimWorld
             return HeartProps.shipspecies;
         }
 
+        private DefOptions blankDefOptions = new DefOptions(new List<ThingDef>());
+
         public virtual ThingDef GetThingDef(string cat)
         {
-            List<ThingDef> def = defs.TryGetValue(cat, null);
+            List<ThingDef> def = defs.TryGetValue(cat, blankDefOptions).defs;
             if (def != null)
             {
                 return def.RandomElement();
@@ -226,6 +248,8 @@ namespace RimWorld
                     return ret * GetStat("metabolicSpeed");
                 case "movementSpeed":
                     return ret * GetStat("conciousness");
+                case "shieldStrength":
+                    return ret * GetStat("conciousness");
                 default:
                     return base.GetStat(stat);
             }
@@ -237,11 +261,11 @@ namespace RimWorld
 			{
 				yield return gizmo;
 			}
-            foreach (Gizmo gizmo in mutationActions)
-            {
-                yield return gizmo;
-            }
 		}
 
+        public override string ToString()
+        {
+            return this.bodyName;
+        }
     }
 }

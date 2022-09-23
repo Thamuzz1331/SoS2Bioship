@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class BoneArmor : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompArmorGrower>() != null);
@@ -20,7 +20,7 @@ namespace RimWorld
             return ret;
         }
        
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompArmorGrower>() != null)
             {
@@ -32,12 +32,18 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompArmorGrower>() != null)
             {
                 target.parent.TryGetComp<CompArmorGrower>().armorClass.Remove(ThingDef.Named("BoneArmor"));
             }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "bone", this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]--;
+            }
+
         }
 
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
@@ -71,10 +77,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
         }
     }
 

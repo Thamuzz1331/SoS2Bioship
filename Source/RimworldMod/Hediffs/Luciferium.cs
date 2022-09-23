@@ -10,21 +10,9 @@ using Verse;
 
 namespace RimWorld
 {
-    public class Luciferium : IHediff
+    public class Hediff_Luciferium : Hediff_Building
     {
-        public CompShipHeart heart = null;
-
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target) {
-            return false;
-        }
-        void IHediff.Apply(CompBuildingBodyPart target)
-        {
-            return;
-        }
-        void IHediff.Remove(CompBuildingBodyPart target)
-        {
-            return;
-        }
+        public bool satisfied = false;
 
         Dictionary<string, float> statMults = new Dictionary<string, float>()
         {
@@ -32,11 +20,9 @@ namespace RimWorld
             {"metabolicSpeed", 1.5f},
             {"conciousness", 1.25f }
         };
-
-
-        float IHediff.StatMult(string stat)
+     	public override float StatMod(string stat)
         {
-            if (heart.luciferiumSupplied)
+            if (satisfied)
             {
                 return statMults.TryGetValue(stat, 1f);
             } else
@@ -44,10 +30,5 @@ namespace RimWorld
                 return 0.85f;
             }
         }
-        void IExposable.ExposeData()
-        {
-            Scribe_Values.Look(ref heart, "heart");
-        }
-
     }
 }

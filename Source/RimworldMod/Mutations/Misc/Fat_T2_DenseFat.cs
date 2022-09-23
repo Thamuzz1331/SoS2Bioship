@@ -12,14 +12,14 @@ namespace RimWorld
 {
     public class DenseFat : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipNutritionStore>() != null);
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipNutritionStore>() != null)
             {
@@ -30,7 +30,7 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<DenseFat>("utility", "misc");
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipNutritionStore>() != null)
             {
@@ -71,10 +71,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
         }
     }
 }

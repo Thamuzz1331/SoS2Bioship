@@ -30,17 +30,16 @@ namespace RimWorld
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad && !initialized && body != null && body.heart != null)
             {
-                foreach (IHediff mut in ((CompShipHeart)body.heart).mutator.mutations)
+                foreach (IMutation mut in ((CompShipHeart)body.heart).mutator.mutations)
                 {
                     if (mut.ShouldAddTo(this))
                     {
                         mut.Apply(this);
-                        this.hediffs.Add(mut);
                     }
                 }
                 initialized = true;
             }
-            foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
+            foreach (IntVec3 c in GenAdjFast.AdjacentCellsCardinal(parent.Position))
             {
                 foreach (Thing adj in c.GetThingList(parent.Map))
                 {

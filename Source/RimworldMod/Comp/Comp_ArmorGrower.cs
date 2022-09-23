@@ -27,6 +27,7 @@ namespace RimWorld
 			base.PostExposeData();
 			Scribe_Collections.Look<Tuple<IntVec3, ThingDef, Rot4, float>>(ref toGrow, "toGrow", LookMode.Deep);
 			Scribe_Collections.Look<Thing>(ref toShed, "toShed", LookMode.Deep);
+			Scribe_Collections.Look<ThingDef>(ref armorClass, "armorClass");
 			Scribe_Values.Look(ref ticksToGrow, "ticksToGrow", 0f);
 			Scribe_Values.Look(ref ticksToShed, "ticksToShed", 0f);
 		}

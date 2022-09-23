@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class UndyingBeast : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -20,17 +20,36 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Undying Beast";
+                toAdd.visible = true;
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                    {"regenSpeed", 1.25f},
+                    {"growthSpeed", 1.05f},
+                    {"metabolicSpeed", 1.05f},
+                    {"regenEfficiency", 1.25f},
+                    {"metabolicEfficiency", 1.05f}
+                };
+                target.AddHediff(toAdd);
+            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<FastRegeneration>("defense", "humors");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                target.RemoveHediff("Undying Beast");
+            }
+            if(target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "humors", new FastRegeneration());
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]--;
@@ -58,19 +77,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        Dictionary<string, float> statMults = new Dictionary<string, float>()
-        {
-            {"regenSpeed", 1.25f},
-            {"growthSpeed", 1.05f},
-            {"metabolicSpeed", 1.05f},
-            {"regenEfficiency", 1.25f},
-            {"metabolicEfficiency", 1.05f}
-        };
-
-        float IHediff.StatMult(string stat)
-        {
-            return statMults.TryGetValue(stat, 1f);
         }
     }
 }

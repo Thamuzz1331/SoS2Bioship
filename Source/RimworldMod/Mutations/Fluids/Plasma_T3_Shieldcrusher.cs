@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class ShieldcrushingPlasma : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -20,12 +20,13 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("BatteringPlasmaMaw"));
+                DefOptions blank = new DefOptions(new List<ThingDef>());
+                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("spinalTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("BatteringPlasmaMaw"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -33,12 +34,13 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"]++;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("BatteringPlasmaMaw"));
+                DefOptions blank = new DefOptions(new List<ThingDef>());
+                target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue("spinalTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("BatteringPlasmaMaw"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -69,10 +71,5 @@ namespace RimWorld
         {
 
         }
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
-        }
-
     }
 }

@@ -145,8 +145,8 @@ namespace BioShip
 			CompBuildingBodyPart bodyPart = shield.parent.TryGetComp<CompBuildingBodyPart>();
 			if (bodyPart != null && bodyPart.body != null && bodyPart.body.heart != null)
             {
-				ret = ret/(0.75f * bodyPart.body.heart.GetStat("conciousness"));
-				if (bodyPart.body.heart.hediffs.Any(mut => (mut.ToString() == "Reflect")))
+				ret = ret/(bodyPart.body.heart.GetStat("shieldStrength"));
+				if (bodyPart.body.heart.hediffs.Any(mut => (mut is Hediff_Reflect)))
                 {
 					if(Rand.Chance(0.1f))
                     {

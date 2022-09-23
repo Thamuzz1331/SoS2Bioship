@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class DenseSpines : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -20,20 +20,21 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
+                DefOptions blank = new DefOptions(new List<ThingDef>());
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
-                    .Add(ThingDef.Named("Spine_HeavyDense"));
-                heart.defs.TryGetValue("HeavySpineLauncher", new List<ThingDef>())
-                    .Add(ThingDef.Named("Spine_HeavyDense"));
+                heart.defs.TryGetValue("HeavySpineLauncher", blank)
+                    .defs.Add(ThingDef.Named("Spine_HeavyDense"));
+                heart.defs.TryGetValue("HeavySpineLauncher", blank)
+                    .defs.Add(ThingDef.Named("Spine_HeavyDense"));
 
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("HeavySpineLauncher"));
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("HeavySpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("HeavySpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("HeavySpineLauncher"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -43,9 +44,28 @@ namespace RimWorld
             }
 
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                DefOptions blank = new DefOptions(new List<ThingDef>());
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("HeavySpineLauncher", blank)
+                    .defs.Remove(ThingDef.Named("Spine_HeavyDense"));
+                heart.defs.TryGetValue("HeavySpineLauncher", blank)
+                    .defs.Remove(ThingDef.Named("Spine_HeavyDense"));
 
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("HeavySpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("HeavySpineLauncher"));
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "bone", this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]--;
+
+            }
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
             if (tier == "tier2")
@@ -80,11 +100,5 @@ namespace RimWorld
         {
 
         }
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
-        }
-
-
     }
 }

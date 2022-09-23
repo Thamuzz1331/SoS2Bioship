@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class LearnedInWar : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -20,13 +20,21 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
                 heart.maxResistence += 0.10f;
 
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Learned In War";
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                    {"regenEfficiency", 1.05f},
+                    {"regenSpeed", 1.05f}
+                };
+                target.AddHediff(toAdd);
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -34,7 +42,7 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["flesh"]++;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
@@ -72,16 +80,5 @@ namespace RimWorld
         {
 
         }
-        Dictionary<string, float> statMults = new Dictionary<string, float>()
-        {
-            {"regenEfficiency", 1.05f},
-            {"regenSpeed", 1.05f}
-        };
-
-        float IHediff.StatMult(string stat)
-        {
-            return statMults.TryGetValue(stat, 1f);
-        }
-
     }
 }

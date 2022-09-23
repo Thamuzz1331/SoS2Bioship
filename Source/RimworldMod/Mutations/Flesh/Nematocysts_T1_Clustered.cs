@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class ClusteredNematocysts : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -20,15 +20,16 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
-                heart.defs.TryGetValue("smallTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+                DefOptions blank = new DefOptions(new List<ThingDef>());
+                heart.defs.TryGetValue("smallTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+                heart.defs.TryGetValue("smallTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
 
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
@@ -37,8 +38,23 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["flesh"]++;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                DefOptions blank = new DefOptions(new List<ThingDef>());
+                heart.defs.TryGetValue("smallTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+                heart.defs.TryGetValue("smallTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("ShipTurret_ClusteredNematocyst"));
+
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("offense", "flesh", this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["flesh"]--;
+            }
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
@@ -91,10 +107,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
         }
     }
 }

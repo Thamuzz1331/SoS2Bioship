@@ -10,42 +10,70 @@ using Verse;
 
 namespace RimWorld
 {
+    public class AmmoOption : IExposable
+    {
+        public ThingDef realProj;
+        public ThingDef fakeProj;
+
+        public AmmoOption()
+        {
+
+        }
+
+        public AmmoOption(ThingDef _realProj, ThingDef _fakeProj)
+        {
+            realProj = _realProj;
+            fakeProj = _fakeProj;
+        }
+
+        void IExposable.ExposeData()
+        {
+            Scribe_Defs.Look(ref realProj, "realProj");
+            Scribe_Defs.Look(ref fakeProj, "fakeProj");
+        }
+    }
+
     public class CompMutableAmmo : ThingComp
     {
         CompProperties_MutableAmmo Props => (CompProperties_MutableAmmo)props;
-        public Dictionary<String, Tuple<ThingDef, ThingDef>> ammoTypes = new Dictionary<String, Tuple<ThingDef, ThingDef>>();
+        public Dictionary<String, AmmoOption> ammoTypes = new Dictionary<String, AmmoOption>();
         public string currentlySelected = "NA";
         public string setSelected = "NA";
 
         public override void PostSpawnSetup(bool b)
         {
             base.PostSpawnSetup(b);
-            ammoTypes.Add(Props.defaultAmmoName, new Tuple<ThingDef, ThingDef>(ThingDef.Named(Props.defaultAmmo), ThingDef.Named(Props.defaultFakeAmmo)));
-            currentlySelected = Props.defaultAmmoName;
+            if (!b)
+            {
+                ammoTypes.Add(Props.defaultAmmoName, new AmmoOption(ThingDef.Named(Props.defaultAmmo), ThingDef.Named(Props.defaultFakeAmmo)));
+                currentlySelected = Props.defaultAmmoName;
+            }
         }
 
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look(ref setSelected, "setSelected", "NA");
+            Scribe_Values.Look(ref currentlySelected, "currentlySelected", "NA");
+            Scribe_Collections.Look<string, AmmoOption>(ref ammoTypes, "ammoTypes", LookMode.Value, LookMode.Deep);
         }
 
         public virtual ThingDef GetProjectileDef()
         {
             if (setSelected != "NA")
             {
-                return ammoTypes[setSelected].Item1;
-            }
-            return ammoTypes[currentlySelected].Item1;
+                return ammoTypes.TryGetValue(setSelected, ammoTypes[Props.defaultAmmo]).realProj;
+            } 
+            return ammoTypes.TryGetValue(currentlySelected, ammoTypes[Props.defaultAmmo]).realProj;
         }
 
         public virtual ThingDef GetFakeProjectileDef()
         {
             if (setSelected != "NA")
             {
-                return ammoTypes[setSelected].Item2;
-            }
-            return ammoTypes[currentlySelected].Item2;
+                return ammoTypes.TryGetValue(setSelected, ammoTypes[Props.defaultAmmo]).fakeProj;
+            } 
+            return ammoTypes.TryGetValue(currentlySelected, ammoTypes[Props.defaultAmmo]).fakeProj;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()

@@ -12,23 +12,38 @@ namespace RimWorld
 {
     public class IronWill : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Iron Will";
+                toAdd.visible = true;
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                    {"conciousness", 1.33f},
+                };
+                target.AddHediff(toAdd);
+            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<IronWill>("defense", "psi");
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["psi"] += 2;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                target.RemoveHediff("Efficient Growth");
+            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "psi", this);
@@ -70,15 +85,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        Dictionary<string, float> statMults = new Dictionary<string, float>()
-        {
-            {"conciousness", 1.33f},
-        };
-
-        float IHediff.StatMult(string stat)
-        {
-            return statMults.TryGetValue(stat, 1f);
         }
     }
 }

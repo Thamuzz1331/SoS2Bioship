@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class OcularPerk : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -20,22 +20,21 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("GiantEyeLaser"));
+                heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
+                    .defs.Add(ThingDef.Named("GiantEyeLaser"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 CompMutationWorker mut = target.parent.TryGetComp<CompMutationWorker>();
-                mut.quirkPossibilities.Remove(this);
             }
 
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
 
         }
@@ -62,9 +61,5 @@ namespace RimWorld
 
         }
 
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
-        }
     }
 }

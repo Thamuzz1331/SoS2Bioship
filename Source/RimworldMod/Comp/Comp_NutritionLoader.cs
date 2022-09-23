@@ -23,6 +23,7 @@ namespace RimWorld
         {
             base.PostExposeData();
             Scribe_Values.Look(ref ticksTillLoad, "ticksTillLoad", 0);
+            Scribe_Collections.Look(ref torpSpawn, "torpSpawn");
         }
 
         public override float getConsumptionPerPulse()

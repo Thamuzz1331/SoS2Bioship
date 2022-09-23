@@ -212,11 +212,6 @@
 		<label>shipflesh  corner (1x1)</label>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipAngle1x1</texPath>
-			<linkType>CornerFiller</linkType>
-			<linkFlags>
-				<li>Wall</li>
-				<li>Rock</li>
-			</linkFlags>
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">

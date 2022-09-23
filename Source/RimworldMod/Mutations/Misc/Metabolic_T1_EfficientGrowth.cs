@@ -12,22 +12,39 @@ namespace RimWorld
 {
     public class EfficientGrowth : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
-        void IHediff.Apply(CompBuildingBodyPart target)
-        {
+        void IMutation.Apply(CompBuildingBodyPart target)
+        {           
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Efficient Growth";
+                toAdd.visible = true;
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                    {"growthEfficiency", 1.50f},
+                    {"metabolicEfficiency", 1.15f},
+                };
+                target.AddHediff(toAdd);
+            }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<EfficientGrowth>("utility", "misc");
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                target.RemoveHediff("Efficient Growth");
+            }
+
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
                 target.parent.TryGetComp<CompMutationWorker>().AddMutation("utility", "misc", new EfficientGrowth());
@@ -55,16 +72,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        Dictionary<string, float> statMults = new Dictionary<string, float>()
-        {
-            {"growthEfficiency", 1.50f},
-            {"metabolicEfficiency", 1.15f},
-        };
-
-        float IHediff.StatMult(string stat)
-        {
-            return statMults.TryGetValue(stat, 1f);
         }
     }
 }

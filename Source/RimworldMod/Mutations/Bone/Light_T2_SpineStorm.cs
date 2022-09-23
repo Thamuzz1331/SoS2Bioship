@@ -12,7 +12,7 @@ namespace RimWorld
 {
     public class SpineStorm : IMutation
     {
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
@@ -21,7 +21,7 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.def == ThingDef.Named("LightSpineLauncher") && target.parent.TryGetComp<CompNutritionLoader>() != null)
             {
@@ -35,11 +35,12 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                DefOptions blank = new DefOptions(new List<ThingDef>());
 
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("LightSpineLauncher"));
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("LightSpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("LightSpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Add(ThingDef.Named("LightSpineLauncher"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -47,7 +48,7 @@ namespace RimWorld
                 target.parent.TryGetComp<CompMutationWorker>().mutationThemes["bone"]++;
             }
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.def == ThingDef.Named("LightSpineLauncher") && target.parent.TryGetComp<CompNutritionLoader>() != null)
             {
@@ -61,11 +62,12 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                DefOptions blank = new DefOptions(new List<ThingDef>());
 
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("LightSpineLauncher"));
-                heart.defs.TryGetValue("largeTurretOptions", new List<ThingDef>())
-                    .Remove(ThingDef.Named("LightSpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("LightSpineLauncher"));
+                heart.defs.TryGetValue("largeTurretOptions", blank)
+                    .defs.Remove(ThingDef.Named("LightSpineLauncher"));
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
@@ -96,10 +98,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
         }
     }
 }

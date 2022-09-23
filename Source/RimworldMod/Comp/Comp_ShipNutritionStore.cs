@@ -18,8 +18,9 @@ namespace RimWorld
         public override void PostExposeData()
         {
             base.PostExposeData();
+            Scribe_Values.Look<float>(ref efficiency, "efficiency", 1f);
+            Scribe_Values.Look<float>(ref capacityModifier, "capacityModifier", 1f);
         }
-
         public override void PostSpawnSetup(bool s)
         {
             base.PostSpawnSetup(s);
@@ -28,16 +29,7 @@ namespace RimWorld
         public override float storeNutrition(float qty)
         {
             qty *= efficiency;
-            float overflow = 0f;
-            float toStore = qty;
-            currentNutrition += toStore;
-            overflow = currentNutrition - getNutrientCapacity();
-            if (overflow <= 0)
-            {
-                return 0;
-            }
-            currentNutrition = getNutrientCapacity();
-            return overflow;
+            return base.storeNutrition(qty);
         }
 
         public override float getNutrientCapacity()

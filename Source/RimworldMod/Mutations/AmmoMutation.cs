@@ -45,7 +45,7 @@ namespace RimWorld
             icon = _icon;
         }
 
-        bool IHediff.ShouldAddTo(CompBuildingBodyPart target)
+        bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             foreach(AmmoMutationTurretDetails det in turretsToApplyTo)
@@ -57,16 +57,17 @@ namespace RimWorld
             return ret;
         }
 
-        void IHediff.Apply(CompBuildingBodyPart target)
+        void IMutation.Apply(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
+                DefOptions blank = new DefOptions(new List<ThingDef>());
                 foreach (AmmoMutationTurretDetails det in turretsToApplyTo)
                 {
                     for (int i = 0; i < det.addWeight; i++)
                     {
-                        target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue(det.addTable, new List<ThingDef>())
-                            .Add(det.turretDef);
+                        target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue(det.addTable, blank)
+                            .defs.Add(det.turretDef);
                     }
                 }
             }
@@ -76,7 +77,7 @@ namespace RimWorld
                 {
                     target.parent.TryGetComp<CompMutableAmmo>()
                         .ammoTypes.Add(det.ammoDef.Item1,
-                            new Tuple<ThingDef, ThingDef>(
+                            new AmmoOption(
                                 det.ammoDef.Item3,
                                 det.ammoDef.Item2));
                     target.parent.TryGetComp<CompMutableAmmo>()
@@ -90,16 +91,17 @@ namespace RimWorld
             }
 
         }
-        void IHediff.Remove(CompBuildingBodyPart target)
+        void IMutation.Remove(CompBuildingBodyPart target)
         {
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
+                DefOptions blank = new DefOptions(new List<ThingDef>());
                 foreach (AmmoMutationTurretDetails det in turretsToApplyTo)
                 {
                     for (int i = 0; i < det.addWeight; i++)
                     {
-                        target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue(det.addTable, new List<ThingDef>())
-                            .Remove(det.turretDef);
+                        target.parent.TryGetComp<CompShipHeart>().defs.TryGetValue(det.addTable, blank)
+                            .defs.Remove(det.turretDef);
                     }
                 }
             }
@@ -148,11 +150,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-
-        float IHediff.StatMult(string stat)
-        {
-            return 1f;
         }
     }
 }

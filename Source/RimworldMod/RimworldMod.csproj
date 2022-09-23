@@ -110,6 +110,7 @@
 	  <Compile Include="Buildings\Building_Armor.cs"/>
 
 	  <Compile Include="Hediffs\Luciferium.cs"/>
+	  <Compile Include="Hediffs\Reflect.cs" />
 
 	  <Compile Include="Comp\Comp_Aggression.cs"/>
 	  <Compile Include="Comp\CompProperties_Aggression.cs"/>
@@ -226,5 +227,6 @@
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_Mutations.cs" />
+
   </ItemGroup>
 </Project>

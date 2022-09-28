@@ -12,8 +12,8 @@ namespace RimWorld
     public class CompPsiEngine : CompEngineTrail
     {
 		protected Mote psiMote;
-		private float emitCounter = 0;
-		public float emitInterval = 120f;
+		protected float emitCounter = 0;
+		public float emitInterval = 120;
 
         public override void PostSpawnSetup(bool b)
         {
@@ -32,7 +32,7 @@ namespace RimWorld
 				if (emitCounter <= 0)
 				{
 					Emit();
-					emitCounter = emitInterval;
+					emitCounter = emitInterval * (1 + (Rand.Range(-15, 15)/100));
 				}
 				emitCounter--;
 			}
@@ -45,17 +45,11 @@ namespace RimWorld
 				return;
 			}
 			Vector3 vector = new Vector3(0f, 1f, 0f);
-			if (typeof(MoteAttached).IsAssignableFrom(ThingDef.Named("Mote_PsychicConditionCauserEffect").thingClass))
+			Log.Message("!!");
+			Vector3 vector2 = this.parent.DrawPos + vector;
+			if (vector2.InBounds(this.parent.Map))
 			{
-				this.psiMote = MoteMaker.MakeAttachedOverlay(this.parent, ThingDef.Named("Mote_PsychicConditionCauserEffect"), vector, 0f, emitInterval);
-			}
-			else
-			{
-				Vector3 vector2 = this.parent.DrawPos + vector;
-				if (vector2.InBounds(this.parent.Map))
-				{
-					this.psiMote = MoteMaker.MakeStaticMote(vector2, this.parent.Map, ThingDef.Named("Mote_PsychicConditionCauserEffect"), 1f);
-				}
+				this.psiMote = MoteMaker.MakeStaticMote(vector2, this.parent.Map, ThingDef.Named("Mote_PsychicConditionCauserEffect"), .5f);
 			}
 		}
 	}

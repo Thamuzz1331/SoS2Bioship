@@ -98,7 +98,7 @@ namespace RimWorld
         };
         public static List<IMutation> quirkPossibilities = new List<IMutation>()
         {
-            new OcularPerk(),
+            new OcularPerk(), new GiantBrainFromOuterSpace()
         };
         public MutTier mutationOptions = null;
 
@@ -339,6 +339,11 @@ namespace RimWorld
         public virtual List<IMutation> GetMutationsForTier(String tier)
         {
             return mutations.FindAll((IMutation m) => m.GetTier() == tier);
+        }
+
+        public virtual List<IMutation> GetQuirks()
+        {
+            return quirkPossibilities;
         }
 
         public virtual List<IMutation> GetMutationOptionsForTeir(String tier)

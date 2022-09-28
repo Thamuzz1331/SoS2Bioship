@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class OcularPerk : IMutation
+    public class GiantBrainFromOuterSpace : IMutation
     {
         bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
@@ -25,18 +25,49 @@ namespace RimWorld
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("GiantEyeLaser"));
+                heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
+                    .defs.Add(ThingDef.Named("ThirdEye"));
+                heart.defs.TryGetValue("shieldEmitter", new DefOptions(new List<ThingDef>())).defs.Clear();
+                heart.defs.TryGetValue("shieldEmitter", new DefOptions(new List<ThingDef>()))
+                    .defs.Add(ThingDef.Named("BioShieldGeneratorMotive"));
+
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Giant Brain From Outer Space";
+                toAdd.visible = true;
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                    {"conciousness", 1.15f},
+                    {"metabolicSpeed", 0.85f},
+                    {"metabolicEfficiency", 0.85f},
+                };
+                heart.AddHediff(toAdd);
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                CompMutationWorker mut = target.parent.TryGetComp<CompMutationWorker>();
-                mut.quirkPossibilities.Remove(this);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<IronWill>("defense", "psi");
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["psi"] += 4;
             }
 
         }
         void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
+                    .defs.Remove(ThingDef.Named("ThirdEye"));
+                heart.defs.TryGetValue("shieldEmitter", new DefOptions(new List<ThingDef>())).defs.Clear();
+                heart.defs.TryGetValue("shieldEmitter", new DefOptions(new List<ThingDef>()))
+                    .defs.Add(ThingDef.Named("BioShieldGenerator"));
+                heart.RemoveHediff("Giant Brain From Outer Space");
+
+            }
+            if (target.parent.TryGetComp<CompMutationWorker>() != null)
+            {
+                target.parent.TryGetComp<CompMutationWorker>().AddMutation("defense", "psi", this);
+                target.parent.TryGetComp<CompMutationWorker>().mutationThemes["humors"] -= 4;
+            }
+
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
@@ -47,11 +78,11 @@ namespace RimWorld
         }
         String IMutation.GetDescription()
         {
-            return "Occular Lineage\nThis beast belongs to the occular family, possessing a powerful eye laser.";
+            return "Giant Brain From Outer Space\nA psi focused lineage.  The Third Eye spinal weapon bypasses hull to unleash psychic fury against enemy crews while motive shield ganglia add thrust.";
         }
         public override string ToString()
         {
-            return "Occular Lineage";
+            return "Giant Brain From Outer Space";
         }
         Texture2D IMutation.GetIcon()
         {
@@ -60,11 +91,6 @@ namespace RimWorld
         void IExposable.ExposeData()
         {
 
-        }
-
-        float IMutation.StatMult(string stat)
-        {
-            return 1f;
         }
     }
 }

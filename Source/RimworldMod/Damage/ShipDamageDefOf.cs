@@ -15,5 +15,6 @@ namespace RimWorld
 
 		public static DamageDef ShipAcid;
 		public static DamageDef ShipNematocystSplinter;
+		public static DamageDef ShipNematocystEnergized;
 	}
 }

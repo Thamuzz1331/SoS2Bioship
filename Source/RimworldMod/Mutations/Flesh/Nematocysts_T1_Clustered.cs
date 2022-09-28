@@ -81,7 +81,14 @@ namespace RimWorld
                         "offense",
                         "flesh"));
                 }
-
+                if (existingMutations.Any(mut => mut is EnergizedPlasma))
+                {
+                    ret.Add(new Tuple<IMutation, string, string>(
+                        new EnergizedNematocysts(),
+                        "offense",
+                        "flesh"
+                        ));
+                }
                 return ret;
             }
             else

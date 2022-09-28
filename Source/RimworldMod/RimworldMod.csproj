@@ -164,6 +164,8 @@
 
 	  <Compile Include="Comp\Comp_PsiEngine.cs"/>
 	  <Compile Include="Comp\CompProperties_PsiEngine.cs"/>
+	  <Compile Include="Comp\Comp_ReactionlessEngine.cs"/>
+	  <Compile Include="Comp\CompProperties_ReactionlessEngine.cs"/>
 
 	  <Compile Include="CritterComps\Comp_BuildingHunter.cs"/>
 	  <Compile Include="CritterComps\CompProperties_BuildingHunter.cs"/>
@@ -190,6 +192,7 @@
 	  <Compile Include="Mutations\Flesh\Nematocysts_T2Acid_Acid.cs" />
 	  <Compile Include="Mutations\Flesh\Nematocysts_T2Heavy_Battering.cs" />
 	  <Compile Include="Mutations\Flesh\Nematocysts_T2Light_Splintering.cs" />
+	  <Compile Include="Mutations\Flesh\Nematocysts_T2Plasma_Energized.cs" />
 	  <Compile Include="Mutations\Flesh\Scars_T1_Adaptive.cs" />
 	  <Compile Include="Mutations\Flesh\Scars_T2_MoreAdaptive.cs" />
 	  <Compile Include="Mutations\Flesh\Scars_T3_LearnedInWar.cs" />
@@ -207,9 +210,11 @@
 	  <Compile Include="Mutations\Misc\Fat_T1_FatStorage.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
-	  <Compile Include="Mutations\Perks\OcularPerk.cs" />
 
-  	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
+	  <Compile Include="Mutations\Perks\OcularPerk.cs" />
+	  <Compile Include="Mutations\Perks\BrainFromOuterSpace.cs" />
+
+	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Splintering.cs"/>
 	  <Compile Include="Damage\Nematocyst\DamageWorker_NematocystAcid.cs"/>
 

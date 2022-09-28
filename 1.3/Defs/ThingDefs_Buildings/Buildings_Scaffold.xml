@@ -1290,9 +1290,9 @@
 			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
 		</placeWorkers>
 		<comps>
-			<li Class="CompProperties_Scaffold">
+			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
-				<transformString>BioShieldGenerator</transformString>
+				<transformString>shieldEmitter</transformString>
 			</li>
 		</comps>
 		<rotatable>false</rotatable>

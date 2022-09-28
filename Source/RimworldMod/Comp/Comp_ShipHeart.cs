@@ -63,6 +63,9 @@ namespace RimWorld
             {"smallMawOptions", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
             })},
+            {"shieldEmitter", new DefOptions(new List<ThingDef>(){
+                ThingDef.Named("BioShieldGenerator")
+            })},
             {"HeavySpineLauncher", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Spine_Heavy")
             })},

@@ -16,7 +16,6 @@ namespace RimWorld
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
-            ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
 
@@ -27,15 +26,26 @@ namespace RimWorld
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
                 heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
                     .defs.Add(ThingDef.Named("GiantEyeLaser"));
-            }
-            if (target.parent.TryGetComp<CompMutationWorker>() != null)
-            {
-                CompMutationWorker mut = target.parent.TryGetComp<CompMutationWorker>();
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Mutant Eyebeast";
+                toAdd.visible = true;
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                    {"metabolicEfficiency", 1.15f},
+                };
+                heart.AddHediff(toAdd);
             }
 
         }
         void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
+                    .defs.Remove(ThingDef.Named("GiantEyeLaser"));
+                heart.RemoveHediff("Mutant Eyebeast");
+            }
 
         }
         List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {

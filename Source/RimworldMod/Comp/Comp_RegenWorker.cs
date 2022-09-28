@@ -69,6 +69,11 @@ namespace RimWorld
 						healedWounds.Add(wounded);
                     } else
                     {
+						if (wounded.TryGetComp<CompBreakdownable>() != null &&
+							wounded.TryGetComp<CompBreakdownable>().BrokenDown)
+                        {
+							wounded.TryGetComp<CompBreakdownable>().Notify_Repaired();
+                        }
 						if (wounded.HitPoints < wounded.MaxHitPoints)
                         {
 							wounded.HitPoints += (int)(wounded.MaxHitPoints/50);

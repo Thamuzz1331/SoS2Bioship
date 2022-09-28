@@ -143,7 +143,7 @@ namespace BioShip
 				ret *= 0.75f;
             }
 			CompBuildingBodyPart bodyPart = shield.parent.TryGetComp<CompBuildingBodyPart>();
-			if (bodyPart != null && bodyPart.body != null && bodyPart.body.heart != null)
+			if (bodyPart != null && bodyPart.HeartSpawned)
             {
 				ret = ret/(bodyPart.body.heart.GetStat("shieldStrength"));
 				if (bodyPart.body.heart.hediffs.Any(mut => (mut is Hediff_Reflect)))
@@ -157,6 +157,10 @@ namespace BioShip
 			if (proj is Projectile_ShieldBatteringProjectile)
             {
 				ret *=  2f;
+            }
+			if (proj.def.projectile.damageDef == ShipDamageDefOf.ShipNematocystEnergized)
+            {
+				ret *= 1.5f;
             }
 			return ret;
         }
@@ -220,6 +224,25 @@ namespace BioShip
 			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
 			fakeTurret.Destroy();
 		}
+
+		public static bool EngineFacing(int playerEngineFacing, Tuple<CompEngineTrail, CompRefuelable, CompFlickable> engine)
+        {
+			if (engine.Item1 is CompReactionlessEngine)
+            {
+				return true;
+            }
+			return (playerEngineFacing == engine.Item2.parent.Rotation.AsByte);
+        }
+
+		public static int GetThrust(Tuple<CompEngineTrail, CompRefuelable, CompFlickable> engine)
+        {
+			if (engine.Item1.parent.TryGetComp<CompShipBodyPart>() != null && engine.Item1.parent.TryGetComp<CompShipBodyPart>().HeartSpawned)
+            {
+				return (int)Math.Round(engine.Item1.Props.thrust * engine.Item1.parent.TryGetComp<CompShipBodyPart>().body.heart.GetStat("movementSpeed"));
+            }
+			return engine.Item1.Props.thrust;
+        }
+
 	}
 
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
@@ -582,6 +605,39 @@ namespace BioShip
 		}
     }
 
+	[HarmonyPatch("ShipCombatManager", "ShipAITick")]
+	public static class SpeedPatch
+    {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+		{
+			List<CodeInstruction> codes = new List<CodeInstruction>(instructions);
+			for (int i = 0; i < codes.Count; i++)
+            {
+				if (codes[i].opcode == OpCodes.Ldsfld && (codes[i].operand.ToString() == "System.Int32 playerEngineRot" 
+					|| codes[i].operand.ToString() == "System.Int32 enemyEngineRot"))
+				{
+					codes[i+2] = new CodeInstruction(OpCodes.Call, 
+						AccessTools.Method(typeof(BioShip), "EngineFacing", 
+							new Type[]{typeof(int), typeof(Tuple<CompEngineTrail, CompRefuelable, CompFlickable>)}));
+					codes[i+3].opcode = OpCodes.Nop;
+					codes[i+4].opcode = OpCodes.Nop;
+					codes[i+5].opcode = OpCodes.Nop;
+					codes[i+6].opcode = OpCodes.Nop;
+					codes[i+7].opcode = OpCodes.Nop;
+					codes[i+8].opcode = OpCodes.Brfalse;
+
+					codes[i+10] = new CodeInstruction(OpCodes.Call, 
+						AccessTools.Method(typeof(BioShip), "GetThrust", 
+							new Type[]{typeof(Tuple<CompEngineTrail, CompRefuelable, CompFlickable>)}));
+					codes[i+11].opcode = OpCodes.Nop;
+					codes[i+12].opcode = OpCodes.Nop;
+				}
+            }
+
+			return codes;
+		}
+    }
+
 	[HarmonyPatch(typeof(Building_ShipBridge), "RecalcStats")]
 	public static class CalcStats
     {
@@ -594,8 +650,7 @@ namespace BioShip
             __instance.ShipThrust = 0;
             foreach (Building b in (List<Building>)AccessTools.Field(typeof(Building_ShipBridge), "cachedShipParts").GetValue(__instance))
             {
-				bool bodyPartWithHeart = (b.TryGetComp<CompShipBodyPart>() != null && b.TryGetComp<CompShipBodyPart>().body != null
-						&& b.TryGetComp<CompShipBodyPart>().body.heart != null);
+				bool bodyPartWithHeart = (b.TryGetComp<CompShipBodyPart>() != null && b.TryGetComp<CompShipBodyPart>().HeartSpawned);
                 if (BioShip.shipHullDefs.Any(bDef => bDef == b.def))
                 {
                     __instance.ShipMass += 1;
@@ -621,13 +676,6 @@ namespace BioShip
                         {
                             __instance.ShipMaxTakeoff += b.TryGetComp<CompRefuelable>().Props.fuelCapacity;
                         }
-                    }
-					if (b.TryGetComp<CompShipCombatShield>() != null 
-						&& b.TryGetComp<CompShipBodyPart>() != null
-						&& b.TryGetComp<CompShipBodyPart>().body != null
-						&& b.TryGetComp<CompShipBodyPart>().body.heart != null)
-                    {
-                        __instance.ShipThrust += (1f * b.TryGetComp<CompShipBodyPart>().body.heart.GetStat("movementSpeed"));
                     }
                 }
             }

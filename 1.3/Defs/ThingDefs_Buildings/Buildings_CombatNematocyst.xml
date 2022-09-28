@@ -307,4 +307,45 @@
 		<defaultDamage>5</defaultDamage>
 	</DamageDef>
 
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_NematocystEnergized</defName>
+		<label>Nematocyst</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>100</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_ShipTurretNematocystEnergized</defName>
+		<label>nematocyst</label>
+		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>ShipNematocystEnergized</damageDef>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef ParentName="ShipNematocyst" Name="ShipNematocystEnergized">
+		<defName>ShipNematocystEnergized</defName>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<defaultDamage>15</defaultDamage>
+	</DamageDef>
+
 </Defs>

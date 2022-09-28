@@ -18,12 +18,19 @@ namespace RimWorld
 
         public override void PostDraw()
         {
-            base.PostDraw();
         }
 
         public override void CompTick()
         {
-			base.CompTick();
+            if (active)
+            {
+                if (emitCounter <= 0)
+                {
+                    Emit();
+                    emitCounter = emitInterval;
+                }
+                emitCounter--;
+            }
         }
 	}
 }

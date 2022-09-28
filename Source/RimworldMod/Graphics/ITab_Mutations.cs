@@ -57,7 +57,13 @@ namespace RimWorld
 				this.DoEmptyRect(mutSlot, label, i < muts.Count);
 				if (i < muts.Count)
                 {
-					DrawMutationIcon(mutSlot, muts[i], label);
+					if (label == "")
+                    {
+						DrawQuirk(mutSlot, muts[i]);
+                    } else
+                    {
+						DrawMutationIcon(mutSlot, muts[i], label);
+					}
                 }
             }
         }
@@ -91,6 +97,33 @@ namespace RimWorld
 			}
 			Widgets.DrawHighlightIfMouseover(inRect);
 		}
+
+		public void DrawQuirk(Rect inRect, IMutation mut)
+        {
+			Widgets.Label(inRect.TopPartPixels(30f), mut.ToString());
+			TooltipHandler.TipRegion(inRect, new TipSignal(string.Format("{0}", mut.GetDescription())));
+			if (Prefs.DevMode)
+            {
+				if (Widgets.ButtonInvisible(inRect, true))
+				{
+					List<FloatMenuOption> options = new List<FloatMenuOption>();
+					foreach(IMutation quirk in mutationWorker.GetQuirks())
+                    {
+						options.Add(new FloatMenuOption(quirk.ToString(),
+							delegate() {
+								mutationWorker.RemoveMutationFromBody(mutationWorker.body, mut);
+								mutationWorker.SpreadMutation(mutationWorker.body, quirk);
+							},
+							MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
+                    }
+					if (options.Count > 0)
+                    {
+						FloatMenu menu = new FloatMenu(options);
+						Find.WindowStack.Add(menu);
+                    }
+				}    
+			}
+        }
 
 		public void DrawMutationIcon(Rect inRect, IMutation mut, string tier)
         {

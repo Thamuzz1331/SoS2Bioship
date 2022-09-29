@@ -10,24 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class DefOptions : IExposable
-    {
-        public List<ThingDef> defs = new List<ThingDef>();
-
-        public DefOptions()
-        {
-
-        }
-
-        public DefOptions(List<ThingDef> _defs)
-        {
-            defs = _defs;
-        }
-
-        void IExposable.ExposeData() {
-            Scribe_Collections.Look<ThingDef>(ref defs, "defs", LookMode.Def);
-        }
-    }
+    
 
     public class CompShipHeart : CompBuildingCore
     {
@@ -269,6 +252,25 @@ namespace RimWorld
         public override string ToString()
         {
             return this.bodyName;
+        }
+    }
+
+    public class DefOptions : IExposable
+    {
+        public List<ThingDef> defs = new List<ThingDef>();
+
+        public DefOptions()
+        {
+
+        }
+
+        public DefOptions(List<ThingDef> _defs)
+        {
+            defs = _defs;
+        }
+
+        void IExposable.ExposeData() {
+            Scribe_Collections.Look<ThingDef>(ref defs, "defs", LookMode.Def);
         }
     }
 }

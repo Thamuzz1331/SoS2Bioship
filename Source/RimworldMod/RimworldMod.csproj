@@ -150,6 +150,9 @@
 	  <Compile Include="Comp\CompProperties_UnfoldTwitch.cs"/>
 	  <Compile Include="Comp\Comp_FueledFacility.cs"/>
 	  <Compile Include="Comp\CompProperties_FueledFacility.cs"/>
+	  <Compile Include="Comp\Comp_MutationInducer.cs"/>
+	  <Compile Include="Comp\CompProperties_MutationInducer.cs"/>
+
 
 	  <Compile Include="Comp\Comp_BioshipSpawner.cs"/>
 	  <Compile Include="Comp\CompProperties_BioshipSpawner.cs"/>

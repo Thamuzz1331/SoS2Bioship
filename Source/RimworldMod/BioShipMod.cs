@@ -689,7 +689,6 @@ namespace BioShip
             }			
 			return false;
         }
-
     }
 
 }

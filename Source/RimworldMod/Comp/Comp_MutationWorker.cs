@@ -143,23 +143,19 @@ namespace RimWorld
             }
         }
 
+        public bool CanMutate
+        {
+            get
+            {
+                return !mutating && !(this.tier == "tier3" && this.GetMutationsForTier("tier3").Count >= 2);
+            }
+        }
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (Gizmo gizmo in base.CompGetGizmosExtra())
             {
                 yield return gizmo;
-            }
-            if ((int)parent.GetStatValue(inducers) > 0 && !mutating && !(this.tier == "tier3" && this.GetMutationsForTier("tier3").Count >= 2))
-            {
-                yield return new Command_Action
-                {
-                    defaultLabel = "Induce Mutation",
-                    action = delegate ()
-                    {
-                        this.mutationCountdown = 60000 * 3;
-                        this.mutating = true;
-                    }
-                };
             }
 	        if (Prefs.DevMode)
 	        {

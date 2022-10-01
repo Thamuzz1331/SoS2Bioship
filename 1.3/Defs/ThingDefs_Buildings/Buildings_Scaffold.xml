@@ -45,6 +45,10 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
 				<transformString>Bio_Ship_Beam</transformString>
@@ -126,6 +130,10 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+
 		</comps>
 		<placeWorkers>
 		</placeWorkers>
@@ -392,6 +400,9 @@
 				<stapleDef>BioShipHullTile_Insensate</stapleDef>
 				<species>bioship</species>
 				<transformString>BioShipHullTile</transformString>
+			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 		</comps>
 		<placeWorkers>

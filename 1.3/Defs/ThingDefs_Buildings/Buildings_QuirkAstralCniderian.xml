@@ -1,8 +1,8 @@
 <Defs>
 	<ThingDef ParentName="BaseShipArtilleryBuilding">
-		<defName>GiantSkipGanglia</defName>
-		<label>chunk skip ganglia</label>
-		<description>A psi-organized optmized to pluck small meteors from the void and hurl them as weapons.</description>
+		<defName>GrandNematocyst</defName>
+		<label>grand nematocyst</label>
+		<description>A giant nematocyst cluster, firing barbed threads laced with virulent toxin.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -61,5 +61,45 @@
 			<turretBurstWarmupTime>2</turretBurstWarmupTime>
 			<turretBurstCooldownTime>45.0</turretBurstCooldownTime>
 		</building>
+	</ThingDef>
+
+	<ThingDef ParentName="ArmorBase">
+		<defName>CoralArmor</defName>
+		<label>coral armor</label>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>CornerFiller</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>0</WorkToBuild>
+		</statBases>
+		<description>A layer of coral armor.</description>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<isArmor>true</isArmor>
+				<species>bioship</species>
+				<growsArmor>true</growsArmor>
+			</li>
+		</comps>
 	</ThingDef>
 </Defs>

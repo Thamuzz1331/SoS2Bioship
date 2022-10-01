@@ -10,48 +10,68 @@ using Verse;
 
 namespace RimWorld
 {
-    public class OcularPerk : IMutation
+    public class AstralCniderian : IMutation
     {
         bool IMutation.ShouldAddTo(CompBuildingBodyPart target)
         {
             bool ret = false;
             ret = ret || (target.parent.TryGetComp<CompShipHeart>() != null);
+            ret = ret || (target.parent.TryGetComp<CompArmorGrower>() != null);
             ret = ret || (target.parent.TryGetComp<CompMutationWorker>() != null);
             return ret;
         }
 
         void IMutation.Apply(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompArmorGrower>() != null)
+            {
+                target.parent.TryGetComp<CompArmorGrower>().armorClass.Add(ThingDef.Named("CoralArmor"));
+            }
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
-                heart.defs.TryGetValue("spinalTurretOptions", new List<ThingDef>())
-                    .Add(ThingDef.Named("GiantEyeLaser"));
+                heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
+                    .defs.Add(ThingDef.Named("GrandNematocyst"));
+                Hediff_Building toAdd = new Hediff_Building();
+                toAdd.label = "Astral Cniderian";
+                toAdd.visible = true;
+                toAdd.statMods = new Dictionary<string, float>()
+                {
+                };
+                heart.AddHediff(toAdd);
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {
-                CompMutationWorker mut = target.parent.TryGetComp<CompMutationWorker>();
-                mut.quirkPossibilities.Remove(this);
+                target.parent.TryGetComp<CompMutationWorker>().RemoveMutation<BoneArmor>("defense", "bone");
             }
 
         }
         void IMutation.Remove(CompBuildingBodyPart target)
         {
+            if (target.parent.TryGetComp<CompShipHeart>() != null)
+            {
+                CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
+                heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
+                    .defs.Remove(ThingDef.Named("GiantEyeLaser"));
+                heart.RemoveHediff("Mutant Eyebeast");
+            }
 
         }
-        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations) {
+        List<Tuple<IMutation, string, string>> IMutation.GetMutationsForTier(string tier, List<IMutation> existingMutations)
+        {
             return new List<Tuple<IMutation, string, string>>() { };
         }
-        String IMutation.GetTier() {
+        String IMutation.GetTier()
+        {
             return "quirk";
         }
         String IMutation.GetDescription()
         {
-            return "Occular Lineage\nThis beast belongs to the occular family, possessing a powerful eye laser.";
+            return "Astral Cniderian Lineage\nThis beast belongs to the cniderian family.  It possesses particularly powerful nematocysts and can grow layers of coral armor.";
         }
         public override string ToString()
         {
-            return "Occular Lineage";
+            return "Astral Cniderian Lineage";
         }
         Texture2D IMutation.GetIcon()
         {
@@ -62,9 +82,5 @@ namespace RimWorld
 
         }
 
-        float IMutation.StatMult(string stat)
-        {
-            return 1f;
-        }
     }
 }

@@ -216,6 +216,8 @@
 
 	  <Compile Include="Mutations\Perks\OcularPerk.cs" />
 	  <Compile Include="Mutations\Perks\BrainFromOuterSpace.cs" />
+	  <Compile Include="Mutations\Perks\CnidarianPerk.cs" />
+
 
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Splintering.cs"/>

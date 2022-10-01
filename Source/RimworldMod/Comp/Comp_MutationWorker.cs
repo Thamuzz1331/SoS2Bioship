@@ -98,7 +98,7 @@ namespace RimWorld
         };
         public static List<IMutation> quirkPossibilities = new List<IMutation>()
         {
-            new OcularPerk(), new GiantBrainFromOuterSpace()
+            new OcularPerk(), new GiantBrainFromOuterSpace(), new AstralCniderian(),
         };
         public MutTier mutationOptions = null;
 

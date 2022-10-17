@@ -17,7 +17,7 @@ namespace RimWorld
             {
 				PawnGenerationRequest req = new PawnGenerationRequest(
 					PawnKindDef.Named("AcidBlob_Small"), 
-					Faction.OfPlayer, 
+					null, 
 					PawnGenerationContext.NonPlayer, 
 					-1, 
 					false, 

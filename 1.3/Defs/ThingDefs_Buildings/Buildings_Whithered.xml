@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Beam</defName>
 		<label>Wall Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
@@ -39,9 +38,10 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold">
-				<species>bioship</species>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
 				<transformString>Bio_Ship_Beam</transformString>
+				<species>bioship</species>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -72,7 +72,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Beam_Unpowered</defName>
 		<label>whithered unpowered wall</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
@@ -108,7 +108,8 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_RoofMe"/>
-			<li Class="CompProperties_Scaffold">
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
 				<species>bioship</species>
 				<transformString>Bio_Ship_Beam_Unpowered</transformString>
 			</li>
@@ -181,7 +182,7 @@
 	</ThingDef>
 	<ThingDef ParentName="WhitheredCorner">
 		<defName>Whithered_Corner_OneOne</defName>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<label>Whithered  corner (1x1)</label>
 		<graphicData>
@@ -201,7 +202,7 @@
 	</ThingDef>
 	<ThingDef ParentName="WhitheredCorner">
 		<defName>Whithered_Corner_OneOneFlip</defName>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<label>Whithered corner (1x1) flip</label>
 		<graphicData>
@@ -221,7 +222,7 @@
 	</ThingDef>
 	<ThingDef ParentName="WhitheredCorner">
 		<defName>Whithered_Corner_OneTwo</defName>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<label>Whithered corner (1x2)</label>
 		<graphicData>
@@ -243,7 +244,7 @@
 	</ThingDef>
 	<ThingDef ParentName="WhitheredCorner">
 		<defName>Whithered_Corner_OneTwoFlip</defName>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<label>Whithered corner (1x2) flip</label>
 		<graphicData>
@@ -265,7 +266,7 @@
 	</ThingDef>
 	<ThingDef ParentName="WhitheredCorner">
 		<defName>Whithered_Corner_OneThree</defName>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<label>Whithered corner (1x3)</label>
 		<graphicData>
@@ -287,7 +288,7 @@
 	</ThingDef>
 	<ThingDef ParentName="WhitheredCorner">
 		<defName>Whithered_Corner_OneThreeFlip</defName>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<label>Whithered corner (1x3) flip</label>
 		<graphicData>
@@ -313,7 +314,7 @@
 		<defName>WhitheredHullTile</defName>
 		<label>Whithered floor</label>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<category>Building</category>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
@@ -446,7 +447,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Engine_Small</defName>
 		<label>small bioengine Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -494,7 +495,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Engine</defName>
 		<label>medium engine Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -544,7 +545,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Engine_Large</defName>
 		<label>large bioengine Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -594,7 +595,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Sensor</defName>
 		<label>sensor Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipSensorCluster</texPath>
@@ -641,7 +642,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Maw_Small</defName>
 		<label>small ship maw Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>Standable</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_1x1</texPath>
@@ -677,6 +678,7 @@
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
+			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
@@ -688,7 +690,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Maw_Corpse</defName>
 		<label>corpse maw Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>Standable</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
@@ -724,6 +726,7 @@
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
+			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
@@ -737,7 +740,7 @@
 		<defName>SmallWeaponWhithered</defName>
 		<label>small weapon Whithered</label>
 		<description>A Whithered from a which small weapon turret will grow.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/HardpointRed</texPath>
@@ -766,7 +769,7 @@
 		<defName>MediumWeaponWhithered</defName>
 		<label>medium weapon Whithered</label>
 		<description>The Whithered from which a medium turret will grow.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/HardpointGreen</texPath>
@@ -793,7 +796,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>LargeWeaponWhithered</defName>
 		<label>large weapon Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
@@ -841,7 +844,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>FatStoreSmallWhithered</defName>
 		<label>fat store Whithered</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -888,7 +891,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>FatStoreLargeWhithered</defName>
 		<label>fat store scaffold</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -934,7 +937,7 @@
 		<defName>WhitheredInside_PassiveCooler</defName>
 		<label>radiator fin Whithered</label>
 		<description>Whithered for a radiator fin.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
@@ -1008,7 +1011,7 @@
 		<defName>WhitheredShieldGenerator</defName>
 		<label>psi shield Whithered</label>
 		<description>The heart will convert this to a shield ganglia.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
@@ -1118,7 +1121,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Giant_Mitochondira</defName>
 		<label>whithered giant mitochondria</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
@@ -1167,7 +1170,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Colossal_Mitochondira</defName>
 		<label>whithered colossal mitochondria</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>

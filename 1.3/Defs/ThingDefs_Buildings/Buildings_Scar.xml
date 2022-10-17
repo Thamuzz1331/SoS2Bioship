@@ -49,7 +49,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -85,6 +85,7 @@
 				<regenDef>Scar_Beam</regenDef>
 				<species>bioship</species>
 				<baseArmor>0.1</baseArmor>
+				<whitherTo>Whithered_Beam</whitherTo>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -125,7 +126,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -161,6 +162,7 @@
 				<regenDef>Scar_Beam_Unpowered</regenDef>
 				<species>bioship</species>
 				<baseArmor>0.1</baseArmor>
+				<whitherTo>Whithered_Beam_Unpowered</whitherTo>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>

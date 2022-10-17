@@ -28,16 +28,16 @@ namespace RimWorld
 			return 0f;
 		}
 
-		public override List<Thing> ConvertScaffold()
+		public override List<Thing> ConvertScaffold(bool instant = false)
 		{
 			if (parent.Faction == Faction.OfPlayer)
             {
 				return base.ConvertScaffold();
             }
 			List<Thing> ret = new List<Thing>();
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 100; i++)
 			{
-				ret.AddRange(base.ConvertScaffold());
+				ret.AddRange(base.ConvertScaffold(instant));
 			}
 			foreach (Thing t in ret)
             {

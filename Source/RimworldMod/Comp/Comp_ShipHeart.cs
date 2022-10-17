@@ -136,7 +136,7 @@ namespace RimWorld
                 }
                 foreach (Thing t in toWhither)
                 {
-                    t.TryGetComp<CompShipBodyPart>().Whither();
+                    t.TryGetComp<CompShipBodyPart>().Whither(true);
                 }
             }
             base.PostDestroy(mode, previousMap);
@@ -223,7 +223,6 @@ namespace RimWorld
             }
             switch (stat)
             {
-
                 case "metabolicEfficiency":
                     return ret * luciferMult;
                 case "metabolicSpeed":
@@ -247,6 +246,26 @@ namespace RimWorld
 			{
 				yield return gizmo;
 			}
+            if (Prefs.DevMode)
+	        {
+				yield return new Command_Action
+			    {
+				    defaultLabel = "DEBUG: Whither All",
+				    action = delegate()
+				    {
+                        List<Thing> toDestroy = new List<Thing>();
+                        foreach(Thing bp in body.bodyParts)
+                        {
+                            toDestroy.Add(bp);
+                        }
+                        foreach(Thing bp in toDestroy)
+                        {
+                            bp.TryGetComp<CompShipBodyPart>().Whither(false);
+                        }
+				    }
+			    };
+			}
+
 		}
 
         public override string ToString()
@@ -273,4 +292,5 @@ namespace RimWorld
             Scribe_Collections.Look<ThingDef>(ref defs, "defs", LookMode.Def);
         }
     }
+
 }

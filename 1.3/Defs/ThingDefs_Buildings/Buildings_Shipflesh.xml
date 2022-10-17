@@ -776,7 +776,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Maw_Small</defName>
 		<label>small ship maw</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_TrapDamager</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_1x1</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -795,6 +795,8 @@
 			<WorkToBuild>0</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
+			<TrapMeleeDamage>100</TrapMeleeDamage>
+			<TrapSpringChance>1.0</TrapSpringChance>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>Small shipmaw.</description>
@@ -826,7 +828,9 @@
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
+			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
+			<trapDestroyOnSpring>false</trapDestroyOnSpring>
 		</building>
 		<costList>
 		</costList>
@@ -837,7 +841,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Maw_Corpse</defName>
 		<label>corpse maw</label>
-		<thingClass>Building</thingClass>
+		<thingClass>Building_TrapDamager</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -856,6 +860,8 @@
 			<WorkToBuild>0</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
+			<TrapMeleeDamage>200</TrapMeleeDamage>
+			<TrapSpringChance>1.0</TrapSpringChance>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>Corpse maw.</description>
@@ -887,7 +893,9 @@
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
+			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
+			<trapDestroyOnSpring>false</trapDestroyOnSpring>
 		</building>
 		<costList>
 		</costList>

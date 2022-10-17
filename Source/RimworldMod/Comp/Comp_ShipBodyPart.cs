@@ -116,28 +116,65 @@ namespace RimWorld
             return ShipProps.isArmor;
         }
 
-        public void Whither()
+        public void Whither(bool heartDeath = false)
         {
             if (this.ShipProps.isArmor)
             {
                 this.parent.Destroy();
-            } else if 
-            (this.ShipProps.whitherTo != null)
-            {
-                Thing replacement = ThingMaker.MakeThing(ThingDef.Named(this.ShipProps.whitherTo));
-                replacement.Rotation = parent.Rotation;
-                replacement.Position = parent.Position;
-                replacement.SetFaction(parent.Faction);
-                if (replacement.TryGetComp<CompColorable>() != null)
+            } else {
+                if (!heartDeath && parent is Building_Trap)
                 {
-                    replacement.TryGetComp<CompColorable>().SetColor(Color.gray);
+                    foreach (IntVec3 c in GenAdjFast.AdjacentCellsCardinal(parent.Position))
+                    {
+                        foreach(Thing adj in c.GetThingList(parent.Map))
+                        {
+                            if (adj is Pawn)
+                            {
+                                ((Building_Trap)parent).Spring((Pawn)adj);
+                                adj.SetPositionDirect(parent.Position);
+                                return;
+                            }
+                        }
+                    }
+                } else
+                {
+                    if (!heartDeath && Rand.Chance(0.3f))
+                    {
+                        List<Thing> onSpace = parent.Position.GetThingList(parent.Map);
+                        if (onSpace.Count == 2) { 
+                            foreach(Thing loc in onSpace)
+                            {
+                                if (loc is Pawn)
+                                {
+                                    Thing replacement = ThingMaker.MakeThing(ThingDef.Named("Maw_Small"));
+                                    replacement.Rotation = parent.Rotation;
+                                    replacement.Position = parent.Position;
+                                    replacement.SetFaction(parent.Faction);
+                                    replacement.SpawnSetup(parent.Map, false);
+                                    ((Building_Trap)replacement).Spring((Pawn)loc);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                 }
-                IntVec3 c = parent.Position;
-                TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);
-                parent.Map.terrainGrid.RemoveTopLayer(c, false);
-                Map m = parent.Map;
+                if (this.ShipProps.whitherTo != null)
+                {
+                    Thing replacement = ThingMaker.MakeThing(ThingDef.Named(this.ShipProps.whitherTo));
+                    replacement.Rotation = parent.Rotation;
+                    replacement.Position = parent.Position;
+                    replacement.SetFaction(parent.Faction);
+                    if (replacement.TryGetComp<CompColorable>() != null)
+                    {
+                        replacement.TryGetComp<CompColorable>().SetColor(Color.gray);
+                    }
+                    IntVec3 c = parent.Position;
+                    TerrainDef terrain = parent.Map.terrainGrid.TerrainAt(c);
+                    parent.Map.terrainGrid.RemoveTopLayer(c, false);
+                    Map m = parent.Map;
+                    replacement.SpawnSetup(m, false);
+                }
                 parent.Destroy();
-                replacement.SpawnSetup(m, false);
             }
         }
 

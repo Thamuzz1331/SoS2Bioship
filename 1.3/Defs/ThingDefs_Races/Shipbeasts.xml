@@ -1,4 +1,7 @@
 <Defs>
+
+	
+	
 	<ThingDef ParentName="AnimalThingBase">
 		<defName>AcidBlob_Small</defName>
 		<label>acid blob</label>

@@ -108,6 +108,8 @@
 
 	  <Compile Include="Buildings\Building_BioTorpTurret.cs"/>
 	  <Compile Include="Buildings\Building_Armor.cs"/>
+	  <Compile Include="Buildings\Building_MeatMaw.cs"/>
+
 
 	  <Compile Include="Hediffs\Luciferium.cs"/>
 	  <Compile Include="Hediffs\Reflect.cs" />
@@ -153,6 +155,8 @@
 	  <Compile Include="Comp\Comp_MutationInducer.cs"/>
 	  <Compile Include="Comp\CompProperties_MutationInducer.cs"/>
 
+	  <Compile Include="Comp\Comp_NutrientInjector.cs"/>
+	  <Compile Include="Comp\CompProperties_NutrientInjector.cs"/>
 
 	  <Compile Include="Comp\Comp_BioshipSpawner.cs"/>
 	  <Compile Include="Comp\CompProperties_BioshipSpawner.cs"/>

@@ -48,7 +48,6 @@
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
-
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
 				<transformString>Bio_Ship_Beam</transformString>
@@ -133,7 +132,6 @@
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
-
 		</comps>
 		<placeWorkers>
 		</placeWorkers>
@@ -757,12 +755,16 @@
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
+			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
 		</building>
 		<costList>
 			<ProtienPutty>2</ProtienPutty>
 			<Neutroamine>4</Neutroamine>
 		</costList>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentTrap</li>
+		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
@@ -806,11 +808,15 @@
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
+			<isTrap>true</isTrap>
 		</building>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
 			<Neutroamine>15</Neutroamine>
 		</costList>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentTrap</li>
+		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>

@@ -10,7 +10,7 @@ namespace RimWorld
 {
 	public class CompShipScaffoldConverter : CompScaffoldConverter
 	{
-		public override List<Thing> ConvertScaffold()
+		public override List<Thing> ConvertScaffold(bool instant = false)
 		{
 			List<Thing> ret = base.ConvertScaffold();
 			if (body.source.Count < 4)

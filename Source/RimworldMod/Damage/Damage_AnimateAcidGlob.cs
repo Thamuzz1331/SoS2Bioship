@@ -15,6 +15,8 @@ namespace RimWorld
         {
 			if (damageCountdown <= 0 && canSpawn && this.damageRemaining > 240f)
             {
+			//TODO: Fix this
+			/*
 				PawnGenerationRequest req = new PawnGenerationRequest(
 					PawnKindDef.Named("AcidBlob_Small"), 
 					null, 
@@ -29,6 +31,7 @@ namespace RimWorld
 				GenSpawn.Spawn(blob, this.Position, this.Map, Rot4.North);
 				this.damageRemaining -= 240f;
 				canSpawn = false;
+			*/
 			}
 			base.Tick();
 		}

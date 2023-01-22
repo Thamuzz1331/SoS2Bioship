@@ -23,14 +23,20 @@ using RimworldMod.VacuumIsNotFun;
 using System.Collections;
 using System.Reflection.Emit;
 using UnityEngine.SceneManagement;
+using LivingBuildings;
+
 
 namespace BioShip
 {
 	[StaticConstructorOnStartup]
 	public class BioShip : ModBase
 	{
+		public static HugsLib.Utils.ModLogger instLogger;
+
 		public static Texture2D NutrientTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.5f, 0.5f, 0.1f));
 		public static Texture2D MutationBackground = SolidColorMaterials.NewSolidColorTexture(new Color(0.5f, 0.5f, 0.1f));
+
+		static BioShip() { }
 
 		public override string ModIdentifier
 		{
@@ -41,8 +47,12 @@ namespace BioShip
 		public override void Initialize()
 		{
 			base.Initialize();
-			//var original = typeof(ShipUtility).GetMethod("LaunchFailReasons");
-			//HarmonyInst.Unpatch(original, HarmonyPatchType.All, "ShipInteriorMod2");
+		}
+
+		public override void DefsLoaded()
+		{
+			base.DefsLoaded();
+			Log.Message("Bioship Loaded");
 		}
 
 		public static List<TerrainDef> shipTerrainDefs = new List<TerrainDef>()
@@ -137,11 +147,8 @@ namespace BioShip
 
 		public static float HeatMultiplier(CompShipCombatShield shield, Projectile_ExplosiveShipCombat proj)
         {
+			//TODO: Fix this
 			float ret = 1f;
-			if (shield.Props.archotech)
-            {
-				ret *= 0.75f;
-            }
 			CompBuildingBodyPart bodyPart = shield.parent.TryGetComp<CompBuildingBodyPart>();
 			if (bodyPart != null && bodyPart.HeartSpawned)
             {
@@ -164,6 +171,7 @@ namespace BioShip
             }
 			return ret;
         }
+
 		private static Type salvageDialogType = AccessTools.TypeByName("Dialog_SalvageShip");
 
 		public static void OpenSalvageWindow()
@@ -244,7 +252,6 @@ namespace BioShip
         }
 
 	}
-
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
 	public static class FindLaunchFailReasonsBioship
 	{
@@ -346,7 +353,7 @@ namespace BioShip
 		};
 	}
 
-
+	/*
 	[HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
 	public static class BioshipInterstellarFailReasons
     {
@@ -689,5 +696,5 @@ namespace BioShip
             }			
 			return false;
         }
-	}
+	}*/
 }

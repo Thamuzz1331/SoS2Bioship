@@ -22,6 +22,8 @@ namespace RimWorld
 
         public override void CompTick()
         {
+            //TODO: Fix this
+            /*
             if (active)
             {
                 if (emitCounter <= 0)
@@ -31,6 +33,7 @@ namespace RimWorld
                 }
                 emitCounter--;
             }
+            */
         }
 	}
 }

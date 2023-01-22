@@ -28,6 +28,8 @@ namespace RimWorld
         public override void CompTick()
         {
 			base.CompTick();
+//TODO: Update this
+/*
             if (active) {
 				if (emitCounter <= 0)
 				{
@@ -36,6 +38,7 @@ namespace RimWorld
 				}
 				emitCounter--;
 			}
+*/
         }
 
 		protected void Emit()

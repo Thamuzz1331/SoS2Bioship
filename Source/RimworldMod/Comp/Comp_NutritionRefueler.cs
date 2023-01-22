@@ -6,6 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 using SaveOurShip2;
+using LivingBuildings;
 
 namespace RimWorld
 {

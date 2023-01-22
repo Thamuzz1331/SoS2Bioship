@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using LivingBuildings;
 
 namespace RimWorld
 {
@@ -21,11 +22,10 @@ namespace RimWorld
         public bool luciferiumAddiction = false;
         public bool luciferiumSupplied = false;
         public CompRegenWorker regenWorker;
-        public CompMutationWorker mutator;
         public CompAggression aggression;
-        public CompArmorGrower armorGrower;
         public bool initialized = false;
         public float maxResistence = 0.15f;
+        public ShipGeneline geneline = null;
 
         public Dictionary<DamageDef, float> resistances = new Dictionary<DamageDef, float>();
 
@@ -55,14 +55,18 @@ namespace RimWorld
             {"LightSpineLauncher", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Spine_Light")
             })},
+            {"LightSpineLauncher", new DefOptions(new List<ThingDef>(){
+                ThingDef.Named("Spine_Light")
+            })},
         };
-
+        
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
             Scribe_Values.Look<bool>(ref luciferiumAddiction, "luciferiumAddiction", false);
             Scribe_Values.Look<bool>(ref luciferiumSupplied, "luciferiumSupplied", false);
+            Scribe_Values.Look<ShipGeneline>(ref geneline, "geneline", null);
             Scribe_Collections.Look<DamageDef, float>(ref resistances, "resistences", LookMode.Def, LookMode.Value);
             Scribe_Collections.Look<string, DefOptions>(ref defs, "defs", LookMode.Value, LookMode.Deep);
         }
@@ -80,20 +84,22 @@ namespace RimWorld
             if (!stats.ContainsKey("shieldStrength"))
                 stats.Add("shieldStrength", 0.75f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
-            mutator = parent.TryGetComp<CompMutationWorker>();
-            if (mutator.tier != "tier1")
-            {
-                mutator.UpgradeMutationTier(mutator.tier);
-            }
             aggression = parent.TryGetComp<CompAggression>();
-            armorGrower = parent.TryGetComp<CompArmorGrower>();
             base.PostSpawnSetup(respawningAfterLoad);
             regenWorker.body = this.body;
-            mutator.body = this.body;
-            armorGrower.body = this.body;
             if (!respawningAfterLoad && !initialized)
             {
-                mutator.GetInitialMutations(this.body);
+                geneline = ShipGenelineMaker.MakeShipGeneline(ShipGenelineDef.Named(HeartProps.geneline));
+                this.AddGene(geneline.smallTurretGene);
+                this.AddGene(geneline.mediumTurretGene);
+                this.AddGene(geneline.largeTurretGene);
+                this.AddGene(geneline.spinalTurretGene);
+                this.AddGene(geneline.armor);
+                foreach (BuildingGene b in geneline.genes)
+                {
+                    this.AddGene(b);
+                }
+
                 initialized = true; //When the ship takes off the comps get regenerated.  This ensures that the initial mutations will only proc once.
             }
             if (!respawningAfterLoad)

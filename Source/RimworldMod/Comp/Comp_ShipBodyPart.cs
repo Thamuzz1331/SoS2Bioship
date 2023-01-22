@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using LivingBuildings;
 
 namespace RimWorld
 {
@@ -30,13 +31,6 @@ namespace RimWorld
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad && !initialized && body != null && body.heart != null)
             {
-                foreach (IMutation mut in ((CompShipHeart)body.heart).mutator.mutations)
-                {
-                    if (mut.ShouldAddTo(this))
-                    {
-                        mut.Apply(this);
-                    }
-                }
                 initialized = true;
             }
             foreach (IntVec3 c in GenAdjFast.AdjacentCellsCardinal(parent.Position))

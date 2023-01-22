@@ -10,6 +10,8 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class Projectile_ShieldBatteringProjectile : Projectile_ExplosiveShipCombat
     {
+        //TODO: Fix this
+/*
         public override void Tick()
         {
             Map m = this.Map;
@@ -30,5 +32,6 @@ namespace RimWorld
                 }
             }
         }
+*/
     }
 }

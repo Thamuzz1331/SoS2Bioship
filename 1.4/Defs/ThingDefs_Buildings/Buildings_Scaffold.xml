@@ -1,0 +1,1607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	
+	<DesignatorDropdownGroupDef>
+		<defName>Protien_Scaffold</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Beam</defName>
+		<label>Protien Wall Scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>Impassable</passability>
+		<designatorDropdown>Protien_Scaffold</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>CornerFiller</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas_ICON</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh.</description>
+		<designationCategory>Ship</designationCategory>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<comps>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
+				<transformString>Bio_Ship_Beam</transformString>
+				<species>bioship</species>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<costList>
+			<Steel>2</Steel>
+			<Plasteel>1</Plasteel>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Beam_Unpowered</defName>
+		<label>unpowered protien wall Scaffold</label>
+		<designatorDropdown>Protien_Scaffold</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>Impassable</passability>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>CornerFiller</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas_ICON</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh.</description>
+		<designationCategory>Ship</designationCategory>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Beam_Unpowered</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<costList>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<!-- corners -->
+	<DesignatorDropdownGroupDef>
+		<defName>Protien_Scaffold_Corners</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase" Name="ScaffoldCornerBase" Abstract="True">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<Flammability>0</Flammability>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>true</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCornerBase" Name="ScaffoldCorner" Abstract="True">
+		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh.</description>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<designationCategory>Ship</designationCategory>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCorner">
+		<defName>Scaffold_Corner_OneOne</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
+		<label>scaffold  corner (1x1)</label>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Scaffold_Corner_OneOne_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Corner_OneOne</transformString>
+			</li>
+		</comps>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/1x1_Scaffold</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>2</MaxHitPoints>
+		</statBases>
+		<costList>
+			<ProtienPutty>2</ProtienPutty>
+		</costList>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCorner">
+		<defName>Scaffold_Corner_OneOneFlip</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
+		<label>scaffold corner (1x1) flip</label>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/1x1_ScaffoldFlip</texPath>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Scaffold_Corner_OneOneFlip_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Corner_OneOneFlip</transformString>
+			</li>
+		</comps>
+		<statBases>
+			<MaxHitPoints>2</MaxHitPoints>
+		</statBases>
+		<costList>
+			<ProtienPutty>2</ProtienPutty>
+		</costList>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCorner">
+		<defName>Scaffold_Corner_OneTwo</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
+		<label>scaffold corner (1x2)</label>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/1x2_Scaffold</texPath>
+			<drawSize>(1,2)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Scaffold_Corner_OneTwo_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Corner_OneTwo</transformString>
+			</li>
+		</comps>
+		<statBases>
+			<MaxHitPoints>5</MaxHitPoints>
+		</statBases>
+		<costList>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<size>(1,2)</size>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCorner">
+		<defName>Scaffold_Corner_OneTwoFlip</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<label>scaffold corner (1x2) flip</label>
+		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/1x2_ScaffoldFlip</texPath>
+			<drawSize>(1,2)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Scaffold_Corner_OneTwoFlip_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Corner_OneTwoFlip</transformString>
+			</li>
+		</comps>
+		<statBases>
+			<MaxHitPoints>5</MaxHitPoints>
+		</statBases>
+		<costList>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<size>(1,2)</size>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCorner">
+		<defName>Scaffold_Corner_OneThree</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
+		<label>scaffold corner (1x3)</label>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/1x3_Scaffold</texPath>
+			<drawSize>(1,3)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Scaffold_Corner_OneThree_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Corner_OneThree</transformString>
+			</li>
+		</comps>
+		<statBases>
+			<MaxHitPoints>7</MaxHitPoints>
+		</statBases>
+		<costList>
+			<ProtienPutty>4</ProtienPutty>
+		</costList>
+		<size>(1,3)</size>
+	</ThingDef>
+	<ThingDef ParentName="ScaffoldCorner">
+		<defName>Scaffold_Corner_OneThreeFlip</defName>
+		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<label>scaffold corner (1x3) flip</label>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/1x3_ScaffoldFlip</texPath>
+			<drawSize>(1,3)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>Scaffold_Corner_OneThreeFlip_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>Bio_Ship_Corner_OneThreeFlip</transformString>
+			</li>
+		</comps>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+		</statBases>
+		<costList>
+			<ProtienPutty>4</ProtienPutty>
+		</costList>
+		<size>(1,3)</size>
+	</ThingDef>
+	<!-- beam misc -->
+	<!-- hull -->
+	<DesignatorDropdownGroupDef>
+		<defName>Protien_Scaffold_Tile</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldHullTile</defName>
+		<designatorDropdown>Protien_Scaffold_Tile</designatorDropdown>
+		<label>scaffold floor</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldHullPlate</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<seeThroughFog>true</seeThroughFog>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/ScaffoldTransparent</texPath>
+			</blueprintGraphicData>
+		</building>
+		<coversFloor>false</coversFloor>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<passability>Standable</passability>
+		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+			<Beauty>1</Beauty>
+		</statBases>
+		<description>Fleshy floors</description>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>BioShipHullTile_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>BioShipHullTile</transformString>
+			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<costList>
+			<ProtienPutty>1</ProtienPutty>
+		</costList>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Ship</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<fillPercent>0.0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Airlock</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldAirlock</defName>
+		<label>bioship sphintcer scaffold</label>
+		<description>Scaffold to grow a sphincter.</description>
+		<designationCategory>Ship</designationCategory>
+		<category>Building</category>
+		<thingClass>Building_ShipAirlock</thingClass>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/DoorScaffolding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<!--  no damage marks because they don't move with the door
+        <rect>(0,0.12,1,0.76)</rect>-->
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+		<costList>
+			<ProtienPutty>1</ProtienPutty>
+			<Neutroamine>5</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>BioShipAirlockInsensate</stapleDef>
+				<species>bioship</species>
+				<transformString>BioShipAirlock</transformString>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<shipPart>true</shipPart>
+			<isInert>true</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+			<soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Door/Door_Blueprint</texPath>
+			</blueprintGraphicData>
+			<blueprintClass>Blueprint_Door</blueprintClass>
+			<roamerCanOpen>false</roamerCanOpen>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<!-- organ -->
+	<!--Engine Scaffolds-->
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Engines</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Engine_Small</defName>
+		<label>small bioengine scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Scaffold_Engines</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/EngineScaffold_Small</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,3)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>GangliaClusterScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A chemfuel-powered organic engine capable of launching a ship into orbit. Not suitable for interplanetary travel.</description>
+		<size>(2,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShip_Engine_Small</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShipEngine</li>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Engine</defName>
+		<label>medium engine scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Scaffold_Engines</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/EngineScaffold_Medium</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>GangliaClusterScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>15</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A chemfuel-powered engine capable of launching a ship into orbit. Not suitable for interplanetary travel.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
+		<size>(3,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShip_Engine</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShipEngine</li>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>12</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Engine_Large</defName>
+		<label>large bioengine scaffold</label>
+		<designatorDropdown>Scaffold_Engines</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/EngineScaffold_Large</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>GangliaClusterScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>25</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A nuclear-powered engine capable of launching a ship into orbit, at the cost of irradiating the surrounding area. Not suitable for interplanetary travel.\n\nProvides six times the speed of small engines.</description>
+		<size>(5,5)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShip_Engine_Large</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShipEngine</li>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>16</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+	<DesignatorDropdownGroupDef>
+		<defName>Sensor_Scaffold</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Sensor</defName>
+		<label>sensor scaffold</label>
+		<designatorDropdown>Sensor_Scaffold</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipSensorCluster</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Scaffold for an organic sensor array.</description>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShip_SensorCluster</transformString>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>6</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Maw</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Maw_Small</defName>
+		<label>small ship maw scaffold</label>
+		<designatorDropdown>Scaffold_Maw</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/MawScaffold_1x1</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Scaffold for an small shipmaw.</description>
+		<size>(1,1)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>smallMawOptions</transformString>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<isTrap>true</isTrap>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>2</ProtienPutty>
+			<Neutroamine>4</Neutroamine>
+		</costList>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentTrap</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Maw_Corpse</defName>
+		<label>corpse maw scaffold</label>
+		<designatorDropdown>Scaffold_Maw</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/MawScaffold_2x2</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Scaffold for an small shipmaw.</description>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>Maw_Corpse</transformString>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<isTrap>true</isTrap>
+		</building>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<placeWorkers>
+			<li>PlaceWorker_NeverAdjacentTrap</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Turret</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>SmallWeaponScaffold</defName>
+		<label>small weapon scaffold</label>
+		<description>A scaffold from a which small weapon turret will grow.</description>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Turret</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<size>(2,2)</size>
+		<comps>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>smallTurretOptions</transformString>
+			</li>
+		</comps>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>SmallWeaponScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>MediumWeaponScaffold</defName>
+		<label>medium weapon scaffold</label>
+		<designatorDropdown>Scaffold_Turret</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<description>The scaffold from which a medium turret will grow.</description>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<size>(3,3)</size>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>mediumTurretOptions</transformString>
+			</li>
+		</comps>
+		<building>
+		</building>
+		<costList>
+			<ProtienPutty>12</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretPlasma_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>MediumWeaponScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>LargeWeaponScaffold</defName>
+		<label>large weapon scaffold</label>
+		<designatorDropdown>Scaffold_Turret</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldTorpedo</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6,3)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>LargeWeaponScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Scaffold for an small shipmaw.</description>
+		<size>(6,3)</size>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>largeTurretOptions</transformString>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>16</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc5</designationHotKey>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Spinal</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>SpinalRootScaffold</defName>
+		<label>spinal weapon root scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<description>Scaffold for the primary attachment point of a bioship spinal weapon.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/SpinalMountEmitter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,3.2)</drawSize>
+		</graphicData>
+		<size>(5,3)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1.0</fillPercent>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Spinal</designatorDropdown>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<statBases>
+			<MaxHitPoints>20</MaxHitPoints>
+			<WorkToBuild>1500</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<ProtienPutty>12</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>SpinalWeaponRoot</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_SpinalMountPort</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>SpinalWeaponScaffold</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.9</uiIconScale>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>SpinalCoilScaffold</defName>
+		<label>spinal coil scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designatorDropdown>Scaffold_Spinal</designatorDropdown>
+		<description>A middle segment of a spinal-mount weapon. Attach one or more of these to a root, then add a barrel to complete the gun.\n\nIncreases base damage by 25%, but also increases power consumption and heat generated by the same percentage.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/SpinalMountAmplifier</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,1.2)</drawSize>
+		</graphicData>
+		<size>(5,1)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<designationHotKey>Misc12</designationHotKey>
+		<fillPercent>0.5</fillPercent>
+		<designationCategory>Ship</designationCategory>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<statBases>
+			<MaxHitPoints>2</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<ProtienPutty>6</ProtienPutty>
+			<Neutroamine>5</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>SpinalWeaponCoil</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_BioShipNeedsSpinalMountPort</li>
+			<li>PlaceWorker_SpinalMountPort</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>SpinalWeaponScaffold</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.65</uiIconScale>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>SpinalWeaponScaffold</defName>
+		<label>spinal weapon scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designatorDropdown>Scaffold_Spinal</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<description>The final segment of a spinal-mount weapon. Should be placed outside the ship, unless you want a new hole in your hull.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,4.2)</drawSize>
+		</graphicData>
+		<size>(5,4)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<designationHotKey>Misc12</designationHotKey>
+		<fillPercent>1</fillPercent>
+		<statBases>
+			<MaxHitPoints>12</MaxHitPoints>
+			<WorkToBuild>4000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
+		</statBases>
+		<costList>
+			<ProtienPutty>20</ProtienPutty>
+			<Neutroamine>100</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>spinalTurretOptions</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_BioShipNeedsSpinalMountPort</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>SpinalWeaponScaffold</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.65</uiIconScale>
+		<building>
+		</building>
+	</ThingDef>
+	
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Fat</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>FatStoreSmallScaffold</defName>
+		<label>small fat store scaffold</label>
+		<designatorDropdown>Scaffold_Fat</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldFatSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,2)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<statBases>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Base for the growth a fat deposite.</description>
+		<size>(1,2)</size>
+		<costList>
+			<ProtienPutty>4</ProtienPutty>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>FatStoreSmall</transformString>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>FatStoreLargeScaffold</defName>
+		<label>large fat store scaffold</label>
+		<designatorDropdown>Scaffold_Fat</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldFatSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.40</fillPercent>
+		<statBases>
+			<MaxHitPoints>1</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Base for the growth a fat deposite.</description>
+		<size>(3,5)</size>
+		<costList>
+			<ProtienPutty>20</ProtienPutty>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>FatStoreLarge</transformString>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Thermoregulation</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldInside_PassiveCooler</defName>
+		<label>radiator fin scaffold</label>
+		<description>Scaffold for a radiator fin.</description>
+		<designatorDropdown>Scaffold_Thermoregulation</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>Impassable</passability>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/RadiatorBaseScaffold</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BioRadiatorBase</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<holdsRoof>true</holdsRoof>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<castEdgeShadows>true</castEdgeShadows>
+		<statBases>
+			<WorkToBuild>100</WorkToBuild>
+			<MaxHitPoints>5</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<ProtienPutty>4</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+			<li>PlaceWorker_Radiator</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipInside_PassiveCooler</transformString>
+			</li>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
+	</ThingDef>
+	
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Shield</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldShieldGenerator</defName>
+		<label>psi shield scaffold</label>
+		<description>The heart will convert this to a shield ganglia.</description>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<size>(3,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designatorDropdown>Scaffold_Shield</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldShieldGenerator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(2.6, 0.8, 2.6)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.2, 0.2, 2.8, 2.8)</rect>
+			</damageData>
+		</graphicData>
+		<placeWorkers>
+			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
+		</placeWorkers>
+		<comps>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>shieldEmitter</transformString>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>AdvancedGangliaClusterScaffold</li>
+		</researchPrerequisites>
+		<costList>
+			<ProtienPutty>12</ProtienPutty>
+			<Neutroamine>100</Neutroamine>
+		</costList>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Heatsink</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldHeatsink</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<label>small heatsink scaffold</label>
+		<description>Scaffold for a bio heatsink</description>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/HeatSinkScaffold_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>350</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>25</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipHeatsink</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldHeatsinkLarge</defName>
+		<label>large heatsink scaffold</label>
+		<description>Scaffold for a bio heatsink</description>
+		<size>(4,4)</size>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/HeatSinkScaffold_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>350</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<ProtienPutty>24</ProtienPutty>
+			<Neutroamine>100</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipHeatsinkLarge</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Scaffold_Mitochondira</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Giant_Mitochondira</defName>
+		<label>giant mitochondria scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldGiantMitochondria</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,3)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<size>(2,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>Giant_Mitochondira</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>7</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Colossal_Mitochondira</defName>
+		<label>colossal mitochondria scaffold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldGiantMitochondria</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,6)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>0</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<size>(4,6)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory>Ship</designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>Colossal_Mitochondira</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>16</ProtienPutty>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
+
+	<DesignatorDropdownGroupDef>
+		<defName>Bio_Capacitor</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>BioCapacitorSmallScaffold</defName>
+		<label>bio ship</label>
+		<designatorDropdown>Bio_Capacitor</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<graphicData>
+			<texPath>Things/Building/Ship/CapacitorSmall</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>0.40</fillPercent>
+		<statBases>
+			<MaxHitPoints>1</MaxHitPoints>
+			<WorkToBuild>400</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Efficiently stores up to 1,000Wd of energy.</description>
+		<size>(1,2)</size>
+		<costList>
+			<Steel>2</Steel>
+			<Plasteel>7</Plasteel>
+			<ComponentSpacer>1</ComponentSpacer>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioCapacitorSmall</transformString>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Ship</designationCategory>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>SalvageMawScafold</defName>
+		<label>salvage maw scafold</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory>Ship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/MawScaffold_2x2</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<passability>Standable</passability>
+		<fillPercent>0.1</fillPercent>
+		<statBases>
+			<WorkToBuild>5000</WorkToBuild>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>Harvests the remains of enemy ships after a battle. Each salvage bay can retrieve up to 1,000kg of material from a ship.</description>
+		<size>(5,5)</size>
+		<building>
+			<shipPart>true</shipPart>
+			<isEdifice>false</isEdifice>
+		</building>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>SalvageMaw</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+			<li>MetabolicScaffoldAdvanced</li>
+		</researchPrerequisites>
+
+	</ThingDef>
+</Defs>

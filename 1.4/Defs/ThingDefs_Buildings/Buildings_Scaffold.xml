@@ -14,7 +14,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -90,7 +90,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -125,6 +125,79 @@
 				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
 				<species>bioship</species>
 				<transformString>Bio_Ship_Beam_Unpowered</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<costList>
+			<ProtienPutty>3</ProtienPutty>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>Scaffold_Armor_Unpowered</defName>
+		<label>unpowered armor scaffold</label>
+		<designatorDropdown>Protien_Scaffold</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>Impassable</passability>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas_ICON</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to armor.</description>
+		<designationCategory>Ship</designationCategory>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<comps>
+			<li Class="CompProperties_MutableScaffold">
+				<species>bioship</species>
+				<transformString>armor</transformString>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -463,7 +536,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -541,7 +614,7 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine_Small</transformString>
@@ -591,7 +664,7 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine</transformString>
@@ -642,7 +715,7 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine_Large</transformString>
@@ -695,7 +768,7 @@
 		<size>(1,1)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
@@ -746,7 +819,7 @@
 		<size>(1,1)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>smallMawOptions</transformString>
@@ -798,7 +871,7 @@
 		<size>(2,2)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Maw_Corpse</transformString>
@@ -872,7 +945,7 @@
 		</graphicData>
 		<size>(3,3)</size>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>mediumTurretOptions</transformString>
@@ -921,7 +994,7 @@
 		<size>(6,3)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>largeTurretOptions</transformString>
@@ -1292,7 +1365,7 @@
 			<Flammability>0.5</Flammability>
 		</statBases>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldShieldGenerator</texPath>
+			<texPath>Things/Building/Scaffold/ScaffoldShield</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<shadowData>
@@ -1397,7 +1470,74 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 	</ThingDef>
-
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldCoolantCyst</defName>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<label>small coolant cyst scaffold</label>
+		<description>Scaffold for a coolant cyst.</description>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/CoolantCystScaffold_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>350</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<ProtienPutty>8</ProtienPutty>
+			<Neutroamine>25</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipCoolantCyst</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldCoolantCystLarge</defName>
+		<label>large coolant cyst scaffold</label>
+		<description>Scaffold for collant cyst</description>
+		<size>(4,4)</size>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/CoolantCystScaffold_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>350</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+			<ProtienPutty>24</ProtienPutty>
+			<Neutroamine>100</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipCoolantCystLarge</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Mitochondira</defName>
 	</DesignatorDropdownGroupDef>
@@ -1432,7 +1572,7 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Giant_Mitochondira</transformString>
@@ -1481,7 +1621,7 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Colossal_Mitochondira</transformString>
@@ -1589,7 +1729,7 @@
 		<costList>
 		</costList>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>SalvageMaw</transformString>

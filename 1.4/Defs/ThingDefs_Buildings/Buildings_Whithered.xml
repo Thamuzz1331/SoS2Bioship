@@ -341,7 +341,7 @@
 		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<TerrainId>FakeFloorShipwhithered</TerrainId>
 			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
@@ -379,7 +379,7 @@
 		<fillPercent>1</fillPercent>
 		<useHitPoints>true</useHitPoints>
 		<graphicData>
-			<texPath>Things/Building/Ship/BioShipSphincter</texPath>
+			<texPath>Things/Building/Ship/Biodoor_Spinchter_Mover</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<damageData>
 				<!--  no damage marks because they don't move with the door
@@ -402,7 +402,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_ShipHeat">
@@ -472,7 +472,7 @@
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -520,7 +520,7 @@
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine</transformString>
@@ -570,7 +570,7 @@
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_Engine_Large</transformString>
@@ -618,7 +618,7 @@
 		<description>Whithered for an organic sensor array.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
@@ -665,7 +665,7 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
@@ -713,7 +713,7 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(2,2)</size>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
@@ -777,7 +777,7 @@
 		</graphicData>
 		<size>(3,3)</size>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
@@ -819,7 +819,7 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(6,3)</size>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_RoofMe"/>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
@@ -1144,7 +1144,7 @@
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Giant_Mitochondira</transformString>
@@ -1193,7 +1193,7 @@
 		<size>(4,6)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Colossal_Mitochondira</transformString>

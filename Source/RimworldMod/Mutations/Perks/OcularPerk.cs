@@ -27,7 +27,7 @@ namespace RimWorld
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
                 heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
                     .defs.Add(ThingDef.Named("GiantEyeLaser"));
-                Hediff_Building toAdd = new Hediff_Building();
+                BuildingHediff toAdd = new BuildingHediff();
                 toAdd.label = "Mutant Eyebeast";
                 toAdd.visible = true;
                 toAdd.statMods = new Dictionary<string, float>()

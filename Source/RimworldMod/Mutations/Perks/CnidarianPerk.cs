@@ -33,13 +33,13 @@ namespace RimWorld
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
                 heart.defs.TryGetValue("spinalTurretOptions", new DefOptions(new List<ThingDef>()))
                     .defs.Add(ThingDef.Named("GrandNematocyst"));
-                Hediff_Building toAdd = new Hediff_Building();
-                toAdd.label = "Astral Cniderian";
-                toAdd.visible = true;
-                toAdd.statMods = new Dictionary<string, float>()
-                {
-                };
-                heart.AddHediff(toAdd);
+//                BuildingHediff toAdd = new Building();
+//                toAdd.label = "Astral Cniderian";
+//                toAdd.visible = true;
+//                toAdd.statMods = new Dictionary<string, float>()
+//                {
+//                };
+ //               heart.AddHediff(toAdd);
             }
             if (target.parent.TryGetComp<CompMutationWorker>() != null)
             {

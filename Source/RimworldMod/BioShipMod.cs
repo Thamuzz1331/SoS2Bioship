@@ -172,19 +172,6 @@ namespace BioShip
 			return ret;
         }
 
-		private static Type salvageDialogType = AccessTools.TypeByName("Dialog_SalvageShip");
-
-		public static void OpenSalvageWindow()
-        {
-			object[] parameters = new object[]
-            {
-				((Map)AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)).spawnedThings.Where(t=>(t.def.defName.Equals("ShipSalvageBay") || t.def.defName.Equals("SalvageMaw"))).Count(),
-				AccessTools.Field(shipCombatManagerType, "PlayerShip").GetValue(null)
-            };
-			Window salvageWindow = (Window)AccessTools.Constructor(salvageDialogType, new Type[]{typeof(int), typeof(Map)}).Invoke(parameters);
-			Find.WindowStack.Add(salvageWindow);
-        }
-
 		public static IntVec3 FindBurstLocation(CompShipCombatShield shield, LocalTargetInfo target)
         {
 			Map sourceMap = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
@@ -252,6 +239,7 @@ namespace BioShip
         }
 
 	}
+/*
 	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
 	public static class FindLaunchFailReasonsBioship
 	{
@@ -352,8 +340,7 @@ namespace BioShip
 			ThingDef.Named("BioShipHullTile")
 		};
 	}
-
-	/*
+*/
 	[HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
 	public static class BioshipInterstellarFailReasons
     {
@@ -371,6 +358,7 @@ namespace BioShip
         }
     }
 
+/*
 	[HarmonyPatch(typeof(ShipCombatOnGUI), "DrawShipRange")]
 	public static class BioShipCombatOnGUI
 	{
@@ -379,29 +367,16 @@ namespace BioShip
 		[HarmonyPostfix]
 		public static void DrawNutritionBars(ref float baseY)
 		{
-			if(Traverse.Create(shipCombatManagerType).Field("InCombat").GetValue<bool>())
+			Map mapPlayer = Find.Maps.Where(m => m.GetComponent<ShipHeatMapComp>().InCombat && !m.GetComponent<ShipHeatMapComp>().ShipCombatMaster).FirstOrDefault();
+			if (mapPlayer != null)
             {
-				Map playerShip = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
-				foreach(Thing h in playerShip.listerBuildings.allBuildingsColonist.Where(b => b.TryGetComp<CompShipHeart>() != null)) {
-					CompShipHeart heart = h.TryGetComp<CompShipHeart>();
-					Rect rect = new Rect(UI.screenWidth - 255, baseY - 40, 250, 40);
-					Verse.Widgets.DrawMenuSection(rect);
-					Widgets.FillableBar(rect.ContractedBy(6), heart.body.currentNutrition / heart.body.nutritionCapacity,
-					BioShip.NutrientTex);
+				MapCompBuildingTracker bioTracker = mapPlayer.GetComponent<MapCompBuildingTracker>();
+				float maxNutrion = 0;
+				float curNutrion = 0;
 
-					rect.y += 10;
-					rect.x = UI.screenWidth - 200;
-					rect.height = Text.LineHeight;
-
-					Widgets.Label(rect, "Nutrition: " + Mathf.Round(heart.body.currentNutrition));
-
-					baseY -= 50;
-                    
-                }
             }
 		}
 	}
-
 	[HarmonyPatch(typeof(CompRefuelable), "Refuel", new Type[] {typeof(List<Thing>)})]
 	public static class ButcherableScalingRefuel
     {

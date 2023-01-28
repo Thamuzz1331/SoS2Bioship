@@ -186,12 +186,6 @@
 					</subNodes>
 				</li>
 
-
-				<!-- Satisfy basic needs -->
-				<li Class="ThinkNode_Subtree">
-					<treeDef>VEF_SatisfyBasicNeedsWeirdEater</treeDef>
-				</li>
-
 				<!-- Tame animal: do useful things for the colony-->
 				<li Class="ThinkNode_ConditionalHasFaction">
 					<subNodes>

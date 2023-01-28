@@ -32,28 +32,22 @@ namespace RimWorld
         public Dictionary<string, DefOptions> defs = new Dictionary<string, DefOptions>()
         {
             {"smallTurretOptions", new DefOptions(new List<ThingDef>(){
-                ThingDef.Named("ShipTurret_Nematocyst")
             })},
             {"mediumTurretOptions", new DefOptions(new List<ThingDef>(){
-                ThingDef.Named("ShipTurret_BioPlasma"), ThingDef.Named("ShipTurret_BioAcid"),
-                ThingDef.Named("ShipTurret_BioPlasma"), ThingDef.Named("ShipTurret_BioAcid"),
             })},
             {"largeTurretOptions", new DefOptions(new List<ThingDef>(){
-                ThingDef.Named("HeavySpineLauncher"), ThingDef.Named("HeavySpineLauncher"),
-                ThingDef.Named("LightSpineLauncher"), ThingDef.Named("LightSpineLauncher"),
             })},
             {"spinalTurretOptions", new DefOptions(new List<ThingDef>(){})},
+            {"armor", new DefOptions(new List<ThingDef>(){
+            })},
             {"smallMawOptions", new DefOptions(new List<ThingDef>(){
-                ThingDef.Named("Maw_Small"), ThingDef.Named("Maw_Small"),
+                ThingDef.Named("Maw_Small"),
             })},
             {"shieldEmitter", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("BioShieldGenerator")
             })},
             {"HeavySpineLauncher", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Spine_Heavy")
-            })},
-            {"LightSpineLauncher", new DefOptions(new List<ThingDef>(){
-                ThingDef.Named("Spine_Light")
             })},
             {"LightSpineLauncher", new DefOptions(new List<ThingDef>(){
                 ThingDef.Named("Spine_Light")
@@ -66,7 +60,7 @@ namespace RimWorld
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
             Scribe_Values.Look<bool>(ref luciferiumAddiction, "luciferiumAddiction", false);
             Scribe_Values.Look<bool>(ref luciferiumSupplied, "luciferiumSupplied", false);
-            Scribe_Values.Look<ShipGeneline>(ref geneline, "geneline", null);
+            Scribe_Deep.Look<ShipGeneline>(ref geneline, "geneline", null);
             Scribe_Collections.Look<DamageDef, float>(ref resistances, "resistences", LookMode.Def, LookMode.Value);
             Scribe_Collections.Look<string, DefOptions>(ref defs, "defs", LookMode.Value, LookMode.Deep);
         }
@@ -89,17 +83,23 @@ namespace RimWorld
             regenWorker.body = this.body;
             if (!respawningAfterLoad && !initialized)
             {
+                Log.Message("Creating geneline");
                 geneline = ShipGenelineMaker.MakeShipGeneline(ShipGenelineDef.Named(HeartProps.geneline));
+                Log.Message("Adding small turret");
                 this.AddGene(geneline.smallTurretGene);
+                Log.Message("Adding medium turret");
                 this.AddGene(geneline.mediumTurretGene);
+                Log.Message("Adding large turret");
                 this.AddGene(geneline.largeTurretGene);
+                Log.Message("Adding spinal turret");
                 this.AddGene(geneline.spinalTurretGene);
+                Log.Message("Adding armor");
                 this.AddGene(geneline.armor);
+                Log.Message("Adding misc");
                 foreach (BuildingGene b in geneline.genes)
                 {
                     this.AddGene(b);
                 }
-
                 initialized = true; //When the ship takes off the comps get regenerated.  This ensures that the initial mutations will only proc once.
             }
             if (!respawningAfterLoad)

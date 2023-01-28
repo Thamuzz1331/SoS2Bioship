@@ -11,22 +11,20 @@ using LivingBuildings;
 
 namespace RimWorld
 {
-    public class Hediff_Luciferium : Hediff_Building
+    public class BuildingHediff_LuciferiumDrug : BuildingHediff_Drug
     {
-        public bool satisfied = false;
+        public bool satisfied = true;
 
-        Dictionary<string, float> statMults = new Dictionary<string, float>()
+        public override void Tick()
         {
-            {"metabolicEfficiency", 1.5f},
-            {"metabolicSpeed", 1.5f},
-            {"conciousness", 1.25f }
-        };
+
+        }
 
      	public override float StatMod(string stat)
         {
             if (satisfied)
             {
-                return statMults.TryGetValue(stat, 1f);
+                return statMods.TryGetValue(stat, 1f);
             } else
             {
                 return 0.85f;

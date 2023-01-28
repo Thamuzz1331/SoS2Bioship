@@ -10,18 +10,22 @@
 		<designationCategory></designationCategory>
 		<comps>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
+				<compClass>CompShipHeat</compClass>
 				<heatPerPulse>10</heatPerPulse>
 				<energyToFire>40</energyToFire>
 				<maxRange>25</maxRange>
+				<optRange>25</optRange>
 				<projectileSpeed>10</projectileSpeed>
 				<pointDefense>true</pointDefense>
+				<groundDefense>true</groundDefense>
+				<groundProjectile>Bullet_Ground_Laser</groundProjectile>
 				<singleFireSound>ShipCombatLaser</singleFireSound>
+				<groundMissRadius>2</groundMissRadius>
 				<threat>10</threat>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>150</basePowerConsumption>
+				<basePowerConsumption>75</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
@@ -32,12 +36,13 @@
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_Flickable"/>
+<!--
 			<li Class="CompProperties_MutableAmmo">
 				<defaultAmmo>Proj_ShipTurretNematocyst</defaultAmmo>
 				<defaultFakeAmmo>Proj_ShipTurretNematocyst</defaultFakeAmmo>
 				<defaultAmmoName>Nematocyst</defaultAmmoName>
-
 			</li>
+-->
 		</comps>
 		<building>
 			<turretGunDef>ShipTurret_NematocystTop</turretGunDef>
@@ -66,52 +71,15 @@
 				<range>12.9</range>
 				<warmupTime>0</warmupTime>
 				<noiseRadius>4</noiseRadius>
+				<forcedMissRadius>1</forcedMissRadius>
 				<burstShotCount>12</burstShotCount>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 				<requireLineOfSight>false</requireLineOfSight>
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
-				<defaultProjectile>Bullet_Fake_Nematocyst</defaultProjectile>
-				<spawnDef>Proj_ShipTurretNematocyst</spawnDef>
-				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-			</li>
-		</verbs>
-	</ThingDef>
-
-	<ThingDef ParentName="ShipTurret_Nematocyst">
-		<defName>ShipTurret_ClusteredNematocyst</defName>
-		<label>clustered nematocyst</label>
-		<description>A barbed thread capable of damaging enemy hulls and shooting down torpedos.</description>
-		<building>
-			<turretGunDef>ShipTurret_ClusteredNematocystTop</turretGunDef>
-			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
-			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
-		</building>
-	</ThingDef>
-	<ThingDef ParentName="BaseShipArtilleryWeapon">
-		<defName>ShipTurret_ClusteredNematocystTop</defName>
-		<label>Nematocyst</label>
-		<description>Nematocyst.  Can deliver powerful a sting at close range.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/TurretClusteredNematocyst</texPath>
-		</graphicData>
-		<verbs>
-			<li>
-				<label>launch nematocyst</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<range>12.9</range>
-				<warmupTime>0</warmupTime>
-				<noiseRadius>4</noiseRadius>
-				<burstShotCount>18</burstShotCount>
-				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-				<requireLineOfSight>false</requireLineOfSight>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
-				<defaultProjectile>Bullet_Fake_Nematocyst</defaultProjectile>
-				<spawnDef>Proj_ShipTurretNematocyst</spawnDef>
+				<defaultProjectile>Proj_ShipTurretNematocyst</defaultProjectile>
+				<spawnDef>Bullet_Fake_Nematocyst</spawnDef>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 			</li>
 		</verbs>
@@ -151,6 +119,25 @@
 			<damageDef>ShipNematocyst</damageDef>
 			<speed>100</speed>
 		</projectile>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Bullet_Ground_Nematocyst</defName>
+		<label>nematocyst thread</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>ShipNematocyst</damageDef>
+			<speed>200</speed>
+			<explosionRadius>1.9</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
 	</ThingDef>
 	<DamageDef Name="ShipNematocyst">
 		<defName>ShipNematocyst</defName>

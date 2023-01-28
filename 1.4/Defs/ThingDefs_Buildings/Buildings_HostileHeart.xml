@@ -28,7 +28,6 @@
 		<statBases>
 			<MaxHitPoints>1500</MaxHitPoints>
 			<Flammability>0</Flammability>
-			<MutationInducers>0</MutationInducers>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>The beating heart of a ship</description>
@@ -37,7 +36,7 @@
 			<li>ITab_Mutations</li>
 		</inspectorTabs>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_ShipHeart">
 				<species>bioship</species>
 				<shipspecies>bioship</shipspecies>
@@ -69,7 +68,6 @@
 			</li>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
-					<li>MutationInducer</li>
 				</linkableFacilities>
 			</li>
 		</comps>
@@ -123,7 +121,6 @@
 		<statBases>
 			<MaxHitPoints>1500</MaxHitPoints>
 			<Flammability>0</Flammability>
-			<MutationInducers>0</MutationInducers>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>The beating heart of a ship</description>
@@ -132,12 +129,11 @@
 			<li>ITab_Mutations</li>
 		</inspectorTabs>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_ShipHeart">
 				<species>bioship</species>
 				<shipspecies>bioship</shipspecies>
 			</li>
-			<li Class="CompProperties_ArmorGrower"/>
 			<li Class="CompProperties_Aggression">
 				<baseAggression>0</baseAggression>
 			</li>
@@ -145,7 +141,6 @@
 				<regenCost>1.75</regenCost>
 				<regenInterval>30</regenInterval>
 			</li>
-			<li Class="CompProperties_MutationWorker"/>
 			<li Class="CompProperties_ShipScaffoldConverterInstant">
 				<conversionInterval>0</conversionInterval>
 				<conversionCost>0</conversionCost>
@@ -164,7 +159,6 @@
 			</li>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
-					<li>MutationInducer</li>
 				</linkableFacilities>
 			</li>
 		</comps>

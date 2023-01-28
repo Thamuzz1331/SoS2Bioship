@@ -30,76 +30,36 @@ namespace RimWorld
             roofTileBio = new Graphic_256_Bio(bioRoofedData.Graphic);
         }
 
-
         private static Type compRoofMeType = AccessTools.TypeByName("CompRoofMe");
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            //base.PostSpawnSetup(respawningAfterLoad);
-            if (parent.Destroyed || parent.TryGetComp<CompShipBodyPart>() != null && parent.TryGetComp<CompShipBodyPart>().bodyId == "NA")
+            base.PostSpawnSetup(true);
+            if (respawningAfterLoad)
             {
                 return;
             }
-
             TerrainDef hullTerrain = DefDatabase<TerrainDef>.GetNamed(BioProps.TerrainId);
-            List<IntVec3> positions = new List<IntVec3>();
             foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(parent))
             {
-                positions.Add(pos);
-            }
-            Traverse.Create(this).Field("positions").SetValue(positions);
-            Traverse.Create(this).Field("map").SetValue(parent.Map);
-            foreach (IntVec3 pos in positions)
-            {
-                if(Props.roof)
-                    parent.Map.roofGrid.SetRoof(pos, CompRoofMe.roof);
-                TerrainDef currentTerrain = parent.Map.terrainGrid.TerrainAt(pos);
-                if (parent.Map.terrainGrid.TerrainAt(pos) == CompRoofMe.hullTerrain)
+                if(!parent.Map.terrainGrid.TerrainAt(pos).layerable)
                 {
-                    parent.Map.terrainGrid.RemoveTopLayer(pos, false);
-                }
-                if (base.Props.roof)
-                    parent.Map.roofGrid.SetRoof(pos, roof);
-                if (!CompRoofMeBio.IsShipTerrain(currentTerrain) && currentTerrain != hullTerrain)
-                {
+                    TerrainDef currentTerrain = parent.Map.terrainGrid.TerrainAt(pos);
                     parent.Map.terrainGrid.SetTerrain(pos, hullTerrain);
                 }
             }
         }
 
-        public override void PostDestroy(DestroyMode m, Map previousMap)
-        {
-            base.PostDestroy(m, previousMap);
-        }
-
         public override void PostDraw()
         {
             base.PostDraw();
-            if ((Find.PlaySettings.showRoofOverlay || 
-                parent.Map.fogGrid.fogGrid[parent.Map.cellIndices.CellToIndex(parent.Position)]) && 
-                parent.Position.GetFirstThing<Building_ShipTurret>(parent.Map) == null)
+            if (!Props.roof)
+                return;
+            if ((Find.PlaySettings.showRoofOverlay || parent.Position.Fogged(parent.Map)) && 
+                parent.Position.Roofed(parent.Map))
             {
                 Graphics.DrawMesh(material: roofTileBio.MatSingleFor(parent), mesh: roofTileBio.MeshAt(parent.Rotation), position: new UnityEngine.Vector3(parent.DrawPos.x, 0, parent.DrawPos.z), rotation: Quaternion.identity, layer: 0);
             }
         }
-
-
-
-        public static List<TerrainDef> shipTerrainDefs = new List<TerrainDef>()
-		{
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipflesh"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipscar"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipwhithered"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShip"),
-			DefDatabase<TerrainDef>.GetNamed("ShipWreckageTerrain"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipMech"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipArchotech"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipFoam"),
-		};
-
-		public static bool IsShipTerrain(TerrainDef tDef)
-		{
-			return (tDef.layerable && !shipTerrainDefs.Contains(tDef));
-		}
     }
 }

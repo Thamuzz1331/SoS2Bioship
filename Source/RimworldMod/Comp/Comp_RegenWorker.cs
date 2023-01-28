@@ -61,7 +61,7 @@ namespace RimWorld
 		public virtual void HealWounds()
         {
 			List<Building> healedWounds = new List<Building>();
-			if (wounds.Count > 0 && parent.Map.Biome == ShipInteriorMod2.OuterSpaceBiome)
+			if (wounds.Count > 0 && parent.Map.Biome == ResourceBank.BiomeDefOf.OuterSpaceBiome)
             {
 				foreach(Building wounded in wounds)
                 {
@@ -94,7 +94,7 @@ namespace RimWorld
 		public virtual float GetRegenCost()
         {
 			float cost = Props.regenCost / body.heart.GetStat("regenEfficiency");
-			if (parent.Map.Biome != ShipInteriorMod2.OuterSpaceBiome)
+			if (parent.Map.Biome != ResourceBank.BiomeDefOf.OuterSpaceBiome)
             {
 				cost *= 8f;
 			}
@@ -112,7 +112,7 @@ namespace RimWorld
 		public virtual float GetRegenInterval()
         {
 			float interval = Props.regenInterval / body.heart.GetStat("regenSpeed");
-			if (parent.Map.Biome != ShipInteriorMod2.OuterSpaceBiome)
+			if (parent.Map.Biome != ResourceBank.BiomeDefOf.OuterSpaceBiome)
             {
 				interval *= 8f;
             }

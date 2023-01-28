@@ -4,7 +4,7 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Ship_Heart</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase" Name="ShipHeart">
 		<defName>Ship_Heart</defName>
 		<label>ship heart</label>
 		<designatorDropdown>Ship_Heart</designatorDropdown>
@@ -41,17 +41,18 @@
 		<size>(5,5)</size>
 		<designationCategory>Ship</designationCategory>
 		<inspectorTabs>
-			<li>ITab_Mutations</li>
 			<li>ITab_Stats</li>
 		</inspectorTabs>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			<li Class="CompProperties_SoShipPart"/>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
 			<li Class="CompProperties_ShipHeart">
 				<species>bioship</species>
 				<shipspecies>bioship</shipspecies>
 				<geneline>AstralCniderianGeneline</geneline>
 			</li>
-			<li Class="CompProperties_ArmorGrower"/>
 			<li Class="CompProperties_Aggression">
 				<baseAggression>1</baseAggression>
 			</li>
@@ -59,7 +60,6 @@
 				<regenCost>1.75</regenCost>
 				<regenInterval>90</regenInterval>
 			</li>
-			<li Class="CompProperties_MutationWorker"/>
 			<li Class="CompProperties_ShipScaffoldConverter">
 				<conversionInterval>45</conversionInterval>
 				<conversionCost>0.75</conversionCost>
@@ -73,12 +73,8 @@
 				<basePowerConsumption>0</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
-			</li>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
-					<li>MutationInducer</li>
 					<li>LuciferiumInjector</li>
 					<li>NutrientInjector</li>
 				</linkableFacilities>
@@ -228,159 +224,6 @@
 		</researchPrerequisites>
 	</ThingDef>
 
-	<DesignatorDropdownGroupDef>
-		<defName>Mutation_Controls</defName>
-	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase">
-		<defName>MutationInducer</defName>
-		<label>mutation inducer</label>
-		<designatorDropdown>Mutation_Controls</designatorDropdown>
-		<description>Can be used to force a heart to undergo mutation.  This is an invasive procedure that has a risk of negative side effects.</description>
-		<graphicData>
-			<texPath>Things/Building/Misc/ToolCabinet</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(1,1)</drawSize>
-			<color>(96,114,95)</color>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-			</damageData>
-		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>PassThroughOnly</passability>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.35</staticSunShadowHeight>
-		<fillPercent>0.5</fillPercent>
-		<canOverlapZones>false</canOverlapZones>
-		<pathCost>42</pathCost>
-		<statBases>
-			<MaxHitPoints>100</MaxHitPoints>
-			<WorkToBuild>1800</WorkToBuild>
-			<Mass>20</Mass>
-			<Flammability>0.5</Flammability>
-		</statBases>
-		<size>(1,1)</size>
-		<costList>
-			<Steel>200</Steel>
-		</costList>
-		<building>
-			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
-		</building>
-		<researchPrerequisites>
-			<li>MutationInduction</li>
-		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		<thingCategories>
-			<li>BuildingsMisc</li>
-		</thingCategories>
-		<comps>
-			<li Class="CompProperties_MutationInducer">
-				<statOffsets>
-					<MutationInducers>1</MutationInducers>
-				</statOffsets>
-				<maxSimultaneous>1</maxSimultaneous>
-			</li>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>1</fuelCapacity>
-				<fuelFilter>
-					<thingDefs>
-						<li>HeartSeed</li>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<showFuelGizmo>true</showFuelGizmo>
-				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
-		</comps>
-		<designationHotKey>Misc6</designationHotKey>
-		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
-		</placeWorkers>
-	</ThingDef>
-
-	<ThingDef ParentName="BuildingBase">
-		<defName>LuciferiumInjector</defName>
-		<label>luciferium injector</label>
-		<designatorDropdown>Mutation_Controls</designatorDropdown>
-		<description>Feeds luciferium to a ship heart.  WARNING: bioships have a prodigious hunger once addicted, requiring 1 luciferium per hundred component structures per day.  Running out will result in catastrophic aggression on the part of the bioship.</description>
-		<graphicData>
-			<texPath>Things/Building/Misc/ToolCabinet</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(1,1)</drawSize>
-			<color>(96,114,95)</color>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-			</damageData>
-		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
-		<passability>PassThroughOnly</passability>
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.35</staticSunShadowHeight>
-		<fillPercent>0.5</fillPercent>
-		<canOverlapZones>false</canOverlapZones>
-		<pathCost>42</pathCost>
-		<tickerType>Normal</tickerType>
-		<statBases>
-			<MaxHitPoints>100</MaxHitPoints>
-			<WorkToBuild>1800</WorkToBuild>
-			<Mass>20</Mass>
-			<Flammability>0.5</Flammability>
-		</statBases>
-		<size>(1,1)</size>
-		<costList>
-			<Steel>200</Steel>
-			<ComponentSpacer>2</ComponentSpacer>
-		</costList>
-		<building>
-			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
-		</building>
-		<researchPrerequisites>
-			<li>MutationInduction</li>
-		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
-		<minifiedDef>MinifiedThing</minifiedDef>
-		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		<thingCategories>
-			<li>BuildingsMisc</li>
-		</thingCategories>
-		<comps>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>5.0</fuelCapacity>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<fuelFilter>
-					<thingDefs>
-						<li>Luciferium</li>
-					</thingDefs>
-				</fuelFilter>
-				<autoRefuelPercent>1</autoRefuelPercent>
-				<showFuelGizmo>true</showFuelGizmo>
-				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
-
-			<li Class="CompProperties_FueledFacility">
-				<statOffsets>
-					<LuciferInjectors>1</LuciferInjectors>
-				</statOffsets>
-				<maxSimultaneous>1</maxSimultaneous>
-			</li>
-		</comps>
-		<designationHotKey>Misc6</designationHotKey>
-		<placeWorkers>
-			<li>PlaceWorker_ShowFacilitiesConnections</li>
-		</placeWorkers>
-	</ThingDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>NutrientInjector</defName>
 		<label>nutrient injector</label>
@@ -443,7 +286,6 @@
 				<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-
 			<li Class="CompProperties_NutrientInjector">
 				<maxSimultaneous>1</maxSimultaneous>
 			</li>

@@ -20,7 +20,6 @@ namespace Verse
 
 			foreach(String geneName in def.miscGenes) {
 				geneline.genes.Add(BuildingGeneMaker.MakeBuildingGene(BuildingGeneDef.Named(geneName)));
-
 			}
 
 			return geneline;

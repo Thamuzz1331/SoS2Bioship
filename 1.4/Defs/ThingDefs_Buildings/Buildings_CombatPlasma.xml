@@ -70,8 +70,8 @@
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
-				<defaultProjectile>Proj_Fake_BioPlasma</defaultProjectile>
-				<spawnDef>Proj_BioPlasma</spawnDef>
+				<defaultProjectile>Proj_BioPlasma</defaultProjectile>
+				<spawnDef>Proj_Fake_BioPlasma</spawnDef>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 				<burstShotCount>2</burstShotCount>
 			</li>

@@ -17,16 +17,16 @@ namespace Verse
         public BuildingGene largeTurretGene;
         public BuildingGene spinalTurretGene;
         public BuildingGene armor;
-        public List<BuildingGene> genes;
+        public List<BuildingGene> genes = new List<BuildingGene>();
 
         void IExposable.ExposeData()
         {
-            Scribe_Values.Look<BuildingGene>(ref smallTurretGene, "smallTurretGene", null);
-            Scribe_Values.Look<BuildingGene>(ref mediumTurretGene, "mediumTurretGene", null);
-            Scribe_Values.Look<BuildingGene>(ref largeTurretGene, "largeTurretGene", null);
-            Scribe_Values.Look<BuildingGene>(ref spinalTurretGene, "spinalTurretGene", null);
-            Scribe_Values.Look<BuildingGene>(ref armor, "armor", null);
-            Scribe_Collections.Look<BuildingGene>(ref genes, "genes");
+            Scribe_Deep.Look<BuildingGene>(ref smallTurretGene, "smallTurretGene", null);
+            Scribe_Deep.Look<BuildingGene>(ref mediumTurretGene, "mediumTurretGene", null);
+            Scribe_Deep.Look<BuildingGene>(ref largeTurretGene, "largeTurretGene", null);
+            Scribe_Deep.Look<BuildingGene>(ref spinalTurretGene, "spinalTurretGene", null);
+            Scribe_Deep.Look<BuildingGene>(ref armor, "armor", null);
+            Scribe_Collections.Look<BuildingGene>(ref genes, "genes", LookMode.Deep);
         }
     }
 }

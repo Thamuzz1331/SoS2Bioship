@@ -11,7 +11,8 @@ using LivingBuildings;
 
 namespace RimWorld
 {
-    public class Hediff_Reflect : BuildingHediff
+    public class BuildingHediff_LuciferiumAddiction : Building_Addiction
     {
+
     }
 }

@@ -10,7 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
-    public class Hediff_Reflect : Hediff_Building
+    public class Hediff_Reflect : BuildingHediff
     {
     }
 }

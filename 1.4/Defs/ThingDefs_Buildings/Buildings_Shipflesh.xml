@@ -7,7 +7,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -37,6 +37,10 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
@@ -80,6 +84,9 @@
 		<designationHotKey>Misc1</designationHotKey>
 		<holdsRoof>true</holdsRoof>
 		<killedLeavings>
+			<ShipMeat>45</ShipMeat>
+			<Steel>2</Steel>
+			<Plasteel>1</Plasteel>
 		</killedLeavings>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -89,7 +96,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -119,6 +126,10 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
@@ -153,6 +164,7 @@
 		<designationHotKey>Misc1</designationHotKey>
 		<holdsRoof>true</holdsRoof>
 		<killedLeavings>
+			<ShipMeat>45</ShipMeat>
 		</killedLeavings>
 	</ThingDef>
 	<!-- corners -->
@@ -198,6 +210,10 @@
 	<ThingDef ParentName="BioShipCornerBase" Name="BioShipCorner" Abstract="True">
 		<description>Angled armor for a ship's outer hull.</description>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -392,6 +408,10 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarHullTile</regenDef>
 				<species>bioship</species>
@@ -438,6 +458,10 @@
 			<ShipMeat>30</ShipMeat>
 		</costList>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
@@ -445,7 +469,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
@@ -520,6 +544,9 @@
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Engine_Small</whitherTo>
@@ -531,7 +558,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_NutritionRefueler">
 				<refuelInterval>60</refuelInterval>
@@ -595,6 +622,9 @@
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Engine</whitherTo>
@@ -603,7 +633,7 @@
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_NutritionRefueler">
 				<refuelInterval>60</refuelInterval>
@@ -669,6 +699,9 @@
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Engine_Large</whitherTo>
@@ -697,7 +730,7 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_PsiEngine">
 				<thrust>6</thrust>
 			</li>
@@ -741,6 +774,7 @@
 		<description>Basic ship sensors. Capable of detecting nearby craft and observing sites from orbit.</description>
 		<size>(1,1)</size>
 		<comps>
+			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Sensor</whitherTo>
@@ -750,7 +784,6 @@
 				<basePowerConsumption>250</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
@@ -800,6 +833,7 @@
 		<description>Small shipmaw.</description>
 		<size>(1,1)</size>
 		<comps>
+			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Maw_Small</whitherTo>
@@ -807,7 +841,7 @@
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
@@ -865,6 +899,7 @@
 		<description>Corpse maw.</description>
 		<size>(2,2)</size>
 		<comps>
+			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Maw_Corpse</whitherTo>
@@ -872,7 +907,7 @@
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_ButcherableScallingRefuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>2500</initialConfigurableTargetFuelLevel>
@@ -932,6 +967,7 @@
 		<costList>
 		</costList>
 		<comps>
+			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_ShipNutritionStore">
 				<nutrientCapacity>25</nutrientCapacity>
 			</li>
@@ -1078,7 +1114,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
 				<heatCapacity>200</heatCapacity>
-				<heatVent>6</heatVent>
+				<heatVent>9</heatVent>
 				<heatLoss>4</heatLoss>
 				<threat>2</threat>
 			</li>
@@ -1116,7 +1152,7 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSink</compClass>
 				<heatCapacity>1000</heatCapacity>
-				<heatVent>24</heatVent>
+				<heatVent>36</heatVent>
 				<heatLoss>12</heatLoss>
 				<threat>12</threat>
 			</li>
@@ -1126,6 +1162,68 @@
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="ShipHeatsinkBase">
+		<defName>BioShipCoolantCyst</defName>
+		<label>coolant cyst</label>
+		<description>A cyst containing a reserve of coolant.\n\nHeat capacity: 800Hu\nHeat loss: 6Hu/s</description>
+		<size>(2,2)</size>
+		<graphicData>
+			<texPath>Things/Building/Ship/CoolantCyst</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<WorkToBuild>1500</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>WhitheredCoolantCyst</whitherTo>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSink</compClass>
+				<heatCapacity>800</heatCapacity>
+				<heatLoss>6</heatLoss>
+				<threat>1</threat>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="ShipHeatsinkBase">
+		<defName>BioShipCoolantCystLarge</defName>
+		<label>large coolant cyst</label>
+		<description>A large cyst containg coolant. Slowly bleeds heat into the surrounding room if not in vacuum.\n\nHeat capacity: 4000Hu\nHeat loss: 18Hu/s</description>
+		<size>(4,4)</size>
+		<graphicData>
+			<texPath>Things/Building/Ship/CoolantCystLarge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1600</MaxHitPoints>
+			<WorkToBuild>6000</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+		</costList>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>WhitheredCoolantCystLarge</whitherTo>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatSink</compClass>
+				<heatCapacity>4000</heatCapacity>
+				<heatLoss>18</heatLoss>
+				<threat>5</threat>
 			</li>
 		</comps>
 	</ThingDef>
@@ -1160,7 +1258,7 @@
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Giant_Mitochondira</whitherTo>
@@ -1224,7 +1322,7 @@
 		<size>(4,6)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Colossal_Mitochondira</whitherTo>
@@ -1350,7 +1448,7 @@
 		<costList>
 		</costList>
 		<comps>
-			<li Class="CompProperties_ShipPart"/>
+			
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>SalvageMawWhithered</whitherTo>

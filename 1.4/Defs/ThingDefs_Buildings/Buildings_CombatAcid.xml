@@ -71,8 +71,8 @@
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
-				<defaultProjectile>Bullet_Fake_BioAcid</defaultProjectile>
-				<spawnDef>Proj_BioAcid</spawnDef>
+				<defaultProjectile>Proj_BioAcid</defaultProjectile>
+				<spawnDef>Bullet_Fake_BioAcid</spawnDef>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 				<burstShotCount>2</burstShotCount>
 			</li>

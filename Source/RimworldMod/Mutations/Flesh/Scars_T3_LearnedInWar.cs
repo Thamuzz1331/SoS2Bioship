@@ -28,7 +28,7 @@ namespace RimWorld
                 CompShipHeart heart = target.parent.TryGetComp<CompShipHeart>();
                 heart.maxResistence += 0.10f;
 
-                Hediff_Building toAdd = new Hediff_Building();
+                BuildingHediff toAdd = new BuildingHediff();
                 toAdd.label = "Learned In War";
                 toAdd.statMods = new Dictionary<string, float>()
                 {

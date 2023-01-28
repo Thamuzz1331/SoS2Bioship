@@ -7,52 +7,53 @@
 		<smallTurret>SmallNematocystGene</smallTurret>
 		<mediumTurret>MediumAcidGene</mediumTurret>
 		<largeTurret>HeavySpineGene</largeTurret>
+		<spinalTurret>GrandNematocyst</spinalTurret>
 		<armor>CoralArmor</armor>
 		<miscGenes></miscGenes>
 	</ShipGenelineDef>
-	<SetterGeneDef>
+	<BuildingGeneDef>
 		<defName>SmallNematocystGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<label>small nematocyst</label>
 		<description>An explosive cell capable of launching a barbed thread.  Devastating in their own right, they can act as delivery mechanisms for all manner of acid and toxin.</description>
-		<fieldDefs>
+		<props>
 			<li>smallTurretOptions:ShipTurret_Nematocyst</li>
-		</fieldDefs>
-	</SetterGeneDef>
-	<SetterGeneDef>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
 		<defName>MediumAcidGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<label>medium acid</label>
 		<description>Specialized glands launch globules of acidic mucus.</description>
-		<fieldDefs>
+		<props>
 			<li>mediumTurretOptions:ShipTurret_BioAcid</li>
-		</fieldDefs>
-	</SetterGeneDef>
-	<SetterGeneDef>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
 		<defName>HeavySpineGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<label>heavy spine</label>
 		<description>Specialized barbs driven by biosplasma, capable of hunting tracking prey.</description>
-		<fieldDefs>
+		<props>
 			<li>largeTurretOptions:HeavySpineLauncher</li>
-		</fieldDefs>
-	</SetterGeneDef>
-	<SetterGeneDef>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
 		<defName>GrandNematocyst</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<label>grand nematocyst</label>
 		<description>A supercluster of explosive cells capable of launching barbed threads.</description>
-		<fieldDefs>
-			<li>largeTurretOptions:HeavySpineLauncher</li>
-		</fieldDefs>
-	</SetterGeneDef>
-	<SetterGeneDef>
+		<props>
+			<li>spinalTurretOptions:GrandNematocyst</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
 		<defName>CoralArmor</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<label>coral armor</label>
 		<description>Layers of ablative coral that provides exceptional protection against acid, toxin, and blunt impact.</description>
-		<fieldDefs>
-			<li>largeTurretOptions:HeavySpineLauncher</li>
-		</fieldDefs>
-	</SetterGeneDef>
+		<props>
+			<li>armor:CoralArmor</li>
+		</props>
+	</BuildingGeneDef>
 </Defs>

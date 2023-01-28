@@ -26,7 +26,7 @@
 		<defName>FakeFloorShipscar</defName>
 		<layerable>true</layerable>
 		<label>shipflesh</label>
-		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>
+		<texturePath>Terrain/Surfaces/ScarFloor</texturePath>
 		<edgeType>Hard</edgeType>
 		<renderPrecedence>70</renderPrecedence>
 		<fertility>0</fertility>

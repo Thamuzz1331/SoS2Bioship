@@ -17,8 +17,7 @@ namespace Verse
         public override void PostAdd(CompBuildingCore core)
         {
             CompShipHeart heart = (CompShipHeart)core;
-            SetterGeneDef setterDef = (SetterGeneDef)this.def;
-            foreach (String fieldDef in setterDef.fieldDefs)
+            foreach (String fieldDef in def.props)
             {
                 string[] fd = fieldDef.Split(':');
                 heart.defs.SetOrAdd(fd[0], new DefOptions(new List<ThingDef>() { ThingDef.Named(fd[1]) }));
@@ -28,8 +27,7 @@ namespace Verse
         public override void PostRemove(CompBuildingCore core)
         {
             CompShipHeart heart = (CompShipHeart)core;
-            SetterGeneDef setterDef = (SetterGeneDef)this.def;
-            foreach (String fieldDef in setterDef.fieldDefs)
+            foreach (String fieldDef in def.props)
             {
                 string[] fd = fieldDef.Split(':');
                 heart.defs.SetOrAdd(fd[0], new DefOptions(new List<ThingDef>()));

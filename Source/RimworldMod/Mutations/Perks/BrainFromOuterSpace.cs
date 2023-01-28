@@ -32,8 +32,7 @@ namespace RimWorld
                 heart.defs.TryGetValue("shieldEmitter", new DefOptions(new List<ThingDef>()))
                     .defs.Add(ThingDef.Named("BioShieldGeneratorMotive"));
 
-                Hediff_Building toAdd = new Hediff_Building();
-                toAdd.label = "Giant Brain From Outer Space";
+                BuildingHediff toAdd = new BuildingHediff();
                 toAdd.visible = true;
                 toAdd.statMods = new Dictionary<string, float>()
                 {

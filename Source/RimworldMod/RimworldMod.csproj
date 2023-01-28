@@ -107,7 +107,8 @@
 	  <Compile Include="Buildings\Building_MeatMaw.cs"/>
 
 
-	  <Compile Include="Hediffs\Luciferium.cs"/>
+	  <Compile Include="Hediffs\BuildingHediff_LuciferiumDrug.cs"/>
+	  <Compile Include="Hediffs\BuildingHediff_LuciferiumAddiction.cs"/>
 	  <Compile Include="Hediffs\Reflect.cs" />
 
 	  <Compile Include="Comp\Comp_Aggression.cs"/>
@@ -146,10 +147,10 @@
 	  <Compile Include="Comp\CompProperties_MutableAmmo.cs"/>
 	  <Compile Include="Comp\Comp_UnfoldTwitch.cs"/>
 	  <Compile Include="Comp\CompProperties_UnfoldTwitch.cs"/>
-	  <Compile Include="Comp\Comp_FueledFacility.cs"/>
-	  <Compile Include="Comp\CompProperties_FueledFacility.cs"/>
-	  <Compile Include="Comp\Comp_MutationInducer.cs"/>
-	  <Compile Include="Comp\CompProperties_MutationInducer.cs"/>
+	  <Compile Include="Comp\Comp_DrugInjector.cs"/>
+	  <Compile Include="Comp\CompProperties_DrugInjector.cs"/>
+	  <Compile Include="Comp\Comp_FueledAddictionSupplier.cs"/>
+	  <Compile Include="Comp\CompProperties_FueledAddictionSupplier.cs"/>
 
 	  <Compile Include="Comp\Comp_NutrientInjector.cs"/>
 	  <Compile Include="Comp\CompProperties_NutrientInjector.cs"/>
@@ -177,7 +178,6 @@
 	  <Compile Include="PlaceWorkers\PlaceWorker_BioShipNeedsSpinalMountPort.cs"/>
 	  <Compile Include="GenSteps\GenStep_BurrowingBioship.cs"/>
 	  <Compile Include="Defs\BioShipDef.cs"/>
-	  <Compile Include="Defs\SetterGeneDef.cs"/>
 	  <Compile Include="Defs\ShipGenelineDef.cs"/>
 	  <Compile Include="Defs\ShipGenelineMaker.cs"/>
 
@@ -219,7 +219,6 @@
 	  <Compile Include="Mutations\Misc\Fat_T1_FatStorage.cs" />
 	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
 	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
-
 	  <Compile Include="Mutations\Perks\OcularPerk.cs" />
 	  <Compile Include="Mutations\Perks\BrainFromOuterSpace.cs" />
 	  <Compile Include="Mutations\Perks\CnidarianPerk.cs" />

@@ -49,8 +49,8 @@ namespace RimWorld
                 map.terrainGrid.RemoveTopLayer(t.Position, false);
                 t.Destroy();
                 replacement.SpawnSetup(map, false);
-                if (terrain != CompRoofMe.hullTerrain)
-                    map.terrainGrid.SetTerrain(replacement.Position, terrain);
+//                if (terrain != CompRoofMe.hullTerrain)
+//                    map.terrainGrid.SetTerrain(replacement.Position, terrain);
             }
 
         }

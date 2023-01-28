@@ -25,7 +25,7 @@ namespace RimWorld
         {            
             if (target.parent.TryGetComp<CompShipHeart>() != null)
             {
-                Hediff_Building toAdd = new Hediff_Building();
+                BuildingHediff toAdd = new BuildingHediff();
                 toAdd.label = "Fast Regeneration";
                 toAdd.statMods = new Dictionary<string, float>()
                 {

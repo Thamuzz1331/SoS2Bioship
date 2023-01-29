@@ -581,6 +581,8 @@
 			</li>
 			<li Class="CompProperties_PsiEngine">
 				<thrust>1</thrust>
+				<fuelUse>1</fuelUse>
+				<takeOff>true</takeOff>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -656,6 +658,8 @@
 			</li>
 			<li Class="CompProperties_PsiEngine">
 				<thrust>2</thrust>
+				<fuelUse>2</fuelUse>
+				<takeOff>true</takeOff>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -733,6 +737,8 @@
 			
 			<li Class="CompProperties_PsiEngine">
 				<thrust>6</thrust>
+				<fuelUse>2</fuelUse>
+				<takeOff>true</takeOff>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -1227,7 +1233,9 @@
 			</li>
 		</comps>
 	</ThingDef>
-
+	
+	
+	
 	<ThingDef ParentName="BuildingBase">
 		<defName>Giant_Mitochondira</defName>
 		<label>giant mitochondria</label>

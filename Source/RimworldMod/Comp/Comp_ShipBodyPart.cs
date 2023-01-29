@@ -175,7 +175,6 @@ namespace RimWorld
         public virtual float GetDamageMult(DamageInfo dinfo)
         {
             float res = ShipProps.baseArmor + ((CompShipHeart)body.heart).GetDamageMult(dinfo);
-            res = res / (1f + ((((CompShipHeart)body.heart).regenWorker.venomOffset)/2));
             return 1f - res;
         }
     }

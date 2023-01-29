@@ -64,6 +64,7 @@
 				<range>12.9</range>
 				<warmupTime>1.5</warmupTime>
 				<noiseRadius>4</noiseRadius>
+				<forcedMissRadius>1</forcedMissRadius>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 				<soundCast>ShipCombatPlasmaLarge</soundCast>
 				<requireLineOfSight>false</requireLineOfSight>

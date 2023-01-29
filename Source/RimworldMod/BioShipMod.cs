@@ -239,108 +239,7 @@ namespace BioShip
         }
 
 	}
-/*
-	[HarmonyPatch(typeof(ShipUtility), "LaunchFailReasons")]
-	public static class FindLaunchFailReasonsBioship
-	{
-		[HarmonyPostfix]
-		public static void FindLaunchFailReasonsReallyBioship(Building rootBuilding, ref IEnumerable<string> __result)
-		{
-			List<string> newResult = new List<string>();
-			List<Building> shipParts = ShipUtility.ShipBuildingsAttachedTo(rootBuilding);
-			bool huntingEngines = true;
-			bool huntingCockpit = true;
-			bool huntingSensors = true;
-			bool hasPilot = false;
-			float fuelNeeded = 0f;
-			float fuelHad = 0f;
-			using (List<Building>.Enumerator enumerator = shipParts.GetEnumerator())
-			{
-				while (enumerator.MoveNext())
-				{
-					Building part = enumerator.Current;
-					CompEngineTrail engineTrail = part.TryGetComp<CompEngineTrail>();
-					if (engineTrail != null)
-					{
-						if (part.TryGetComp<CompRefuelable>() != null)
-                        {
-							fuelHad += part.TryGetComp<CompRefuelable>().Fuel;
-                        }
-						huntingEngines = false;
-					}
-					if (huntingCockpit)
-					{
-						if (part is Building_ShipBridge)
-                        {
-							bool functioning = true;
-							CompMannable manable = part.TryGetComp<CompMannable>();
-							if (manable != null)
-                            {
-								functioning = functioning && manable.MannedNow;
-                            }
-							if (part.TryGetComp<CompPowerTrader>() != null)
-                            {
-								functioning = functioning && part.TryGetComp<CompPowerTrader>().PowerOn;
-                            }
-							huntingCockpit = !functioning;
-							hasPilot = functioning;
-                        }
-					}
-					if (huntingSensors)
-					{
-						huntingSensors = !FindLaunchFailReasonsBioship.sensors.Any((ThingDef d) => d == part.def);
-					}
-					if (!FindLaunchFailReasonsBioship.hullPlates.Any((ThingDef d) => d == part.def))
-					{
-						fuelNeeded += (float)(part.def.size.x * part.def.size.z) * 3f;
-					}
-					else
-					{
-						fuelNeeded += 1f;
-					}
-				}
-			}
-			if (huntingEngines)
-			{
-				newResult.Add("ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": " + ThingDefOf.Ship_Engine.label);
-			}
-			if (huntingCockpit)
-			{
-				string str = "ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": ";
-				ThingDef thingDef = ThingDef.Named("ShipPilotSeat");
-				newResult.Add(str + ((thingDef != null) ? thingDef.ToString() : null));
-			}
-			if (huntingSensors)
-			{
-				newResult.Add("ShipReportMissingPart".Translate(Array.Empty<NamedArgument>()) + ": " + ThingDefOf.Ship_SensorCluster.label);
-			}
-			if (fuelHad < fuelNeeded)
-			{
-				newResult.Add("ShipNeedsMoreChemfuel".Translate(fuelHad, fuelNeeded));
-			}
-			if (!hasPilot)
-			{
-				newResult.Add("ShipReportNeedPilot".Translate(Array.Empty<NamedArgument>()));
-			}
-			__result = newResult;
-		}
 
-		private static List<ThingDef> sensors = new List<ThingDef>
-		{
-			ThingDefOf.Ship_SensorCluster,
-			ThingDef.Named("Ship_SensorClusterAdv"),
-			ThingDef.Named("BioShip_SensorCluster")
-		};
-
-		private static List<ThingDef> hullPlates = new List<ThingDef>
-		{
-			ThingDef.Named("ShipHullTile"),
-			ThingDef.Named("ShipHullTileMech"),
-			ThingDef.Named("ShipHullTileArchotech"),
-			ThingDef.Named("BioShipHullTile")
-		};
-	}
-*/
 	[HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
 	public static class BioshipInterstellarFailReasons
     {
@@ -358,25 +257,52 @@ namespace BioShip
         }
     }
 
-/*
-	[HarmonyPatch(typeof(ShipCombatOnGUI), "DrawShipRange")]
+	[HarmonyPatch(typeof(ColonistBar), "ColonistBarOnGUI")]
 	public static class BioShipCombatOnGUI
 	{
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
 
 		[HarmonyPostfix]
-		public static void DrawNutritionBars(ref float baseY)
+		public static void DrawNutritionBars(ColonistBar __instance)
 		{
 			Map mapPlayer = Find.Maps.Where(m => m.GetComponent<ShipHeatMapComp>().InCombat && !m.GetComponent<ShipHeatMapComp>().ShipCombatMaster).FirstOrDefault();
 			if (mapPlayer != null)
             {
-				MapCompBuildingTracker bioTracker = mapPlayer.GetComponent<MapCompBuildingTracker>();
-				float maxNutrion = 0;
-				float curNutrion = 0;
+				float screenHalf = (float)UI.screenWidth / 2 + SaveOurShip2.ModSettings_SoS.offsetUIx;
 
+				float baseY = __instance.Size.y + 40 + SaveOurShip2.ModSettings_SoS.offsetUIy;
+
+				MapCompBuildingTracker bioTracker = mapPlayer.GetComponent<MapCompBuildingTracker>();
+				if (bioTracker != null)
+                {
+					float maxNutrion = 0;
+					float curNutrion = 0;
+					foreach (BuildingBody body in bioTracker.bodies.Values)
+					{
+						maxNutrion += body.nutritionCapacity;
+						curNutrion += body.currentNutrition;
+					}
+					baseY += 45;
+					Rect rect2 = new Rect(screenHalf - 630, baseY, 205, 35);
+					Verse.Widgets.DrawMenuSection(rect2);
+
+					Rect rect3 = new Rect(screenHalf - 630, baseY, 200, 35);
+					Widgets.FillableBar(rect3.ContractedBy(6), curNutrion / maxNutrion,
+						BioShip.NutrientTex);
+					Text.Font = GameFont.Small;
+					rect3.y += 7;
+					rect3.x = screenHalf - 615;
+					rect3.height = Text.LineHeight;
+					if (maxNutrion > 0)
+						Widgets.Label(rect3, "Nutrition: " + Mathf.Round(curNutrion) + " / " + maxNutrion);
+					else
+						Widgets.Label(rect3, "<color=red>Nutrition: N/A</color>");
+                }
             }
-		}
+		}	
 	}
+
+/*
 	[HarmonyPatch(typeof(CompRefuelable), "Refuel", new Type[] {typeof(List<Thing>)})]
 	public static class ButcherableScalingRefuel
     {

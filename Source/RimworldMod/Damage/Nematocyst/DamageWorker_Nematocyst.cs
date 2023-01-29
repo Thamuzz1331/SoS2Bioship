@@ -17,8 +17,6 @@ namespace RimWorld
 				CompShipBodyPart bp = t.TryGetComp<CompShipBodyPart>();
 				if (bp != null && bp.body != null && bp.body.heart != null)
                 {
-					((CompShipHeart)bp.body.heart).regenWorker.RaiseVenom(0.0001f);
-
 				}
             }
 		}

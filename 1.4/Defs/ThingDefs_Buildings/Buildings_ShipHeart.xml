@@ -33,7 +33,6 @@
 		<statBases>
 			<MaxHitPoints>1500</MaxHitPoints>
 			<Flammability>0</Flammability>
-			<MutationInducers>0</MutationInducers>
 			<LuciferInjectors>0</LuciferInjectors>
 		</statBases>
 		<tickerType>Normal</tickerType>
@@ -79,6 +78,8 @@
 					<li>NutrientInjector</li>
 				</linkableFacilities>
 			</li>
+			<li Class="CompProperties_ShipLifeSupport"/>
+			<li Class="CompProperties_Flickable"/>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>

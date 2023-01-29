@@ -14,10 +14,7 @@ namespace RimWorld
 	{
 		public CompProperties_RegenWorker Props => (CompProperties_RegenWorker)props;
 
-		public float venomOffset = 0f;
-
 		private float ticksToRegen = 0f;
-		private float ticksToVenomDec = 0f;
 		
 		public HashSet<Building> wounds = new HashSet<Building>();
 
@@ -27,8 +24,6 @@ namespace RimWorld
 		{
 			base.PostExposeData();
 			Scribe_Values.Look(ref ticksToRegen, "ticksToRegen", 0f);
-			Scribe_Values.Look(ref ticksToVenomDec, "ticksToVenomDec", 0f);
-			Scribe_Values.Look(ref venomOffset, "venomOffset", 0f);
 			Scribe_Collections.Look(ref wounds, "wounds", LookMode.Reference);
 		}
 
@@ -36,15 +31,6 @@ namespace RimWorld
 		{
 			if (!parent.Spawned || body == null)
 				return;
-			if (ticksToVenomDec <= 0)
-            {
-				if (venomOffset > 0f)
-                {
-					venomOffset -= 0.001f;
-                }
-				ticksToVenomDec = 20f;
-            }
-			ticksToVenomDec--;
 			if (ticksToRegen <= 0)
             {
 				HealWounds();
@@ -98,15 +84,7 @@ namespace RimWorld
             {
 				cost *= 8f;
 			}
-			return cost  * (1f+(venomOffset/4));
-        }
-
-		public virtual void RaiseVenom(float inc)
-        {
-			if (venomOffset < 3.0f)
-            {
-				venomOffset += inc;
-            }
+			return cost;
         }
 
 		public virtual float GetRegenInterval()
@@ -117,13 +95,7 @@ namespace RimWorld
 				interval *= 8f;
             }
 			interval *= (1 + (float)(Rand.RangeInclusive(-15, 15)/100));
-			return interval * (1f + venomOffset);
-        }
-
-
-	    public override string CompInspectStringExtra()
-        {
-			return "Venom level " + venomOffset;
+			return interval;
         }
 	}
 }

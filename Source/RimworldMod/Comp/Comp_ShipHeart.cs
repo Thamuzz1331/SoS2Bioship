@@ -149,7 +149,7 @@ namespace RimWorld
         }
         public override string CompInspectStringExtra()
         {
-            return String.Format("Heart of of {0}", this.bodyName);
+            return String.Format("Heart of {0}", this.bodyName);
         }
 
 

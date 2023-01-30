@@ -242,6 +242,7 @@
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_Mutations.cs" />
+	  <Compile Include="Graphics\ITab_ShipGenes.cs" />
 
   </ItemGroup>
 </Project>

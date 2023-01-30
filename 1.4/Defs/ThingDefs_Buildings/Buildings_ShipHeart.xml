@@ -41,6 +41,7 @@
 		<designationCategory>Ship</designationCategory>
 		<inspectorTabs>
 			<li>ITab_Stats</li>
+			<li>ITab_ShipGenes</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="CompProperties_SoShipPart"/>

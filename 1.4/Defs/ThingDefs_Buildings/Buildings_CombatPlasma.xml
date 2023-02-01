@@ -1,6 +1,6 @@
 <Defs>
 	<ThingDef ParentName="ShipTurretBuilding" Name="BioPlasmaBase">
-		<defName>ShipTurret_BioPlasma</defName>
+		<defName>ShipTurret_MediumPlasmaMaw</defName>
 		<label>bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
 		<designationCategory></designationCategory>

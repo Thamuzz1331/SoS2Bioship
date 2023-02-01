@@ -14,7 +14,8 @@ namespace RimWorld
         public float addictionChance;
         public float maxWithdrawl;
         public float withdrawlRate;
-        public float massDosageOffset;
+        public float massDosageMult;
+        public float massAddictionMult;
         public CompProperties_DrugInjector()
         {
             compClass = typeof(CompDrugInjector);

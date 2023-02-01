@@ -16,10 +16,10 @@ namespace RimWorld
 
 		private float ticksToAttack = 0;
 		public float attackInterval = 120;
-		public int modifiedAggression = 0;
 		public float extremeAggressionDetection = 0f;
 		public float extremeAggressionInterval = 600f;
 
+		public HashSet<IAggressionSource> aggressionSources = new HashSet<IAggressionSource>();
 		public HashSet<Thing> otherFlesh = new HashSet<Thing>();
 		public HashSet<Thing> adjacentMechanicals = new HashSet<Thing>();
 		public HashSet<Thing> targets = new HashSet<Thing>();
@@ -30,6 +30,7 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToAttack, "ticksToAttack", 0);
 			Scribe_Values.Look(ref extremeAggressionDetection, "extremeAggressionDetection", 0);
 			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
+			Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
 		}
 
 		public override void CompTick()
@@ -38,7 +39,6 @@ namespace RimWorld
             {
 				return;
             }
-
 			if (ticksToAttack <= 0)
             {
 				DoAttack();
@@ -55,37 +55,33 @@ namespace RimWorld
 
 		public virtual int GetAggression()
         {
-			CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
-			if (heart.luciferiumAddiction && !heart.luciferiumSupplied)
+			int ret = 0;
+			foreach(IAggressionSource source in aggressionSources)
             {
-				return 3;
+				ret += source.GetAggressionValue();
             }
-			return (modifiedAggression + Props.baseAggression);
+			return ret;
         }
 
 		public virtual void DoAttack()
         {
 			int numAttack = Rand.RangeInclusive(1, 3);
+			int aggressionLevel = GetAggression();
 			for (int i = 0; i < numAttack; i++)
 			{
-				//I probably should update this to use enums that are set by hediffs or something to that effect.
-				switch (GetAggression())
-				{
-					case 1:
-						BasicAggress(adjacentMechanicals);
-						break;
-					case 2:
-						BasicAggress(adjacentMechanicals);
-						BasicAggress(otherFlesh);
-						break;
-					case 3:
-						BasicAggress(adjacentMechanicals);
-						BasicAggress(otherFlesh);
-						BasicAggress(targets);
-						break;
-					default:
-						return;
-				};
+				if (aggressionLevel > 0 && aggressionLevel <= 2)
+                {
+					BasicAggress(adjacentMechanicals);
+                }else if (aggressionLevel > 2 && aggressionLevel <= 4)
+                {
+					BasicAggress(adjacentMechanicals);
+					BasicAggress(otherFlesh);
+                } else if (aggressionLevel > 4)
+                {
+					BasicAggress(adjacentMechanicals);
+					BasicAggress(otherFlesh);
+					BasicAggress(targets);
+                }
 			}
         }
 
@@ -117,7 +113,6 @@ namespace RimWorld
         {
 			if (GetAggression() == 3 && targets.Count <= 0)
             {
-
 				CompShipHeart heart = parent.TryGetComp<CompShipHeart>();
 				if (heart != null && heart.body != null)
 				{

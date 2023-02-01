@@ -76,6 +76,7 @@
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
 					<li>LuciferiumInjector</li>
+					<li>WakeUpInjector</li>
 					<li>NutrientInjector</li>
 				</linkableFacilities>
 			</li>

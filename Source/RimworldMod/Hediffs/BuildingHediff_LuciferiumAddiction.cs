@@ -11,8 +11,28 @@ using LivingBuildings;
 
 namespace RimWorld
 {
-    public class BuildingHediff_LuciferiumAddiction : Building_Addiction
+    public class BuildingHediff_LuciferiumAddiction : Building_Addiction, IAggressionSource
     {
+        public override void PostAdd()
+        {
+            base.PostAdd();
+            ((CompShipHeart)bp.Core).aggression.aggressionSources.Add(this);
+        }
+
+        public override void PostRemove()
+        {
+            base.PostRemove();
+            ((CompShipHeart)bp.Core).aggression.aggressionSources.Remove(this);
+        }
+
+        int IAggressionSource.GetAggressionValue()
+        {
+            if (this.withdrawl > maxWithdrawl/2)
+            {
+                return 999;
+            }
+            return 0;
+        }
 
     }
 }

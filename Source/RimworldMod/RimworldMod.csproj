@@ -101,6 +101,7 @@
   <ItemGroup>
 	  <Compile Include="BioShipMod.cs" />
 	  <Compile Include="Building_NerveStaple.cs"/>
+	  <Compile Include="IAggressionSource.cs"/>
 
 	  <Compile Include="Buildings\Building_BioTorpTurret.cs"/>
 	  <Compile Include="Buildings\Building_Armor.cs"/>
@@ -109,12 +110,12 @@
 
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumDrug.cs"/>
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumAddiction.cs"/>
+	  <Compile Include="Hediffs\BuildingHediff_ToxicBuildup.cs"/>
 	  <Compile Include="Hediffs\Reflect.cs" />
 
 	  <Compile Include="Comp\Comp_Aggression.cs"/>
 	  <Compile Include="Comp\CompProperties_Aggression.cs"/>
-	  <Compile Include="Comp\Comp_ArmorGrower.cs"/>
-	  <Compile Include="Comp\CompProperties_ArmorGrower.cs"/>
+	  <Compile Include="Comp\Comp_BioshipShield.cs"/>
 	  <Compile Include="Comp\Comp_EatMe.cs"/>
 	  <Compile Include="Comp\CompProperties_EatMe.cs"/>
 	  <Compile Include="Comp\Comp_NutritionLoader.cs"/>
@@ -131,10 +132,6 @@
 	  <Compile Include="Comp\CompProperties_RegenWorker.cs"/>
 	  <Compile Include="Comp\Comp_RegenSpot.cs"/>
 	  <Compile Include="Comp\CompProperties_RegenSpot.cs"/>
-	  <Compile Include="Comp\Comp_MutationWorker.cs"/>
-	  <Compile Include="Comp\CompProperties_MutationWorker.cs"/>
-	  <Compile Include="Comp\Comp_FixedMutationWorker.cs"/>
-	  <Compile Include="Comp\CompProperties_FixedMutationWorker.cs"/>
 	  <Compile Include="Comp\Comp_MutableScaffold.cs"/>
 	  <Compile Include="Comp\CompProperties_MutableScaffold.cs"/>
 	  <Compile Include="Comp\Comp_ShipNutritionSource.cs"/>
@@ -189,41 +186,6 @@
 	  <Compile Include="WorkGiver\WorkGiver_RefuelButcherScalable.cs"/>
 	  <Compile Include="Jobs\JobGiver_DestroyBuildings.cs"/>
 
-	  <Compile Include="Mutations\IMutation.cs" />
-	  <Compile Include="Mutations\AmmoMutation.cs" />
-	  <Compile Include="Mutations\Bone\Heavy_T1_DenseSpines.cs" />
-	  <Compile Include="Mutations\Bone\Heavy_T2_PenetratorSpines.cs" />
-	  <Compile Include="Mutations\Bone\Light_T1_EfficientSpines.cs" />
-	  <Compile Include="Mutations\Bone\Light_T2_SpineStorm.cs" />
-	  <Compile Include="Mutations\Bone\Armor_T1_Bone.cs" />
-	  <Compile Include="Mutations\Bone\Armor_T2_Plasteel.cs" />
-	  <Compile Include="Mutations\Flesh\Nematocysts_T1_Clustered.cs" />
-	  <Compile Include="Mutations\Flesh\Nematocysts_T2Acid_Acid.cs" />
-	  <Compile Include="Mutations\Flesh\Nematocysts_T2Heavy_Battering.cs" />
-	  <Compile Include="Mutations\Flesh\Nematocysts_T2Light_Splintering.cs" />
-	  <Compile Include="Mutations\Flesh\Nematocysts_T2Plasma_Energized.cs" />
-	  <Compile Include="Mutations\Flesh\Scars_T1_Adaptive.cs" />
-	  <Compile Include="Mutations\Flesh\Scars_T2_MoreAdaptive.cs" />
-	  <Compile Include="Mutations\Flesh\Scars_T3_LearnedInWar.cs" />
-	  <Compile Include="Mutations\Fluids\Acid_T1_Potent.cs" />
-	  <Compile Include="Mutations\Fluids\Acid_T2_Motile.cs" />
-	  <Compile Include="Mutations\Fluids\Acid_T3_Animate.cs" />
-	  <Compile Include="Mutations\Fluids\Plasma_T1_Energized.cs" />
-	  <Compile Include="Mutations\Fluids\Plasma_T2_Shieldbuster.cs" />
-	  <Compile Include="Mutations\Fluids\Plasma_T3_Shieldcrusher.cs" />
-	  <Compile Include="Mutations\Fluids\Regen_T1_Efficient.cs" />
-	  <Compile Include="Mutations\Fluids\Regen_T2_Fast.cs" />
-	  <Compile Include="Mutations\Fluids\Regen_T3_UndyingBeast.cs" />
-	  <Compile Include="Mutations\Psi\Will_T1_IronWill.cs" />
-	  <Compile Include="Mutations\Psi\Will_T2_Reflect.cs" />
-	  <Compile Include="Mutations\Misc\Fat_T1_FatStorage.cs" />
-	  <Compile Include="Mutations\Misc\Fat_T2_DenseFat.cs" />
-	  <Compile Include="Mutations\Misc\Metabolic_T1_EfficientGrowth.cs" />
-	  <Compile Include="Mutations\Perks\OcularPerk.cs" />
-	  <Compile Include="Mutations\Perks\BrainFromOuterSpace.cs" />
-	  <Compile Include="Mutations\Perks\CnidarianPerk.cs" />
-
-
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Splintering.cs"/>
 	  <Compile Include="Damage\Nematocyst\DamageWorker_NematocystAcid.cs"/>
@@ -241,7 +203,6 @@
 	  <Compile Include="Projectiles\Projectile_Penetrator.cs"/>
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
-	  <Compile Include="Graphics\ITab_Mutations.cs" />
 	  <Compile Include="Graphics\ITab_ShipGenes.cs" />
 
   </ItemGroup>

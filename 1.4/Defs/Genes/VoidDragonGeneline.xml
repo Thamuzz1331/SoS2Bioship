@@ -1,0 +1,59 @@
+<Defs>
+	<ShipGenelineDef>
+		<defName>VoidDragonGeneline</defName>
+		<shipGenelineClass>ShipGeneline</shipGenelineClass>
+		<label>Void Dragon</label>
+		<description>Space dragon were not a thing that existed.  Someone decided to remedy this grievous oversite.</description>
+		<smallTurret>SmallPlasmaMawGene</smallTurret>
+		<mediumTurret>MediumPlasmaMawGene</mediumTurret>
+		<largeTurret>HeavyPlasmaMawGene</largeTurret>
+		<spinalTurret>DragonMawGene</spinalTurret>
+		<armor>DragonscaleGene</armor>
+		<miscGenes></miscGenes>
+	</ShipGenelineDef>
+	<BuildingGeneDef>
+		<defName>SmallPlasmaMawGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>small plasma maw</label>
+		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
+		<props>
+			<li>smallTurretOptions:ShipTurret_SmallPlasmaMaw</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>MediumPlasmaMawGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>medium plasma maw</label>
+		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
+		<props>
+			<li>mediumTurretOptions:ShipTurret_MediumPlasmaMaw</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>HeavyPlasmaMawGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>heavy plasma maw</label>
+		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
+		<props>
+			<li>largeTurretOptions:ShipTurret_LargePlasmaMaw</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>DragonMawGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>dragon maw</label>
+		<description>Bioelectromagnetic coils channel a beam of devestating plasma.</description>
+		<props>
+			<li>spinalTurretOptions:DragonMaw</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>DragonscaleGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>dragonscale</label>
+		<description>Thick scales of organically deposited plasteel prove particularly resistant to plasma weapons..</description>
+		<props>
+			<li>armor:DragonscaleArmor</li>
+		</props>
+	</BuildingGeneDef>
+</Defs>

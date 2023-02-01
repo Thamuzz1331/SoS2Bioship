@@ -2,6 +2,7 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Drug_Injectors</defName>
 	</DesignatorDropdownGroupDef>
+	<!-- Luciferium -->
 	<ThingDef ParentName="BuildingBase">
 		<defName>LuciferiumInjector</defName>
 		<label>luciferium injector</label>
@@ -42,7 +43,7 @@
 			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
 		</building>
 		<researchPrerequisites>
-			<li>MutationInduction</li>
+			<li>BioshipDrugs</li>
 		</researchPrerequisites>
 		<designationCategory>Ship</designationCategory>
 		<minifiedDef>MinifiedThing</minifiedDef>
@@ -72,8 +73,9 @@
 				<addictionChance>1</addictionChance>
 				<maxWithdrawl>420000</maxWithdrawl>
 				<withdrawlRate>1</withdrawlRate>
-				<massDosageOffset>0.01</massDosageOffset>
-				<maxSimultaneous>10</maxSimultaneous>
+				<massDosageMult>0</massDosageMult>
+				<massAddictionMult>0.01</massAddictionMult>
+				<maxSimultaneous>100</maxSimultaneous>
 			</li>
 			<li Class="CompProperties_FueledAddictionSupplier">
 				<addictionId>AddictionLuciferium</addictionId>
@@ -87,8 +89,9 @@
 	<BuildingHediffDef>
 		<defName>DrugLuciferium</defName>
 		<label>luciferium</label>
-		<description>Mechanites suffuse the flesh, repairing damage and improving functionality.</description>
+		<description>Active luciferium mechanites in the body. They improve the body's functioning in all respects. However, if they are not regularly replenished with more doses of luciferium, they lose cohesion and drive the user insane.</description>
 		<buildingHediffClass>BuildingHediff_LuciferiumDrug</buildingHediffClass>
+		<displayColor>(1,1,0.5)</displayColor>
 		<comps>
 			<li Class="CompProperties_BuildingHediffStats">
 				<stat>metabolicEfficiency</stat>
@@ -107,8 +110,11 @@
 	<BuildingHediffDef>
 		<defName>AddictionLuciferium</defName>
 		<label>luciferium addiction</label>
-		<description>Fresh infusions of luciferium mechnites are required to satisfy the body's dependency.  Without those, it will die in maddness and agony.</description>
+		<description>Luciferium mechanites in the body. Luciferium mechanites decohere over time; only regular doses of fresh luciferium can prevent this process.
+			\nWithout luciferium, the mechanite decoherence will reach a critical state, causing the victim to go insane and die.</description>
+		<displayColor>(1,1,0.5)</displayColor>
 		<buildingHediffClass>BuildingHediff_LuciferiumAddiction</buildingHediffClass>
+		<isBad>true</isBad>
 		<comps>
 			<li Class="CompProperties_BuildingHediffStats">
 				<stat>metabolicEfficiency</stat>
@@ -118,6 +124,118 @@
 				<stat>metabolicSpeed</stat>
 				<mod>0.5</mod>
 			</li>
+			<li Class="CompProperties_BuildingHediffStats">
+				<stat>conciousness</stat>
+				<mod>0.75</mod>
+			</li>
+		</comps>
+	</BuildingHediffDef>
+	<!-- Wake Up -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>WakeUpInjector</defName>
+		<label>wake up injector</label>
+		<designatorDropdown>Drug_Injectors</designatorDropdown>
+		<description>Feeds wake up to a shipheart.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/ToolCabinet</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+			<color>(96,114,95)</color>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(1,1)</size>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+			<li>BioshipDrugs</li>
+		</researchPrerequisites>
+		<designationCategory>Ship</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>50.0</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<fuelFilter>
+					<thingDefs>
+						<li>WakeUp</li>
+					</thingDefs>
+				</fuelFilter>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_DrugInjector">
+				<drugHediff>DrugWakeup</drugHediff>
+				<addictionHediff>AddictionWakeup</addictionHediff>
+				<drugDuration>2500</drugDuration>
+				<addictionChance>0.15</addictionChance>
+				<maxWithdrawl>420000</maxWithdrawl>
+				<withdrawlRate>1</withdrawlRate>
+				<massDosageMult>0.1</massDosageMult>
+				<massAddictionMult>0.02</massAddictionMult>
+				<maxSimultaneous>100</maxSimultaneous>
+			</li>
+			<li Class="CompProperties_FueledAddictionSupplier">
+				<addictionId>AddictionWakeup</addictionId>
+			</li>
+		</comps>
+		<designationHotKey>Misc6</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+	<BuildingHediffDef>
+		<defName>DrugWakeup</defName>
+		<label>wake-up</label>
+		<description>Wake-up in the bloodstream. It stimulates the brain, strengthening shields and empowering engines.</description>
+		<buildingHediffClass>BuildingHediff_Drug</buildingHediffClass>
+		<displayColor>(1,1,0.5)</displayColor>
+		<comps>
+			<li Class="CompProperties_BuildingHediffStats">
+				<stat>conciousness</stat>
+				<mod>1.15</mod>
+			</li>
+		</comps>
+	</BuildingHediffDef>
+	<BuildingHediffDef>
+		<defName>AddictionWakeup</defName>
+		<label>wake-up addiction</label>
+		<description>A chemical addiction to wake-up. Long-term presence of wake-up has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+			\nWithout regular doses of wake-up, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+		<displayColor>(1,1,0.5)</displayColor>
+		<buildingHediffClass>Building_Addiction</buildingHediffClass>
+		<isBad>true</isBad>
+		<comps>
 			<li Class="CompProperties_BuildingHediffStats">
 				<stat>conciousness</stat>
 				<mod>0.75</mod>

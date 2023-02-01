@@ -53,9 +53,9 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="BioShipProjectBase">
-		<defName>MutationInduction</defName>
-		<label>mutation inducers</label>
-		<description>The explosive cell growth experienced when the seed expands into being a proper ship heart results in a raft of mutations.  It should be possible to induce this process to our own ends..</description>
+		<defName>BioshipDrugs</defName>
+		<label>chemical injection</label>
+		<description>Based off the lessons learned from nerve stapling, it should be possible to safely introduce a number of other chemicals into the ship's metabolism.</description>
 		<baseCost>3000</baseCost>
 		<prerequisites>
 			<li>NerveStapling</li>
@@ -65,12 +65,12 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef ParentName="BioShipProjectBase">
-		<defName>MutationControl</defName>
-		<label>gene expression influcers</label>
-		<description>While the outcome of the creature's mutations will always be up to chance, with these tools we can put our fingers on the scales of probability.</description>
+		<defName>BioshipGenetics</defName>
+		<label>gene expression influencers</label>
+		<description>The genetic structure underlying the bioship is incredible maluable.  With the correct techniques it should be possible to insert and remove genes to suit our needs.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
-			<li>MutationInduction</li>
+			<li>BioshipDrugs</li>
 		</prerequisites>
 		<researchViewX>5.00</researchViewX>
 		<researchViewY>4.00</researchViewY>

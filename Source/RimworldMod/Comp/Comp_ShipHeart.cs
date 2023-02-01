@@ -13,14 +13,17 @@ namespace RimWorld
 {
     
 
-    public class CompShipHeart : CompBuildingCore
+    public class CompShipHeart : CompBuildingCore, IAggressionSource
     {
         public CompProperties_ShipHeart HeartProps => (CompProperties_ShipHeart)props;
 
         StatDef injectors = StatDef.Named("LuciferInjectors");
 
-        public bool luciferiumAddiction = false;
-        public bool luciferiumSupplied = false;
+        int IAggressionSource.GetAggressionValue()
+        {
+            return 2;
+        }
+
         public CompRegenWorker regenWorker;
         public CompAggression aggression;
         public bool initialized = false;
@@ -58,8 +61,6 @@ namespace RimWorld
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
-            Scribe_Values.Look<bool>(ref luciferiumAddiction, "luciferiumAddiction", false);
-            Scribe_Values.Look<bool>(ref luciferiumSupplied, "luciferiumSupplied", false);
             Scribe_Deep.Look<ShipGeneline>(ref geneline, "geneline", null);
             Scribe_Collections.Look<DamageDef, float>(ref resistances, "resistences", LookMode.Def, LookMode.Value);
             Scribe_Collections.Look<string, DefOptions>(ref defs, "defs", LookMode.Value, LookMode.Deep);
@@ -83,19 +84,13 @@ namespace RimWorld
             regenWorker.body = this.body;
             if (!respawningAfterLoad && !initialized)
             {
-                Log.Message("Creating geneline");
+                aggression.aggressionSources.Add(this);
                 geneline = ShipGenelineMaker.MakeShipGeneline(ShipGenelineDef.Named(HeartProps.geneline));
-                Log.Message("Adding small turret");
                 this.AddGene(geneline.smallTurretGene);
-                Log.Message("Adding medium turret");
                 this.AddGene(geneline.mediumTurretGene);
-                Log.Message("Adding large turret");
                 this.AddGene(geneline.largeTurretGene);
-                Log.Message("Adding spinal turret");
                 this.AddGene(geneline.spinalTurretGene);
-                Log.Message("Adding armor");
                 this.AddGene(geneline.armor);
-                Log.Message("Adding misc");
                 foreach (BuildingGene b in geneline.genes)
                 {
                     this.AddGene(b);
@@ -222,17 +217,8 @@ namespace RimWorld
         public override float GetStat(string stat)
         {
             float ret = base.GetStat(stat);
-            float luciferMult = 1f;
-            if (luciferiumAddiction && luciferiumSupplied)
-            {
-                luciferMult = 1.5f;
-            }
             switch (stat)
             {
-                case "metabolicEfficiency":
-                    return ret * luciferMult;
-                case "metabolicSpeed":
-                    return ret * luciferMult;
                 case "regenEfficiency": 
                     return ret * GetStat("metabolicEfficiency");
                 case "regenSpeed":

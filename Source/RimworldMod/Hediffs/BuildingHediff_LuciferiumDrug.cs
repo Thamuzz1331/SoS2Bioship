@@ -17,10 +17,10 @@ namespace RimWorld
 
         public override void Tick()
         {
-
         }
 
-     	public override float StatMod(string stat)
+
+        public override float StatMod(string stat)
         {
             if (satisfied)
             {

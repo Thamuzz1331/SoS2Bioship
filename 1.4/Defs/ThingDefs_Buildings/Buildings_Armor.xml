@@ -67,8 +67,8 @@
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="ArmorBase">
-		<defName>PlasteelCarapace</defName>
-		<label>plasteel carapace</label>
+		<defName>DragonscaleArmor</defName>
+		<label>dragonscale armor</label>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/PlasteelCarapaceAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -93,7 +93,7 @@
 			<Flammability>0</Flammability>
 			<WorkToBuild>0</WorkToBuild>
 		</statBases>
-		<description>A layer of plasteel carapace.</description>
+		<description>A scales laced with an organic plasteel matrix.  Highly resistant to plasma weapons.</description>
 		<comps>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -105,5 +105,4 @@
 			</li>
 		</comps>
 	</ThingDef>
-
 </Defs>

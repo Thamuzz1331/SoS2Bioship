@@ -1069,7 +1069,7 @@
 				<whitherTo>WhitheredShieldGenerator</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipCombatShield</compClass>
+				<compClass>CompBioshipShield</compClass>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>

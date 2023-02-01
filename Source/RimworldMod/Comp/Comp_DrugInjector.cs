@@ -72,7 +72,7 @@ namespace RimWorld
             foreach (Thing heart in this.LinkedBuildings)
             {
                 CompShipHeart bp = heart.TryGetComp<CompShipHeart>();
-                float requiredDosage = bp.body.bodyParts.Count * InjectorProps.massDosageOffset;
+                float requiredDosage = bp.body.bodyParts.Count * InjectorProps.massDosageMult;
                 if (requiredDosage <= refuelable.Fuel)
                 {
                     options.Add(new FloatMenuOption(bp.bodyName,
@@ -88,7 +88,7 @@ namespace RimWorld
                                     (Building_Addiction)BuildingHediffMaker.MakeBuildingHediff(addictionDef);
                                 addiction.maxWithdrawl = InjectorProps.maxWithdrawl;
                                 addiction.withdrawRate = InjectorProps.withdrawlRate;
-                                addiction.massMult = InjectorProps.massDosageOffset;
+                                addiction.massMult = InjectorProps.massAddictionMult;
                                 bp.AddHediff(addiction);
                             }
                         },
@@ -130,7 +130,7 @@ namespace RimWorld
                                 (Building_Addiction)BuildingHediffMaker.MakeBuildingHediff(addictionDef);
                             addiction.maxWithdrawl = InjectorProps.maxWithdrawl;
                             addiction.withdrawRate = InjectorProps.withdrawlRate;
-                            addiction.massMult = InjectorProps.massDosageOffset;
+                            addiction.massMult = InjectorProps.massAddictionMult;
                             bp.AddHediff(addiction);
                             Log.Message("Addiction added");
                         },

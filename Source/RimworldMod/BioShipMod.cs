@@ -150,10 +150,10 @@ namespace BioShip
 			//TODO: Fix this
 			float ret = 1f;
 			CompBuildingBodyPart bodyPart = shield.parent.TryGetComp<CompBuildingBodyPart>();
-			if (bodyPart != null && bodyPart.HeartSpawned)
+			if (bodyPart != null && bodyPart.CoreSpawned)
             {
-				ret = ret/(bodyPart.body.heart.GetStat("shieldStrength"));
-				if (bodyPart.body.heart.hediffs.Any(mut => (mut is Hediff_Reflect)))
+				ret = ret/(bodyPart.Core.GetStat("shieldStrength"));
+				if (bodyPart.Core.hediffs.Any(mut => (mut is Hediff_Reflect)))
                 {
 					if(Rand.Chance(0.1f))
                     {
@@ -231,9 +231,9 @@ namespace BioShip
 
 		public static int GetThrust(Tuple<CompEngineTrail, CompRefuelable, CompFlickable> engine)
         {
-			if (engine.Item1.parent.TryGetComp<CompShipBodyPart>() != null && engine.Item1.parent.TryGetComp<CompShipBodyPart>().HeartSpawned)
+			if (engine.Item1.parent.TryGetComp<CompShipBodyPart>() != null && engine.Item1.parent.TryGetComp<CompShipBodyPart>().CoreSpawned)
             {
-				return (int)Math.Round(engine.Item1.Props.thrust * engine.Item1.parent.TryGetComp<CompShipBodyPart>().body.heart.GetStat("movementSpeed"));
+				return (int)Math.Round(engine.Item1.Props.thrust * engine.Item1.parent.TryGetComp<CompShipBodyPart>().Core.GetStat("movementSpeed"));
             }
 			return engine.Item1.Props.thrust;
         }
@@ -302,7 +302,7 @@ namespace BioShip
 		}	
 	}
 
-/*
+
 	[HarmonyPatch(typeof(CompRefuelable), "Refuel", new Type[] {typeof(List<Thing>)})]
 	public static class ButcherableScalingRefuel
     {
@@ -327,7 +327,7 @@ namespace BioShip
 			return false;
         }
     }
-
+/*
 	[HarmonyPatch(typeof(SaveShip), "MoveShip")]
 	public static class ExpandFloorListPatch
     {
@@ -364,6 +364,7 @@ namespace BioShip
 			return codes;
 		}
     }
+
 	[HarmonyPatch("Verb_LaunchProjectileShip", "TryCastShot")]
 	public static class AddVariableLaunchPatch
     {

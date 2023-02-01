@@ -31,6 +31,8 @@
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipCombatShield</compClass>
+				<heatMultiplier>0.1</heatMultiplier>
+				<color>(0,255,100)</color>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>

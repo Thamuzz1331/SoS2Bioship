@@ -106,6 +106,7 @@
 	  <Compile Include="Buildings\Building_BioTorpTurret.cs"/>
 	  <Compile Include="Buildings\Building_Armor.cs"/>
 	  <Compile Include="Buildings\Building_MeatMaw.cs"/>
+	  <Compile Include="Buildings\Building_ShipHeart.cs"/>
 
 
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumDrug.cs"/>
@@ -168,6 +169,9 @@
 	  <Compile Include="Comp\Comp_ReactionlessEngine.cs"/>
 	  <Compile Include="Comp\CompProperties_ReactionlessEngine.cs"/>
 
+	  <Compile Include="ItemComp\Comp_HeartSeed.cs"/>
+	  <Compile Include="ItemComp\CompProperties_HeartSeed.cs"/>
+
 	  <Compile Include="CritterComps\Comp_BuildingHunter.cs"/>
 	  <Compile Include="CritterComps\CompProperties_BuildingHunter.cs"/>
 
@@ -180,6 +184,7 @@
 
 	  <Compile Include="Genes\ShipGeneline.cs"/>
 	  <Compile Include="Genes\DefSetterGene.cs"/>
+	  <Compile Include="Genes\StatSetterGene.cs"/>
 
 	  <Compile Include="Jobs\BioShipJobDefs.cs"/>
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>
@@ -188,7 +193,6 @@
 
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Splintering.cs"/>
-	  <Compile Include="Damage\Nematocyst\DamageWorker_NematocystAcid.cs"/>
 
 	  <Compile Include="Damage\DamageWorker_Acid.cs"/>
 	  <Compile Include="Damage\DamageWorker_PotentAcid.cs"/>
@@ -204,6 +208,8 @@
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_ShipGenes.cs" />
+
+	  <Compile Include="Verbs\Verb_MutableProjectileShip.cs" />
 
   </ItemGroup>
 </Project>

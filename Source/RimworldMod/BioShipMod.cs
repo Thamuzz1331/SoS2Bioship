@@ -55,18 +55,6 @@ namespace BioShip
 			Log.Message("Bioship Loaded");
 		}
 
-		public static List<TerrainDef> shipTerrainDefs = new List<TerrainDef>()
-		{
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipflesh"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipscar"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorShipwhithered"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShip"),
-			DefDatabase<TerrainDef>.GetNamed("ShipWreckageTerrain"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipMech"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipArchotech"),
-			DefDatabase<TerrainDef>.GetNamed("FakeFloorInsideShipFoam"),
-		};
-
 		public static List<ThingDef> shipHullDefs = new List<ThingDef>()
         {
 			ThingDef.Named("ShipHullTile"),
@@ -76,16 +64,6 @@ namespace BioShip
 			ThingDef.Named("ScaffoldHullTile"),
 			ThingDef.Named("BioShipHullTile"),
         };
-
-		public static bool IsShipTerrain(TerrainDef tDef)
-		{
-			return (tDef.layerable && !shipTerrainDefs.Contains(tDef));
-		}
-
-		public static bool ShouldExplode(Projectile_ExplosiveShipCombat proj)
-        {
-			return proj.Spawned && proj.ExactPosition.ToIntVec3().GetThingList(proj.Map).Any(t => shipHullDefs.Any(hDef => hDef == t.def));
-        }
 
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
 
@@ -130,46 +108,6 @@ namespace BioShip
             }
 			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
 			return projectileDef;
-        }
-
-		public static void RoundShield(CompShipCombatShield shield)
-        {
-			float absDiff = Math.Abs(shield.radius - shield.radiusSet);
-			if (absDiff > 0 && absDiff < 1)
-            {
-				shield.radius = shield.radiusSet;
-            }
-			else if (shield.radiusSet > shield.radius)
-                shield.radius+=1f;
-            else if (shield.radiusSet < shield.radius)
-                shield.radius-=1f;
-        }
-
-		public static float HeatMultiplier(CompShipCombatShield shield, Projectile_ExplosiveShipCombat proj)
-        {
-			//TODO: Fix this
-			float ret = 1f;
-			CompBuildingBodyPart bodyPart = shield.parent.TryGetComp<CompBuildingBodyPart>();
-			if (bodyPart != null && bodyPart.CoreSpawned)
-            {
-				ret = ret/(bodyPart.Core.GetStat("shieldStrength"));
-				if (bodyPart.Core.hediffs.Any(mut => (mut is Hediff_Reflect)))
-                {
-					if(Rand.Chance(0.1f))
-                    {
-						ReflectShot(shield, proj);
-					}
-				}
-            }
-			if (proj is Projectile_ShieldBatteringProjectile)
-            {
-				ret *=  2f;
-            }
-			if (proj.def.projectile.damageDef == ShipDamageDefOf.ShipNematocystEnergized)
-            {
-				ret *= 1.5f;
-            }
-			return ret;
         }
 
 		public static IntVec3 FindBurstLocation(CompShipCombatShield shield, LocalTargetInfo target)
@@ -219,15 +157,6 @@ namespace BioShip
 			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
 			fakeTurret.Destroy();
 		}
-
-		public static bool EngineFacing(int playerEngineFacing, Tuple<CompEngineTrail, CompRefuelable, CompFlickable> engine)
-        {
-			if (engine.Item1 is CompReactionlessEngine)
-            {
-				return true;
-            }
-			return (playerEngineFacing == engine.Item2.parent.Rotation.AsByte);
-        }
 
 		public static int GetThrust(Tuple<CompEngineTrail, CompRefuelable, CompFlickable> engine)
         {

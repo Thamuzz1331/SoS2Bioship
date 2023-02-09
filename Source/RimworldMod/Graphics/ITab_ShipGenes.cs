@@ -49,6 +49,10 @@ namespace RimWorld
 			Rect containingRect = rect2;
 			containingRect.y = scrollPosition.y;
 			containingRect.height = rect.height;
+			if (Prefs.DevMode)
+            {
+
+            }
 			if (ITab_ShipGenes.endogenes.Any<BuildingGene>())
 			{
 				ITab_ShipGenes.DrawSection(rect, false, ITab_ShipGenes.endogenes.Count, ref num, ref ITab_ShipGenes.endoGenesHeight, delegate (int i, Rect r)
@@ -116,7 +120,7 @@ namespace RimWorld
 				GUI.color = ColoredText.SubtleGrayColor;
 			}
 			CachedTexture cachedTexture = ITab_ShipGenes.GeneBackground_Archite;
-			if (!gene.isArchoGene)
+			if (gene.architeCost == 0)
 			{
 				if (geneType != GeneType.Endogene)
 				{
@@ -250,9 +254,9 @@ namespace RimWorld
             {
 				ITab_ShipGenes.complexity += g.def.complexity;
 				ITab_ShipGenes.metabolicFactor += g.def.metabolicCost;
-				if (g.def.isArchoGene)
+				if (g.def.architeCost > 0)
                 {
-					ITab_ShipGenes.archoGenes++;
+					ITab_ShipGenes.archoGenes += g.def.architeCost;
 				}
 				if (g.geneLineGene)
                 {

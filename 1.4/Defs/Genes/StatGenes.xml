@@ -1,0 +1,22 @@
+<Defs>
+	<BuildingGeneDef>
+		<defName>ToxResistanceGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<label>toxic resistance</label>
+		<description>This organism is particularly resistant to toxic buildup.</description>
+		<props>
+			<li>toxSensitivity:0.5</li>
+		</props>
+		<metabolicCost>-1</metabolicCost>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>ToxVulnerabilityGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<label>toxic vulnerability</label>
+		<description>This organism is particularly vulnerable to toxic buildup.</description>
+		<props>
+			<li>toxSensitivity:2f</li>
+		</props>
+		<metabolicCost>1</metabolicCost>
+	</BuildingGeneDef>
+</Defs>

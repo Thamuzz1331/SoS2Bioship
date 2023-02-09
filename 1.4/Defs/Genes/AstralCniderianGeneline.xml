@@ -9,7 +9,9 @@
 		<largeTurret>HeavySpineGene</largeTurret>
 		<spinalTurret>GrandNematocyst</spinalTurret>
 		<armor>CoralArmor</armor>
-		<miscGenes></miscGenes>
+		<miscGenes>
+			<li>ToxResistanceGene</li>
+		</miscGenes>
 	</ShipGenelineDef>
 	<BuildingGeneDef>
 		<defName>SmallNematocystGene</defName>

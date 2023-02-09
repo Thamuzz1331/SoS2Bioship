@@ -1094,8 +1094,136 @@
 		</costList>
 		<seeThroughFog>true</seeThroughFog>
 	</ThingDef>
-	
-	<ThingDef ParentName="ShipHeatsinkBase">
+
+	<!-- Heat Vent -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>Bioship_PassiveVent</defName>
+		<label>biological vent</label>
+		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
+		<thingClass>Building_ShipVent</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BioRadiatorBase</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<holdsRoof>true</holdsRoof>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<castEdgeShadows>true</castEdgeShadows>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<WorkToBuild>4000</WorkToBuild>
+			<MaxHitPoints>500</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<Steel>30</Steel>
+			<Plasteel>5</Plasteel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>Scar_Beam</regenDef>
+				<species>bioship</species>
+				<whitherTo>Whithered_PassiveVent</whitherTo>
+			</li>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl">
+				<energyPerSecond>-64</energyPerSecond>
+			</li>
+			<li Class="CompProperties_Overlay">
+				<graphicPath>Things/Building/Ship/Ship_Vent</graphicPath>
+				<size>(1,1,1)</size>
+			</li>
+			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+			<ChunkSlagSteel>1</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+
+
+	<!-- Heatsinks -->
+	<ThingDef ParentName="BuildingBase" Name="BioShipHeatsinkBase" Abstract="True">
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<pathCost>50</pathCost>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<tickerType>Normal</tickerType>
+		<placeWorkers>
+			<li>PlaceWorker_Heater</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	</ThingDef>
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipHeatsink</defName>
 		<label>organic heatsink</label>
 		<description>A liquid-cooled heatsink for storing excess heat. Slowly bleeds heat into the surrounding room; will not function in vacuum.\n\nHeat capacity: 115\nHeat released: 0.5/s</description>
@@ -1133,7 +1261,7 @@
 			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="ShipHeatsinkBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipHeatsinkLarge</defName>
 		<label>organic heatsink</label>
 		<description>A liquid-cooled heatsink for storing excess heat. Slowly bleeds heat into the surrounding room; will not function in vacuum.\n\nHeat capacity: 115\nHeat released: 0.5/s</description>
@@ -1171,7 +1299,7 @@
 			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="ShipHeatsinkBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipCoolantCyst</defName>
 		<label>coolant cyst</label>
 		<description>A cyst containing a reserve of coolant.\n\nHeat capacity: 800Hu\nHeat loss: 6Hu/s</description>
@@ -1202,7 +1330,7 @@
 			</li>
 		</comps>
 	</ThingDef>
-	<ThingDef ParentName="ShipHeatsinkBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipCoolantCystLarge</defName>
 		<label>large coolant cyst</label>
 		<description>A large cyst containg coolant. Slowly bleeds heat into the surrounding room if not in vacuum.\n\nHeat capacity: 4000Hu\nHeat loss: 18Hu/s</description>
@@ -1233,7 +1361,122 @@
 			</li>
 		</comps>
 	</ThingDef>
-	
+	<ThingDef ParentName="BioShipHeatsinkBase">
+		<defName>BioShipPurgePort</defName>
+		<label>thermal bile purge duct</label>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Shields will be dropped during a purge.</description>
+		<size>(2,2)</size>
+		<graphicData>
+			<texPath>Things/Building/Ship/BileVent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>800</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+		</costList>
+		<passability>Impassable</passability>
+		<seeThroughFog>true</seeThroughFog>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>WhitheredBioShipPurgePort</whitherTo>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatPurge</compClass>
+				<heatPurge>5</heatPurge>
+				<threat>5</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500.0</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<fuelFilter>
+					<thingDefs>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>100</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>5</refuelInterval>
+				<refuelCost>0.5</refuelCost>
+				<refuelAmmount>1</refuelAmmount>
+			</li>
+		</comps>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BioShipHeatsinkBase">
+		<defName>BioShipPurgePortLarge</defName>
+		<label>large thermal bile purge duct</label>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Ejecting molten silver into space is a costly way to quickly purge stored heat. Shields will be dropped during a purge.</description>
+		<size>(4,4)</size>
+		<graphicData>
+			<texPath>Things/Building/Ship/BileVentLarge</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1600</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+		</costList>
+		<passability>Impassable</passability>
+		<seeThroughFog>true</seeThroughFog>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>WhitheredBioShipPurgePortLarge</whitherTo>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeatPurge</compClass>
+				<heatPurge>25</heatPurge>
+				<threat>30</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>2500.0</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<fuelFilter>
+					<thingDefs>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>1</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>5</refuelInterval>
+				<refuelCost>0.5</refuelCost>
+				<refuelAmmount>1.25</refuelAmmount>
+			</li>
+		</comps>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
 	
 	
 	<ThingDef ParentName="BuildingBase">

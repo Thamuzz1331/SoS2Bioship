@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ShipHeart">
+		<defName>Ship_Heart_VoidDragon</defName>
+		<label>ship heart</label>
+		<designatorDropdown>Ship_Heart</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<description>The beating heart of a ship</description>
+		<designationCategory></designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipHeart">
+				<species>bioship</species>
+				<shipspecies>bioship</shipspecies>
+				<geneline>VoidDragonGeneline</geneline>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="ShipHeart">
+		<defName>Ship_Heart_Quest</defName>
+		<label>ship heart</label>
+		<designatorDropdown>Ship_Heart</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<description>The beating heart of a ship</description>
+		<designationCategory></designationCategory>
+		<comps>
+			<li Class="CompProperties_ShipHeart">
+				<species>bioship</species>
+				<shipspecies>bioship</shipspecies>
+				<geneline>AstralCniderianGeneline</geneline>
+			</li>
+		</comps>
+	</ThingDef>
+
+</Defs>

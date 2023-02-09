@@ -134,9 +134,9 @@
 		<thingClass>Building_BioTorpTurret</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioTorpedoHeavy</texPath>
-			<drawSize>(6,3)</drawSize>
+			<drawSize>(4,4)</drawSize>
 		</graphicData>
-		<size>(6,3)</size>
+		<size>(4,4)</size>
 		<comps>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>
@@ -174,9 +174,9 @@
 		<thingClass>Building_BioTorpTurret</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
-			<drawSize>(6,3)</drawSize>
+			<drawSize>(4,4)</drawSize>
 		</graphicData>
-		<size>(6,3)</size>
+		<size>(4,4)</size>
 		<comps>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeatSource</compClass>

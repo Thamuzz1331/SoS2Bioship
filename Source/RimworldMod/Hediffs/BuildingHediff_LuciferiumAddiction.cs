@@ -13,6 +13,15 @@ namespace RimWorld
 {
     public class BuildingHediff_LuciferiumAddiction : Building_Addiction, IAggressionSource
     {
+        public override void PostSpawnSetup(bool r)
+        {
+            base.PostSpawnSetup(r);
+            if (r)
+            {
+                ((CompShipHeart)bp.Core).aggression.aggressionSources.Add(this);
+            }
+        }
+
         public override void PostAdd()
         {
             base.PostAdd();

@@ -13,8 +13,8 @@
 				<compClass>CompShipHeat</compClass>
 				<heatPerPulse>10</heatPerPulse>
 				<energyToFire>40</energyToFire>
-				<maxRange>25</maxRange>
-				<optRange>25</optRange>
+				<optRange>50</optRange>
+				<maxRange>50</maxRange>
 				<projectileSpeed>10</projectileSpeed>
 				<pointDefense>true</pointDefense>
 				<groundDefense>true</groundDefense>
@@ -49,11 +49,7 @@
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
 		</building>
-		<costList>
-		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
-		<researchPrerequisites>
-		</researchPrerequisites>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
@@ -151,8 +147,8 @@
 		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
 		<impactSoundType>Blunt</impactSoundType>
 		<armorCategory>Sharp</armorCategory>
-		<minDamageToFragment>15</minDamageToFragment>
-		<defaultDamage>15</defaultDamage>
+		<minDamageToFragment>12</minDamageToFragment>
+		<defaultDamage>12</defaultDamage>
 		<defaultStoppingPower>0.5</defaultStoppingPower>
 		<defaultArmorPenetration>0.10</defaultArmorPenetration>
 		<buildingDamageFactor>4</buildingDamageFactor>
@@ -165,48 +161,7 @@
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
-
-
-	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_Fake_NematocystAcid</defName>
-		<label>Nematocyst</label>
-		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-			<drawSize>(6,6)</drawSize>
-		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
-		<projectile>
-			<damageDef>Bomb</damageDef>
-			<speed>100</speed>
-			<explosionRadius>0</explosionRadius>
-			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
-		</projectile>
-		<altitudeLayer>MetaOverlays</altitudeLayer>
-		<seeThroughFog>true</seeThroughFog>
-	</ThingDef>
-	<ThingDef ParentName="BaseGrenadeProjectile">
-		<defName>Proj_ShipTurretNematocystAcid</defName>
-		<label>nematocyst</label>
-		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
-		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-			<drawSize>(6,6)</drawSize>
-		</graphicData>
-		<projectile>
-			<explosionRadius>1.9</explosionRadius>
-			<damageDef>ShipNematocystAcid</damageDef>
-			<speed>100</speed>
-		</projectile>
-	</ThingDef>
-	<DamageDef ParentName="ShipNematocyst" Name="ShipNematocystAcid">
-		<defName>ShipNematocystAcid</defName>
-		<workerClass>DamageWorker_NematocystAcid</workerClass>
-	</DamageDef>
-
+	
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_Fake_NematocystBattering</defName>
 		<label>Nematocyst</label>

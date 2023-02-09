@@ -16,7 +16,12 @@ namespace Verse
 
         public override void PostAdd(CompBuildingCore core)
         {
+            base.PostAdd(core);
             CompShipHeart heart = (CompShipHeart)core;
+            foreach (BuildingGene g in heart.genes)
+            {
+
+            }
             foreach (String fieldDef in def.props)
             {
                 string[] fd = fieldDef.Split(':');
@@ -26,12 +31,22 @@ namespace Verse
 
         public override void PostRemove(CompBuildingCore core)
         {
-            CompShipHeart heart = (CompShipHeart)core;
-            foreach (String fieldDef in def.props)
+            base.PostRemove(core);
+            if (!this.Overridden)
             {
-                string[] fd = fieldDef.Split(':');
-                heart.defs.SetOrAdd(fd[0], new DefOptions(new List<ThingDef>()));
+                CompShipHeart heart = (CompShipHeart)core;
+                foreach (String fieldDef in def.props)
+                {
+                    string[] fd = fieldDef.Split(':');
+                    heart.defs.SetOrAdd(fd[0], new DefOptions(new List<ThingDef>()));
+                }
             }
         }
+
+        public override bool OverridesGene(BuildingGene b)
+        {
+			return false;
+        }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using Verse;
 using Verse.AI.Group;
 using RimWorld.Planet;
+using SaveOurShip2;
 
 namespace RimWorld
 {
@@ -29,27 +30,10 @@ namespace RimWorld
 
         protected override void ScatterAt(IntVec3 c, Map map, GenStepParams stepparams, int stackCount = 1)
         {
-            Building core = null;
-            ref Building coreRef = ref core;
-            try
-            {
-                EnemyShipDef d = DefDatabase<EnemyShipDef>.AllDefs.Where(def=>def.core.shapeOrDef == "Ship_Heart_Quest").RandomElement();
-                object[] parameters = new object[]{
-                    d,
-                    map,
-                    null,
-                    Faction.OfInsects,
-                    null,
-                    coreRef,
-                    true,
-                    true
-                };
-                AccessTools.Method(shipCombatManagerType, "GenerateShip").Invoke(null, parameters);
-            }
-            catch(Exception e)
-            {
-                Log.Error(e.ToString());
-            }
+            List<Building> cores = new List<Building>();
+            //limited to 100x100 due to unsettable map size, no fleets
+            EnemyShipDef ship = DefDatabase<EnemyShipDef>.AllDefs.Where(def => def.core.shapeOrDef == "Ship_Heart_Quest").RandomElement();
+            ShipInteriorMod2.GenerateShip(ship, map, null, Faction.OfInsects, null, out cores, false, true, 0, (map.Size.x - ship.sizeX) / 2, (map.Size.z - ship.sizeZ) / 2);
         }
     }
 }

@@ -65,17 +65,17 @@ namespace RimWorld
         public ToxSeverity GetSeverityForMass()
         {
             float toxSev = toxLevel / bp.body.bodyParts.Count;
-            if (toxSev <= 0f)
+            if (toxSev <= 0.04f)
                 return ToxSeverity.NONE;
-            else if (toxSev <= 0.04f)
+            else if (toxSev <= 0.2f)
                 return ToxSeverity.INITIAL;
-            else if (toxSev <= .2f)
-                return ToxSeverity.MINOR;
             else if (toxSev <= .4f)
-                return ToxSeverity.MODERATE;
+                return ToxSeverity.MINOR;
             else if (toxSev <= .6f)
-                return ToxSeverity.SERIOUS;
+                return ToxSeverity.MODERATE;
             else if (toxSev <= .8f)
+                return ToxSeverity.SERIOUS;
+            else if (toxSev > 0.8f)
                 return ToxSeverity.EXTREME;
             return ToxSeverity.NONE;
         }

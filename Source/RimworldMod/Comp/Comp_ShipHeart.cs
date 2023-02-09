@@ -17,8 +17,6 @@ namespace RimWorld
     {
         public CompProperties_ShipHeart HeartProps => (CompProperties_ShipHeart)props;
 
-        StatDef injectors = StatDef.Named("LuciferInjectors");
-
         int IAggressionSource.GetAggressionValue()
         {
             return 2;
@@ -28,8 +26,7 @@ namespace RimWorld
         public CompAggression aggression;
         public bool initialized = false;
         public float maxResistence = 0.15f;
-        public ShipGeneline geneline = null;
-
+        public ShipGenelineDef geneline = null;
         public Dictionary<DamageDef, float> resistances = new Dictionary<DamageDef, float>();
 
         public Dictionary<string, DefOptions> defs = new Dictionary<string, DefOptions>()
@@ -61,7 +58,7 @@ namespace RimWorld
         {
             base.PostExposeData();
             Scribe_Values.Look<bool>(ref initialized, "initialized", false);
-            Scribe_Deep.Look<ShipGeneline>(ref geneline, "geneline", null);
+            Scribe_Defs.Look<ShipGenelineDef>(ref geneline, "geneline");
             Scribe_Collections.Look<DamageDef, float>(ref resistances, "resistences", LookMode.Def, LookMode.Value);
             Scribe_Collections.Look<string, DefOptions>(ref defs, "defs", LookMode.Value, LookMode.Deep);
         }
@@ -78,25 +75,47 @@ namespace RimWorld
                 stats.Add("movementSpeed", 1f);
             if (!stats.ContainsKey("shieldStrength"))
                 stats.Add("shieldStrength", 0.75f);
+            if (!stats.ContainsKey("toxSensitivity"))
+                stats.Add("toxSensitivity", 1f);
             regenWorker = parent.TryGetComp<CompRegenWorker>();
             aggression = parent.TryGetComp<CompAggression>();
             base.PostSpawnSetup(respawningAfterLoad);
             regenWorker.body = this.body;
             if (!respawningAfterLoad && !initialized)
             {
-                aggression.aggressionSources.Add(this);
-                geneline = ShipGenelineMaker.MakeShipGeneline(ShipGenelineDef.Named(HeartProps.geneline));
-                this.AddGene(geneline.smallTurretGene);
-                this.AddGene(geneline.mediumTurretGene);
-                this.AddGene(geneline.largeTurretGene);
-                this.AddGene(geneline.spinalTurretGene);
-                this.AddGene(geneline.armor);
-                foreach (BuildingGene b in geneline.genes)
+                if (CompHeartSeed.Geneline != null)
+                {
+                    this.geneline = CompHeartSeed.Geneline;
+                    CompHeartSeed.Geneline = null;
+                } else
+                {
+                    this.geneline = ShipGenelineDef.Named(HeartProps.geneline);
+                }
+                ShipGeneline g = ShipGenelineMaker.MakeShipGeneline(this.geneline);
+                this.AddGene(g.smallTurretGene);
+                this.AddGene(g.mediumTurretGene);
+                this.AddGene(g.largeTurretGene);
+                this.AddGene(g.spinalTurretGene);
+                this.AddGene(g.armor);
+                foreach (BuildingGene b in g.genes)
                 {
                     this.AddGene(b);
                 }
+                if (CompHeartSeed.ExoDefs != null)
+                {
+                    foreach (BuildingGeneDef gDef in CompHeartSeed.ExoDefs)
+                    {
+                        BuildingGene gene = BuildingGeneMaker.MakeBuildingGene(gDef);
+                        this.AddGene(gene);
+                    }
+                    CompHeartSeed.ExoDefs = null;
+                }
+                BuildingHediff toxBuildup = BuildingHediffMaker.MakeBuildingHediff(BuildingHediffDef.Named("ShipToxBuildup"));
+                this.AddHediff(toxBuildup);
                 initialized = true; //When the ship takes off the comps get regenerated.  This ensures that the initial mutations will only proc once.
             }
+            aggression.aggressionSources.Add(this);
+            regenWorker.toxicBuildup = (BuildingHediff_ToxicBuildup)hediffs.Where(x => x is BuildingHediff_ToxicBuildup).FirstOrDefault();
             if (!respawningAfterLoad)
             {
                 if (parent.TryGetComp<CompShipNutritionStore>() != null)

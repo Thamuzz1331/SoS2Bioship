@@ -974,7 +974,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/ScaffoldTorpedo</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(6,3)</drawSize>
+			<drawSize>(4,4)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
 			<li>LargeWeaponScaffold</li>
@@ -991,7 +991,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>Scaffold for an small shipmaw.</description>
-		<size>(6,3)</size>
+		<size>(4,4)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
 			
@@ -1270,82 +1270,7 @@
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
 	</ThingDef>
-	<DesignatorDropdownGroupDef>
-		<defName>Scaffold_Thermoregulation</defName>
-	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase">
-		<defName>ScaffoldInside_PassiveCooler</defName>
-		<label>radiator fin scaffold</label>
-		<description>Scaffold for a radiator fin.</description>
-		<designatorDropdown>Scaffold_Thermoregulation</designatorDropdown>
-		<designationCategory>Ship</designationCategory>
-		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>Impassable</passability>
-		<graphicData>
-			<texPath>Things/Building/Scaffold/RadiatorBaseScaffold</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-				<edgeTop>Damage/Edge</edgeTop>
-				<edgeBot>Damage/Edge</edgeBot>
-				<edgeLeft>Damage/Edge</edgeLeft>
-				<edgeRight>Damage/Edge</edgeRight>
-			</damageData>
-		</graphicData>
-		<uiIconPath>Things/Building/Ship/BioRadiatorBase</uiIconPath>
-		<size>(1,1)</size>
-		<rotatable>true</rotatable>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<holdsRoof>true</holdsRoof>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
-		<castEdgeShadows>true</castEdgeShadows>
-		<statBases>
-			<WorkToBuild>100</WorkToBuild>
-			<MaxHitPoints>5</MaxHitPoints>
-			<Flammability>0</Flammability>
-		</statBases>
-		<selectable>true</selectable>
-		<costList>
-			<ProtienPutty>4</ProtienPutty>
-			<Neutroamine>15</Neutroamine>
-		</costList>
-		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
-		<placeWorkers>
-			<li>PlaceWorker_Radiator</li>
-		</placeWorkers>
-		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-		<comps>
-			<li>
-				<compClass>CompColorable</compClass>
-			</li>
-			<li Class="CompProperties_Scaffold">
-				<species>bioship</species>
-				<transformString>BioShipInside_PassiveCooler</transformString>
-			</li>
-		</comps>
-		<designationHotKey>Misc2</designationHotKey>
-		<researchPrerequisites>
-			<li>ThermoregulatoryScaffolds</li>
-		</researchPrerequisites>
-		<building>
-			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-			</blueprintGraphicData>
-		</building>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<killedLeavings>
-		</killedLeavings>
-	</ThingDef>
-	
+
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Shield</defName>
 	</DesignatorDropdownGroupDef>
@@ -1402,7 +1327,7 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Heatsink</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldHeatsink</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
@@ -1436,7 +1361,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldHeatsinkLarge</defName>
 		<label>large heatsink scaffold</label>
 		<description>Scaffold for a bio heatsink</description>
@@ -1470,7 +1395,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldCoolantCyst</defName>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
@@ -1504,7 +1429,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldCoolantCystLarge</defName>
 		<label>large coolant cyst scaffold</label>
 		<description>Scaffold for collant cyst</description>
@@ -1538,6 +1463,74 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 	</ThingDef>
+	<ThingDef ParentName="BioShipHeatsinkBase">
+		<defName>ScaffoldPurgePort</defName>
+		<label>thermal bile purge duct</label>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Shields will be dropped during a purge.</description>
+		<size>(2,2)</size>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/BileVentScaffold_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2.1,4.7)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>8</MaxHitPoints>
+			<WorkToBuild>35</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+		</costList>
+		<passability>Impassable</passability>
+		<seeThroughFog>true</seeThroughFog>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipPurgePort</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BioShipHeatsinkBase">
+		<defName>ScaffoldPurgePortLarge</defName>
+		<label>large thermal bile purge duct scaffold</label>
+		<altitudeLayer>WorldClipper</altitudeLayer>
+		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Ejecting molten silver into space is a costly way to quickly purge stored heat. Shields will be dropped during a purge.</description>
+		<size>(4,4)</size>
+		<designationCategory>Ship</designationCategory>
+		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
+		<graphicData>
+			<texPath>Things/Building/Scaffold/BileVentScaffold_Big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>16</MaxHitPoints>
+			<WorkToBuild>120</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<costList>
+		</costList>
+		<passability>Impassable</passability>
+		<seeThroughFog>true</seeThroughFog>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipPurgePortLarge</transformString>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
+	
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Mitochondira</defName>
 	</DesignatorDropdownGroupDef>
@@ -1572,7 +1565,6 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
 		<comps>
-			
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Giant_Mitochondira</transformString>

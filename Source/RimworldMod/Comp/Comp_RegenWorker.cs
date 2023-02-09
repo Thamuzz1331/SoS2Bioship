@@ -14,6 +14,8 @@ namespace RimWorld
 	{
 		public CompProperties_RegenWorker Props => (CompProperties_RegenWorker)props;
 
+		public BuildingHediff_ToxicBuildup toxicBuildup;
+
 		private float ticksToRegen = 0f;
 		
 		public HashSet<Building> wounds = new HashSet<Building>();
@@ -46,6 +48,13 @@ namespace RimWorld
 
 		public virtual void HealWounds()
         {
+			if (toxicBuildup.toxLevel > 0)
+            {
+				toxicBuildup.toxLevel -= (body.bodyParts.Count/500);
+            } else if (toxicBuildup.toxLevel < 0)
+            {
+				toxicBuildup.toxLevel = 0;
+            }
 			List<Building> healedWounds = new List<Building>();
 			if (wounds.Count > 0 && parent.Map.Biome == ResourceBank.BiomeDefOf.OuterSpaceBiome)
             {

@@ -28,8 +28,6 @@ namespace RimWorld
         public override void CompTick()
         {
 			base.CompTick();
-//TODO: Update this
-/*
             if (active) {
 				if (emitCounter <= 0)
 				{
@@ -38,8 +36,20 @@ namespace RimWorld
 				}
 				emitCounter--;
 			}
-*/
         }
+		public override float Thrust
+        {
+            get
+            {
+				CompBuildingBodyPart bp = parent.TryGetComp<CompBuildingBodyPart>();
+				if (bp != null && bp.CoreSpawned)
+                {
+					return (Props.thrust * bp.Core.GetStat("movementSpeed"));
+                } 
+                return Props.thrust;
+            }
+        }
+
 
 		protected void Emit()
 		{
@@ -48,7 +58,6 @@ namespace RimWorld
 				return;
 			}
 			Vector3 vector = new Vector3(0f, 1f, 0f);
-			Log.Message("!!");
 			Vector3 vector2 = this.parent.DrawPos + vector;
 			if (vector2.InBounds(this.parent.Map))
 			{

@@ -30,7 +30,7 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToAttack, "ticksToAttack", 0);
 			Scribe_Values.Look(ref extremeAggressionDetection, "extremeAggressionDetection", 0);
 			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
-			Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
+			//Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
 		}
 
 		public override void CompTick()

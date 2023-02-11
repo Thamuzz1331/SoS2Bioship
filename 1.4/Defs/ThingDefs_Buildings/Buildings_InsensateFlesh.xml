@@ -36,7 +36,9 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -106,7 +108,9 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
@@ -306,7 +310,9 @@
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>

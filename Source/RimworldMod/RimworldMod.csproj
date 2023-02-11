@@ -208,7 +208,10 @@
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_ShipGenes.cs" />
-
+<!--	  
+	  <Compile Include="Graphics\ShipGeneCreationDialogBase.cs" />
+	  <Compile Include="Graphics\Dialog_CreateShipXenogerm.cs" />
+-->
 	  <Compile Include="Verbs\Verb_MutableProjectileShip.cs" />
 
   </ItemGroup>

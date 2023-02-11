@@ -80,7 +80,9 @@
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
 				<species>bioship</species>
@@ -157,7 +159,9 @@
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam_Unpowered</regenDef>
 				<species>bioship</species>
@@ -394,7 +398,9 @@
 				<regenDef>ScarHullTile</regenDef>
 				<species>bioship</species>
 			</li>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_OnShipHull</li>
@@ -441,7 +447,9 @@
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarHullTile</regenDef>
 				<species>bioship</species>

@@ -37,7 +37,9 @@
 		<description>Whithered flesh.  Connect to a heart to restore its vitality</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
 				<transformString>Bio_Ship_Beam</transformString>
@@ -106,7 +108,9 @@
 		<description>Whithered wall.  Connect to a well fed ShipHeart to revitalize</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
 				<species>bioship</species>
@@ -404,7 +408,9 @@
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>
@@ -618,8 +624,9 @@
 		<description>Whithered for an organic sensor array.</description>
 		<size>(1,1)</size>
 		<comps>
-			
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
@@ -665,8 +672,9 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(1,1)</size>
 		<comps>
-			
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>smallMawOptions</transformString>
@@ -713,8 +721,9 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(2,2)</size>
 		<comps>
-			
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Maw_Corpse</transformString>
@@ -777,8 +786,9 @@
 		</graphicData>
 		<size>(3,3)</size>
 		<comps>
-			
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>mediumTurretOptions</transformString>
@@ -819,8 +829,9 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(4,4)</size>
 		<comps>
-			
-			<li Class="CompProperties_RoofMe"/>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>largeTurretOptions</transformString>
@@ -931,79 +942,6 @@
 		<researchPrerequisites>
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
-	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
-		<defName>WhitheredInside_PassiveCooler</defName>
-		<label>radiator fin Whithered</label>
-		<description>Whithered for a radiator fin.</description>
-		<thingClass>Building_Scaffold</thingClass>
-		<passability>Impassable</passability>
-		<graphicData>
-			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>Basic</linkType>
-			<linkFlags>
-				<li>Wall</li>
-				<li>Rock</li>
-			</linkFlags>
-			<damageData>
-				<cornerTL>Damage/Corner</cornerTL>
-				<cornerTR>Damage/Corner</cornerTR>
-				<cornerBL>Damage/Corner</cornerBL>
-				<cornerBR>Damage/Corner</cornerBR>
-				<edgeTop>Damage/Edge</edgeTop>
-				<edgeBot>Damage/Edge</edgeBot>
-				<edgeLeft>Damage/Edge</edgeLeft>
-				<edgeRight>Damage/Edge</edgeRight>
-			</damageData>
-		</graphicData>
-		<uiIconPath>Things/Building/Ship/BeamRadiatorUI</uiIconPath>
-		<size>(1,1)</size>
-		<rotatable>true</rotatable>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<holdsRoof>true</holdsRoof>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
-		<castEdgeShadows>true</castEdgeShadows>
-		<tickerType>Normal</tickerType>
-		<statBases>
-			<WorkToBuild>0</WorkToBuild>
-			<MaxHitPoints>5</MaxHitPoints>
-			<Flammability>0</Flammability>
-		</statBases>
-		<selectable>true</selectable>
-		<costList>
-		</costList>
-		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
-		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
-		<placeWorkers>
-			<li>PlaceWorker_Radiator</li>
-		</placeWorkers>
-		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-		<comps>
-			<li Class="CompProperties_RoofMe"/>
-			<li>
-				<compClass>CompColorable</compClass>
-			</li>
-			<li Class="CompProperties_Scaffold">
-				<species>bioship</species>
-				<transformString>BioShipInside_PassiveCooler</transformString>
-			</li>
-		</comps>
-		<designationHotKey>Misc2</designationHotKey>
-		<researchPrerequisites>
-		</researchPrerequisites>
-		<building>
-			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-			</blueprintGraphicData>
-		</building>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<killedLeavings>
-		</killedLeavings>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">

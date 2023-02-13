@@ -5,6 +5,7 @@
 		<description>A cluster of specialized neurons specialized for projecting a skip shield. Shots can go out, but not in.\nA mutation has added the effect of folding space, allowing the ship to move without the need for reaction mass.\n\nGenerates heat when it blocks attacks. If no heatsink capacity is available, the shield will be damaged and require repairs.\n\nShip radiators cannot disperse heat while shields are up. Captains are advised to drop shields once heatsinks are close to capacity, or risk their ships turning into ovens.</description>
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
+		<designationCategory></designationCategory>
 		<statBases>
 			<MaxHitPoints>600</MaxHitPoints>
 			<Flammability>0.5</Flammability>
@@ -83,6 +84,7 @@
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ThirdEye</defName>
 		<label>third eye</label>
+		<designationCategory></designationCategory>
 		<description>A focus for the psychic might of the ship.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
@@ -93,7 +95,6 @@
 		<size>(5,4)</size>
 		<rotatable>true</rotatable>
 		<tickerType>Normal</tickerType>
-		<designationCategory></designationCategory>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>Impassable</passability>
 		<castEdgeShadows>false</castEdgeShadows>

@@ -75,6 +75,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
 		</graphicData>
+		<designationCategory></designationCategory>
 		<weaponTags>
 			<li>Artillery_BaseDestroyer</li>
 		</weaponTags>

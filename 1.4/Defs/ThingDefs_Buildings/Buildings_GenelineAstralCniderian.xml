@@ -3,6 +3,7 @@
 		<defName>GrandNematocyst</defName>
 		<label>grand nematocyst</label>
 		<description>A giant nematocyst cluster, firing barbed threads laced with virulent toxin.</description>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -12,7 +13,6 @@
 		<size>(5,4)</size>
 		<rotatable>true</rotatable>
 		<tickerType>Normal</tickerType>
-		<designationCategory></designationCategory>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<passability>Impassable</passability>
 		<castEdgeShadows>false</castEdgeShadows>
@@ -55,7 +55,6 @@
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
-
 		</comps>
 		<placeWorkers>
 		</placeWorkers>

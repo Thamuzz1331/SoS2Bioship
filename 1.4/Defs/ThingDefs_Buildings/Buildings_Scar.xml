@@ -46,6 +46,7 @@
 		<defName>Scar_Beam</defName>
 		<label>scar</label>
 		<thingClass>Building_Armor</thingClass>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -125,6 +126,7 @@
 		<defName>Scar_Beam_Unpowered</defName>
 		<label>scar</label>
 		<thingClass>Building_Armor</thingClass>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipScars/ScarBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -372,6 +374,7 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Scar/ScarHullPlate</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -421,6 +424,7 @@
 		<label>Scar sphintcer</label>
 		<description>Allows access to a ship or divides rooms inside it.  A permiable mucus layer prevents the loss of gasses.</description>
 		<category>Building</category>
+		<designationCategory></designationCategory>
 		<thingClass>Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>

@@ -33,7 +33,7 @@
 		<statBases>
 			<MaxHitPoints>1500</MaxHitPoints>
 			<Flammability>0</Flammability>
-			<LuciferInjectors>0</LuciferInjectors>
+			<WorkToBuild>16000</WorkToBuild>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<description>The beating heart of a ship</description>

@@ -55,6 +55,7 @@ namespace BioShip
 			Log.Message("Bioship Loaded");
 		}
 
+/*
 		public static List<ThingDef> shipHullDefs = new List<ThingDef>()
         {
 			ThingDef.Named("ShipHullTile"),
@@ -64,6 +65,7 @@ namespace BioShip
 			ThingDef.Named("ScaffoldHullTile"),
 			ThingDef.Named("BioShipHullTile"),
         };
+*/
 
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
 

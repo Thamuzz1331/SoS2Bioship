@@ -30,6 +30,7 @@
 	<ThingDef ParentName="ArmorBase">
 		<defName>CoralArmor</defName>
 		<label>coral armor</label>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -62,13 +63,13 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<isArmor>true</isArmor>
 				<species>bioship</species>
-				<growsArmor>true</growsArmor>
 			</li>
 		</comps>
 	</ThingDef>
 	<ThingDef ParentName="ArmorBase">
 		<defName>BoneArmor</defName>
 		<label>bone armor</label>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -108,6 +109,7 @@
 	<ThingDef ParentName="ArmorBase">
 		<defName>DragonscaleArmor</defName>
 		<label>dragonscale armor</label>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/PlasteelCarapaceAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

@@ -43,8 +43,7 @@
 		</building>
 		<costList>
 		</costList>
-		<designationCategory>
-		</designationCategory>
+		<designationCategory/>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<altitudeLayer>WorldClipper</altitudeLayer>

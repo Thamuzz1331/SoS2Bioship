@@ -4,6 +4,7 @@
 		<defName>Bio_Ship_Beam</defName>
 		<label>Shipflesh</label>
 		<thingClass>Building_Armor</thingClass>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -93,6 +94,7 @@
 		<defName>Bio_Ship_Beam_Unpowered</defName>
 		<label>shipflesh</label>
 		<thingClass>Building_Armor</thingClass>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -209,6 +211,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BioShipCornerBase" Name="BioShipCorner" Abstract="True">
 		<description>Angled armor for a ship's outer hull.</description>
+		<designationCategory></designationCategory>
 		<comps>
 			<li Class="CompProperties_SoShipPart">
 				<isHull>true</isHull>
@@ -379,6 +382,7 @@
 		<label>shipflesh floor</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<category>Building</category>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
@@ -440,6 +444,7 @@
 		<label>bioship sphintcer</label>
 		<description>Allows access to a ship or divides rooms inside it.  A permiable mucus layer prevents the loss of gasses.</description>
 		<category>Building</category>
+		<designationCategory></designationCategory>
 		<thingClass>Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
@@ -523,6 +528,7 @@
 		<label>small biorocket engine</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -601,6 +607,7 @@
 		<label>biorocket engine</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -679,6 +686,7 @@
 		<label>nuclear bioengine</label>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -757,6 +765,7 @@
 		<defName>BioShip_SensorCluster</defName>
 		<label>bioship sensors</label>
 		<thingClass>Building_ShipAdvSensor</thingClass>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipSensorCluster</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -814,6 +823,7 @@
 		<defName>Maw_Small</defName>
 		<label>small ship maw</label>
 		<thingClass>Building_TrapDamager</thingClass>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_1x1</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -879,6 +889,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Maw_Corpse</defName>
 		<label>corpse maw</label>
+		<designationCategory></designationCategory>
 		<thingClass>Building_TrapDamager</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
@@ -946,6 +957,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>FatStoreSmall</defName>
 		<label>fat store</label>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -994,6 +1006,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>FatStoreLarge</defName>
 		<label>fat store</label>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1044,6 +1057,7 @@
 		<description>A cluster of specialized neurons specialized for projecting a skip shield. Shots can go out, but not in.\n\nGenerates heat when it blocks attacks. If no heatsink capacity is available, the shield will be damaged and require repairs.\n\nShip radiators cannot disperse heat while shields are up. Captains are advised to drop shields once heatsinks are close to capacity, or risk their ships turning into ovens.</description>
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
+		<designationCategory></designationCategory>
 		<statBases>
 			<MaxHitPoints>600</MaxHitPoints>
 			<Flammability>0.5</Flammability>
@@ -1103,6 +1117,7 @@
 		<thingClass>Building_ShipVent</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1306,6 +1321,7 @@
 		<label>coolant cyst</label>
 		<description>A cyst containing a reserve of coolant.\n\nHeat capacity: 800Hu\nHeat loss: 6Hu/s</description>
 		<size>(2,2)</size>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/CoolantCyst</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1337,6 +1353,7 @@
 		<label>large coolant cyst</label>
 		<description>A large cyst containg coolant. Slowly bleeds heat into the surrounding room if not in vacuum.\n\nHeat capacity: 4000Hu\nHeat loss: 18Hu/s</description>
 		<size>(4,4)</size>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/CoolantCystLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1369,6 +1386,7 @@
 		<altitudeLayer>WorldClipper</altitudeLayer>
 		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Shields will be dropped during a purge.</description>
 		<size>(2,2)</size>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BileVent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1427,6 +1445,7 @@
 		<altitudeLayer>WorldClipper</altitudeLayer>
 		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Ejecting molten silver into space is a costly way to quickly purge stored heat. Shields will be dropped during a purge.</description>
 		<size>(4,4)</size>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BileVentLarge</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1487,6 +1506,7 @@
 		<thingClass>Building</thingClass>
 		<passability>Impassable</passability>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipGiantMitochondria</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1551,6 +1571,7 @@
 		<passability>Impassable</passability>
 		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipGiantMitochondria</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1615,6 +1636,7 @@
 		<designatorDropdown>Ship_Capacitors</designatorDropdown>
 		<thingClass>Building_ShipCapacitor</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
+		<designationCategory></designationCategory>
 		<thingCategories>
 			<li>BuildingsFurniture</li>
 		</thingCategories>
@@ -1673,6 +1695,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>SalvageMaw</defName>
 		<label>salvage maw</label>
+		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

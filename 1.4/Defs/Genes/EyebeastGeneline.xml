@@ -1,0 +1,62 @@
+<Defs>
+	<ShipGenelineDef>
+		<defName>MutantEyebeastGeneline</defName>
+		<shipGenelineClass>ShipGeneline</shipGenelineClass>
+		<label>Mutant Eyebeast</label>
+		<description>Flesh grown riot.</description>
+		<smallTurret>SmallEyelaserGene</smallTurret>
+		<mediumTurret>MediumEyelaserGene</mediumTurret>
+		<largeTurret>LargeEyelaserGene</largeTurret>
+		<spinalTurret>CollosalEyelaserGene</spinalTurret>
+		<armor>ThickHide</armor>
+		<miscGenes>
+			<li>FastRegenGene</li>
+		</miscGenes>
+	</ShipGenelineDef>
+	<BuildingGeneDef>
+		<defName>SmallEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>small eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<props>
+			<li>smallTurretOptions:ShipTurret_SmallEyeLaser</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>MediumEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>medium eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<props>
+			<li>mediumTurretOptions:ShipTurret_MediumEyeLaser</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>LargeEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>heavy plasma maw</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<props>
+			<li>largeTurretOptions:ShipTurret_LargeEyeLaser</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>CollosalEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>collosal eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam</description>
+		<props>
+			<li>spinalTurretOptions:GiantEyeLaser</li>
+		</props>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>ThickHide</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<label>hide</label>
+		<description>Placeholder</description>
+		<props>
+			<li>armor:Bio_Ship_Beam_Unpowered</li>
+		</props>
+		<metabolicCost>1</metabolicCost>
+	</BuildingGeneDef>
+</Defs>

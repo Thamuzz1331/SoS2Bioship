@@ -34,10 +34,10 @@
 	<BuildingGeneDef>
 		<defName>HeavySpineGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
-		<label>heavy spine</label>
+		<label>spine launcher</label>
 		<description>Specialized barbs driven by biosplasma, capable of hunting tracking prey.</description>
 		<props>
-			<li>largeTurretOptions:HeavySpineLauncher</li>
+			<li>largeTurretOptions:HeavySpineLauncher,LightSpineLauncher</li>
 		</props>
 	</BuildingGeneDef>
 	<BuildingGeneDef>

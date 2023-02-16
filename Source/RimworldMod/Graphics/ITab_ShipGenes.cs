@@ -268,7 +268,6 @@ namespace RimWorld
             }
 		}
 
-
 		protected static List<BuildingGene> endogenes = new List<BuildingGene>();
 		protected static List<BuildingGene> xenogenes = new List<BuildingGene>();
 		protected static int archoGenes;

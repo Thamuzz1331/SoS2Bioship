@@ -66,150 +66,84 @@
 			</li>
 		</verbs>
 	</ThingDef>
-
-
-
-	<!-- Spike Launchers-->
-	<ThingDef ParentName="BaseShipArtilleryWeapon" Name="BaseBioTorpedo" Abstract="True">
-		<description>Spine launcher.  Hurls volleys of bio-plasma propelled bone spikes.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
-		</graphicData>
+	<!-- UV Eye Laser-->
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>ShipTurret_UVEyeLaser</defName>
+		<label>large eye laser</label>
+		<description>Concentrated ultraviolet light is devestating in its effects matter.  While highly desireable in a weapon, it also renders the prospect of creating a resonance chamber capable of focusing the radiation without being damaged in the process difficult.\n\nThis organ addresses that problem by ignoring it and trusting to its regenerative abilities to recover from its self inflicted wounds.</description>
 		<designationCategory></designationCategory>
-		<weaponTags>
-			<li>Artillery_BaseDestroyer</li>
-		</weaponTags>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>LargeWeaponWhithered</whitherTo>
+				<regenDef>ShipTurret_UVEyeLaser</regenDef>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
+			</li>
+
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<heatPerPulse>30</heatPerPulse>
+				<energyToFire>240</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>100</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
+				<threat>45</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_LargeEyeLaserTop</turretGunDef>
+			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+		</building>
+		<costList>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<size>(4,4)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_LargeEyeLaserTop</defName>
+		<label>laser</label>
+		<description>Laser cannon. Short-ranged but devastating.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaser</texPath>
+		</graphicData>
 		<verbs>
 			<li>
+				<label>shoot laser</label>
 				<verbClass>Verb_LaunchProjectileShip</verbClass>
-				<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
-				<warmupTime>4.0</warmupTime>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1000</range>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>18</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 				<requireLineOfSight>false</requireLineOfSight>
-				<range>500</range>
-				<burstShotCount>1</burstShotCount>
-				<soundCast>Mortar_LaunchA</soundCast>
-				<muzzleFlashScale>16</muzzleFlashScale>
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
+				<defaultProjectile>Proj_MediumEyeLaser</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 			</li>
 		</verbs>
-		<building>
-			<fixedStorageSettings>
-				<filter>
-					<categories>
-					</categories>
-				</filter>
-			</fixedStorageSettings>
-			<defaultStorageSettings>
-				<filter>
-					<categories>
-					</categories>
-				</filter>
-			</defaultStorageSettings>
-		</building>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseBioTorpedo">
-		<defName>Artillery_BioShipTorpedo_Two</defName>
-		<label>torpedo tubes (2)</label>
-		<comps>
-			<li Class="CompProperties_ChangeableProjectilePlural">
-				<maxTorpedoes>2</maxTorpedoes>
-			</li>
-		</comps>
-	</ThingDef>
-	<ThingDef ParentName="BaseBioTorpedo">
-		<defName>Artillery_BioShipTorpedo_Six</defName>
-		<label>torpedo tubes (6)</label>
-		<comps>
-			<li Class="CompProperties_ChangeableProjectilePlural">
-				<maxTorpedoes>6</maxTorpedoes>
-			</li>
-		</comps>
-	</ThingDef>
-
-	<ThingDef ParentName="BaseShipTorpedoBuilding">
-		<defName>HeavySpineLauncher</defName>
-		<label>heavy spine launcher</label>
-		<thingClass>Building_BioTorpTurret</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Ship/BioTorpedoHeavy</texPath>
-			<drawSize>(4,4)</drawSize>
-		</graphicData>
-		<size>(4,4)</size>
-		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
-				<heatPerPulse>1</heatPerPulse>
-				<energyToFire>10</energyToFire>
-				<maxRange>200</maxRange>
-				<projectileSpeed>0.25</projectileSpeed>
-				<threat>30</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>0</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_ShipBodyPart">
-				<species>bioship</species>
-				<whitherTo>LargeWeaponWhithered</whitherTo>
-			</li>
-			<li Class="CompProperties_NutritionLoader">
-				<ammoCat>Spine_Heavy</ammoCat>
-				<reloadInterval>18</reloadInterval>
-				<reloadCost>0.3</reloadCost>
-			</li>
-		</comps>
-		<building>
-			<turretGunDef>Artillery_BioShipTorpedo_Two</turretGunDef>
-		</building>
-		<costList>
-		</costList>
 	</ThingDef>
 	
-	<ThingDef ParentName="BaseShipTorpedoBuilding">
-		<defName>LightSpineLauncher</defName>
-		<label>light spine launcher</label>
-		<thingClass>Building_BioTorpTurret</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
-			<drawSize>(4,4)</drawSize>
-		</graphicData>
-		<size>(4,4)</size>
-		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
-				<heatPerPulse>1</heatPerPulse>
-				<energyToFire>10</energyToFire>
-				<maxRange>200</maxRange>
-				<projectileSpeed>0.25</projectileSpeed>
-				<threat>30</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>0</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_ShipBodyPart">
-				<species>bioship</species>
-				<whitherTo>LargeWeaponWhithered</whitherTo>
-			</li>
-			<li Class="CompProperties_NutritionLoader">
-				<ammoCat>Spine_Light</ammoCat>
-				<reloadInterval>6</reloadInterval>
-				<reloadCost>0.15</reloadCost>
-			</li>
-		</comps>
-		<building>
-			<turretGunDef>Artillery_BioShipTorpedo_Six</turretGunDef>
-		</building>
-		<uiIconPath>Things/Building/Ship/TorpedoTubes_small</uiIconPath>
-		<costList>
-		</costList>
-	</ThingDef>
-
 	<ThingDef ParentName="BuildingBase">
 		<defName>SpinalWeaponRoot</defName>
 		<label>spinal weapon root</label>

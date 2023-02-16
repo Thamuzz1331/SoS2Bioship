@@ -18,14 +18,16 @@ namespace Verse
         {
             base.PostAdd(core);
             CompShipHeart heart = (CompShipHeart)core;
-            foreach (BuildingGene g in heart.genes)
-            {
-
-            }
             foreach (String fieldDef in def.props)
             {
                 string[] fd = fieldDef.Split(':');
-                heart.defs.SetOrAdd(fd[0], new DefOptions(new List<ThingDef>() { ThingDef.Named(fd[1]) }));
+                List<ThingDef> newOpts = new List<ThingDef>(new List<ThingDef>());
+                string[] opts = fd[1].Split(',');
+                foreach (String o in opts)
+                {
+                    newOpts.Add(ThingDef.Named(o));
+                }
+                heart.defs.SetOrAdd(fd[0], new DefOptions(newOpts));
             }
         }
 

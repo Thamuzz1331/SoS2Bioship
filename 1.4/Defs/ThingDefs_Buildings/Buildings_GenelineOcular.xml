@@ -1,8 +1,340 @@
 <Defs>
 	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>ShipTurret_SmallEyeLaser</defName>
+		<label>small eye laser</label>
+		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>SmallWeaponWhithered</whitherTo>
+				<regenDef>ShipTurret_SmallEyeLaser</regenDef>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<heatPerPulse>10</heatPerPulse>
+				<energyToFire>80</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>50</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<pointDefense>true</pointDefense>
+				<groundDefense>true</groundDefense>
+				<groundProjectile>Bullet_Ground_EyeLaser</groundProjectile>
+				<singleFireSound>ShipCombatLaser</singleFireSound>
+				<threat>10</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_SmallEyeLaserTop</turretGunDef>
+			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
+		</building>
+		<costList>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_SmallEyeLaserTop</defName>
+		<label>laser</label>
+		<description>Laser cannon. Short-ranged but devastating.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>500</range>
+				<minRange>29.9</minRange>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>6</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_SmallEyeLaser</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_SmallEyeLaser</defName>
+		<label>laser beam</label>
+		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>SmallEyeLaser</damageDef>
+			<speed>400</speed>
+		</projectile>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Bullet_Ground_EyeLaser</defName>
+		<label>laser beam</label>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<damageDef>SmallEyeLaser</damageDef>
+			<speed>800</speed>
+			<explosionRadius>0</explosionRadius>
+			<flyOverhead>true</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+	<DamageDef Name="SmallEyeLaser">
+		<defName>SmallEyeLaser</defName>
+		<label>laser</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<isExplosive>true</isExplosive>
+		<deathMessage>{0} has been lasered to death.</deathMessage>
+		<hediff>Burn</hediff>
+		<hediffSolid>Burn</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Blunt</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<minDamageToFragment>15</minDamageToFragment>
+		<defaultDamage>30</defaultDamage>
+		<defaultStoppingPower>0.5</defaultStoppingPower>
+		<defaultArmorPenetration>0.30</defaultArmorPenetration>
+		<buildingDamageFactor>4</buildingDamageFactor>
+		<plantDamageFactor>4</plantDamageFactor>
+		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastLaserSoS</explosionCellFleck>
+		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+		<soundExplosion>Explosion_Bomb</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>ShipTurret_MediumEyeLaser</defName>
+		<label>medium eye laser</label>
+		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>MediumWeaponWhithered</whitherTo>
+				<regenDef>ShipTurret_MediumEyeLaser</regenDef>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
+			</li>
+
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<heatPerPulse>30</heatPerPulse>
+				<energyToFire>240</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>100</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
+				<threat>30</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_MediumEyeLaserTop</turretGunDef>
+			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+		</building>
+		<costList>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>ShipTurretMedium</li>
+		</researchPrerequisites>
+		<size>(3,3)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_MediumEyeLaserTop</defName>
+		<label>laser</label>
+		<description>Laser cannon. Short-ranged but devastating.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaser</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1000</range>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>12</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_MediumEyeLaser</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_MediumEyeLaser</defName>
+		<label>laser beam</label>
+		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>MediumEyeLaser</damageDef>
+			<speed>400</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef Name="MediumEyeLaser">
+		<defName>MediumEyeLaser</defName>
+		<label>laser</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<isExplosive>true</isExplosive>
+		<deathMessage>{0} has been lasered to death.</deathMessage>
+		<hediff>Burn</hediff>
+		<hediffSolid>Burn</hediffSolid>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Blunt</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<minDamageToFragment>15</minDamageToFragment>
+		<defaultDamage>60</defaultDamage>
+		<defaultStoppingPower>0.5</defaultStoppingPower>
+		<defaultArmorPenetration>0.40</defaultArmorPenetration>
+		<buildingDamageFactor>4</buildingDamageFactor>
+		<plantDamageFactor>4</plantDamageFactor>
+		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastLaserSoS</explosionCellFleck>
+		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+		<soundExplosion>Explosion_Bomb</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>ShipTurret_LargeEyeLaser</defName>
+		<label>large eye laser</label>
+		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>LargeWeaponWhithered</whitherTo>
+				<regenDef>ShipTurret_LargeEyeLaser</regenDef>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
+			</li>
+
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<heatPerPulse>30</heatPerPulse>
+				<energyToFire>240</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>100</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
+				<threat>45</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_LargeEyeLaserTop</turretGunDef>
+			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+		</building>
+		<costList>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<size>(4,4)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_LargeEyeLaserTop</defName>
+		<label>laser</label>
+		<description>Laser cannon. Short-ranged but devastating.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaser</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1000</range>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>18</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_MediumEyeLaser</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>GiantEyeLaser</defName>
 		<label>giant eye laser</label>
-		<description>A giant eye with a reinforced tapetum lucidum.  Connected to the coils of a fiberoptic nerve it functions as a giant laser.</description>
+		<description>A giant eye with a plasteel laced tapetum lucidum.  Connected to the coils of a fiberoptic nerve it functions as a giant laser.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -25,6 +357,14 @@
 		<costList>
 		</costList>
 		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>WhitheredSpinalWeapon</whitherTo>
+				<regenDef>GiantEyeLaser</regenDef>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
+			</li>
 			<li Class="CompProperties_SpinalMount">
 				<emits>false</emits>
 				<receives>true</receives>

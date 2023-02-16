@@ -4,10 +4,8 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Ship_Heart</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase" Name="ShipHeart">
-		<defName>Ship_Heart</defName>
+	<ThingDef ParentName="BuildingBase" Name="ShipHeart" Abstract="True">
 		<label>ship heart</label>
-		<designatorDropdown>Ship_Heart</designatorDropdown>
 		<thingClass>Building_ShipHeart</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipHeart7</texPath>
@@ -20,9 +18,6 @@
 				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 		</graphicData>
-		<researchPrerequisites>
-			<li>StructuralScaffold</li>
-		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -38,7 +33,6 @@
 		<tickerType>Normal</tickerType>
 		<description>The beating heart of a ship</description>
 		<size>(5,5)</size>
-		<designationCategory>Ship</designationCategory>
 		<inspectorTabs>
 			<li>ITab_Stats</li>
 			<li>ITab_ShipGenes</li>
@@ -47,11 +41,6 @@
 			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
-			</li>
-			<li Class="CompProperties_ShipHeart">
-				<species>bioship</species>
-				<shipspecies>bioship</shipspecies>
-				<geneline>AstralCniderianGeneline</geneline>
 			</li>
 			<li Class="CompProperties_Aggression">
 				<baseAggression>1</baseAggression>
@@ -101,9 +90,37 @@
 		<killedLeavings>
 			<OrganSeed>2</OrganSeed>
 		</killedLeavings>
-
 	</ThingDef>
-	
+
+	<ThingDef ParentName="ShipHeart">
+		<defName>Ship_Heart</defName>
+		<label>ship heart</label>
+		<designatorDropdown>Ship_Heart</designatorDropdown>
+		<designationCategory>Ship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<description>The beating heart of a ship</description>
+		<comps>
+			<li Class="CompProperties_ShipHeart">
+				<species>bioship</species>
+				<shipspecies>bioship</shipspecies>
+				<geneline>AstralCniderianGeneline</geneline>
+			</li>
+		</comps>
+	</ThingDef>
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>ShipfleshAnalysisStation</defName>
 		<label>flesh codex</label>

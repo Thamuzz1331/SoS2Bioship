@@ -15,8 +15,28 @@
 		<label>toxic vulnerability</label>
 		<description>This organism is particularly vulnerable to toxic buildup.</description>
 		<props>
-			<li>toxSensitivity:2f</li>
+			<li>toxSensitivity:2</li>
 		</props>
 		<metabolicCost>1</metabolicCost>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>FastRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<label>rapid regeneration</label>
+		<description>This organism's wounds close particularly quickly.</description>
+		<props>
+			<li>regenSpeed:1.25</li>
+		</props>
+		<metabolicCost>-2</metabolicCost>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>SlowRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<label>slow regeneration</label>
+		<description>This organism's wounds close particularly slowly.</description>
+		<props>
+			<li>regenSpeed:0.75</li>
+		</props>
+		<metabolicCost>2</metabolicCost>
 	</BuildingGeneDef>
 </Defs>

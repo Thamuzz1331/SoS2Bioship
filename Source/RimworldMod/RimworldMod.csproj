@@ -104,6 +104,7 @@
 	  <Compile Include="IAggressionSource.cs"/>
 
 	  <Compile Include="Buildings\Building_BioTorpTurret.cs"/>
+	  <Compile Include="Buildings\Building_UVTurret.cs"/>
 	  <Compile Include="Buildings\Building_Armor.cs"/>
 	  <Compile Include="Buildings\Building_MeatMaw.cs"/>
 	  <Compile Include="Buildings\Building_ShipHeart.cs"/>

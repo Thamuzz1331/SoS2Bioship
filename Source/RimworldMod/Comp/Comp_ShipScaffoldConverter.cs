@@ -29,7 +29,7 @@ namespace RimWorld
 			return base.GetConversionWaitLength();
         }
 
-		public override List<Thing> ConvertScaffold(bool instant = false)
+		public override List<Thing> ConvertScaffold(bool instant = false, bool free = false)
 		{
 /*			if (parent.Faction != Faction.OfPlayer && !instant)
             {

@@ -47,7 +47,7 @@ namespace BioShip
 		public override void Initialize()
 		{
 			base.Initialize();
-			Verb_LaunchProjectileShip.LaserColors.SetOrAdd("Bullet_FakeUVLaser", Color.magenta);
+//			Verb_LaunchProjectileShip.LaserColors.SetOrAdd("Bullet_FakeUVLaser", Color.magenta);
 		}
 
 		public override void DefsLoaded()

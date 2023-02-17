@@ -265,6 +265,10 @@
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
+			<li Class="CompProperties_SoShipPart">
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+			</li>
 		</comps>
 		<placeWorkers>
 		</placeWorkers>
@@ -310,9 +314,6 @@
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>

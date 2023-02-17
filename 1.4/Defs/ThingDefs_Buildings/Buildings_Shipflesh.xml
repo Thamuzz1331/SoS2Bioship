@@ -413,7 +413,7 @@
 		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_SoShipPart">
-				<isHull>true</isHull>
+				<isPlating>true</isPlating>
 				<hermetic>true</hermetic>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
@@ -1719,11 +1719,11 @@
 		<costList>
 		</costList>
 		<comps>
-			
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>SalvageMawWhithered</whitherTo>
 			</li>
+			<li Class="CompProperties_SalvageBay"></li>
 		</comps>
 		<placeWorkers>
 		</placeWorkers>

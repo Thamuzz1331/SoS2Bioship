@@ -344,6 +344,10 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipwhithered</TerrainId>
 			</li>

@@ -33,7 +33,8 @@ namespace RimWorld
             } else if (wasFiring)
             {
                 wasFiring = false;
-                this.HitPoints -= this.MaxHitPoints / 2;
+                
+//                this.TakeDamage();
             }
         }
 

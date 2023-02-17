@@ -397,8 +397,13 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarHullTile</regenDef>
+				<whitherTo>WhitheredHullTile</whitherTo>
 				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_RoofMeBio">

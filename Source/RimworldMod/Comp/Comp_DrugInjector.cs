@@ -120,7 +120,6 @@ namespace RimWorld
                             BuildingHediff_Drug drug = (BuildingHediff_Drug)BuildingHediffMaker.MakeBuildingHediff(drugDef);
                             drug.durationTicks = InjectorProps.drugDuration;
                             bp.AddHediff(drug);
-                            Log.Message("Drug added");
                         },
                         MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                     devAddictionOptions.Add(new FloatMenuOption(bp.bodyName,
@@ -132,7 +131,6 @@ namespace RimWorld
                             addiction.withdrawRate = InjectorProps.withdrawlRate;
                             addiction.massMult = InjectorProps.massAddictionMult;
                             bp.AddHediff(addiction);
-                            Log.Message("Addiction added");
                         },
                         MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
 

@@ -30,7 +30,7 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToAttack, "ticksToAttack", 0);
 			Scribe_Values.Look(ref extremeAggressionDetection, "extremeAggressionDetection", 0);
 			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
-			//Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
+			Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
 		}
 
 		public override void CompTick()
@@ -68,7 +68,6 @@ namespace RimWorld
 
 			int numAttack = Rand.RangeInclusive(1, 3);
 			int aggressionLevel = GetAggression();
-			Log.Message("Aggression level " + aggressionLevel);
 			for (int i = 0; i < numAttack; i++)
 			{
 				if (aggressionLevel > 0 && aggressionLevel <= 2)
@@ -89,20 +88,10 @@ namespace RimWorld
 
 		private void BasicAggress(HashSet<Thing> targetList)
         {
-			Log.Message("Doing basic attack");
 			if (targetList.Count > 0)
             {
 				Thing target = targetList.RandomElement();
-				Log.Message("Target " + target);
 				bool stillViable = !target.Destroyed;
-				if (stillViable)
-                {
-					foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(target.Position))
-					{
-						Thing bbp = c.GetFirstThingWithComp<CompBuildingBodyPart>(parent.Map);
-						stillViable = stillViable && !(bbp == null || bbp.TryGetComp<CompBuildingBodyPart>().bodyId != this.parent.TryGetComp<CompShipHeart>().bodyId);
-					}
-                }
 				if (!stillViable)
                 {
 					targetList.Remove(target);

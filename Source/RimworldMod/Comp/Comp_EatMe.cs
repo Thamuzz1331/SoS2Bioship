@@ -15,6 +15,13 @@ namespace RimWorld
     public class CompEatMe : ThingComp
     {
         private CompProperties_EatMe Props => (CompProperties_EatMe)props;
+
+        public override string CompInspectStringExtra()
+        {
+            return "Eat me";
+        }
+
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             if (parent.Destroyed || (parent.TryGetComp<CompShipBodyPart>() != null && parent.TryGetComp<CompShipBodyPart>().bodyId == "NA"))
@@ -26,7 +33,7 @@ namespace RimWorld
             if (parent.TryGetComp<CompScaffold>() != null) {
                 return;
             }
-            foreach (IntVec3 c in GenAdjFast.AdjacentCells8Way(parent.Position))
+            foreach (IntVec3 c in GenAdjFast.AdjacentCellsCardinal(parent.Position))
             {
                 foreach (Thing adj in c.GetThingList(parent.Map))
                 {
@@ -48,7 +55,7 @@ namespace RimWorld
                             }
                         } else
                         {
-                            if (body != null && body.heart != null)
+                            if (flesh.CoreSpawned)
                             {
                                 ((CompShipHeart)body.heart).AggressionTarget(parent, true);
                             }

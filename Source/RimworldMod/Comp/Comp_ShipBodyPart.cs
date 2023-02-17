@@ -45,7 +45,6 @@ namespace RimWorld
                         {
                             if (bodyPart.bodyId != this.bodyId)
                             {
-                                Log.Message("Foreign Body " + bodyPart.parent);
                                 if (body.heart != null)
                                 {
                                     ((CompShipHeart)body.heart).AggressionTarget(adj, false);

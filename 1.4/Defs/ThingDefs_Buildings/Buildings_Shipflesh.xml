@@ -457,7 +457,7 @@
 				<enabled>false</enabled>
 			</damageData>
 		</graphicData>
-		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Ship/Biodoor_Spinchter_UI</uiIconPath>
 		<costList>
 			<ShipMeat>30</ShipMeat>
 		</costList>
@@ -920,10 +920,6 @@
 				<species>bioship</species>
 				<whitherTo>Whithered_Maw_Corpse</whitherTo>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
-			
 			<li Class="CompProperties_ButcherableScallingRefuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>2500</initialConfigurableTargetFuelLevel>

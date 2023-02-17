@@ -5,6 +5,7 @@
 		<defName>Ship_Heart</defName>
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase" Name="ShipHeart" Abstract="True">
+		<defName>AbstractHeart</defName>
 		<label>ship heart</label>
 		<thingClass>Building_ShipHeart</thingClass>
 		<graphicData>

@@ -37,7 +37,7 @@
 		<label>spine launcher</label>
 		<description>Specialized barbs driven by biosplasma, capable of hunting tracking prey.</description>
 		<props>
-			<li>largeTurretOptions:HeavySpineLauncher,LightSpineLauncher</li>
+			<li>largeTurretOptions:ShipTurret_UVEyeLaser</li>
 		</props>
 	</BuildingGeneDef>
 	<BuildingGeneDef>

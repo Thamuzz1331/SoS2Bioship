@@ -69,7 +69,7 @@
 	<!-- UV Eye Laser-->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ShipTurret_UVEyeLaser</defName>
-		<label>large eye laser</label>
+		<label>ultraviolet eye laser</label>
 		<description>Concentrated ultraviolet light is devestating in its effects matter.  While highly desireable in a weapon, it also renders the prospect of creating a resonance chamber capable of focusing the radiation without being damaged in the process difficult.\n\nThis organ addresses that problem by ignoring it and trusting to its regenerative abilities to recover from its self inflicted wounds.</description>
 		<thingClass>Building_UVTurret</thingClass>
 		<designationCategory />
@@ -110,6 +110,7 @@
 		</building>
 		<costList>
 		</costList>
+		<placeWorkers/>
 		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -137,7 +138,7 @@
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
-				<defaultProjectile>Proj_UVEyeLaser</defaultProjectile>
+				<defaultProjectile>Proj_MediumEyeLaser</defaultProjectile>
 				<spawnDef>Bullet_FakeUVLaser</spawnDef>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 			</li>
@@ -173,7 +174,7 @@
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>UVEyeLaser</damageDef>
-			<speed>400</speed>
+			<speed>800</speed>
 		</projectile>
 	</ThingDef>
 	<DamageDef Name="UVEyeLaser">

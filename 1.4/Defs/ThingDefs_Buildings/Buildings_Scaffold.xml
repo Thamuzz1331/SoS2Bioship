@@ -523,7 +523,7 @@
 				<enabled>false</enabled>
 			</damageData>
 		</graphicData>
-		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+		<uiIconPath>Things/Building/Ship/Biodoor_Spinchter_UI</uiIconPath>
 		<costList>
 			<ProtienPutty>1</ProtienPutty>
 			<Neutroamine>5</Neutroamine>

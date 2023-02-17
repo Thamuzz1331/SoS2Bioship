@@ -65,8 +65,10 @@ namespace RimWorld
 
 		public virtual void DoAttack()
         {
+
 			int numAttack = Rand.RangeInclusive(1, 3);
 			int aggressionLevel = GetAggression();
+			Log.Message("Aggression level " + aggressionLevel);
 			for (int i = 0; i < numAttack; i++)
 			{
 				if (aggressionLevel > 0 && aggressionLevel <= 2)
@@ -87,9 +89,11 @@ namespace RimWorld
 
 		private void BasicAggress(HashSet<Thing> targetList)
         {
+			Log.Message("Doing basic attack");
 			if (targetList.Count > 0)
             {
 				Thing target = targetList.RandomElement();
+				Log.Message("Target " + target);
 				bool stillViable = !target.Destroyed;
 				if (stillViable)
                 {

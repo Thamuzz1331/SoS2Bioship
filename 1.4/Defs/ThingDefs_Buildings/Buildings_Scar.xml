@@ -406,7 +406,6 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<rotatable>false</rotatable>
 		<selectable>false</selectable>

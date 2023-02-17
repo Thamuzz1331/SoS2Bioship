@@ -47,6 +47,7 @@ namespace BioShip
 		public override void Initialize()
 		{
 			base.Initialize();
+			Verb_LaunchProjectileShip.LaserColors.SetOrAdd("Bullet_FakeUVLaser", Color.magenta);
 		}
 
 		public override void DefsLoaded()
@@ -54,18 +55,6 @@ namespace BioShip
 			base.DefsLoaded();
 			Log.Message("Bioship Loaded");
 		}
-
-/*
-		public static List<ThingDef> shipHullDefs = new List<ThingDef>()
-        {
-			ThingDef.Named("ShipHullTile"),
-			ThingDef.Named("ShipHullTileMech"),
-			ThingDef.Named("ShipHullTileArchotech"),
-			ThingDef.Named("ScarHullTile"),
-			ThingDef.Named("ScaffoldHullTile"),
-			ThingDef.Named("BioShipHullTile"),
-        };
-*/
 
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
 

@@ -72,7 +72,7 @@
 		<label>large eye laser</label>
 		<description>Concentrated ultraviolet light is devestating in its effects matter.  While highly desireable in a weapon, it also renders the prospect of creating a resonance chamber capable of focusing the radiation without being damaged in the process difficult.\n\nThis organ addresses that problem by ignoring it and trusting to its regenerative abilities to recover from its self inflicted wounds.</description>
 		<thingClass>Building_UVTurret</thingClass>
-		<designationCategory></designationCategory>
+		<designationCategory />
 		<graphicData>
 			<texPath>Things/Building/Ship/HardpointRed</texPath>
 			<drawSize>(4,4)</drawSize>

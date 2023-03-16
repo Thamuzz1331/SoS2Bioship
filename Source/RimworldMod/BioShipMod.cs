@@ -48,6 +48,7 @@ namespace BioShip
 		{
 			base.Initialize();
 //			Verb_LaunchProjectileShip.LaserColors.SetOrAdd("Bullet_FakeUVLaser", Color.magenta);
+//			Projectile_ExplosiveShipCombatLaser.defToColor.SetOrAdd("Proj_UVEyeLaser", Color.magenta);
 		}
 
 		public override void DefsLoaded()
@@ -190,7 +191,7 @@ namespace BioShip
             {
 				float screenHalf = (float)UI.screenWidth / 2 + SaveOurShip2.ModSettings_SoS.offsetUIx;
 
-				float baseY = __instance.Size.y + 40 + SaveOurShip2.ModSettings_SoS.offsetUIy;
+				float baseY = __instance.Size.y + SaveOurShip2.ModSettings_SoS.offsetUIy;
 
 				MapCompBuildingTracker bioTracker = mapPlayer.GetComponent<MapCompBuildingTracker>();
 				if (bioTracker != null)
@@ -203,10 +204,10 @@ namespace BioShip
 						curNutrion += body.currentNutrition;
 					}
 					baseY += 45;
-					Rect rect2 = new Rect(screenHalf - 630, baseY, 205, 35);
+					Rect rect2 = new Rect(screenHalf - 700, baseY, 205, 35);
 					Verse.Widgets.DrawMenuSection(rect2);
 
-					Rect rect3 = new Rect(screenHalf - 630, baseY, 200, 35);
+					Rect rect3 = new Rect(screenHalf - 700, baseY, 200, 35);
 					Widgets.FillableBar(rect3.ContractedBy(6), curNutrion / maxNutrion,
 						BioShip.NutrientTex);
 					Text.Font = GameFont.Small;

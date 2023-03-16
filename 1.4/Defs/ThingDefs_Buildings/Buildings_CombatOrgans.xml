@@ -74,7 +74,7 @@
 		<thingClass>Building_UVTurret</thingClass>
 		<designationCategory />
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
 		<comps>
@@ -95,6 +95,7 @@
 				<projectileSpeed>10</projectileSpeed>
 				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
 				<threat>450</threat>
+				<laserColor>(127, 0, 255)</laserColor>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -107,11 +108,11 @@
 			<turretGunDef>ShipTurret_UVLaserTop</turretGunDef>
 			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+			<turretTopDrawSize>4.1</turretTopDrawSize>
 		</building>
 		<costList>
 		</costList>
 		<placeWorkers/>
-		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<size>(4,4)</size>
@@ -130,7 +131,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>1000</range>
 				<warmupTime>0</warmupTime>
-				<forcedMissRadius>1</forcedMissRadius>
+				<forcedMissRadius>.01</forcedMissRadius>
 				<noiseRadius>4</noiseRadius>
 				<burstShotCount>40</burstShotCount>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
@@ -138,29 +139,11 @@
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
-				<defaultProjectile>Proj_MediumEyeLaser</defaultProjectile>
-				<spawnDef>Bullet_FakeUVLaser</spawnDef>
+				<defaultProjectile>Proj_UVEyeLaser</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
 				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
 			</li>
 		</verbs>
-	</ThingDef>
-	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_FakeUVLaser</defName>
-		<label>laser beam</label>
-		<graphicData>
-			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
-		<projectile>
-			<damageDef>Bomb</damageDef>
-			<speed>400</speed>
-			<explosionRadius>0</explosionRadius>
-			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
-		</projectile>
-		<altitudeLayer>MetaOverlays</altitudeLayer>
-		<seeThroughFog>true</seeThroughFog>
 	</ThingDef>
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_UVEyeLaser</defName>
@@ -174,7 +157,7 @@
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>UVEyeLaser</damageDef>
-			<speed>800</speed>
+			<speed>200</speed>
 		</projectile>
 	</ThingDef>
 	<DamageDef Name="UVEyeLaser">
@@ -203,7 +186,7 @@
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
-	
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>SpinalWeaponRoot</defName>
 		<label>spinal weapon root</label>

@@ -5,6 +5,7 @@
 		<description>A barbed thread that can be launched against enemy ships or torpedos.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
+			<drawSize>(2,2)</drawSize>
 		</graphicData>
 		<designationCategory></designationCategory>
 		<comps>
@@ -47,6 +48,7 @@
 			<turretGunDef>ShipTurret_NematocystTop</turretGunDef>
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
+			<turretTopDrawSize>2.1</turretTopDrawSize>
 		</building>
 		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
 		<altitudeLayer>WorldClipper</altitudeLayer>
@@ -56,7 +58,7 @@
 		<label>Nematocyst</label>
 		<description>Nematocyst.  Can deliver powerful blows at close range.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretNematocyst</texPath>
+			<texPath>Things/Building/Ship/AC_TurretNematocyst</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -67,7 +69,7 @@
 				<warmupTime>0</warmupTime>
 				<noiseRadius>4</noiseRadius>
 				<forcedMissRadius>1</forcedMissRadius>
-				<burstShotCount>12</burstShotCount>
+				<burstShotCount>3</burstShotCount>
 				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 				<requireLineOfSight>false</requireLineOfSight>
 				<targetParams>
@@ -127,7 +129,7 @@
 		<projectile>
 			<damageDef>ShipNematocyst</damageDef>
 			<speed>200</speed>
-			<explosionRadius>1.9</explosionRadius>
+			<explosionRadius>2.9</explosionRadius>
 			<flyOverhead>true</flyOverhead>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
 		</projectile>
@@ -147,7 +149,7 @@
 		<impactSoundType>Blunt</impactSoundType>
 		<armorCategory>Sharp</armorCategory>
 		<minDamageToFragment>12</minDamageToFragment>
-		<defaultDamage>12</defaultDamage>
+		<defaultDamage>90</defaultDamage>
 		<defaultStoppingPower>0.5</defaultStoppingPower>
 		<defaultArmorPenetration>0.10</defaultArmorPenetration>
 		<buildingDamageFactor>4</buildingDamageFactor>
@@ -201,7 +203,7 @@
 			<turretGunDef>ShipTurret_BioAcidTop</turretGunDef>
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
-			<turretTopDrawSize>3</turretTopDrawSize>
+			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
 		<costList>
 		</costList>
@@ -216,7 +218,7 @@
 		<label>bioplasma</label>
 		<description>Acid cannon. Medium-range with damage over time.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretAcid</texPath>
+			<texPath>Things/Building/Ship/AC_AcidTurret</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -368,7 +370,7 @@
 		<label>heavy spine launcher</label>
 		<thingClass>Building_BioTorpTurret</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Ship/BioTorpedoHeavy</texPath>
+			<texPath>Things/Building/Ship/AC_SpineLauncher</texPath>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
 		<size>(4,4)</size>
@@ -408,7 +410,7 @@
 		<label>light spine launcher</label>
 		<thingClass>Building_BioTorpTurret</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
+			<texPath>Things/Building/Ship/AC_SpineLauncher</texPath>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
 		<size>(4,4)</size>
@@ -445,9 +447,9 @@
 	</ThingDef>
 
 	<ThingDef ParentName="ShipTurretBuilding">
-		<defName>GrandNematocyst</defName>
-		<label>grand nematocyst</label>
-		<description>A giant nematocyst cluster, firing barbed threads laced with virulent toxin.</description>
+		<defName>JellyCannon</defName>
+		<label>jelly cannon</label>
+		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
 		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
@@ -508,9 +510,96 @@
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 		<uiIconScale>0.65</uiIconScale>
 		<building>
-			<turretGunDef>ShipTurret_SpinalMountTopLaser</turretGunDef>
+			<turretGunDef>ShipTurret_JellyCannon</turretGunDef>
 			<turretBurstWarmupTime>2</turretBurstWarmupTime>
-			<turretBurstCooldownTime>45.0</turretBurstCooldownTime>
+			<turretBurstCooldownTime>90.0</turretBurstCooldownTime>
 		</building>
 	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_JellyCannon</defName>
+		<label>spinal-mount cannon</label>
+		<description>Capital ship weaponry.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1000</range>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>4</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_Jelly</defaultProjectile>
+				<spawnDef>Bullet_Fake_Jelly</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>Bullet_Fake_Jelly</defName>
+		<label>Jelly</label>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<thingClass>Projectile_SoSFake</thingClass>
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<speed>100</speed>
+			<explosionRadius>0</explosionRadius>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+		</projectile>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseGrenadeProjectile">
+		<defName>Proj_Jelly</defName>
+		<label>jelly</label>
+		<thingClass>Projectile_MonsterSpawner</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>BioShipJellyDamage</damageDef>
+			<speed>400</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef Name="JellyProjectile">
+		<defName>BioShipJellyDamage</defName>
+		<label>jelly</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<isExplosive>true</isExplosive>
+		<deathMessage>{0} has been crushed by a jelly.</deathMessage>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Blunt</impactSoundType>
+		<armorCategory>Blunt</armorCategory>
+		<minDamageToFragment>15</minDamageToFragment>
+		<defaultDamage>10</defaultDamage>
+		<defaultStoppingPower>0.5</defaultStoppingPower>
+		<defaultArmorPenetration>0.20</defaultArmorPenetration>
+		<buildingDamageFactor>4</buildingDamageFactor>
+		<plantDamageFactor>4</plantDamageFactor>
+		<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+		<explosionHeatEnergyPerCell>25</explosionHeatEnergyPerCell>
+		<explosionCellFleck>BlastPlasma</explosionCellFleck>
+		<explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+		<explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+		<soundExplosion>Explosion_Bomb</soundExplosion>
+		<combatLogRules>Damage_Bomb</combatLogRules>
+	</DamageDef>
+
 </Defs>

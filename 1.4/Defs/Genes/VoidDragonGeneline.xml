@@ -19,6 +19,9 @@
 		<props>
 			<li>smallTurretOptions:ShipTurret_SmallPlasmaMaw</li>
 		</props>
+		<tags>
+			<li>smallWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>MediumPlasmaMawGene</defName>
@@ -28,6 +31,9 @@
 		<props>
 			<li>mediumTurretOptions:ShipTurret_MediumPlasmaMaw</li>
 		</props>
+		<tags>
+			<li>mediumWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>HeavyPlasmaMawGene</defName>
@@ -37,6 +43,9 @@
 		<props>
 			<li>largeTurretOptions:ShipTurret_LargePlasmaMaw</li>
 		</props>
+		<tags>
+			<li>largeWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>DragonMawGene</defName>
@@ -46,6 +55,9 @@
 		<props>
 			<li>spinalTurretOptions:DragonMaw</li>
 		</props>
+		<tags>
+			<li>spinalWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>DragonscaleGene</defName>
@@ -55,5 +67,8 @@
 		<props>
 			<li>armor:DragonscaleArmor</li>
 		</props>
+		<tags>
+			<li>armor</li>
+		</tags>
 	</BuildingGeneDef>
 </Defs>

@@ -11,6 +11,7 @@ using BioShip;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompBioshipShield : CompShipCombatShield
 	{
 		public CompBuildingBodyPart bp;

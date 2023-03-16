@@ -7,6 +7,7 @@
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
+		<size>(2,2)</size>
 		<comps>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -37,17 +38,16 @@
 			<turretGunDef>ShipTurretTop_BioPlasmaTopSmall</turretGunDef>
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
-			<turretTopDrawSize>2</turretTopDrawSize>
+			<turretTopDrawSize>2.5</turretTopDrawSize>
 		</building>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<size>(2,2)</size>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurretTop_BioPlasmaTopSmall</defName>
 		<label>plasma</label>
 		<description>Plasma cannon. Medium-range and balanced.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretPlasmaSmall</texPath>
+			<texPath>Things/Building/Ship/VD_PlasmaSmall</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -160,8 +160,8 @@
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
+		<size>(3,3)</size>
 		<designationCategory></designationCategory>
-
 		<comps>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -190,17 +190,16 @@
 			<turretGunDef>ShipTurret_MediumBioPlasmaTop</turretGunDef>
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
-			<turretTopDrawSize>3</turretTopDrawSize>
+			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<size>(3,3)</size>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_MediumBioPlasmaTop</defName>
 		<label>bioplasma</label>
 		<description>Bioplasma cannon. Medium-range with large aoe.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretBioPlasma</texPath>
+			<texPath>Things/Building/Ship/VD_PlasmaMedium</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -295,6 +294,7 @@
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
+		<size>(4,4)</size>
 		<comps>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -326,21 +326,20 @@
 			<turretGunDef>ShipTurret_LargeBioPlasmaTop</turretGunDef>
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
-			<turretTopDrawSize>3</turretTopDrawSize>
+			<turretTopDrawSize>4.1</turretTopDrawSize>
 		</building>
 		<costList>
 		</costList>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<size>(3,3)</size>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_LargeBioPlasmaTop</defName>
 		<label>bioplasma</label>
 		<description>Bioplasma cannon. Medium-range with large aoe.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretBioPlasma</texPath>
+			<texPath>Things/Building/Ship/VD_PlasmaLarge</texPath>
 		</graphicData>
 		<verbs>
 			<li>

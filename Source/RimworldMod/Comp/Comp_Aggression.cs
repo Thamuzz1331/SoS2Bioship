@@ -10,6 +10,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompAggression : ThingComp
 	{
 		public CompProperties_Aggression Props => (CompProperties_Aggression)props;
@@ -20,8 +21,8 @@ namespace RimWorld
 		public float extremeAggressionInterval = 600f;
 
 		public HashSet<IAggressionSource> aggressionSources = new HashSet<IAggressionSource>();
-		public HashSet<Thing> otherFlesh = new HashSet<Thing>();
 		public HashSet<Thing> adjacentMechanicals = new HashSet<Thing>();
+		public HashSet<Thing> otherFlesh = new HashSet<Thing>();
 		public HashSet<Thing> targets = new HashSet<Thing>();
 
 		public override void PostExposeData()
@@ -30,7 +31,7 @@ namespace RimWorld
 			Scribe_Values.Look(ref ticksToAttack, "ticksToAttack", 0);
 			Scribe_Values.Look(ref extremeAggressionDetection, "extremeAggressionDetection", 0);
 			Scribe_Collections.Look(ref targets, "targets", LookMode.Reference);
-			Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
+//			Scribe_Collections.Look(ref aggressionSources, "aggressionSources", LookMode.Reference);
 		}
 
 		public override void CompTick()

@@ -11,6 +11,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class Building_ShipHeart : Building_ShipBridge
 	{
 		public override void DeSpawn(DestroyMode mode)

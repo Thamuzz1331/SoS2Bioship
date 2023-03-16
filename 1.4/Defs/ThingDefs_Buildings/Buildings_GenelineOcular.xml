@@ -5,7 +5,7 @@
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
@@ -40,17 +40,17 @@
 			<turretGunDef>ShipTurret_SmallEyeLaserTop</turretGunDef>
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
+			<turretTopDrawSize>2.5</turretTopDrawSize>
 		</building>
 		<costList>
 		</costList>
-		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_SmallEyeLaserTop</defName>
 		<label>laser</label>
 		<description>Laser cannon. Short-ranged but devastating.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
+			<texPath>Things/Building/Ship/ME_SmallEyeTurret</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -86,7 +86,7 @@
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>SmallEyeLaser</damageDef>
-			<speed>400</speed>
+			<speed>200</speed>
 		</projectile>
 	</ThingDef>
 	<ThingDef ParentName="BaseGrenadeProjectile">
@@ -141,7 +141,7 @@
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<comps>
@@ -175,6 +175,7 @@
 			<turretGunDef>ShipTurret_MediumEyeLaserTop</turretGunDef>
 			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
 		<costList>
 		</costList>
@@ -189,7 +190,7 @@
 		<label>laser</label>
 		<description>Laser cannon. Short-ranged but devastating.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaser</texPath>
+			<texPath>Things/Building/Ship/ME_MediumEyeTurret</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -224,7 +225,7 @@
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>MediumEyeLaser</damageDef>
-			<speed>400</speed>
+			<speed>200</speed>
 		</projectile>
 	</ThingDef>
 	<DamageDef Name="MediumEyeLaser">
@@ -260,7 +261,7 @@
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
 		<comps>
@@ -294,6 +295,7 @@
 			<turretGunDef>ShipTurret_LargeEyeLaserTop</turretGunDef>
 			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+			<turretTopDrawSize>4.1</turretTopDrawSize>
 		</building>
 		<costList>
 		</costList>
@@ -307,7 +309,7 @@
 		<label>laser</label>
 		<description>Laser cannon. Short-ranged but devastating.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaser</texPath>
+			<texPath>Things/Building/Ship/ME_LargeEyeTurret</texPath>
 		</graphicData>
 		<verbs>
 			<li>

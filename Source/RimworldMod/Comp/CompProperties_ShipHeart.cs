@@ -12,6 +12,7 @@ namespace RimWorld
     {
         public string shipspecies = null;
         public string geneline;
+        public List<string> exoGenes = new List<string>();
         public CompProperties_ShipHeart()
         {
             compClass = typeof(CompShipHeart);

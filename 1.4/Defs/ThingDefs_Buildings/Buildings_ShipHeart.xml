@@ -41,7 +41,7 @@
 		<comps>
 			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+				<compClass>CompHeartHeat</compClass>
 			</li>
 			<li Class="CompProperties_Aggression">
 				<baseAggression>1</baseAggression>

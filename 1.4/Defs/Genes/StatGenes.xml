@@ -7,7 +7,14 @@
 		<props>
 			<li>toxSensitivity:0.5</li>
 		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>toxSensitivity</li>
+		</tags>
 		<metabolicCost>-1</metabolicCost>
+		<geneOverrides>
+			<li>ToxVulnerabilityGene</li>
+		</geneOverrides>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>ToxVulnerabilityGene</defName>
@@ -17,8 +24,16 @@
 		<props>
 			<li>toxSensitivity:2</li>
 		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>toxSensitivity</li>
+		</tags>
 		<metabolicCost>1</metabolicCost>
+		<geneOverrides>
+			<li>ToxResistanceGene</li>
+		</geneOverrides>
 	</BuildingGeneDef>
+	
 	<BuildingGeneDef>
 		<defName>FastRegenGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
@@ -27,7 +42,14 @@
 		<props>
 			<li>regenSpeed:1.25</li>
 		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>regenSpeed</li>
+		</tags>
 		<metabolicCost>-2</metabolicCost>
+		<geneOverrides>
+			<li>SlowRegenGene</li>
+		</geneOverrides>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>SlowRegenGene</defName>
@@ -37,6 +59,15 @@
 		<props>
 			<li>regenSpeed:0.75</li>
 		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>regenSpeed</li>
+		</tags>
 		<metabolicCost>2</metabolicCost>
+		<geneOverrides>
+			<li>FastRegenGene</li>
+		</geneOverrides>
 	</BuildingGeneDef>
+
+	
 </Defs>

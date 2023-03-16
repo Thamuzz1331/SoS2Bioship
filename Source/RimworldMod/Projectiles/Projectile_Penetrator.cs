@@ -11,8 +11,7 @@ namespace RimWorld
     public class Projectile_Penetrator : Projectile_ExplosiveShipCombat
     {
         //TODO: Fix this
-        /*
-        protected override void Impact(Thing hitThing)
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             Projectile secondaryProjectile = (Projectile)GenSpawn.Spawn(ThingDef.Named("Bullet_Spine_Penetrator_StageTwo"), this.Position, this.Map);
             secondaryProjectile.Launch(this.Launcher,
@@ -21,8 +20,7 @@ namespace RimWorld
                 this.DestinationCell,
                 ProjectileHitFlags.All,
                 equipment: this.Launcher);
-            base.Impact(hitThing);
+            base.Impact(hitThing, blockedByShield);
         }
-        */
     }
 }

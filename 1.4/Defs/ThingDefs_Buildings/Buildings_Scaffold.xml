@@ -912,7 +912,7 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Turret</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<texPath>Things/Building/Scaffold/TurretBaseScaffold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -933,7 +933,6 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
 		<researchPrerequisites>
 			<li>SmallWeaponScaffold</li>
 		</researchPrerequisites>
@@ -950,7 +949,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<texPath>Things/Building/Scaffold/TurretBaseScaffold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
@@ -973,7 +972,6 @@
 			<Neutroamine>15</Neutroamine>
 			<OrganSeed>6</OrganSeed>
 		</costList>
-		<uiIconPath>Things/Building/Ship/TurretPlasma_MenuIcon</uiIconPath>
 		<researchPrerequisites>
 			<li>MediumWeaponScaffold</li>
 		</researchPrerequisites>
@@ -988,7 +986,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldTorpedo</texPath>
+			<texPath>Things/Building/Scaffold/TurretBaseScaffold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
@@ -997,16 +995,16 @@
 		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
+		<castEdgeShadows>false</castEdgeShadows>
 		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
+		<blockLight>false</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<WorkToBuild>6000</WorkToBuild>
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>Scaffold for an small shipmaw.</description>
+		<description>Scaffold for a large weapon organ.</description>
 		<size>(4,4)</size>
 		<designationCategory>Ship</designationCategory>
 		<comps>
@@ -1562,6 +1560,90 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingShipHullBase">
+		<defName>Scaffold_PassiveVent</defName>
+		<label>vent scaffold</label>
+		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BioRadiatorBase2</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<WorkToBuild>4000</WorkToBuild>
+			<MaxHitPoints>5</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<ProtienPutty>3</ProtienPutty>
+			<Steel>3</Steel>
+			<Plasteel>1</Plasteel>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+			<li>PlaceWorker_ShipVent</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipPurgePort</transformString>
+			</li>
+			<li Class="CompProperties_RoofMeBio"/>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<designationCategory>Ship</designationCategory>
+		<designationHotKey>Misc2</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<researchPrerequisites>
+			<li>ShipBasics</li>
+			<li>AirConditioning</li>
+		</researchPrerequisites>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+			<paintable>true</paintable>
+		</building>
 	</ThingDef>
 	
 	<DesignatorDropdownGroupDef>

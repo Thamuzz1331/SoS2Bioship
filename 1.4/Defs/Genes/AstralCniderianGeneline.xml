@@ -7,7 +7,7 @@
 		<smallTurret>SmallNematocystGene</smallTurret>
 		<mediumTurret>MediumAcidGene</mediumTurret>
 		<largeTurret>HeavySpineGene</largeTurret>
-		<spinalTurret>GrandNematocyst</spinalTurret>
+		<spinalTurret>PolypCannon</spinalTurret>
 		<armor>CoralArmor</armor>
 		<miscGenes>
 			<li>ToxResistanceGene</li>
@@ -21,6 +21,9 @@
 		<props>
 			<li>smallTurretOptions:ShipTurret_Nematocyst</li>
 		</props>
+		<tags>
+			<li>smallWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>MediumAcidGene</defName>
@@ -30,6 +33,9 @@
 		<props>
 			<li>mediumTurretOptions:ShipTurret_BioAcid</li>
 		</props>
+		<tags>
+			<li>mediumWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>HeavySpineGene</defName>
@@ -39,15 +45,21 @@
 		<props>
 			<li>largeTurretOptions:ShipTurret_UVEyeLaser</li>
 		</props>
+		<tags>
+			<li>largeWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
-		<defName>GrandNematocyst</defName>
+		<defName>PolypCannon</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
-		<label>grand nematocyst</label>
-		<description>A supercluster of explosive cells capable of launching barbed threads.</description>
+		<label>jelly cannon</label>
+		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
 		<props>
-			<li>spinalTurretOptions:GrandNematocyst</li>
+			<li>spinalTurretOptions:JellyCannon</li>
 		</props>
+		<tags>
+			<li>spinalWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>CoralArmor</defName>
@@ -57,5 +69,8 @@
 		<props>
 			<li>armor:CoralArmor</li>
 		</props>
+		<tags>
+			<li>armor</li>
+		</tags>
 	</BuildingGeneDef>
 </Defs>

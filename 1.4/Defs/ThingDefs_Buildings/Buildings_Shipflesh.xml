@@ -988,6 +988,10 @@
 				<species>bioship</species>
 				<whitherTo>FatStoreSmallWhithered</whitherTo>
 			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<threat>3</threat>
+			</li>
 		</comps>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
@@ -1035,6 +1039,10 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>FatStoreLargeWhithered</whitherTo>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<threat>30</threat>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
@@ -1258,7 +1266,7 @@
 				<whitherTo>WhitheredHeatsink</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
+				<compClass>CompStatScalingThreatHeat</compClass>
 				<heatCapacity>200</heatCapacity>
 				<heatVent>9</heatVent>
 				<heatLoss>4</heatLoss>
@@ -1296,7 +1304,7 @@
 				<whitherTo>WhitheredHeatsinkLarge</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
+				<compClass>CompStatScalingThreatHeat</compClass>
 				<heatCapacity>1000</heatCapacity>
 				<heatVent>36</heatVent>
 				<heatLoss>12</heatLoss>
@@ -1336,7 +1344,7 @@
 				<whitherTo>WhitheredCoolantCyst</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
+				<compClass>CompStatScalingThreatHeat</compClass>
 				<heatCapacity>800</heatCapacity>
 				<heatLoss>6</heatLoss>
 				<threat>1</threat>
@@ -1368,7 +1376,7 @@
 				<whitherTo>WhitheredCoolantCystLarge</whitherTo>
 			</li>
 			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
+				<compClass>CompStatScalingThreatHeat</compClass>
 				<heatCapacity>4000</heatCapacity>
 				<heatLoss>18</heatLoss>
 				<threat>5</threat>
@@ -1426,9 +1434,9 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_NutritionRefueler">
-				<refuelInterval>5</refuelInterval>
-				<refuelCost>0.5</refuelCost>
-				<refuelAmmount>1</refuelAmmount>
+				<refuelInterval>10</refuelInterval>
+				<refuelCost>0.05</refuelCost>
+				<refuelAmmount>0.5</refuelAmmount>
 			</li>
 		</comps>
 		<researchPrerequisites>
@@ -1485,9 +1493,9 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_NutritionRefueler">
-				<refuelInterval>5</refuelInterval>
-				<refuelCost>0.5</refuelCost>
-				<refuelAmmount>1.25</refuelAmmount>
+				<refuelInterval>10</refuelInterval>
+				<refuelCost>0.05</refuelCost>
+				<refuelAmmount>0.75</refuelAmmount>
 			</li>
 		</comps>
 		<researchPrerequisites>

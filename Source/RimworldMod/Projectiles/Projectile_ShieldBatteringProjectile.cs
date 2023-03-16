@@ -10,28 +10,22 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class Projectile_ShieldBatteringProjectile : Projectile_ExplosiveShipCombat
     {
-        //TODO: Fix this
-/*
         public override void Tick()
         {
             Map m = this.Map;
             base.Tick();
             
-            if (this.Destroyed && CompShipCombatShield.allShieldsOnMap.ContainsKey(m))
+            foreach (CompShipCombatShield shield in this.Map.GetComponent<ShipHeatMapComp>().Shields)            
             {
-                foreach (CompShipCombatShield shield in CompShipCombatShield.allShieldsOnMap[m])
+                if (!shield.shutDown && Position.DistanceTo(shield.parent.Position) <= shield.radius)
                 {
-                    if (!shield.shutDown && Position.DistanceTo(shield.parent.Position) <= shield.radius)
+                    if (shield.radius >= 15f)
                     {
-                        if (shield.radius >= 15f)
-                        {
-                            shield.radius -= 0.2f;
-                        }
-                        break;
+                        shield.radius -= 0.2f;
                     }
+                    break;
                 }
             }
         }
-*/
     }
 }

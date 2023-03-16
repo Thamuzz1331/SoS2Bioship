@@ -11,8 +11,6 @@ using LivingBuildings;
 
 namespace RimWorld
 {
-    
-
     public class CompShipHeart : CompBuildingCore, IAggressionSource
     {
         public CompProperties_ShipHeart HeartProps => (CompProperties_ShipHeart)props;
@@ -20,6 +18,14 @@ namespace RimWorld
         int IAggressionSource.GetAggressionValue()
         {
             return 2;
+        }
+
+        public int Threat
+        {
+            get
+            {
+                return 5;
+            }
         }
 
         public CompRegenWorker regenWorker;

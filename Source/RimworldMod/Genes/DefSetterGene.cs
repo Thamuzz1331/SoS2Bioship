@@ -47,7 +47,12 @@ namespace Verse
 
         public override bool OverridesGene(BuildingGene b)
         {
-			return false;
+            bool ret = base.OverridesGene(b);
+            foreach(string tag in this.def.tags)
+            {
+                ret = ret || b.def.tags.Contains(tag);
+            }
+			return ret;
         }
 
     }

@@ -150,6 +150,9 @@
 	  <Compile Include="Comp\Comp_FueledAddictionSupplier.cs"/>
 	  <Compile Include="Comp\CompProperties_FueledAddictionSupplier.cs"/>
 
+	  <Compile Include="Comp\Comp_HeartHeat.cs"/>
+	  <Compile Include="Comp\Comp_StatScalingThreatHeat.cs"/>
+
 	  <Compile Include="Comp\Comp_NutrientInjector.cs"/>
 	  <Compile Include="Comp\CompProperties_NutrientInjector.cs"/>
 
@@ -203,8 +206,11 @@
 	  <Compile Include="Damage\Damage_AnimateAcidGlob.cs"/>
 	  <Compile Include="Damage\ShipDamageDefOf.cs"/>
 
+	  <Compile Include="Projectiles\Projectile_MonsterSpawner.cs"/>
 	  <Compile Include="Projectiles\Projectile_ShieldBatteringProjectile.cs"/>
 	  <Compile Include="Projectiles\Projectile_Penetrator.cs"/>
+
+	  <Compile Include="MentalState\Exterminator.cs"/>
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_ShipGenes.cs" />

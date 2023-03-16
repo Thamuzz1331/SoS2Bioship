@@ -812,7 +812,7 @@
 		<thingClass>Building_Scaffold</thingClass>
 		<passability>PassThroughOnly</passability>
 		<graphicData>
-			<texPath>Things/Building/Ship/BioTorpedoLight</texPath>
+			<texPath>Things/Building/Ship/AC_SpineLauncher</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>

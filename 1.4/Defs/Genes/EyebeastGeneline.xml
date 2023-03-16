@@ -21,6 +21,9 @@
 		<props>
 			<li>smallTurretOptions:ShipTurret_SmallEyeLaser</li>
 		</props>
+		<tags>
+			<li>smallWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>MediumEyelaserGene</defName>
@@ -30,6 +33,9 @@
 		<props>
 			<li>mediumTurretOptions:ShipTurret_MediumEyeLaser</li>
 		</props>
+			<tags>
+			<li>mediumWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>LargeEyelaserGene</defName>
@@ -39,6 +45,9 @@
 		<props>
 			<li>largeTurretOptions:ShipTurret_LargeEyeLaser</li>
 		</props>
+		<tags>
+			<li>largeWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>CollosalEyelaserGene</defName>
@@ -48,6 +57,9 @@
 		<props>
 			<li>spinalTurretOptions:GiantEyeLaser</li>
 		</props>
+		<tags>
+			<li>spinalWeapon</li>
+		</tags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>ThickHide</defName>
@@ -57,6 +69,9 @@
 		<props>
 			<li>armor:Bio_Ship_Beam_Unpowered</li>
 		</props>
+		<tags>
+			<li>armor</li>
+		</tags>
 		<metabolicCost>1</metabolicCost>
 	</BuildingGeneDef>
 </Defs>

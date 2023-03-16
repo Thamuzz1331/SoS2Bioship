@@ -34,13 +34,13 @@ namespace RimWorld
 		protected Thing FindTarget(Pawn pawn)
         {
 			Thing ret = null;
-
 			ret = GenClosest.ClosestThingReachable(
 				pawn.Position, 
 				pawn.Map, 
 				ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), 
-				PathEndMode.ClosestTouch, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false, false, false), 
-				9999f, 
+				PathEndMode.ClosestTouch, 
+				TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false, false, false), 
+				9999f,
 				null, 
 				null, 
 				0, 

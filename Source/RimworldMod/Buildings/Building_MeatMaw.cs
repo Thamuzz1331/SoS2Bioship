@@ -4,6 +4,7 @@ using Verse.Sound;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class Building_TrapMeatMaw : Building_Trap
 	{
 		protected override void SpringSub(Pawn p)

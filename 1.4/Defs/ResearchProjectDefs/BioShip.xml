@@ -187,5 +187,16 @@
 		<researchViewY>1.00</researchViewY>
 	</ResearchProjectDef>
 
+	<ResearchProjectDef ParentName="BioShipProjectBase">
+		<defName>ServitorScaffolds</defName>
+		<label>servitor scaffolds</label>
+		<description>Meat must be brought to hungry mouths, and invading bodies butchered.  These shall be your hands within.</description>
+		<baseCost>4000</baseCost>
+		<prerequisites>
+			<li>MetabolicScaffoldSimple</li>
+		</prerequisites>
+		<researchViewX>4.00</researchViewX>
+		<researchViewY>5.00</researchViewY>
 
+	</ResearchProjectDef>
 </Defs>

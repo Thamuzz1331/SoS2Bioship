@@ -14,6 +14,7 @@
 	<BuildingGeneDef>
 		<defName>SmallPlasmaMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>small plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
 		<props>
@@ -26,6 +27,7 @@
 	<BuildingGeneDef>
 		<defName>MediumPlasmaMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>medium plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
 		<props>
@@ -38,6 +40,7 @@
 	<BuildingGeneDef>
 		<defName>HeavyPlasmaMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>heavy plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
 		<props>
@@ -50,6 +53,7 @@
 	<BuildingGeneDef>
 		<defName>DragonMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>dragon maw</label>
 		<description>Bioelectromagnetic coils channel a beam of devestating plasma.</description>
 		<props>
@@ -62,6 +66,7 @@
 	<BuildingGeneDef>
 		<defName>DragonscaleGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>dragonscale</label>
 		<description>Thick scales of organically deposited plasteel prove particularly resistant to plasma weapons..</description>
 		<props>

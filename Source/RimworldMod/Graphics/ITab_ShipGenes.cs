@@ -135,6 +135,7 @@ namespace RimWorld
 				}
 			}
 			GUI.DrawTexture(rect2, cachedTexture.Texture);
+			GUI.DrawTexture(rect2, gene.Icon);
 			Widgets.DefIcon(rect2, gene, null, 0.9f, null, false, new Color?(iconColor), null, null);
 			Text.Font = GameFont.Tiny;
 			float num2 = Text.CalcHeight(gene.LabelCap, rect.width);
@@ -291,8 +292,8 @@ namespace RimWorld
 
 		protected const float InitialHeight = 550f;
 
-		private static readonly CachedTexture GeneBackground_Archite = new CachedTexture("UI/Icons/Genes/GeneBackground_ArchiteGene");
-		private static readonly CachedTexture GeneBackground_Endogene = new CachedTexture("UI/Icons/Genes/GeneBackground_Endogene");
-		private static readonly CachedTexture GeneBackground_Xenogene = new CachedTexture("UI/Icons/Genes/GeneBackground_Xenogene");
+		private static readonly CachedTexture GeneBackground_Archite = new CachedTexture("UI_Elements/Gene_Background");
+		private static readonly CachedTexture GeneBackground_Endogene = new CachedTexture("UI_Elements/Gene_Background");
+		private static readonly CachedTexture GeneBackground_Xenogene = new CachedTexture("UI_Elements/Gene_Background");
 	}
 }

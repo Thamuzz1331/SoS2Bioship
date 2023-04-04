@@ -16,6 +16,7 @@
 	<BuildingGeneDef>
 		<defName>SmallEyelaserGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeS</iconPath>
 		<label>small eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
 		<props>
@@ -28,6 +29,7 @@
 	<BuildingGeneDef>
 		<defName>MediumEyelaserGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeM</iconPath>
 		<label>medium eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
 		<props>
@@ -40,6 +42,7 @@
 	<BuildingGeneDef>
 		<defName>LargeEyelaserGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeL</iconPath>
 		<label>heavy plasma maw</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
 		<props>
@@ -52,6 +55,7 @@
 	<BuildingGeneDef>
 		<defName>CollosalEyelaserGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeX</iconPath>
 		<label>collosal eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam</description>
 		<props>
@@ -64,8 +68,9 @@
 	<BuildingGeneDef>
 		<defName>ThickHide</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ArmorHide</iconPath>
 		<label>hide</label>
-		<description>Placeholder</description>
+		<description>Thick hide</description>
 		<props>
 			<li>armor:Bio_Ship_Beam_Unpowered</li>
 		</props>

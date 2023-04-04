@@ -86,7 +86,7 @@
 		<defName>Bullet_Fake_Nematocyst</defName>
 		<label>Nematocyst</label>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_HarpoonC</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
@@ -106,7 +106,7 @@
 		<label>nematocyst</label>
 		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_HarpoonC</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
@@ -121,7 +121,7 @@
 		<defName>Bullet_Ground_Nematocyst</defName>
 		<label>nematocyst thread</label>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_HarpoonC</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(4,4)</drawSize>
@@ -246,7 +246,7 @@
 		<defName>Bullet_Fake_BioAcid</defName>
 		<label>acid glob</label>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_AcidC</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
@@ -266,7 +266,7 @@
 		<label>acid glob</label>
 		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_AcidC</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
@@ -547,7 +547,7 @@
 		<defName>Bullet_Fake_Jelly</defName>
 		<label>Jelly</label>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_Polyp</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
@@ -568,7 +568,7 @@
 		<label>jelly</label>
 		<thingClass>Projectile_MonsterSpawner</thingClass>
 		<graphicData>
-			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<texPath>Things/Projectile/Projectile_Polyp</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>

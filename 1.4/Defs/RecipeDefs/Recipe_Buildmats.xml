@@ -9,7 +9,7 @@
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
-		<workAmount>500</workAmount>
+		<workAmount>250</workAmount>
 		<targetCountAdjustment>5</targetCountAdjustment>
 		<ingredients>
 			<li>
@@ -18,7 +18,7 @@
 						<li>MeatRaw</li>
 					</categories>
 				</filter>
-				<count>50</count>
+				<count>25</count>
 			</li>
 			<li>
 				<filter>
@@ -45,7 +45,52 @@
 			<li>ProtienRendering</li>
 		</researchPrerequisites>
 	</RecipeDef>
-
+	<RecipeDef>
+		<defName>MakeProteinClayBulk</defName>
+		<label>make protein clay</label>
+		<description>Craft 10 protein clay.</description>
+		<jobString>Making protein clay.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>2300</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>230</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<ProtienPutty>10</ProtienPutty>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
 	<RecipeDef>
 		<defName>NutrientSolution</defName>
 		<label>create hyperdense nutrient solution</label>

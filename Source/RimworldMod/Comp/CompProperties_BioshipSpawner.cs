@@ -11,7 +11,7 @@ namespace RimWorld
     public class CompProperties_BioshipSpawner : CompProperties_NutritionConsumer
     {
         public string creatureDef = null;
-        public float gestationTime = 60000f;
+        public int spawnCount = 1;
 
         public CompProperties_BioshipSpawner()
         {

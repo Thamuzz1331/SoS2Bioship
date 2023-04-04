@@ -53,11 +53,14 @@ namespace RimWorld
                         {
                             adjRegen.Add(adj.TryGetComp<CompRegenSpot>());
                         }
+                        Log.Message("HID" + heart.TryGetComp<CompShipHeart>().bodyId);
+                        Log.Message("BPID" + adj.TryGetComp<CompShipBodyPart>()?.bodyId);
                         if (!didRegen && 
                             adj.TryGetComp<CompShipBodyPart>() != null && 
                             adj.TryGetComp<CompShipBodyPart>().bodyId == heart.TryGetComp<CompShipHeart>().bodyId &&
                             heart.TryGetComp<CompShipHeart>().body.RequestNutrition(heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenCost()))
                         {
+                            Log.Message("Regenerating");
                             replacement = ThingMaker.MakeThing(regenDef);
                             CompShipBodyPart bodyPart = replacement.TryGetComp<CompShipBodyPart>();
                             if (bodyPart != null)
@@ -82,6 +85,7 @@ namespace RimWorld
                     {
                         adj.regenCountdown = heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenInterval();
                     }
+                    Log.Message("Spawning replacement");
                     replacement.SpawnSetup(parent.Map, false);
                     parent.Destroy();
                 }

@@ -16,12 +16,6 @@ namespace RimWorld
     {
         private CompProperties_EatMe Props => (CompProperties_EatMe)props;
 
-        public override string CompInspectStringExtra()
-        {
-            return "Eat me";
-        }
-
-
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             if (parent.Destroyed || (parent.TryGetComp<CompShipBodyPart>() != null && parent.TryGetComp<CompShipBodyPart>().bodyId == "NA"))

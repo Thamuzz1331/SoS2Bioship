@@ -17,6 +17,7 @@
 		<defName>SmallNematocystGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<label>small nematocyst</label>
+		<iconPath>UI_Elements/Gene_TurretHarpoon</iconPath>
 		<description>An explosive cell capable of launching a barbed thread.  Devastating in their own right, they can act as delivery mechanisms for all manner of acid and toxin.</description>
 		<props>
 			<li>smallTurretOptions:ShipTurret_Nematocyst</li>
@@ -28,6 +29,7 @@
 	<BuildingGeneDef>
 		<defName>MediumAcidGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_TurretAcid</iconPath>
 		<label>medium acid</label>
 		<description>Specialized glands launch globules of acidic mucus.</description>
 		<props>
@@ -40,10 +42,11 @@
 	<BuildingGeneDef>
 		<defName>HeavySpineGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_TurretSpine</iconPath>
 		<label>spine launcher</label>
 		<description>Specialized barbs driven by biosplasma, capable of hunting tracking prey.</description>
 		<props>
-			<li>largeTurretOptions:ShipTurret_UVEyeLaser</li>
+			<li>largeTurretOptions:LightSpineLauncher,HeavySpineLauncher</li>
 		</props>
 		<tags>
 			<li>largeWeapon</li>
@@ -52,6 +55,7 @@
 	<BuildingGeneDef>
 		<defName>PolypCannon</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_TurretPolyp</iconPath>
 		<label>jelly cannon</label>
 		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
 		<props>
@@ -64,6 +68,7 @@
 	<BuildingGeneDef>
 		<defName>CoralArmor</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ArmorCoral</iconPath>
 		<label>coral armor</label>
 		<description>Layers of ablative coral that provides exceptional protection against acid, toxin, and blunt impact.</description>
 		<props>

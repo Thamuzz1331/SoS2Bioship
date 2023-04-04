@@ -49,6 +49,7 @@
 			</li>
 		</tools>
 		<race>
+			<thinkTreeMain>Bioship_HaulBeast</thinkTreeMain>
 			<herdAnimal>false</herdAnimal>
 			<predator>false</predator>
 			<body>Bioship_Haulbeast</body>
@@ -89,9 +90,8 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Special/AcidGlob</texPath>
-					<graphicClass>Graphic_Flicker</graphicClass>
-					<shaderType>TransparentPostLight</shaderType>
+					<texPath>Things/Pawn/Animal/HaulBeast/HaulBeast</texPath>
+					<drawSize>1.75</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>

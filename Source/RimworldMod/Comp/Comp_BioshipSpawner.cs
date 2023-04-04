@@ -9,57 +9,54 @@ using LivingBuildings;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompBioshipSpawner : CompNutritionConsumer
+    public class CompBioshipSpawner : ThingComp
     {
         private CompProperties_BioshipSpawner SpawnerProps => (CompProperties_BioshipSpawner)props;
+        private CompRefuelable refuelable = null;
 
-
-        Pawn servitor = null;
-        bool growing = false;
-        bool readyToSpawn = false;
-        float gesationCountdown = 0f;
-
-        public override void PostExposeData()
+        public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            base.PostExposeData();
-            Scribe_Values.Look(ref servitor, "servitor");
-            Scribe_Values.Look(ref growing, "growing", false);
-            Scribe_Values.Look(ref readyToSpawn, "readyToSpawn", false);
-            Scribe_Values.Look(ref gesationCountdown, "gesationCountdown", 0f);
-        }
-
-
-        public override float getConsumptionPerPulse()
-        {
-            if (growing)
-            {
-                return SpawnerProps.consumptionPerPulse;
-            } else
-            {
-                return 0f;
-            }
-        }
-
-        public override void CompTick()
-        {
-            if (growing)
-            {
-                if (gesationCountdown <= 0)
-                {
-                    growing = false;
-                    readyToSpawn = true;
-                }
-                gesationCountdown--;
-            }
-            if (servitor != null && servitor.Destroyed)
-            {
-                servitor = null;
-            }
+            base.PostSpawnSetup(respawningAfterLoad);
+            refuelable = parent.TryGetComp<CompRefuelable>();
         }
 
         public virtual void DoSpawn()
         {
+            for (int i = 0; i < SpawnerProps.spawnCount; i++)
+            {
+                PawnGenerationRequest req =
+                new PawnGenerationRequest(
+                    PawnKindDef.Named(SpawnerProps.creatureDef),
+                    parent.Faction,
+                    PawnGenerationContext.NonPlayer,
+                    -1,
+                    true,
+                    false,
+                    false,
+                    false,
+                    true,
+                    0,
+                    allowFood: false,
+                    allowAddictions: false,
+                    forceNoIdeo: true,
+                    forbidAnyTitle: true,
+                    fixedBiologicalAge: 0,
+                    fixedChronologicalAge: 0,
+                    forceNoBackstory: true);
+                Pawn spawn = PawnGenerator.GeneratePawn(req);
+                IntVec3 targetCell;
+                CellFinder.TryFindRandomSpawnCellForPawnNear(parent.Position, parent.Map, out targetCell, 3);
+                GenSpawn.Spawn(spawn, targetCell, parent.Map, Rot4.North);
 
+                spawn.training.Train(TrainableDefOf.Tameness, null, true);
+                spawn.training.Train(TrainableDefOf.Obedience, null, true);
+                spawn.training.Train(TrainableDefOf.Release, null, true);
+                spawn.training.Train(BSTrainableDefOf.Haul, null, true);
+            }
+            if(refuelable != null)
+            {
+                refuelable.ConsumeFuel(refuelable.Fuel);
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -68,23 +65,11 @@ namespace RimWorld
             {
                 yield return gizmo;
             }
-            if (servitor == null && !growing && !readyToSpawn)
+            if (refuelable != null && refuelable.IsFull)
             {
                 yield return new Command_Action
                 {
-                    defaultLabel = "Start Growth",
-                    action = delegate ()
-                    {
-                        growing = true;
-                        gesationCountdown = SpawnerProps.gestationTime;
-                    }
-                };
-            }
-            if (readyToSpawn)
-            {
-                yield return new Command_Action
-                {
-                    defaultLabel = "Start Growth",
+                    defaultLabel = "Spawn",
                     action = delegate ()
                     {
                         DoSpawn();
@@ -94,4 +79,11 @@ namespace RimWorld
         }
 
     }
+
+    [DefOf]
+    public static class BSTrainableDefOf
+    {
+        public static TrainableDef Haul;
+    }
+
 }

@@ -2,6 +2,7 @@
 	<BuildingGeneDef>
 		<defName>ToxResistanceGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_SensitivityB</iconPath>
 		<label>toxic resistance</label>
 		<description>This organism is particularly resistant to toxic buildup.</description>
 		<props>
@@ -19,6 +20,7 @@
 	<BuildingGeneDef>
 		<defName>ToxVulnerabilityGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_SensitivityC</iconPath>
 		<label>toxic vulnerability</label>
 		<description>This organism is particularly vulnerable to toxic buildup.</description>
 		<props>
@@ -37,6 +39,7 @@
 	<BuildingGeneDef>
 		<defName>FastRegenGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenB</iconPath>
 		<label>rapid regeneration</label>
 		<description>This organism's wounds close particularly quickly.</description>
 		<props>
@@ -54,6 +57,7 @@
 	<BuildingGeneDef>
 		<defName>SlowRegenGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenC</iconPath>
 		<label>slow regeneration</label>
 		<description>This organism's wounds close particularly slowly.</description>
 		<props>

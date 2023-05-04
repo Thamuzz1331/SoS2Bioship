@@ -475,7 +475,14 @@
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
+			<li Class="CompProperties_SoShipPart">
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+			</li>
 		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShipHull</li>
+		</placeWorkers>
 		<rotatable>false</rotatable>
 		<selectable>false</selectable>
 		<costList>

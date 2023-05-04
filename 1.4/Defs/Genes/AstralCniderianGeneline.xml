@@ -57,7 +57,7 @@
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<iconPath>UI_Elements/Gene_TurretPolyp</iconPath>
 		<label>jelly cannon</label>
-		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
+		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.  The size of the jellies depends on the number of amplifiers, maxing out at 20.</description>
 		<props>
 			<li>spinalTurretOptions:JellyCannon</li>
 		</props>

@@ -374,14 +374,13 @@ namespace RimWorld
 					}
 				}
 			}
-			Func<GeneDef, int> <> 9__2;
 			foreach (GeneLeftChosenGroup geneLeftChosenGroup3 in this.leftChosenGroups)
 			{
 				List<BuildingGeneDef> overriddenGenes = geneLeftChosenGroup3.overriddenGenes;
 				Func<BuildingGeneDef, int> selector;
-				if ((selector = <> 9__2) == null)
+				if (selector == null)
 				{
-					selector = (<> 9__2 = ((BuildingGeneDef x) => selectedGenes.IndexOf(x)));
+					selector = ((BuildingGeneDef x) => selectedGenes.IndexOf(x));
 				}
 				overriddenGenes.SortBy(selector);
 			}

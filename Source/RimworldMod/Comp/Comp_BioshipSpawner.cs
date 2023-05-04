@@ -18,6 +18,10 @@ namespace RimWorld
         {
             base.PostSpawnSetup(respawningAfterLoad);
             refuelable = parent.TryGetComp<CompRefuelable>();
+            if (!respawningAfterLoad && parent.Faction != Faction.OfPlayer)
+            {
+                DoSpawn();
+            }
         }
 
         public virtual void DoSpawn()
@@ -52,6 +56,7 @@ namespace RimWorld
                 spawn.training.Train(TrainableDefOf.Obedience, null, true);
                 spawn.training.Train(TrainableDefOf.Release, null, true);
                 spawn.training.Train(BSTrainableDefOf.Haul, null, true);
+                
             }
             if(refuelable != null)
             {

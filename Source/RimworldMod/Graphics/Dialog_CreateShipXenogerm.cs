@@ -39,9 +39,9 @@ namespace RimWorld
 			get
 			{
 				this.tmpGenes.Clear();
-				foreach (Genepack genepack in this.selectedGenepacks)
+				foreach (CompHeartSeed genepack in this.selectedGenepacks)
 				{
-					foreach (BuildingGeneDef item in genepack.GeneSet.GenesListForReading)
+					foreach (BuildingGeneDef item in genepack.heartGenes)
 					{
 						this.tmpGenes.Add(item);
 					}
@@ -50,7 +50,7 @@ namespace RimWorld
 			}
 		}
 
-		public Dialog_CreateXenogerm(Building_GeneAssembler geneAssembler)
+		public Dialog_CreateShipXenogerm(Building_ShipGeneAssembler geneAssembler)
 		{
 			this.geneAssembler = geneAssembler;
 			this.maxGCX = geneAssembler.MaxComplexity();
@@ -222,11 +222,9 @@ namespace RimWorld
 				string extraTooltip = null;
 				if (this.leftChosenGroups.Any((GeneLeftChosenGroup x) => x.leftChosen == gene))
 				{
-					extraTooltip = Dialog_CreateXenogerm.< DrawGenepack > g__GroupInfo | 21_0(this.leftChosenGroups.FirstOrDefault((GeneLeftChosenGroup x) => x.leftChosen == gene));
 				}
 				else if (this.cachedOverriddenGenes.Contains(gene))
 				{
-					extraTooltip = Dialog_CreateXenogerm.< DrawGenepack > g__GroupInfo | 21_0(this.leftChosenGroups.FirstOrDefault((GeneLeftChosenGroup x) => x.overriddenGenes.Contains(gene)));
 				}
 				else if (this.randomChosenGroups.ContainsKey(gene))
 				{
@@ -449,8 +447,7 @@ namespace RimWorld
 			this.quickSearchWidget.noResultsMatched = !this.matchingGenepacks.Any<Genepack>();
 		}
 
-		[CompilerGenerated]
-		internal static string <DrawGenepack>g__GroupInfo|21_0(GeneLeftChosenGroup group)
+		internal static string GeneOneActive()
 		{
 			if (group == null)
 			{
@@ -460,18 +457,18 @@ namespace RimWorld
 			select(x.label + " (" + "Suppressed".Translate() + ")").Colorize(ColorLibrary.RedReadable)).ToLineList("  - ", true)).Colorize(ColoredText.TipSectionTitleColor);
 	}
 
-	private Building_GeneAssembler geneAssembler;
+	private Building_ShipGeneAssembler geneAssembler;
 
-	private List<Genepack> libraryGenepacks = new List<Genepack>();
+	private List<CompHeartSeed> libraryGenepacks = new List<CompHeartSeed>();
 
-	private List<Genepack> unpoweredGenepacks = new List<Genepack>();
+	private List<CompHeartSeed> unpoweredGenepacks = new List<CompHeartSeed>();
 
-	private List<Genepack> selectedGenepacks = new List<Genepack>();
+	private List<CompHeartSeed> selectedGenepacks = new List<CompHeartSeed>();
 
-	private HashSet<Genepack> matchingGenepacks = new HashSet<Genepack>();
+	private HashSet<CompHeartSeed> matchingGenepacks = new HashSet<CompHeartSeed>();
 
 	private readonly Color UnpoweredColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
 
-	private List<BuildingGeneDef> tmpGenes = new List<GeneDef>();
+	private List<BuildingGeneDef> tmpGenes = new List<BuildingGeneDef>();
 }
 }

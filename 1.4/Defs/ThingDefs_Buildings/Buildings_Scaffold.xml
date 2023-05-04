@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	
+	
+	
 	<DesignatorDropdownGroupDef>
 		<defName>Protien_Scaffold</defName>
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scaffold_Beam</defName>
-		<label>Protien Wall Scaffold</label>
+		<label>protien wall scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<passability>Impassable</passability>
@@ -46,6 +48,10 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
@@ -58,8 +64,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
@@ -135,8 +139,6 @@
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
@@ -209,8 +211,6 @@
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
@@ -259,8 +259,6 @@
 			<WorkToBuild>400</WorkToBuild>
 		</statBases>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
-		<placeWorkers>
-		</placeWorkers>
 		<rotatable>true</rotatable>
 		<building>
 			<shipPart>true</shipPart>
@@ -456,9 +454,6 @@
 			<isInert>true</isInert>
 			<isEdifice>false</isEdifice>
 			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Ship/ScaffoldTransparent</texPath>
-			</blueprintGraphicData>
 		</building>
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
@@ -481,8 +476,6 @@
 				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<rotatable>false</rotatable>
 		<selectable>false</selectable>
 		<costList>
@@ -1685,8 +1678,6 @@
 				<transformString>Giant_Mitochondira</transformString>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
@@ -1734,8 +1725,6 @@
 				<transformString>Colossal_Mitochondira</transformString>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
@@ -1846,8 +1835,6 @@
 				<transformString>SalvageMaw</transformString>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
@@ -1898,8 +1885,6 @@
 				<transformString>HaulBeastSpawner</transformString>
 			</li>
 		</comps>
-		<placeWorkers>
-		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>

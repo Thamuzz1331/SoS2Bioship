@@ -105,6 +105,7 @@
 	  <Compile Include="Buildings\Building_Armor.cs"/>
 	  <Compile Include="Buildings\Building_MeatMaw.cs"/>
 	  <Compile Include="Buildings\Building_ShipHeart.cs"/>
+	  <Compile Include="Buildings\Building_ShipGeneAssembler.cs"/>
 
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumDrug.cs"/>
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumAddiction.cs"/>
@@ -216,6 +217,5 @@
 	  <Compile Include="Graphics\Dialog_CreateShipXenogerm.cs" />
 -->
 	  <Compile Include="Verbs\Verb_MutableProjectileShip.cs" />
-
   </ItemGroup>
 </Project>

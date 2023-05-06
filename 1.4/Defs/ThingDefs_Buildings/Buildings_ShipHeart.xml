@@ -81,7 +81,7 @@
 		</placeWorkers>
 		<costList>
 			<HeartSeed>1</HeartSeed>
-<!--			<ProtienPutty>100</ProtienPutty>  -->
+			<ProtienPutty>100</ProtienPutty>
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>

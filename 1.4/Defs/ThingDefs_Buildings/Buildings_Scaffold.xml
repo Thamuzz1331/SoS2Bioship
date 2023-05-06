@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	
-	
-	
 	<DesignatorDropdownGroupDef>
 		<defName>Protien_Scaffold</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_Beam</defName>
 		<label>protien wall scaffold</label>
-		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>Impassable</passability>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
+		<thingClass>Building_Scaffold</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -33,12 +28,6 @@
 			</damageData>
 		</graphicData>
 		<uiIconPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas_ICON</uiIconPath>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
@@ -52,9 +41,6 @@
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
 				<transformString>Bio_Ship_Beam</transformString>
@@ -63,6 +49,16 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -70,28 +66,25 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<paintable>true</paintable>
 		</building>
 		<costList>
 			<Steel>2</Steel>
 			<Plasteel>1</Plasteel>
 			<ProtienPutty>3</ProtienPutty>
 		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
 			<li>StructuralScaffold</li>
 		</researchPrerequisites>
 		<designationHotKey>Misc1</designationHotKey>
-		<holdsRoof>true</holdsRoof>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
 	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_Beam_Unpowered</defName>
-		<label>unpowered protien wall Scaffold</label>
+		<label>unpowered protien wall scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -112,21 +105,19 @@
 			</damageData>
 		</graphicData>
 		<uiIconPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas_ICON</uiIconPath>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<WorkToBuild>400</WorkToBuild>
 		</statBases>
-		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh.</description>
+		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh. Does not include conduits for power or coolant.</description>
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
 				<species>bioship</species>
@@ -145,26 +136,23 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<paintable>true</paintable>
 		</building>
 		<costList>
 			<ProtienPutty>3</ProtienPutty>
 		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
 			<li>StructuralScaffold</li>
 		</researchPrerequisites>
 		<designationHotKey>Misc1</designationHotKey>
-		<holdsRoof>true</holdsRoof>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
 	</ThingDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_Armor_Unpowered</defName>
 		<label>unpowered armor scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>Impassable</passability>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -185,12 +173,6 @@
 			</damageData>
 		</graphicData>
 		<uiIconPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas_ICON</uiIconPath>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>true</castEdgeShadows>
-		<fillPercent>1</fillPercent>
-		<blockLight>true</blockLight>
-		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>0</Flammability>
@@ -200,6 +182,10 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>armor</transformString>
@@ -217,19 +203,19 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<paintable>true</paintable>
 		</building>
 		<costList>
-			<ProtienPutty>3</ProtienPutty>
+			<ProtienPutty>4</ProtienPutty>
 		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>
 			<li>StructuralScaffold</li>
 		</researchPrerequisites>
 		<designationHotKey>Misc1</designationHotKey>
-		<holdsRoof>true</holdsRoof>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
 	</ThingDef>
+	
 	<!-- corners -->
 	<DesignatorDropdownGroupDef>
 		<defName>Protien_Scaffold_Corners</defName>
@@ -1620,7 +1606,7 @@
 			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
-				<transformString>BioShipPurgePort</transformString>
+				<transformString>Bioship_PassiveVent</transformString>
 			</li>
 			<li Class="CompProperties_RoofMeBio"/>
 			<li Class="CompProperties_ShipHeat">

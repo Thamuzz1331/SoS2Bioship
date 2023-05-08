@@ -778,6 +778,9 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Maw</defName>
@@ -829,6 +832,7 @@
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentTrap</li>
+			<li>PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -880,6 +884,7 @@
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentTrap</li>
+			<li>PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -889,13 +894,11 @@
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Turret</defName>
 	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BaseShipTurretBuilding">
 		<defName>SmallWeaponScaffold</defName>
 		<label>small weapon scaffold</label>
 		<description>A scaffold from a which small weapon turret will grow.</description>
 		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>PassThroughOnly</passability>
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Turret</designatorDropdown>
 		<graphicData>
@@ -910,6 +913,9 @@
 				<transformString>smallTurretOptions</transformString>
 			</li>
 		</comps>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
 		<costList>
 			<ProtienPutty>8</ProtienPutty>
 			<Neutroamine>15</Neutroamine>
@@ -923,18 +929,20 @@
 		<researchPrerequisites>
 			<li>SmallWeaponScaffold</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
 	</ThingDef>
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BaseShipTurretBuilding">
 		<defName>MediumWeaponScaffold</defName>
 		<label>medium weapon scaffold</label>
 		<designatorDropdown>Scaffold_Turret</designatorDropdown>
 		<designationCategory>Ship</designationCategory>
 		<description>The scaffold from which a medium turret will grow.</description>
 		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Scaffold/TurretBaseScaffold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -948,6 +956,7 @@
 			</li>
 		</comps>
 		<building>
+			<shipPart>true</shipPart>
 		</building>
 		<statBases>
 			<WorkToBuild>4000</WorkToBuild>
@@ -962,16 +971,18 @@
 		<researchPrerequisites>
 			<li>MediumWeaponScaffold</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
+		<castEdgeShadows>true</castEdgeShadows>
 	</ThingDef>
 
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BaseShipTurretBuilding">
 		<defName>LargeWeaponScaffold</defName>
 		<label>large weapon scaffold</label>
 		<designatorDropdown>Scaffold_Turret</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<passability>PassThroughOnly</passability>
 		<graphicData>
 			<texPath>Things/Building/Scaffold/TurretBaseScaffold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -980,12 +991,9 @@
 		<researchPrerequisites>
 			<li>LargeWeaponScaffold</li>
 		</researchPrerequisites>
-		<altitudeLayer>Building</altitudeLayer>
-		<blockWind>true</blockWind>
-		<castEdgeShadows>false</castEdgeShadows>
+		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>1</fillPercent>
 		<blockLight>false</blockLight>
-		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<WorkToBuild>6000</WorkToBuild>
 			<MaxHitPoints>10</MaxHitPoints>
@@ -1000,7 +1008,6 @@
 				<transformString>largeTurretOptions</transformString>
 			</li>
 		</comps>
-		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
@@ -1009,9 +1016,11 @@
 			<Neutroamine>15</Neutroamine>
 			<OrganSeed>8</OrganSeed>
 		</costList>
-		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
+		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 
 	<DesignatorDropdownGroupDef>
@@ -1224,6 +1233,9 @@
 		<researchPrerequisites>
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	
 	<ThingDef ParentName="BuildingBase">
@@ -1276,6 +1288,9 @@
 		<researchPrerequisites>
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 
 	<DesignatorDropdownGroupDef>
@@ -1310,6 +1325,7 @@
 		</graphicData>
 		<placeWorkers>
 			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
+			<li>PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_MutableScaffold">
@@ -1370,6 +1386,9 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldHeatsinkLarge</defName>
@@ -1405,6 +1424,9 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldCoolantCyst</defName>
@@ -1440,6 +1462,9 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldCoolantCystLarge</defName>
@@ -1475,6 +1500,9 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldPurgePort</defName>
@@ -1511,6 +1539,9 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldPurgePortLarge</defName>
@@ -1547,6 +1578,9 @@
 		<researchPrerequisites>
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingShipHullBase">
@@ -1681,6 +1715,9 @@
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>Scaffold_Colossal_Mitochondira</defName>
@@ -1728,6 +1765,9 @@
 		</costList>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 
 	<DesignatorDropdownGroupDef>
@@ -1833,6 +1873,9 @@
 		<researchPrerequisites>
 			<li>MetabolicScaffoldAdvanced</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 	
 	<!-- Beast Spawners-->
@@ -1883,5 +1926,8 @@
 		<researchPrerequisites>
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 	</ThingDef>
 </Defs>

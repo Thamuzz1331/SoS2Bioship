@@ -453,6 +453,7 @@
 			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorScaffold</TerrainId>
+				<isBioTile>true</isBioTile>
 				<roof>true</roof>
 				<isPlating>true</isPlating>
 				<hermetic>true</hermetic>

@@ -10,7 +10,7 @@ using Verse;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompRoofMeBio : CompRoofMe
+    public class CompRoofMeBio : CompSoShipPart
     {
         public CompProperties_RoofMeBio BioProps
         {
@@ -28,32 +28,12 @@ namespace RimWorld
             bioRoofedData.graphicClass = typeof(Graphic_Single);
             bioRoofedData.shaderType = ShaderTypeDefOf.MetaOverlay;
             roofTileBio = new Graphic_256_Bio(bioRoofedData.Graphic);
-        }
-
-        private static Type compRoofMeType = AccessTools.TypeByName("CompRoofMe");
-
-        public override void PostSpawnSetup(bool respawningAfterLoad)
-        {
-            base.PostSpawnSetup(true);
-            if (respawningAfterLoad)
-            {
-                return;
-            }
-            TerrainDef hullTerrain = DefDatabase<TerrainDef>.GetNamed(BioProps.TerrainId);
-            foreach (IntVec3 pos in GenAdj.CellsOccupiedBy(parent))
-            {
-                if(!parent.Map.terrainGrid.TerrainAt(pos).layerable)
-                {
-                    TerrainDef currentTerrain = parent.Map.terrainGrid.TerrainAt(pos);
-                    parent.Map.terrainGrid.SetTerrain(pos, hullTerrain);
-                }
-            }
-        }
+          }
 
         public override void PostDraw()
         {
             base.PostDraw();
-            if (!Props.roof)
+            if (!Props.roof || !BioProps.isBioTile)
                 return;
             if ((Find.PlaySettings.showRoofOverlay || parent.Position.Fogged(parent.Map)) && 
                 parent.Position.Roofed(parent.Map))
@@ -66,6 +46,15 @@ namespace RimWorld
                     }
                 }
                 Graphics.DrawMesh(material: roofTileBio.MatSingleFor(parent), mesh: roofTileBio.MeshAt(parent.Rotation), position: new UnityEngine.Vector3(parent.DrawPos.x, 0, parent.DrawPos.z), rotation: Quaternion.identity, layer: 0);
+            }
+        }
+
+        public override void SetShipTerrain(IntVec3 v)
+        {
+            Map map = parent.Map;
+            if (!map.terrainGrid.TerrainAt(v).layerable)
+            {
+                map.terrainGrid.SetTerrain(v, DefDatabase<TerrainDef>.GetNamed(BioProps.TerrainId));
             }
         }
     }

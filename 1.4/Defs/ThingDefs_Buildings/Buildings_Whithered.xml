@@ -37,8 +37,10 @@
 		<description>Whithered flesh.  Connect to a heart to restore its vitality</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
@@ -108,8 +110,10 @@
 		<description>Whithered wall.  Connect to a well fed ShipHeart to revitalize</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Unpowered_Insensate</stapleDef>
@@ -344,12 +348,11 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
-				<isPlating>true</isPlating>
-				<hermetic>true</hermetic>
-			</li>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipwhithered</TerrainId>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
@@ -413,7 +416,12 @@
 			
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<TerrainId>FakeFloorShipwhithered</TerrainId>
+				<isBioTile>true</isBioTile>
+				<isHull>true</isHull>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
@@ -628,9 +636,7 @@
 		<description>Whithered for an organic sensor array.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
+			<li Class="CompProperties_SoShipPart"/>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
@@ -676,9 +682,6 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>smallMawOptions</transformString>
@@ -725,9 +728,6 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(2,2)</size>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>Maw_Corpse</transformString>
@@ -790,9 +790,6 @@
 		</graphicData>
 		<size>(3,3)</size>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>mediumTurretOptions</transformString>
@@ -833,9 +830,6 @@
 		<description>Whithered for an small shipmaw.</description>
 		<size>(4,4)</size>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_MutableScaffold">
 				<species>bioship</species>
 				<transformString>largeTurretOptions</transformString>

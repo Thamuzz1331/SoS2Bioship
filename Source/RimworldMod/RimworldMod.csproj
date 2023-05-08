@@ -114,6 +114,8 @@
 
 	  <Compile Include="Comp\Comp_Aggression.cs"/>
 	  <Compile Include="Comp\CompProperties_Aggression.cs"/>
+	  <Compile Include="Comp\Comp_RoofMeBio.cs"/>
+	  <Compile Include="Comp\CompProperties_RoofMeBio.cs"/>
 	  <Compile Include="Comp\Comp_BioshipShield.cs"/>
 	  <Compile Include="Comp\Comp_EatMe.cs"/>
 	  <Compile Include="Comp\CompProperties_EatMe.cs"/>
@@ -121,8 +123,6 @@
 	  <Compile Include="Comp\CompProperties_NutritionLoader.cs"/>
 	  <Compile Include="Comp\Comp_NutritionRefueler.cs"/>
 	  <Compile Include="Comp\CompProperties_NutritionRefueler.cs"/>
-	  <Compile Include="Comp\Comp_RoofMeBio.cs"/>
-	  <Compile Include="Comp\CompProperties_RoofMeBio.cs"/>
 	  <Compile Include="Comp\Comp_ShipBodyPart.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipBodyPart.cs"/>
 	  <Compile Include="Comp\Comp_ShipHeart.cs"/>

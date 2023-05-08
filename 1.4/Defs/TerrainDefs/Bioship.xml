@@ -1,69 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
+		<defName>FakeFloorScaffold</defName>
+		<label>protien scaffold</label>
+		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+	</TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
 		<defName>FakeFloorShipflesh</defName>
-		<layerable>true</layerable>
 		<label>shipflesh</label>
 		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>
-		<edgeType>Hard</edgeType>
-		<renderPrecedence>70</renderPrecedence>
-		<fertility>0</fertility>
-		<holdSnow>false</holdSnow>
 		<statBases>
 			<Cleanliness>0</Cleanliness>
 			<Beauty>0</Beauty>
 		</statBases>
-		<tags>
-			<li>Ship</li>
-		</tags>
-		<affordances>
-			<li>Light</li>
-			<li>Medium</li>
-			<li>Heavy</li>
-		</affordances>
 	</TerrainDef>
-	<TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
 		<defName>FakeFloorShipscar</defName>
-		<layerable>true</layerable>
-		<label>shipflesh</label>
+		<label>shipscar</label>
 		<texturePath>Terrain/Surfaces/ScarFloor</texturePath>
-		<edgeType>Hard</edgeType>
-		<renderPrecedence>70</renderPrecedence>
-		<fertility>0</fertility>
-		<holdSnow>false</holdSnow>
 		<statBases>
 			<Cleanliness>0</Cleanliness>
 			<Beauty>0</Beauty>
 		</statBases>
-		<tags>
-			<li>Ship</li>
-		</tags>
-		<affordances>
-			<li>Light</li>
-			<li>Medium</li>
-			<li>Heavy</li>
-		</affordances>
 	</TerrainDef>
-	<TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
 		<defName>FakeFloorShipwhithered</defName>
-		<layerable>true</layerable>
 		<label>shipflesh</label>
 		<texturePath>Terrain/Surfaces/WhitheredFloor</texturePath>
-		<edgeType>Hard</edgeType>
-		<renderPrecedence>70</renderPrecedence>
-		<fertility>0</fertility>
-		<holdSnow>false</holdSnow>
 		<statBases>
 			<Cleanliness>0</Cleanliness>
 			<Beauty>0</Beauty>
 		</statBases>
-		<tags>
-			<li>Ship</li>
-		</tags>
-		<affordances>
-			<li>Light</li>
-			<li>Medium</li>
-			<li>Heavy</li>
-		</affordances>
 	</TerrainDef>
 </Defs>

@@ -41,9 +41,7 @@
 			<li Class="CompProperties_SoShipPart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
-			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
@@ -126,9 +124,7 @@
 			<li Class="CompProperties_SoShipPart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
-			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<roof>true</roof>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -404,17 +400,17 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<isBioTile>true</isBioTile>
 				<isPlating>true</isPlating>
 				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarHullTile</regenDef>
 				<species>bioship</species>
 				<whitherTo>WhitheredHullTile</whitherTo>
-			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -454,9 +450,13 @@
 			<ShipMeat>30</ShipMeat>
 		</costList>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<isBioTile>true</isBioTile>
 				<isHull>true</isHull>
+				<isPlating>true</isPlating>
 				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
@@ -467,9 +467,6 @@
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarAirlock</regenDef>
 				<species>bioship</species>
@@ -790,9 +787,6 @@
 				<basePowerConsumption>250</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 		<rotatable>false</rotatable>
@@ -845,10 +839,6 @@
 				<species>bioship</species>
 				<whitherTo>Whithered_Maw_Small</whitherTo>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
-			
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
@@ -1161,9 +1151,6 @@
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
 				<species>bioship</species>
@@ -1172,6 +1159,7 @@
 			<li Class="CompProperties_SoShipPart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -1183,11 +1171,8 @@
 				<energyPerSecond>-64</energyPerSecond>
 			</li>
 			<li Class="CompProperties_Overlay">
-				<graphicPath>Things/Building/Ship/Ship_Vent</graphicPath>
+				<graphicPath>Things/Building/Ship/BioRadiatorBase</graphicPath>
 				<size>(1,1,1)</size>
-			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>

@@ -81,8 +81,10 @@
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
@@ -161,8 +163,10 @@
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam_Unpowered</regenDef>
@@ -397,17 +401,17 @@
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
-				<isPlating>true</isPlating>
-				<hermetic>true</hermetic>
-			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarHullTile</regenDef>
 				<whitherTo>WhitheredHullTile</whitherTo>
 				<species>bioship</species>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<TerrainId>FakeFloorShipscar</TerrainId>
+				<isBioTile>true</isBioTile>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -457,6 +461,11 @@
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<isBioTile>true</isBioTile>
+				<isHull>true</isHull>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>ScarHullTile</regenDef>

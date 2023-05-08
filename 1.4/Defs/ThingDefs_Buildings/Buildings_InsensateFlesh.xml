@@ -36,8 +36,10 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -108,8 +110,10 @@
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
+			<li Class="CompProperties_SoShipPart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -264,8 +268,8 @@
 		<comps>
 			<li Class="CompProperties_RoofMeBio">
 				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
-			<li Class="CompProperties_SoShipPart">
+				<roof>true</roof>
+				<isBioTile>true</isBioTile>
 				<isPlating>true</isPlating>
 				<hermetic>true</hermetic>
 			</li>
@@ -305,6 +309,14 @@
 		<costList>
 		</costList>
 		<comps>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorShipflesh</TerrainId>
+				<isBioTile>true</isBioTile>
+				<isHull>true</isHull>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
+			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>

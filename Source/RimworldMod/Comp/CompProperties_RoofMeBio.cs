@@ -3,9 +3,10 @@ using Verse;
 
 namespace RimWorld
 {
-	public class CompProperties_RoofMeBio : CompProperties_RoofMe
+	public class CompProperties_RoofMeBio : CompProperties_SoShipPart
 	{
 		public string TerrainId = "FakeFloorShipflesh";
+		public bool isBioTile = false;
 
 		public CompProperties_RoofMeBio()
 		{

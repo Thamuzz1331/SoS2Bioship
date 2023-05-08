@@ -40,6 +40,7 @@
 			<li Class="CompProperties_SoShipPart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Bio_Ship_Beam_Insensate</stapleDef>
@@ -48,9 +49,6 @@
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
-			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
@@ -126,9 +124,6 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
 		</comps>
 		<rotatable>false</rotatable>
 		<building>
@@ -183,6 +178,7 @@
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_SoShipPart">
+				<roof>true</roof>
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 			</li>
@@ -192,9 +188,6 @@
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
-			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
 			</li>
 		</comps>
 		<rotatable>false</rotatable>
@@ -459,9 +452,8 @@
 				<transformString>BioShipHullTile</transformString>
 			</li>
 			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipflesh</TerrainId>
-			</li>
-			<li Class="CompProperties_SoShipPart">
+				<TerrainId>FakeFloorScaffold</TerrainId>
+				<roof>true</roof>
 				<isPlating>true</isPlating>
 				<hermetic>true</hermetic>
 			</li>
@@ -534,6 +526,14 @@
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_RoofMeBio">
+				<TerrainId>FakeFloorScaffold</TerrainId>
+				<isBioTile>true</isBioTile>
+				<isHull>true</isHull>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
 			</li>
 		</comps>
 		<designationHotKey>Misc2</designationHotKey>
@@ -1608,7 +1608,6 @@
 				<species>bioship</species>
 				<transformString>Bioship_PassiveVent</transformString>
 			</li>
-			<li Class="CompProperties_RoofMeBio"/>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompShipHeat</compClass>
 			</li>

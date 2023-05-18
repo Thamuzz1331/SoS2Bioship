@@ -35,7 +35,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
+		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_SoShipPart">
@@ -118,7 +118,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.</description>
+		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_SoShipPart">
@@ -1721,7 +1721,6 @@
 		<defName>HaulBeastSpawner</defName>
 		<label>haul beast eggsac</label>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<designationCategory>Ship</designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1764,14 +1763,13 @@
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
 				<fuelCapacity>25</fuelCapacity>
-				<fuelFilter>
-				</fuelFilter>
 				<fuelConsumptionRate>0</fuelConsumptionRate>
 			</li>
 			<li Class="CompProperties_NutritionRefueler">
 				<refuelInterval>10</refuelInterval>
 				<refuelCost>.001</refuelCost>
 				<refuelAmmount>.001</refuelAmmount>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 			</li>
 		</comps>
 		<placeWorkers>

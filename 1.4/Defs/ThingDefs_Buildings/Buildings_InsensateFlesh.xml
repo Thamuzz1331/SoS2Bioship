@@ -33,7 +33,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
+		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_SoShipPart">
@@ -107,7 +107,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protien scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
+		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
 			<li Class="CompProperties_SoShipPart">

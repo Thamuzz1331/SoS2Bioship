@@ -14,12 +14,12 @@
 
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>ProtienRendering</defName>
-		<label>protien rendering</label>
+		<label>protein rendering</label>
 		<description>A bioship is not a natural organism that contains the pattern of its ultimate developement.  Its growth must be guided and shaped, and it is by this clay that it shall know its ultimate form.</description>
 		<baseCost>1500</baseCost>
 		<techLevel>Spacer</techLevel>
 		<discoveredLetterTitle>About: Growing a Ship</discoveredLetterTitle>
-		<discoveredLetterText>Creating a bioship is a bit different than constructing a conventional ship.  The first step is to build the outline of the ship out of protien scaffolds.  Once the scaffolds of the ship have been built, including the floor scaffolds, build the Shipheart on the floor scaffolds.  The heart will expand outward, converting surrounding scaffolds into flesh.\nThis process is nutrient intensive, so be prepared to feed your ship with meat as it grows.</discoveredLetterText>
+		<discoveredLetterText>Creating a bioship is a bit different than constructing a conventional ship.  The first step is to build the outline of the ship out of protein scaffolds.  Once the scaffolds of the ship have been built, including the floor scaffolds, build the Shipheart on the floor scaffolds.  The heart will expand outward, converting surrounding scaffolds into flesh.\nThis process is nutrient intensive, so be prepared to feed your ship with meat as it grows.</discoveredLetterText>
 		<prerequisites>
 		</prerequisites>
 		<researchViewX>1.00</researchViewX>

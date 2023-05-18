@@ -54,6 +54,7 @@
 		<comps>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>50.0</fuelCapacity>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>

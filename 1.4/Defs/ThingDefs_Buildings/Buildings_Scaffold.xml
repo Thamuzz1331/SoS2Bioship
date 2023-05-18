@@ -5,7 +5,7 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_Beam</defName>
-		<label>protien wall scaffold</label>
+		<label>protein wall scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
 		<graphicData>
@@ -80,7 +80,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_Beam_Unpowered</defName>
-		<label>unpowered protien wall scaffold</label>
+		<label>unpowered protein wall scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
 		<graphicData>

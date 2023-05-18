@@ -2,7 +2,7 @@
 <Defs>
 	<TerrainDef ParentName="ShipFloorBase">
 		<defName>FakeFloorScaffold</defName>
-		<label>protien scaffold</label>
+		<label>protein scaffold</label>
 		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>
 		<statBases>
 			<Cleanliness>0</Cleanliness>

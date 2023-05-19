@@ -133,7 +133,7 @@
 		<defName>MakeOrganSeed</defName>
 		<label>breed organ seed</label>
 		<description>Breeds an organ seed into two.</description>
-		<jobString>Making protein clay.</jobString>
+		<jobString>Breeding organ seeds.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
@@ -147,7 +147,7 @@
 						<li>MeatRaw</li>
 					</categories>
 				</filter>
-				<count>150</count>
+				<count>100</count>
 			</li>
 			<li>
 				<filter>
@@ -173,6 +173,39 @@
 		</fixedIngredientFilter>
 		<products>
 			<OrganSeed>2</OrganSeed>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>JuiceOrganSeed</defName>
+		<label>juice organ seed</label>
+		<description>Juices an organseed for neutroamine.</description>
+		<jobString>Juicing organseed.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>4000</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OrganSeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<Neutroamine>50</Neutroamine>
 		</products>
 		<workSkill>Crafting</workSkill>
 		<recipeUsers>

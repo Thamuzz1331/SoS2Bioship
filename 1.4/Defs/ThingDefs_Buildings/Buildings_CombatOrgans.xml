@@ -111,6 +111,8 @@
 			<turretTopDrawSize>4.1</turretTopDrawSize>
 		</building>
 		<costList>
+			<ShipMeat>400</ShipMeat>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 		<placeWorkers/>
 		<researchPrerequisites>
@@ -210,6 +212,9 @@
 			<Flammability>0.5</Flammability>
 		</statBases>
 		<costList>
+			<ShipMeat>300</ShipMeat>
+			<OrganSeed>2</OrganSeed>
+			<Neutroamine>7</Neutroamine>
 		</costList>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
@@ -259,6 +264,7 @@
 			<Flammability>0.5</Flammability>
 		</statBases>
 		<costList>
+			<ShipMeat>100</ShipMeat>
 		</costList>
 		<comps>
 			<li Class="CompProperties_SpinalMount">

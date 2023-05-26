@@ -151,22 +151,7 @@ namespace RimWorld
                 }
             }
         }
-        public override void PostDestroy(DestroyMode mode, Map previousMap)
-        {
-            if (body != null)
-            {
-                List<Thing> toWhither = new List<Thing>();
-                foreach (Thing t in body.bodyParts)
-                {
-                    toWhither.Add(t);
-                }
-                foreach (Thing t in toWhither)
-                {
-                    t.TryGetComp<CompShipBodyPart>().Whither(true);
-                }
-            }
-            base.PostDestroy(mode, previousMap);
-        }
+
         public override string CompInspectStringExtra()
         {
             return String.Format("Heart of {0}", this.bodyName);

@@ -40,6 +40,10 @@
 			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
 			<turretTopDrawSize>2.5</turretTopDrawSize>
 		</building>
+		<costList>
+			<ShipMeat>200</ShipMeat>
+			<OrganSeed>4</OrganSeed>
+		</costList>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
@@ -192,6 +196,10 @@
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
+		<costList>
+			<ShipMeat>300</ShipMeat>
+			<OrganSeed>6</OrganSeed>
+		</costList>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
@@ -329,6 +337,8 @@
 			<turretTopDrawSize>4.1</turretTopDrawSize>
 		</building>
 		<costList>
+			<ShipMeat>400</ShipMeat>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -382,6 +392,9 @@
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>
+			<ShipMeat>500</ShipMeat>
+			<Neutroamine>50</Neutroamine>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 		<comps>
 			<li Class="CompProperties_SoShipPart">

@@ -27,6 +27,15 @@ namespace RimWorld
             base.PostSpawnSetup(s);
         }
 
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
+        {
+            base.PostDestroy(mode, previousMap);
+            if (mode == DestroyMode.Deconstruct)
+            {
+                //TODO: On deconstruct, drop meat based on stored nutrition
+            }
+        }
+
         public override float storeNutrition(float qty)
         {
             qty *= efficiency;

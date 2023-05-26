@@ -36,13 +36,6 @@
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_Flickable"/>
-			<!--
-			<li Class="CompProperties_MutableAmmo">
-				<defaultAmmo>Proj_ShipTurretNematocyst</defaultAmmo>
-				<defaultFakeAmmo>Proj_ShipTurretNematocyst</defaultFakeAmmo>
-				<defaultAmmoName>Nematocyst</defaultAmmoName>
-			</li>
--->
 		</comps>
 		<building>
 			<turretGunDef>ShipTurret_NematocystTop</turretGunDef>
@@ -50,6 +43,10 @@
 			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
 			<turretTopDrawSize>2.1</turretTopDrawSize>
 		</building>
+		<costList>
+			<ShipMeat>200</ShipMeat>
+			<OrganSeed>4</OrganSeed>
+		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
@@ -81,7 +78,6 @@
 			</li>
 		</verbs>
 	</ThingDef>
-
 	<ThingDef ParentName="BaseBullet">
 		<defName>Bullet_Fake_Nematocyst</defName>
 		<label>Nematocyst</label>
@@ -206,6 +202,8 @@
 			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
 		<costList>
+			<ShipMeat>300</ShipMeat>
+			<OrganSeed>6</OrganSeed>
 		</costList>
 		<designationCategory/>
 		<researchPrerequisites>
@@ -395,13 +393,15 @@
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Heavy</ammoCat>
 				<reloadInterval>18</reloadInterval>
-				<reloadCost>0.3</reloadCost>
+				<reloadCost>0.01</reloadCost>
 			</li>
 		</comps>
 		<building>
 			<turretGunDef>Artillery_BioShipTorpedo_Two</turretGunDef>
 		</building>
 		<costList>
+			<ShipMeat>400</ShipMeat>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 	</ThingDef>
 
@@ -435,7 +435,7 @@
 			<li Class="CompProperties_NutritionLoader">
 				<ammoCat>Spine_Light</ammoCat>
 				<reloadInterval>6</reloadInterval>
-				<reloadCost>0.15</reloadCost>
+				<reloadCost>0.05</reloadCost>
 			</li>
 		</comps>
 		<building>
@@ -443,6 +443,8 @@
 		</building>
 		<uiIconPath>Things/Building/Ship/TorpedoTubes_small</uiIconPath>
 		<costList>
+			<ShipMeat>400</ShipMeat>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 	</ThingDef>
 
@@ -470,6 +472,9 @@
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>
+			<ShipMeat>500</ShipMeat>
+			<Neutroamine>50</Neutroamine>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 		<comps>
 			<li Class="CompProperties_SpinalMount">

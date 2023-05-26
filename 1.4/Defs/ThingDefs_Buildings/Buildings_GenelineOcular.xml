@@ -43,6 +43,8 @@
 			<turretTopDrawSize>2.5</turretTopDrawSize>
 		</building>
 		<costList>
+			<ShipMeat>200</ShipMeat>
+			<OrganSeed>4</OrganSeed>
 		</costList>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
@@ -178,6 +180,8 @@
 			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
 		<costList>
+			<ShipMeat>300</ShipMeat>
+			<OrganSeed>6</OrganSeed>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
 		<researchPrerequisites>
@@ -298,6 +302,8 @@
 			<turretTopDrawSize>4.1</turretTopDrawSize>
 		</building>
 		<costList>
+			<ShipMeat>400</ShipMeat>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
 		<researchPrerequisites>
@@ -357,6 +363,9 @@
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>
+			<ShipMeat>500</ShipMeat>
+			<Neutroamine>50</Neutroamine>
+			<OrganSeed>8</OrganSeed>
 		</costList>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">

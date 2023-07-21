@@ -41,7 +41,7 @@ namespace RimWorld
 				this.tmpGenes.Clear();
 				foreach (CompHeartSeed genepack in this.selectedGenepacks)
 				{
-					foreach (BuildingGeneDef item in genepack.heartGenes)
+					foreach (BuildingGeneDef item in genepack.GenesListForReading)
 					{
 						this.tmpGenes.Add(item);
 					}
@@ -60,7 +60,7 @@ namespace RimWorld
 			this.closeOnAccept = false;
 			this.forcePause = true;
 			this.absorbInputAroundWindow = true;
-			this.searchWidgetOffsetX = GeneCreationDialogBase.ButSize.x * 2f + 4f;
+			this.searchWidgetOffsetX = ShipGeneCreationDialogBase.ButSize.x * 2f + 4f;
 			this.libraryGenepacks.SortGenepacks();
 			this.unpoweredGenepacks.SortGenepacks();
 		}
@@ -87,8 +87,8 @@ namespace RimWorld
 
 		private void StartAssembly()
 		{
-			Building_GeneAssembler building_GeneAssembler = this.geneAssembler;
-			List<Genepack> packs = this.selectedGenepacks;
+			Building_ShipGeneAssembler building_GeneAssembler = this.geneAssembler;
+			List<CompHeartSeed> packs = this.selectedGenepacks;
 			int arc = this.arc;
 			string xenotypeName = this.xenotypeName;
 			building_GeneAssembler.Start(packs, arc, (xenotypeName != null) ? xenotypeName.Trim() : null, this.iconDef);
@@ -116,7 +116,7 @@ namespace RimWorld
 			GUI.EndGroup();
 		}
 
-		private void DrawSection(Rect rect, List<Genepack> genepacks, string label, ref float curY, ref float sectionHeight, bool adding, Rect containingRect)
+		private void DrawSection(Rect rect, List<CompHeartSeed> genepacks, string label, ref float curY, ref float sectionHeight, bool adding, Rect containingRect)
 		{
 			float num = 4f;
 			Rect rect2 = new Rect(10f, curY, rect.width - 16f - 10f, Text.LineHeight);
@@ -134,7 +134,7 @@ namespace RimWorld
 			Rect rect3 = new Rect(0f, curY, rect.width, sectionHeight);
 			Widgets.DrawRectFast(rect3, Widgets.MenuSectionBGFillColor, null);
 			curY += 4f;
-			if (!genepacks.Any<Genepack>())
+			if (!genepacks.Any<CompHeartSeed>())
 			{
 				Text.Anchor = TextAnchor.MiddleCenter;
 				GUI.color = ColoredText.SubtleGrayColor;
@@ -146,10 +146,10 @@ namespace RimWorld
 			{
 				for (int i = 0; i < genepacks.Count; i++)
 				{
-					Genepack genepack = genepacks[i];
+					CompHeartSeed genepack = genepacks[i];
 					if (!this.quickSearchWidget.filter.Active || (this.matchingGenepacks.Contains(genepack) && (!adding || !this.selectedGenepacks.Contains(genepack))))
 					{
-						float num3 = 34f + GeneCreationDialogBase.GeneSize.x * (float)genepack.GeneSet.GenesListForReading.Count + 4f * (float)(genepack.GeneSet.GenesListForReading.Count + 2);
+						float num3 = 34f + GeneCreationDialogBase.GeneSize.x * (float)genepack.GenesListForReading.Count + 4f * (float)(genepack.GenesListForReading.Count + 2);
 						if (num + num3 > rect.width - 16f)
 						{
 							num = 4f;
@@ -174,7 +174,7 @@ namespace RimWorld
 							}
 							if (!this.xenotypeNameLocked)
 							{
-								this.xenotypeName = GeneUtility.GenerateXenotypeNameFromGenes(this.SelectedGenes);
+								this.xenotypeName = "fleshthing".Translate();
 							}
 							this.OnGenesChanged();
 							break;
@@ -189,10 +189,10 @@ namespace RimWorld
 			}
 		}
 
-		private bool DrawGenepack(Genepack genepack, ref float curX, float curY, float packWidth, Rect containingRect)
+		private bool DrawGenepack(CompHeartSeed genepack, ref float curX, float curY, float packWidth, Rect containingRect)
 		{
 			bool result = false;
-			if (genepack.GeneSet == null || genepack.GeneSet.GenesListForReading.NullOrEmpty<BuildingGeneDef>())
+			if (genepack.GeneSet == null || genepack.GenesListForReading.NullOrEmpty<BuildingGeneDef>())
 			{
 				return result;
 			}
@@ -203,28 +203,30 @@ namespace RimWorld
 				return false;
 			}
 			Widgets.DrawHighlight(rect);
-			GUI.color = GeneCreationDialogBase.OutlineColorUnselected;
+			GUI.color = ShipGeneCreationDialogBase.OutlineColorUnselected;
 			Widgets.DrawBox(rect, 1, null);
 			GUI.color = Color.white;
 			curX += 4f;
-			ITab_ShipGenes.DrawBiostats(genepack.GeneSet.ComplexityTotal, genepack.GeneSet.MetabolismTotal, genepack.GeneSet.ArchitesTotal, ref curX, curY, 4f);
-			List<BuildingGeneDef> genesListForReading = genepack.GeneSet.GenesListForReading;
+			GeneUIUtility.DrawBiostats(genepack.ComplexityTotal, genepack.MetabolismTotal, genepack.ArchitesTotal, ref curX, curY, 4f);
+			List<BuildingGeneDef> genesListForReading = genepack.GenesListForReading;
 			for (int i = 0; i < genesListForReading.Count; i++)
 			{
 				BuildingGeneDef gene = genesListForReading[i];
 				bool flag = this.quickSearchWidget.filter.Active && this.matchingGenes.Contains(gene) && this.matchingGenepacks.Contains(genepack);
-				bool overridden = this.leftChosenGroups.Any((GeneLeftChosenGroup x) => x.overriddenGenes.Contains(gene));
+				bool overridden = this.leftChosenGroups.Any((BuildingGeneLeftChosenGroup x) => x.overriddenGenes.Contains(gene));
 				Rect rect2 = new Rect(curX, curY + 4f, GeneCreationDialogBase.GeneSize.x, GeneCreationDialogBase.GeneSize.y);
 				if (flag)
 				{
 					Widgets.DrawStrongHighlight(rect2.ExpandedBy(6f), null);
 				}
 				string extraTooltip = null;
-				if (this.leftChosenGroups.Any((GeneLeftChosenGroup x) => x.leftChosen == gene))
+				if (this.leftChosenGroups.Any((BuildingGeneLeftChosenGroup x) => x.leftChosen == gene))
 				{
+					extraTooltip = Dialog_CreateShipXenogerm.DrawGenepack(this.leftChosenGroups.FirstOrDefault((BuildingGeneLeftChosenGroup x) => x.leftChosen == gene));
 				}
 				else if (this.cachedOverriddenGenes.Contains(gene))
 				{
+					extraTooltip = Dialog_CreateShipXenogerm.DrawGenepack(this.leftChosenGroups.FirstOrDefault((BuildingGeneLeftChosenGroup x) => x.overriddenGenes.Contains(gene)));
 				}
 				else if (this.randomChosenGroups.ContainsKey(gene))
 				{
@@ -234,7 +236,7 @@ namespace RimWorld
 				ITab_ShipGenes.DrawGeneDef_NewTemp(genesListForReading[i], rect2, GeneType.Xenogene, () => extraTooltip, false, false, overridden);
 				curX += GeneCreationDialogBase.GeneSize.x + 4f;
 			}
-			Widgets.InfoCardButton(rect.xMax - 24f, rect.y + 2f, genepack);
+			Widgets.InfoCardButton(rect.xMax - 24f, rect.y + 2f, genepack.parent);
 			if (this.unpoweredGenepacks.Contains(genepack))
 			{
 				Widgets.DrawBoxSolid(rect, this.UnpoweredColor);
@@ -249,12 +251,12 @@ namespace RimWorld
 				List<FloatMenuOption> list = new List<FloatMenuOption>();
 				list.Add(new FloatMenuOption("EjectGenepackFromGeneBank".Translate(), delegate ()
 				{
-					CompGenepackContainer geneBankHoldingPack = this.geneAssembler.GetGeneBankHoldingPack(genepack);
+					CompShipGeneContainer geneBankHoldingPack = this.geneAssembler.GetGeneBankHoldingPack(genepack);
 					if (geneBankHoldingPack != null)
 					{
 						ThingWithComps parent = geneBankHoldingPack.parent;
 						Thing thing;
-						if (geneBankHoldingPack.innerContainer.TryDrop(genepack, parent.def.hasInteractionCell ? parent.InteractionCell : parent.Position, parent.Map, ThingPlaceMode.Near, 1, out thing, null, null))
+						if (geneBankHoldingPack.innerContainer.TryDrop(genepack.parent, parent.def.hasInteractionCell ? parent.InteractionCell : parent.Position, parent.Map, ThingPlaceMode.Near, 1, out thing, null, null))
 						{
 							if (this.selectedGenepacks.Contains(genepack))
 							{
@@ -285,56 +287,17 @@ namespace RimWorld
 		protected override void DrawSearchRect(Rect rect)
 		{
 			base.DrawSearchRect(rect);
-			if (Widgets.ButtonText(new Rect(rect.xMax - GeneCreationDialogBase.ButSize.x, rect.y, GeneCreationDialogBase.ButSize.x, GeneCreationDialogBase.ButSize.y), "LoadXenogermTemplate".Translate(), true, true, true, null))
-			{
-				Find.WindowStack.Add(new Dialog_XenogermList_Load(delegate (CustomXenogerm xenogerm)
-				{
-					this.xenotypeName = xenogerm.name;
-					this.iconDef = xenogerm.iconDef;
-					IEnumerable<Genepack> collection = CustomXenogermUtility.GetMatchingGenepacks(xenogerm.genesets, this.libraryGenepacks);
-					this.selectedGenepacks.Clear();
-					this.selectedGenepacks.AddRange(collection);
-					this.OnGenesChanged();
-					IEnumerable<GeneSet> source = from gp in xenogerm.genesets
-												  where !this.selectedGenepacks.Any((Genepack g) => g.GeneSet.Matches(gp))
-												  select gp;
-					if (source.Any<GeneSet>())
-					{
-						int num = source.Count<GeneSet>();
-						string text;
-						if (num == 1)
-						{
-							text = "MissingGenepackForXenogerm".Translate(xenogerm.name.Named("NAME"));
-							text = text + ": " + (from g in source
-												  select g.Label).ToCommaList(false, false).CapitalizeFirst();
-						}
-						else
-						{
-							text = "MissingGenepacksForXenogerm".Translate(num.Named("COUNT"), xenogerm.name.Named("NAME"));
-						}
-						Messages.Message(text, null, MessageTypeDefOf.CautionInput, false);
-					}
-				}));
-			}
-			if (Widgets.ButtonText(new Rect(rect.xMax - GeneCreationDialogBase.ButSize.x * 2f - 4f, rect.y, GeneCreationDialogBase.ButSize.x, GeneCreationDialogBase.ButSize.y), "SaveXenogermTemplate".Translate(), true, true, true, null))
-			{
-				AcceptanceReport acceptanceReport = CustomXenogermUtility.SaveXenogermTemplate(this.xenotypeName, this.iconDef, this.selectedGenepacks);
-				if (!acceptanceReport.Reason.NullOrEmpty())
-				{
-					Messages.Message(acceptanceReport.Reason, MessageTypeDefOf.RejectInput, false);
-				}
-			}
 		}
 
 		protected override void DoBottomButtons(Rect rect)
 		{
 			base.DoBottomButtons(rect);
-			if (!this.selectedGenepacks.Any<Genepack>())
+			if (!this.selectedGenepacks.Any<CompHeartSeed>())
 			{
 				return;
 			}
 			int numTicks = Mathf.RoundToInt((float)Mathf.RoundToInt(GeneTuning.ComplexityToCreationHoursCurve.Evaluate((float)this.gcx) * 2500f) / this.geneAssembler.GetStatValue(StatDefOf.AssemblySpeedFactor, true, -1));
-			Rect rect2 = new Rect(rect.center.x, rect.y, rect.width / 2f - GeneCreationDialogBase.ButSize.x - 10f, GeneCreationDialogBase.ButSize.y);
+			Rect rect2 = new Rect(rect.center.x, rect.y, rect.width / 2f - ShipGeneCreationDialogBase.ButSize.x - 10f, ShipGeneCreationDialogBase.ButSize.y);
 			TaggedString label;
 			TaggedString str;
 			if (this.arc > 0 && !ResearchProjectDefOf.Archogenetics.IsFinished)
@@ -357,13 +320,14 @@ namespace RimWorld
 			}
 		}
 
+		// Token: 0x06008B0C RID: 35596 RVA: 0x002FD0FC File Offset: 0x002FB2FC
 		protected override bool CanAccept()
 		{
 			if (!base.CanAccept())
 			{
 				return false;
 			}
-			if (!this.selectedGenepacks.Any<Genepack>())
+			if (!this.selectedGenepacks.Any<CompHeartSeed>())
 			{
 				Messages.Message("MessageNoSelectedGenepacks".Translate(), null, MessageTypeDefOf.RejectInput, false);
 				return false;
@@ -386,6 +350,7 @@ namespace RimWorld
 			return true;
 		}
 
+		// Token: 0x06008B0D RID: 35597 RVA: 0x002FD1F4 File Offset: 0x002FB3F4
 		private bool ColonyHasEnoughArchites()
 		{
 			if (this.arc == 0 || this.geneAssembler.MapHeld == null)
@@ -408,6 +373,7 @@ namespace RimWorld
 			return false;
 		}
 
+		// Token: 0x06008B0E RID: 35598 RVA: 0x002FD2A0 File Offset: 0x002FB4A0
 		protected override void UpdateSearchResults()
 		{
 			this.quickSearchWidget.noResultsMatched = false;
@@ -417,9 +383,9 @@ namespace RimWorld
 			{
 				return;
 			}
-			foreach (Genepack genepack in this.selectedGenepacks)
+			foreach (CompHeartSeed genepack in this.selectedGenepacks)
 			{
-				List<BuildingGeneDef> genesListForReading = genepack.GeneSet.GenesListForReading;
+				List<BuildingGeneDef> genesListForReading = genepack.GenesListForReading;
 				for (int i = 0; i < genesListForReading.Count; i++)
 				{
 					if (this.quickSearchWidget.filter.Matches(genesListForReading[i].label))
@@ -429,11 +395,11 @@ namespace RimWorld
 					}
 				}
 			}
-			foreach (Genepack genepack2 in this.libraryGenepacks)
+			foreach (CompHeartSeed genepack2 in this.libraryGenepacks)
 			{
 				if (!this.selectedGenepacks.Contains(genepack2))
 				{
-					List<BuildingGeneDef> genesListForReading2 = genepack2.GeneSet.GenesListForReading;
+					List<BuildingGeneDef> genesListForReading2 = genepack2.GenesListForReading;
 					for (int j = 0; j < genesListForReading2.Count; j++)
 					{
 						if (this.quickSearchWidget.filter.Matches(genesListForReading2[j].label))
@@ -444,10 +410,10 @@ namespace RimWorld
 					}
 				}
 			}
-			this.quickSearchWidget.noResultsMatched = !this.matchingGenepacks.Any<Genepack>();
+			this.quickSearchWidget.noResultsMatched = !this.matchingGenepacks.Any<CompHeartSeed>();
 		}
 
-		internal static string GeneOneActive()
+		internal static string DrawGenepack(BuildingGeneLeftChosenGroup group)
 		{
 			if (group == null)
 			{
@@ -455,20 +421,20 @@ namespace RimWorld
 			}
 			return ("GeneOneActive".Translate() + ":\n  - " + group.leftChosen.LabelCap + " (" + "Active".Translate() + ")" + "\n" + (from x in @group.overriddenGenes
 			select(x.label + " (" + "Suppressed".Translate() + ")").Colorize(ColorLibrary.RedReadable)).ToLineList("  - ", true)).Colorize(ColoredText.TipSectionTitleColor);
+		}
+
+		private Building_ShipGeneAssembler geneAssembler;
+
+		private List<CompHeartSeed> libraryGenepacks = new List<CompHeartSeed>();
+
+		private List<CompHeartSeed> unpoweredGenepacks = new List<CompHeartSeed>();
+
+		private List<CompHeartSeed> selectedGenepacks = new List<CompHeartSeed>();
+
+		private HashSet<CompHeartSeed> matchingGenepacks = new HashSet<CompHeartSeed>();
+
+		private readonly Color UnpoweredColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+
+		private List<BuildingGeneDef> tmpGenes = new List<BuildingGeneDef>();
 	}
-
-	private Building_ShipGeneAssembler geneAssembler;
-
-	private List<CompHeartSeed> libraryGenepacks = new List<CompHeartSeed>();
-
-	private List<CompHeartSeed> unpoweredGenepacks = new List<CompHeartSeed>();
-
-	private List<CompHeartSeed> selectedGenepacks = new List<CompHeartSeed>();
-
-	private HashSet<CompHeartSeed> matchingGenepacks = new HashSet<CompHeartSeed>();
-
-	private readonly Color UnpoweredColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-
-	private List<BuildingGeneDef> tmpGenes = new List<BuildingGeneDef>();
-}
 }

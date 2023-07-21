@@ -1,4 +1,9 @@
 <Defs>
+	<GeneCategoryDef>
+		<defName>Geneline</defName>
+		<label>geneline</label>
+		<displayPriorityInXenotype>900</displayPriorityInXenotype>
+	</GeneCategoryDef>
 	<ShipGenelineDef>
 		<defName>AstralCniderianGeneline</defName>
 		<shipGenelineClass>ShipGeneline</shipGenelineClass>
@@ -19,6 +24,8 @@
 		<label>small nematocyst</label>
 		<iconPath>UI_Elements/Gene_TurretHarpoon</iconPath>
 		<description>An explosive cell capable of launching a barbed thread.  Devastating in their own right, they can act as delivery mechanisms for all manner of acid and toxin.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>10</displayOrderInCategory>
 		<props>
 			<li>smallTurretOptions:ShipTurret_Nematocyst</li>
 		</props>
@@ -32,6 +39,8 @@
 		<iconPath>UI_Elements/Gene_TurretAcid</iconPath>
 		<label>medium acid</label>
 		<description>Specialized glands launch globules of acidic mucus.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>15</displayOrderInCategory>
 		<props>
 			<li>mediumTurretOptions:ShipTurret_BioAcid</li>
 		</props>
@@ -45,6 +54,8 @@
 		<iconPath>UI_Elements/Gene_TurretSpine</iconPath>
 		<label>spine launcher</label>
 		<description>Specialized barbs driven by biosplasma, capable of hunting tracking prey.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>20</displayOrderInCategory>
 		<props>
 			<li>largeTurretOptions:LightSpineLauncher,HeavySpineLauncher</li>
 		</props>
@@ -58,6 +69,8 @@
 		<iconPath>UI_Elements/Gene_TurretPolyp</iconPath>
 		<label>jelly cannon</label>
 		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.  The size of the jellies depends on the number of amplifiers, maxing out at 20.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>25</displayOrderInCategory>
 		<props>
 			<li>spinalTurretOptions:JellyCannon</li>
 		</props>
@@ -71,6 +84,8 @@
 		<iconPath>UI_Elements/Gene_ArmorCoral</iconPath>
 		<label>coral armor</label>
 		<description>Layers of ablative coral that provides exceptional protection against acid, toxin, and blunt impact.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>30</displayOrderInCategory>
 		<props>
 			<li>armor:CoralArmor</li>
 		</props>

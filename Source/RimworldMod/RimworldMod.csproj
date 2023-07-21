@@ -170,6 +170,9 @@
 	  <Compile Include="Comp\Comp_ReactionlessEngine.cs"/>
 	  <Compile Include="Comp\CompProperties_ReactionlessEngine.cs"/>
 
+	  <Compile Include="Comp\Comp_ShipGeneContainer.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipGeneContainer.cs"/>
+
 	  <Compile Include="ItemComp\Comp_HeartSeed.cs"/>
 	  <Compile Include="ItemComp\CompProperties_HeartSeed.cs"/>
 
@@ -212,10 +215,11 @@
 
 	  <Compile Include="Graphics\Graphic_256_Bio.cs" />
 	  <Compile Include="Graphics\ITab_ShipGenes.cs" />
-<!--	  
+	  <Compile Include="Graphics\ITab_ContentsHeartseedHolder.cs" />
+
 	  <Compile Include="Graphics\ShipGeneCreationDialogBase.cs" />
 	  <Compile Include="Graphics\Dialog_CreateShipXenogerm.cs" />
--->
+
 	  <Compile Include="Verbs\Verb_MutableProjectileShip.cs" />
   </ItemGroup>
 </Project>

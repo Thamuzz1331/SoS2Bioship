@@ -19,6 +19,8 @@
 		<iconPath>UI_Elements/Gene_LaserEyeS</iconPath>
 		<label>small eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>35</displayOrderInCategory>
 		<props>
 			<li>smallTurretOptions:ShipTurret_SmallEyeLaser</li>
 		</props>
@@ -32,6 +34,8 @@
 		<iconPath>UI_Elements/Gene_LaserEyeM</iconPath>
 		<label>medium eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>40</displayOrderInCategory>
 		<props>
 			<li>mediumTurretOptions:ShipTurret_MediumEyeLaser</li>
 		</props>
@@ -45,6 +49,8 @@
 		<iconPath>UI_Elements/Gene_LaserEyeL</iconPath>
 		<label>heavy plasma maw</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>45</displayOrderInCategory>
 		<props>
 			<li>largeTurretOptions:ShipTurret_LargeEyeLaser</li>
 		</props>
@@ -58,6 +64,8 @@
 		<iconPath>UI_Elements/Gene_LaserEyeX</iconPath>
 		<label>collosal eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>50</displayOrderInCategory>
 		<props>
 			<li>spinalTurretOptions:GiantEyeLaser</li>
 		</props>
@@ -71,6 +79,8 @@
 		<iconPath>UI_Elements/Gene_ArmorHide</iconPath>
 		<label>hide</label>
 		<description>Thick hide</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>55</displayOrderInCategory>
 		<props>
 			<li>armor:Bio_Ship_Beam_Unpowered</li>
 		</props>

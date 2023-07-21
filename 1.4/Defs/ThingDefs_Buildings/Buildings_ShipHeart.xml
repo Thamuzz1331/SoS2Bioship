@@ -315,4 +315,121 @@
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
 	</ThingDef>
+
+	<ThingDef ParentName="GeneBuildingBase">
+		<defName>GeneBankShipHeart</defName>
+		<label>heartseed bank</label>
+		<description>This building can store heartseeds and make them usable to breed new ones, when placed near a heart breeder.</description>
+		<researchPrerequisites>
+			<li>BioshipGenetics</li>
+		</researchPrerequisites>
+		<designationCategory>Ship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Misc/Genebank/Genebank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2, 1)</drawSize>
+			<shadowData>
+				<volume>(1.7, 0.3, 0.85)</volume>
+			</shadowData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<tickerType>Rare</tickerType>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(2, 1)</size>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_ContentsHeartseedHolder</li>
+		</inspectorTabs>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<descriptionHyperlinks>
+			<ThingDef>HeartSeed</ThingDef>
+			<ThingDef>ShipGeneAssembler</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_ShipGeneContainer">
+				<maxCapacity>4</maxCapacity>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>40</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>100</maxSimultaneous>
+				<maxDistance>12.9</maxDistance>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="GeneBuildingBase">
+		<defName>ShipGeneAssembler</defName>
+		<label>heartseed breeder</label>
+		<description>A facility where heartseeds can be crossbred.</description>
+		<thingClass>Building_ShipGeneAssembler</thingClass>
+		<researchPrerequisites>
+			<li>BioshipGenetics</li>
+		</researchPrerequisites>
+		<designationCategory>Ship</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneAssembler/GeneAssembler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 2)</drawSize>
+			<shadowData>
+				<volume>(2.55, 0.75, 1.7)</volume>
+			</shadowData>
+		</graphicData>
+		<descriptionHyperlinks>
+			<ThingDef>GeneBankShipHeart</ThingDef>
+			<ThingDef>GeneProcessor</ThingDef>
+		</descriptionHyperlinks>
+		<tickerType>Normal</tickerType>
+		<size>(3, 2)</size>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0, 0, 2)</interactionCellOffset>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>35</Mass>
+			<Flammability>0.5</Flammability>
+			<AssemblySpeedFactor>1.0</AssemblySpeedFactor>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<idlePowerDraw>25</idlePowerDraw>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>GeneBankShipHeart</li>
+					<li>GeneProcessor</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+	</ThingDef>
 </Defs>

@@ -76,7 +76,6 @@
 			<Plasteel>1</Plasteel>
 		</costList>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
-		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<researchPrerequisites>

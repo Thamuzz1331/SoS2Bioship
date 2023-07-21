@@ -16,7 +16,6 @@ using RimWorld.QuestGen;
 using RimworldMod;
 using System.Net;
 using System.IO;
-using RimworldMod.VacuumIsNotFun;
 using System.Collections;
 using System.Reflection.Emit;
 using UnityEngine.SceneManagement;

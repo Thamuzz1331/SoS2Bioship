@@ -17,6 +17,8 @@
 		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>small plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
 		<props>
 			<li>smallTurretOptions:ShipTurret_SmallPlasmaMaw</li>
 		</props>
@@ -30,6 +32,8 @@
 		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>medium plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>65</displayOrderInCategory>
 		<props>
 			<li>mediumTurretOptions:ShipTurret_MediumPlasmaMaw</li>
 		</props>
@@ -43,6 +47,8 @@
 		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>heavy plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>70</displayOrderInCategory>
 		<props>
 			<li>largeTurretOptions:ShipTurret_LargePlasmaMaw</li>
 		</props>
@@ -56,6 +62,8 @@
 		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>dragon maw</label>
 		<description>Bioelectromagnetic coils channel a beam of devestating plasma.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>75</displayOrderInCategory>
 		<props>
 			<li>spinalTurretOptions:DragonMaw</li>
 		</props>
@@ -68,7 +76,9 @@
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
 		<label>dragonscale</label>
-		<description>Thick scales of organically deposited plasteel prove particularly resistant to plasma weapons..</description>
+		<description>Thick scales of organically deposited plasteel prove particularly resistant to plasma weapons.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>80</displayOrderInCategory>
 		<props>
 			<li>armor:DragonscaleArmor</li>
 		</props>

@@ -1,10 +1,18 @@
 <Defs>
+	<GeneCategoryDef>
+		<defName>StatGene</defName>
+		<label>stat</label>
+		<displayPriorityInXenotype>910</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
 	<BuildingGeneDef>
 		<defName>ToxResistanceGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
 		<iconPath>UI_Elements/Gene_SensitivityB</iconPath>
 		<label>toxic resistance</label>
 		<description>This organism is particularly resistant to toxic buildup.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
 		<props>
 			<li>toxSensitivity:0.5</li>
 		</props>
@@ -23,6 +31,8 @@
 		<iconPath>UI_Elements/Gene_SensitivityC</iconPath>
 		<label>toxic vulnerability</label>
 		<description>This organism is particularly vulnerable to toxic buildup.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>10</displayOrderInCategory>
 		<props>
 			<li>toxSensitivity:2</li>
 		</props>
@@ -42,6 +52,8 @@
 		<iconPath>UI_Elements/Gene_RegenB</iconPath>
 		<label>rapid regeneration</label>
 		<description>This organism's wounds close particularly quickly.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>15</displayOrderInCategory>
 		<props>
 			<li>regenSpeed:1.25</li>
 		</props>
@@ -60,6 +72,8 @@
 		<iconPath>UI_Elements/Gene_RegenC</iconPath>
 		<label>slow regeneration</label>
 		<description>This organism's wounds close particularly slowly.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>20</displayOrderInCategory>
 		<props>
 			<li>regenSpeed:0.75</li>
 		</props>

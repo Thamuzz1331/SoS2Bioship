@@ -17,80 +17,6 @@ namespace RimWorld
 
 		protected abstract string AcceptButtonLabel { get; }
 
-		protected int gcx;
-
-		protected int met;
-
-		protected int arc;
-
-		protected string xenotypeName;
-
-		protected bool xenotypeNameLocked;
-
-		protected float scrollHeight;
-
-		protected Vector2 scrollPosition;
-
-		protected float selectedHeight;
-
-		protected float unselectedHeight;
-
-		protected bool ignoreRestrictions;
-
-		protected float postXenotypeHeight;
-
-		protected bool alwaysUseFullBiostatsTableHeight;
-
-		protected int maxGCX = -1;
-
-		protected float searchWidgetOffsetX;
-
-		protected QuickSearchWidget quickSearchWidget = new QuickSearchWidget();
-
-		protected HashSet<BuildingGeneDef> matchingGenes = new HashSet<BuildingGeneDef>();
-
-		protected Dictionary<BuildingGeneDef, List<BuildingGeneDef>> randomChosenGroups = new Dictionary<BuildingGeneDef, List<BuildingGeneDef>>();
-
-		protected List<GeneLeftChosenGroup> leftChosenGroups = new List<GeneLeftChosenGroup>();
-
-		protected List<BuildingGeneDef> cachedOverriddenGenes = new List<BuildingGeneDef>();
-
-		protected List<BuildingGeneDef> cachedUnoverriddenGenes = new List<BuildingGeneDef>();
-
-		protected List<GeneDefWithType> tmpGenesWithType = new List<GeneDefWithType>();
-
-		protected XenotypeIconDef iconDef;
-
-		protected static readonly Vector2 ButSize = new Vector2(150f, 38f);
-
-		protected const float HeaderHeight = 35f;
-
-		protected const float GeneGap = 4f;
-
-		private const int MaxNameLength = 40;
-
-		private const int NumCharsTypedBeforeAutoLockingName = 3;
-
-		private const int MaxTriesToGenerateUniqueXenotypeNames = 1000;
-
-		private const float TextFieldWidthPct = 0.25f;
-
-		private static readonly Regex ValidSymbolRegex = new Regex("^[\\p{L}0-9 '\\-]*$");
-
-		public static readonly Texture2D UnlockedTex = ContentFinder<Texture2D>.Get("UI/Overlays/LockedMonochrome", true);
-
-		public static readonly Texture2D LockedTex = ContentFinder<Texture2D>.Get("UI/Overlays/Locked", true);
-
-		protected const float BiostatsWidth = 38f;
-
-		public static readonly Vector2 GeneSize = new Vector2(87f, 68f);
-
-		protected static readonly Color OutlineColorUnselected = new Color(1f, 1f, 1f, 0.1f);
-
-		protected const float GenepackGap = 14f;
-
-		protected const float QuickSearchFilterWidth = 300f;
-
 		public override void PreOpen()
 		{
 			base.PreOpen();
@@ -102,7 +28,7 @@ namespace RimWorld
 		public override void DoWindowContents(Rect rect)
 		{
 			Rect rect2 = rect;
-			rect2.yMax -= GeneCreationDialogBase.ButSize.y + 4f;
+			rect2.yMax -= ShipGeneCreationDialogBase.ButSize.y + 4f;
 			Rect rect3 = new Rect(rect2.x, rect2.y, rect2.width, 35f);
 			Text.Font = GameFont.Medium;
 			Widgets.Label(rect3, this.Header);
@@ -126,7 +52,7 @@ namespace RimWorld
 			Rect rect7 = new Rect(rect6.xMin, rect6.y + Text.LineHeight, num, Text.LineHeight);
 			rect7.xMax = rect2.xMax - this.Margin - 17f - num2 * 0.25f;
 			string text2 = this.xenotypeName;
-			this.xenotypeName = Widgets.TextField(rect7, this.xenotypeName, 40, GeneCreationDialogBase.ValidSymbolRegex);
+			this.xenotypeName = Widgets.TextField(rect7, this.xenotypeName, 40, ShipGeneCreationDialogBase.ValidSymbolRegex);
 			if (text2 != this.xenotypeName)
 			{
 				if (this.xenotypeName.Length > text2.Length && this.xenotypeName.Length > 3)
@@ -151,7 +77,7 @@ namespace RimWorld
 				{
 					GUI.FocusControl(null);
 					SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
-					this.xenotypeName = GeneUtility.GenerateXenotypeNameFromGenes(this.SelectedGenes);
+					this.xenotypeName = "fleshthing".Translate();
 				}
 			}
 			Rect rect10 = new Rect(rect9.xMax + 4f, rect9.y, num2 * 0.25f, 24f);
@@ -163,7 +89,7 @@ namespace RimWorld
 					int num5 = 0;
 					while (list.Count < 20)
 					{
-						string text3 = GeneUtility.GenerateXenotypeNameFromGenes(this.SelectedGenes);
+						string text3 = "fleshthing".Translate();
 						if (text3.NullOrEmpty())
 						{
 							break;
@@ -221,7 +147,7 @@ namespace RimWorld
 			this.postXenotypeHeight = rect11.yMax - num4;
 			this.PostXenotypeOnGUI(rect6.xMin, rect9.y + 24f);
 			Rect rect12 = rect;
-			rect12.yMin = rect12.yMax - GeneCreationDialogBase.ButSize.y;
+			rect12.yMin = rect12.yMax - ShipGeneCreationDialogBase.ButSize.y;
 			this.DoBottomButtons(rect12);
 		}
 
@@ -272,6 +198,7 @@ namespace RimWorld
 			return true;
 		}
 
+		// Token: 0x06008D00 RID: 36096 RVA: 0x00313A34 File Offset: 0x00311C34
 		private void DrawIconSelector(Rect rect)
 		{
 			Widgets.DrawHighlight(rect);
@@ -336,20 +263,20 @@ namespace RimWorld
 					{
 						if (!selectedGenes[l].RandomChosen && selectedGenes[k].ConflictsWith(selectedGenes[l]))
 						{
-							int num = GeneUtility.GenesInOrder.IndexOf(selectedGenes[k]);
-							int num2 = GeneUtility.GenesInOrder.IndexOf(selectedGenes[l]);
+							int num = BuildingGeneUtils.GenesInOrder.IndexOf(selectedGenes[k]);
+							int num2 = BuildingGeneUtils.GenesInOrder.IndexOf(selectedGenes[l]);
 							BuildingGeneDef leftMost = (num < num2) ? selectedGenes[k] : selectedGenes[l];
 							BuildingGeneDef rightMost = (num >= num2) ? selectedGenes[k] : selectedGenes[l];
-							GeneLeftChosenGroup geneLeftChosenGroup = this.leftChosenGroups.FirstOrDefault((GeneLeftChosenGroup x) => x.leftChosen == leftMost);
-							GeneLeftChosenGroup geneLeftChosenGroup2 = this.leftChosenGroups.FirstOrDefault((GeneLeftChosenGroup x) => x.leftChosen == rightMost);
+							BuildingGeneLeftChosenGroup geneLeftChosenGroup = this.leftChosenGroups.FirstOrDefault((BuildingGeneLeftChosenGroup x) => x.leftChosen == leftMost);
+							BuildingGeneLeftChosenGroup geneLeftChosenGroup2 = this.leftChosenGroups.FirstOrDefault((BuildingGeneLeftChosenGroup x) => x.leftChosen == rightMost);
 							if (geneLeftChosenGroup == null)
 							{
-								geneLeftChosenGroup = new GeneLeftChosenGroup(leftMost);
+								geneLeftChosenGroup = new BuildingGeneLeftChosenGroup(leftMost);
 								this.leftChosenGroups.Add(geneLeftChosenGroup);
 							}
 							if (geneLeftChosenGroup2 != null)
 							{
-								foreach (GeneDef item in geneLeftChosenGroup2.overriddenGenes)
+								foreach (BuildingGeneDef item in geneLeftChosenGroup2.overriddenGenes)
 								{
 									if (!geneLeftChosenGroup.overriddenGenes.Contains(item))
 									{
@@ -374,13 +301,14 @@ namespace RimWorld
 					}
 				}
 			}
-			foreach (GeneLeftChosenGroup geneLeftChosenGroup3 in this.leftChosenGroups)
+			Func<BuildingGeneDef, int> selFunc = null;
+			foreach (BuildingGeneLeftChosenGroup geneLeftChosenGroup3 in this.leftChosenGroups)
 			{
 				List<BuildingGeneDef> overriddenGenes = geneLeftChosenGroup3.overriddenGenes;
 				Func<BuildingGeneDef, int> selector;
-				if (selector == null)
+				if ((selector = selFunc) == null)
 				{
-					selector = ((BuildingGeneDef x) => selectedGenes.IndexOf(x));
+					selector = (selFunc = ((BuildingGeneDef x) => selectedGenes.IndexOf(x)));
 				}
 				overriddenGenes.SortBy(selector);
 			}
@@ -393,11 +321,11 @@ namespace RimWorld
 			{
 				this.tmpGenesWithType.Add(new BuildingGeneDefWithType(selectedGenes[m], true));
 			}
-			foreach (BuildingGeneDef buildingGeneDef in this.tmpGenesWithType.NonOverriddenGenes().Distinct<GeneDef>())
+			foreach (BuildingGeneDef geneDef in this.tmpGenesWithType.NonOverriddenGenes().Distinct<BuildingGeneDef>())
 			{
-				this.gcx += BuildingGeneDef.biostatCpx;
-				this.met += geneDef.biostatMet;
-				this.arc += geneDef.biostatArc;
+				this.gcx += geneDef.complexity;
+				this.met += geneDef.metabolicCost;
+				this.arc += geneDef.architeCost;
 			}
 		}
 
@@ -405,16 +333,100 @@ namespace RimWorld
 
 		protected virtual void DoBottomButtons(Rect rect)
 		{
-			if (Widgets.ButtonText(new Rect(rect.xMax - GeneCreationDialogBase.ButSize.x, rect.y, GeneCreationDialogBase.ButSize.x, GeneCreationDialogBase.ButSize.y), this.AcceptButtonLabel, true, true, true, null) && this.CanAccept())
+			if (Widgets.ButtonText(new Rect(rect.xMax - ShipGeneCreationDialogBase.ButSize.x, rect.y, ShipGeneCreationDialogBase.ButSize.x, ShipGeneCreationDialogBase.ButSize.y), this.AcceptButtonLabel, true, true, true, null) && this.CanAccept())
 			{
 				this.Accept();
 			}
-			if (Widgets.ButtonText(new Rect(rect.x, rect.y, GeneCreationDialogBase.ButSize.x, GeneCreationDialogBase.ButSize.y), "Close".Translate(), true, true, true, null))
+			if (Widgets.ButtonText(new Rect(rect.x, rect.y, ShipGeneCreationDialogBase.ButSize.x, ShipGeneCreationDialogBase.ButSize.y), "Close".Translate(), true, true, true, null))
 			{
 				this.Close(true);
 			}
 		}
 
+		protected int gcx;
 
+		protected int met;
+
+		protected int arc;
+
+		protected string xenotypeName;
+
+		protected bool xenotypeNameLocked;
+
+		protected float scrollHeight;
+
+		protected Vector2 scrollPosition;
+
+		protected float selectedHeight;
+
+		protected float unselectedHeight;
+
+		protected bool ignoreRestrictions;
+
+		protected float postXenotypeHeight;
+
+		protected bool alwaysUseFullBiostatsTableHeight;
+
+		protected int maxGCX = -1;
+
+		protected float searchWidgetOffsetX;
+
+		protected QuickSearchWidget quickSearchWidget = new QuickSearchWidget();
+
+		protected HashSet<BuildingGeneDef> matchingGenes = new HashSet<BuildingGeneDef>();
+
+		protected Dictionary<BuildingGeneDef, List<BuildingGeneDef>> randomChosenGroups = new Dictionary<BuildingGeneDef, List<BuildingGeneDef>>();
+
+		protected List<BuildingGeneLeftChosenGroup> leftChosenGroups = new List<BuildingGeneLeftChosenGroup>();
+
+		protected List<BuildingGeneDef> cachedOverriddenGenes = new List<BuildingGeneDef>();
+
+		protected List<BuildingGeneDef> cachedUnoverriddenGenes = new List<BuildingGeneDef>();
+
+		protected List<BuildingGeneDefWithType> tmpGenesWithType = new List<BuildingGeneDefWithType>();
+
+		protected XenotypeIconDef iconDef;
+
+		protected static readonly Vector2 ButSize = new Vector2(150f, 38f);
+
+		protected const float HeaderHeight = 35f;
+
+		protected const float GeneGap = 4f;
+
+		private const int MaxNameLength = 40;
+
+		private const int NumCharsTypedBeforeAutoLockingName = 3;
+
+		private const int MaxTriesToGenerateUniqueXenotypeNames = 1000;
+
+		private const float TextFieldWidthPct = 0.25f;
+
+		private static readonly Regex ValidSymbolRegex = new Regex("^[\\p{L}0-9 '\\-]*$");
+
+		public static readonly Texture2D UnlockedTex = ContentFinder<Texture2D>.Get("UI/Overlays/LockedMonochrome", true);
+
+		public static readonly Texture2D LockedTex = ContentFinder<Texture2D>.Get("UI/Overlays/Locked", true);
+
+		protected const float BiostatsWidth = 38f;
+
+		public static readonly Vector2 GeneSize = new Vector2(87f, 68f);
+
+		protected static readonly Color OutlineColorUnselected = new Color(1f, 1f, 1f, 0.1f);
+
+		protected const float GenepackGap = 14f;
+
+		protected const float QuickSearchFilterWidth = 300f;
+	}
+
+	public class BuildingGeneLeftChosenGroup
+	{
+		public BuildingGeneLeftChosenGroup(BuildingGeneDef left)
+		{
+			this.leftChosen = left;
+		}
+
+		public BuildingGeneDef leftChosen;
+
+		public List<BuildingGeneDef> overriddenGenes = new List<BuildingGeneDef>();
 	}
 }

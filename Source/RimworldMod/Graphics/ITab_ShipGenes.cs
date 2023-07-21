@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 namespace RimWorld
 {
-	// Token: 0x0200168D RID: 5773
 	public class ITab_ShipGenes : ITab
 	{
 		public override bool Hidden
@@ -100,7 +99,32 @@ namespace RimWorld
 			}
 		}
 
-		private static void DrawGeneBasics(BuildingGeneDef gene, Rect geneRect, GeneType geneType, bool doBackground, bool clickable, bool overridden)
+		public static void DrawGeneDef_NewTemp(BuildingGeneDef gene, Rect geneRect, GeneType geneType, Func<string> extraTooltip = null, bool doBackground = true, bool clickable = true, bool overridden = false)
+		{
+			ITab_ShipGenes.DrawGeneBasics(gene, geneRect, geneType, doBackground, clickable, overridden);
+			if (Mouse.IsOver(geneRect))
+			{
+				TooltipHandler.TipRegion(geneRect, delegate ()
+				{
+					string text = gene.LabelCap.Colorize(ColoredText.TipSectionTitleColor) + "\n\n" + gene.DescriptionFull;
+					if (extraTooltip != null)
+					{
+						string text2 = extraTooltip();
+						if (!text2.NullOrEmpty())
+						{
+							text = text + "\n\n" + text2.Colorize(ColorLibrary.RedReadable);
+						}
+					}
+					if (clickable)
+					{
+						text = text + "\n\n" + "ClickForMoreInfo".Translate().ToString().Colorize(ColoredText.SubtleGrayColor);
+					}
+					return text;
+				}, 316238373);
+			}
+		}
+
+		public static void DrawGeneBasics(BuildingGeneDef gene, Rect geneRect, GeneType geneType, bool doBackground, bool clickable, bool overridden)
 		{
 			GUI.BeginGroup(geneRect);
 			Rect rect = geneRect.AtZero();

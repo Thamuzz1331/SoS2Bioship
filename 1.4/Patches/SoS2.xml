@@ -10,22 +10,9 @@
 			<li>Save Our Ship 2</li>
 		</mods>
 		<match Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[comps/li[@Class!="CompProperties_ShipBodyPart"] and thingClass!="Building_ShipHeart" and comps/li[@Class="CompProperties_SoShipPart"] and not(contains(defName, "_Insensate"))]/comps</xpath>
+			<xpath>Defs/ThingDef[comps/li[@Class!="CompProperties_ShipBodyPart"] and thingClass!="Building_ShipHeart" and comps/li[@Class="CompProperties_ShipHeat"] and not(contains(defName, "_Insensate"))]/comps</xpath>
 			<value>
 				<li Class="CompProperties_EatMe"/>
-			</value>
-		</match>
-	</Operation>
-	<Operation Class="PatchOperationFindMod">
-		<mods>
-			<li>Save Our Ship 2</li>
-		</mods>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[designatorDropdown="Ship_Heatsinks"]</xpath>
-			<value>
-				<comps>
-					<li Class="CompProperties_EatMe"/>
-				</comps>
 			</value>
 		</match>
 	</Operation>

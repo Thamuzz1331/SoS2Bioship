@@ -27,6 +27,9 @@
 		<tags>
 			<li>smallWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>smallWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>MediumEyelaserGene</defName>
@@ -42,6 +45,9 @@
 			<tags>
 			<li>mediumWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>mediumWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>LargeEyelaserGene</defName>
@@ -57,6 +63,9 @@
 		<tags>
 			<li>largeWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>largeWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>CollosalEyelaserGene</defName>
@@ -72,6 +81,9 @@
 		<tags>
 			<li>spinalWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>spinalWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>ThickHide</defName>

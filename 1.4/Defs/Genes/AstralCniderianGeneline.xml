@@ -32,6 +32,9 @@
 		<tags>
 			<li>smallWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>smallWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>MediumAcidGene</defName>
@@ -47,6 +50,9 @@
 		<tags>
 			<li>mediumWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>mediumWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>HeavySpineGene</defName>
@@ -62,6 +68,9 @@
 		<tags>
 			<li>largeWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>largeWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>PolypCannon</defName>
@@ -77,6 +86,9 @@
 		<tags>
 			<li>spinalWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>spinalWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>CoralArmor</defName>

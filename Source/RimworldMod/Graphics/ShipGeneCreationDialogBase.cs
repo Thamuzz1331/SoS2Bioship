@@ -198,7 +198,6 @@ namespace RimWorld
 			return true;
 		}
 
-		// Token: 0x06008D00 RID: 36096 RVA: 0x00313A34 File Offset: 0x00311C34
 		private void DrawIconSelector(Rect rect)
 		{
 			Widgets.DrawHighlight(rect);

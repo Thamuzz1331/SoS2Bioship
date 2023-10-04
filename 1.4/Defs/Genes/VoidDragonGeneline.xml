@@ -25,6 +25,9 @@
 		<tags>
 			<li>smallWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>smallWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>MediumPlasmaMawGene</defName>
@@ -40,6 +43,9 @@
 		<tags>
 			<li>mediumWeapon</li>
 		</tags>
+		<geneOverridesTags>
+			<li>mediumWeapon</li>
+		</geneOverridesTags>
 	</BuildingGeneDef>
 	<BuildingGeneDef>
 		<defName>HeavyPlasmaMawGene</defName>

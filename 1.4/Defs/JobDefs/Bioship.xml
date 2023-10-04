@@ -5,4 +5,11 @@
 		<driverClass>JobDriver_RefuleButcherableScaling</driverClass>
 		<reportString>Feeding Corpse Maw.</reportString>
 	</JobDef>
+	<JobDef>
+		<defName>CreateShipXenogerm</defName>
+		<driverClass>JobDriver_CreateShipXenogerm</driverClass>
+		<reportString>creating shipheart.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+
 </Defs>

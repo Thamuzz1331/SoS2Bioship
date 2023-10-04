@@ -14,8 +14,16 @@ namespace BioShip
 		public static Texture2D MutationBackground = SolidColorMaterials.NewSolidColorTexture(new Color(0.5f, 0.5f, 0.1f));
 
 		[DefOf]
-		public static class ThingDefOf
+		public static class BioshipThingDefOf
 		{
+			public static ThingDef ShipGeneAssembler;
 		}
+
+		[DefOf]
+		public static class BioshipJobDefOf
+		{
+			public static JobDef CreateShipXenogerm;
+		}
+
 	}
 }

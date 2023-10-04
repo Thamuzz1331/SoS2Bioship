@@ -192,6 +192,8 @@
 
 	  <Compile Include="Jobs\BioShipJobDefs.cs"/>
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>
+	  <Compile Include="Jobs\JobDriver_CreateShipXenogerm.cs"/>
+	  <Compile Include="WorkGiver\WorkGiver_CreateShipXenogerm.cs"/>
 	  <Compile Include="WorkGiver\WorkGiver_RefuelButcherScalable.cs"/>
 	  <Compile Include="Jobs\JobGiver_DestroyBuildings.cs"/>
 

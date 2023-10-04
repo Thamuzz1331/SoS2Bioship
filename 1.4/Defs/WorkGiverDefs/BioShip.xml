@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<WorkGiverDef>
+		<defName>RefuelButcherScalable</defName>
+		<label>feeding corpse maw</label>
+		<giverClass>WorkGiver_RefuelButcherScalable</giverClass>
+		<workType>Hauling</workType>
+		<verb>load</verb>
+		<gerund>loading</gerund>
+		<priorityInType>210</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>CreateShipXenogerm</defName>
+		<label>create shipheart</label>
+		<giverClass>WorkGiver_CreateShipXenogerm</giverClass>
+		<workType>Research</workType>
+		<verb>breed shipheart</verb>
+		<gerund>breeding shipheart at</gerund>
+		<priorityInType>120</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<canBeDoneByMechs>false</canBeDoneByMechs>
+	</WorkGiverDef>
+</Defs>

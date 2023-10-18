@@ -110,9 +110,12 @@ namespace RimWorld
             return ShipProps.isArmor;
         }
 
-        public override void Detatch()
+        public override void Detatch(DestroyMode mode, Map previousMap)
         {
-            this.Whither(true);
+            if (mode != DestroyMode.Vanish)
+            {
+                this.Whither(true);
+            }
         }
 
         public void Whither(bool heartDeath = false)

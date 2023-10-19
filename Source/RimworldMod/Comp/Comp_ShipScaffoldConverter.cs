@@ -9,6 +9,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompShipScaffoldConverter : CompScaffoldConverter
 	{
 		public override float GetConversionCost()

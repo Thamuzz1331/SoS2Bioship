@@ -7,6 +7,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_ShipNutritionSource : CompProperties_RefuelableNutritionSource
     {
         public CompProperties_ShipNutritionSource()

@@ -8,6 +8,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_ShipHeart : CompProperties_BuildingCore
     {
         public string shipspecies = null;

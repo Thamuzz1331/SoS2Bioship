@@ -7,6 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_Aggression : CompProperties
     {
         public int baseAggression = 0;

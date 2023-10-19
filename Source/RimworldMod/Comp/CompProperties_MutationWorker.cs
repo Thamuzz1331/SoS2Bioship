@@ -7,6 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_MutationWorker : CompProperties
     {
         public CompProperties_MutationWorker()

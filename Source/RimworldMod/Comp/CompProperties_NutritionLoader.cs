@@ -6,6 +6,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_NutritionLoader : CompProperties
     {
         public string ammoCat;

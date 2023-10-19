@@ -10,6 +10,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class AmmoOption : IExposable
     {
         public ThingDef realProj;
@@ -33,6 +34,7 @@ namespace RimWorld
         }
     }
 
+    [StaticConstructorOnStartup]
     public class CompMutableAmmo : ThingComp
     {
         CompProperties_MutableAmmo Props => (CompProperties_MutableAmmo)props;

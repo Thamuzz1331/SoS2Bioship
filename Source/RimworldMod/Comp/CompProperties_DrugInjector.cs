@@ -6,6 +6,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_DrugInjector : CompProperties_Facility
     {
         public string drugHediff;

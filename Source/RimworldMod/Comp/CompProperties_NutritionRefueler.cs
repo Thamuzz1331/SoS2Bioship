@@ -6,6 +6,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_NutritionRefueler : CompProperties
     {
         public float refuelInterval = 120f;

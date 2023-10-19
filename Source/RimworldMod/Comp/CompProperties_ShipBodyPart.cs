@@ -8,6 +8,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_ShipBodyPart : CompProperties_BuildingBodyPart
     {
         public string regenDef = null;

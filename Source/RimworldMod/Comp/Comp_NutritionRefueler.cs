@@ -10,6 +10,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompNutritionRefueler : CompNutritionConsumer
     {
         private CompProperties_NutritionRefueler Props => (CompProperties_NutritionRefueler)props;

@@ -8,6 +8,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_StaplebleScaffold : CompProperties_Scaffold
     {
         public string stapleDef = null;

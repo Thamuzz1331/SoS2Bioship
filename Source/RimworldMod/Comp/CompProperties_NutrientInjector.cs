@@ -6,6 +6,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_NutrientInjector : CompProperties_Facility
     {
         public CompProperties_NutrientInjector()

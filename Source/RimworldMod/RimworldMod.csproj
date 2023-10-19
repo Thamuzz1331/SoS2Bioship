@@ -173,6 +173,9 @@
 	  <Compile Include="Comp\Comp_ShipGeneContainer.cs"/>
 	  <Compile Include="Comp\CompProperties_ShipGeneContainer.cs"/>
 
+	  <Compile Include="Comp\Comp_SalvageMaw.cs"/>
+	  <Compile Include="Comp\CompProperties_SalvageMaw.cs"/>
+
 	  <Compile Include="ItemComp\Comp_HeartSeed.cs"/>
 	  <Compile Include="ItemComp\CompProperties_HeartSeed.cs"/>
 
@@ -189,6 +192,7 @@
 	  <Compile Include="Genes\ShipGeneline.cs"/>
 	  <Compile Include="Genes\DefSetterGene.cs"/>
 	  <Compile Include="Genes\StatSetterGene.cs"/>
+	  <Compile Include="Genes\Powers\PsiSuppressionGene.cs"/>
 
 	  <Compile Include="Jobs\BioShipJobDefs.cs"/>
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>
@@ -223,5 +227,6 @@
 	  <Compile Include="Graphics\Dialog_CreateShipXenogerm.cs" />
 
 	  <Compile Include="Verbs\Verb_MutableProjectileShip.cs" />
+	  <Compile Include="Verbs\Verb_EatShip.cs" />
   </ItemGroup>
 </Project>

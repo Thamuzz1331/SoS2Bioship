@@ -10,6 +10,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompRegenWorker : ThingComp
 	{
 		public CompProperties_RegenWorker Props => (CompProperties_RegenWorker)props;

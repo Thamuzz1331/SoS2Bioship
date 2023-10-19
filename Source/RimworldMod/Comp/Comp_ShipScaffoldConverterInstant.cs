@@ -9,6 +9,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompShipScaffoldConverterInstant : CompShipScaffoldConverter
 	{
 		public override float GetConversionWaitLength()

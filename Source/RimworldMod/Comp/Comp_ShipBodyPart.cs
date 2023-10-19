@@ -11,6 +11,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompShipBodyPart : CompBuildingBodyPart
     {
         public CompProperties_ShipBodyPart ShipProps => (CompProperties_ShipBodyPart)props;

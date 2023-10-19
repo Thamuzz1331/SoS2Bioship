@@ -7,6 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_RegenWorker : CompProperties
     {
         public float regenCost = 0;

@@ -8,6 +8,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_FueledAddictionSupplier : CompProperties_AddictionSupplier
     {
         public CompProperties_FueledAddictionSupplier()

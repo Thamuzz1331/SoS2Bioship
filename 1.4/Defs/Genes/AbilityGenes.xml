@@ -1,3 +1,27 @@
 <Defs>
-	
+	<GeneCategoryDef>
+		<defName>AbilityGene</defName>
+		<label>ability</label>
+		<displayPriorityInXenotype>810</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<BuildingGeneDef>
+		<defName>PsiSuppressionGene</defName>
+		<buildingGeneClass>PsiSuppressionGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_SensitivityB</iconPath>
+		<label>psi suppression</label>
+		<description>This organism can suppress the minds of an enemy crew.</description>
+		<displayCategory>AbilityGene</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<props>
+		</props>
+		<tags>
+			<li>psi</li>
+			<li>ability</li>
+		</tags>
+		<metabolicCost>-3</metabolicCost>
+		<geneOverrides>
+		</geneOverrides>
+	</BuildingGeneDef>
+
 </Defs>

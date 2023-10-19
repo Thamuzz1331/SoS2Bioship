@@ -12,6 +12,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompRegenSpot : ThingComp
     {
         private CompProperties_RegenSpot Props => (CompProperties_RegenSpot)props;

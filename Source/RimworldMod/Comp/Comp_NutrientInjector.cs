@@ -11,6 +11,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompNutrientInjector : CompFacility
     {
         private CompProperties_NutrientInjector FueledProps => (CompProperties_NutrientInjector)props;

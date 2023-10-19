@@ -7,6 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_ShipScaffoldConverterInstant : CompProperties_ShipScaffoldConverter
     {
         public CompProperties_ShipScaffoldConverterInstant()

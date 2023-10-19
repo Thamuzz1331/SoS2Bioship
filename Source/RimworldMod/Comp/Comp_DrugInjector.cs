@@ -11,6 +11,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompDrugInjector : CompFacility
     {
         private CompProperties_DrugInjector InjectorProps => (CompProperties_DrugInjector)props;

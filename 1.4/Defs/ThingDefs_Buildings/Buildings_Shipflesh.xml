@@ -1773,7 +1773,20 @@
 				<species>bioship</species>
 				<whitherTo>SalvageMawWhithered</whitherTo>
 			</li>
-			<li Class="CompProperties_SalvageBay"></li>
+			<li Class="CompProperties_SalvageMaw"></li>
+			<li Class="CompProperties_Refuelable">
+				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+				<fuelFilter>
+					<thingDefs>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>400</fuelCapacity>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+			<li Class="CompProperties_RefuelableNutritionSource">
+				<nutrientPerPulse>5</nutrientPerPulse>
+			</li>
 		</comps>
 		<placeWorkers>
 		</placeWorkers>

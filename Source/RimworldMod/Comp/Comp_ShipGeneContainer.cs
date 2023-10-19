@@ -4,6 +4,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompShipGeneContainer : ThingComp, IThingHolder
 	{
 		public CompProperties_ShipGeneContainer Props

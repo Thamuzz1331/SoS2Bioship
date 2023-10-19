@@ -11,6 +11,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompShipHeart : CompBuildingCore, IAggressionSource
     {
         public CompProperties_ShipHeart HeartProps => (CompProperties_ShipHeart)props;

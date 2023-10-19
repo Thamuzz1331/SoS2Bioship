@@ -8,6 +8,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_BioshipSpawner : CompProperties_NutritionConsumer
     {
         public string creatureDef = null;

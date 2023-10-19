@@ -7,6 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_FixedMutationWorker : CompProperties
     {
         public List<String> startingMutations = new List<String>();

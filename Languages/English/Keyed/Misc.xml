@@ -12,4 +12,7 @@
 	<movementSpeed>Thrust Power</movementSpeed>
 	<toxSensitivity>Toxic Sensitivity</toxSensitivity>
 	<fleshthing>Fleshthing</fleshthing>
+	<ShipDevourWreckCommand>Devour wreck</ShipDevourWreckCommand>
+	<ShipDevourWreckCommandDesc>Devour a wreck for nutrition.</ShipDevourWreckCommandDesc>
+	<ShipDevourWreckDisabled>Cannot devour a fighting ship.</ShipDevourWreckDisabled>
 </LanguageData>

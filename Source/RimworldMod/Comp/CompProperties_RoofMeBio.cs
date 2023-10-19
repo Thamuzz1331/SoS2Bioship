@@ -3,6 +3,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
 	public class CompProperties_RoofMeBio : CompProperties_SoShipPart
 	{
 		public string TerrainId = "FakeFloorShipflesh";

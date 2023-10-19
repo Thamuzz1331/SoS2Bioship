@@ -6,6 +6,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_ButcherableScallingRefuelable : CompProperties_Refuelable
     {
         public CompProperties_ButcherableScallingRefuelable()

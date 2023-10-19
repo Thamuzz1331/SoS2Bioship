@@ -9,6 +9,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompShipNutritionStore : CompNutritionStore
     {
         public CompProperties_ShipNutritionStore ShipProps => (CompProperties_ShipNutritionStore)props;

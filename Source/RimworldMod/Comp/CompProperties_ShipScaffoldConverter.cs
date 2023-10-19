@@ -8,6 +8,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_ShipScaffoldConverter : CompProperties_ScaffoldConverter
     {
         public CompProperties_ShipScaffoldConverter()

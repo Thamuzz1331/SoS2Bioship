@@ -9,6 +9,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompShipNutritionSource : CompRefuelableNutritionSource
     {
         public float efficiency = 1f;

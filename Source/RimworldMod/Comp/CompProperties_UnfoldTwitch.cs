@@ -7,6 +7,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompProperties_UnfoldTwitch : CompProperties_Unfold
     {
         public CompProperties_UnfoldTwitch()

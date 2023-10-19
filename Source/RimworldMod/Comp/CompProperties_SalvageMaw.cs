@@ -7,12 +7,11 @@ using Verse;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompProperties_EatMe : CompProperties
+    public class CompProperties_SalvageMaw : CompProperties_SalvageBay
     {
-        public CompProperties_EatMe()
+        public CompProperties_SalvageMaw()
         {
-            compClass = typeof(CompEatMe);
+            compClass = typeof(CompSalvageMaw);
         }
-
     }
 }

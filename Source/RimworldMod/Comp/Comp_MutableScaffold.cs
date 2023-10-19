@@ -11,6 +11,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompMutableScaffold : CompScaffold
     {
         CompProperties_MutableScaffold ShipProps => (CompProperties_MutableScaffold)props;

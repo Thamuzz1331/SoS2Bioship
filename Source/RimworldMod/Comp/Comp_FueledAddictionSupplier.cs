@@ -8,6 +8,7 @@ using Verse;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class CompFueledAddictionSupplier : CompAddictionSupplier
     {
         CompRefuelable refuelable;

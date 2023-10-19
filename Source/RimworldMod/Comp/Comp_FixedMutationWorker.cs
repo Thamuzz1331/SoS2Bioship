@@ -10,7 +10,8 @@ using LivingBuildings;
 
 namespace RimWorld
 {
-	public class CompFixedMutationWorker : CompMutationWorker
+    [StaticConstructorOnStartup]
+    public class CompFixedMutationWorker : CompMutationWorker
     {
         public CompProperties_FixedMutationWorker FixedProps => (CompProperties_FixedMutationWorker)props;
 

@@ -931,7 +931,8 @@
 				<fuelCapacity>2500</fuelCapacity>
 				<fuelFilter>
 					<categories>
-						<li>Corpses</li>
+						<li>CorpsesAnimal</li>
+						<li>CorpsesHumanlike</li>
 					</categories>
 				</fuelFilter>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
@@ -1780,12 +1781,12 @@
 					<thingDefs>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>400</fuelCapacity>
-				<fuelConsumptionRate>0</fuelConsumptionRate>
+				<fuelCapacity>10000</fuelCapacity>
+				<fuelConsumptionRate>600</fuelConsumptionRate>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 			</li>
 			<li Class="CompProperties_RefuelableNutritionSource">
-				<nutrientPerPulse>5</nutrientPerPulse>
+				<nutrientPerPulse>30</nutrientPerPulse>
 			</li>
 		</comps>
 		<placeWorkers>

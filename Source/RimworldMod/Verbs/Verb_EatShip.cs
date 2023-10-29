@@ -10,12 +10,14 @@ using Verse.Sound;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class Command_VerbEatShip : Command
     {
         public Building salvageMaw;
         public int salvageMawNum;
         public Map sourceMap;
         public Map targetMap;
+        public IntVec3 position;
 
         public override void ProcessInput(Event ev)
         {
@@ -36,7 +38,7 @@ namespace RimWorld
         {
             List<Building> wreck = ShipInteriorMod2.FindBuildingsAttached(b);
             List<CompRefuelable> maws = new List<CompRefuelable>();
-            foreach(Thing maw in salvageMaw.Map.listerThings.ThingsOfDef(ThingDef.Named("SalvageMaw")))
+            foreach(Thing maw in sourceMap.listerThings.ThingsOfDef(ThingDef.Named("SalvageMaw")))
             {
                 CompRefuelable refuelable = ((Building)maw).TryGetComp<CompRefuelable>();
                 if (refuelable.FuelPercentOfMax < 1)
@@ -46,28 +48,42 @@ namespace RimWorld
             }
             foreach (Building w in wreck)
             {
-                if (w.def.costList != null)
+                if (!w.Destroyed)
                 {
-                    foreach(ThingDefCountClass bcomp in w.def.costList)
+                    if (w.def.costList != null)
                     {
-                        List<CompRefuelable> full = new List<CompRefuelable>();
-                        float fuel = bcomp.count / maws.Count;
-                        foreach(CompRefuelable m in maws)
+                        foreach (ThingDefCountClass bcomp in w.def.costList)
                         {
-                            m.Refuel(fuel);
-                            if(m.FuelPercentOfTarget >= 1)
+                            List<CompRefuelable> full = new List<CompRefuelable>();
+                            if (maws.Count > 0)
                             {
-                                full.Add(m);
+                                float fuel = bcomp.count / (maws.Count*5);
+                                if (bcomp.)
+                                foreach (CompRefuelable m in maws)
+                                {
+                                    m.Refuel(fuel);
+                                    if (m.FuelPercentOfTarget >= 1)
+                                    {
+                                        full.Add(m);
+                                    }
+                                }
+                                foreach (CompRefuelable f in full)
+                                {
+                                    maws.Remove(f);
+                                }
                             }
-                        }
-                        foreach(CompRefuelable f in full)
-                        {
-                            maws.Remove(f);
                         }
                     }
                 }
-                w.Destroy(DestroyMode.Vanish);
             }
+            List<IntVec3> positions = ShipInteriorMod2.FindAreaAttached(b, true).ToList();
+            if (positions.Contains(position) || positions.NullOrEmpty())
+                return;
+            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ShipSalvageAbandonConfirm", delegate
+            {
+                ShipInteriorMod2.RemoveShip(positions, targetMap, false);
+            }));
+
         }
     }
 }

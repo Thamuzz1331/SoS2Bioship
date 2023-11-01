@@ -58,7 +58,6 @@ namespace RimWorld
                             if (maws.Count > 0)
                             {
                                 float fuel = bcomp.count / (maws.Count*5);
-                                if (bcomp.)
                                 foreach (CompRefuelable m in maws)
                                 {
                                     m.Refuel(fuel);

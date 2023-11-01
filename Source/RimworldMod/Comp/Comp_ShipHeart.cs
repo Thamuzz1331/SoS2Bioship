@@ -267,6 +267,35 @@ namespace RimWorld
                         }
 				    }
 			    };
+                List<BuildingGeneDef> bodyDefs = new List<BuildingGeneDef>();
+                foreach(BuildingGene gene in this.genes)
+                {
+                    bodyDefs.Add(gene.def);
+                }
+                yield return new Command_Action
+                {
+                    defaultLabel = "DEBUG: Add Gene",
+                    action = delegate()
+                    {
+                        List<FloatMenuOption> options = new List<FloatMenuOption>();
+                        List<BuildingGeneDef> missingGenes = DefDatabase<BuildingGeneDef>.AllDefs.Where(g => !bodyDefs.Contains(g)).ToList();
+                        foreach(BuildingGeneDef mg in missingGenes)
+                        {
+                            options.Add(new FloatMenuOption(
+                                mg.label,
+                                delegate
+                                {
+                                    BuildingGene toAdd = BuildingGeneMaker.MakeBuildingGene(mg);
+                                    this.AddGene(toAdd);
+                                }));
+                        }
+                        if (options.Count > 0)
+                        {
+                            FloatMenu menu = new FloatMenu(options);
+                            Find.WindowStack.Add(menu);
+                        }
+                    }
+                };
 			}
 
 		}

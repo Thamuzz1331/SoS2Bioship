@@ -124,7 +124,7 @@
 		<label>laser</label>
 		<description>Laser cannon. Short-ranged but devastating.</description>
 		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaser</texPath>
+			<texPath>Things/Building/Ship/CO_UVEyeTurret</texPath>
 		</graphicData>
 		<verbs>
 			<li>
@@ -188,7 +188,89 @@
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
-
+	<!-- Visible Spectrum Eye Laser-->
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>ShipTurret_VSEyeLaser</defName>
+		<label>visual spectrum eye laser</label>
+		<description>Concentrated visual spectrum light.  Longer ranged than tranditional infrared lasers, made possible by a self healing focusing chamber.</description>
+		<thingClass>Building_ShipTurret</thingClass>
+		<designationCategory />
+		<graphicData>
+			<texPath>Things/Building/Ship/BioshipTurret</texPath>
+			<drawSize>(4,4)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>LargeWeaponWhithered</whitherTo>
+				<regenDef>ShipTurret_VSEyeLaser</regenDef>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
+			</li>
+			<li Class="CompProperties_ShipHeat">
+				<compClass>CompShipHeat</compClass>
+				<heatPerPulse>15</heatPerPulse>
+				<energyToFire>75</energyToFire>
+				<optRange>100</optRange>
+				<maxRange>100</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
+				<threat>20</threat>
+				<laserColor>(0, 255, 127)</laserColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_VSLaserTop</turretGunDef>
+			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
+			<turretTopDrawSize>4.1</turretTopDrawSize>
+		</building>
+		<costList>
+			<ShipMeat>400</ShipMeat>
+			<OrganSeed>8</OrganSeed>
+		</costList>
+		<placeWorkers/>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<size>(4,4)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>ShipTurret_VSLaserTop</defName>
+		<label>laser</label>
+		<description>VS laser cannon. Medium-ranged and devastating.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/CO_VSEyeTurret</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot laser</label>
+				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1000</range>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>12</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_ShipTurretLaserTwo</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	
+	<!--Spinal Weapons-->
 	<ThingDef ParentName="BuildingBase">
 		<defName>SpinalWeaponRoot</defName>
 		<label>spinal weapon root</label>

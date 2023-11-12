@@ -32,7 +32,7 @@
 	<BuildingGeneDef>
 		<defName>MediumPlasmaMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
-		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<iconPath>UI_Elements/Gene_PlasmaMawM</iconPath>
 		<label>medium plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
 		<displayCategory>Geneline</displayCategory>
@@ -50,7 +50,7 @@
 	<BuildingGeneDef>
 		<defName>HeavyPlasmaMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
-		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<iconPath>UI_Elements/Gene_PlasmaMawL</iconPath>
 		<label>heavy plasma maw</label>
 		<description>Bioelectromagnetic coils launch a globule of unstable mucus that ignites into a plasma storm on impact.</description>
 		<displayCategory>Geneline</displayCategory>
@@ -68,7 +68,7 @@
 	<BuildingGeneDef>
 		<defName>DragonMawGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
-		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<iconPath>UI_Elements/Gene_PlasmaMawX</iconPath>
 		<label>dragon maw</label>
 		<description>Bioelectromagnetic coils channel a beam of devestating plasma.</description>
 		<displayCategory>Geneline</displayCategory>

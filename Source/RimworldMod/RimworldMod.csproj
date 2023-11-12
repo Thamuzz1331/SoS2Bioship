@@ -192,6 +192,7 @@
 	  <Compile Include="Genes\ShipGeneline.cs"/>
 	  <Compile Include="Genes\DefSetterGene.cs"/>
 	  <Compile Include="Genes\StatSetterGene.cs"/>
+	  <Compile Include="Genes\RandGene.cs"/>
 	  <Compile Include="Genes\Powers\PsiSuppressionGene.cs"/>
 
 	  <Compile Include="Jobs\BioShipJobDefs.cs"/>

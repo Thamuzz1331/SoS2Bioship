@@ -105,5 +105,38 @@
 		</comps>
 	</ThingDef>
 
-
+	<ThingDef ParentName="ShipHeart">
+		<defName>Ship_Heart_GBFOS</defName>
+		<label>ship heart (gbfos)</label>
+		<designatorDropdown>Hostile_Heart</designatorDropdown>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<description>The beating heart of a ship</description>
+		<comps>
+			<li Class="CompProperties_ShipHeart">
+				<species>bioship</species>
+				<shipspecies>bioship</shipspecies>
+				<geneline>MutantEyebeastGeneline</geneline>
+				<exoGenes>
+					<li>MotiveGangliaGene</li>
+					<li>UVEyeLaser</li>
+					<li>VSEyeLaser</li>
+					<li>Gbfos_Rand_1</li>
+					<li>SlowRegenGene</li>
+					<li>ToxVulnerabilityGene</li>
+					<li>StrongShieldGene</li>
+				</exoGenes>
+			</li>
+		</comps>
+	</ThingDef>
 </Defs>

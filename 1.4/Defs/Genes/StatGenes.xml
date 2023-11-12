@@ -87,5 +87,87 @@
 		</geneOverrides>
 	</BuildingGeneDef>
 
-	
+	<BuildingGeneDef>
+		<defName>StrongShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldB</iconPath>
+		<label>strong shields</label>
+		<description>This organism's shields are particularly strong.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>25</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:1.25</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>3</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>VeryStrongShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldA</iconPath>
+		<label>very strong shields</label>
+		<description>This organism's shields are extremely powerful.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>30</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:2</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>7</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>WeakShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldC</iconPath>
+		<label>weak shields</label>
+		<description>This organism's shields are particularly weak.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>35</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:0.75</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>-3</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>PatheticShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldD</iconPath>
+		<label>pathetic shields</label>
+		<description>This organism's shields are pathetic.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>40</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:0.25</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>-7</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
 </Defs>

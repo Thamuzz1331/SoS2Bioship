@@ -1326,7 +1326,6 @@
 			</damageData>
 		</graphicData>
 		<placeWorkers>
-			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
 			<li>PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<comps>

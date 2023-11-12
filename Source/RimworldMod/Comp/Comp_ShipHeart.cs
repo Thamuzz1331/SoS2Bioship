@@ -108,6 +108,11 @@ namespace RimWorld
                 {
                     this.AddGene(b);
                 }
+                foreach (string exoGeneString in this.HeartProps.exoGenes)
+                {
+                    BuildingGene gene = BuildingGeneMaker.MakeBuildingGene(BuildingGeneDef.Named(exoGeneString));
+                    this.AddGene(gene);
+                }
                 if (CompHeartSeed.ExoDefs != null)
                 {
                     foreach (BuildingGeneDef gDef in CompHeartSeed.ExoDefs)

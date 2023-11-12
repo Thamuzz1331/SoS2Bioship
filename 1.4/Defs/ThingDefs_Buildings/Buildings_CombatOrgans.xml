@@ -197,7 +197,7 @@
 		<designationCategory />
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
-			<drawSize>(4,4)</drawSize>
+			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<comps>
 			<li Class="CompProperties_ShipBodyPart">
@@ -230,7 +230,7 @@
 			<turretGunDef>ShipTurret_VSLaserTop</turretGunDef>
 			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
-			<turretTopDrawSize>4.1</turretTopDrawSize>
+			<turretTopDrawSize>3.1</turretTopDrawSize>
 		</building>
 		<costList>
 			<ShipMeat>400</ShipMeat>

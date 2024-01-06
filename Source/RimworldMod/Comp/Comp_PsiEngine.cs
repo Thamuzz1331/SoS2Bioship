@@ -37,14 +37,14 @@ namespace RimWorld
 				emitCounter--;
 			}
         }
-		public override float Thrust
+		public override int Thrust
         {
             get
             {
 				CompBuildingBodyPart bp = parent.TryGetComp<CompBuildingBodyPart>();
 				if (bp != null && bp.CoreSpawned)
                 {
-					return (Props.thrust * bp.Core.GetStat("movementSpeed"));
+					return Mathf.RoundToInt(Props.thrust * bp.Core.GetStat("movementSpeed"));
                 } 
                 return Props.thrust;
             }

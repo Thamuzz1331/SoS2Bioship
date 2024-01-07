@@ -15,7 +15,7 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class CompSalvageMaw : CompShipSalvageBay
     {
-        private CompProperties_SalvageMaw Props => (CompProperties_SalvageMaw)props;
+        private new CompProperties_SalvageMaw Props => (CompProperties_SalvageMaw)props;
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {

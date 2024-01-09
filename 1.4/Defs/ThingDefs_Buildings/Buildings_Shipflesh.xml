@@ -663,6 +663,7 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
+			<li Class="CompProperties_RCSThruster"/>
 			<li Class="CompProperties_PsiEngine">
 				<thrust>2</thrust>
 				<fuelUse>2</fuelUse>
@@ -746,7 +747,7 @@
 				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			
+			<li Class="CompProperties_RCSThruster"/>
 			<li Class="CompProperties_PsiEngine">
 				<thrust>6</thrust>
 				<fuelUse>2</fuelUse>

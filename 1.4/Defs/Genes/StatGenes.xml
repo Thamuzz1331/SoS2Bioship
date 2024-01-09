@@ -88,6 +88,47 @@
 	</BuildingGeneDef>
 
 	<BuildingGeneDef>
+		<defName>EfficientRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenB</iconPath>
+		<label>efficient regeneration</label>
+		<description>This organism is particularly efficient in converting nutrition into scar tissue.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>16</displayOrderInCategory>
+		<props>
+			<li>regenEfficiency:1.25</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>regenEfficiency</li>
+		</tags>
+		<metabolicCost>-2</metabolicCost>
+		<geneOverridesTags>
+			<li>regenEfficiency</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>InefficentRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenC</iconPath>
+		<label>inefficient regeneration</label>
+		<description>This organism converts nutrition to scar tissue inefficiently.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>17</displayOrderInCategory>
+		<props>
+			<li>regenEfficiency:0.75</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>regenEfficiency</li>
+		</tags>
+		<metabolicCost>2</metabolicCost>
+		<geneOverridesTags>
+			<li>regenEfficiency</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
 		<defName>StrongShieldGene</defName>
 		<buildingGeneClass>StatSetterGene</buildingGeneClass>
 		<iconPath>UI_Elements/Gene_ShieldB</iconPath>
@@ -96,13 +137,13 @@
 		<displayCategory>StatGene</displayCategory>
 		<displayOrderInCategory>25</displayOrderInCategory>
 		<props>
-			<li>shieldStrength:1.25</li>
+			<li>shieldStrength:2</li>
 		</props>
 		<tags>
 			<li>statBuff</li>
 			<li>shieldStrength</li>
 		</tags>
-		<metabolicCost>3</metabolicCost>
+		<metabolicCost>-3</metabolicCost>
 		<geneOverridesTags>
 			<li>shieldStrength</li>
 		</geneOverridesTags>
@@ -117,13 +158,13 @@
 		<displayCategory>StatGene</displayCategory>
 		<displayOrderInCategory>30</displayOrderInCategory>
 		<props>
-			<li>shieldStrength:2</li>
+			<li>shieldStrength:3.5</li>
 		</props>
 		<tags>
 			<li>statBuff</li>
 			<li>shieldStrength</li>
 		</tags>
-		<metabolicCost>7</metabolicCost>
+		<metabolicCost>-7</metabolicCost>
 		<geneOverridesTags>
 			<li>shieldStrength</li>
 		</geneOverridesTags>
@@ -144,7 +185,7 @@
 			<li>statMalus</li>
 			<li>shieldStrength</li>
 		</tags>
-		<metabolicCost>-3</metabolicCost>
+		<metabolicCost>3</metabolicCost>
 		<geneOverridesTags>
 			<li>shieldStrength</li>
 		</geneOverridesTags>
@@ -165,7 +206,7 @@
 			<li>statMalus</li>
 			<li>shieldStrength</li>
 		</tags>
-		<metabolicCost>-7</metabolicCost>
+		<metabolicCost>7</metabolicCost>
 		<geneOverridesTags>
 			<li>shieldStrength</li>
 		</geneOverridesTags>

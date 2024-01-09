@@ -159,7 +159,7 @@
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>UVEyeLaser</damageDef>
-			<speed>200</speed>
+			<speed>150</speed>
 		</projectile>
 	</ThingDef>
 	<DamageDef Name="UVEyeLaser">

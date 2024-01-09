@@ -40,6 +40,7 @@
 		</inspectorTabs>
 		<comps>
 			<li Class="CompProperties_SoShipPart"/>
+			<li Class="CompProperties_ShipPart"/>
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompHeartHeat</compClass>
 			</li>
@@ -70,13 +71,9 @@
 					<li>NutrientInjector</li>
 				</linkableFacilities>
 			</li>
-			<li Class="CompProperties_ShipLifeSupport"/>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
 		<rotatable>false</rotatable>
-		<building>
-			<shipPart>true</shipPart>
-		</building>
 		<placeWorkers>
 		</placeWorkers>
 		<costList>

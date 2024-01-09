@@ -26,6 +26,8 @@
 			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
 		</placeWorkers>
 		<comps>
+			<li Class="CompProperties_SoShipPart">
+			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>WhitheredShieldGenerator</whitherTo>
@@ -65,9 +67,14 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_ReactionlessEngine">
-				<thrust>1</thrust>
+				<thrust>4</thrust>
+				<fuelUse>1</fuelUse>
+				<reactionless>true</reactionless>
 			</li>
 		</comps>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
 		<rotatable>false</rotatable>
 		<selectable>true</selectable>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>

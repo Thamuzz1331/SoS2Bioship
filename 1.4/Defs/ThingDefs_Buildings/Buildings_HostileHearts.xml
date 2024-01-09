@@ -131,8 +131,8 @@
 					<li>MotiveGangliaGene</li>
 					<li>UVEyeLaser</li>
 					<li>VSEyeLaser</li>
-					<li>Gbfos_Rand_1</li>
 					<li>SlowRegenGene</li>
+					<li>InefficentRegenGene</li>
 					<li>ToxVulnerabilityGene</li>
 					<li>StrongShieldGene</li>
 				</exoGenes>

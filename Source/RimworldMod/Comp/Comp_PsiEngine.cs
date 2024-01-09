@@ -44,7 +44,7 @@ namespace RimWorld
 				CompBuildingBodyPart bp = parent.TryGetComp<CompBuildingBodyPart>();
 				if (bp != null && bp.CoreSpawned)
                 {
-					return (int)(Props.thrust * bp.Core.GetStat("movementSpeed"));
+					return Mathf.RoundToInt(Props.thrust * bp.Core.GetStat("movementSpeed"));
                 } 
                 return Props.thrust;
             }

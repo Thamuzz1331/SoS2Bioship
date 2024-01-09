@@ -4,3 +4,8 @@
 .vs/*
 *.sqlite
 .vs/slnx.sqlite
+*.vsidx
+*.lock
+*.cache
+*.cache
+*.cache

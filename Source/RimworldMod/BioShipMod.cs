@@ -129,7 +129,7 @@ namespace BioShip
 		[HarmonyPostfix]
 		public static void DrawNutritionBars(ColonistBar __instance)
 		{
-			Map mapPlayer = Find.Maps.Where(m => m.GetComponent<ShipHeatMapComp>().InCombat && !m.GetComponent<ShipHeatMapComp>().ShipCombatMaster).FirstOrDefault();
+			Map mapPlayer = Find.Maps.Where(m => m.GetComponent<ShipHeatMapComp>().InCombat && !m.GetComponent<ShipHeatMapComp>().ShipCombatOrigin).FirstOrDefault();
 			if (mapPlayer != null)
             {
 				float screenHalf = (float)UI.screenWidth / 2 + SaveOurShip2.ModSettings_SoS.offsetUIx;

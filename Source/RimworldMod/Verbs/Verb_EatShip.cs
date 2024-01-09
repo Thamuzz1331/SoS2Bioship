@@ -34,9 +34,11 @@ namespace RimWorld
             }, (Pawn)null, delegate { AfterTarget(b); });
         }
 
+
         public void AfterTarget(Building b)
         {
-            List<Building> wreck = ShipInteriorMod2.FindBuildingsAttached(b);
+
+            HashSet<IntVec3> positions = ShipInteriorMod2.FindAreaAttached(b, true);
             List<CompRefuelable> maws = new List<CompRefuelable>();
             foreach(Thing maw in sourceMap.listerThings.ThingsOfDef(ThingDef.Named("SalvageMaw")))
             {
@@ -46,41 +48,46 @@ namespace RimWorld
                     maws.Add(refuelable);
                 }
             }
-            foreach (Building w in wreck)
+
+            foreach (IntVec3 i in positions.ToList())
             {
-                if (!w.Destroyed)
+                foreach (Thing t in i.GetThingList(targetMap))
                 {
-                    if (w.def.costList != null)
+                    if ((t == null) || t.GetType() != typeof(Building)) { continue; }
+                    Building w = (Building)t;
+                    if (!w.Destroyed)
                     {
-                        foreach (ThingDefCountClass bcomp in w.def.costList)
+                        if (w.def.costList != null)
                         {
-                            List<CompRefuelable> full = new List<CompRefuelable>();
-                            if (maws.Count > 0)
+                            foreach (ThingDefCountClass bcomp in w.def.costList)
                             {
-                                float fuel = bcomp.count / (maws.Count*5);
-                                foreach (CompRefuelable m in maws)
+                                List<CompRefuelable> full = new List<CompRefuelable>();
+                                if (maws.Count > 0)
                                 {
-                                    m.Refuel(fuel);
-                                    if (m.FuelPercentOfTarget >= 1)
+                                    float fuel = bcomp.count / (maws.Count * 5);
+                                    foreach (CompRefuelable m in maws)
                                     {
-                                        full.Add(m);
+                                        m.Refuel(fuel);
+                                        if (m.FuelPercentOfTarget >= 1)
+                                        {
+                                            full.Add(m);
+                                        }
                                     }
-                                }
-                                foreach (CompRefuelable f in full)
-                                {
-                                    maws.Remove(f);
+                                    foreach (CompRefuelable f in full)
+                                    {
+                                        maws.Remove(f);
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-            List<IntVec3> positions = ShipInteriorMod2.FindAreaAttached(b, true).ToList();
-            if (positions.Contains(position) || positions.NullOrEmpty())
+            if (positions.Contains(position) || positions.ToList().NullOrEmpty())
                 return;
             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ShipSalvageAbandonConfirm", delegate
             {
-                ShipInteriorMod2.RemoveShip(positions, targetMap, false);
+                ShipInteriorMod2.RemoveShip(null, false, positions, targetMap);
             }));
 
         }

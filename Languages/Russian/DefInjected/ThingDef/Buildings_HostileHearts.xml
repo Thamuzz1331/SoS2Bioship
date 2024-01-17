@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Ship_Heart_Quest.label>Сердце корабля (квестовое)</Ship_Heart_Quest.label>
+<Ship_Heart_Quest.description>Бьющееся сердце корабля.</Ship_Heart_Quest.description>
+
+<Ship_Heart_VoidDragon.label>Сердце корабля (дракон)</Ship_Heart_VoidDragon.label>
+<Ship_Heart_VoidDragon.description>Бьющееся сердце корабля.</Ship_Heart_VoidDragon.description>
+
+<Ship_Heart_MutantEyebeast.label>Сердце корабля (глазастое чудовище)</Ship_Heart_MutantEyebeast.label>
+<Ship_Heart_MutantEyebeast.description>Бьющееся сердце корабля.</Ship_Heart_MutantEyebeast.description>
+
+<Ship_Heart_Small_AC.label>Сердце корабля (неразвитое)</Ship_Heart_Small_AC.label>
+<Ship_Heart_Small_AC.description>Бьющееся сердце корабля.</Ship_Heart_Small_AC.description>
+
+<Ship_Heart_GBFOS.label>Сердце корабля (мутант)</Ship_Heart_GBFOS.label>
+<Ship_Heart_GBFOS.description>Бьющееся сердце корабля.</Ship_Heart_GBFOS.description>
+
+</LanguageData>

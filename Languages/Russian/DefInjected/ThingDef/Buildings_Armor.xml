@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<CoralArmor.label>Коралловая броня</CoralArmor.label>
+<CoralArmor.description>Слой коралловой брони.</CoralArmor.description>
+
+<BoneArmor.label>Костяная броня</BoneArmor.label>
+<BoneArmor.description>Слой костяной брони.</BoneArmor.description>
+
+<DragonscaleArmor.label>Драконья чешуя</DragonscaleArmor.label>
+<DragonscaleArmor.description>Слой чешуи, пронизанной органической пластальной сетью. Высокоустойчив к плазменному оружию.</DragonscaleArmor.description>
+
+</LanguageData>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <BuildingHediffDef.label>Накопление токсинов</BuildingHediffDef.label>
+  <BuildingHediffDef.description>Токсины в крови. Возможные источники: токсины в атмосфере, ядовитые укусы или удары отравленным оружием.
+  В больших дозах приводят к смерти.</BuildingHediffDef.description>
+
+</LanguageData>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Scaffold_Beam.label>Протеиновая распорка стены</Scaffold_Beam.label>
+<Scaffold_Beam.description>Протеиновая распорка для направления роста корабельной плоти. Сердце корабля будет потреблять питательные вещества для роста вдоль этих распорок.</Scaffold_Beam.description>
+
+<Scaffold_Beam_Unpowered.label>Протеиновая распорка стены (без коммуникаций)</Scaffold_Beam_Unpowered.label>
+<Scaffold_Beam_Unpowered.description>Протеиновая распорка для направления роста корабельной плоти. Сердце корабля будет потреблять питательные вещества для роста вдоль этих распорок. Не проводит тепло или электричество.</Scaffold_Beam_Unpowered.description>
+
+<Scaffold_Armor_Unpowered.label>Протеиновая распорка брони (без коммуникаций)</Scaffold_Armor_Unpowered.label>
+<Scaffold_Armor_Unpowered.description>Протеиновая распорка для направления роста корабельной плоти. Сердце корабля будет потреблять питательные вещества для наращивания брони вдоль этих распорок. Не проводит тепло или электричество.</Scaffold_Armor_Unpowered.description>
+
+<Scaffold_Corner_OneOne.label>Распорка угла (1х1)</Scaffold_Corner_OneOne.label>
+
+<Scaffold_Corner_OneOneFlip.label>Распорка угла (1х1) (перевернутая)</Scaffold_Corner_OneOneFlip.label>
+
+<Scaffold_Corner_OneTwo.label>Распорка угла (1х2)</Scaffold_Corner_OneTwo.label>
+
+<Scaffold_Corner_OneTwoFlip.label>Распорка угла (1х2) (перевернутая)</Scaffold_Corner_OneTwoFlip.label>
+
+<Scaffold_Corner_OneThree.label>Распорка угла (1х3)</Scaffold_Corner_OneThree.label>
+
+<Scaffold_Corner_OneThreeFlip.label>Распорка угла (1х3) (перевернутая)</Scaffold_Corner_OneThreeFlip.label>
+
+<ScaffoldHullTile.label>Протеиновая распорка пола</ScaffoldHullTile.label>
+<ScaffoldHullTile.description>Полы, по которым пойдет рост корабельной плоти.</ScaffoldHullTile.description>
+
+<ScaffoldAirlock.label>Распорка для сфинктера биокорабля</ScaffoldAirlock.label>
+<ScaffoldAirlock.description>Протеиновая распорка для выращивания сфинктера биокорабля.</ScaffoldAirlock.description>
+
+<Scaffold_Engine_Small.label>Малая протеиновая распорка двигателя</Scaffold_Engine_Small.label>
+<Scaffold_Engine_Small.description>Распорка для выращивания малого биодвигателя. Биодвигатель питается топливом и подходит для выхода на орбиту, но недостаточен для межпланетных путешествий.</Scaffold_Engine_Small.description>
+
+<Scaffold_Engine.label>Протеиновая распорка двигателя</Scaffold_Engine.label>
+<Scaffold_Engine.description>Распорка для выращивания биодвигателя. Биодвигатель питается топливом и подходит для выхода на орбиту, но недостаточен для межпланетных путешествий.</Scaffold_Engine.description>
+
+<Scaffold_Engine_Large.label>Большая протеиновая распорка двигателя</Scaffold_Engine_Large.label>
+<Scaffold_Engine_Large.description>Распорка для выращивания ядерного биодвигателя. Биодвигатель питается урановым топливом и подходит для выхода на орбиту за счет превращения взлетной области в радиоактивный ад, но недостаточен для межпланетных путешествий.
+
+В шесть раз мощнее малого биодвигателя.</Scaffold_Engine_Large.description>
+
+<Scaffold_Sensor.label>Протеиновая распорка сенсора</Scaffold_Sensor.label>
+<Scaffold_Sensor.description>Протеиновая распорка для выращивания органического сенсора.</Scaffold_Sensor.description>
+
+<Scaffold_Maw_Small.label>Распорка малой пасти</Scaffold_Maw_Small.label>
+<Scaffold_Maw_Small.description>Протеиновая распорка для выращивания малой корабельной пасти.</Scaffold_Maw_Small.description>
+
+<SmallWeaponScaffold.label>Распорка малого орудия</SmallWeaponScaffold.label>
+<SmallWeaponScaffold.description>Протеиновая распорка для выращивания малого орудия.</SmallWeaponScaffold.description>
+
+<MediumWeaponScaffold.label>Распорка среднего орудия</MediumWeaponScaffold.label>
+<MediumWeaponScaffold.description>Протеиновая распорка для выращивания среднего орудия.</MediumWeaponScaffold.description>
+
+<LargeWeaponScaffold.label>Распорка большого орудия</LargeWeaponScaffold.label>
+<LargeWeaponScaffold.description>Протеиновая распорка для выращивания большого орудия.</LargeWeaponScaffold.description>
+
+<SpinalRootScaffold.label>Распорка корня спинального орудия</SpinalRootScaffold.label>
+<SpinalRootScaffold.description>Протеиновая распорка для выращивания корня спинального орудия, которым оно крепится к биокораблю.</SpinalRootScaffold.description>
+
+<SpinalCoilScaffold.label>Распорка катушки спинального орудия</SpinalCoilScaffold.label>
+<SpinalCoilScaffold.description>Протеиновая распорка для выращивания среднего сегмента спинального орудия. Для работы орудия прикрепите один или более сегмент к корню орудия, а затем прикрепите само орудие.
+
+Увеличивает базовый урон, энергопотребление и тепловыделение на 25% от общего значения за каждый сегмент.</SpinalCoilScaffold.description>
+
+<SpinalWeaponScaffold.label>Распорка навершия спинального орудия</SpinalWeaponScaffold.label>
+<SpinalWeaponScaffold.description>Протеиновая распорка для выращивания навершия спинального орудия. Стоит строить ее снаружи корабля, если вас не интересуют новые отверстия в стенах.</SpinalWeaponScaffold.description>
+
+<FatStoreSmallScaffold.label>Распорка малого жирового отложения</FatStoreSmallScaffold.label>
+<FatStoreSmallScaffold.description>Протеиновая распорка для выращивания малого жирового отложения.</FatStoreSmallScaffold.description>
+
+<FatStoreLargeScaffold.label>Распорка крупного жирового отложения</FatStoreLargeScaffold.label>
+<FatStoreLargeScaffold.description>Протеиновая распорка для выращивания крупного жирового отложения.</FatStoreLargeScaffold.description>
+
+<ScaffoldShieldGenerator.label>Распорка щита</ScaffoldShieldGenerator.label>
+<ScaffoldShieldGenerator.description>Протеиновая распорка для выращивания кластера псионических щитовых нервов.</ScaffoldShieldGenerator.description>
+
+<Scaffold_PassiveVent.label>Распорка дыхальца</Scaffold_PassiveVent.label>
+<Scaffold_PassiveVent.description>Проводит теплообмен с системой хладагента, охлаждая или нагревая комнаты до необходимой температуры.
+
+Также может нагревать комнаты с помощью электричества.</Scaffold_PassiveVent.description>
+
+<ScaffoldHeatsink.label>Распорка малого теплообменника</ScaffoldHeatsink.label>
+<ScaffoldHeatsink.description>Протеиновая распорка для выращивания малого теплообменника.</ScaffoldHeatsink.description>
+
+<ScaffoldHeatsinkLarge.label>Распорка крупного теплообменника</ScaffoldHeatsinkLarge.label>
+<ScaffoldHeatsinkLarge.description>Протеиновая распорка для выращивания крупного теплообменника.</ScaffoldHeatsinkLarge.description>
+
+<ScaffoldCoolantCyst.label>Распорка охладительной кисты</ScaffoldCoolantCyst.label>
+<ScaffoldCoolantCyst.description>Протеиновая распорка для выращивания охладительной кисты.</ScaffoldCoolantCyst.description>
+
+<ScaffoldCoolantCystLarge.label>Распорка крупной охладительной кисты</ScaffoldCoolantCystLarge.label>
+<ScaffoldCoolantCystLarge.description>Протеиновая распорка для выращивания крупной охладительной кисты.</ScaffoldCoolantCystLarge.description>
+
+<ScaffoldPurgePort.label>Распорка теплосбросного сфинктера</ScaffoldPurgePort.label>
+<ScaffoldPurgePort.description>Протеиновая распорка для выращивания теплосбросного сфинктера. Перегретая жижа выбрасывается из корабля, снижая накопление тепла в системе. Щиты в это время не работают.</ScaffoldPurgePort.description>
+
+<ScaffoldPurgePortLarge.label>Распорка большого теплосбросного сфинктера</ScaffoldPurgePortLarge.label>
+<ScaffoldPurgePortLarge.description>Протеиновая распорка для выращивания большого теплосбросного сфинктера. Перегретая жижа выбрасывается из корабля, обнуляя накопление тепла в системе. Щиты в это время не работают.</ScaffoldPurgePortLarge.description>
+
+<Scaffold_Giant_Mitochondira.label>Распорка гигантской митохондрии</Scaffold_Giant_Mitochondira.label>
+<Scaffold_Giant_Mitochondira.description>Протеиновая распорка для выращивания гигантской митохондрии, энергетического источника монстра.</Scaffold_Giant_Mitochondira.description>
+
+<Scaffold_Colossal_Mitochondira.label>Распорка колоссальной митохондрии</Scaffold_Colossal_Mitochondira.label>
+<Scaffold_Colossal_Mitochondira.description>Протеиновая распорка для выращивания колоссальной митохондрии, энергетического источника монстра.</Scaffold_Colossal_Mitochondira.description>
+
+<BioCapacitorSmallScaffold.label>Распорка биобатареи</BioCapacitorSmallScaffold.label>
+<BioCapacitorSmallScaffold.description>Протеиновая распорка для выращивания биобатареи, эффективно хранящей до 1000Wd.</BioCapacitorSmallScaffold.description>
+
+<SalvageMawScafold.label>Распорка пасти-падальщика</SalvageMawScafold.label>
+<SalvageMawScafold.description>Протеиновая распорка пасти-падальщика. Каждая пасть может собрать до 1000кг обломков кораблей после сражения.</SalvageMawScafold.description>
+
+<HaulBeastSpawnerScaffold.label>Распорка для кисты паразита-носильщика</HaulBeastSpawnerScaffold.label>
+<HaulBeastSpawnerScaffold.description>Протеиновая распорка для выращивания кисты, из которой появится паразит-носильщик.</HaulBeastSpawnerScaffold.description>
+
+<ThreeHaulBeastSpawnerScaffold.label>Распорка для множественной кисты паразита-носильщика</ThreeHaulBeastSpawnerScaffold.label>
+<ThreeHaulBeastSpawnerScaffold.description>Протеиновая распорка для выращивания множественной кисты, из которой появится три паразита-носильщика.</ThreeHaulBeastSpawnerScaffold.description>
+
+<WarBeastSpawnerScaffold.label>Распорка для кисты паразита-воина</WarBeastSpawnerScaffold.label>
+<WarBeastSpawnerScaffold.description>Протеиновая распорка для выращивания кисты, из которой появится паразит-воин.</WarBeastSpawnerScaffold.description>
+
+</LanguageData>

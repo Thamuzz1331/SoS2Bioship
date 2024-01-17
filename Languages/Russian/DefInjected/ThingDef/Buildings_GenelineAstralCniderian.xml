@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<ShipTurret_Nematocyst.label>Нематоцист</ShipTurret_Nematocyst.label>
+<ShipTurret_Nematocyst.description>Моток колючей нити для противостояния враждебным кораблям или торпедам.</ShipTurret_Nematocyst.description>
+
+<ShipTurret_NematocystTop.label>Нематоцист</ShipTurret_NematocystTop.label>
+<ShipTurret_NematocystTop.description>Нематоцист - мощное оружие ближнего боя.</ShipTurret_NematocystTop.description>
+
+<Bullet_Fake_Nematocyst.label>Нематоцист</Bullet_Fake_Nematocyst.label>
+
+<Proj_ShipTurretNematocyst.label>Нематоцист</Proj_ShipTurretNematocyst.label>
+
+<Bullet_Ground_Nematocyst.label>Нить нематоциста</Bullet_Ground_Nematocyst.label>
+
+<ShipNematocyst.label>Нематоцист</ShipNematocyst.label>
+<ShipNematocyst.deathMessage>{0} был(а) изрезан(а) в клочья.</ShipNematocyst.deathMessage>
+
+<ShipTurret_BioAcid.label>Метатель кислоты</ShipTurret_BioAcid.label>
+<ShipTurret_BioAcid.description>Выплевывает комок едкой липкой жижи, наносящей длительный урон при попадании. Оружие средней дистанции.
+
+При отсутствии подключения к температурной сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_BioAcid.description>
+
+<ShipTurret_BioAcidTop.label>Метатель кислоты</ShipTurret_BioAcidTop.label>
+<ShipTurret_BioAcidTop.description>Выплевывает комок едкой липкой жижи, наносящей длительный урон при попадании. Оружие средней дистанции.
+
+При отсутствии подключения к температурной сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_BioAcidTop.description>
+<ShipTurret_BioAcidTop.verbs.label>Выстрелить комком кислоты</ShipTurret_BioAcidTop.verbs.label>
+
+<Bullet_Fake_BioAcid.label>Комок кислоты</Bullet_Fake_BioAcid.label>
+
+<Proj_BioAcid.label>Комок кислоты</Proj_BioAcid.label>
+
+<ShipBioAcid.label>Кислота</ShipBioAcid.label>
+<ShipBioAcid.deathMessage>{0} был(а) растворен(а) кислотой.</ShipBioAcid.deathMessage>
+
+<Artillery_BioShipTorpedo_Two.label>Торпедный аппарат (2)</Artillery_BioShipTorpedo_Two.label>
+
+<Artillery_BioShipTorpedo_Six.label>Торпедный аппарат (6)</Artillery_BioShipTorpedo_Six.label>
+
+<HeavySpineLauncher.label>Тяжелый шипомёт</HeavySpineLauncher.label>
+
+<LightSpineLauncher.label>Лёгкий шипомёт</LightSpineLauncher.label>
+
+<JellyCannon.label>Медузомёт</JellyCannon.label>
+<JellyCannon.description>Стреляет медузами бездны, организмами разрушительной мощи.</JellyCannon.description>
+
+<ShipTurret_JellyCannon.label>Медузомёт</ShipTurret_JellyCannon.label>
+<ShipTurret_JellyCannon.description>Спинальное орудие корабля, стреляющее медузами бездны.</ShipTurret_JellyCannon.description>
+<ShipTurret_JellyCannon.verbs.label>Выстрелить</ShipTurret_JellyCannon.verbs.label>
+
+<Bullet_Fake_Jelly.label>Медуза бездны</Bullet_Fake_Jelly.label>
+
+<Proj_Jelly.label>Медуза бездны</Proj_Jelly.label>
+
+<BioShipJellyDamage.label>Медуза бездны</BioShipJellyDamage.label>
+<BioShipJellyDamage.deathMessage>{0} был(а) раздавлен(а) медузой бездны.</BioShipJellyDamage.deathMessage>
+
+</LanguageData>

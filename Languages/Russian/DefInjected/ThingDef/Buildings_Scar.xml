@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Wound.label>Ранение</Wound.label>
+<Wound.description>Здесь была плоть. Здесь будет плоть.</Wound.description>
+
+<Scar_Beam.label>Шрам</Scar_Beam.label>
+<Scar_Beam.description>Шрам.</Scar_Beam.description>
+
+<Scar_Beam_Unpowered.label>Шрам (без коммуникаций)</Scar_Beam_Unpowered.label>
+<Scar_Beam_Unpowered.description>Шрам (без коммуникаций).</Scar_Beam_Unpowered.description>
+
+<Scar_Corner_OneOne.label>Уголок шрама (1х1)</Scar_Corner_OneOne.label>
+
+<Scar_Corner_OneOneFlip.label>Уголок шрама (1х1) (Перевернутый)</Scar_Corner_OneOneFlip.label>
+
+<Scar_Corner_OneTwo.label>Уголок шрама (1х2)</Scar_Corner_OneTwo.label>
+
+<Scar_Corner_OneTwoFlip.label>Уголок шрама (1х2) (Перевернутый)</Scar_Corner_OneTwoFlip.label>
+
+<Scar_Corner_OneThree.label>Уголок шрама (1х3)</Scar_Corner_OneThree.label>
+
+<Scar_Corner_OneThreeFlip.label>Уголок шрама (1х3) (Перевернутый)</Scar_Corner_OneThreeFlip.label>
+
+<ScarHullTile.label>Напольный шрам</ScarHullTile.label>
+
+<ScarAirlock.label>Шрамированный сфинктер</ScarAirlock.label>
+<TODO.description>Выполняет роль внутренних и внешних дверей биокорабля.  Проницаемый слой биологической слизи предотвращает потерю атмосферы.</TODO.description>
+
+</LanguageData>

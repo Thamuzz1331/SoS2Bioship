@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<ShipTurret_SmallEyeLaser.label>Малый глазной лазер</ShipTurret_SmallEyeLaser.label>
+<ShipTurret_SmallEyeLaser.description>Гигантский глаз с укрепленным пласталью зеркальцем.</ShipTurret_SmallEyeLaser.description>
+
+<ShipTurret_SmallEyeLaserTop.label>Малый глазной лазер</ShipTurret_SmallEyeLaserTop.label>
+<ShipTurret_SmallEyeLaserTop.description>Гигантский глаз с укрепленным пласталью зеркальцем. Малый радиус поражения.</ShipTurret_SmallEyeLaserTop.description>
+<ShipTurret_SmallEyeLaserTop.verbs.label>Выстрелить лазером</ShipTurret_SmallEyeLaserTop.verbs.label>
+
+<Proj_SmallEyeLaser.label>Лазерный луч</Proj_SmallEyeLaser.label>
+
+<Bullet_Ground_EyeLaser.label>Лазерный луч</Bullet_Ground_EyeLaser.label>
+
+<SmallEyeLaser.label>Лазер</SmallEyeLaser.label>
+<SmallEyeLaser.deathMessage>{0} был(а) сожжен(а) лазером.</SmallEyeLaser.deathMessage>
+
+<ShipTurret_MediumEyeLaser.label>Средний глазной лазер</ShipTurret_MediumEyeLaser.label>
+<ShipTurret_MediumEyeLaser.description>Гигантский глаз с укрепленным пласталью зеркальцем.</ShipTurret_MediumEyeLaser.description>
+
+<ShipTurret_MediumEyeLaserTop.label>Средний глазной лазер</ShipTurret_MediumEyeLaserTop.label>
+<ShipTurret_MediumEyeLaserTop.description>Гигантский глаз с укрепленным пласталью зеркальцем. Малый радиус поражения.</ShipTurret_MediumEyeLaserTop.description>
+<ShipTurret_MediumEyeLaserTop.verbs.label>Выстрелить лазером</ShipTurret_MediumEyeLaserTop.verbs.label>
+
+<Proj_MediumEyeLaser.label>Лазер</Proj_MediumEyeLaser.label>
+<Proj_MediumEyeLaser.deathMessage>{0} был(а) сожжен(а) лазером.</Proj_MediumEyeLaser.deathMessage>
+
+<ShipTurret_LargeEyeLaser.label>Большой глазной лазер</ShipTurret_LargeEyeLaser.label>
+<ShipTurret_LargeEyeLaser.description>Гигантский глаз с укрепленным пласталью зеркальцем. Малый радиус поражения.</ShipTurret_LargeEyeLaser.description>
+
+<ShipTurret_LargeEyeLaserTop.label>Большой глазной лазер</ShipTurret_LargeEyeLaserTop.label>
+<ShipTurret_LargeEyeLaserTop.description>Гигантский глаз с укрепленным пласталью зеркальцем. Малый радиус поражения.</ShipTurret_LargeEyeLaserTop.description>
+<ShipTurret_LargeEyeLaserTop.verbs.label>Выстрелить лазером</ShipTurret_LargeEyeLaserTop.verbs.label>
+
+<GiantEyeLaser.label>Гигантский глазной лазер</GiantEyeLaser.label>
+<GiantEyeLaser.description>Гигантский глаз с укрепленным пласталью зеркальцем. Малый радиус поражения. Присоединение к пучкам оптоволоконных нервов позволяет этому глазу излучать немыслимую мощь.</GiantEyeLaser.description>
+
+</LanguageData>

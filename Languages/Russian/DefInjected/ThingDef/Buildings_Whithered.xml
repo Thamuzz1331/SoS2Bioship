@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Whithered_Beam.label>Усохшая стена</Whithered_Beam.label>
+<Whithered_Beam.description>Усохшая плоть. Воссоедините с сердцем корабля для оживления.</Whithered_Beam.description>
+
+<Whithered_Beam_Unpowered.label>Усохшая стена (без коммуникаций)</Whithered_Beam_Unpowered.label>
+<Whithered_Beam_Unpowered.description>Усохшая стена. Воссоедините с сердцем корабля для оживления.</Whithered_Beam_Unpowered.description>
+
+<Whithered_Corner_OneOne.label>Усохший угол (1х1)</Whithered_Corner_OneOne.label>
+<Whithered_Corner_OneOneFlip.label>Усохший угол (1х1) (Перевернутый)</Whithered_Corner_OneOneFlip.label>
+<Whithered_Corner_OneTwo.label>Усохший угол (1х2)</Whithered_Corner_OneTwo.label>
+<Whithered_Corner_OneTwoFlip.label>Усохший угол (1х2) (Перевернутый)</Whithered_Corner_OneTwoFlip.label>
+<Whithered_Corner_OneThree.label>Усохший угол (1х3)</Whithered_Corner_OneThree.label>
+<Whithered_Corner_OneThreeFlip.label>Усохший угол (1х3) (Перевернутый)</Whithered_Corner_OneThreeFlip.label>
+
+<WhitheredHullTile.label>Усохший пол</WhitheredHullTile.label>
+
+<WhitheredAirlock.label>Усохший сфинктер</WhitheredAirlock.label>
+<TODO.description>Усохший сфинктер. Воссоедините с сердцем корабля для оживления.</TODO.description>
+
+<Whithered_Engine_Small.label>Усохший малый биодвигатель</Whithered_Engine_Small.label>
+<Whithered_Engine_Small.description>Усохший малый биодвигатель. Воссоедините с сердцем корабля для оживления.</Whithered_Engine_Small.description>
+
+<Whithered_Engine.label>Усохший биодвигатель</Whithered_Engine.label>
+<Whithered_Engine.description>Усохший биодвигатель. Воссоедините с сердцем корабля для оживления.</Whithered_Engine.description>
+
+<Whithered_Engine_Large.label>Усохший ядерный биодвигательL</Whithered_Engine_Large.label>
+<Whithered_Engine_Large.description>Усохший ядерный биодвигатель. Воссоедините с сердцем корабля для оживления.</Whithered_Engine_Large.description>
+
+<Whithered_Sensor.label>Усохший сенсорный пучок</Whithered_Sensor.label>
+<Whithered_Sensor.description>Усохший сенсорный пучок. Воссоедините с сердцем корабля для оживления.</Whithered_Sensor.description>
+
+<Whithered_Maw_Small.label>Усохшая малая пасть</Whithered_Maw_Small.label>
+<Whithered_Maw_Small.description>Усохшая малая пасть. Воссоедините с сердцем корабля для оживления. И берегите ноги.</Whithered_Maw_Small.description>
+
+<Whithered_Maw_Corpse.label>Усохшая трупная пасть</Whithered_Maw_Corpse.label>
+<Whithered_Maw_Corpse.description>Усохшая трупная пасть. Воссоедините с сердцем корабля для оживления.</Whithered_Maw_Corpse.description>
+
+<SmallWeaponWhithered.label>Усохшее малое орудие</SmallWeaponWhithered.label>
+<SmallWeaponWhithered.description>Усохшее малое орудие. Воссоедините с сердцем корабля для оживления.</SmallWeaponWhithered.description>
+
+<MediumWeaponWhithered.label>Усохшее орудие</MediumWeaponWhithered.label>
+<MediumWeaponWhithered.description>Усохшее орудие. Воссоедините с сердцем корабля для оживления.</MediumWeaponWhithered.description>
+
+<LargeWeaponWhithered.label>Усохшее крупное орудие</LargeWeaponWhithered.label>
+<LargeWeaponWhithered.description>Усохшее крупное орудие. Воссоедините с сердцем корабля для оживления.</LargeWeaponWhithered.description>
+
+<FatStoreSmallWhithered.label>Усохшее жировое отложение</FatStoreSmallWhithered.label>
+<FatStoreSmallWhithered.description>Усохшее жировое отложение. Воссоедините с сердцем корабля для оживления.</FatStoreSmallWhithered.description>
+
+<FatStoreLargeWhithered.label>Усохшее крупноее жировое отложение</FatStoreLargeWhithered.label>
+<FatStoreLargeWhithered.description>Усохшее крупное жировое отложение. Воссоедините с сердцем корабля для оживления.</FatStoreLargeWhithered.description>
+
+<WhitheredShieldGenerator.label>Усохший пучок щитовых нервов</WhitheredShieldGenerator.label>
+<WhitheredShieldGenerator.description>Усохший пучок щитовых нервов. Воссоедините с сердцем корабля для оживления.</WhitheredShieldGenerator.description>
+
+<WhitheredHeatsink.label>Усохший теплообменник</WhitheredHeatsink.label>
+<WhitheredHeatsink.description>Усохший теплообменник. Воссоедините с сердцем корабля для оживления.</WhitheredHeatsink.description>
+
+<WhitheredHeatsinkLarge.label>Усохший крупный теплообменник</WhitheredHeatsinkLarge.label>
+<WhitheredHeatsinkLarge.description>Усохший крупный теплообменник. Воссоедините с сердцем корабля для оживления.</WhitheredHeatsinkLarge.description>
+
+<WhitheredCoolantCyst.label>Усохшая киста с хладагентом</WhitheredCoolantCyst.label>
+<WhitheredCoolantCyst.description>Усохшая киста с хладагентом. Воссоедините с сердцем корабля для оживления.</WhitheredCoolantCyst.description>
+
+<WhitheredCoolantCystLarge.label>Усохшая крупная киста с хладагентом</WhitheredCoolantCystLarge.label>
+<WhitheredCoolantCystLarge.description>Усохшая крупная киста с хладагентом. Воссоедините с сердцем корабля для оживления.</WhitheredCoolantCystLarge.description>
+
+<WhitheredBioShipPurgePort.label>Усохший теплосбрасывающий сфинктер</WhitheredBioShipPurgePort.label>
+<WhitheredBioShipPurgePort.description>Усохший теплосбрасывающий сфинктер. Воссоедините с сердцем корабля для оживления.</WhitheredBioShipPurgePort.description>
+
+<WhitheredBioShipPurgePortLarge.label>Усохший крупный теплосбрасывающий сфинктер</WhitheredBioShipPurgePortLarge.label>
+<WhitheredBioShipPurgePortLarge.description>Усохший крупный теплосбрасывающий сфинктер. Воссоедините с сердцем корабля для оживления.</WhitheredBioShipPurgePortLarge.description>
+
+<Whithered_Giant_Mitochondira.label>Усохшая гигантская митохондрия</Whithered_Giant_Mitochondira.label>
+<Whithered_Giant_Mitochondira.description>Усохшая гигантская митохондрия. Воссоедините с сердцем корабля для оживления.</Whithered_Giant_Mitochondira.description>
+
+<Whithered_Colossal_Mitochondira.label>Усохшая колоссальная митохондрия</Whithered_Colossal_Mitochondira.label>
+<Whithered_Colossal_Mitochondira.description>Усохшая колоссальная митохондрия. Воссоедините с сердцем корабля для оживления.</Whithered_Colossal_Mitochondira.description>
+
+<WhitheredSpinalRoot.label>Усохший корень спинального орудия</WhitheredSpinalRoot.label>
+<WhitheredSpinalRoot.description>Усохший корень спинального орудия. Воссоедините с сердцем корабля для оживления.</WhitheredSpinalRoot.description>
+
+<WhitheredSpinalCoil.label>Усохшая катушка спинального орудия</WhitheredSpinalCoil.label>
+<WhitheredSpinalCoil.description>Усохшая катушка спинального орудия. Воссоедините с сердцем корабля для оживления.</WhitheredSpinalCoil.description>
+
+<WhitheredSpinalWeapon.label>Усохшее навершие спинального орудия</WhitheredSpinalWeapon.label>
+<WhitheredSpinalWeapon.description>Усохшее навершие спинального орудия. Воссоедините с сердцем корабля для оживления.</WhitheredSpinalWeapon.description>
+
+<BioCapacitorSmallWhithered.label>Усохшая батарея</BioCapacitorSmallWhithered.label>
+<BioCapacitorSmallWhithered.description>Усохшая батарея. Воссоедините с сердцем корабля для оживления.</BioCapacitorSmallWhithered.description>
+
+<SalvageMawWhithered.label>Усохшая пасть-падальщик</SalvageMawWhithered.label>
+<SalvageMawWhithered.description>Усохшая пасть-падальщик. Воссоедините с сердцем корабля для оживления.</SalvageMawWhithered.description>
+
+<HaulBeastSpawnerWhithered.label>Усохшая киста паразита-носильщика</HaulBeastSpawnerWhithered.label>
+<HaulBeastSpawnerWhithered.description>Усохшая киста паразита-носильщика. Воссоедините с сердцем корабля для оживления.</HaulBeastSpawnerWhithered.description>
+
+<ThreeHaulBeastSpawnerWhithered.label>Усохшая множественная киста паразита-носильщика</ThreeHaulBeastSpawnerWhithered.label>
+<ThreeHaulBeastSpawnerWhithered.description>Усохшая множественная киста паразита-носильщика. Воссоедините с сердцем корабля для оживления.</ThreeHaulBeastSpawnerWhithered.description>
+
+<WarBeastSpawnerWhithered.label>Усохшая киста паразита-воина</WarBeastSpawnerWhithered.label>
+<WarBeastSpawnerWhithered.description>Усохшая киста паразита-воина. Воссоедините с сердцем корабля для оживления.</WarBeastSpawnerWhithered.description>
+
+</LanguageData>

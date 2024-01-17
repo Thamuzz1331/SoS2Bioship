@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Geneline.label>Генная линия</Geneline.label>
+
+<AstralCniderianGeneline.label>Звездные Стрекающие</AstralCniderianGeneline.label>
+<AstralCniderianGeneline.description>Генная линия, берущая свои решения от земных Стрекающих - медуз, полипов, гидр и т.д.</AstralCniderianGeneline.description>
+
+<SmallNematocystGene.label>Малый нематоцист</SmallNematocystGene.label>
+<SmallNematocystGene.description>Взрывоопасная клетка, позволяющая запускать во врагов нити токсинов и кислот.</SmallNematocystGene.description>
+
+<MediumAcidGene.label>Кислотное оружие</MediumAcidGene.label>
+<MediumAcidGene.description>Специальные гланды запускают комки кислотной слизи.</MediumAcidGene.description>
+
+<HeavySpineGene.label>Костяные шипы</HeavySpineGene.label>
+<HeavySpineGene.description>Специализированные костяные шипы на биоплазменной тяге выискивают даже уклоняющуюся цель.</HeavySpineGene.description>
+
+<PolypCannon.label>Орудие медуз бездны</PolypCannon.label>
+<PolypCannon.description>Позволяет запускать медуз бездны - смертоносных пожирателей кораблей. Количество усилителей перед навершием орудия увеличивает количество запускаемых медуз (не больше 20).</PolypCannon.description>
+
+<CoralArmor.label>Коралловая броня</CoralArmor.label>
+<CoralArmor.description>Лежащие нахлестом листы коралловой брони отлично защищают от кислотных, токсичных и тупых атак.</CoralArmor.description>
+
+
+</LanguageData>

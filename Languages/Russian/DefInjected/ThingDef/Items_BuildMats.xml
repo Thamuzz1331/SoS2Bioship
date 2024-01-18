@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<ShipMeat.label>Корабельное мясо</ShipMeat.label>
+<ShipMeat.description>Разделанная плоть живого корабля. Вызывает отвращение тем, что даже в приготовленном виде пытается съесть тебя.</ShipMeat.description>
+
+<ProtienPutty.label>Протеиновая масса</ProtienPutty.label>
+<ProtienPutty.description>Глиноподобная смесь, которая при затвердевании помогает направлять рост живого корабля. Быстро разрушается под открытым небом и осадками.</ProtienPutty.description>
+
+<NutrientPod.label>Сверхконцентрированный питательный раствор</NutrientPod.label>
+<NutrientPod.description>Канистра сверхконцентрированного питательного раствора.</NutrientPod.description>
+
+<HeartSeed.label>Семя сердца</HeartSeed.label>
+<HeartSeed.description>Комок плоти, из которого вырастет сердце корабля.</HeartSeed.description>
+
+<OrganSeed.label>Семя органа</OrganSeed.label>
+<OrganSeed.description>Комок плоти, из которого вырастет орган корабля.</OrganSeed.description>
+
+</LanguageData>

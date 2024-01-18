@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Phantom_Turret.label>Фантом</Phantom_Turret.label>
+<Phantom_Turret.description>Фантом.</Phantom_Turret.description>
+
+<ShipTurret_Phantom.label>Фантом</ShipTurret_Phantom.label>
+<ShipTurret_Phantom.description>Фантом.</ShipTurret_Phantom.description>
+
+<ShipTurret_UVEyeLaser.label>Ультрафиолетовый глазной лазер</ShipTurret_UVEyeLaser.label>
+<ShipTurret_UVEyeLaser.description>Сконцентрированное ультрафиолетовое излучение крайне разрушительно. Несмотря на несравнимую мощь такого оружия, чудовищное радиационное излучение сильно затрудняет создание подходящей резонансной камеры. 
+
+Данный орган решает эту проблему, игнорируя ее и полагаясь на сверхбыструю регенерацию.</ShipTurret_UVEyeLaser.description>
+
+<ShipTurret_UVLaserTop.label>Ультрафиолетовый глазной лазер</ShipTurret_UVLaserTop.label>
+<ShipTurret_UVLaserTop.description>Сконцентрированное ультрафиолетовое излучение крайне разрушительно. Несмотря на несравнимую мощь такого оружия, чудовищное радиационное излучение сильно затрудняет создание подходящей резонансной камеры. 
+
+Данный орган решает эту проблему, игнорируя ее и полагаясь на сверхбыструю регенерацию.</ShipTurret_UVLaserTop.description>
+
+<Proj_UVEyeLaser.label>Лазерный луч</Proj_UVEyeLaser.label>
+
+<UVEyeLaser.label>Лазер</UVEyeLaser.label>
+<UVEyeLaser.deathMessage>{0} был(а) сожжен(а) лазерным лучом.</UVEyeLaser.deathMessage>
+
+<ShipTurret_VSEyeLaser.label>Глазной лазер видимого спектра</ShipTurret_VSEyeLaseryeLaser.label>
+<ShipTurret_VSEyeLaser.description>Сконцентрированный свет видимого спектра. Бьет дальше и точнее благодаря самовосстанавливающейся фокусировочной камере.</ShipTurret_VSEyeLaser.description>
+
+<ShipTurret_VSLaserTop.label>Глазной лазер видимого спектра</ShipTurret_VSLaserTop.label>
+<ShipTurret_VSLaserTop.description>Сконцентрированный свет видимого спектра. Бьет дальше и точнее благодаря самовосстанавливающейся фокусировочной камере.</ShipTurret_VSLaserTop.description>
+
+<SpinalWeaponRoot.label>Корень спинального орудия</SpinalWeaponRoot.label>
+<SpinalWeaponRoot.description>нарост, отвечающий за основное прикрепление спинального орудия биокорабля.</SpinalWeaponRoot.description>
+
+<SpinalWeaponCoil.label>Катушка спинального орудия</SpinalWeaponCoil.label>
+<SpinalWeaponCoil.description>Средний сегмент спинального орудия. Для работы орудия прикрепите один или более сегмент к корню орудия, а затем прикрепите само орудие.
+
+Увеличивает базовый урон, энергопотребление и тепловыделение на 25% от общего значения за каждый сегмент.</SpinalWeaponCoil.description>
+
+</LanguageData>

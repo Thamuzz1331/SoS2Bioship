@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<MutantEyebeastGeneline.label>Глазной мутант</MutantEyebeastGeneline.label>
+<MutantEyebeastGeneline.description>Да восторжествует зрячая плоть!</MutantEyebeastGeneline.description>
+
+<SmallEyelaserGene.label>Малый глазной лазер</SmallEyelaserGene.label>
+<SmallEyelaserGene.description>Укрепленная пласталью сетчатка гигантского глаза фокусирует свет в разрушительный луч энергии.</SmallEyelaserGene.description>
+
+<MediumEyelaserGene.label>Средний глазной лазер</MediumEyelaserGene.label>
+<MediumEyelaserGene.description>Укрепленная пласталью сетчатка гигантского глаза фокусирует свет в разрушительный луч энергии.</MediumEyelaserGene.description>
+
+<LargeEyelaserGene.label>Тяжелый глазной лазер</LargeEyelaserGene.label>
+<LargeEyelaserGene.description>Укрепленная пласталью сетчатка гигантского глаза фокусирует свет в разрушительный луч энергии.</LargeEyelaserGene.description>
+
+<CollosalEyelaserGene.label>Колоссальный глазной лазер</CollosalEyelaserGene.label>
+<CollosalEyelaserGene.description>Укрепленная пласталью сетчатка гигантского глаза фокусирует свет в разрушительный луч энергии.</CollosalEyelaserGene.description>
+
+<ThickHide.label>Толстая кожа</ThickHide.label>
+<ThickHide.description>Толстая кожа, закаленная ударами микрометеоритов.</ThickHide.description>
+
+</LanguageData>

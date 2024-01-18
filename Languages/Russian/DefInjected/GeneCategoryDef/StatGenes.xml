@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<StatGene.label>Параметр</StatGene.label>
+
+<ToxResistanceGene.label>Сопротивление токсинам</ToxResistanceGene.label>
+<ToxResistanceGene.description>Этот организм особенно устойчив к накоплению токсиных веществ.</ToxResistanceGene.description>
+
+<ToxVulnerabilityGene.label>Уязвимость к токсинам</ToxVulnerabilityGene.label>
+<ToxVulnerabilityGene.description>Этот организм особенно уязвим к накоплению токсичных веществ.</ToxVulnerabilityGene.description>
+
+<FastRegenGene.label>Быстрая регенерация</FastRegenGene.label>
+<FastRegenGene.description>Раны этого организма закрываются быстрее обычного.</FastRegenGene.description>
+
+<SlowRegenGene.label>Медленная регенерация</SlowRegenGene.label>
+<SlowRegenGene.description>Раны этого организма закрываются медленнее обычного.</SlowRegenGene.description>
+
+<StrongShieldGene.label>Сильные щиты</StrongShieldGene.label>
+<StrongShieldGene.description>Щиты этого организма сильнее обычных.</StrongShieldGene.description>
+
+<VeryStrongShieldGene.label>Очень сильные щиты</VeryStrongShieldGene.label>
+<VeryStrongShieldGene.description>Щиты этого организма чрезвычайно сильны.</VeryStrongShieldGene.description>
+
+<WeakShieldGene.label>Слабые щиты</WeakShieldGene.label>
+<WeakShieldGene.description>Щиты этого организма слабее обычных.</WeakShieldGene.description>
+
+<PatheticShieldGene.label>Ничтожные щиты</PatheticShieldGene.label>
+<PatheticShieldGene.description>Щиты этого организма ничтожно слабы.</PatheticShieldGene.description>
+
+</LanguageData>

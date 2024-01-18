@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<VoidDragonGeneline.label>Дракон Пустоты</VoidDragonGeneline.label>
+<VoidDragonGeneline.description>В космосе не было драконов. Кто-то решил исправить этот страшный недочёт.</VoidDragonGeneline.description>
+
+<SmallPlasmaMawGene.label>Малая плазменная пасть</SmallPlasmaMawGene.label>
+<SmallPlasmaMawGene.description>Биологические электромагнитные катушки запускают ком нестабильной слизи, который при ударе взрывается плазмой.</SmallPlasmaMawGene.description>
+
+<MediumPlasmaMawGene.label>Средняя плазменная пасть</MediumPlasmaMawGene.label>
+<MediumPlasmaMawGene.description>Биологические электромагнитные катушки запускают ком нестабильной слизи, который при ударе взрывается плазмой.</MediumPlasmaMawGene.description>
+
+<HeavyPlasmaMawGene.label>Большая плазменная пасть</HeavyPlasmaMawGene.label>
+<HeavyPlasmaMawGene.description>Биологические электромагнитные катушки запускают ком нестабильной слизи, который при ударе взрывается плазмой.</HeavyPlasmaMawGene.description>
+
+<DragonMawGene.label>Пасть дракона</DragonMawGene.label>
+<DragonMawGene.description>Биологические электромагнитные катушки изрыгают разрушительный поток раскаленной плазмы.</DragonMawGene.description>
+
+<DragonscaleGene.label>Чешуя дракона</DragonscaleGene.label>
+<DragonscaleGene.description>Толстые чешуйки биологической пластали отлично защищают от плазменного урона.</DragonscaleGene.description>
+
+</LanguageData>

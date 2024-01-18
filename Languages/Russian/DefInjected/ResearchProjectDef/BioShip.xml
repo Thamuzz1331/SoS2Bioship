@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<ResearchTabBioShip.label>Биокорабль</ResearchTabBioShip.label>
+
+<ProtienRendering.label>Изготовление протеина</ProtienRendering.label>
+<ProtienRendering.description>Живой корабль - это не тот организм, в генах которого записан путь взросления. Рост живого корабля должен быть направлен этой протеиновой массой для достижения своей финальной формы.</ProtienRendering.description>
+<ProtienRendering.discoveredLetterTitle>О выращивании живого корабля:</ProtienRendering.discoveredLetterTitle>
+<ProtienRendering.discoveredLetterText>Выращивание живого корабля значительно отличается от строительства обычного корабля. Первый шаг - выстроить внешние стены корабля из протеиновых распорок; затем необходимо заполнить внутреннее пространство протеиновыми распорками пола. Следующий шаг - построить Сердце корабля на протееиновых распорках пола и дать ему время на рост. По мере роста Сердце будет поглощать питательные элементы из своих запасов, поэтому запаситесь мясом.</ProtienRendering.discoveredLetterText>
+
+<StructuralScaffold.label>Протеиновые распорки</StructuralScaffold.label>
+<StructuralScaffold.description>Наперво мы явим миру ребра и кости, дабы плоть знала свое место.
+
+Комментарий исследователя: простые изменения в расположении глины приводят к образованию костей, мускулов и соединительной ткани.</StructuralScaffold.description>
+
+<NerveStapling.label>Нейронная блокада</NerveStapling.label>
+<NerveStapling.description>Неконтролируемый рост может привести к неконтролируемым последствиям. Умертвив части чудовища, вы можете точнее направлять его развитие в нужном направлении.</NerveStapling.description>
+
+<BioshipDrugs.label>Введение химикатов</BioshipDrugs.label>
+<BioshipDrugs.description>Знания, полученные в ходе экспериментов с нейронной блокадой, позволили исследовать способ введения иных веществ в кровеносную систему корабля.</BioshipDrugs.description>
+
+<BioshipGenetics.label>Генетическая экспрессия</BioshipGenetics.label>
+<BioshipGenetics.description>Генетическая структура живого корабля крайне гибка. Это исследование позволит изменять генетическую структуру корабля.</BioshipGenetics.description>
+
+<MetabolicScaffoldSimple.label>Простые метаболические распорки</MetabolicScaffoldSimple.label>
+<MetabolicScaffoldSimple.description>Голод направит первый всплеск роста, но далее необходима осторожность и внимательность. Никому не нравится, когда по твоим коридорам и артериям расползаются блестящие жировые наросты и голодные пасти, да, малыш?</MetabolicScaffoldSimple.description>
+
+<MetabolicScaffoldAdvanced.label>Продвинутые метаболические распорки</MetabolicScaffoldAdvanced.label>
+<MetabolicScaffoldAdvanced.description>Ты вкусил сладость простой плоти, малыш. Но пред тобой открываются более сложные блюда.</MetabolicScaffoldAdvanced.description>
+
+<ThermoregulatoryScaffolds.label>Теплообменные распорки</ThermoregulatoryScaffolds.label>
+<ThermoregulatoryScaffolds.description>Битва кипятит твою кровь и лихорадит, малыш. Позволь нам показать, как остудить свой пыл.</ThermoregulatoryScaffolds.description>
+
+<SmallWeaponScaffold.label>Малые орудийные распорки</SmallWeaponScaffold.label>
+<SmallWeaponScaffold.description>Прими наш дар, малыш. Этими бросками ты отвадишь застигнутого врасплох охотника... или обездвижишь свою жертву.</SmallWeaponScaffold.description>
+
+<MediumWeaponScaffold.label>Средние орудийные распорки</MediumWeaponScaffold.label>
+<MediumWeaponScaffold.description>Жгучие химикаты для растворения и горения, малыш. Сожги, спали, раствори шкуру своей жертвы.</MediumWeaponScaffold.description>
+
+<LargeWeaponScaffold.label>Крупные орудийные распорки</LargeWeaponScaffold.label>
+<LargeWeaponScaffold.description>Шипы для атаки держащегося поодаль врага, считающего тебя беспомощным на этой дистанции. Покарай их за беспечность, малыш.</LargeWeaponScaffold.description>
+
+<SpinalWeaponScaffold.label>Спинальные орудийные распорки</SpinalWeaponScaffold.label>
+<SpinalWeaponScaffold.description>Какую форму примет твое самое могучее оружие, малыш, мы можем только гадать.</SpinalWeaponScaffold.description>
+
+<GangliaClusterScaffold.label>Простые распорки оборудования</GangliaClusterScaffold.label>
+<GangliaClusterScaffold.description>Ускорь свои мысли, малыш, и позволь этой скорости вырвать тебя из объятий гравитации.</GangliaClusterScaffold.description>
+
+<AdvancedGangliaClusterScaffold.label>Продвинутые распорки оборудования</AdvancedGangliaClusterScaffold.label>
+<AdvancedGangliaClusterScaffold.description>Малыш, да будет воля твоя сталью, о которую разобьются атаки противника. Ничто не тронет твою плоть.</AdvancedGangliaClusterScaffold.description>
+
+<ServitorScaffolds.label>Паразитические распорки</ServitorScaffolds.label>
+<ServitorScaffolds.description>Мясо должно быть в пасти, а вторженцы должны стать мясом. Эти симбиоты станут твоей волей внутри тебя.</ServitorScaffolds.description>
+
+</LanguageData>

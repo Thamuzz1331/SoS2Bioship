@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Bio_Ship_Beam.label>Корабельная плоть</Bio_Ship_Beam.label>
+<Bio_Ship_Beam.description>Плоть биокорабля. Выращена сердцем корабля, направлена протеиновыми распорками.</Bio_Ship_Beam.description>
+
+<Bio_Ship_Beam_Unpowered.label>Корабельная плоть</Bio_Ship_Beam_Unpowered.label>
+<Bio_Ship_Beam_Unpowered.description>Плоть биокорабля. Выращена сердцем корабля, направлена протеиновыми распорками. Не проводит тепло или электричество.</Bio_Ship_Beam_Unpowered.description>
+
+<Bio_Ship_Corner_OneOne.label>Уголок из корабельной плоти (1х1)</Bio_Ship_Corner_OneOne.label>
+
+<Bio_Ship_Corner_OneOneFlip.label>Уголок из корабельной плоти (1х1) (перевернутый)</Bio_Ship_Corner_OneOneFlip.label>
+
+<Bio_Ship_Corner_OneTwo.label>Уголок из корабельной плоти (1х2)</Bio_Ship_Corner_OneTwo.label>
+
+<Bio_Ship_Corner_OneTwoFlip.label>Уголок из корабельной плоти (1х2) (перевернутый)</Bio_Ship_Corner_OneTwoFlip.label>
+
+<Bio_Ship_Corner_OneThree.label>Уголок из корабельной плоти (1х3)</Bio_Ship_Corner_OneThree.label>
+
+<Bio_Ship_Corner_OneThreeFlip.label>Уголок из корабельной плоти (1х3) (перевернутый)</Bio_Ship_Corner_OneThreeFlip.label>
+
+<BioShipHullTile.label>Мясистый пол биокорабля</BioShipHullTile.label>
+
+<BioShipAirlock.label>Живой сфинктер биокорабля</BioShipAirlock.label>
+<BioShipAirlock.description>Выполняет роль внутренних и внешних дверей биокорабля.  Проницаемый слой биологической слизи предотвращает потерю атмосферы.</BioShipAirlock.description>
+
+<BioShip_Engine_Small.label>Малый биодвигатель</BioShip_Engine_Small.label>
+<BioShip_Engine_Small.description>Малый химический биодвигатель. Биодвигатель питается топливом и подходит для выхода на орбиту, но недостаточен для межпланетных путешествий.</BioShip_Engine_Small.description>
+
+<BioShip_Engine.label>Биодвигатель</BioShip_Engine.label>
+<BioShip_Engine.description>Химический биодвигатель. Биодвигатель питается топливом и подходит для выхода на орбиту, но недостаточен для межпланетных путешествий. В два раза мощнее и вместительнее малого биодвигателя.</BioShip_Engine.description>
+
+<BioShip_Engine_Large.label>Ядерный биодвигатель</BioShip_Engine_Large.label>
+<BioShip_Engine_Large.description>Ядерный биодвигатель. Биодвигатель питается урановым топливом и подходит для выхода на орбиту за счет превращения взлетной области в радиоактивный ад, но недостаточен для межпланетных путешествий.
+
+В шесть раз мощнее малого биодвигателя.</BioShip_Engine_Large.description>
+
+<BioShip_SensorCluster.label>Органический сенсор</BioShip_SensorCluster.label>
+<BioShip_SensorCluster.description>Низкоэнергетический органический сенсор. Может производить равзедку окружающего космоса на предмет точек интереса, а также сканировать планету.</BioShip_SensorCluster.description>
+
+<Maw_Small.label>Малая корабельная пасть</Maw_Small.label>
+<Maw_Small.description>Малая корабельная пасть. Берегите ноги.</Maw_Small.description>
+
+<Maw_Corpse.label>Трупная пасть</Maw_Corpse.label>
+<Maw_Corpse.description>Корабельная пасть, насытившаяся добычей.</Maw_Corpse.description>
+
+<FatStoreSmall.label>Малое жировое отложение</FatStoreSmall.label>
+<FatStoreSmall.description>Хранит в себе до 25 единиц нутриентов.</FatStoreSmall.description>
+
+<FatStoreLarge.label>Крупное жировое отложение</FatStoreLarge.label>
+<FatStoreLarge.description>Хранит в себе до 250 единиц нутриентов.</FatStoreLarge.description>
+
+<BioShieldGenerator.label>Щитовые пучки нейронов</BioShieldGenerator.label>
+<BioShieldGenerator.description>Кластер специализированных нейронов, необходимый для поддержания скип-щита. Снаряды могут проходить только наружу, но не извне. 
+
+Блокирование снарядов генерирует тепло. Если в сети избыток тепла, генератор сломается и будет нуждаться в ремонте. Пока щиты активны, корабль не может сбрасывать накопившееся тепло через радиаторы. 
+
+Капитану рекомендуется отключать щиты при критическом накоплении тепла, чтобы не превратить корабль в духовку.</BioShieldGenerator.description>
+
+<Bioship_PassiveVent.label>Дыхальце</Bioship_PassiveVent.label>
+<Bioship_PassiveVent.description>Проводит теплообмен с системой хладагента, охлаждая или нагревая комнаты до необходимой температуры.
+
+Также может нагревать комнаты с помощью электричества.</Bioship_PassiveVent.description>
+
+<BioShipHeatsink.label>Малый теплообменник</BioShipHeatsink.label>
+<BioShipHeatsink.description>Малый теплообменник постоянно сбрасывает накопленное тепло в комнату, в которой находится. 
+
+Емкость: 200 единиц
+Скорость теплообмена: 0,5 единиц/секунду</BioShipHeatsink.description>
+
+<BioShipHeatsinkLarge.label>Крупный теплообменник</BioShipHeatsinkLarge.label>
+<BioShipHeatsinkLarge.description>Крупный теплообменник постоянно сбрасывает накопленное тепло в комнату, в которой находится. 
+
+Емкость: 1000 единиц
+Скорость теплообмена: 0,5 единиц/секунду</BioShipHeatsinkLarge.description>
+
+<BioShipCoolantCyst.label>Охладительная киста</BioShipCoolantCyst.label>
+<BioShipCoolantCyst.description>Киста с хладагентом.
+
+Емкость: 800 единиц тепла;
+Скорость теплообмена: 6 единиц/секунду.</BioShipCoolantCyst.description>
+
+<BioShipCoolantCystLarge.label>Крупная киста с хладагентом</BioShipCoolantCystLarge.label>
+<BioShipCoolantCystLarge.description>Крупная киста с хладагентом.
+
+Емкость: 4000 единиц тепла;
+Скорость теплообмена: 18 единиц/секунду.</BioShipCoolantCystLarge.description>
+
+<BioShipPurgePort.label>Теплосбросный сфинктер</BioShipPurgePort.label>
+<BioShipPurgePort.description>Теплосбросный сфинктер. Перегретая жижа выбрасывается из корабля, снижая накопление тепла в системе. Щиты в это время не работают.</BioShipPurgePort.description>
+
+<BioShipPurgePortLarge.label>Большой теплосбросный сфинктер</BioShipPurgePortLarge.label>
+<BioShipPurgePortLarge.description>Большой теплосбросный сфинктер. Перегретая жижа выбрасывается из корабля, обнуляя накопление тепла в системе. Щиты в это время не работают.</BioShipPurgePortLarge.description>
+
+<Giant_Mitochondira.label>Гигантская митохондрия</Giant_Mitochondira.label>
+<Giant_Mitochondira.description>Гигантская митохондрия, энергетический источник монстра.</Giant_Mitochondira.description>
+
+<Colossal_Mitochondira.label>Колоссальная митохондрия</Colossal_Mitochondira.label>
+<Colossal_Mitochondira.description>Колоссальная митохондрия, энергетический источник монстра.</Colossal_Mitochondira.description>
+
+<BioCapacitorSmall.label>Биобатарея</BioCapacitorSmall.label>
+<BioCapacitorSmall.description>Биобатарея, эффективно хранящяя до 1000Wd.</BioCapacitorSmall.description>
+
+<SalvageMaw.label>Пасть-падальщик</SalvageMaw.label>
+<SalvageMaw.description>Пасть-падальщик. Каждая пасть может собрать до 1000кг обломков кораблей после сражения.</SalvageMaw.description>
+
+<HaulBeastSpawner.label>Киста паразита-носильщика</HaulBeastSpawner.label>
+<HaulBeastSpawner.description>Киста паразита-носильщика, из которой появится паразит-носильщик.</HaulBeastSpawner.description>
+
+<ThreeHaulBeastSpawner.label>Множественная киста паразита-носильщика</ThreeHaulBeastSpawner.label>
+<ThreeHaulBeastSpawner.description>Киста паразита-носильщика, из которой появятся три паразита-носильщика.</ThreeHaulBeastSpawner.description>
+
+<WarBeastSpawner.label>Киста паразита-воина</WarBeastSpawner.label>
+<WarBeastSpawner.description>Киста паразита-воина, из которой появится паразит-воин.</WarBeastSpawner.description>
+
+</LanguageData>

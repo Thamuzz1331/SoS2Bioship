@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<ShipTurret_SmallPlasmaMaw.label>Малая биоплазменная пасть</ShipTurret_SmallPlasmaMaw.label>
+<ShipTurret_SmallPlasmaMaw.description>Плюется сгустком плазмы, взрывающимся при попадании. Орудие среднего радиуса действия с уроном по большой площади. 
+
+При отсутствии доступа к тепловой сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_SmallPlasmaMaw.description>
+
+<ShipTurretTop_BioPlasmaTopSmall.label>Малая биоплазменная пасть</ShipTurretTop_BioPlasmaTopSmall.label>
+<ShipTurretTop_BioPlasmaTopSmall.description>Плюется сгустком плазмы, взрывающимся при попадании. Орудие среднего радиуса действия с уроном по большой площади. 
+
+При отсутствии доступа к тепловой сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurretTop_BioPlasmaTopSmall.description>
+<ShipTurretTop_BioPlasmaTopSmall.verbs.label>Выстрелить плазмой</ShipTurretTop_BioPlasmaTopSmall.verbs.label>
+
+<Bullet_Fake_BioPlasma.label>Сгусток плазмы</Bullet_Fake_BioPlasma.label>
+
+<Proj_BioShipTurretPlasma.label>Сгусток плазмы</Proj_BioShipTurretPlasma.label>
+
+<Bullet_Ground_Plasma.label>Сгусток плазмы</Bullet_Ground_Plasma.label>
+
+<BioShipPlasmaSmall.label>Плазма</BioShipPlasmaSmall.label>
+<BioShipPlasmaSmall.deathMessage>{0} был(а) испепелен(а) плазмой.</BioShipPlasmaSmall.deathMessage>
+
+<ShipTurret_MediumPlasmaMaw.label>Биоплазменная пасть</ShipTurret_MediumPlasmaMaw.label>
+<ShipTurret_MediumPlasmaMaw.description>Плюется сгустком плазмы, взрывающимся при попадании. Орудие среднего радиуса действия с уроном по большой площади. 
+
+При отсутствии доступа к тепловой сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_MediumPlasmaMaw.description>
+
+<ShipTurret_MediumBioPlasmaTop.label>Биоплазменная пасть</ShipTurret_MediumBioPlasmaTop.label>
+<ShipTurret_MediumBioPlasmaTop.description>Плюется сгустком плазмы, взрывающимся при попадании. Орудие среднего радиуса действия с уроном по большой площади. 
+
+При отсутствии доступа к тепловой сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_MediumBioPlasmaTop.description>
+<ShipTurret_MediumBioPlasmaTop.verbs.label>Выстрелить плазмой</ShipTurret_MediumBioPlasmaTop.verbs.label>
+
+<Proj_Fake_BioPlasmaMedium.label>Сгусток плазмы</Proj_Fake_BioPlasmaMedium.label>
+
+<Proj_BioPlasmaMedium.label>Сгусток плазмы</Proj_BioPlasmaMedium.label>
+
+<ShipBioPlasmaMedium.label>Плазма</ShipBioPlasmaMedium.label>
+<ShipBioPlasmaMedium.deathMessage>{0} был(а) испепелен(а) плазмой.</ShipBioPlasmaMedium.deathMessage>
+
+<ShipTurret_LargePlasmaMaw.label>Большая биоплазменная пасть</ShipTurret_LargePlasmaMaw.label>
+<ShipTurret_LargePlasmaMaw.description>Плюется сгустком плазмы, взрывающимся при попадании. Орудие среднего радиуса действия с уроном по большой площади. 
+
+При отсутствии доступа к тепловой сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_LargePlasmaMaw.description>
+
+<ShipTurret_LargeBioPlasmaTop.label>Большая биоплазменная пасть</ShipTurret_LargeBioPlasmaTop.label>
+<ShipTurret_LargeBioPlasmaTop.description>Плюется сгустком плазмы, взрывающимся при попадании. Орудие среднего радиуса действия с уроном по большой площади. 
+
+При отсутствии доступа к тепловой сети будет сбрасывать излишек тепла в окружающую комнату.</ShipTurret_LargeBioPlasmaTop.description>
+<ShipTurret_LargeBioPlasmaTop.verbs.label>Выстрелить плазмой</ShipTurret_LargeBioPlasmaTop.verbs.label>
+
+<DragonMaw.label>Пасть дракона</DragonMaw.label>
+<DragonMaw.description>Биомагнитные катушки сжимают материю в кипящую плазму, прежде чем извергнуть ее потоком разрушения.
+			
+			Навершие спинального орудия. Стоит строить его снаружи корабля, если вас не интересуют новые отверстия в стенах.</DragonMaw.description>
+
+</LanguageData>

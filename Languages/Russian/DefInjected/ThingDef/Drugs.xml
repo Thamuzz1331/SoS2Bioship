@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<LuciferiumInjector.label>Инжектор люциферия</LuciferiumInjector.label>
+<LuciferiumInjector.description>Вводит люциферий в сердце корабля. ВНИМАНИЕ: зависимые биокорабли крайне прожорливы, и требуют 1 люциферий за каждые сто структурных компонентов в сутки. В случае недостаточности люциферия произойдет катастрофический всплеск агрессии биокорабля.</LuciferiumInjector.description>
+<DrugLuciferium.label>Люциферий</DrugLuciferium.label>
+<DrugLuciferium.description>Активные наночастицы люциферия. Они значительно увеличивают все телесные показатели. Без новых регулярных доз механиты приведут к агрессивному безумию.</DrugLuciferium.description>
+<AddictionLuciferium.label>Зависимость от люциферия</AddictionLuciferium.label>
+<AddictionLuciferium.description>Активные наночастицы люциферия. Люцифериевые механиты теряют связность с течением времени; единственный способ обратить этот процесс - введение новых доз.
+			\nБез новых доз, бессвязность наночастиц достигнет критических значений и приведет к безумию и смерти.</AddictionLuciferium.description>
+<WakeUpInjector.label>Инжектор бодрина</WakeUpInjector.label>
+<WakeUpInjector.description>Вводит бодрин в сердце корабля.</WakeUpInjector.description>
+<DrugWakeup.label>Бодрин</DrugWakeup.label>
+<DrugWakeup.description>Бодрин в кровотоке. Разгоняет процессы в сердце корабля, усиливая щиты и двигатели.</DrugWakeup.description>
+<AddictionWakeup.label>Зависимость от бодрина</AddictionWakeup.label>
+<AddictionWakeup.description>Химическая зависимость от бодрина. Длительное присутствие бодрина в крови привело к адаптации на клеточном уровне, поэтому мозг не может нормально функционировать в отсутствие новых доз.
+			\nВ случае воздержания возникают симптомы отмены. Несмотря на это, длительные симптомы отмены приведут к обратной мозговой адаптации, нивелируя последствия.</AddictionWakeup.description>
+			
+</LanguageData>

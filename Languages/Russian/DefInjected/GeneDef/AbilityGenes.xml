@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<AbilityGene.label>Умение</AbilityGene.label>
+
+<PsiSuppressionGene.label>Псионическое подавление</PsiSuppressionGene.label>
+<PsiSuppressionGene.description>Этот организм может подавлять разум вражеской команды.</PsiSuppressionGene.description>
+
+</LanguageData>

@@ -10,6 +10,7 @@ namespace RimWorld
     {
         public List<BuildingGeneDef> heartGenes = null;
         public ShipGenelineDef geneline = null;
+		public Thing TargetHeart = null;
 
         public List<BuildingGeneDef> GeneSet
         {
@@ -90,6 +91,7 @@ namespace RimWorld
 			}
 		}
 
+
 		public void RandInit(int metCost = 1)
         {
 			geneline = DefDatabase<ShipGenelineDef>.GetRandom();
@@ -115,11 +117,24 @@ namespace RimWorld
 			}
 		}
 
+		public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Add(parent);
+        }
+
         public override void PostExposeData()
         {
             base.PostExposeData();
+			Scribe_References.Look(ref TargetHeart, "targetHeart", false);
             Scribe_Defs.Look(ref geneline, "geneline");
             Scribe_Collections.Look(ref heartGenes, "heartGenes", LookMode.Def);
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
+            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Remove(parent);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -141,6 +156,49 @@ namespace RimWorld
                 b.Append("\n" + gDef.label);
             }
             return b.ToString();
+        }
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+			foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+			{
+				yield return gizmo;
+			}
+			List<Thing> hearts = new List<Thing>();
+
+			foreach(BuildingBody b in ((MapCompBuildingTracker)this.parent.Map.components.Where(t => t is MapCompBuildingTracker).FirstOrDefault()).bodies?.Values)
+            {
+				if (b.heart != null)
+                {
+					hearts.Add(b.heart.parent);
+                }
+            }
+
+			if (this.TargetHeart == null)
+            {
+				yield return new Command_Action
+                {
+					defaultLabel = "Implant heartseed",//"ImplantHeartseed".Translate(),
+					action = delegate ()
+					{
+						List<FloatMenuOption> options = new List<FloatMenuOption>();
+						foreach (Thing heart in hearts)
+                        {
+							options.Add(new FloatMenuOption(
+								heart.TryGetComp<CompShipHeart>()?.bodyName,
+								delegate()
+                                {
+									this.TargetHeart = heart;
+                                }));
+                        }
+						if (options.Count > 0)
+                        {
+							FloatMenu menu = new FloatMenu(options);
+							Find.WindowStack.Add(menu);
+                        }
+					},
+				};
+			}
         }
 
         public static ShipGenelineDef Geneline = null;

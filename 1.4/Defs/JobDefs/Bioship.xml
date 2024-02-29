@@ -8,8 +8,12 @@
 	<JobDef>
 		<defName>CreateShipXenogerm</defName>
 		<driverClass>JobDriver_CreateShipXenogerm</driverClass>
-		<reportString>creating shipheart.</reportString>
+		<reportString>creating heartseed.</reportString>
 		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
 	</JobDef>
-
+	<JobDef>
+		<defName>ImplantHeartSeed</defName>
+		<driverClass>JobDriver_ImplantHeartSeed</driverClass>
+		<reportString>implanting heartseed.</reportString>
+	</JobDef>
 </Defs>

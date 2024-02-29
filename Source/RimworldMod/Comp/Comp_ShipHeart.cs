@@ -302,8 +302,25 @@ namespace RimWorld
                     }
                 };
 			}
-
 		}
+
+        public void ApplyHeartSeed(CompHeartSeed seed)
+        {
+            foreach (BuildingGene gene in this.genes.ToArray())
+            {
+                this.RemoveGene(gene);
+            }
+            ShipGeneline g = ShipGenelineMaker.MakeShipGeneline(this.geneline);
+            this.AddGene(g.smallTurretGene);
+            this.AddGene(g.mediumTurretGene);
+            this.AddGene(g.largeTurretGene);
+            this.AddGene(g.spinalTurretGene);
+            this.AddGene(g.armor);
+            foreach(BuildingGeneDef gd in seed.heartGenes)
+            {
+                this.AddGene(BuildingGeneMaker.MakeBuildingGene(gd, false));
+            }
+        }
 
         public override string ToString()
         {

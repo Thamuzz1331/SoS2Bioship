@@ -7,6 +7,7 @@ using Verse.AI;
 
 namespace RimWorld
 {
+    [StaticConstructorOnStartup]
     public class JobDriver_RefuleButcherableScaling : JobDriver
     {
         private const int Duration = 400;

@@ -509,6 +509,50 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	</ThingDef>
+		<ThingDef ParentName="BuildingBase">
+		<defName>Whithered_Engine_RCS</defName>
+		<label>whithered rcs bioengine</label>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<passability>PassThroughOnly</passability>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1.5)</drawSize>
+		</graphicData>
+		<researchPrerequisites>
+			<li>GangliaClusterScaffold</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<WorkToBuild>500</WorkToBuild>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<description>A small thruster that is required to reposition ships. One is required for every 2000 weight.</description>
+		<size>(1,1)</size>
+		<receivesSignals>true</receivesSignals>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>Whithered_Engine_RCS</transformString>
+			</li>
+		</comps>
+		<building>
+			<shipPart>true</shipPart>
+		</building>
+		<costList>
+			<ProtienPutty>4</ProtienPutty>
+			<Neutroamine>7</Neutroamine>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Engine</defName>
 		<label>medium engine Whithered</label>
@@ -1749,7 +1793,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<designationCategory>Ship</designationCategory>
 		<designationHotKey>Misc2</designationHotKey>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<building>

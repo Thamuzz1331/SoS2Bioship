@@ -15,4 +15,5 @@
 	<ShipDevourWreckCommand>Devour wreck</ShipDevourWreckCommand>
 	<ShipDevourWreckCommandDesc>Devour a wreck for nutrition.</ShipDevourWreckCommandDesc>
 	<ShipDevourWreckDisabled>Cannot devour a fighting ship.</ShipDevourWreckDisabled>
+	<ImplantHeartseed>Implant Heartseed</ImplantHeartseed>
 </LanguageData>

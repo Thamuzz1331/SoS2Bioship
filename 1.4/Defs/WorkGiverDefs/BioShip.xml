@@ -25,4 +25,9 @@
 		</requiredCapacities>
 		<canBeDoneByMechs>false</canBeDoneByMechs>
 	</WorkGiverDef>
+	<WorkGiverDeg>
+		<defName>ImplantShipXenogerm</defName>
+		<label>implant heartseed</label>
+		<giverClass>WorkGiver_ImplantHeartSeed</giverClass>
+	</WorkGiverDeg>
 </Defs>

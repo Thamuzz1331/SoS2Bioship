@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<GiantBrainGenes.label>Гигантский мозг из глубокого космоса</GiantBrainGenes.label>
+
+<MotiveGangliaGene.label>Подвижные ганглии</MotiveGangliaGene.label>
+<MotiveGangliaGene.description>Генераторы щита также играют роль безынерционных двигателей, позволяя живому кораблю перемещаться исключительно силой своей воли.</MotiveGangliaGene.description>
+
+<UVEyeLaser.label>Ультрафиолетовый глазной лазер</UVEyeLaser.label>
+<UVEyeLaser.description>Большие распорки орудий вырастают в ультрафиолетовые глазные лазеры, уничтожающие врага на огромной дистанции.</UVEyeLaser.description>
+
+<VSEyeLaser.label>Глазной лазер видимого спектра</VSEyeLaser.label>
+<VSEyeLaser.description>Средние распорки орудий вырастают в глазные лазеры видимого спектра, уничтожающие врага на средней дистанции</VSEyeLaser.description>
+
+<Gbfos_Rand_1.label>Случайный ген мозга</Gbfos_Rand_1.label>
+<Gbfos_Rand_1.description>Случайные ген из данной генной линии.</Gbfos_Rand_1.description>
+
+</LanguageData>

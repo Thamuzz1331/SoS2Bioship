@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Spine_Heavy.label>Тяжелый костяной шип</Spine_Heavy.label>
+<Spine_Heavy.description>Тяжелый костяной шип на биоплазменной тяге.</Spine_Heavy.description>
+
+<Bullet_Fake_Spine_Heavy.label>Тяжелый костяной шип</Bullet_Fake_Spine_Heavy.label>
+
+<Bullet_Spine_Heavy.label>Тяжелый костяной шип</Bullet_Spine_Heavy.label>
+
+<Spine_HeavyDense.label>Сверхплотный костяной шип</Spine_HeavyDense.label>
+<Spine_HeavyDense.description>Сверхплотный костяной шип на биоплазменной тяге.</Spine_HeavyDense.description>
+
+<Bullet_Fake_Spine_Dense.label>Плотный костяной шип</Bullet_Fake_Spine_Dense.label>
+
+<Bullet_Spine_Dense.label>Плотный костяной шип</Bullet_Spine_Dense.label>
+
+<Spine_Penetrator.label>Пробивающий костяной шип</Spine_Penetrator.label>
+<Spine_Penetrator.description>Пробивающий костяной шип на биоплазменной тяге.</Spine_Penetrator.description>
+
+<Bullet_Fake_Spine_Penetrator.label>Пробивающий костяной шип</Bullet_Fake_Spine_Penetrator.label>
+
+<Bullet_Spine_Penetrator.label>Пробивающий костяной шип</Bullet_Spine_Penetrator.label>
+
+<Bullet_Spine_Penetrator_StageTwo.label>Пробивающий костяной шип</Bullet_Spine_Penetrator_StageTwo.label>
+
+<Spine_Light.label>Лёгкий костяной шип</Spine_Light.label>
+<Spine_Light.description>Лёгкий костяной шип на биоплазменной тяге.</Spine_Light.description>
+
+<Bullet_Fake_Spine_Light.label>Лёгкий костяной шип</Bullet_Fake_Spine_Light.label>
+
+<Bullet_Spine_Light.label>Лёгкий костяной шип</Bullet_Spine_Light.label>
+
+</LanguageData>

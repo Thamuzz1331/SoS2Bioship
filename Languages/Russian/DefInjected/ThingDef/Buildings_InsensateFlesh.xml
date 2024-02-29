@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LanguageData>
+
+<Bio_Ship_Beam_Insensate.label>Бесчувственная плоть</Bio_Ship_Beam_Insensate.label>
+<Bio_Ship_Beam_Insensate.description>Плоть биокорабля. Выращена сердцем корабля, направлена протеиновыми распорками.
+
+Эта секция была подвергнута нейронной блокаде и не будет разрастаться или регенерировать.</Bio_Ship_Beam_Insensate.description>
+
+<Bio_Ship_Beam_Unpowered_Insensate.label>Бесчувственная плоть</Bio_Ship_Beam_Unpowered_Insensate.label>
+<Bio_Ship_Beam_Unpowered_Insensate.description>Плоть биокорабля. Выращена сердцем корабля, направлена протеиновыми распорками. Не проводит тепло или электричество.
+
+Эта секция была подвергнута нейронной блокаде и не будет разрастаться или регенерировать.</Bio_Ship_Beam_Unpowered_Insensate.description>
+
+<Bio_Ship_Corner_OneOne_Insensate.label>Уголок из бесчувственной плоти (1х1)</Bio_Ship_Corner_OneOne_Insensate.label>
+
+<Bio_Ship_Corner_OneOneFlip_Insensate.label>Уголок из бесчувственной плоти (1х1) (перевернутый)</Bio_Ship_Corner_OneOneFlip_Insensate.label>
+
+<Bio_Ship_Corner_OneTwo_Insensate.label>Уголок из бесчувственной плоти (1х2)</Bio_Ship_Corner_OneTwo_Insensate.label>
+
+<Bio_Ship_Corner_OneTwoFlip_Insensate.label>Уголок из бесчувственной плоти (1х2) (перевернутый)</Bio_Ship_Corner_OneTwoFlip_Insensate.label>
+
+<Bio_Ship_Corner_OneThree_Insensate.label>Уголок из бесчувственной плоти (1х3)</Bio_Ship_Corner_OneThree_Insensate.label>
+
+<Bio_Ship_Corner_OneThreeFlip_Insensate.label>Уголок из бесчувственной плоти (1х3) (перевернутый)</Bio_Ship_Corner_OneThreeFlip_Insensate.label>
+
+<BioShipHullTile_Insensate.label>Бесчувственный пол биокорабля</BioShipHullTile_Insensate.label>
+
+<BioShipAirlock_Insensate.label>Бесчувственный сфинктер биокорабля</BioShipAirlock_Insensate.label>
+<BioShipAirlock_Insensate.description>Выполняет роль внутренних и внешних дверей биокорабля.  Проницаемый слой биологической слизи предотвращает потерю атмосферы.</BioShipAirlock_Insensate.description>
+
+</LanguageData>

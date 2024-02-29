@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<Bioship.TabMutations>Мутации</Bioship.TabMutations>
+	<Bioship.TabGenes>Гены</Bioship.TabGenes>
+	<tier1>Уровень 1</tier1>
+	<tier2>Уровень 2</tier2>
+	<tier3>Уровень 3</tier3>
+	<regenEfficiency>Эффективность регенерации</regenEfficiency>
+	<regenSpeed>Скорость регенерации</regenSpeed>
+	<conciousness>Сознание</conciousness>
+	<shieldStrength>Сила щита</shieldStrength>
+	<movementSpeed>Мощность ускорения</movementSpeed>
+	<toxSensitivity>Чувствительность к токсинам</toxSensitivity>
+	<fleshthing>Плоть ненавидящая</fleshthing>
+	<ShipDevourWreckCommand>Сожрать обломки</ShipDevourWreckCommand>
+	<ShipDevourWreckCommandDesc>Сожрать обломки для восстановления питательных веществ.</ShipDevourWreckCommandDesc>
+	<ShipDevourWreckDisabled>Жертва еще сопротивляется.</ShipDevourWreckDisabled>
+</LanguageData>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+<AbstractHeart.label>Сердце корабля</AbstractHeart.label>
+<AbstractHeart.description>Бьющееся сердце корабля.</AbstractHeart.description>
+
+<Ship_Heart.label>Сердце корабля</Ship_Heart.label>
+<Ship_Heart.description>Бьющееся сердце корабля.</Ship_Heart.description>
+
+<ShipfleshAnalysisStation.label>Кодекс Плоти</ShipfleshAnalysisStation.label>
+<ShipfleshAnalysisStation.description>Исследовательская станция, на которой можно раскрыть секреты чудовищного семени.</ShipfleshAnalysisStation.description>
+
+<NerveStaple.label>Нейронная блокада</NerveStaple.label>
+<NerveStaple.description>Набор имплантов, умертвляющий плоть и снижающий рост и агрессию корабля.</NerveStaple.description>
+
+<NutrientInjector.label>Инжектор нутриентов</NutrientInjector.label>
+<NutrientInjector.description>Позволяет запустить сердце, пополняя его внутренние жировые запасы. Внимание: излишки питательных веществ будут утеряны.</NutrientInjector.description>
+
+<GeneBankShipHeart.label>Хранилище сердец</GeneBankShipHeart.label>
+<GeneBankShipHeart.description>Это строение позволяет хранить сердца и размножать их в размножителе сердец.</GeneBankShipHeart.description>
+
+<ShipGeneAssembler.label>Рамзножитель сердец</ShipGeneAssembler.label>
+<ShipGeneAssembler.description>Это строение может подключаться к хранилищам сердец для их скрещивания и размножения.</ShipGeneAssembler.description>
+
+</LanguageData>

@@ -81,7 +81,7 @@
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 				<roof>true</roof>
@@ -99,8 +99,8 @@
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 		</comps>
 		<placeWorkers>
@@ -163,7 +163,7 @@
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 				<roof>true</roof>
@@ -433,7 +433,7 @@
 		<description>Allows access to a ship or divides rooms inside it.  A permiable mucus layer prevents the loss of gasses.</description>
 		<category>Building</category>
 		<designationCategory></designationCategory>
-		<thingClass>Building_ShipAirlock</thingClass>
+		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
 		<useHitPoints>true</useHitPoints>
@@ -454,8 +454,8 @@
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
@@ -471,8 +471,8 @@
 				<regenDef>ScarHullTile</regenDef>
 				<species>bioship</species>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>

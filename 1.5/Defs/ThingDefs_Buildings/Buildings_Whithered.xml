@@ -37,7 +37,7 @@
 		<description>Whithered flesh.  Connect to a heart to restore its vitality</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 				<roof>true</roof>
@@ -110,7 +110,7 @@
 		<description>Whithered wall.  Connect to a well fed ShipHeart to revitalize</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 				<roof>true</roof>
@@ -362,9 +362,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
-		</placeWorkers>
 		<rotatable>false</rotatable>
 		<selectable>false</selectable>
 		<costList>
@@ -385,7 +382,7 @@
 		<label>bioship sphintcer Whithered</label>
 		<description>Whithered to grow a sphincter.</description>
 		<category>Building</category>
-		<thingClass>Building_ShipAirlock</thingClass>
+		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
 		<useHitPoints>true</useHitPoints>
@@ -410,8 +407,8 @@
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
@@ -423,8 +420,8 @@
 				<hermetic>true</hermetic>
 				<roof>true</roof>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -591,9 +588,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_ShipEngine</li>
-		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
@@ -641,9 +635,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_ShipEngine</li>
-		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
 		</building>
@@ -680,8 +671,8 @@
 		<description>Whithered for an organic sensor array.</description>
 		<size>(1,1)</size>
 		<comps>
-			<li Class="CompProperties_SoShipPart"/>
-			<li Class="CompProperties_Scaffold">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
+				<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShip_SensorCluster</transformString>
 			</li>
@@ -1010,9 +1001,6 @@
 			</damageData>
 		</graphicData>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<placeWorkers>
-			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
-		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
@@ -1115,8 +1103,8 @@
 		<costList>
 		</costList>
 		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSink</compClass>
 				<heatCapacity>800</heatCapacity>
 				<heatLoss>6</heatLoss>
 				<threat>1</threat>
@@ -1146,8 +1134,8 @@
 		<costList>
 		</costList>
 		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSink</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSink</compClass>
 				<heatCapacity>4000</heatCapacity>
 				<heatLoss>18</heatLoss>
 				<threat>5</threat>
@@ -1184,33 +1172,9 @@
 				<species>bioship</species>
 				<transformString>BioShipPurgePort</transformString>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatPurge</compClass>
-				<heatPurge>5</heatPurge>
-				<threat>5</threat>
-			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>500.0</fuelCapacity>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<fuelFilter>
-					<thingDefs>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<autoRefuelPercent>100</autoRefuelPercent>
-				<showFuelGizmo>true</showFuelGizmo>
-				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
-			<li Class="CompProperties_NutritionRefueler">
-				<refuelInterval>5</refuelInterval>
-				<refuelCost>0.5</refuelCost>
-				<refuelAmmount>1</refuelAmmount>
 			</li>
 		</comps>
 		<researchPrerequisites>
@@ -1242,39 +1206,14 @@
 				<species>bioship</species>
 				<transformString>BioShipPurgePortLarge</transformString>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatPurge</compClass>
-				<heatPurge>25</heatPurge>
-				<threat>30</threat>
-			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>2500.0</fuelCapacity>
-				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				<fuelFilter>
-					<thingDefs>
-					</thingDefs>
-				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
-				<autoRefuelPercent>1</autoRefuelPercent>
-				<showFuelGizmo>true</showFuelGizmo>
-				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
-				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
-			<li Class="CompProperties_NutritionRefueler">
-				<refuelInterval>5</refuelInterval>
-				<refuelCost>0.5</refuelCost>
-				<refuelAmmount>1.25</refuelAmmount>
 			</li>
 		</comps>
 		<researchPrerequisites>
 		</researchPrerequisites>
 	</ThingDef>
-	
 	
 	<ThingDef ParentName="BuildingBase">
 		<defName>Whithered_Giant_Mitochondira</defName>
@@ -1478,9 +1417,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_NeedsSpinalMountPort</li>
-		</placeWorkers>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
@@ -1623,9 +1559,6 @@
 		<researchPrerequisites>
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
-		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
-		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>ThreeHaulBeastSpawnerWhithered</defName>
@@ -1673,9 +1606,6 @@
 		<researchPrerequisites>
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
-		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
-		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>WarBeastSpawnerWhithered</defName>
@@ -1723,9 +1653,6 @@
 		<researchPrerequisites>
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
-		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
-		</placeWorkers>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1769,12 +1696,9 @@
 		</costList>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
-		<placeWorkers>
-			<li>PlaceWorker_ShipVent</li>
-		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 			</li>
@@ -1786,8 +1710,8 @@
 				<species>bioship</species>
 				<transformString>Bioship_PassiveVent</transformString>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>

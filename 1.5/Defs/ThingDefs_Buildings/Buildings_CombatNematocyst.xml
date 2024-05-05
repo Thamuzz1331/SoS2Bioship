@@ -11,7 +11,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<speed>100</speed>
@@ -24,7 +24,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_ShipTurretNematocystBattering</defName>
 		<label>nematocyst</label>
-		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShip</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -52,7 +52,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<speed>100</speed>
@@ -65,7 +65,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_ShipTurretNematocystSplintering</defName>
 		<label>nematocyst</label>
-		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShip</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -98,7 +98,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(6,6)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<speed>100</speed>
@@ -111,7 +111,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_ShipTurretNematocystEnergized</defName>
 		<label>nematocyst</label>
-		<thingClass>Projectile_ExplosiveShipCombat</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShip</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

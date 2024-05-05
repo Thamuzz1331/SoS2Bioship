@@ -37,7 +37,7 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 				<roof>true</roof>
@@ -54,8 +54,8 @@
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 		</comps>
 		<rotatable>false</rotatable>
@@ -112,7 +112,7 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 			</li>
@@ -177,7 +177,7 @@
 		<designationCategory>Ship</designationCategory>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<roof>true</roof>
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
@@ -460,7 +460,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_ShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_ShipHull</li>
 		</placeWorkers>
 		<rotatable>false</rotatable>
 		<selectable>false</selectable>
@@ -489,7 +489,7 @@
 		<description>Scaffold to grow a sphincter.</description>
 		<designationCategory>Ship</designationCategory>
 		<category>Building</category>
-		<thingClass>Building_ShipAirlock</thingClass>
+		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
 		<useHitPoints>true</useHitPoints>
@@ -517,13 +517,13 @@
 				<compClass>CompPowerTransmitter</compClass>
 				<transmitsPower>true</transmitsPower>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			
 			<li Class="CompProperties_Forbiddable"/>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -614,7 +614,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_ShipEngine</li>
+			<li>SaveOurShip2.PlaceWorker_ShipEngine</li>
 		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
@@ -712,7 +712,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_ShipEngine</li>
+			<li>SaveOurShip2.PlaceWorker_ShipEngine</li>
 		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
@@ -764,7 +764,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_ShipEngine</li>
+			<li>SaveOurShip2.PlaceWorker_ShipEngine</li>
 		</placeWorkers>
 		<building>
 			<shipPart>true</shipPart>
@@ -830,7 +830,7 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<DesignatorDropdownGroupDef>
@@ -882,7 +882,7 @@
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentTrap</li>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -933,7 +933,7 @@
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentTrap</li>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -979,7 +979,7 @@
 			<li>SmallWeaponScaffold</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 		<castEdgeShadows>true</castEdgeShadows>
@@ -1021,7 +1021,7 @@
 			<li>MediumWeaponScaffold</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 		<castEdgeShadows>true</castEdgeShadows>
@@ -1067,7 +1067,7 @@
 		</costList>
 		<designationHotKey>Misc5</designationHotKey>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
@@ -1082,7 +1082,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<description>Scaffold for the primary attachment point of a bioship spinal weapon.</description>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/Root_Scaffold</texPath>
+			<texPath>Things/Building/Scaffold/Root_Scafold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(5,3.2)</drawSize>
@@ -1117,7 +1117,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_SpinalMountPort</li>
+			<li>SaveOurShip2.PlaceWorker_SpinalMountPort</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
@@ -1168,7 +1168,7 @@
 		</comps>
 		<placeWorkers>
 			<li>PlaceWorker_BioShipNeedsSpinalMountPort</li>
-			<li>PlaceWorker_SpinalMountPort</li>
+			<li>SaveOurShip2.PlaceWorker_SpinalMountPort</li>
 		</placeWorkers>
 		<researchPrerequisites>
 			<li>SpinalWeaponScaffold</li>
@@ -1241,7 +1241,7 @@
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/FatDeposite_Scafold</texPath>
+			<texPath>Things/Building/Scaffold/FatDeposit_Scafold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1,2)</drawSize>
 			<damageData>
@@ -1283,7 +1283,7 @@
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	
@@ -1295,7 +1295,7 @@
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldFatSmall</texPath>
+			<texPath>Things/Building/Scaffold/FatDeposit_Scafold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(3,5)</drawSize>
 			<damageData>
@@ -1338,7 +1338,7 @@
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 
@@ -1373,7 +1373,8 @@
 			</damageData>
 		</graphicData>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_ShipShieldRadius</li>
 		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_MutableScaffold">
@@ -1441,11 +1442,11 @@
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<placeWorkers>
-			<li>PlaceWorker_ShipVent</li>
+			<li>SaveOurShip2.PlaceWorker_ShipVent</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 			</li>
@@ -1457,8 +1458,8 @@
 				<species>bioship</species>
 				<transformString>Bioship_PassiveVent</transformString>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -1518,7 +1519,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1556,7 +1557,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1594,7 +1595,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1632,7 +1633,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1671,7 +1672,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1710,7 +1711,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 
@@ -1764,7 +1765,7 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -1814,7 +1815,7 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 
@@ -1828,7 +1829,7 @@
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/BioCapacitor_Scaffold</texPath>
+			<texPath>Things/Building/Scaffold/BioCapacitor_Scafold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(3,1)</drawSize>
 			<damageData>
@@ -1922,7 +1923,7 @@
 			<li>MetabolicScaffoldAdvanced</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	
@@ -1979,7 +1980,7 @@
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -2031,7 +2032,7 @@
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -2083,7 +2084,7 @@
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>PlaceWorker_OnShipHull</li>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
 		</placeWorkers>
 	</ThingDef>
 </Defs>

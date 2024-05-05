@@ -39,9 +39,9 @@
 			<li>ITab_ShipGenes</li>
 		</inspectorTabs>
 		<comps>
-			<li Class="CompProperties_SoShipPart"/>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
 			<li Class="CompProperties_ShipPart"/>
-			<li Class="CompProperties_ShipHeat">
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>CompHeartHeat</compClass>
 			</li>
 			<li Class="CompProperties_Power">

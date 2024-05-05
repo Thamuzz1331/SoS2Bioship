@@ -16,8 +16,8 @@
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 				<heatPerPulse>10</heatPerPulse>
 				<energyToFire>80</energyToFire>
 				<optRange>50</optRange>
@@ -57,7 +57,7 @@
 		<verbs>
 			<li>
 				<label>shoot laser</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>500</range>
 				<minRange>29.9</minRange>
@@ -79,7 +79,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_SmallEyeLaser</defName>
 		<label>laser beam</label>
-		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShipLaser</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -156,8 +156,8 @@
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 				<heatPerPulse>30</heatPerPulse>
 				<energyToFire>240</energyToFire>
 				<optRange>50</optRange>
@@ -199,7 +199,7 @@
 		<verbs>
 			<li>
 				<label>shoot laser</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>1000</range>
 				<warmupTime>0</warmupTime>
@@ -220,7 +220,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_MediumEyeLaser</defName>
 		<label>laser beam</label>
-		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShipLaser</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -278,8 +278,8 @@
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 				<heatPerPulse>30</heatPerPulse>
 				<energyToFire>240</energyToFire>
 				<optRange>50</optRange>
@@ -320,7 +320,7 @@
 		<verbs>
 			<li>
 				<label>shoot laser</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>1000</range>
 				<warmupTime>0</warmupTime>
@@ -376,13 +376,13 @@
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
-			<li Class="CompProperties_SpinalMount">
+			<li Class="SaveOurShip2.CompProps_SpinalMount">
 				<emits>false</emits>
 				<receives>true</receives>
 				<color>(0.5,0,0)</color>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>120</heatPerPulse>
 				<energyToFire>360</energyToFire>
 				<maxRange>50</maxRange>
@@ -400,9 +400,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_NeedsSpinalMountPort</li>
-		</placeWorkers>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>

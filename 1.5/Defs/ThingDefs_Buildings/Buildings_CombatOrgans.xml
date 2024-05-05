@@ -8,8 +8,8 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>25</heatPerPulse>
 				<energyToFire>25</energyToFire>
 				<maxRange>500</maxRange>
@@ -48,7 +48,7 @@
 		<verbs>
 			<li>
 				<label>firenothing</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>12.9</range>
 				<warmupTime>1.5</warmupTime>
@@ -86,8 +86,8 @@
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 				<heatPerPulse>30</heatPerPulse>
 				<energyToFire>240</energyToFire>
 				<optRange>300</optRange>
@@ -129,7 +129,7 @@
 		<verbs>
 			<li>
 				<label>shoot laser</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>1000</range>
 				<warmupTime>0</warmupTime>
@@ -150,7 +150,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Proj_UVEyeLaser</defName>
 		<label>laser beam</label>
-		<thingClass>Projectile_ExplosiveShipCombatLaser</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShipLaser</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -193,7 +193,7 @@
 		<defName>ShipTurret_VSEyeLaser</defName>
 		<label>visual spectrum eye laser</label>
 		<description>Concentrated visual spectrum light.  Longer ranged than tranditional infrared lasers, made possible by a self healing focusing chamber.</description>
-		<thingClass>Building_ShipTurret</thingClass>
+		<thingClass>SaveOurShip2.Building_ShipTurret</thingClass>
 		<designationCategory />
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
@@ -208,8 +208,8 @@
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeat</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
 				<heatPerPulse>15</heatPerPulse>
 				<energyToFire>75</energyToFire>
 				<optRange>100</optRange>
@@ -251,7 +251,7 @@
 		<verbs>
 			<li>
 				<label>shoot laser</label>
-				<verbClass>Verb_LaunchProjectileShip</verbClass>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<range>1000</range>
 				<warmupTime>0</warmupTime>
@@ -303,7 +303,7 @@
 				<species>bioship</species>
 				<whitherTo>WhitheredSpinalWeaponRoot</whitherTo>
 			</li>
-			<li Class="CompProperties_SpinalMount">
+			<li Class="SaveOurShip2.CompProps_SpinalMount">
 				<emits>true</emits>
 				<stackEnd>true</stackEnd>
 			</li>
@@ -312,7 +312,7 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_SpinalMountPort</li>
+			<li>SaveOurShip2.PlaceWorker_SpinalMountPort</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
@@ -349,7 +349,7 @@
 			<ShipMeat>100</ShipMeat>
 		</costList>
 		<comps>
-			<li Class="CompProperties_SpinalMount">
+			<li Class="SaveOurShip2.CompProps_SpinalMount">
 				<emits>true</emits>
 				<receives>true</receives>
 				<ampAmount>0.25</ampAmount>
@@ -363,8 +363,8 @@
 			</li>
 		</comps>
 		<placeWorkers>
-			<li>PlaceWorker_NeedsSpinalMountPort</li>
-			<li>PlaceWorker_SpinalMountPort</li>
+			<li>SaveOurShip2.PlaceWorker_NeedsSpinalMountPort</li>
+			<li>SaveOurShip2.PlaceWorker_SpinalMountPort</li>
 		</placeWorkers>
 		<researchPrerequisites>
 		</researchPrerequisites>

@@ -39,7 +39,7 @@ namespace RimWorld
             {
                 if (toReload == null)
                 {
-                    toReload = ((Building_ShipTurret)parent).gun.TryGetComp<SaveOurShip2.CompChangeableProjectile>();
+                    toReload = ((SaveOurShip2.Building_ShipTurret)parent).gun.TryGetComp<SaveOurShip2.CompChangeableProjectile>();
                 }
                 if (toReload != null && !toReload.FullyLoaded && body != null && body.heart != null)
                 {

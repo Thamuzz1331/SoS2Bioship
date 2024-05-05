@@ -11,7 +11,7 @@ using SaveOurShip2;
 
 namespace RimWorld
 {
-    public class Verb_MutableProjectileShip : Verb_LaunchProjectileShip
+    public class Verb_MutableProjectileShip : SaveOurShip2.Verb_LaunchProjectileShip
     {
         public override ThingDef Projectile
         {

@@ -27,7 +27,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<!-- damage amount is the damage def default -->
@@ -43,7 +43,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Bullet_Spine_Heavy</defName>
 		<label>heavy bone spike</label>
-		<thingClass>Projectile_TorpedoShipCombat</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShipTorpedo</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/HeavySpine</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -91,7 +91,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<!-- damage amount is the damage def default -->
@@ -106,7 +106,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Bullet_Spine_Dense</defName>
 		<label>dense bone spike</label>
-		<thingClass>Projectile_TorpedoShipCombat</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShipTorpedo</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/HeavySpine</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -154,7 +154,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<speed>60</speed>
@@ -232,7 +232,7 @@
 			<shaderType>TransparentPostLight</shaderType>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
-		<thingClass>Projectile_SoSFake</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ShipFake</thingClass>
 		<projectile>
 			<damageDef>Bomb</damageDef>
 			<!-- damage amount is the damage def default -->
@@ -248,7 +248,7 @@
 	<ThingDef ParentName="BaseGrenadeProjectile">
 		<defName>Bullet_Spine_Light</defName>
 		<label>light bone spike</label>
-		<thingClass>Projectile_TorpedoShipCombat</thingClass>
+		<thingClass>SaveOurShip2.Projectile_ExplosiveShipTorpedo</thingClass>
 		<graphicData>
 			<texPath>Things/Projectile/LightSpine</texPath>
 			<graphicClass>Graphic_Single</graphicClass>

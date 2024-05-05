@@ -12,7 +12,7 @@
 		</statBases>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipShieldGenerator</texPath>
-			<graphicClass>Graphic_SingleOnOff</graphicClass>
+			<graphicClass>SaveOurShip2.Graphic_SingleOnOff</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<shadowData>
 				<volume>(2.6, 0.8, 2.6)</volume>
@@ -22,23 +22,20 @@
 			</damageData>
 		</graphicData>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<placeWorkers>
-			<li>PlaceWorker_ShipProjectileInterceptorRadius</li>
-		</placeWorkers>
 		<comps>
-			<li Class="CompProperties_SoShipPart">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>WhitheredShieldGenerator</whitherTo>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipCombatShield</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatShield</compClass>
 				<heatMultiplier>0.1</heatMultiplier>
 				<color>(0,255,100)</color>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -114,13 +111,13 @@
 		<costList>
 		</costList>
 		<comps>
-			<li Class="CompProperties_SpinalMount">
+			<li Class="SaveOurShip2.CompProps_SpinalMount">
 				<emits>false</emits>
 				<receives>true</receives>
 				<color>(0.5,0,0)</color>
 			</li>
-			<li Class="CompProperties_ShipHeat">
-				<compClass>CompShipHeatSource</compClass>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>120</heatPerPulse>
 				<energyToFire>360</energyToFire>
 				<maxRange>50</maxRange>
@@ -138,9 +135,6 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
-		<placeWorkers>
-			<li>PlaceWorker_NeedsSpinalMountPort</li>
-		</placeWorkers>
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>

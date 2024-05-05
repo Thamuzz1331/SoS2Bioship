@@ -15,7 +15,7 @@ namespace RimWorld
     {
         private CompProperties_NutritionLoader Props => (CompProperties_NutritionLoader)props;
 
-        private CompChangeableProjectilePlural toReload = null;
+        private SaveOurShip2.CompChangeableProjectile toReload = null;
         private float ticksTillLoad = 0;
         public List<int> torpSpawn = new List<int>() { 
             1,
@@ -39,7 +39,7 @@ namespace RimWorld
             {
                 if (toReload == null)
                 {
-                    toReload = ((Building_ShipTurret)parent).gun.TryGetComp<CompChangeableProjectilePlural>();
+                    toReload = ((Building_ShipTurret)parent).gun.TryGetComp<SaveOurShip2.CompChangeableProjectile>();
                 }
                 if (toReload != null && !toReload.FullyLoaded && body != null && body.heart != null)
                 {

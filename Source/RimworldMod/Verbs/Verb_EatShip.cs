@@ -37,7 +37,7 @@ namespace RimWorld
 
         public void AfterTarget(Building b)
         {
-
+/*
             HashSet<IntVec3> positions = ShipInteriorMod2.FindAreaAttached(b, true);
             List<CompRefuelable> maws = new List<CompRefuelable>();
             foreach(Thing maw in sourceMap.listerThings.ThingsOfDef(ThingDef.Named("SalvageMaw")))
@@ -89,7 +89,7 @@ namespace RimWorld
             {
                 ShipInteriorMod2.RemoveShip(null, false, positions, targetMap);
             }));
-
+*/
         }
     }
 }

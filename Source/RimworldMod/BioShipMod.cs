@@ -13,7 +13,7 @@ using System.Text;
 using UnityEngine;
 using Verse.AI.Group;
 using RimWorld.QuestGen;
-using RimworldMod;
+//using RimworldMod;
 using System.Net;
 using System.IO;
 using System.Collections;
@@ -55,7 +55,7 @@ namespace BioShip
 
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
 
-		public static IntVec3 FindBurstLocation(CompShipCombatShield shield, LocalTargetInfo target)
+		public static IntVec3 FindBurstLocation(CompShipHeatShield shield, LocalTargetInfo target)
         {
 			Map sourceMap = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
 			if (shield.parent.Map == sourceMap)
@@ -75,7 +75,7 @@ namespace BioShip
 			}
 		}
 
-		public static void ReflectShot(CompShipCombatShield shield, Projectile_ExplosiveShipCombat proj)
+		public static void ReflectShot(CompShipHeatShield shield, Projectile proj)
         {
 			Vector3 origin = Traverse.Create(proj).Field("origin").GetValue<Vector3>();
 			int ticksToImpact = Traverse.Create(proj).Field("ticksToImpact").GetValue<int>();
@@ -129,6 +129,7 @@ namespace BioShip
 		[HarmonyPostfix]
 		public static void DrawNutritionBars(ColonistBar __instance)
 		{
+			/*
 			Map mapPlayer = Find.Maps.Where(m => m.GetComponent<ShipHeatMapComp>().InCombat && !m.GetComponent<ShipHeatMapComp>().ShipCombatOrigin).FirstOrDefault();
 			if (mapPlayer != null)
             {
@@ -162,7 +163,7 @@ namespace BioShip
 					else
 						Widgets.Label(rect3, "<color=red>Nutrition: N/A</color>");
                 }
-            }
+            }*/
 		}	
 	}
 

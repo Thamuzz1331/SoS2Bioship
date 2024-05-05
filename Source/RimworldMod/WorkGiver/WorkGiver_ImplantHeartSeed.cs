@@ -23,7 +23,13 @@ namespace RimWorld
 
 		public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
 		{
-			return ((CorpseMawTracker)pawn.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds;
+			List<CompHeartSeed> seeds = ((CorpseMawTracker)pawn.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds;
+			List<Thing> ret = new List<Thing>();
+			foreach(CompHeartSeed seed in seeds)
+            {
+				ret.Add(seed.parent);
+            }
+			return ret;
 		}
 
 		public override Danger MaxPathDanger(Pawn pawn)
@@ -34,11 +40,13 @@ namespace RimWorld
 		public override bool HasJobOnThing(Pawn pawn, Thing thing, bool forced = false)
 		{
 			CompHeartSeed heartSeed = thing.TryGetComp<CompHeartSeed>();
-			return heartSeed != null 
-				&& !thing.IsForbidden(pawn) 
-				&& pawn.CanReserveAndReach(thing, PathEndMode.Touch, pawn.NormalMaxDanger(), 1, -1, null, false) 
+			bool hasJob = heartSeed != null
+				&& !thing.IsForbidden(pawn)
+				&& pawn.CanReserveAndReach(thing, PathEndMode.Touch, pawn.NormalMaxDanger(), 1, -1, null, false)
 				&& FindHeart(pawn, thing) != null
 				&& !thing.IsBurning();
+			Log.Message("hasJob" + hasJob);
+			return hasJob;
 		}
 
 		public override Job JobOnThing(Pawn pawn, Thing thing, bool forced = false)
@@ -48,7 +56,8 @@ namespace RimWorld
             {
 				return null;
             }
-			return JobMaker.MakeJob(BioShipJobDefs.ImplantHeartSeed, thing, t);
+			Log.Message("Make implant job");
+			return JobMaker.MakeJob(BioShipJobDefs.ImplantHeartSeed, t, thing);
 		}
 
 		private Thing FindHeart(Pawn pawn, Thing thing)

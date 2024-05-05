@@ -10,7 +10,7 @@ using Verse;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompRoofMeBio : CompSoShipPart
+    public class CompRoofMeBio : CompShipCachePart
     {
         public CompProperties_RoofMeBio BioProps
         {

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using SaveOurShip2;
 
 namespace RimWorld
 {
-    public class Projectile_MonsterSpawner : Projectile_ExplosiveShipCombat
+    public class Projectile_MonsterSpawner : Projectile_ExplosiveShip
     {
         public override void Tick()
         {
@@ -15,7 +16,7 @@ namespace RimWorld
             IntVec3 p = this.Position;
             base.Tick();
 
-            foreach (CompShipCombatShield shield in m.GetComponent<ShipHeatMapComp>().Shields)
+            foreach (CompShipHeatShield shield in m.GetComponent<ShipMapComp>().Shields)
             {
                 if (!shield.shutDown && Position.DistanceTo(shield.parent.Position) <= shield.radius)
                 {

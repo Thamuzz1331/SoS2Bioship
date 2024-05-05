@@ -44,6 +44,11 @@
 			<li Class="CompProperties_ShipHeat">
 				<compClass>CompHeartHeat</compClass>
 			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>0</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
 			<li Class="CompProperties_Aggression">
 				<baseAggression>1</baseAggression>
 			</li>
@@ -58,11 +63,6 @@
 			<li Class="CompProperties_ShipNutritionStore">
 				<nutrientCapacity>50</nutrientCapacity>
 				<initialNutrition>50</initialNutrition>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>0</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>

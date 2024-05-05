@@ -13,7 +13,7 @@ using HarmonyLib;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompUnfoldTwitch : UnfoldComponent
+    public class CompUnfoldTwitch : CompUnfold
     {
         private float ticksToTwitchInterval = 0;
         private float twitchInterval = 180;

@@ -9,17 +9,16 @@ using UnityEngine;
 using Verse;
 using LivingBuildings;
 
-
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompSalvageMaw : CompShipSalvageBay
+    public class CompSalvageMaw : CompShipBaySalvage
     {
         private new CompProperties_SalvageMaw Props => (CompProperties_SalvageMaw)props;
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            var mapComp = this.parent.Map.GetComponent<ShipHeatMapComp>();
+            var mapComp = this.parent.Map.GetComponent<ShipMapComp>();
 
             foreach (Gizmo item in base.CompGetGizmosExtra())
             {
@@ -32,7 +31,7 @@ namespace RimWorld
                 List<Map> salvagableMaps = new List<Map>();
                 foreach (Map map in Find.Maps)
                 {
-                    if (map.GetComponent<ShipHeatMapComp>().IsGraveyard)
+                    if (map.GetComponent<ShipMapComp>().ShipMapState == ShipMapState.isGraveyard)
                         salvagableMaps.Add(map);
                 }
                 foreach (Map map in salvagableMaps)
@@ -46,7 +45,7 @@ namespace RimWorld
                         defaultLabel = TranslatorFormattedStringExtensions.Translate("ShipDevourWreckCommand") + " (" + map + ")",
                         defaultDesc = TranslatorFormattedStringExtensions.Translate("ShipDevourWreckCommandDesc") + map
                     };
-                    if (mapComp.InCombat)
+                    if (mapComp.ShipMapState == ShipMapState.inCombat)
                         eatShipEnemy.Disable(TranslatorFormattedStringExtensions.Translate("ShipDevourWreckDisabled"));
                     yield return eatShipEnemy;
                 }

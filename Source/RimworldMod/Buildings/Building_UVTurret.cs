@@ -9,7 +9,7 @@ using Verse.Sound;
 using SaveOurShip2;
 using RimWorld.Planet;
 using HarmonyLib;
-using RimworldMod;
+//using RimworldMod;
 
 namespace RimWorld
 {

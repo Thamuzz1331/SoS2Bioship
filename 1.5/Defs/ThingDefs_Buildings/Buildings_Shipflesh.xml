@@ -819,7 +819,7 @@
 		<thingClass>Building_ShipAdvSensor</thingClass>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/ShipSensorCluster</texPath>
+			<texPath>Things/Building/Ship/BioSensorCluster</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1,1)</drawSize>
 		</graphicData>
@@ -1724,7 +1724,7 @@
 			<li>BuildingsFurniture</li>
 		</thingCategories>
 		<graphicData>
-			<texPath>Things/Building/Ship/CapacitorSmall</texPath>
+			<texPath>Things/Building/Ship/BioCapacitor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<damageData>

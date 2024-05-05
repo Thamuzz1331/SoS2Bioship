@@ -25,9 +25,16 @@
 		</requiredCapacities>
 		<canBeDoneByMechs>false</canBeDoneByMechs>
 	</WorkGiverDef>
-	<WorkGiverDeg>
+	<WorkGiverDef>
 		<defName>ImplantShipXenogerm</defName>
 		<label>implant heartseed</label>
 		<giverClass>WorkGiver_ImplantHeartSeed</giverClass>
-	</WorkGiverDeg>
+		<workType>Hauling</workType>
+		<verb>implant</verb>
+		<gerund>implanting</gerund>
+		<priorityInType>215</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
 </Defs>

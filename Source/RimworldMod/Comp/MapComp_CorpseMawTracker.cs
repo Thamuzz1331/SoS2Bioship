@@ -17,6 +17,6 @@ namespace RimWorld
         }
 
         public List<Thing> corpseMaws = new List<Thing>();
-        public List<Thing> heartSeeds = new List<Thing>();
+        public List<CompHeartSeed> heartSeeds = new List<CompHeartSeed>();
     }
 }

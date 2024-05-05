@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using SaveOurShip2;
 
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompProperties_UnfoldTwitch : CompProperties_Unfold
+    public class CompProperties_UnfoldTwitch : CompProps_Unfold
     {
         public CompProperties_UnfoldTwitch()
         {

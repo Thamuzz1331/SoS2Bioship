@@ -12,7 +12,7 @@ using BioShip;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-	public class CompBioshipShield : CompShipCombatShield
+	public class CompBioshipShield : CompShipHeatShield
 	{
 		public CompBuildingBodyPart bp;
 		public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -21,17 +21,9 @@ namespace RimWorld
 			bp = parent.TryGetComp<CompBuildingBodyPart>();
 		}
 
-		public override float CalcHeatGenerated(Projectile_ExplosiveShipCombat proj)
+		public override float CalcHeatGenerated(Projectile proj)
         {
 			float heat = base.CalcHeatGenerated(proj);
-//			if (proj is Projectile_ShieldBatteringProjectile)
-//			{
-//				heat *= 2f;
-//			}
-//			if (proj.def.projectile.damageDef == ShipDamageDefOf.ShipNematocystEnergized)
-//			{
-//				heat *= 1.5f;
-//			}
 			if (bp.CoreSpawned)
             {
 				heat /= bp.Core.GetStat("shieldStrength"); 

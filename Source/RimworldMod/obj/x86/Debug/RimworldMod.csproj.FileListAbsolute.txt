@@ -6,3 +6,5 @@ E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\Source\RimworldMod\obj\x86\D
 E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\Source\RimworldMod\obj\x86\Debug\RimworldMod.csproj.AssemblyReference.cache
 E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.4\Assemblies\SoS2Bioship.dll
 E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.4\Assemblies\SoS2Bioship.pdb
+E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.5\Assemblies\SoS2Bioship.dll
+E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.5\Assemblies\SoS2Bioship.pdb

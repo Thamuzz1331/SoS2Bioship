@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using SaveOurShip2;
 
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class Projectile_Penetrator : Projectile_ExplosiveShipCombat
+    public class Projectile_Penetrator : Projectile_ExplosiveShip
     {
         //TODO: Fix this
         protected override void Impact(Thing hitThing, bool blockedByShield = false)

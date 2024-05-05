@@ -13,7 +13,7 @@ namespace RimWorld
         {
 			get
             {
-				return this.job.GetTarget(TargetIndex.A).Thing;
+				return this.job.GetTarget(TargetIndex.B).Thing;
 			}
 		}
 
@@ -21,7 +21,7 @@ namespace RimWorld
         {
 			get
             {
-				return this.job.GetTarget(TargetIndex.B).Thing;
+				return this.job.GetTarget(TargetIndex.A).Thing;
             }
         }
 
@@ -33,14 +33,25 @@ namespace RimWorld
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-			this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
-			Toil reserveSeed = Toils_Reserve.Reserve(TargetIndex.A, 1, 1, (ReservationLayerDef)null);
-			yield return reserveSeed;
-			this.FailOnDespawnedNullOrForbidden(TargetIndex.B);
-
-			yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveSeed, TargetIndex.A, TargetIndex.B, true, (Predicate<Thing>)null);
-			this.ShipHeart.TryGetComp<CompShipHeart>()?.ApplyHeartSeed(this.HeartSeed.TryGetComp<CompHeartSeed>());
-			yield break;
+			this.job.count = 1;
+			ToilFailConditions.FailOnDespawnedNullOrForbidden<JobDriver_ImplantHeartSeed>(this, (TargetIndex)1);
+			ToilFailConditions.FailOnBurningImmobile<JobDriver_ImplantHeartSeed>(this, (TargetIndex)1);
+			yield return Toils_Reserve.Reserve((TargetIndex)1, 1, 1, (ReservationLayerDef)null);
+			Toil reserveCorpse = Toils_Reserve.Reserve((TargetIndex)2, 1, 1, (ReservationLayerDef)null);
+			yield return reserveCorpse;
+			yield return ToilFailConditions.FailOnSomeonePhysicallyInteracting<Toil>(ToilFailConditions.FailOnDespawnedNullOrForbidden<Toil>(Toils_Goto.GotoThing((TargetIndex)2, (PathEndMode)3), (TargetIndex)2), (TargetIndex)2);
+			yield return ToilFailConditions.FailOnDestroyedNullOrForbidden<Toil>(Toils_Haul.StartCarryThing((TargetIndex)2, false, true, false), (TargetIndex)2);
+			yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveCorpse, (TargetIndex)2, (TargetIndex)0, true, (Predicate<Thing>)null);
+			yield return Toils_Goto.GotoThing((TargetIndex)1, (PathEndMode)2);
+			yield return ToilEffects.WithProgressBarToilDelay(ToilFailConditions.FailOnDestroyedNullOrForbidden<Toil>(ToilFailConditions.FailOnDestroyedNullOrForbidden<Toil>(Toils_General.Wait(250, (TargetIndex)0), (TargetIndex)2), (TargetIndex)1), (TargetIndex)1, false, -0.5f);
+			Toil val = new Toil();
+			val.initAction = delegate
+			{
+				this.ShipHeart.TryGetComp<CompShipHeart>()?.ApplyHeartSeed(this.HeartSeed.TryGetComp<CompHeartSeed>());
+				this.HeartSeed.Destroy();
+			};
+			val.defaultCompleteMode = (ToilCompleteMode)1;
+			yield return val;
 		}
 
 		private const int JobEndInterval = 4000;

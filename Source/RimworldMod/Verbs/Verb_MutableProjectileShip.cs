@@ -7,7 +7,7 @@ using Verse;
 using RimWorld.Planet;
 using HarmonyLib;
 using SaveOurShip2;
-using RimworldMod;
+//using RimworldMod;
 
 namespace RimWorld
 {

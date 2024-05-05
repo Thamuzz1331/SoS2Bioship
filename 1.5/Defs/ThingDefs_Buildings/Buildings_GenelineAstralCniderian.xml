@@ -454,7 +454,7 @@
 		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
+			<texPath>Things/Building/Ship/PolypLauncherCannon</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(5,4.2)</drawSize>

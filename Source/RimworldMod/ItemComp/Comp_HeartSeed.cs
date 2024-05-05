@@ -120,21 +120,21 @@ namespace RimWorld
 		public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Add(parent);
+            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Add(this);
         }
 
         public override void PostExposeData()
         {
             base.PostExposeData();
-			Scribe_References.Look(ref TargetHeart, "targetHeart", false);
+			Scribe_Deep.Look(ref TargetHeart, "targetHeart", null);
             Scribe_Defs.Look(ref geneline, "geneline");
             Scribe_Collections.Look(ref heartGenes, "heartGenes", LookMode.Def);
         }
 
         public override void PostDeSpawn(Map map)
         {
+            ((CorpseMawTracker)map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Remove(this);
             base.PostDeSpawn(map);
-            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Remove(parent);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

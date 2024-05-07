@@ -1598,6 +1598,86 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 	</ThingDef>
 
+	<ThingDef ParentName="BuildingShipHullBase">
+		<defName>Scaffold_PassiveVent</defName>
+		<label>vent scaffold</label>
+		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BioRadiatorBase</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<WorkToBuild>4000</WorkToBuild>
+			<MaxHitPoints>5</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<ProtienPutty>3</ProtienPutty>
+			<Steel>3</Steel>
+			<Plasteel>1</Plasteel>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>Bioship_PassiveVent</transformString>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<designationCategory>Ship</designationCategory>
+		<designationHotKey>Misc2</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<researchPrerequisites>
+			<li>ShipBasics</li>
+			<li>AirConditioning</li>
+		</researchPrerequisites>
+		<building>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+			<paintable>true</paintable>
+		</building>
+	</ThingDef>
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>BioCapacitorSmall</defName>
 		<label>bio capacitor</label>
@@ -1611,7 +1691,7 @@
 		<graphicData>
 			<texPath>Things/Building/Ship/BioCapacitor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,3)</drawSize>
+			<drawSize>(1,2)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>

@@ -451,13 +451,6 @@
 				<species>bioship</species>
 				<transformString>BioShipHullTile</transformString>
 			</li>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorScaffold</TerrainId>
-				<isBioTile>true</isBioTile>
-				<roof>true</roof>
-				<isPlating>true</isPlating>
-				<hermetic>true</hermetic>
-			</li>
 		</comps>
 		<placeWorkers>
 			<li>SaveOurShip2.PlaceWorker_ShipHull</li>
@@ -1824,14 +1817,14 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>BioCapacitorSmallScaffold</defName>
-		<label>bio ship</label>
+		<label>biocapacitor</label>
 		<designatorDropdown>Bio_Capacitor</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Scaffold/BioCapacitor_Scafold</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3,1)</drawSize>
+			<drawSize>(1,2)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -1870,6 +1863,9 @@
 		<constructEffect>ConstructMetal</constructEffect>
 		<designationHotKey>Misc4</designationHotKey>
 		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+		</placeWorkers>
 		<researchPrerequisites>
 			<li>MetabolicScaffoldAdvanced</li>
 		</researchPrerequisites>

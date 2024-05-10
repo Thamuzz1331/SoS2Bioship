@@ -1599,14 +1599,14 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingShipHullBase">
-		<defName>Scaffold_PassiveVent</defName>
-		<label>vent scaffold</label>
+		<defName>Bioship_PassiveVent</defName>
+		<label>vent</label>
 		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
 		<graphicData>
-			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>Basic</linkType>
 			<linkFlags>
@@ -1629,8 +1629,7 @@
 		<rotatable>true</rotatable>
 		<tickerType>Rare</tickerType>
 		<statBases>
-			<WorkToBuild>4000</WorkToBuild>
-			<MaxHitPoints>5</MaxHitPoints>
+			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
 		<selectable>true</selectable>

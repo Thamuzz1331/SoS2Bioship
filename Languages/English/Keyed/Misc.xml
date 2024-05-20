@@ -16,4 +16,5 @@
 	<ShipDevourWreckCommandDesc>Devour a wreck for nutrition.</ShipDevourWreckCommandDesc>
 	<ShipDevourWreckDisabled>Cannot devour a fighting ship.</ShipDevourWreckDisabled>
 	<ImplantHeartseed>Implant Heartseed</ImplantHeartseed>
+	<Bioship.OnFleshOrScaff>Must be placed on owned ship flesh or scaffold.</Bioship.OnFleshOrScaff>
 </LanguageData>

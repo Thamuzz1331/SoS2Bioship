@@ -823,7 +823,7 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<designationHotKey>Misc5</designationHotKey>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<DesignatorDropdownGroupDef>
@@ -875,7 +875,7 @@
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentTrap</li>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -926,7 +926,7 @@
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_NeverAdjacentTrap</li>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -972,7 +972,7 @@
 			<li>SmallWeaponScaffold</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 		<castEdgeShadows>true</castEdgeShadows>
@@ -1014,7 +1014,7 @@
 			<li>MediumWeaponScaffold</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 		<castEdgeShadows>true</castEdgeShadows>
@@ -1060,7 +1060,7 @@
 		</costList>
 		<designationHotKey>Misc5</designationHotKey>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
@@ -1276,7 +1276,7 @@
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	
@@ -1331,7 +1331,7 @@
 			<li>MetabolicScaffoldSimple</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 
@@ -1366,7 +1366,7 @@
 			</damageData>
 		</graphicData>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 			<li>SaveOurShip2.PlaceWorker_ShipShieldRadius</li>
 		</placeWorkers>
 		<comps>
@@ -1512,7 +1512,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1550,7 +1550,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1588,7 +1588,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1626,7 +1626,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1665,7 +1665,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
@@ -1704,7 +1704,7 @@
 			<li>ThermoregulatoryScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 
@@ -1758,7 +1758,7 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -1808,7 +1808,7 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 
@@ -1864,7 +1864,7 @@
 		<designationHotKey>Misc4</designationHotKey>
 		<canOverlapZones>false</canOverlapZones>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 		<researchPrerequisites>
 			<li>MetabolicScaffoldAdvanced</li>
@@ -1919,7 +1919,7 @@
 			<li>MetabolicScaffoldAdvanced</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	
@@ -1976,7 +1976,7 @@
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -2028,7 +2028,7 @@
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
@@ -2080,7 +2080,7 @@
 			<li>ServitorScaffolds</li>
 		</researchPrerequisites>
 		<placeWorkers>
-			<li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+			<li>PlaceWorker_OnFleshOrScaff</li>
 		</placeWorkers>
 	</ThingDef>
 </Defs>

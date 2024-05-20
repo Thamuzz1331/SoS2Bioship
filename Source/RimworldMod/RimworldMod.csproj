@@ -184,6 +184,7 @@
 
 	  <Compile Include="Comp\MapComp_CorpseMawTracker.cs"/>
 	  <Compile Include="PlaceWorkers\PlaceWorker_BioShipNeedsSpinalMountPort.cs"/>
+	  <Compile Include="PlaceWorkers\PlaceWorker_OnFleshOrScaff.cs"/>
 	  <Compile Include="GenSteps\GenStep_BurrowingBioship.cs"/>
 	  <Compile Include="Defs\BioShipDef.cs"/>
 	  <Compile Include="Defs\ShipGenelineDef.cs"/>

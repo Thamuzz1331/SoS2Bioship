@@ -806,14 +806,11 @@
 		<defName>BioShip_SensorCluster</defName>
 		<label>bioship sensors</label>
 		<thingClass>SaveOurShip2.Building_ShipSensor</thingClass>
-		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioSensorCluster</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1,1)</drawSize>
 		</graphicData>
-		<researchPrerequisites>
-		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
@@ -831,6 +828,7 @@
 		<size>(1,1)</size>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
+			<li Class="SaveOurShip2.CompProps_ShipScanner"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_Sensor</whitherTo>
@@ -1474,9 +1472,6 @@
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,3)</drawSize>
 		</graphicData>
-		<researchPrerequisites>
-			<li>MetabolicScaffoldAdvanced</li>
-		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<blockWind>true</blockWind>
 		<castEdgeShadows>false</castEdgeShadows>
@@ -1600,11 +1595,10 @@
 
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Bioship_PassiveVent</defName>
-		<label>vent</label>
+		<label>organic vent</label>
 		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
-		<thingClass>Building</thingClass>
+		<thingClass>SaveOurShip2.Building_ShipVent</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
-		<category>Building</category>
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BioShipBeam_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -1646,13 +1640,13 @@
 				<isHull>true</isHull>
 				<hermetic>true</hermetic>
 			</li>
-			<li Class="CompProperties_Power">
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>Whithered_PassiveVent</whitherTo>
+			</li>
+				<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Scaffold">
-				<species>bioship</species>
-				<transformString>Bioship_PassiveVent</transformString>
 			</li>
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeat</compClass>

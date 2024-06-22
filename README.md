@@ -24,4 +24,14 @@ Rimworld mod intending to extend Save our Ship 2 with the ability to create orga
 - SoS2 Bioship
 
 
-  
+
+Quickstart Guide
+   Building A Bioship:
+      Acquire a Shipheart and organseeds from a quest that spawns a crashed bioship.   
+      Research the appropriate techs and start rendering protein clay.
+      Outline the bioship in protein scaffold walls and floors
+      Protein scaffolds of all kinds require protein clay, which can be created at the drug bench using meat and chemfuel.  
+      Build a shipheart in contact with the scaffolds, it will convert surrounding scaffolds into shipflesh, which will spread and convert future scaffolds.
+      Buildings such as heatsinks, weapons, and other bodyparts are similarly placed as scaffolds that will be converted.
+      Some scaffolds (primarily ship turrets) can produce variable results when converted.
+   

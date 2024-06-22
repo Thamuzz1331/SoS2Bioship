@@ -30,7 +30,7 @@ Quickstart Guide
     -  Acquire a Shipheart and organseeds from a quest that spawns a crashed bioship.   
     -  Research the appropriate techs and start rendering protein clay.
     -  Outline the bioship in protein scaffold walls and floors
-     - Protein scaffolds of all kinds require protein clay, which can be created at the drug bench using meat and chemfuel.
+         - Protein scaffolds of all kinds require protein clay, which can be created at the drug bench using meat and chemfuel.
      - A bioship requires food, it can be acquired by feeding meat or corpses to the ship. Expect a need for a large amount of food to grow the bioship  
      - Build a shipheart in contact with the scaffolds, it will convert surrounding scaffolds into shipflesh, which will spread and convert future scaffolds.
      - Buildings such as heatsinks, weapons, and other body parts are similarly placed as scaffolds that will be converted, as an example these include shields and sensors.

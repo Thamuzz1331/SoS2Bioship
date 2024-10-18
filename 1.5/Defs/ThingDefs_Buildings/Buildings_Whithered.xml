@@ -1090,7 +1090,7 @@
 		<description>A cyst containing a reserve of coolant.\n\nHeat capacity: 800Hu\nHeat loss: 6Hu/s</description>
 		<size>(2,2)</size>
 		<graphicData>
-			<texPath>Things/Building/Ship/CoolantCyst</texPath>
+			<texPath>Things/Building/Ship/SmallCoolantCyst</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -1121,7 +1121,7 @@
 		<description>A large cyst containg coolant. Slowly bleeds heat into the surrounding room if not in vacuum.\n\nHeat capacity: 4000Hu\nHeat loss: 18Hu/s</description>
 		<size>(4,4)</size>
 		<graphicData>
-			<texPath>Things/Building/Ship/CoolantCystLarge</texPath>
+			<texPath>Things/Building/Ship/LargeCoolantCyst</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
@@ -1153,7 +1153,7 @@
 		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Shields will be dropped during a purge.</description>
 		<size>(2,2)</size>
 		<graphicData>
-			<texPath>Things/Building/Ship/BileVent</texPath>
+			<texPath>Things/Building/Ship/SmallThermalBile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2.1,4.7)</drawSize>
 		</graphicData>
@@ -1187,7 +1187,7 @@
 		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Ejecting molten silver into space is a costly way to quickly purge stored heat. Shields will be dropped during a purge.</description>
 		<size>(4,4)</size>
 		<graphicData>
-			<texPath>Things/Building/Ship/BileVentLarge</texPath>
+			<texPath>Things/Building/Ship/LargeThermalBile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>

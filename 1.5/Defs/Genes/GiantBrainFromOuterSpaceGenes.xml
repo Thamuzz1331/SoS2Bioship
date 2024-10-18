@@ -61,23 +61,4 @@
 			<li>mediumTurretOptions</li>
 		</geneOverridesTags>
 	</BuildingGeneDef>
-
-
-	<BuildingGeneDef>
-		<defName>Gbfos_Rand_1</defName>
-		<buildingGeneClass>RandGene</buildingGeneClass>
-		<iconPath>UI_Elements/Gene_SensitivityB</iconPath>
-		<label>rand gbfos</label>
-		<description>Random GBFOS gene.</description>
-		<displayCategory>GiantBrainGenes</displayCategory>
-		<displayOrderInCategory>60</displayOrderInCategory>
-		<props>
-			<li>PsiSuppressionGene</li>
-		</props>
-		<tags>
-		</tags>
-		<metabolicCost>0</metabolicCost>
-		<geneOverrides>
-		</geneOverrides>
-	</BuildingGeneDef>
 </Defs>

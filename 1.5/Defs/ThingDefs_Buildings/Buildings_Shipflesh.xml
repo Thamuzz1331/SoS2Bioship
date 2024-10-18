@@ -1272,7 +1272,7 @@
 		<size>(2,2)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/CoolantCyst</texPath>
+			<texPath>Things/Building/Ship/SmallCoolantCyst</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -1307,7 +1307,7 @@
 		<size>(4,4)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/CoolantCystLarge</texPath>
+			<texPath>Things/Building/Ship/LargeCoolantCyst</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
@@ -1343,7 +1343,7 @@
 		<size>(2,2)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/BileVent</texPath>
+			<texPath>Things/Building/Ship/SmallThermalBile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -1405,7 +1405,7 @@
 		<size>(4,4)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/BileVentLarge</texPath>
+			<texPath>Things/Building/Ship/LargeThermalBile</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
@@ -1803,7 +1803,7 @@
 		<label>haul beast eggsac cluster</label>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/Maw_2x2</texPath>
+			<texPath>Things/Building/Ship/WorkerEggSac</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
 			<damageData>
@@ -1868,7 +1868,7 @@
 		<label>haul beast eggsac cluster</label>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/Maw_2x2</texPath>
+			<texPath>Things/Building/Ship/WorkerEggSac_Cluster</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<damageData>
@@ -1934,7 +1934,7 @@
 		<label>warbeast eggsac</label>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Ship/Maw_2x2</texPath>
+			<texPath>Things/Building/Ship/WarriorEggSac</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<damageData>

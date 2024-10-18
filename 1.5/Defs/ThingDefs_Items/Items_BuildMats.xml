@@ -31,7 +31,7 @@
 		<label>shipflesh</label>
 		<description>The butchered flesh of a living ship.  Disconcertingly, even when cooked it still feels like its trying to eat you back.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/Meat_Muffalo</texPath>
+			<texPath>Things/Item/Resource/MeatFoodRaw/Meat_Big</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>

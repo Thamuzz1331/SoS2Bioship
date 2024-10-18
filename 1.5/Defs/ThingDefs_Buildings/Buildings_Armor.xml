@@ -32,7 +32,7 @@
 		<label>coral armor</label>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
+			<texPath>Things/Building/Linked/ShipBeam/CoralArmorWall_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>CornerFiller</linkType>
 			<linkFlags>
@@ -63,6 +63,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<isArmor>true</isArmor>
 				<species>bioship</species>
+				<growsArmor>true</growsArmor>
 			</li>
 		</comps>
 	</ThingDef>
@@ -111,7 +112,7 @@
 		<label>dragonscale armor</label>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Linked/ShipBeam/PlasteelCarapaceAtlas</texPath>
+			<texPath>Things/Building/Linked/ShipBeam/ScaleArmorWall_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>CornerFiller</linkType>
 			<linkFlags>

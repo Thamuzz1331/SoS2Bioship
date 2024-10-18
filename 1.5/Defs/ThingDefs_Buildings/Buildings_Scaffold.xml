@@ -145,11 +145,11 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_Armor_Unpowered</defName>
-		<label>unpowered armor scaffold</label>
+		<label>armor scaffold</label>
 		<designatorDropdown>Protien_Scaffold</designatorDropdown>
 		<thingClass>Building_Scaffold</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Linked/ShipBeam/WallScaffolding_atlas</texPath>
+			<texPath>Things/Building/Linked/ShipBeam/ArmorWall_Scafold</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<linkType>Basic</linkType>
 			<linkFlags>
@@ -1563,7 +1563,7 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/CoolantCystScaffold_Small</texPath>
+			<texPath>Things/Building/Scaffold/SmallCoolantCyst_Scafold</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
 		</graphicData>
@@ -1601,7 +1601,7 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/CoolantCystScaffold_Big</texPath>
+			<texPath>Things/Building/Scaffold/LargeCoolantCyst_Scafold</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>
@@ -1638,7 +1638,7 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/BileVentScaffold_Small</texPath>
+			<texPath>Things/Building/Scaffold/SmallThermalBile_Scafold</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2.1,4.7)</drawSize>
 		</graphicData>
@@ -1677,7 +1677,7 @@
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Scaffold/BileVentScaffold_Big</texPath>
+			<texPath>Things/Building/Scaffold/LargeThermalBile_Scafold</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4,4)</drawSize>
 		</graphicData>

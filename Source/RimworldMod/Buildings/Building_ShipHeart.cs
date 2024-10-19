@@ -14,8 +14,21 @@ namespace RimWorld
     [StaticConstructorOnStartup]
 	public class Building_ShipHeart : Building_ShipBridge
 	{
+        public bool recentReplace = false;
+
+        public override void Tick()
+        {
+            if (this.recentReplace)
+            {
+                this.terminate = false;
+                this.recentReplace = false;
+            }
+            base.Tick();
+        }
+
 		public override void DeSpawn(DestroyMode mode)
         {
+            Log.Message("DeSpawn Invoked");
             CompShipHeart heart = this.TryGetComp<CompShipHeart>();
             if (heart != null && mode != DestroyMode.Vanish)
             {

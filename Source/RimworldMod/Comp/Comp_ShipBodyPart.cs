@@ -125,6 +125,9 @@ namespace RimWorld
             {
                 this.parent.Destroy();
             } else if (!heartDeath) {
+                CompShipHeart h = (CompShipHeart)this.body.heart;
+                Building_ShipHeart bh = (Building_ShipHeart)h.parent;
+                bh.recentReplace = true;
                 if (parent is Building_Trap)
                 {
                     foreach (IntVec3 c in GenAdjFast.AdjacentCellsCardinal(parent.Position))

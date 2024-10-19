@@ -9,12 +9,11 @@ using LivingBuildings;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class CompProperties_StaplebleScaffold : CompProperties_ShipScaffold
+    public class CompProperties_ShipScaffold : CompProperties_Scaffold
     {
-        public string stapleDef = null;
-        public CompProperties_StaplebleScaffold()
+        public CompProperties_ShipScaffold()
         {
-            compClass = typeof(CompStapleableScaffold);
+            compClass = typeof(CompShipScaffold);
         }
     }
 

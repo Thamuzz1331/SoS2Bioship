@@ -537,7 +537,7 @@
 		<comps>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
-				<transformString>Whithered_Engine_RCS</transformString>
+				<transformString>BioShip_Engine_RCS</transformString>
 			</li>
 		</comps>
 		<building>

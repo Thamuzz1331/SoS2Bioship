@@ -60,7 +60,7 @@
       <Private>False</Private>
     </Reference>
 	  <Reference Include="SaveOurShip2">
-		  <HintPath>..\..\..\SaveOurShip2Experimental\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>
+		  <HintPath>E:\Steam\steamapps\workshop\content\294100\1909914131\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
 	  <Reference Include="LivingBuildingFramework">
@@ -148,6 +148,9 @@
 	  <Compile Include="Comp\Comp_FueledAddictionSupplier.cs"/>
 	  <Compile Include="Comp\CompProperties_FueledAddictionSupplier.cs"/>
 
+	  <Compile Include="Comp\Comp_ShipScaffold.cs"/>
+	  <Compile Include="Comp\CompProperties_ShipScaffold.cs"/>
+	  
 	  <Compile Include="Comp\Comp_HeartHeat.cs"/>
 	  <Compile Include="Comp\Comp_StatScalingThreatHeat.cs"/>
 

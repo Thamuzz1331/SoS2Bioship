@@ -66,7 +66,6 @@ namespace RimWorld
 
 		public virtual void DoAttack()
         {
-
 			int numAttack = Rand.RangeInclusive(1, 3);
 			int aggressionLevel = GetAggression();
 			for (int i = 0; i < numAttack; i++)

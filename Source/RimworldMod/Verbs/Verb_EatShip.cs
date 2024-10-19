@@ -37,8 +37,12 @@ namespace RimWorld
 
         public void AfterTarget(Building b)
         {
-/*
-            HashSet<IntVec3> positions = ShipInteriorMod2.FindAreaAttached(b, true);
+            if (b == null)
+				return;
+            var sourceMapComp = salvageMaw.Map.GetComponent<ShipMapComp>();
+			var mapComp = b.Map.GetComponent<ShipMapComp>();
+            int shipIndex = mapComp.ShipIndexOnVec(b.Position);
+			var ship = mapComp.ShipsOnMap[shipIndex];
             List<CompRefuelable> maws = new List<CompRefuelable>();
             foreach(Thing maw in sourceMap.listerThings.ThingsOfDef(ThingDef.Named("SalvageMaw")))
             {
@@ -48,48 +52,44 @@ namespace RimWorld
                     maws.Add(refuelable);
                 }
             }
-
-            foreach (IntVec3 i in positions.ToList())
+            List<Building> toRemove = new List<Building>();
+            foreach (Building w in ship.Buildings)
             {
-                foreach (Thing t in i.GetThingList(targetMap))
+                if (!w.Destroyed)
                 {
-                    if ((t == null) || t.GetType() != typeof(Building)) { continue; }
-                    Building w = (Building)t;
-                    if (!w.Destroyed)
+                    if (w.def.costList != null)
                     {
-                        if (w.def.costList != null)
+                        foreach (ThingDefCountClass bcomp in w.def.costList)
                         {
-                            foreach (ThingDefCountClass bcomp in w.def.costList)
+                            List<CompRefuelable> full = new List<CompRefuelable>();
+                            if (maws.Count > 0)
                             {
-                                List<CompRefuelable> full = new List<CompRefuelable>();
-                                if (maws.Count > 0)
+                                float fuel = bcomp.count / (maws.Count * 5);
+                                foreach (CompRefuelable m in maws)
                                 {
-                                    float fuel = bcomp.count / (maws.Count * 5);
-                                    foreach (CompRefuelable m in maws)
+                                    m.Refuel(fuel);
+                                    if (m.FuelPercentOfTarget >= 1)
                                     {
-                                        m.Refuel(fuel);
-                                        if (m.FuelPercentOfTarget >= 1)
-                                        {
-                                            full.Add(m);
-                                        }
+                                        full.Add(m);
                                     }
-                                    foreach (CompRefuelable f in full)
-                                    {
-                                        maws.Remove(f);
-                                    }
+                                }
+                                foreach (CompRefuelable f in full)
+                                {
+                                    maws.Remove(f);
                                 }
                             }
                         }
                     }
+                    toRemove.Add(w);
                 }
             }
-            if (positions.Contains(position) || positions.ToList().NullOrEmpty())
-                return;
-            Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ShipSalvageAbandonConfirm", delegate
+            foreach (Building w in toRemove)
             {
-                ShipInteriorMod2.RemoveShip(null, false, positions, targetMap);
-            }));
-*/
+                w.Destroy(DestroyMode.Vanish);
+            }
+
+
+            mapComp.RemoveShipFromCache(shipIndex);
         }
     }
 }

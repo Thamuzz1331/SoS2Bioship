@@ -57,23 +57,26 @@ namespace RimWorld
 			{
 				foreach(Thing t in ret)
 				{
-					if (t.def == ThingDef.Named("BioShipHullTile") && t.Position.GetThingList(parent.Map).Count < 2 && Rand.Chance(.6f))
-					{
-						Thing newMaw = ThingMaker.MakeThing(ThingDef.Named("Maw_Small"));
-						CompBuildingBodyPart bodyPart = newMaw.TryGetComp<CompBuildingBodyPart>();
-						if (bodyPart != null)
+					if (t is Building_Scaffold) { 
+						Building_Scaffold scaff = (Building_Scaffold) t;
+						if (scaff.scaffold.transformDef == ThingDef.Named("BioShipHullTile") && t.Position.GetThingList(parent.Map).Count < 2 && Rand.Chance(.6f))
 						{
-							bodyPart.SetId(this.bodyId);
+							Thing newMaw = ThingMaker.MakeThing(ThingDef.Named("Maw_Small"));
+							CompBuildingBodyPart bodyPart = newMaw.TryGetComp<CompBuildingBodyPart>();
+							if (bodyPart != null)
+							{
+								bodyPart.SetId(this.bodyId);
+							}
+							CompNutrition nutrition = newMaw.TryGetComp<CompNutrition>();
+							if (nutrition != null)
+							{
+								nutrition.SetId(this.bodyId);
+							}
+							newMaw.Rotation = t.Rotation;
+							newMaw.Position = t.Position;
+							newMaw.SetFaction(t.Faction);
+							newMaw.SpawnSetup(parent.Map, false);
 						}
-						CompNutrition nutrition = newMaw.TryGetComp<CompNutrition>();
-						if (nutrition != null)
-						{
-							nutrition.SetId(this.bodyId);
-						}
-						newMaw.Rotation = t.Rotation;
-						newMaw.Position = t.Position;
-						newMaw.SetFaction(t.Faction);
-						newMaw.SpawnSetup(parent.Map, false);
 					}
 				}
 			}

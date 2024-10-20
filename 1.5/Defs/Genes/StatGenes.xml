@@ -179,7 +179,7 @@
 		<displayCategory>StatGene</displayCategory>
 		<displayOrderInCategory>35</displayOrderInCategory>
 		<props>
-			<li>shieldStrength:0.75</li>
+			<li>shieldStrength:0.55</li>
 		</props>
 		<tags>
 			<li>statMalus</li>

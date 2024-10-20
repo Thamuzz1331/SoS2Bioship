@@ -8,7 +8,7 @@
 	<BuildingGeneDef>
 		<defName>PsiRefelct</defName>
 		<buildingGeneClass>HediffGiverGene</buildingGeneClass>
-		<iconPath>UI_Elements/Gene_LaserEyeL</iconPath>
+		<iconPath>UI_Elements/Gene_ShieldReflect</iconPath>
 		<label>psi reflect</label>
 		<description>Bioship's psionic shields have a small chance to open a skipgate redirecting an incomming shot back to its source.</description>
 		<displayCategory>AbilityGene</displayCategory>

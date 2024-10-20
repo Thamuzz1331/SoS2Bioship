@@ -36,6 +36,7 @@ namespace RimWorld
                 yield return new Command_Action
                 {
                     defaultLabel = "Inject Nutrients",
+                    icon = ContentFinder<Texture2D>.Get("UI_Elements/Gizmo_InjectDrug"),
                     action = delegate ()
                     {
                         foreach (Thing heart in this.LinkedBuildings)

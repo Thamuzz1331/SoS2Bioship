@@ -86,7 +86,7 @@
 	<BuildingGeneDef>
 		<defName>DragonscaleGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
-		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<iconPath>UI_Elements/Gene_ArmorDragon</iconPath>
 		<label>dragonscale</label>
 		<description>Thick scales of organically deposited plasteel prove particularly resistant to plasma weapons.</description>
 		<displayCategory>Geneline</displayCategory>

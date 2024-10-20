@@ -34,7 +34,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/CoralArmorWall_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -74,7 +74,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>
@@ -114,7 +114,7 @@
 		<graphicData>
 			<texPath>Things/Building/Linked/ShipBeam/ScaleArmorWall_Atlas</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<linkType>CornerFiller</linkType>
+			<linkType>Basic</linkType>
 			<linkFlags>
 				<li>Wall</li>
 				<li>Rock</li>

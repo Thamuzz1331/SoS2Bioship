@@ -10,4 +10,16 @@
 		<comps>
 		</comps>
 	</BuildingHediffDef>
+
+	<BuildingHediffDef>
+		<defName>PsiReflect</defName>
+		<label>psi reflect</label>
+		<description>Shields have a small chance to return incoming attacks to their source.</description>
+		<displayColor>(0.7, 1.0, 0.7)</displayColor>
+		<buildingHediffClass>BuildingHediff_Reflect</buildingHediffClass>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+	</BuildingHediffDef>
+
 </Defs>

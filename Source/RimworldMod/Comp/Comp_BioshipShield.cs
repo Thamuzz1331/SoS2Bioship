@@ -27,7 +27,7 @@ namespace RimWorld
 			if (bp.CoreSpawned)
             {
 				heat /= bp.Core.GetStat("shieldStrength"); 
-				if (bp.Core.hediffs.Any(diff => (diff is Hediff_Reflect)))
+				if (bp.Core.hediffs.Any(diff => (diff is BuildingHediff_Reflect)))
 				{
 					if (Rand.Chance(0.1f))
 					{

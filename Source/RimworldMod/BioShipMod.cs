@@ -53,36 +53,32 @@ namespace BioShip
 			Log.Message("Bioship Loaded");
 		}
 
-		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
-
-		public static IntVec3 FindBurstLocation(CompShipHeatShield shield, LocalTargetInfo target)
-        {
-			Map sourceMap = Traverse.Create(shipCombatManagerType).Field("PlayerShip").GetValue<Map>();
-			if (shield.parent.Map == sourceMap)
-            {
-				return (IntVec3)AccessTools.Method(shipCombatManagerType, "FindClosestEdgeCell").Invoke(null, new object[] {
-					Traverse.Create(shipCombatManagerType).Field("EnemyShip").GetValue<Map>(),
-					(object)target.Cell
-				});
-			}
-			else
-            {
-				return (IntVec3)AccessTools.Method(shipCombatManagerType, "FindClosestEdgeCell").Invoke(null, new object[] {
-					sourceMap,
-					(object)target.Cell
-				});
-
-			}
-		}
-
 		public static void ReflectShot(CompShipHeatShield shield, Projectile proj)
         {
+			Log.Message("Reflecting");
+
 			Vector3 origin = Traverse.Create(proj).Field("origin").GetValue<Vector3>();
 			int ticksToImpact = Traverse.Create(proj).Field("ticksToImpact").GetValue<int>();
 			Traverse.Create(proj).Field("ticksToImpact").SetValue(ticksToImpact + 2);
 			Vector3 returnPoint = proj.ExactPosition;
 			LocalTargetInfo localTarget = new LocalTargetInfo(origin.ToIntVec3());
+			Building_ShipTurret sourceTurret = (Building_ShipTurret)proj.Launcher;
+			IntVec3 burstLoc = sourceTurret.Map.GetComponent<ShipMapComp>().FindClosestEdgeCell(sourceTurret.Map, sourceTurret.Position);
+			ThingDef returnProjSpawnDef = null;
+			ThingDef d = proj.Launcher.def.building?.turretGunDef;
+			Log.Message("Launcher Type " + d.defName);
+			if (d != null)
+            {
+				foreach(VerbProperties vp in d.Verbs)
+                {
+					returnProjSpawnDef = vp.spawnDef;
+                }
+            } else
+            {
+				return;
+            }
 
+			Log.Message("Create Phantom Turret");
 			Building_ShipTurret fakeTurret = (Building_ShipTurret)GenSpawn.Spawn(ThingDef.Named("Phantom_Turret"), returnPoint.ToIntVec3(), proj.Map);
 			Projectile returnFire = (Projectile)GenSpawn.Spawn(proj.def, returnPoint.ToIntVec3(), proj.Map);
 			returnFire.Launch(proj.Launcher,
@@ -92,14 +88,20 @@ namespace BioShip
 				ProjectileHitFlags.All,
 				equipment: proj.Launcher);
 
-			object[] parameters = new object[]{
-					fakeTurret,
-					new LocalTargetInfo(proj.Launcher.Position),
-					proj.def,
-					0f,
-					FindBurstLocation(shield, new LocalTargetInfo(proj.Launcher.Position))
-				};
-			AccessTools.Method(shipCombatManagerType, "RegisterProjectile").Invoke(null, parameters);
+			ShipCombatProjectile retProj = new ShipCombatProjectile
+			{
+				turret = fakeTurret,
+				target = new LocalTargetInfo(proj.Launcher.Position),
+				range = 0,
+				spawnProjectile = proj.def,
+				missRadius = 0,
+				accBoost = 0,
+				burstLoc = burstLoc,
+				speed = sourceTurret.heatComp.Props.projectileSpeed,
+				Map = shield.parent.Map
+			};
+			ShipMapComp mC = shield.parent.Map.GetComponent<ShipMapComp>();
+			mC.Projectiles.Add(retProj);
 			fakeTurret.Destroy();
 		}
 	}

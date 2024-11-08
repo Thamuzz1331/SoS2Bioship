@@ -28,7 +28,9 @@ namespace RimWorld
             bioRoofedData.graphicClass = typeof(Graphic_Single);
             bioRoofedData.shaderType = ShaderTypeDefOf.MetaOverlay;
             roofTileBio = new Graphic_256_Bio(bioRoofedData.Graphic);
-          }
+        }
+
+
 
         public override void PostDraw()
         {

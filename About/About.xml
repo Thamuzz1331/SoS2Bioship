@@ -28,7 +28,28 @@
 <description>
 	Grow your own starfaring abomination.
 
+	Step 1: Wait for something to fall from the sky.  Or go to the stars and hunt it.
+	Step 2: Go to it, harvest its gooy innards.  You're looking for a heartseed and organseeds.
+	Step 3: Research.
+	Step 4: Render meat into protien putty.  You'll want a lot of meat and chemfuel on hand.
+	Step 5: Breed organ seeds at the drug workbench.  One organseed, some meat, and some neutroamine will get you two organ seeds.  Organ seeds can be squeezed for neutroamine.
+	Step 6: Use the putty to build scaffolds for your ship.  You'll want more neutroamine and organ seeds for the advanced scaffolds.
+	Step 7: Build the heart.  Make sure you're ready to feed it.  It eats meat.  And corpses.  And wrecked ships.
+	Step 8: The heart will convert scaffolds to flesh.  Watch your ship grow.
+
+	Some scaffolds (mainly weapons) will grow into different building depending on your ship's genes.  Harvest the hearts of enemy bioships for more genes.
+
+	Bioships store nutrition in fat deposites.  Nutrition is used to grow and heal.
+
+	Bioships have an immune response to being exposed to inorganic thermofluid, and will destroy mechanical components with thermal conduits that touch them.
+
+	Known Bugs:
+	- When growing large areas the roof can sometimes collapse.  Saving and reloading will repair the missing roof, but not anything damaged in the collapse.
+	- Building floors on top of shipflesh floors causes pawns to freeze trying to deconstruct the shipflesh floor.  No current workaround.
+
+
 	Art Credits:
+	BlackMarket420
 	Isaias
 	ItsHalno
 	Нельсон

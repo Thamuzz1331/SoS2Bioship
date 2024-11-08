@@ -1636,25 +1636,34 @@
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
-			<li Class="SaveOurShip2.CompProps_ShipCachePart">
-				<isHull>true</isHull>
-				<hermetic>true</hermetic>
-			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_PassiveVent</whitherTo>
 			</li>
-				<li Class="CompProperties_Power">
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>true</roof>
+			</li>
+			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl">
+				<energyPerSecond>-64</energyPerSecond>
+			</li>
+			<li Class="SaveOurShip2.CompProps_Overlay">
+				<graphicPath>Things/Building/Ship/Ship_Vent</graphicPath>
+				<size>(1,1,1)</size>
 			</li>
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeat</compClass>
 			</li>
 			<li>
 				<compClass>CompColorable</compClass>
-			</li>
-		</comps>
+			</li>		</comps>
 		<designationCategory>Ship</designationCategory>
 		<designationHotKey>Misc2</designationHotKey>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>

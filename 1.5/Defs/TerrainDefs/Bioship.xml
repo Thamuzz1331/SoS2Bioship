@@ -10,6 +10,7 @@
 		</statBases>
 	</TerrainDef>
 	<TerrainDef ParentName="ShipFloorBase">
+		<layerable>true</layerable>
 		<defName>FakeFloorShipflesh</defName>
 		<label>shipflesh</label>
 		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>

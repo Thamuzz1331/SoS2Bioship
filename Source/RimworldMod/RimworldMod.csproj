@@ -60,7 +60,8 @@
       <Private>False</Private>
     </Reference>
 	  <Reference Include="SaveOurShip2">
-		  <HintPath>E:\Steam\steamapps\workshop\content\294100\1909914131\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>
+		  <!--		  <HintPath>K:\Steam\steamapps\workshop\content\294100\1909914131\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>-->
+		  <HintPath>..\..\..\SaveOurShip2\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
 	  <Reference Include="LivingBuildingFramework">
@@ -107,6 +108,8 @@
 	  <Compile Include="Buildings\Building_ShipHeart.cs"/>
 	  <Compile Include="Buildings\Building_ShipGeneAssembler.cs"/>
 
+	  <Compile Include="Buildings\Building_BioShipTurret.cs"/>
+	  
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumDrug.cs"/>
 	  <Compile Include="Hediffs\BuildingHediff_LuciferiumAddiction.cs"/>
 	  <Compile Include="Hediffs\BuildingHediff_ToxicBuildup.cs"/>

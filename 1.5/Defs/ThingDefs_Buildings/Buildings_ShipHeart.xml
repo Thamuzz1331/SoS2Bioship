@@ -69,6 +69,7 @@
 				<linkableFacilities>
 					<li>LuciferiumInjector</li>
 					<li>WakeUpInjector</li>
+					<li>GoJuiceInjector</li>
 					<li>NutrientInjector</li>
 				</linkableFacilities>
 			</li>

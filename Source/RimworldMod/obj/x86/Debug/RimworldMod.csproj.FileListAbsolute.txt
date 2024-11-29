@@ -8,3 +8,9 @@ E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.4\Assemblies\SoS2Bioship.d
 E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.4\Assemblies\SoS2Bioship.pdb
 E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.5\Assemblies\SoS2Bioship.dll
 E:\Steam\steamapps\common\RimWorld\Mods\SoS2Bioship\1.5\Assemblies\SoS2Bioship.pdb
+K:\SteamLibrary\steamapps\common\RimWorld\Mods\SoS2Bioship\1.5\Assemblies\SoS2Bioship.dll
+K:\SteamLibrary\steamapps\common\RimWorld\Mods\SoS2Bioship\1.5\Assemblies\SoS2Bioship.pdb
+K:\SteamLibrary\steamapps\common\RimWorld\Mods\SoS2Bioship\Source\RimworldMod\obj\x86\Debug\RimworldMod.csproj.AssemblyReference.cache
+K:\SteamLibrary\steamapps\common\RimWorld\Mods\SoS2Bioship\Source\RimworldMod\obj\x86\Debug\RimworldMod.csproj.CoreCompileInputs.cache
+K:\SteamLibrary\steamapps\common\RimWorld\Mods\SoS2Bioship\Source\RimworldMod\obj\x86\Debug\SoS2Bioship.dll
+K:\SteamLibrary\steamapps\common\RimWorld\Mods\SoS2Bioship\Source\RimworldMod\obj\x86\Debug\SoS2Bioship.pdb

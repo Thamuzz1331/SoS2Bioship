@@ -20,6 +20,7 @@ namespace RimWorld
         public float baseArmor = 0.05f;
         public bool adaptiveArmor = false;
         public bool globalAdaptation = false;
+        public float turretNutritionCost = 0;
 
         public CompProperties_ShipBodyPart()
         {

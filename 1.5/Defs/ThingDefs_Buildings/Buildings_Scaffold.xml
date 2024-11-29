@@ -1719,7 +1719,7 @@
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldGiantMitochondria</texPath>
+			<texPath>Things/Building/Scaffold/ScaffoldGiantMitochondria</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,3)</drawSize>
 		</graphicData>
@@ -1769,7 +1769,7 @@
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Scaffold_Mitochondira</designatorDropdown>
 		<graphicData>
-			<texPath>Things/Building/Ship/ScaffoldGiantMitochondria</texPath>
+			<texPath>Things/Building/Scaffold/ScaffoldCollosalMitochondria</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(4,6)</drawSize>
 		</graphicData>

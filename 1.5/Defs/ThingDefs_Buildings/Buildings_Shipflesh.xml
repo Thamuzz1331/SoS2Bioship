@@ -1533,7 +1533,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/BioShipGiantMitochondria</texPath>
+			<texPath>Things/Building/Ship/BioShipCollosalMitochondria</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(4,6)</drawSize>
 		</graphicData>

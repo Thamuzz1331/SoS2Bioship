@@ -122,7 +122,7 @@
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_UVLaserTop</defName>
 		<label>laser</label>
-		<description>Laser cannon. Short-ranged but devastating.</description>
+		<description>UV Laser cannon.  Long range and devestating.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/CO_UVEyeTurret</texPath>
 		</graphicData>
@@ -193,7 +193,7 @@
 		<defName>ShipTurret_VSEyeLaser</defName>
 		<label>visual spectrum eye laser</label>
 		<description>Concentrated visual spectrum light.  Longer ranged than tranditional infrared lasers, made possible by a self healing focusing chamber.</description>
-		<thingClass>SaveOurShip2.Building_ShipTurret</thingClass>
+		<thingClass>Building_BioShipTurret</thingClass>
 		<designationCategory />
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
@@ -204,14 +204,15 @@
 				<species>bioship</species>
 				<whitherTo>LargeWeaponWhithered</whitherTo>
 				<regenDef>ShipTurret_VSEyeLaser</regenDef>
+				<turretNutritionCost>5</turretNutritionCost>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeat</compClass>
-				<heatPerPulse>15</heatPerPulse>
-				<energyToFire>75</energyToFire>
+				<heatPerPulse>10</heatPerPulse>
+				<energyToFire>40</energyToFire>
 				<optRange>100</optRange>
 				<maxRange>100</maxRange>
 				<projectileSpeed>10</projectileSpeed>

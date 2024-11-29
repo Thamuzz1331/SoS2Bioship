@@ -14,7 +14,7 @@ using HarmonyLib;
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
-    public class Building_UVTurret : Building_ShipTurret
+    public class Building_UVTurret : Building_BioShipTurret
     {
         private bool wasFiring = false;
 

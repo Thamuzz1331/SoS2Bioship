@@ -1,6 +1,7 @@
 <Defs>
 	<ThingDef ParentName="ShipTurretBuilding" Name="ShipTurret_Nematocyst">
 		<defName>ShipTurret_Nematocyst</defName>
+		<thingClass>Building_BioShipTurret</thingClass>
 		<label>nematocyst</label>
 		<description>A barbed thread that can be launched against enemy ships or torpedos.</description>
 		<graphicData>
@@ -31,6 +32,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>SmallWeaponWhithered</whitherTo>
+				<turretNutritionCost>.25</turretNutritionCost>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>
@@ -161,6 +163,7 @@
 
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ShipTurret_BioAcid</defName>
+		<thingClass>Building_BioShipTurret</thingClass>
 		<label>acid spitter</label>
 		<description>Spits a ball of caustic mucus clings to a hull on impact.  A medium ranged weapon that deals linger damage.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
 		<graphicData>
@@ -185,6 +188,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>MediumWeaponWhithered</whitherTo>
+				<turretNutritionCost>.5</turretNutritionCost>
 			</li>
 			<li Class="CompProperties_NutritionConsumer">
 				<consumptionPerPulse>1</consumptionPerPulse>

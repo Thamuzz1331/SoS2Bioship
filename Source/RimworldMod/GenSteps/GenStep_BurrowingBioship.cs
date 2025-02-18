@@ -33,7 +33,7 @@ namespace RimWorld
             List<Building> cores = new List<Building>();
             //limited to 100x100 due to unsettable map size, no fleets
             ShipDef ship = DefDatabase<ShipDef>.AllDefs.Where(def => def.core.shapeOrDef == "Ship_Heart_Quest").RandomElement();
-            ShipInteriorMod2.GenerateShip(ship, map, null, Faction.OfInsects, null, out cores, false, true, 0, (map.Size.x - ship.sizeX) / 2, (map.Size.z - ship.sizeZ) / 2);
+            ShipInteriorMod2.GenerateShip(ship, map, null, Faction.OfAncientsHostile, null, out cores, false, true, 0, (map.Size.x - ship.sizeX) / 2, (map.Size.z - ship.sizeZ) / 2);
         }
     }
 }

@@ -28,7 +28,6 @@ namespace RimWorld
 
 		public override void DeSpawn(DestroyMode mode)
         {
-            Log.Message("DeSpawn Invoked");
             CompShipHeart heart = this.TryGetComp<CompShipHeart>();
             if (heart != null && mode != DestroyMode.Vanish)
             {
@@ -56,6 +55,13 @@ namespace RimWorld
                     seed.heartGenes = dropgenes;
                 }
                 heartSeed.SpawnSetup(this.Map, false);
+
+                for (int i = 0; i < 4; i++)
+                {
+                    Thing organSeed = ThingMaker.MakeThing(ThingDef.Named("OrganSeed"));
+                    organSeed.Position = this.Position;
+                    organSeed.SpawnSetup(this.Map, false);
+                }
             }
             base.DeSpawn(mode);
         }

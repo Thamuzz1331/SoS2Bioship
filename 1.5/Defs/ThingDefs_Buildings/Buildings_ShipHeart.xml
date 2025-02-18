@@ -88,7 +88,7 @@
 		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<killedLeavings>
-			<OrganSeed>2</OrganSeed>
+			<OrganSeed>4</OrganSeed>
 		</killedLeavings>
 	</ThingDef>
 
@@ -292,6 +292,7 @@
 		<comps>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>1.0</fuelCapacity>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>

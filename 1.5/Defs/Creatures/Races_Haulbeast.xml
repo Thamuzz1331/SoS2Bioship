@@ -5,6 +5,9 @@
 		<statBases>
 			<MoveSpeed>3.8</MoveSpeed>
 			<ComfyTemperatureMin>-200</ComfyTemperatureMin>
+			<ComfyTemperatureMax>100</ComfyTemperatureMax>
+			<HypoxiaResistance>1</HypoxiaResistance>
+			<DecompressionResistance>1</DecompressionResistance>
 			<MarketValue>700</MarketValue>
 			<FilthRate>4</FilthRate>
 			<ArmorRating_Sharp>0.15</ArmorRating_Sharp>

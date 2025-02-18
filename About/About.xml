@@ -43,15 +43,22 @@
 
 	Bioships have an immune response to being exposed to inorganic thermofluid, and will destroy mechanical components with thermal conduits that touch them.
 
+	You will think you have enough meat.  You are wrong.
+
+	It is strongly recommended to save and reload after building a shipheart.
+
 	Known Bugs:
 	- When growing large areas the roof can sometimes collapse.  Saving and reloading will repair the missing roof, but not anything damaged in the collapse.
 	- Building floors on top of shipflesh floors causes pawns to freeze trying to deconstruct the shipflesh floor.  No current workaround.
-
+	- Launching the ship with no maws or all maws empty can result in the ship dying as soon as it reaches orbit.
 
 	Art Credits:
 	BlackMarket420
 	Isaias
 	ItsHalno
 	Нельсон
+	
+	Dishonorable mention to Vali/Suvi.
+	
 </description>
 </ModMetaData>

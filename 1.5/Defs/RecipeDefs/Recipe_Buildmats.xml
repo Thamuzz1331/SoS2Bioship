@@ -18,7 +18,7 @@
 						<li>MeatRaw</li>
 					</categories>
 				</filter>
-				<count>25</count>
+				<count>20</count>
 			</li>
 			<li>
 				<filter>
@@ -26,7 +26,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</filter>
-				<count>15</count>
+				<count>10</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -47,7 +47,7 @@
 	</RecipeDef>
 	<RecipeDef>
 		<defName>MakeProteinClayBulk</defName>
-		<label>make protein clay</label>
+		<label>make protein clay x10</label>
 		<description>Craft 10 protein clay.</description>
 		<jobString>Making protein clay.</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
@@ -63,7 +63,7 @@
 						<li>MeatRaw</li>
 					</categories>
 				</filter>
-				<count>230</count>
+				<count>180</count>
 			</li>
 			<li>
 				<filter>

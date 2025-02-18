@@ -1,9 +1,12 @@
+using SaveOurShip2;
+using BioShip;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using UnityEngine;
 using LivingBuildings;
 
 namespace RimWorld
@@ -75,6 +78,7 @@ namespace RimWorld
                 yield return new Command_Action
                 {
                     defaultLabel = "Spawn",
+                    icon = ContentFinder<Texture2D>.Get("U_Elements/Gizmo_SpawnHaulbeast"),
                     action = delegate ()
                     {
                         DoSpawn();

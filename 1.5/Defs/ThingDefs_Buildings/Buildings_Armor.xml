@@ -52,8 +52,8 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
-			<WorkToBuild>0</WorkToBuild>
 		</statBases>
 		<description>A layer of coral armor.</description>
 		<comps>
@@ -92,8 +92,8 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
-			<WorkToBuild>0</WorkToBuild>
 		</statBases>
 		<description>A layer of bone plate.</description>
 		<comps>
@@ -132,8 +132,8 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
-			<WorkToBuild>0</WorkToBuild>
 		</statBases>
 		<description>A scales laced with an organic plasteel matrix.  Highly resistant to plasma weapons.</description>
 		<comps>

@@ -78,7 +78,6 @@ namespace BioShip
 				return;
             }
 
-			Log.Message("Create Phantom Turret");
 			Building_ShipTurret fakeTurret = (Building_ShipTurret)GenSpawn.Spawn(ThingDef.Named("Phantom_Turret"), returnPoint.ToIntVec3(), proj.Map);
 			Projectile returnFire = (Projectile)GenSpawn.Spawn(proj.def, returnPoint.ToIntVec3(), proj.Map);
 			returnFire.Launch(proj.Launcher,
@@ -105,25 +104,23 @@ namespace BioShip
 			fakeTurret.Destroy();
 		}
 	}
-
-	[HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
+/*
+	[HarmonyPatch(typeof(CompShipBlueprint), "SpawnShipDefBlueprint")]
 	public static class BioshipInterstellarFailReasons
     {
 
 		[HarmonyPrefix]
-		public static bool BioshipFailReasons(Building_ShipBridge __instance, ref List<string> __result)
+		public static bool BioshipSpawn(ShipDef __shipDef, IntVec3 __pos, Map __map, int __tier)
         {
-			__result = new List<string>();
-			if (__instance.TryGetComp<CompShipHeart>() != null)
-            {
-				__result.Add("Bioship FTL Pending");
-				return false;
-            } 
+
 			return true;
         }
     }
+*/
+    [HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
 
-	[HarmonyPatch(typeof(ColonistBar), "ColonistBarOnGUI")]
+
+    [HarmonyPatch(typeof(ColonistBar), "ColonistBarOnGUI")]
 	public static class BioShipCombatOnGUI
 	{
 		private static Type shipCombatManagerType = AccessTools.TypeByName("ShipCombatManager");
@@ -186,7 +183,8 @@ namespace BioShip
                 {
 					foreach(Thing bt in ((Corpse)t).InnerPawn.ButcherProducts(null, 1.25f))
 					{
-						__instance.Refuel(bt.stackCount);
+						float adjustedCount = bt.stackCount * 1.25f;
+						__instance.Refuel(adjustedCount);
 					}
 				}
 				t.Destroy(DestroyMode.Vanish);

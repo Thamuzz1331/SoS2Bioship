@@ -33,6 +33,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.</description>
@@ -116,6 +117,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.</description>
@@ -183,6 +185,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<Flammability>0</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<placeWorkers>
@@ -231,6 +234,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 			<ShipMeat>50</ShipMeat>
@@ -255,6 +259,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 			<ShipMeat>50</ShipMeat>
@@ -281,6 +286,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 			<ShipMeat>75</ShipMeat>
@@ -308,6 +314,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 			<ShipMeat>75</ShipMeat>
@@ -335,6 +342,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 			<ShipMeat>100</ShipMeat>
@@ -362,6 +370,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 			<ShipMeat>100</ShipMeat>
@@ -403,6 +412,7 @@
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Flammability>0.0</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 			<Beauty>1</Beauty>
 		</statBases>
 		<description>Fleshy floors</description>
@@ -492,6 +502,7 @@
 		</researchPrerequisites>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.0</Flammability>
 		</statBases>
 		<selectable>true</selectable>
@@ -539,6 +550,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
@@ -612,6 +624,7 @@
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
@@ -664,6 +677,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
@@ -743,7 +757,7 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>80000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>2500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -819,7 +833,7 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>1</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -875,7 +889,7 @@
 		<blockLight>false</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<TrapMeleeDamage>100</TrapMeleeDamage>
@@ -940,7 +954,7 @@
 		<blockLight>false</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<TrapMeleeDamage>200</TrapMeleeDamage>
@@ -1012,6 +1026,7 @@
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>0</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<description>Stores 25 nutrition units worth of fat.</description>
 		<size>(1,2)</size>
@@ -1067,6 +1082,7 @@
 		<statBases>
 			<MaxHitPoints>1000</MaxHitPoints>
 			<Flammability>0</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<description>Stores 250 nutrition units worth of fat.</description>
 		<size>(3,5)</size>
@@ -1107,6 +1123,7 @@
 		<statBases>
 			<MaxHitPoints>600</MaxHitPoints>
 			<Flammability>0.5</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipShieldGenerator</texPath>
@@ -1133,7 +1150,7 @@
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>2000</basePowerConsumption>
+				<basePowerConsumption>1000</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
@@ -1192,7 +1209,7 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>800</MaxHitPoints>
-			<WorkToBuild>3500</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.7</Flammability>
 			<Beauty>0</Beauty>
 		</statBases>
@@ -1235,7 +1252,7 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>1600</MaxHitPoints>
-			<WorkToBuild>3500</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.7</Flammability>
 			<Beauty>0</Beauty>
 		</statBases>
@@ -1278,7 +1295,7 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>800</MaxHitPoints>
-			<WorkToBuild>1500</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.7</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
@@ -1313,7 +1330,7 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>1600</MaxHitPoints>
-			<WorkToBuild>6000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.7</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
@@ -1349,7 +1366,7 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>800</MaxHitPoints>
-			<WorkToBuild>3500</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.7</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
@@ -1411,7 +1428,7 @@
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>1600</MaxHitPoints>
-			<WorkToBuild>12000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.7</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
@@ -1479,7 +1496,7 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>1000</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1538,7 +1555,6 @@
 			<drawSize>(4,6)</drawSize>
 		</graphicData>
 		<researchPrerequisites>
-			<li>MetabolicScaffoldAdvanced</li>
 		</researchPrerequisites>
 		<altitudeLayer>Building</altitudeLayer>
 		<blockWind>true</blockWind>
@@ -1547,7 +1563,7 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-			<WorkToBuild>0</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>1000</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
@@ -1623,6 +1639,7 @@
 		<rotatable>true</rotatable>
 		<tickerType>Rare</tickerType>
 		<statBases>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -1664,12 +1681,9 @@
 			<li>
 				<compClass>CompColorable</compClass>
 			</li>		</comps>
-		<designationCategory>Ship</designationCategory>
 		<designationHotKey>Misc2</designationHotKey>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<researchPrerequisites>
-			<li>ShipBasics</li>
-			<li>AirConditioning</li>
 		</researchPrerequisites>
 		<building>
 			<shipPart>true</shipPart>
@@ -1708,10 +1722,9 @@
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>0.40</fillPercent>
 		<tickerType>Normal</tickerType>
-		<minifiedDef>MinifiedThing</minifiedDef>
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
-			<WorkToBuild>800</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Mass>20</Mass>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -1764,7 +1777,7 @@
 		<passability>Standable</passability>
 		<fillPercent>0.1</fillPercent>
 		<statBases>
-			<WorkToBuild>5000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -1826,7 +1839,7 @@
 		<passability>Standable</passability>
 		<fillPercent>0.1</fillPercent>
 		<statBases>
-			<WorkToBuild>5000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -1891,7 +1904,7 @@
 		<passability>Standable</passability>
 		<fillPercent>0.1</fillPercent>
 		<statBases>
-			<WorkToBuild>5000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
@@ -1957,7 +1970,7 @@
 		<passability>Standable</passability>
 		<fillPercent>0.1</fillPercent>
 		<statBases>
-			<WorkToBuild>5000</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>

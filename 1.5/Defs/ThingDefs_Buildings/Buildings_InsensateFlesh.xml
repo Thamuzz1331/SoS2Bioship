@@ -31,6 +31,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>400</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
@@ -105,6 +106,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
@@ -151,6 +153,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -165,6 +168,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -180,6 +184,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -196,6 +201,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -212,6 +218,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -228,6 +235,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -261,6 +269,7 @@
 		<placingDraggableDimensions>2</placingDraggableDimensions>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.0</Flammability>
 			<Beauty>1</Beauty>
 		</statBases>
@@ -338,6 +347,7 @@
 		</researchPrerequisites>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.0</Flammability>
 		</statBases>
 		<selectable>true</selectable>

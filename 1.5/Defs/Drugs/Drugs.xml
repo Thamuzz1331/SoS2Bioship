@@ -337,6 +337,10 @@
 				<stat>metabolicSpeed</stat>
 				<mod>1.25</mod>
 			</li>
+			<li Class="CompProperties_BuildingHediffStats">
+				<stat>movementSpeed</stat>
+				<mod>2.0</mod>
+			</li>
 		</comps>
 	</BuildingHediffDef>
 	<BuildingHediffDef>
@@ -351,6 +355,10 @@
 			<li Class="CompProperties_BuildingHediffStats">
 				<stat>metabolicSpeed</stat>
 				<mod>0.75</mod>
+			</li>
+			<li Class="CompProperties_BuildingHediffStats">
+				<stat>movementSpeed</stat>
+				<mod>0.50</mod>
 			</li>
 		</comps>
 	</BuildingHediffDef>

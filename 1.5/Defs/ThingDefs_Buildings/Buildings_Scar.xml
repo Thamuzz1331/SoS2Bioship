@@ -76,6 +76,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>A scar.</description>
@@ -158,6 +159,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>A scar.</description>
@@ -224,6 +226,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<Flammability>0</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<placeWorkers>
@@ -264,6 +267,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>375</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -282,6 +286,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -302,6 +307,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -323,6 +329,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -344,6 +351,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>1125</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -365,6 +373,7 @@
 		</comps>
 		<statBases>
 			<MaxHitPoints>1125</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<costList>
 		</costList>
@@ -398,6 +407,7 @@
 			<MaxHitPoints>150</MaxHitPoints>
 			<Flammability>0.0</Flammability>
 			<Beauty>1</Beauty>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
@@ -484,6 +494,7 @@
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0.0</Flammability>
+			<WorkToBuild>200</WorkToBuild>
 		</statBases>
 		<selectable>true</selectable>
 		<tickerType>Normal</tickerType>

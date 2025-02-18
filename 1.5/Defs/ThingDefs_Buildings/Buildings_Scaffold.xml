@@ -1367,7 +1367,6 @@
 		</graphicData>
 		<placeWorkers>
 			<li>PlaceWorker_OnFleshOrScaff</li>
-			<li>SaveOurShip2.PlaceWorker_ShipShieldRadius</li>
 		</placeWorkers>
 		<comps>
 			<li Class="CompProperties_MutableScaffold">
@@ -1462,8 +1461,7 @@
 		<designationHotKey>Misc2</designationHotKey>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<researchPrerequisites>
-			<li>ShipBasics</li>
-			<li>AirConditioning</li>
+			<li>StructuralScaffold</li>
 		</researchPrerequisites>
 		<building>
 			<shipPart>true</shipPart>
@@ -1640,7 +1638,7 @@
 		<graphicData>
 			<texPath>Things/Building/Scaffold/SmallThermalBile_Scafold</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(2.1,4.7)</drawSize>
+			<drawSize>(2,2)</drawSize>
 		</graphicData>
 		<statBases>
 			<MaxHitPoints>8</MaxHitPoints>
@@ -1968,6 +1966,7 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>HaulBeastSpawner</transformString>
+				<iconPath>Things/Pawn/Animal/HaulBeast/HaulBeast_south</iconPath>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -2020,6 +2019,7 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>ThreeHaulBeastSpawner</transformString>
+				<iconPath>Things/Pawn/Animal/HaulBeast/HaulBeast_south</iconPath>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -2072,6 +2072,7 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>WarBeastSpawner</transformString>
+				<iconPath>Things/Pawn/Animal/WarBeast/WarBeast_south</iconPath>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>

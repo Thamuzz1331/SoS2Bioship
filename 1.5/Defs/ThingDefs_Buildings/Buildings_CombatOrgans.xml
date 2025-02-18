@@ -291,6 +291,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<statBases>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>200</MaxHitPoints>
 			<Flammability>0.5</Flammability>
 		</statBases>
@@ -343,7 +344,7 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
-			<WorkToBuild>1600</WorkToBuild>
+			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0.5</Flammability>
 		</statBases>
 		<costList>

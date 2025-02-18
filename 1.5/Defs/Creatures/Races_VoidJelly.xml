@@ -7,6 +7,8 @@
 			<MoveSpeed>5.5</MoveSpeed>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>65</ComfyTemperatureMax>
+			<HypoxiaResistance>1</HypoxiaResistance>
+			<DecompressionResistance>1</DecompressionResistance>
 			<MarketValue>150</MarketValue>
 			<MeatAmount>0</MeatAmount>
 			<LeatherAmount>0</LeatherAmount>

@@ -105,7 +105,8 @@ namespace RimWorld
                     {
                         FloatMenu menu = new FloatMenu(options);
                         Find.WindowStack.Add(menu);
-                    }
+                    },
+                    icon = ContentFinder<Texture2D>.Get("UI_Elements/Gizmo_InjectDrug")
                 };
             }
             if (Prefs.DevMode)

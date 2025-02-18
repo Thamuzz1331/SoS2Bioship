@@ -7,6 +7,7 @@
 		<receivesSignals>true</receivesSignals>
 		<designationCategory></designationCategory>
 		<statBases>
+			<WorkToBuild>200</WorkToBuild>
 			<MaxHitPoints>600</MaxHitPoints>
 			<Flammability>0.5</Flammability>
 		</statBases>
@@ -39,7 +40,7 @@
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>2000</basePowerConsumption>
+				<basePowerConsumption>1000</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
@@ -106,6 +107,7 @@
 		<fillPercent>1</fillPercent>
 		<statBases>
 			<MaxHitPoints>1250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>

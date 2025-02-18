@@ -13,6 +13,7 @@ namespace RimWorld
     {
         public string creatureDef = null;
         public int spawnCount = 1;
+        public string iconPath = "";
 
         public CompProperties_BioshipSpawner()
         {

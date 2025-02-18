@@ -360,6 +360,7 @@
 		<fillPercent>1</fillPercent>
 		<statBases>
 			<MaxHitPoints>1250</MaxHitPoints>
+			<WorkToBuild>8000</WorkToBuild>
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>

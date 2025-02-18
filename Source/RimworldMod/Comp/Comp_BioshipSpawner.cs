@@ -9,6 +9,7 @@ using Verse;
 using UnityEngine;
 using LivingBuildings;
 
+
 namespace RimWorld
 {
     [StaticConstructorOnStartup]
@@ -78,7 +79,7 @@ namespace RimWorld
                 yield return new Command_Action
                 {
                     defaultLabel = "Spawn",
-                    icon = ContentFinder<Texture2D>.Get("U_Elements/Gizmo_SpawnHaulbeast"),
+                    icon = ContentFinder<Texture2D>.Get("UI_Elements/Gizmo_SpawnHaulbeast"),
                     action = delegate ()
                     {
                         DoSpawn();

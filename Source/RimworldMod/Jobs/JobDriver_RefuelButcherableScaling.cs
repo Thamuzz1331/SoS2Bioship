@@ -10,7 +10,7 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class JobDriver_RefuleButcherableScaling : JobDriver
     {
-        private const int Duration = 400;
+        private const int Duration = 100;
 
         protected Thing Refuelable
         {

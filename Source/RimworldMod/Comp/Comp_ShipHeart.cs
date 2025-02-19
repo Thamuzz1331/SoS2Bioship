@@ -326,6 +326,13 @@ namespace RimWorld
         {
             return this.bodyName;
         }
+
+        public override float GetPassiveConsumptions()
+        {
+
+            float metabolicOffset = 1f;
+            return (0.015f * (body.bodyParts.Count + 25)) / metabolicOffset;
+        }
     }
 
     public class DefOptions : IExposable

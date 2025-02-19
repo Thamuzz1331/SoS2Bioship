@@ -61,7 +61,7 @@
 			<baseHealthScale>1.25</baseHealthScale>
 			<foodType></foodType>
 			<wildness>0.0</wildness>
-			<lifeExpectancy>1</lifeExpectancy>
+			<lifeExpectancy>.01</lifeExpectancy>
 			<trainability>Advanced</trainability>
 			<manhunterOnDamageChance>1.00</manhunterOnDamageChance>
 			<lifeStageAges>

@@ -1145,9 +1145,6 @@
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>CompBioshipShield</compClass>
 			</li>
-			<li Class="SaveOurShip2.CompProps_ShipHeat">
-				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
-			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>1000</basePowerConsumption>

@@ -61,7 +61,7 @@
 				<compClass>CompColorable</compClass>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<isArmor>true</isArmor>
+				<regenDef>CoralArmor</regenDef>
 				<species>bioship</species>
 				<growsArmor>true</growsArmor>
 			</li>
@@ -101,7 +101,7 @@
 				<compClass>CompColorable</compClass>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<isArmor>true</isArmor>
+				<regenDef>BoneArmor</regenDef>
 				<species>bioship</species>
 				<growsArmor>true</growsArmor>
 			</li>
@@ -141,7 +141,7 @@
 				<compClass>CompColorable</compClass>
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
-				<isArmor>true</isArmor>
+				<regenDef>DragonscaleArmor</regenDef>
 				<species>bioship</species>
 				<growsArmor>true</growsArmor>
 			</li>

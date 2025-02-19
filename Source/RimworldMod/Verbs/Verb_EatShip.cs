@@ -64,7 +64,7 @@ namespace RimWorld
                             List<CompRefuelable> full = new List<CompRefuelable>();
                             if (maws.Count > 0)
                             {
-                                float fuel = bcomp.count / (maws.Count * 5);
+                                float fuel = bcomp.count / (maws.Count * 2);
                                 foreach (CompRefuelable m in maws)
                                 {
                                     m.Refuel(fuel);

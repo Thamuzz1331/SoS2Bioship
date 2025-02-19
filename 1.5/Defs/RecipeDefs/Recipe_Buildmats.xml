@@ -93,9 +93,9 @@
 	
 	<RecipeDef>
 		<defName>NutrientSolution</defName>
-		<label>create hyperdense nutrient solution</label>
-		<description>Create hyperdense nutrient solution</description>
-		<jobString>Rendering hyperdense nutrient solution</jobString>
+		<label>create superconcentrated nutrient solution</label>
+		<description>Create superconcentrated nutrient solution</description>
+		<jobString>Rendering superconcentrated nutrient solution</jobString>
 		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>

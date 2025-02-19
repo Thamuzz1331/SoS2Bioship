@@ -1798,16 +1798,16 @@
 			<li Class="CompProperties_SalvageMaw"></li>
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+				<fuelCapacity>10000</fuelCapacity>
+				<fuelConsumptionRate>600</fuelConsumptionRate>
 				<fuelFilter>
 					<thingDefs>
 					</thingDefs>
 				</fuelFilter>
-				<fuelCapacity>10000</fuelCapacity>
-				<fuelConsumptionRate>600</fuelConsumptionRate>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
 			</li>
 			<li Class="CompProperties_RefuelableNutritionSource">
-				<nutrientPerPulse>30</nutrientPerPulse>
+				<nutrientPerPulse>50</nutrientPerPulse>
 			</li>
 		</comps>
 		<placeWorkers>

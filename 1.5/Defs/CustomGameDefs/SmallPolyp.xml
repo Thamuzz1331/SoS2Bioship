@@ -19,7 +19,7 @@
 		<tradeShip>False</tradeShip>
 		<navyExclusive>False</navyExclusive>
 		<customPaintjob>False</customPaintjob>
-		<neverFleet>False</neverFleet>
+		<neverFleet>True</neverFleet>
 		<core>
 			<shapeOrDef>Ship_Heart_Small_AC</shapeOrDef>
 			<x>8</x>

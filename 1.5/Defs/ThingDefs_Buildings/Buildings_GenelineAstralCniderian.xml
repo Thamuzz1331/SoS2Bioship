@@ -12,8 +12,8 @@
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeat</compClass>
-				<heatPerPulse>10</heatPerPulse>
-				<energyToFire>40</energyToFire>
+				<heatPerPulse>5</heatPerPulse>
+				<energyToFire>20</energyToFire>
 				<optRange>50</optRange>
 				<maxRange>50</maxRange>
 				<projectileSpeed>10</projectileSpeed>
@@ -381,8 +381,9 @@
 				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>1</heatPerPulse>
 				<energyToFire>10</energyToFire>
-				<maxRange>200</maxRange>
-				<projectileSpeed>0.25</projectileSpeed>
+				<optRange>300</optRange>
+				<maxRange>300</maxRange>
+				<projectileSpeed>0.5</projectileSpeed>
 				<threat>30</threat>
 			</li>
 			<li Class="CompProperties_Power">
@@ -423,8 +424,9 @@
 				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>1</heatPerPulse>
 				<energyToFire>10</energyToFire>
-				<maxRange>200</maxRange>
-				<projectileSpeed>0.25</projectileSpeed>
+				<optRange>300</optRange>
+				<maxRange>300</maxRange>
+				<projectileSpeed>0.5</projectileSpeed>
 				<threat>30</threat>
 			</li>
 			<li Class="CompProperties_Power">

@@ -60,7 +60,7 @@ namespace RimWorld
                 spawn.training.Train(TrainableDefOf.Obedience, null, true);
                 spawn.training.Train(TrainableDefOf.Release, null, true);
                 spawn.training.Train(BSTrainableDefOf.Haul, null, true);
-                
+                HediffGiverUtility.TryApply(spawn, HediffDef.Named("ShipDrone"), null, true);
             }
             if(refuelable != null)
             {

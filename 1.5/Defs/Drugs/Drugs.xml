@@ -182,13 +182,15 @@
 		</thingCategories>
 		<comps>
 			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>50.0</fuelCapacity>
+				<fuelCapacity>500.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				
 				<fuelFilter>
 					<thingDefs>
 						<li>WakeUp</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
 				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
@@ -198,11 +200,11 @@
 			<li Class="CompProperties_DrugInjector">
 				<drugHediff>DrugWakeup</drugHediff>
 				<addictionHediff>AddictionWakeup</addictionHediff>
-				<drugDuration>2500</drugDuration>
+				<drugDuration>25000</drugDuration>
 				<addictionChance>0.15</addictionChance>
 				<maxWithdrawl>420000</maxWithdrawl>
 				<withdrawlRate>1</withdrawlRate>
-				<massDosageMult>0.1</massDosageMult>
+				<massDosageMult>0.01</massDosageMult>
 				<massAddictionMult>0.02</massAddictionMult>
 				<maxSimultaneous>100</maxSimultaneous>
 			</li>
@@ -243,6 +245,7 @@
 			</li>
 		</comps>
 	</BuildingHediffDef>
+	<!-- Go-Juice Injector -->
 	<ThingDef ParentName="BuildingBase">
 		<defName>GoJuiceInjector</defName>
 		<label>go juice injector</label>
@@ -293,13 +296,14 @@
 		</thingCategories>
 		<comps>
 			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>50.0</fuelCapacity>
+				<fuelCapacity>500.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>
 						<li>GoJuice</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<autoRefuelPercent>1</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
 				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
@@ -309,11 +313,11 @@
 			<li Class="CompProperties_DrugInjector">
 				<drugHediff>DrugGoJuice</drugHediff>
 				<addictionHediff>AddictionGoJuice</addictionHediff>
-				<drugDuration>2500</drugDuration>
+				<drugDuration>25000</drugDuration>
 				<addictionChance>0.15</addictionChance>
 				<maxWithdrawl>420000</maxWithdrawl>
 				<withdrawlRate>1</withdrawlRate>
-				<massDosageMult>0.1</massDosageMult>
+				<massDosageMult>0.01</massDosageMult>
 				<massAddictionMult>0.02</massAddictionMult>
 				<maxSimultaneous>100</maxSimultaneous>
 			</li>
@@ -335,7 +339,7 @@
 		<comps>
 			<li Class="CompProperties_BuildingHediffStats">
 				<stat>metabolicSpeed</stat>
-				<mod>1.25</mod>
+				<mod>1.50</mod>
 			</li>
 			<li Class="CompProperties_BuildingHediffStats">
 				<stat>movementSpeed</stat>

@@ -54,8 +54,6 @@ namespace RimWorld
                         {
                             adjRegen.Add(adj.TryGetComp<CompRegenSpot>());
                         }
-                        Log.Message("HID" + heart.TryGetComp<CompShipHeart>().bodyId);
-                        Log.Message("BPID" + adj.TryGetComp<CompShipBodyPart>()?.bodyId);
                         if (!didRegen && 
                             adj.TryGetComp<CompShipBodyPart>() != null && 
                             adj.TryGetComp<CompShipBodyPart>().bodyId == heart.TryGetComp<CompShipHeart>().bodyId &&
@@ -86,8 +84,25 @@ namespace RimWorld
                     {
                         adj.regenCountdown = heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenInterval();
                     }
-                    Log.Message("Spawning replacement");
                     replacement.SpawnSetup(parent.Map, false);
+                    CellRect occupies = replacement.OccupiedRect();
+                    List<Thing> toDestroy = new List<Thing>();
+                    foreach (IntVec3 cell in occupies.Cells)
+                    {
+                        foreach (Thing t in cell.GetThingList(this.parent.Map))
+                        {
+                            Log.Message("Detecting " + t);
+                            if (t != replacement && t != parent && !(t is Pawn))
+                            {
+                                Log.Message(t + " should not be here");
+                                toDestroy.Add(t);
+                            }
+                        }
+                    }
+                    foreach (Thing t in toDestroy)
+                    {
+                        t.Destroy();
+                    }
                     parent.Destroy();
                 }
                 regenCountdown += (heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenInterval()/2);

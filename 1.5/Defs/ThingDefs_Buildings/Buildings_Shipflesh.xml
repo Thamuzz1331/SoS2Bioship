@@ -76,6 +76,8 @@
 			<Steel>2</Steel>
 			<Plasteel>1</Plasteel>
 		</costList>
+		<killedLeavings>
+		</killedLeavings>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -151,6 +153,8 @@
 		<costList>
 			<ShipMeat>75</ShipMeat>
 		</costList>
+		<killedLeavings>
+		</killedLeavings>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -194,6 +198,8 @@
 		<building>
 			<shipPart>true</shipPart>
 		</building>
+		<killedLeavings>
+		</killedLeavings>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<holdsRoof>true</holdsRoof>
@@ -213,6 +219,8 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
+		<killedLeavings>
+		</killedLeavings>
 		<researchPrerequisites>
 		</researchPrerequisites>
 	</ThingDef>
@@ -1795,7 +1803,12 @@
 				<species>bioship</species>
 				<whitherTo>SalvageMawWhithered</whitherTo>
 			</li>
-			<li Class="CompProperties_SalvageMaw"></li>
+			<li Class="SaveOurShip2.CompProps_ShipBay">
+				<compClass>CompSalvageMaw</compClass>
+				<weight>5000</weight>
+				<borderSize>1</borderSize>
+				<graphicPath>Things/Building/Ship/Salvage_Bay_Roof</graphicPath>
+			</li>
 			<li Class="CompProperties_Refuelable">
 				<targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
 				<fuelCapacity>10000</fuelCapacity>

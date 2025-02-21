@@ -88,7 +88,6 @@
 		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<killedLeavings>
-			<OrganSeed>4</OrganSeed>
 		</killedLeavings>
 	</ThingDef>
 

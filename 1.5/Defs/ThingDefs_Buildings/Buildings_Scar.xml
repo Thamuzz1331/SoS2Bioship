@@ -79,6 +79,8 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
+		<killedLeavings>
+		</killedLeavings>
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
@@ -162,6 +164,8 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
+		<killedLeavings>
+		</killedLeavings>
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
@@ -235,6 +239,8 @@
 		<building>
 			<shipPart>true</shipPart>
 		</building>
+		<killedLeavings>
+		</killedLeavings>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<holdsRoof>true</holdsRoof>
@@ -269,6 +275,8 @@
 			<MaxHitPoints>375</MaxHitPoints>
 			<WorkToBuild>200</WorkToBuild>
 		</statBases>
+		<killedLeavings>
+		</killedLeavings>
 		<costList>
 		</costList>
 	</ThingDef>
@@ -426,6 +434,8 @@
 		</comps>
 		<placeWorkers>
 		</placeWorkers>
+		<killedLeavings>
+		</killedLeavings>
 		<rotatable>false</rotatable>
 		<selectable>false</selectable>
 		<neverMultiSelect>true</neverMultiSelect>

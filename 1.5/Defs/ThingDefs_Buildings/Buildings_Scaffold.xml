@@ -445,7 +445,6 @@
 			<Beauty>1</Beauty>
 			<WorkToBuild>600</WorkToBuild>
 		</statBases>
-		<description>Fleshy floors</description>
 		<comps>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>BioShipHullTile_Insensate</stapleDef>
@@ -1872,7 +1871,7 @@
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>SalvageMawScafold</defName>
-		<label>salvage maw scafold</label>
+		<label>salvage maw scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory>Ship</designationCategory>
@@ -1967,7 +1966,6 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>HaulBeastSpawner</transformString>
-				<iconPath>Things/Pawn/Animal/HaulBeast/HaulBeast_south</iconPath>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -2020,7 +2018,6 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>ThreeHaulBeastSpawner</transformString>
-				<iconPath>Things/Pawn/Animal/HaulBeast/HaulBeast_south</iconPath>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -2073,7 +2070,6 @@
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>WarBeastSpawner</transformString>
-				<iconPath>Things/Pawn/Animal/WarBeast/WarBeast_south</iconPath>
 			</li>
 		</comps>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>

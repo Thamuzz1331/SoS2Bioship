@@ -5,9 +5,6 @@
 		<thingClass>Building_BioShipTurret</thingClass>
 		<label>nematocyst</label>
 		<description>A barbed thread that can be launched against enemy ships or torpedos.</description>
-		<relatedBuildCommands>
-			<li>SmallWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(2,2)</drawSize>
@@ -48,6 +45,9 @@
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>17.0</turretBurstCooldownTime>
 			<turretTopDrawSize>2.1</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>SmallWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>200</ShipMeat>
@@ -171,9 +171,6 @@
 		<thingClass>Building_BioShipTurret</thingClass>
 		<label>acid spitter</label>
 		<description>Spits a ball of caustic mucus clings to a hull on impact.  A medium ranged weapon that deals linger damage.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
-		<relatedBuildCommands>
-			<li>MediumWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
@@ -212,6 +209,9 @@
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>3.1</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>MediumWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>300</ShipMeat>
@@ -317,9 +317,6 @@
 	<!-- Heavy Turret -->
 	<ThingDef ParentName="BaseShipArtilleryWeapon" Name="BaseBioTorpedo" Abstract="True">
 		<description>Spine launcher.  Hurls volleys of bio-plasma propelled bone spikes.</description>
-		<relatedBuildCommands>
-			<li>LargeWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
 		</graphicData>
@@ -343,6 +340,9 @@
 			</li>
 		</verbs>
 		<building>
+			<relatedBuildCommands>
+				<li>LargeWeaponScaffold</li>
+			</relatedBuildCommands>
 			<fixedStorageSettings>
 				<filter>
 					<categories>
@@ -415,6 +415,9 @@
 		</comps>
 		<building>
 			<turretGunDef>Artillery_BioShipTorpedo_Two</turretGunDef>
+			<relatedBuildCommands>
+				<li>LargeWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>400</ShipMeat>
@@ -458,6 +461,9 @@
 		</comps>
 		<building>
 			<turretGunDef>Artillery_BioShipTorpedo_Six</turretGunDef>
+			<relatedBuildCommands>
+				<li>LargeWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<uiIconPath>Things/Building/Ship/TorpedoTubes_small</uiIconPath>
 		<costList>
@@ -472,9 +478,6 @@
 		<label>jelly cannon</label>
 		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>SpinalWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/PolypLauncherCannon</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -542,6 +545,9 @@
 			<turretGunDef>ShipTurret_JellyCannon</turretGunDef>
 			<turretBurstWarmupTime>2</turretBurstWarmupTime>
 			<turretBurstCooldownTime>90.0</turretBurstCooldownTime>
+			<relatedBuildCommands>
+				<li>SpinalWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">

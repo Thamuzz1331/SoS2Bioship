@@ -79,8 +79,6 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
-		<killedLeavings>
-		</killedLeavings>
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
@@ -114,6 +112,9 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>Scaffold_Beam</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 		</costList>
@@ -164,8 +165,6 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
-		<killedLeavings>
-		</killedLeavings>
 		<description>A scar.</description>
 		<placingDraggableDimensions>1</placingDraggableDimensions>
 		<comps>
@@ -192,6 +191,9 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>Scaffold_Beam_Unpowered</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 		</costList>
@@ -202,8 +204,6 @@
 		<designationHotKey>Misc1</designationHotKey>
 		<holdsRoof>true</holdsRoof>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<killedLeavings>
-		</killedLeavings>
 	</ThingDef>
 	<!-- corners -->
 	<ThingDef ParentName="BuildingBase" Name="ScarCornerBase" Abstract="True">
@@ -245,8 +245,6 @@
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<holdsRoof>true</holdsRoof>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-		<killedLeavings>
-		</killedLeavings>
 	</ThingDef>
 	<ThingDef ParentName="ScarCornerBase" Name="ScarCorner" Abstract="True">
 		<description>Angled armor for a ship's outer hull.</description>

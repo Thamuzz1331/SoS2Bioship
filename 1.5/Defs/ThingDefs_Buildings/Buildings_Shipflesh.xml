@@ -69,6 +69,9 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>Scaffold_Beam</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>75</ShipMeat>
@@ -77,9 +80,6 @@
 		</costList>
 		<killedLeavings>
 		</killedLeavings>
-		<relatedBuildCommands>
-			<li>Scaffold_Beam</li>
-		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -150,15 +150,15 @@
 			<blueprintGraphicData>
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>Scaffold_Beam_Unpowered</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>75</ShipMeat>
 		</costList>
 		<killedLeavings>
 		</killedLeavings>
-		<relatedBuildCommands>
-			<li>Scaffold_Beam_Unpowered</li>
-		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -201,9 +201,10 @@
 		<rotatable>true</rotatable>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Corner_OneOne</li>
+			</relatedBuildCommands>
 		</building>
-		<killedLeavings>
-		</killedLeavings>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<holdsRoof>true</holdsRoof>
@@ -250,9 +251,6 @@
 		<costList>
 			<ShipMeat>50</ShipMeat>
 		</costList>
-		<relatedBuildCommands>
-			<li>Scaffold_Corner_OneOne</li>
-		</relatedBuildCommands>
 	</ThingDef>
 	<ThingDef ParentName="BioShipCorner">
 		<defName>Bio_Ship_Corner_OneOneFlip</defName>
@@ -277,9 +275,11 @@
 		<costList>
 			<ShipMeat>50</ShipMeat>
 		</costList>
-		<relatedBuildCommands>
-			<li>Scaffold_Corner_OneFlip</li>
-		</relatedBuildCommands>
+		<building>
+			<relatedBuildCommands>
+				<li>Scaffold_Corner_OneOneFlip</li>
+			</relatedBuildCommands>
+		</building>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 	</ThingDef>
 	<ThingDef ParentName="BioShipCorner">
@@ -306,9 +306,11 @@
 		<costList>
 			<ShipMeat>75</ShipMeat>
 		</costList>
-		<relatedBuildCommands>
-			<li>Scaffold_Corner_OneTwo</li>
-		</relatedBuildCommands>
+		<building>
+			<relatedBuildCommands>
+				<li>Scaffold_Corner_OneTwo</li>
+			</relatedBuildCommands>
+		</building>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,2)</size>
 	</ThingDef>
@@ -336,9 +338,11 @@
 		<costList>
 			<ShipMeat>75</ShipMeat>
 		</costList>
-		<relatedBuildCommands>
-			<li>Scaffold_Corner_OneTwoFlip</li>
-		</relatedBuildCommands>
+		<building>
+			<relatedBuildCommands>
+				<li>Scaffold_Corner_OneTwoFlip</li>
+			</relatedBuildCommands>
+		</building>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,2)</size>
 	</ThingDef>
@@ -366,9 +370,11 @@
 		<costList>
 			<ShipMeat>100</ShipMeat>
 		</costList>
-		<relatedBuildCommands>
-			<li>Scaffold_Corner_OneThree</li>
-		</relatedBuildCommands>
+		<building>
+			<relatedBuildCommands>
+				<li>Scaffold_Corner_OneThree</li>
+			</relatedBuildCommands>
+		</building>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,3)</size>
 	</ThingDef>
@@ -396,9 +402,11 @@
 		<costList>
 			<ShipMeat>100</ShipMeat>
 		</costList>
-		<relatedBuildCommands>
-			<li>Scaffold_Corner_OneThreeFlip</li>
-		</relatedBuildCommands>
+		<building>
+			<relatedBuildCommands>
+				<li>Scaffold_Corner_OneThreeFlip</li>
+			</relatedBuildCommands>
+		</building>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,3)</size>
 	</ThingDef>
@@ -475,9 +483,6 @@
 		<description>Allows access to a ship or divides rooms inside it.  A permiable mucus layer prevents the loss of gasses.</description>
 		<category>Building</category>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>ScaffoldAirlock</li>
-		</relatedBuildCommands>
 		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
@@ -556,6 +561,9 @@
 			</blueprintGraphicData>
 			<blueprintClass>Blueprint_Door</blueprintClass>
 			<roamerCanOpen>false</roamerCanOpen>
+			<relatedBuildCommands>
+				<li>ScaffoldAirlock</li>
+			</relatedBuildCommands>
 		</building>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 	</ThingDef>
@@ -565,9 +573,6 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>Scaffold_Engine_Small</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -633,6 +638,9 @@
 		</comps>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Engine_Small</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>120</ShipMeat>
@@ -647,9 +655,6 @@
 		<defName>BioShip_Engine_RCS</defName>
 		<label>Organic RCS thruster</label>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>Scaffold_Engine_rcs</li>
-		</relatedBuildCommands>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
@@ -684,6 +689,9 @@
 		<building>
 			<shipPart>true</shipPart>
 			<paintable>true</paintable>
+			<relatedBuildCommands>
+				<li>Scaffold_Engine_rcs</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>60</ShipMeat>
@@ -696,9 +704,6 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>Scaffold_Engine</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -719,7 +724,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A psiengine capable of launching a ship into orbit. Not suitable for interplanetary travel.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
+		<description>A psi-engine capable of launching a ship into orbit.  Utilizes shaped solar-pinholes to generate thrust.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
@@ -763,6 +768,9 @@
 		</comps>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Engine</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>300</ShipMeat>
@@ -780,9 +788,6 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>Scaffold_Engine_Large</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -803,7 +808,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A nuclear-powered engine capable of launching a ship into orbit, at the cost of irradiating the surrounding area. Not suitable for interplanetary travel.\n\nProvides six times the speed of small engines.</description>
+		<description>A powerful psi-engine capable of launching a ship into orbit.  Utilizes shaped solar-pinholes to generate thrust. Not suitable for interplanetary travel.\n\nProvides eigth times the speed of small engines.</description>
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
@@ -839,13 +844,16 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 			<li Class="CompProperties_PsiEngine">
-				<thrust>6</thrust>
+				<thrust>8</thrust>
 				<fuelUse>2</fuelUse>
 				<takeOff>true</takeOff>
 			</li>
 		</comps>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Engine_Large</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>400</ShipMeat>
@@ -861,9 +869,6 @@
 		<defName>BioShip_SensorCluster</defName>
 		<label>bioship sensors</label>
 		<thingClass>SaveOurShip2.Building_ShipSensor</thingClass>
-		<relatedBuildCommands>
-			<li>Scaffold_Sensor</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioSensorCluster</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -882,7 +887,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>Basic ship sensors. Capable of detecting nearby craft and observing sites from orbit.</description>
+		<description>Basic ship sensors. Capable of detecting nearby craft and observing sites from orbit.\nCurrently bugged, use mechanical sensor instead.</description>
 		<size>(1,1)</size>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
@@ -901,6 +906,9 @@
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Sensor</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>75</ShipMeat>
@@ -916,9 +924,6 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Maw_Small</defName>
 		<label>small ship maw</label>
-		<relatedBuildCommands>
-			<li>Scaffold_Maw_Small</li>
-		</relatedBuildCommands>
 		<thingClass>Building_TrapDamager</thingClass>
 		<designationCategory></designationCategory>
 		<graphicData>
@@ -943,7 +948,7 @@
 			<TrapSpringChance>1.0</TrapSpringChance>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>Small shipmaw.</description>
+		<description>Small shipmaw capable of processing butchered meat.</description>
 		<size>(1,1)</size>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
@@ -972,6 +977,9 @@
 			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
 			<trapDestroyOnSpring>false</trapDestroyOnSpring>
+			<relatedBuildCommands>
+				<li>Scaffold_Maw_Small</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>50</ShipMeat>
@@ -985,9 +993,6 @@
 		<defName>Maw_Corpse</defName>
 		<label>corpse maw</label>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>Scaffold_Maw_Corpse</li>
-		</relatedBuildCommands>
 		<thingClass>Building_TrapDamager</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
@@ -1011,7 +1016,7 @@
 			<TrapSpringChance>1.0</TrapSpringChance>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>Corpse maw.</description>
+		<description>Larger shipmaw, capable of processing corpses.  More efficient than butchering.</description>
 		<size>(2,2)</size>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
@@ -1041,6 +1046,9 @@
 			<isTrap>true</isTrap>
 			<shipPart>true</shipPart>
 			<trapDestroyOnSpring>false</trapDestroyOnSpring>
+			<relatedBuildCommands>
+				<li>Scaffold_Maw_Corpse</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>50</ShipMeat>
@@ -1055,9 +1063,11 @@
 		<defName>FatStoreSmall</defName>
 		<label>fat store</label>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>Scaffold_Maw_Corpse</li>
-		</relatedBuildCommands>
+		<building>
+			<relatedBuildCommands>
+				<li>FatStoreSmallScaffold</li>
+			</relatedBuildCommands>
+		</building>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1081,7 +1091,7 @@
 			<Flammability>0</Flammability>
 			<WorkToBuild>200</WorkToBuild>
 		</statBases>
-		<description>Stores 25 nutrition units worth of fat.</description>
+		<description>Stores up to 25 nutrition units worth of fat.</description>
 		<size>(1,2)</size>
 		<costList>
 			<ShipMeat>50</ShipMeat>
@@ -1114,6 +1124,11 @@
 		<defName>FatStoreLarge</defName>
 		<label>fat store</label>
 		<designationCategory></designationCategory>
+		<building>
+			<relatedBuildCommands>
+				<li>FatStoreLargeScaffold</li>
+			</relatedBuildCommands>
+		</building>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1137,7 +1152,7 @@
 			<Flammability>0</Flammability>
 			<WorkToBuild>200</WorkToBuild>
 		</statBases>
-		<description>Stores 250 nutrition units worth of fat.</description>
+		<description>Stores up to 250 nutrition units worth of fat.</description>
 		<size>(3,5)</size>
 		<costList>
 			<ShipMeat>500</ShipMeat>
@@ -1219,6 +1234,11 @@
 			<OrganSeed>3</OrganSeed>
 			<Neutroamine>25</Neutroamine>
 		</costList>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldShieldGenerator</li>
+			</relatedBuildCommands>
+		</building>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<seeThroughFog>true</seeThroughFog>
 	</ThingDef>
@@ -1276,7 +1296,7 @@
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>CompStatScalingThreatHeat</compClass>
 				<heatCapacity>200</heatCapacity>
-				<heatVent>9</heatVent>
+				<heatVent>12</heatVent>
 				<heatLoss>4</heatLoss>
 				<threat>2</threat>
 			</li>
@@ -1288,6 +1308,11 @@
 				<compClass>CompColorable</compClass>
 			</li>
 		</comps>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldHeatsink</li>
+			</relatedBuildCommands>
+		</building>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipHeatsinkLarge</defName>
@@ -1331,6 +1356,11 @@
 			<Neutroamine>10</Neutroamine>
 			<OrganSeed>4</OrganSeed>
 		</costList>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldHeatsinkLarge</li>
+			</relatedBuildCommands>
+		</building>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipCoolantCyst</defName>
@@ -1366,6 +1396,11 @@
 				<threat>1</threat>
 			</li>
 		</comps>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldCoolantCyst</li>
+			</relatedBuildCommands>
+		</building>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipCoolantCystLarge</defName>
@@ -1401,6 +1436,12 @@
 				<threat>5</threat>
 			</li>
 		</comps>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldCoolantCystLarge</li>
+			</relatedBuildCommands>
+		</building>
+
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipPurgePort</defName>
@@ -1463,12 +1504,17 @@
 		</comps>
 		<researchPrerequisites>
 		</researchPrerequisites>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldPurgePort</li>
+			</relatedBuildCommands>
+		</building>
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>BioShipPurgePortLarge</defName>
 		<label>large thermal bile purge duct</label>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Ejecting molten silver into space is a costly way to quickly purge stored heat. Shields will be dropped during a purge.</description>
+		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Shields will be dropped during a purge.</description>
 		<size>(4,4)</size>
 		<designationCategory></designationCategory>
 		<graphicData>
@@ -1525,6 +1571,11 @@
 		</comps>
 		<researchPrerequisites>
 		</researchPrerequisites>
+		<building>
+			<relatedBuildCommands>
+				<li>ScaffoldPurgePortLarge</li>
+			</relatedBuildCommands>
+		</building>
 	</ThingDef>
 		
 	<ThingDef ParentName="BuildingBase">
@@ -1581,6 +1632,9 @@
 		</comps>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Giant_Mitochondira</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>200</ShipMeat>
@@ -1648,6 +1702,9 @@
 		</comps>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Giant_Mitochondira</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>400</ShipMeat>
@@ -1741,6 +1798,9 @@
 				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
 			<paintable>true</paintable>
+			<relatedBuildCommands>
+				<li>Scaffold_PassiveVent</li>
+			</relatedBuildCommands>
 		</building>
 	</ThingDef>
 
@@ -1751,9 +1811,6 @@
 		<thingClass>SaveOurShip2.Building_ShipCapacitor</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
-		<thingCategories>
-			<li>BuildingsFurniture</li>
-		</thingCategories>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioCapacitor</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1806,6 +1863,11 @@
 		<canOverlapZones>false</canOverlapZones>
 		<researchPrerequisites>
 		</researchPrerequisites>
+		<building>
+			<relatedBuildCommands>
+				<li>BioCapacitorSmallScaffold</li>
+			</relatedBuildCommands>
+		</building>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -1831,11 +1893,14 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>Harvests the remains of enemy ships after a battle. Each salvage bay can retrieve up to 1,000kg of material from a ship.</description>
+		<description>Can devour wrecked ships for nutrition.</description>
 		<size>(5,5)</size>
 		<building>
 			<shipPart>true</shipPart>
 			<isEdifice>false</isEdifice>
+			<relatedBuildCommands>
+				<li>SalvageMawScafold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>500</ShipMeat>
@@ -1868,6 +1933,7 @@
 				<nutrientPerPulse>50</nutrientPerPulse>
 			</li>
 		</comps>
+		<tickerType>Normal</tickerType>
 		<placeWorkers>
 		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -1898,11 +1964,14 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>An eggsac in which a haulbeast will gestate.</description>
+		<description>An eggsac in which a haulbeast gestates.</description>
 		<size>(2,2)</size>
 		<building>
 			<shipPart>true</shipPart>
 			<isEdifice>false</isEdifice>
+			<relatedBuildCommands>
+				<li>HaulBeastSpawnerScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>120</ShipMeat>
@@ -1963,11 +2032,14 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>A cluster of eggsacs in which a three haulbeasts will gestate.</description>
+		<description>A cluster of eggsacs in which a three haulbeasts gestates.</description>
 		<size>(3,3)</size>
 		<building>
 			<shipPart>true</shipPart>
 			<isEdifice>false</isEdifice>
+			<relatedBuildCommands>
+				<li>ThreeHaulBeastSpawnerScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>120</ShipMeat>
@@ -2034,6 +2106,9 @@
 		<building>
 			<shipPart>true</shipPart>
 			<isEdifice>false</isEdifice>
+			<relatedBuildCommands>
+				<li>WarBeastSpawnerScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>120</ShipMeat>

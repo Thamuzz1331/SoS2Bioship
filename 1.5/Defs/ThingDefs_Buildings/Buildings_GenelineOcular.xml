@@ -5,9 +5,6 @@
 		<label>small eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
 		<designationCategory></designationCategory>
-		<relatedBuildCommands>
-			<li>SmallWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 		</graphicData>
@@ -45,6 +42,9 @@
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
 			<turretTopDrawSize>2.5</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>SmallWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>200</ShipMeat>
@@ -146,9 +146,6 @@
 		<defName>ShipTurret_MediumEyeLaser</defName>
 		<label>medium eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
-		<relatedBuildCommands>
-			<li>MediumWeaponScaffold</li>
-		</relatedBuildCommands>
 		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
@@ -186,6 +183,9 @@
 			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>3.1</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>MediumWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>300</ShipMeat>
@@ -272,9 +272,6 @@
 		<defName>ShipTurret_LargeEyeLaser</defName>
 		<label>large eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
-		<relatedBuildCommands>
-			<li>LargeWeaponScaffold</li>
-		</relatedBuildCommands>
 		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
@@ -312,6 +309,9 @@
 			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>4.1</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>LargeWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>400</ShipMeat>
@@ -356,9 +356,6 @@
 		<defName>GiantEyeLaser</defName>
 		<label>giant eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.  Connected to the coils of a fiberoptic nerve it functions as a giant laser.</description>
-		<relatedBuildCommands>
-			<li>SpinalWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -426,6 +423,9 @@
 			<turretGunDef>ShipTurret_SpinalMountTopLaser</turretGunDef>
 			<turretBurstWarmupTime>2</turretBurstWarmupTime>
 			<turretBurstCooldownTime>45.0</turretBurstCooldownTime>
+			<relatedBuildCommands>
+				<li>SpinalWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 	</ThingDef>
 </Defs>

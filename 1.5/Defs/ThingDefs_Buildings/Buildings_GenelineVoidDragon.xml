@@ -3,9 +3,6 @@
 		<defName>ShipTurret_SmallPlasmaMaw</defName>
 		<label>small bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
-		<relatedBuildCommands>
-			<li>SmallWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(2,2)</drawSize>
@@ -42,6 +39,9 @@
 			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
 			<turretTopDrawSize>2.5</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>SmallWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>200</ShipMeat>
@@ -163,9 +163,6 @@
 		<defName>ShipTurret_MediumPlasmaMaw</defName>
 		<label>bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
-		<relatedBuildCommands>
-			<li>MediumWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
@@ -201,6 +198,9 @@
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>3.1</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>MediumWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>300</ShipMeat>
@@ -304,9 +304,6 @@
 		<defName>ShipTurret_LargePlasmaMaw</defName>
 		<label>large bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
-		<relatedBuildCommands>
-			<li>LargeWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(4,4)</drawSize>
@@ -344,6 +341,9 @@
 			<turretBurstWarmupTime>1.5</turretBurstWarmupTime>
 			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
 			<turretTopDrawSize>4.1</turretTopDrawSize>
+			<relatedBuildCommands>
+				<li>LargeWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 		<costList>
 			<ShipMeat>400</ShipMeat>
@@ -388,9 +388,6 @@
 		<label>dragon maw</label>
 		<description>Biomagnetic coils compress mater into a roiling plasma before projecting in a terrible beam of devestation.
 			\n\nThe final segment of a spinal-mount cannon. Should be placed outside the ship, unless you want a new hole in your hull.</description>
-		<relatedBuildCommands>
-			<li>SpinalWeaponScaffold</li>
-		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -452,6 +449,9 @@
 			<turretGunDef>ShipTurret_SpinalMountTopLaser</turretGunDef>
 			<turretBurstWarmupTime>2</turretBurstWarmupTime>
 			<turretBurstCooldownTime>45.0</turretBurstCooldownTime>
+			<relatedBuildCommands>
+				<li>SpinalWeaponScaffold</li>
+			</relatedBuildCommands>
 		</building>
 	</ThingDef>
 </Defs>

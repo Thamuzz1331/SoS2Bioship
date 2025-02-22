@@ -72,6 +72,9 @@
 		</comps>
 		<building>
 			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>ScaffoldShieldGenerator</li>
+			</relatedBuildCommands>
 		</building>
 		<rotatable>false</rotatable>
 		<selectable>true</selectable>

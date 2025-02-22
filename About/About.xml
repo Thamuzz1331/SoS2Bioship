@@ -51,6 +51,7 @@
 	- When growing large areas the roof can sometimes collapse.  Saving and reloading will repair the missing roof, but not anything damaged in the collapse.
 	- Building floors on top of shipflesh floors causes pawns to freeze trying to deconstruct the shipflesh floor.  No current workaround.
 	- Launching the ship with no maws or all maws empty can result in the ship dying as soon as it reaches orbit.
+	- Bioship salvage maws are not contributing to salvage bay mass capacity.
 
 	Art Credits:
 	BlackMarket420

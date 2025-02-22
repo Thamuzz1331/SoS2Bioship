@@ -446,6 +446,8 @@
 			<Flammability>0.0</Flammability>
 			<WorkToBuild>200</WorkToBuild>
 			<Beauty>1</Beauty>
+			<Cleanliness>0.6</Cleanliness>
+			<CleaningTimeFactor>0.6</CleaningTimeFactor>
 		</statBases>
 		<description>Fleshy floors</description>
 		<comps>
@@ -592,7 +594,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A chemfuel-powered engine capable of launching a ship into orbit. Not suitable for interplanetary travel.</description>
+		<description>A psi-engine capable of launching a ship into orbit.  Utilizes shaped solar-pinholes to generate thrust.  Not suitable for interplanetary travel.</description>
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
@@ -725,7 +727,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A chemfuel-powered engine capable of launching a ship into orbit. Not suitable for interplanetary travel.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
+		<description>A psiengine capable of launching a ship into orbit. Not suitable for interplanetary travel.\n\nIn combat, provides double the speed of smaller engines at the cost of double fuel consumption.</description>
 		<size>(3,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>

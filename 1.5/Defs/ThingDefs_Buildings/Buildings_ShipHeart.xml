@@ -32,7 +32,7 @@
 			<WorkToBuild>16000</WorkToBuild>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>The beating heart of a ship</description>
+		<description>The beating heart of a ship.  Capable of converting protien scaffold to flesh and revitalizing withered flesh.</description>
 		<size>(5,5)</size>
 		<inspectorTabs>
 			<li>ITab_Stats</li>
@@ -110,7 +110,6 @@
 		<researchPrerequisites>
 			<li>StructuralScaffold</li>
 		</researchPrerequisites>
-		<description>The beating heart of a ship</description>
 		<comps>
 			<li Class="CompProperties_ShipHeart">
 				<species>bioship</species>
@@ -123,7 +122,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>ShipfleshAnalysisStation</defName>
 		<label>flesh codex</label>
-		<description>An analysis station where the secrets of the abomination seed can be unraveled.</description>
+		<description>An analysis station where the secrets of the organ seed can be unraveled.</description>
 		<graphicData>
 			<texPath>Things/Building/Ship/FleshCodex</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -314,7 +313,7 @@
 		</placeWorkers>
 	</ThingDef>
 
-	<ThingDef ParentName="GeneBuildingBase">
+	<ThingDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="GeneBuildingBase">
 		<defName>GeneBankShipHeart</defName>
 		<label>heartseed bank</label>
 		<description>This building can store heartseeds and make them usable to breed new ones, when placed near a heart breeder.</description>
@@ -373,7 +372,7 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="GeneBuildingBase">
+	<ThingDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="GeneBuildingBase">
 		<defName>ShipGeneAssembler</defName>
 		<label>heartseed breeder</label>
 		<description>A facility where heartseeds can be crossbred.</description>

@@ -265,7 +265,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<passability>PassThroughOnly</passability>
 		<designatorDropdown>Protien_Scaffold_Corners</designatorDropdown>
-		<label>scaffold  corner (1x1)</label>
+		<label>scaffold corner (1x1)</label>
 		<comps>
 			<li Class="CompProperties_StaplebleScaffold">
 				<stapleDef>Scaffold_Corner_OneOne_Insensate</stapleDef>
@@ -419,7 +419,8 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>ScaffoldHullTile</defName>
 		<designatorDropdown>Protien_Scaffold_Tile</designatorDropdown>
-		<label>scaffold floor</label>
+		<label>floor scaffold</label>
+		<description>Grows into shipflesh floors when connected to a well fed heart.</description>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
@@ -1393,7 +1394,7 @@
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>Scaffold_PassiveVent</defName>
 		<label>vent scaffold</label>
-		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
+		<description>The heart will convert this into an internal thermoregulatory vent.</description>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<category>Building</category>
@@ -1516,7 +1517,7 @@
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldHeatsinkLarge</defName>
 		<label>large heatsink scaffold</label>
-		<description>Scaffold for a bio heatsink</description>
+		<description>Scaffold for a large bio heatsink</description>
 		<size>(4,4)</size>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
@@ -1629,9 +1630,9 @@
 	</ThingDef>
 	<ThingDef ParentName="BioShipHeatsinkBase">
 		<defName>ScaffoldPurgePort</defName>
-		<label>thermal bile purge duct</label>
+		<label>thermal bile purge duct scaffold</label>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Shields will be dropped during a purge.</description>
+		<description>The heart will grow this into a thermal bile purge duct.</description>
 		<size>(2,2)</size>
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
@@ -1670,7 +1671,7 @@
 		<defName>ScaffoldPurgePortLarge</defName>
 		<label>large thermal bile purge duct scaffold</label>
 		<altitudeLayer>WorldClipper</altitudeLayer>
-		<description>Superheated bile is expelled through this duct, allowing the ship to rapidly cool itself. Ejecting molten silver into space is a costly way to quickly purge stored heat. Shields will be dropped during a purge.</description>
+		<description>The heart will grow this into a thermal bile purge duct.</description>
 		<size>(4,4)</size>
 		<designationCategory>Ship</designationCategory>
 		<designatorDropdown>Scaffold_Heatsink</designatorDropdown>
@@ -1735,7 +1736,7 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<description>Grows into a giant mitochondira, the powerhouse of the beast.</description>
 		<size>(2,3)</size>
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
@@ -1785,7 +1786,7 @@
 			<MaxHitPoints>10</MaxHitPoints>
 			<Flammability>1.0</Flammability>
 		</statBases>
-		<description>A giant mitochondira, the powerhouse of the beast.</description>
+		<description>Grows into a collosal mitochondira, the powerhouse of the beast.</description>
 		<size>(4,6)</size>
 		<receivesSignals>true</receivesSignals>
 		<designationCategory>Ship</designationCategory>
@@ -1840,7 +1841,7 @@
 			<WorkToBuild>400</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>Efficiently stores up to 1,000Wd of energy.</description>
+		<description>Grows into a biocapacitor that can store 1000 w/d of energy.</description>
 		<size>(1,2)</size>
 		<costList>
 			<Steel>2</Steel>
@@ -1894,7 +1895,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>Harvests the remains of enemy ships after a battle. Each salvage bay can retrieve up to 1,000kg of material from a ship.</description>
+		<description>Grows into a salvage maw that can consume wrecks for nutrition.</description>
 		<size>(5,5)</size>
 		<building>
 			<shipPart>true</shipPart>
@@ -1927,7 +1928,7 @@
 	</DesignatorDropdownGroupDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>HaulBeastSpawnerScaffold</defName>
-		<label>haul beast eggsac scafold</label>
+		<label>haul beast eggsac scaffold</label>
 		<thingClass>Building_Scaffold</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory>Ship</designationCategory>
@@ -1951,7 +1952,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>A cyst in which a haulbeast will gestate.</description>
+		<description>Grows into a cyst in which a haulbeast will gestate.</description>
 		<size>(2,2)</size>
 		<building>
 			<shipPart>true</shipPart>
@@ -2004,7 +2005,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>A cyst in which a haulbeast will gestate.</description>
+		<description>Grows into a cyst cluster in which three haulbeasts will gestate.</description>
 		<size>(3,3)</size>
 		<building>
 			<shipPart>true</shipPart>
@@ -2057,7 +2058,7 @@
 			<MaxHitPoints>500</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
-		<description>A cyst in which a war beast will gestate.</description>
+		<description>Grows into a cyst in which a war beast will gestate.</description>
 		<size>(3,3)</size>
 		<building>
 			<shipPart>true</shipPart>

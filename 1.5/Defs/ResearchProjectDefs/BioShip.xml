@@ -42,7 +42,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>NerveStapling</defName>
 		<label>nerve staples</label>
-		<description>Unchecked growth could lead to undesired outcomes.  By these means we shall numb the beast's senses and shape it to our design.</description>
+		<description>Unchecked growth could lead to undesired outcomes.  By these means we shall numb the beast's senses and shape it to our design.\nClinician Notes: It is possible to chemically deaden the nerve endings of certain simple tissues, preventing further growth and aggressive reactions to inorganic thermofluid.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
@@ -79,7 +79,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>MetabolicScaffoldSimple</defName>
 		<label>simple metabolc scaffolds</label>
-		<description>Hunger shall guide the first growth, but direction and discretion will be required beyond that point.  It would not do to clog your halls and aterties with glistening fat and glutonous maws, now would it little one?</description>
+		<description>Hunger shall guide the first growth, but direction and discretion will be required beyond that point.  It would not do to clog your halls and aterties with glistening fat and glutonous maws, now would it little one?\nClinician Notes: With more complex scaffolds laced with chemical markers we can direct the organism where to concentrate fat reserves.</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
@@ -92,7 +92,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>MetabolicScaffoldAdvanced</defName>
 		<label>advanced metabolic scaffolds</label>
-		<description>You have tasted the simple joys of sweet flesh little one, but there are more rarified palates to consider.</description>
+		<description>You have tasted the simple joys of sweet flesh little one, but there are more rarified palates to consider.\nClinician Notes: With the correct scaffold designs and some mechanical assistance we can grow organs capable of storing electricity and more powerful maws.</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
@@ -105,7 +105,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>ThermoregulatoryScaffolds</defName>
 		<label>thermoregulatory scaffolds</label>
-		<description>Battle has you beset by fever and boiling blood little one, let me show you how to cool yourself.</description>
+		<description>Battle has you beset by fever and boiling blood little one, let me show you how to cool yourself.\nClinician Notes: These scaffolds allow us to trigger the growth of living radiators and thermalstores.</description>
 		<baseCost>2000</baseCost>
 		<prerequisites>
 			<li>MetabolicScaffoldAdvanced</li>
@@ -117,7 +117,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>SmallWeaponScaffold</defName>
 		<label>small weapon scaffolds</label>
-		<description>Here now little one, accept our gift: Flicking darts to deter the unwary predator and subdue your prey.</description>
+		<description>Here now little one, accept our gift: Flicking darts to deter the unwary predator and subdue your prey.\nClinician Notes: We have observed a high degree of variability in the organs grown through these techniques.</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
@@ -166,7 +166,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>GangliaClusterScaffold</defName>
 		<label>ganglic cluster scaffold</label>
-		<description>Quicken your thoughts little one, and with that speed free yourself from gravity's smothering embrace.</description>
+		<description>Quicken your thoughts little one, and with that speed free yourself from gravity's smothering embrace.\nClinician Notes: These organs appear to incorporate stunted anima trees, which it uses to create enlarged and directed solar pinholes to generate thrust.</description>
 		<baseCost>4000</baseCost>
 		<prerequisites>
 			<li>MetabolicScaffoldSimple</li>
@@ -178,7 +178,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>AdvancedGangliaClusterScaffold</defName>
 		<label>advanced ganglic cluster scaffold</label>
-		<description>Let your will be as steel little one, their blandishments shall break upon it before ever touching your flesh.</description>
+		<description>Let your will be as steel little one, their blandishments shall break upon it before ever touching your flesh.\nClinician Notes: A mangled anima tree-analog generates a powerful skipshield.</description>
 		<baseCost>4000</baseCost>
 		<prerequisites>
 			<li>GangliaClusterScaffold</li>
@@ -190,7 +190,7 @@
 	<ResearchProjectDef ParentName="BioShipProjectBase">
 		<defName>ServitorScaffolds</defName>
 		<label>servitor scaffolds</label>
-		<description>Meat must be brought to hungry mouths, and invading bodies butchered.  These shall be your hands within.</description>
+		<description>Meat must be brought to hungry mouths, and invading bodies butchered.  These shall be your hands within.\nClinician Notes: Personal survival dictates that these will be my last notes.</description>
 		<baseCost>4000</baseCost>
 		<prerequisites>
 			<li>MetabolicScaffoldSimple</li>

@@ -55,6 +55,9 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
+		<relatedBuildCommands>
+			<li>Scaffold_Armor_Unpowered</li>
+		</relatedBuildCommands>
 		<description>A layer of coral armor.</description>
 		<comps>
 			<li>
@@ -95,6 +98,9 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
+		<relatedBuildCommands>
+			<li>Scaffold_Armor_Unpowered</li>
+		</relatedBuildCommands>
 		<description>A layer of bone plate.</description>
 		<comps>
 			<li>
@@ -135,6 +141,9 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
+		<relatedBuildCommands>
+			<li>Scaffold_Armor_Unpowered</li>
+		</relatedBuildCommands>
 		<description>A scales laced with an organic plasteel matrix.  Highly resistant to plasma weapons.</description>
 		<comps>
 			<li>

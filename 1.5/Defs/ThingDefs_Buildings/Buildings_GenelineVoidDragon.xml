@@ -3,6 +3,9 @@
 		<defName>ShipTurret_SmallPlasmaMaw</defName>
 		<label>small bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
+		<relatedBuildCommands>
+			<li>SmallWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(2,2)</drawSize>
@@ -155,11 +158,14 @@
 		<soundExplosion>Explosion_Bomb</soundExplosion>
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
-
+	<!-- Medium Turret -->
 	<ThingDef ParentName="ShipTurretBuilding" Name="BioPlasmaBase">
 		<defName>ShipTurret_MediumPlasmaMaw</defName>
 		<label>bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
+		<relatedBuildCommands>
+			<li>MediumWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
@@ -293,11 +299,14 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 
-
+	<!-- Heavy Turret -->
 	<ThingDef ParentName="BioPlasmaBase">
 		<defName>ShipTurret_LargePlasmaMaw</defName>
 		<label>large bioplasma maw</label>
 		<description>Spits a ball of goo that violently expolodes into plasma on impact.  A medium ranged weapon that deals damage over a wide area.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
+		<relatedBuildCommands>
+			<li>LargeWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(4,4)</drawSize>
@@ -379,6 +388,9 @@
 		<label>dragon maw</label>
 		<description>Biomagnetic coils compress mater into a roiling plasma before projecting in a terrible beam of devestation.
 			\n\nThe final segment of a spinal-mount cannon. Should be placed outside the ship, unless you want a new hole in your hull.</description>
+		<relatedBuildCommands>
+			<li>SpinalWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>

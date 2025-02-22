@@ -78,6 +78,9 @@
 		</costList>
 		<killedLeavings>
 		</killedLeavings>
+		<relatedBuildCommands>
+			<li>Scaffold_Beam</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -155,6 +158,9 @@
 		</costList>
 		<killedLeavings>
 		</killedLeavings>
+		<relatedBuildCommands>
+			<li>Scaffold_Beam_Unpowered</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
@@ -247,6 +253,9 @@
 		<costList>
 			<ShipMeat>50</ShipMeat>
 		</costList>
+		<relatedBuildCommands>
+			<li>Scaffold_Corner_OneOne</li>
+		</relatedBuildCommands>
 	</ThingDef>
 	<ThingDef ParentName="BioShipCorner">
 		<defName>Bio_Ship_Corner_OneOneFlip</defName>
@@ -272,6 +281,9 @@
 		<costList>
 			<ShipMeat>50</ShipMeat>
 		</costList>
+		<relatedBuildCommands>
+			<li>Scaffold_Corner_OneFlip</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 	</ThingDef>
 	<ThingDef ParentName="BioShipCorner">
@@ -299,6 +311,9 @@
 		<costList>
 			<ShipMeat>75</ShipMeat>
 		</costList>
+		<relatedBuildCommands>
+			<li>Scaffold_Corner_OneTwo</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,2)</size>
 	</ThingDef>
@@ -327,6 +342,9 @@
 		<costList>
 			<ShipMeat>75</ShipMeat>
 		</costList>
+		<relatedBuildCommands>
+			<li>Scaffold_Corner_OneTwoFlip</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,2)</size>
 	</ThingDef>
@@ -355,6 +373,9 @@
 		<costList>
 			<ShipMeat>100</ShipMeat>
 		</costList>
+		<relatedBuildCommands>
+			<li>Scaffold_Corner_OneThree</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,3)</size>
 	</ThingDef>
@@ -383,6 +404,9 @@
 		<costList>
 			<ShipMeat>100</ShipMeat>
 		</costList>
+		<relatedBuildCommands>
+			<li>Scaffold_Corner_OneThreeFlip</li>
+		</relatedBuildCommands>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<size>(1,3)</size>
 	</ThingDef>
@@ -457,6 +481,9 @@
 		<description>Allows access to a ship or divides rooms inside it.  A permiable mucus layer prevents the loss of gasses.</description>
 		<category>Building</category>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>ScaffoldAirlock</li>
+		</relatedBuildCommands>
 		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
 		<altitudeLayer>DoorMoveable</altitudeLayer>
 		<fillPercent>1</fillPercent>
@@ -544,6 +571,9 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>Scaffold_Engine_Small</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -622,7 +652,10 @@
 		<ThingDef ParentName="BuildingShipBase">
 		<defName>BioShip_Engine_RCS</defName>
 		<label>Organic RCS thruster</label>
-		<designatorDropdown>Ship_Engines</designatorDropdown>
+		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>Scaffold_Engine_rcs</li>
+		</relatedBuildCommands>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket_Single</texPath>
@@ -669,6 +702,9 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>Scaffold_Engine</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineRocket</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -750,6 +786,9 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>Scaffold_Engine_Large</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipEngineLarge</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -828,6 +867,9 @@
 		<defName>BioShip_SensorCluster</defName>
 		<label>bioship sensors</label>
 		<thingClass>SaveOurShip2.Building_ShipSensor</thingClass>
+		<relatedBuildCommands>
+			<li>Scaffold_Sensor</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioSensorCluster</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -880,6 +922,9 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>Maw_Small</defName>
 		<label>small ship maw</label>
+		<relatedBuildCommands>
+			<li>Scaffold_Maw_Small</li>
+		</relatedBuildCommands>
 		<thingClass>Building_TrapDamager</thingClass>
 		<designationCategory></designationCategory>
 		<graphicData>
@@ -946,6 +991,9 @@
 		<defName>Maw_Corpse</defName>
 		<label>corpse maw</label>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>Scaffold_Maw_Corpse</li>
+		</relatedBuildCommands>
 		<thingClass>Building_TrapDamager</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Ship/Maw_2x2</texPath>
@@ -1013,6 +1061,9 @@
 		<defName>FatStoreSmall</defName>
 		<label>fat store</label>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>Scaffold_Maw_Corpse</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioShipFatSmall</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>

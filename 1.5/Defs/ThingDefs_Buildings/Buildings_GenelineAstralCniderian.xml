@@ -1,9 +1,13 @@
 <Defs>
+	<!-- Small Turret -->
 	<ThingDef ParentName="ShipTurretBuilding" Name="ShipTurret_Nematocyst">
 		<defName>ShipTurret_Nematocyst</defName>
 		<thingClass>Building_BioShipTurret</thingClass>
 		<label>nematocyst</label>
 		<description>A barbed thread that can be launched against enemy ships or torpedos.</description>
+		<relatedBuildCommands>
+			<li>SmallWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(2,2)</drawSize>
@@ -161,11 +165,15 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 
+	<!-- Medium Turret -->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ShipTurret_BioAcid</defName>
 		<thingClass>Building_BioShipTurret</thingClass>
 		<label>acid spitter</label>
 		<description>Spits a ball of caustic mucus clings to a hull on impact.  A medium ranged weapon that deals linger damage.\n\nWill vent heat to the surrounding room if no heatsink capacity is available.</description>
+		<relatedBuildCommands>
+			<li>MediumWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 			<drawSize>(3,3)</drawSize>
@@ -306,8 +314,12 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 
+	<!-- Heavy Turret -->
 	<ThingDef ParentName="BaseShipArtilleryWeapon" Name="BaseBioTorpedo" Abstract="True">
 		<description>Spine launcher.  Hurls volleys of bio-plasma propelled bone spikes.</description>
+		<relatedBuildCommands>
+			<li>LargeWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
 		</graphicData>
@@ -454,11 +466,15 @@
 		</costList>
 	</ThingDef>
 
+	<!-- Spinal Weapon -->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>JellyCannon</defName>
 		<label>jelly cannon</label>
 		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.</description>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>SpinalWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/PolypLauncherCannon</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -492,9 +508,10 @@
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>120</heatPerPulse>
-				<energyToFire>360</energyToFire>
-				<maxRange>50</maxRange>
-				<projectileSpeed>10</projectileSpeed>
+				<energyToFire>180</energyToFire>
+				<optRange>300</optRange>
+				<maxRange>300</maxRange>
+				<projectileSpeed>5</projectileSpeed>
 				<singleFireSound>ShipCombatLaser</singleFireSound>
 				<threat>100</threat>
 			</li>

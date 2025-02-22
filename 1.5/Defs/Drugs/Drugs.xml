@@ -184,7 +184,6 @@
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>500.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
-				
 				<fuelFilter>
 					<thingDefs>
 						<li>WakeUp</li>
@@ -201,7 +200,7 @@
 				<drugHediff>DrugWakeup</drugHediff>
 				<addictionHediff>AddictionWakeup</addictionHediff>
 				<drugDuration>25000</drugDuration>
-				<addictionChance>0.15</addictionChance>
+				<addictionChance>0.05</addictionChance>
 				<maxWithdrawl>420000</maxWithdrawl>
 				<withdrawlRate>1</withdrawlRate>
 				<massDosageMult>0.01</massDosageMult>
@@ -314,7 +313,7 @@
 				<drugHediff>DrugGoJuice</drugHediff>
 				<addictionHediff>AddictionGoJuice</addictionHediff>
 				<drugDuration>25000</drugDuration>
-				<addictionChance>0.15</addictionChance>
+				<addictionChance>0.05</addictionChance>
 				<maxWithdrawl>420000</maxWithdrawl>
 				<withdrawlRate>1</withdrawlRate>
 				<massDosageMult>0.01</massDosageMult>

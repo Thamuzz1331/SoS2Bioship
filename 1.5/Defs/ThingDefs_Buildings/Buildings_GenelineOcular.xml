@@ -1,9 +1,13 @@
 <Defs>
+	<!-- Small Turret -->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ShipTurret_SmallEyeLaser</defName>
 		<label>small eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
 		<designationCategory></designationCategory>
+		<relatedBuildCommands>
+			<li>SmallWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
 		</graphicData>
@@ -137,10 +141,14 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 
+	<!-- Medium Turret -->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ShipTurret_MediumEyeLaser</defName>
 		<label>medium eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
+		<relatedBuildCommands>
+			<li>MediumWeaponScaffold</li>
+		</relatedBuildCommands>
 		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
@@ -259,10 +267,14 @@
 		<combatLogRules>Damage_Bomb</combatLogRules>
 	</DamageDef>
 
+	<!-- Heavy Turret -->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>ShipTurret_LargeEyeLaser</defName>
 		<label>large eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.</description>
+		<relatedBuildCommands>
+			<li>LargeWeaponScaffold</li>
+		</relatedBuildCommands>
 		<designationCategory></designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/BioshipTurret</texPath>
@@ -339,10 +351,14 @@
 		</verbs>
 	</ThingDef>
 
+	<!-- Spinal Weapon -->
 	<ThingDef ParentName="ShipTurretBuilding">
 		<defName>GiantEyeLaser</defName>
 		<label>giant eye laser</label>
 		<description>A giant eye with a plasteel laced tapetum lucidum.  Connected to the coils of a fiberoptic nerve it functions as a giant laser.</description>
+		<relatedBuildCommands>
+			<li>SpinalWeaponScaffold</li>
+		</relatedBuildCommands>
 		<graphicData>
 			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -386,6 +402,7 @@
 				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>120</heatPerPulse>
 				<energyToFire>360</energyToFire>
+				<optRange>50</optRange>
 				<maxRange>50</maxRange>
 				<projectileSpeed>10</projectileSpeed>
 				<singleFireSound>ShipCombatLaser</singleFireSound>

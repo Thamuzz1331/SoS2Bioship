@@ -46,7 +46,6 @@
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam</regenDef>
-				<growsArmor>true</growsArmor>
 				<species>bioship</species>
 				<whitherTo>Whithered_Beam</whitherTo>
 				<baseArmor>0.05</baseArmor>
@@ -138,7 +137,6 @@
 			</li>
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>Scar_Beam_Unpowered</regenDef>
-				<growsArmor>true</growsArmor>
 				<species>bioship</species>
 				<whitherTo>Whithered_Beam_Unpowered</whitherTo>
 				<baseArmor>0.05</baseArmor>
@@ -241,7 +239,6 @@
 				<regenDef>Scar_Corner_OneOne</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneOne</whitherTo>
-				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<baseArmor>0.05</baseArmor>
 			</li>
@@ -268,7 +265,6 @@
 				<regenDef>Scar_Corner_OneOneFlip</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneOneFlip</whitherTo>
-				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>true</isFlip>
 				<baseArmor>0.05</baseArmor>
@@ -298,7 +294,6 @@
 				<regenDef>Scar_Corner_OneTwo</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneTwo</whitherTo>
-				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>false</isFlip>
 				<baseArmor>0.05</baseArmor>
@@ -329,7 +324,6 @@
 				<regenDef>Scar_Corner_OneTwoFlip</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneTwoFlip</whitherTo>
-				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>true</isFlip>
 				<baseArmor>0.05</baseArmor>
@@ -360,7 +354,6 @@
 				<regenDef>Scar_Corner_OneThree</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneThree</whitherTo>
-				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>false</isFlip>
 				<baseArmor>0.05</baseArmor>
@@ -391,7 +384,6 @@
 				<regenDef>Scar_Corner_OneThreeFlip</regenDef>
 				<species>bioship</species>
 				<whitherTo>Whithered_Corner_OneThreeFlip</whitherTo>
-				<growsArmor>true</growsArmor>
 				<isCorner>true</isCorner>
 				<isFlip>true</isFlip>
 				<baseArmor>0.05</baseArmor>

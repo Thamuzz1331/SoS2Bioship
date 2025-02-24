@@ -116,8 +116,8 @@
 				
 			</li>
 		</comps>
-			<thingCategories>
-			<li>Items</li>
+		<thingCategories>
+			<li>Manufactured</li>
 		</thingCategories>
 		<researchPrerequisites>
 		</researchPrerequisites>
@@ -141,7 +141,7 @@
 			<DeteriorationRate>1.0</DeteriorationRate>
 		</statBases>
 		<thingCategories>
-			<li>Items</li>
+			<li>Manufactured</li>
 		</thingCategories>
 		<researchPrerequisites>
 		</researchPrerequisites>

@@ -87,15 +87,17 @@ namespace RimWorld
                     replacement.SpawnSetup(parent.Map, false);
                     CellRect occupies = replacement.OccupiedRect();
                     List<Thing> toDestroy = new List<Thing>();
-                    foreach (IntVec3 cell in occupies.Cells)
+                    if (replacement.def.passability == Traversability.Impassable)
                     {
-                        foreach (Thing t in cell.GetThingList(this.parent.Map))
-                        {
-                            Log.Message("Detecting " + t);
-                            if (t != replacement && t != parent && !(t is Pawn))
+                        foreach (IntVec3 cell in occupies.Cells)
+                       {
+                            foreach (Thing t in cell.GetThingList(this.parent.Map))
                             {
-                                Log.Message(t + " should not be here");
-                                toDestroy.Add(t);
+                                if (t != replacement && t != parent && !(t is Pawn))
+                                {
+                                    Log.Message(t + " should not be here");
+                                    toDestroy.Add(t);
+                                }
                             }
                         }
                     }

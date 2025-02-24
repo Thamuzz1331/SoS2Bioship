@@ -808,7 +808,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>A powerful psi-engine capable of launching a ship into orbit.  Utilizes shaped solar-pinholes to generate thrust. Not suitable for interplanetary travel.\n\nProvides eigth times the speed of small engines.</description>
+		<description>A powerful psi-engine capable of launching a ship into orbit.  Utilizes shaped solar-pinholes to generate thrust. Not suitable for interplanetary travel.\n\nProvides eight times the speed of small engines.</description>
 		<size>(5,5)</size>
 		<receivesSignals>true</receivesSignals>
 		<comps>
@@ -1033,6 +1033,7 @@
 					<categories>
 						<li>CorpsesAnimal</li>
 						<li>CorpsesHumanlike</li>
+						<li MayRequire="Ludeon.RimWorld.Anomaly">CorpsesEntity</li>
 					</categories>
 				</fuelFilter>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
@@ -1703,7 +1704,7 @@
 		<building>
 			<shipPart>true</shipPart>
 			<relatedBuildCommands>
-				<li>Scaffold_Giant_Mitochondira</li>
+				<li>Scaffold_Colossal_Mitochondira</li>
 			</relatedBuildCommands>
 		</building>
 		<costList>
@@ -1763,6 +1764,7 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>Whithered_PassiveVent</whitherTo>
+				<regenDef>Bioship_PassiveVent</regenDef>
 			</li>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>

@@ -342,9 +342,6 @@
 			<isInert>true</isInert>
 			<isEdifice>false</isEdifice>
 			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
-			</blueprintGraphicData>
 		</building>
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
@@ -358,12 +355,6 @@
 		</statBases>
 		<description>Withered floors, connect to a well fed heart to revitalize.</description>
 		<comps>
-			<li Class="CompProperties_RoofMeBio">
-				<TerrainId>FakeFloorShipwhithered</TerrainId>
-				<isPlating>true</isPlating>
-				<hermetic>true</hermetic>
-				<roof>true</roof>
-			</li>
 			<li Class="CompProperties_Scaffold">
 				<species>bioship</species>
 				<transformString>BioShipHullTile</transformString>

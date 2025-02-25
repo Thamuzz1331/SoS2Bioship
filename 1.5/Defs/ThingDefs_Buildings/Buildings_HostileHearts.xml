@@ -25,6 +25,9 @@
 				<species>bioship</species>
 				<shipspecies>bioship</shipspecies>
 				<geneline>AstralCniderianGeneline</geneline>
+				<exoGenes>
+					<li>RandRandWeaponGene</li>
+				</exoGenes>
 			</li>
 		</comps>
 	</ThingDef>

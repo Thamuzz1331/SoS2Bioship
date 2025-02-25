@@ -53,7 +53,7 @@
 		<defName>LargeEyelaserGene</defName>
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<iconPath>UI_Elements/Gene_LaserEyeL</iconPath>
-		<label>heavy plasma maw</label>
+		<label>heavy eye laser</label>
 		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
 		<displayCategory>Geneline</displayCategory>
 		<displayOrderInCategory>45</displayOrderInCategory>

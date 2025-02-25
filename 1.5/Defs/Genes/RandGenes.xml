@@ -1,0 +1,118 @@
+<Defs>
+	<GeneCategoryDef>
+		<defName>RandGenes</defName>
+		<label>rand</label>
+		<displayPriorityInXenotype>817</displayPriorityInXenotype>
+	</GeneCategoryDef>
+	
+	<BuildingGeneDef>
+		<defName>RandSmallWeapon</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random small weapon gene.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<props>
+			<li>SmallNematocystGene</li>
+			<li>SmallEyelaserGene</li>
+			<li>SmallPlasmaMawGene</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>RandMediumWeapon</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random medium weapon gene.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>61</displayOrderInCategory>
+		<props>
+			<li>MediumAcidGene</li>
+			<li>MediumEyelaserGene</li>
+			<li>MediumPlasmaMawGene</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>RandLargeWeapon</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random large weapon gene.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>62</displayOrderInCategory>
+		<props>
+			<li>HeavySpineGene</li>
+			<li>LargeEyelaserGene</li>
+			<li>HeavyPlasmaMawGene</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>RandSpinalWeapon</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random spinal weapon gene.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>63</displayOrderInCategory>
+		<props>
+			<li>PolypCannon</li>
+			<li>CollosalEyelaserGene</li>
+			<li>DragonMawGene</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>RandRandWeaponGene</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random size weapon gene.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>63</displayOrderInCategory>
+		<props>
+			<li>RandSmallWeapon</li>
+			<li>RandMediumWeapon</li>
+			<li>RandLargeWeapon</li>
+			<li>RandSpinalWeapon</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>RandBonusStatGene1</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random cost 1 bonus.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>63</displayOrderInCategory>
+		<props>
+			<li>RandSmallWeapon</li>
+			<li>RandMediumWeapon</li>
+			<li>RandLargeWeapon</li>
+			<li>RandSpinalWeapon</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+</Defs>

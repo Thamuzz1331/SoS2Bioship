@@ -605,11 +605,12 @@
 		<graphicData>
 			<texPath>Things/Projectile/Projectile_Polyp</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
 		</graphicData>
 		<projectile>
 			<explosionRadius>1.9</explosionRadius>
 			<damageDef>BioShipJellyDamage</damageDef>
-			<speed>400</speed>
+			<speed>100</speed>
 		</projectile>
 	</ThingDef>
 	<DamageDef Name="JellyProjectile">

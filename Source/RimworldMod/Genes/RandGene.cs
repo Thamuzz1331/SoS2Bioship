@@ -14,6 +14,11 @@ namespace Verse
     {
         public override void PostAdd(CompBuildingCore core)
         {
+            List<String> potentialGenes = this.def.props;
+            foreach(BuildingGene g in core.genes)
+            {
+                potentialGenes.Remove(g.def.defName);
+            }
             string gene = this.def.props.RandomElement();
             BuildingGene rGene = BuildingGeneMaker.MakeBuildingGene(BuildingGeneDef.Named(gene), false);
             core.AddGene(rGene);

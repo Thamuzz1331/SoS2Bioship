@@ -4,11 +4,12 @@
 		<label>void jelly</label>
 		<description>A motile blob of acidic mucus.</description>
 		<statBases>
-			<MoveSpeed>5.5</MoveSpeed>
+			<MoveSpeed>10</MoveSpeed>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>65</ComfyTemperatureMax>
 			<HypoxiaResistance>1</HypoxiaResistance>
 			<DecompressionResistance>1</DecompressionResistance>
+			<VacuumSpeedMultiplier>4</VacuumSpeedMultiplier>
 			<MarketValue>150</MarketValue>
 			<MeatAmount>0</MeatAmount>
 			<LeatherAmount>0</LeatherAmount>
@@ -23,7 +24,7 @@
 				<capacities>
 					<li>AcidTentacle</li>
 				</capacities>
-				<power>21</power>
+				<power>41</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>Arms</linkedBodyPartsGroup>
 			</li>

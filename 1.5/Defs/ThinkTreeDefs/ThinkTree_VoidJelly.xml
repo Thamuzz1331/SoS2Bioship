@@ -36,60 +36,7 @@
 					<treeDef>Downed</treeDef>
 				</li>
 				<li Class="ThinkNode_Subtree">
-					<treeDef>BurningResponse</treeDef>
-				</li>
-				<li Class="ThinkNode_Subtree">
-					<treeDef>MentalStateCritical</treeDef>
-				</li>
-
-				<!-- React to close melee threat -->
-				<li Class="JobGiver_ReactToCloseMeleeThreat" />
-
-				<!-- Do a queued job -->
-				<li Class="ThinkNode_QueuedJob" />
-
-				<!-- Mental state non critical -->
-				<li Class="ThinkNode_Subtree">
-					<treeDef>MentalStateNonCritical</treeDef>
-				</li>
-				
-				<!-- Forced goto -->
-				<li Class="ThinkNode_ConditionalForcedGoto">
-					<subNodes>
-						<li Class="ThinkNode_Tagger">
-							<tagToGive>Misc</tagToGive>
-							<subNodes>
-								<li Class="JobGiver_ForcedGoto" />
-							</subNodes>
-						</li>
-					</subNodes>
-				</li>
-
-				<!-- Lord directives -->
-				<li Class="ThinkNode_Subtree">
-					<treeDef>LordDuty</treeDef>
-				</li>
-
-				<!-- Insertion hook for modders -->
-				<li Class="ThinkNode_SubtreesByTag">
-					<insertTag>Animal_PreMain</insertTag>
-				</li>
-
-				<!-- Insertion hook for modders -->
-				<li Class="ThinkNode_SubtreesByTag">
-					<insertTag>Animal_PreWander</insertTag>
-				</li>
-
-				<!-- Hunt buildings -->
-				<li Class="ThinkNode_Tagger">
-					<tagToGive>SatisfyingNeeds</tagToGive>
-					<subNodes>
-						<li Class="ThinkNode_PrioritySorter">
-							<subNodes>
-								<li Class="JobGiver_DestroyBuildings"/>
-							</subNodes>
-						</li>
-					</subNodes>
+					<li Class="JobGiver_DestroyBuildings"/>
 				</li>
 
 				<li Class="JobGiver_IdleError"/>

@@ -42,18 +42,14 @@ namespace RimWorld
             }
 			if (ticksToAttack <= 0)
             {
-				Log.Message("Starting basic aggression");
 				DoAttack();
 				ticksToAttack = attackInterval;
-                Log.Message("Finishing basic aggression");
             }
             ticksToAttack--;
 			if (extremeAggressionDetection <= 0)
             {
-                Log.Message("Starting extreme aggression");
                 OmniAggressionPulse();
 				extremeAggressionDetection = extremeAggressionInterval;
-                Log.Message("Finishing extreme aggression");
             }
             extremeAggressionDetection--;
 		}

@@ -12,7 +12,17 @@ namespace Verse
 {
     public class StatSetterGene : BuildingGene
     {
-
+        public override void PostSpawnSetup(bool respawningAfterLoad, CompBuildingCore core)
+        {
+            base.PostSpawnSetup(respawningAfterLoad, core);
+            CompShipHeart heart = (CompShipHeart)core;
+            foreach (String statdDef in def.props)
+            {
+                string[] fd = statdDef.Split(':');
+                float stat = heart.stats.TryGetValue(fd[0], 1f) * float.Parse(fd[1]);
+                heart.stats.SetOrAdd(fd[0], stat);
+            }
+        }
 
         public override void PostAdd(CompBuildingCore core)
         {

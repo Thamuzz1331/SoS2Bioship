@@ -39,7 +39,7 @@ namespace RimWorld
 				pawn.Map, 
 				ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), 
 				PathEndMode.ClosestTouch, 
-				TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false, false, false), 
+				TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, true, false, true), 
 				9999f,
 				null, 
 				null, 

@@ -187,6 +187,7 @@
 
 	  <Compile Include="CritterComps\Comp_BuildingHunter.cs"/>
 	  <Compile Include="CritterComps\CompProperties_BuildingHunter.cs"/>
+	  <Compile Include="CritterComps\DeathActionWorker_JellyBoom.cs"/>
 
 	  <Compile Include="Comp\MapComp_CorpseMawTracker.cs"/>
 	  <Compile Include="PlaceWorkers\PlaceWorker_BioShipNeedsSpinalMountPort.cs"/>

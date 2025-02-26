@@ -12,9 +12,9 @@
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>
-			<blueprintGraphicData>
-				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
-			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>Scaffold_Armor_Unpowered</li>
+			</relatedBuildCommands>
 		</building>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
@@ -55,11 +55,6 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
-		<building>
-			<relatedBuildCommands>
-				<li>Scaffold_Armor_Unpowered</li>
-			</relatedBuildCommands>
-		</building>
 		<description>A layer of coral armor.</description>
 		<comps>
 			<li>
@@ -68,6 +63,11 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>CoralArmor</regenDef>
 				<species>bioship</species>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>false</roof>
 			</li>
 		</comps>
 	</ThingDef>
@@ -99,12 +99,13 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
+		<description>A layer of bone plate.</description>
 		<building>
+			<shipPart>true</shipPart>
 			<relatedBuildCommands>
 				<li>Scaffold_Armor_Unpowered</li>
 			</relatedBuildCommands>
 		</building>
-		<description>A layer of bone plate.</description>
 		<comps>
 			<li>
 				<compClass>CompColorable</compClass>
@@ -112,6 +113,11 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>BoneArmor</regenDef>
 				<species>bioship</species>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>false</roof>
 			</li>
 		</comps>
 	</ThingDef>
@@ -143,11 +149,6 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
-		<building>
-			<relatedBuildCommands>
-				<li>Scaffold_Armor_Unpowered</li>
-			</relatedBuildCommands>
-		</building>
 		<description>A scales laced with an organic plasteel matrix.  Highly resistant to plasma weapons.</description>
 		<comps>
 			<li>
@@ -156,6 +157,11 @@
 			<li Class="CompProperties_ShipBodyPart">
 				<regenDef>DragonscaleArmor</regenDef>
 				<species>bioship</species>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>false</roof>
 			</li>
 		</comps>
 	</ThingDef>

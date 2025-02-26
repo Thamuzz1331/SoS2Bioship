@@ -13,7 +13,8 @@ namespace RimWorld
 			DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
 		}
 
-		public static DamageDef ShipAcid;
+		public static DamageDef ShipBioAcid;
+        public static DamageDef ShipAcid;
 		public static DamageDef ShipNematocystSplinter;
 		public static DamageDef ShipNematocystEnergized;
 	}

@@ -246,7 +246,7 @@
 		<placeWorkers/>
 		<researchPrerequisites>
 		</researchPrerequisites>
-		<size>(4,4)</size>
+		<size>(3,3)</size>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_VSLaserTop</defName>

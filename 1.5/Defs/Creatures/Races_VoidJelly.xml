@@ -35,6 +35,9 @@
 		</comps>
 		<race>
 			<thinkTreeMain>Bioship_BuildingHunter</thinkTreeMain>
+			<deathAction>
+				<workerClass>DeathActionWorker_JellyBoom</workerClass>
+			</deathAction>
 			<executionRange>4</executionRange>
 			<herdAnimal>false</herdAnimal>
 			<body>Shipbeast_VoidJelly</body>
@@ -140,6 +143,9 @@
 		<label>void jellyfish</label>
 		<race>VoidJelly</race>
 		<combatPower>500</combatPower>
+		<ignoresPainShock>true</ignoresPainShock>
+		<preventIdeo>true</preventIdeo>
+		<hostileToAll>true</hostileToAll>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>1</ecoSystemWeight>
 		<lifeStages>

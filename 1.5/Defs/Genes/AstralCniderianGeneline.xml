@@ -77,7 +77,7 @@
 		<buildingGeneClass>DefSetterGene</buildingGeneClass>
 		<iconPath>UI_Elements/Gene_TurretPolyp</iconPath>
 		<label>jelly cannon</label>
-		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.  The size of the jellies depends on the number of amplifiers, maxing out at 20.</description>
+		<description>Launches a void jelly, a destructive organism capable of tearing hulls apart.  The size of the jellies depends on the number of amplifiers, maxing out at 20.\nVoid jellies are omnicidal, and will attack even allied pawns.</description>
 		<displayCategory>Geneline</displayCategory>
 		<displayOrderInCategory>25</displayOrderInCategory>
 		<props>

@@ -1898,7 +1898,7 @@
 		<description>Can devour wrecked ships for nutrition.</description>
 		<size>(5,5)</size>
 		<building>
-			<shipPart>true</shipPart>
+			<shipPart>false</shipPart>
 			<isEdifice>false</isEdifice>
 			<relatedBuildCommands>
 				<li>SalvageMawScafold</li>
@@ -1911,6 +1911,7 @@
 		</costList>
 		<resourcesFractionWhenDeconstructed>1.0</resourcesFractionWhenDeconstructed>
 		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
 			<li Class="CompProperties_ShipBodyPart">
 				<species>bioship</species>
 				<whitherTo>SalvageMawWhithered</whitherTo>

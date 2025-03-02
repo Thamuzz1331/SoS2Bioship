@@ -44,7 +44,8 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>200</ShipMeat>
+			<ShipMeat>120</ShipMeat>
+			<Neutroamine>7</Neutroamine>
 			<OrganSeed>4</OrganSeed>
 		</costList>
 		<altitudeLayer>WorldClipper</altitudeLayer>
@@ -203,7 +204,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>300</ShipMeat>
+			<ShipMeat>180</ShipMeat>
 			<OrganSeed>6</OrganSeed>
 		</costList>
 		<altitudeLayer>WorldClipper</altitudeLayer>
@@ -346,7 +347,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>400</ShipMeat>
+			<ShipMeat>240</ShipMeat>
 			<OrganSeed>8</OrganSeed>
 		</costList>
 		<researchPrerequisites>
@@ -388,8 +389,9 @@
 		<label>dragon maw</label>
 		<description>Biomagnetic coils compress mater into a roiling plasma before projecting in a terrible beam of devestation.
 			\n\nThe final segment of a spinal-mount cannon. Should be placed outside the ship, unless you want a new hole in your hull.</description>
+		<designationCategory></designationCategory>
 		<graphicData>
-			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
+			<texPath>Things/Building/Ship/DragonMawCannon</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(5,4.2)</drawSize>

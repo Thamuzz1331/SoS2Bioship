@@ -72,6 +72,7 @@ namespace RimWorld
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
+            hungerThreshold = 600f;
             if (!stats.ContainsKey("regenEfficiency"))
                 stats.Add("regenEfficiency", 1f);
             if (!stats.ContainsKey("regenSpeed"))

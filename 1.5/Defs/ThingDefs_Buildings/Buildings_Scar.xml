@@ -115,6 +115,7 @@
 			<relatedBuildCommands>
 				<li>Scaffold_Beam</li>
 			</relatedBuildCommands>
+			<supportsWallAttachments>true</supportsWallAttachments>
 		</building>
 		<costList>
 		</costList>
@@ -194,6 +195,7 @@
 			<relatedBuildCommands>
 				<li>Scaffold_Beam_Unpowered</li>
 			</relatedBuildCommands>
+			<supportsWallAttachments>true</supportsWallAttachments>
 		</building>
 		<costList>
 		</costList>

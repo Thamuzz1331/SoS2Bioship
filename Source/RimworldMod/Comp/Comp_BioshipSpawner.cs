@@ -56,11 +56,17 @@ namespace RimWorld
                 CellFinder.TryFindRandomSpawnCellForPawnNear(parent.Position, parent.Map, out targetCell, 3);
                 GenSpawn.Spawn(spawn, targetCell, parent.Map, Rot4.North);
 
-                spawn.training.Train(TrainableDefOf.Tameness, null, true);
-                spawn.training.Train(TrainableDefOf.Obedience, null, true);
-                spawn.training.Train(TrainableDefOf.Release, null, true);
-                spawn.training.Train(BSTrainableDefOf.Haul, null, true);
                 HediffGiverUtility.TryApply(spawn, HediffDef.Named("ShipDrone"), null, true);
+                if (parent.Faction != Faction.OfPlayer)
+                {
+                    HediffGiverUtility.TryApply(spawn, HediffDef.Named("Scaria"), null, true);
+                } else
+                {
+                    spawn.training.Train(TrainableDefOf.Tameness, null, true);
+                    spawn.training.Train(TrainableDefOf.Obedience, null, true);
+                    spawn.training.Train(TrainableDefOf.Release, null, true);
+                    spawn.training.Train(BSTrainableDefOf.Haul, null, true);
+                }
             }
             if(refuelable != null)
             {

@@ -20,7 +20,7 @@
 				<projectileSpeed>10</projectileSpeed>
 				<pointDefense>true</pointDefense>
 				<groundDefense>true</groundDefense>
-				<groundProjectile>Bullet_Ground_Laser</groundProjectile>
+				<groundProjectile>Bullet_Ground_Nematocyst</groundProjectile>
 				<singleFireSound>ShipCombatLaser</singleFireSound>
 				<groundMissRadius>2</groundMissRadius>
 				<threat>10</threat>
@@ -50,7 +50,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>200</ShipMeat>
+			<ShipMeat>120</ShipMeat>
 			<OrganSeed>4</OrganSeed>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
@@ -214,7 +214,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>300</ShipMeat>
+			<ShipMeat>180</ShipMeat>
 			<OrganSeed>6</OrganSeed>
 		</costList>
 		<designationCategory/>
@@ -420,7 +420,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>400</ShipMeat>
+			<ShipMeat>200</ShipMeat>
 			<OrganSeed>8</OrganSeed>
 		</costList>
 	</ThingDef>
@@ -467,7 +467,7 @@
 		</building>
 		<uiIconPath>Things/Building/Ship/TorpedoTubes_small</uiIconPath>
 		<costList>
-			<ShipMeat>400</ShipMeat>
+			<ShipMeat>200</ShipMeat>
 			<OrganSeed>8</OrganSeed>
 		</costList>
 	</ThingDef>
@@ -498,8 +498,8 @@
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>
-			<ShipMeat>500</ShipMeat>
-			<Neutroamine>50</Neutroamine>
+			<ShipMeat>300</ShipMeat>
+			<Neutroamine>25</Neutroamine>
 			<OrganSeed>8</OrganSeed>
 		</costList>
 		<comps>
@@ -512,8 +512,8 @@
 				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
 				<heatPerPulse>120</heatPerPulse>
 				<energyToFire>180</energyToFire>
-				<optRange>300</optRange>
-				<maxRange>300</maxRange>
+				<optRange>100</optRange>
+				<maxRange>100</maxRange>
 				<projectileSpeed>5</projectileSpeed>
 				<singleFireSound>ShipCombatLaser</singleFireSound>
 				<threat>100</threat>

@@ -19,6 +19,17 @@
 		<defName>Bioship_BuildingHunter</defName>
 		<thinkRoot Class="ThinkNode_Priority">
 			<subNodes>
+				<li Class="ThinkNode_ConditionalMustKeepLyingDown">
+					<subNodes>
+						<li Class="JobGiver_KeepLyingDown" />
+					</subNodes>
+				</li>
+
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Downed</treeDef>
+				</li>
+
+
 				<li Class="JobGiver_DestroyBuildings"/>
 
 				<li Class="JobGiver_IdleError"/>
@@ -26,6 +37,16 @@
 		</thinkRoot>
 	</ThinkTreeDef>
 
-
+	<ThinkTreeDef>
+		<defName>VoidJellyConstant</defName>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				<!-- Despawned -->
+				<li Class="ThinkNode_Subtree">
+					<treeDef>Despawned</treeDef>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
 
 </Defs>

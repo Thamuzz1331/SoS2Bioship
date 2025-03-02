@@ -149,7 +149,7 @@
 	<BodyPartDef>
 		<defName>Bioship_JellyHood</defName>
 		<label>hood</label>
-		<hitPoints>60</hitPoints>
+		<hitPoints>15</hitPoints>
 		<skinCovered>true</skinCovered>
 		<tags>
 			<li>MovingLimbCore</li>
@@ -158,7 +158,7 @@
 	<BodyPartDef>
 		<defName>Bioship_JellyLappet</defName>
 		<label>tentacle</label>
-		<hitPoints>30</hitPoints>
+		<hitPoints>7</hitPoints>
 		<frostbiteVulnerability>0.1</frostbiteVulnerability>
 		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
 		<skinCovered>true</skinCovered>

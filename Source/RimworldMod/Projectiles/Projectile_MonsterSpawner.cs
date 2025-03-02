@@ -27,7 +27,7 @@ namespace RimWorld
                         PawnGenerationRequest req = 
                             new PawnGenerationRequest(
                                 PawnKindDef.Named("BioShip_VoidJelly"),
-                                this.Launcher.Faction, 
+                                this.Launcher.Faction,
                                 PawnGenerationContext.NonPlayer, 
                                 -1, 
                                 true, 

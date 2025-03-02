@@ -104,21 +104,52 @@ namespace BioShip
 			fakeTurret.Destroy();
 		}
 	}
-/*
-	[HarmonyPatch(typeof(CompShipBlueprint), "SpawnShipDefBlueprint")]
-	public static class BioshipInterstellarFailReasons
+    /*
+		[HarmonyPatch(typeof(CompShipBlueprint), "SpawnShipDefBlueprint")]
+		public static class BioshipInterstellarFailReasons
+		{
+
+			[HarmonyPrefix]
+			public static bool BioshipSpawn(ShipDef __shipDef, IntVec3 __pos, Map __map, int __tier)
+			{
+
+				return true;
+			}
+		}
+	*/
+    /*
+        [HarmonyPatch(typeof(SelfDefenseUtility), nameof(SelfDefenseUtility.ShouldStartFleeing))]
+        public static class JellyNotFlee
+        {
+            [HarmonyPostfix]
+            public static void IgnoreFlee(Pawn pawn, ref bool __result)
+            {
+                Log.Message("Testing Should Flee " + pawn.def.defName);
+                if (pawn.def.defName == "BioShip_VoidJelly")
+                {
+                    Log.Message("Jelly detected");
+                    __result = false;
+                }
+            }
+        }
+    */
+    [HarmonyPatch(typeof(ShipUtility), nameof(ShipUtility.LaunchFailReasons))]
+    public static class BioshipLaunch
     {
 
-		[HarmonyPrefix]
-		public static bool BioshipSpawn(ShipDef __shipDef, IntVec3 __pos, Map __map, int __tier)
+        [HarmonyPostfix]
+        public static void Postfix(IEnumerable<string> __result, Building rootBuilding)
         {
-
-			return true;
+			if (rootBuilding is Building_ShipBridge)
+			{
+				Building_ShipBridge bridge = (Building_ShipBridge)rootBuilding;
+                if (bridge.Ship.Sensors.Count > 0)
+				{
+					__result = __result.Where((s) => !(s.Contains("sensor")));
+				}
+            }
         }
     }
-*/
-    [HarmonyPatch(typeof(Building_ShipBridge), "InterstellarFailReasons")]
-
 
     [HarmonyPatch(typeof(ColonistBar), "ColonistBarOnGUI")]
 	public static class BioShipCombatOnGUI

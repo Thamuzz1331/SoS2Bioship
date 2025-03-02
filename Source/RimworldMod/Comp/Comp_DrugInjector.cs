@@ -30,6 +30,37 @@ namespace RimWorld
             supplier = parent.TryGetComp<CompFueledAddictionSupplier>();
             drugDef = BuildingHediffDef.Named(InjectorProps.drugHediff);
             addictionDef = BuildingHediffDef.Named(InjectorProps.addictionHediff);
+
+            if (!respawningAfterLoad && this.parent.Faction != Faction.OfPlayer)
+            {
+                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                foreach (Thing heart in this.LinkedBuildings)
+                {
+                    CompShipHeart bp = heart.TryGetComp<CompShipHeart>();
+                    float requiredDosage = bp.body.bodyParts.Count * InjectorProps.massDosageMult;
+                    if (requiredDosage <= refuelable.Fuel)
+                    {
+                        ApplyDrug(bp, requiredDosage);
+                    }
+                }
+            }
+        }
+
+        public void ApplyDrug(CompShipHeart bp, float requiredDosage)
+        {
+            BuildingHediff_Drug drug = (BuildingHediff_Drug)BuildingHediffMaker.MakeBuildingHediff(drugDef);
+            drug.durationTicks = InjectorProps.drugDuration;
+            bp.AddHediff(drug);
+            refuelable.ConsumeFuel(requiredDosage);
+            if (Rand.Chance(InjectorProps.addictionChance))
+            {
+                Building_Addiction addiction =
+                    (Building_Addiction)BuildingHediffMaker.MakeBuildingHediff(addictionDef);
+                addiction.maxWithdrawl = InjectorProps.maxWithdrawl;
+                addiction.withdrawRate = InjectorProps.withdrawlRate;
+                addiction.massMult = InjectorProps.massAddictionMult;
+                bp.AddHediff(addiction);
+            }
         }
 
         public override void PostExposeData()
@@ -76,22 +107,10 @@ namespace RimWorld
                 float requiredDosage = bp.body.bodyParts.Count * InjectorProps.massDosageMult;
                 if (requiredDosage <= refuelable.Fuel)
                 {
-                    options.Add(new FloatMenuOption(bp.bodyName,
+                    options.Add(new FloatMenuOption(bp.bodyName + " " + requiredDosage,
                         delegate ()
                         {
-                            BuildingHediff_Drug drug = (BuildingHediff_Drug)BuildingHediffMaker.MakeBuildingHediff(drugDef);
-                            drug.durationTicks = InjectorProps.drugDuration;
-                            bp.AddHediff(drug);
-                            refuelable.ConsumeFuel(requiredDosage);
-                            if (Rand.Chance(InjectorProps.addictionChance))
-                            {
-                                Building_Addiction addiction =
-                                    (Building_Addiction)BuildingHediffMaker.MakeBuildingHediff(addictionDef);
-                                addiction.maxWithdrawl = InjectorProps.maxWithdrawl;
-                                addiction.withdrawRate = InjectorProps.withdrawlRate;
-                                addiction.massMult = InjectorProps.massAddictionMult;
-                                bp.AddHediff(addiction);
-                            }
+                            ApplyDrug(bp, requiredDosage);
                         },
                         MenuOptionPriority.Default, null, null, 0f, null, null, true, 0));
                 }

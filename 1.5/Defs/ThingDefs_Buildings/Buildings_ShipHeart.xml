@@ -32,7 +32,7 @@
 			<WorkToBuild>16000</WorkToBuild>
 		</statBases>
 		<tickerType>Normal</tickerType>
-		<description>The beating heart of a ship.  Capable of converting protien scaffold to flesh and revitalizing withered flesh.</description>
+		<description>The beating heart of a ship.  Capable of converting protien scaffold to flesh and revitalizing withered flesh.\nSustains a livable environment within the ship's interior caveties.</description>
 		<size>(5,5)</size>
 		<inspectorTabs>
 			<li>ITab_Stats</li>
@@ -95,7 +95,7 @@
 		<defName>Ship_Heart</defName>
 		<label>ship heart</label>
 		<designatorDropdown>Ship_Heart</designatorDropdown>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Ship/ShipHeart7</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -174,7 +174,7 @@
 			<li>PlaceWorker_ShowFacilitiesConnections</li>
 		</placeWorkers>
 		<constructionSkillPrerequisite>15</constructionSkillPrerequisite>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<researchPrerequisites>
 			<li>MicroelectronicsBasics</li>
 		</researchPrerequisites>
@@ -233,7 +233,7 @@
 		<neverMultiSelect>true</neverMultiSelect>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
 		<clearBuildingArea>false</clearBuildingArea>
 		<researchPrerequisites>
@@ -281,7 +281,7 @@
 		<researchPrerequisites>
 			<li>ProtienRendering</li>
 		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 		<thingCategories>
@@ -320,7 +320,7 @@
 		<researchPrerequisites>
 			<li>BioshipGenetics</li>
 		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<graphicData>
 			<texPath>Things/Building/Misc/HeartContainer</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -380,7 +380,7 @@
 		<researchPrerequisites>
 			<li>BioshipGenetics</li>
 		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<passability>PassThroughOnly</passability>
 		<castEdgeShadows>true</castEdgeShadows>
 		<fillPercent>0.4</fillPercent>

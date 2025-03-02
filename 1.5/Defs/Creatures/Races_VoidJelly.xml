@@ -35,6 +35,7 @@
 		</comps>
 		<race>
 			<thinkTreeMain>Bioship_BuildingHunter</thinkTreeMain>
+			<thinkTreeConstant>Bioship_BuildingHunter</thinkTreeConstant>
 			<deathAction>
 				<workerClass>DeathActionWorker_JellyBoom</workerClass>
 			</deathAction>

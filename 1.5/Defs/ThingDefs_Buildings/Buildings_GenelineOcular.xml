@@ -47,7 +47,8 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>200</ShipMeat>
+			<ShipMeat>120</ShipMeat>
+			<Neutroamine>7</Neutroamine>
 			<OrganSeed>4</OrganSeed>
 		</costList>
 	</ThingDef>
@@ -188,7 +189,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>300</ShipMeat>
+			<ShipMeat>240</ShipMeat>
 			<OrganSeed>6</OrganSeed>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
@@ -314,7 +315,7 @@
 			</relatedBuildCommands>
 		</building>
 		<costList>
-			<ShipMeat>400</ShipMeat>
+			<ShipMeat>240</ShipMeat>
 			<OrganSeed>8</OrganSeed>
 		</costList>
 		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
@@ -377,8 +378,8 @@
 			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
 		</statBases>
 		<costList>
-			<ShipMeat>500</ShipMeat>
-			<Neutroamine>50</Neutroamine>
+			<ShipMeat>300</ShipMeat>
+			<Neutroamine>25</Neutroamine>
 			<OrganSeed>8</OrganSeed>
 		</costList>
 		<comps>

@@ -45,7 +45,7 @@
 		<researchPrerequisites>
 			<li>BioshipDrugs</li>
 		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 		<thingCategories>
@@ -74,7 +74,7 @@
 				<addictionChance>1</addictionChance>
 				<maxWithdrawl>420000</maxWithdrawl>
 				<withdrawlRate>1</withdrawlRate>
-				<massDosageMult>0</massDosageMult>
+				<massDosageMult>.01</massDosageMult>
 				<massAddictionMult>0.01</massAddictionMult>
 				<maxSimultaneous>100</maxSimultaneous>
 			</li>
@@ -174,7 +174,7 @@
 		<researchPrerequisites>
 			<li>BioshipDrugs</li>
 		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 		<thingCategories>
@@ -287,7 +287,7 @@
 		<researchPrerequisites>
 			<li>BioshipDrugs</li>
 		</researchPrerequisites>
-		<designationCategory>Ship</designationCategory>
+		<designationCategory>Bioship</designationCategory>
 		<minifiedDef>MinifiedThing</minifiedDef>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 		<thingCategories>

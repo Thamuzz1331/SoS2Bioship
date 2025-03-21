@@ -130,8 +130,8 @@
 		</graphicData>
 		<projectile>
 			<damageDef>ShipNematocyst</damageDef>
-			<speed>200</speed>
-			<explosionRadius>2.9</explosionRadius>
+			<speed>100</speed>
+			<explosionRadius>1.9</explosionRadius>
 			<flyOverhead>true</flyOverhead>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
 		</projectile>

@@ -11,6 +11,9 @@ namespace RimWorld
         public List<BuildingGeneDef> heartGenes = null;
         public ShipGenelineDef geneline = null;
 		public Thing TargetHeart = null;
+		public Thing TargetContainer = null;
+		public bool isPhantom = false;
+
 
         public List<BuildingGeneDef> GeneSet
         {
@@ -127,6 +130,7 @@ namespace RimWorld
         {
             base.PostExposeData();
 			Scribe_Deep.Look(ref TargetHeart, "targetHeart", null);
+			Scribe_Deep.Look(ref TargetContainer, "targetContainer", null);
             Scribe_Defs.Look(ref geneline, "geneline");
             Scribe_Collections.Look(ref heartGenes, "heartGenes", LookMode.Def);
         }

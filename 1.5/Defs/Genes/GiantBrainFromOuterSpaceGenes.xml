@@ -4,6 +4,22 @@
 		<label>gbfos</label>
 		<displayPriorityInXenotype>811</displayPriorityInXenotype>
 	</GeneCategoryDef>
+	<BuildingGeneDef>
+		<defName>BoneArmor</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ArmorBone</iconPath>
+		<label>bone</label>
+		<description>Bone armor</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>55</displayOrderInCategory>
+		<props>
+			<li>armor:BoneArmor</li>
+		</props>
+		<tags>
+			<li>armor</li>
+		</tags>
+		<metabolicCost>1</metabolicCost>
+	</BuildingGeneDef>
 
 	<BuildingGeneDef>
 		<defName>MotiveGangliaGene</defName>
@@ -13,6 +29,7 @@
 		<description>Shield generators double as reactionless drives, allowing the bioship to move via willpower alone.</description>
 		<displayCategory>Geneline</displayCategory>
 		<displayOrderInCategory>60</displayOrderInCategory>
+		<architeCost>8</architeCost>
 		<props>
 			<li>shieldEmitter:BioShieldGeneratorMotive</li>
 		</props>
@@ -32,6 +49,8 @@
 		<description>Large weapon scaffolds grow into UV eye lasers, devestating weapons with extreme range, precision, and damage.</description>
 		<displayCategory>Geneline</displayCategory>
 		<displayOrderInCategory>60</displayOrderInCategory>
+		<architeCost>16</architeCost>
+		<metabolicCost>-4</metabolicCost>
 		<props>
 			<li>largeTurretOptions:ShipTurret_UVEyeLaser</li>
 		</props>
@@ -51,6 +70,8 @@
 		<description>Medium weapon scaffolds grow into visual spectrum eye lasers, devestating weapons with medium range, precision, and damage.</description>
 		<displayCategory>Geneline</displayCategory>
 		<displayOrderInCategory>60</displayOrderInCategory>
+		<architeCost>8</architeCost>
+		<metabolicCost>-1</metabolicCost>
 		<props>
 			<li>mediumTurretOptions:ShipTurret_VSEyeLaser</li>
 		</props>

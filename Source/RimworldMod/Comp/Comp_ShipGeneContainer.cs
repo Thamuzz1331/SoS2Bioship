@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Verse;
+
 
 namespace RimWorld
 {
@@ -85,7 +88,14 @@ namespace RimWorld
 			return this.innerContainer;
 		}
 
-		public override void PostDestroy(DestroyMode mode, Map previousMap)
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+            ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).geneContainers.Add(this);
+        }
+
+
+        public override void PostDestroy(DestroyMode mode, Map previousMap)
 		{
 			this.innerContainer.ClearAndDestroyContents(DestroyMode.Vanish);
 			base.PostDestroy(mode, previousMap);

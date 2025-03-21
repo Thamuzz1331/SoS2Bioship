@@ -37,4 +37,16 @@
 			<li>Manipulation</li>
 		</requiredCapacities>
 	</WorkGiverDef>
+	<WorkGiverDef>
+		<defName>HaulHeartToBank</defName>
+		<label>banking heartseed</label>
+		<giverClass>WorkGiver_HaulHeartToBank</giverClass>
+		<workType>Hauling</workType>
+		<verb>bank</verb>
+		<gerund>banking</gerund>
+		<priorityInType>216</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
 </Defs>

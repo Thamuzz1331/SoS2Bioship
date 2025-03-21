@@ -18,5 +18,6 @@ namespace RimWorld
 
         public List<Thing> corpseMaws = new List<Thing>();
         public List<CompHeartSeed> heartSeeds = new List<CompHeartSeed>();
+        public List<CompShipGeneContainer> geneContainers = new List<CompShipGeneContainer>();
     }
 }

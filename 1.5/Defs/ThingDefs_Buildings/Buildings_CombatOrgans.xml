@@ -121,6 +121,7 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<size>(4,4)</size>
+		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_UVLaserTop</defName>
@@ -203,15 +204,6 @@
 			<drawSize>(3,3)</drawSize>
 		</graphicData>
 		<comps>
-			<li Class="CompProperties_ShipBodyPart">
-				<species>bioship</species>
-				<whitherTo>LargeWeaponWhithered</whitherTo>
-				<regenDef>ShipTurret_VSEyeLaser</regenDef>
-				<turretNutritionCost>5</turretNutritionCost>
-			</li>
-			<li Class="CompProperties_NutritionConsumer">
-				<consumptionPerPulse>1</consumptionPerPulse>
-			</li>
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeat</compClass>
 				<heatPerPulse>10</heatPerPulse>
@@ -227,6 +219,15 @@
 				<compClass>CompPowerTrader</compClass>
 				<basePowerConsumption>150</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>LargeWeaponWhithered</whitherTo>
+				<regenDef>ShipTurret_VSEyeLaser</regenDef>
+				<turretNutritionCost>5</turretNutritionCost>
+			</li>
+			<li Class="CompProperties_NutritionConsumer">
+				<consumptionPerPulse>1</consumptionPerPulse>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 		</comps>
@@ -247,6 +248,7 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<size>(3,3)</size>
+		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_VSLaserTop</defName>

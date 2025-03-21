@@ -34,6 +34,7 @@ namespace Verse
         public override void PostRemove(CompBuildingCore core)
         {
             base.PostRemove(core);
+            Log.Message("Gene " + this.label + " " + this.Overridden);
             if (!this.Overridden)
             {
                 CompShipHeart heart = (CompShipHeart)core;
@@ -48,6 +49,10 @@ namespace Verse
         public override bool OverridesGene(BuildingGene b)
         {
             bool ret = base.OverridesGene(b);
+            if(this.Equals(b))
+            {
+                return false;
+            }
             foreach(string tag in this.def.tags)
             {
                 ret = ret || b.def.tags.Contains(tag);

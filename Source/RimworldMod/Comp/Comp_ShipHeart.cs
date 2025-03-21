@@ -36,6 +36,31 @@ namespace RimWorld
         public ShipGenelineDef geneline = null;
         public Dictionary<DamageDef, float> resistances = new Dictionary<DamageDef, float>();
 
+        public Dictionary<string, DefOptions> defaultDefs = new Dictionary<string, DefOptions>()
+        {
+            {"smallTurretOptions", new DefOptions(new List<ThingDef>(){
+            })},
+            {"mediumTurretOptions", new DefOptions(new List<ThingDef>(){
+            })},
+            {"largeTurretOptions", new DefOptions(new List<ThingDef>(){
+            })},
+            {"spinalTurretOptions", new DefOptions(new List<ThingDef>(){})},
+            {"armor", new DefOptions(new List<ThingDef>(){
+            })},
+            {"smallMawOptions", new DefOptions(new List<ThingDef>(){
+                ThingDef.Named("Maw_Small"),
+            })},
+            {"shieldEmitter", new DefOptions(new List<ThingDef>(){
+                ThingDef.Named("BioShieldGenerator")
+            })},
+            {"HeavySpineLauncher", new DefOptions(new List<ThingDef>(){
+                ThingDef.Named("Spine_Heavy")
+            })},
+            {"LightSpineLauncher", new DefOptions(new List<ThingDef>(){
+                ThingDef.Named("Spine_Light")
+            })},
+        };
+
         public Dictionary<string, DefOptions> defs = new Dictionary<string, DefOptions>()
         {
             {"smallTurretOptions", new DefOptions(new List<ThingDef>(){
@@ -311,6 +336,7 @@ namespace RimWorld
             {
                 this.RemoveGene(gene);
             }
+            this.defs = this.defaultDefs.ToDictionary(entry => entry.Key, entry=> entry.Value);
             ShipGeneline g = ShipGenelineMaker.MakeShipGeneline(this.geneline);
             this.AddGene(g.smallTurretGene);
             this.AddGene(g.mediumTurretGene);

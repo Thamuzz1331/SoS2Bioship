@@ -115,4 +115,20 @@
 		<geneOverridesTags>
 		</geneOverridesTags>
 	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>RandGBFOSGene1</defName>
+		<buildingGeneClass>RandGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_PlasmaMawS</iconPath>
+		<label>random small weapon</label>
+		<description>Transforms into a random cost 1 bonus.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>63</displayOrderInCategory>
+		<props>
+			<li>PsiRefelct</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
 </Defs>

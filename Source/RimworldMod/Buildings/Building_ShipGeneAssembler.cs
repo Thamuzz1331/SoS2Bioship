@@ -231,13 +231,12 @@ namespace RimWorld
 					seed.geneline = ShipGenelineDef.Named("AstralCniderianGeneline");
                     seed.heartGenes = this.genepacksToRecombine.NonOverriddenGenes(true);
                 }
-                heartSeed.SpawnSetup(this.Map, false);
 				if (GenPlace.TryPlaceThing(heartSeed, this.InteractionCell, base.Map, ThingPlaceMode.Near, null, null, default(Rot4)))
 				{
 					Messages.Message("MessageXenogermCompleted".Translate(), heartSeed, MessageTypeDefOf.PositiveEvent, true);
 				}
-			}
-			if (this.architesRequired > 0)
+            }
+            if (this.architesRequired > 0)
 			{
 				for (int i = this.innerContainer.Count - 1; i >= 0; i--)
 				{
@@ -258,6 +257,7 @@ namespace RimWorld
 
 		public List<CompHeartSeed> GetGenepacks(bool includePowered, bool includeUnpowered)
 		{
+			List<ShipGenelineDef> seenGenelines = new List<ShipGenelineDef>();
 			this.tmpGenepacks.Clear();
 			List<Thing> connectedFacilities = this.ConnectedFacilities;
 			if (connectedFacilities != null)
@@ -271,6 +271,22 @@ namespace RimWorld
 						bool flag = compPowerTrader == null || compPowerTrader.PowerOn;
 						if ((includePowered && flag) || (includeUnpowered && !flag))
 						{
+							foreach (CompHeartSeed s in compGenepackContainer.ContainedGenepacks)
+							{
+								if (!seenGenelines.Contains(s.geneline))
+								{
+									seenGenelines.Add(s.geneline);
+
+                                    this.tmpGenepacks.Add(CreateAdHocSeed(s.geneline.smallTurret));
+                                    this.tmpGenepacks.Add(CreateAdHocSeed(s.geneline.mediumTurret));
+                                    this.tmpGenepacks.Add(CreateAdHocSeed(s.geneline.largeTurret));
+                                    this.tmpGenepacks.Add(CreateAdHocSeed(s.geneline.spinalTurret));
+									foreach (string g in s.geneline.miscGenes)
+									{
+                                        this.tmpGenepacks.Add(CreateAdHocSeed(g));
+                                    }
+                                }
+                            }
 							this.tmpGenepacks.AddRange(compGenepackContainer.ContainedGenepacks);
 						}
 					}
@@ -278,6 +294,16 @@ namespace RimWorld
 			}
 			return this.tmpGenepacks;
 		}
+
+		private static CompHeartSeed CreateAdHocSeed(string geneDefName)
+		{
+			CompHeartSeed ret = new CompHeartSeed();
+			List<BuildingGeneDef> retList = new List<BuildingGeneDef>();
+			retList.Add(BuildingGeneDef.Named(geneDefName));
+			ret.heartGenes = retList;
+			ret.isPhantom = true;
+			return ret;
+        }
 
 		public CompShipGeneContainer GetGeneBankHoldingPack(CompHeartSeed pack)
 		{
@@ -349,7 +375,7 @@ namespace RimWorld
 				for (int j = 0; j < connectedFacilities.Count; j++)
 				{
 					CompShipGeneContainer compGenepackContainer = connectedFacilities[j].TryGetComp<CompShipGeneContainer>();
-					if (compGenepackContainer != null && compGenepackContainer.ContainedGenepacks.Contains(this.genepacksToRecombine[i]))
+					if (this.genepacksToRecombine[i].isPhantom || (compGenepackContainer != null && compGenepackContainer.ContainedGenepacks.Contains(this.genepacksToRecombine[i])))
 					{
 						flag = true;
 						break;

@@ -8,11 +8,11 @@
 		<sizeX>22</sizeX>
 		<sizeZ>20</sizeZ>
 		<label>Giant Brainlet</label>
-		<combatPoints>134</combatPoints>
-		<rarityLevel>0</rarityLevel>
+		<combatPoints>200</combatPoints>
+		<rarityLevel>1</rarityLevel>
 		<neverRandom>False</neverRandom>
 		<neverAttacks>False</neverAttacks>
-		<neverWreck>False</neverWreck>
+		<neverWreck>True</neverWreck>
 		<startingShip>False</startingShip>
 		<startingDungeon>False</startingDungeon>
 		<spaceSite>False</spaceSite>

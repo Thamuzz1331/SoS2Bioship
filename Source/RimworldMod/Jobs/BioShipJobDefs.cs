@@ -13,5 +13,6 @@ namespace RimWorld
 
 		public static JobDef RefuelButcherScalable;
 		public static JobDef ImplantHeartSeed;
+		public static JobDef HaulHeartToBank;
 	}
 }

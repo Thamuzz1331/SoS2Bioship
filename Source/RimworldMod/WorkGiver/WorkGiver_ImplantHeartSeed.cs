@@ -56,7 +56,6 @@ namespace RimWorld
             {
 				return null;
             }
-			Log.Message("Make implant job");
 			return JobMaker.MakeJob(BioShipJobDefs.ImplantHeartSeed, t, thing);
 		}
 

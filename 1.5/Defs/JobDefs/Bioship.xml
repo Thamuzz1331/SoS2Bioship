@@ -16,4 +16,10 @@
 		<driverClass>JobDriver_ImplantHeartSeed</driverClass>
 		<reportString>implanting heartseed.</reportString>
 	</JobDef>
+	<JobDef>
+		<defName>HaulHeartToBank</defName>
+		<driverClass>JobDriver_HaulHeartToBank</driverClass>
+		<reportString>banking heartseed.</reportString>
+	</JobDef>
+
 </Defs>

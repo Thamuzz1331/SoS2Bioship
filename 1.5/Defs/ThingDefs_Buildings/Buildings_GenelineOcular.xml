@@ -51,6 +51,7 @@
 			<Neutroamine>7</Neutroamine>
 			<OrganSeed>4</OrganSeed>
 		</costList>
+		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_SmallEyeLaserTop</defName>
@@ -197,6 +198,7 @@
 			<li>ShipTurretMedium</li>
 		</researchPrerequisites>
 		<size>(3,3)</size>
+		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_MediumEyeLaserTop</defName>
@@ -322,6 +324,7 @@
 		<researchPrerequisites>
 		</researchPrerequisites>
 		<size>(4,4)</size>
+		<altitudeLayer>WorldClipper</altitudeLayer>
 	</ThingDef>
 	<ThingDef ParentName="BaseShipArtilleryWeapon">
 		<defName>ShipTurret_LargeEyeLaserTop</defName>

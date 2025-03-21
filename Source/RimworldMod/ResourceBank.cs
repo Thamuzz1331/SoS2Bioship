@@ -17,6 +17,7 @@ namespace BioShip
 		public static class BioshipThingDefOf
 		{
 			public static ThingDef ShipGeneAssembler;
+			public static ThingDef HeartSeed;
 		}
 
 		[DefOf]
@@ -24,6 +25,5 @@ namespace BioShip
 		{
 			public static JobDef CreateShipXenogerm;
 		}
-
 	}
 }

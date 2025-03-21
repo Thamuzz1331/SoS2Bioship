@@ -484,6 +484,129 @@
 		<fillPercent>0.0</fillPercent>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>ScaffoldHullTileUnroofed</defName>
+		<designatorDropdown>Protien_Scaffold_Tile</designatorDropdown>
+		<label>unroofed floor scaffold</label>
+		<description>Grows into shipflesh floors when connected to a well fed heart.  Does not automatically create a roof.</description>
+		<thingClass>Building_Scaffold</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/ScaffoldHullPlate</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<seeThroughFog>true</seeThroughFog>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<shipPart>true</shipPart>
+		</building>
+		<coversFloor>false</coversFloor>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<passability>Standable</passability>
+		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+			<Beauty>1</Beauty>
+			<WorkToBuild>600</WorkToBuild>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_StaplebleScaffold">
+				<stapleDef>BioShipHullTileUnroofed_Insensate</stapleDef>
+				<species>bioship</species>
+				<transformString>BioShipHullTileUnroofed</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipHull</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<costList>
+			<ProtienPutty>1</ProtienPutty>
+		</costList>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Bioship</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<fillPercent>0.0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase" Name="BioHeatConduit">
+		<defName>BioHeatConduitScaffold</defName>
+		<label>thermal bile duct scaffold</label>
+		<description>Grows into a duct for moving thermal bile around a starship.</description>
+		<thingClass>SaveOurShip2.Building_ShipConduit</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/Atlas_CoolantConduit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshOnly</drawerType>
+		<uiIconPath>Things/Building/Ship/CoolantConduit_MenuIcon</uiIconPath>
+		<uiIconScale>0.7</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/Blueprint_Atlas_CoolantConduit</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>Conduits</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>50</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>1</Steel>
+			<Plasteel>1</Plasteel>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+			</li>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioHeatConduit</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipHeatConduit</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Bioship</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+		<researchPrerequisites>
+			<li>ThermoregulatoryScaffolds</li>
+		</researchPrerequisites>
+	</ThingDef>
+	
 	
 	<DesignatorDropdownGroupDef>
 		<defName>Scaffold_Airlock</defName>

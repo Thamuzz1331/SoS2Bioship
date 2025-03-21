@@ -192,6 +192,7 @@
 	  <Compile Include="Comp\MapComp_CorpseMawTracker.cs"/>
 	  <Compile Include="PlaceWorkers\PlaceWorker_BioShipNeedsSpinalMountPort.cs"/>
 	  <Compile Include="PlaceWorkers\PlaceWorker_OnFleshOrScaff.cs"/>
+	  <Compile Include="PlaceWorkers\PlaceWorker_OnScaffOnly.cs"/>
 	  <Compile Include="GenSteps\GenStep_BurrowingBioship.cs"/>
 	  <Compile Include="Defs\BioShipDef.cs"/>
 	  <Compile Include="Defs\ShipGenelineDef.cs"/>
@@ -208,9 +209,11 @@
 	  <Compile Include="Jobs\JobDriver_RefuelButcherableScaling.cs"/>
 	  <Compile Include="Jobs\JobDriver_CreateShipXenogerm.cs"/>
 	  <Compile Include="Jobs\JobDriver_ImplantHeartSeed.cs"/>
+	  <Compile Include="Jobs\JobDriver_HaulHeartToBank.cs"/>
 	  <Compile Include="WorkGiver\WorkGiver_CreateShipXenogerm.cs"/>
 	  <Compile Include="WorkGiver\WorkGiver_RefuelButcherScalable.cs"/>
 	  <Compile Include="WorkGiver\WorkGiver_ImplantHeartSeed.cs"/>
+	  <Compile Include="WorkGiver\WorkGiver_HaulHeartToBank.cs"/>
 	  <Compile Include="Jobs\JobGiver_DestroyBuildings.cs"/>
 
 	  <Compile Include="Damage\Nematocyst\DamageWorker_Nematocyst.cs"/>
@@ -240,5 +243,7 @@
 
 	  <Compile Include="Verbs\Verb_MutableProjectileShip.cs" />
 	  <Compile Include="Verbs\Verb_EatShip.cs" />
+
+	  <Compile Include="ScenPart\Bioship_GangAndMonster.cs" />
   </ItemGroup>
 </Project>

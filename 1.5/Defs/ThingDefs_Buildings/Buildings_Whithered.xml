@@ -394,7 +394,126 @@
 		<fillPercent>0.0</fillPercent>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 	</ThingDef>
-	
+	<ThingDef ParentName="BuildingBase">
+		<defName>WhitheredHullTileUnroofed</defName>
+		<label>withered floor</label>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<thingClass>Building_Scaffold</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/WitheredHullPlate</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<seeThroughFog>true</seeThroughFog>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<shipPart>true</shipPart>
+		</building>
+		<coversFloor>false</coversFloor>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<passability>Standable</passability>
+		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<statBases>
+			<MaxHitPoints>75</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+			<Beauty>1</Beauty>
+			<WorkToBuild>200</WorkToBuild>
+		</statBases>
+		<description>Withered floors, connect to a well fed heart to revitalize.</description>
+		<comps>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioShipHullTileUnroofed</transformString>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<costList>
+			<ShipMeat>7</ShipMeat>
+			<ProtienPutty>1</ProtienPutty>
+		</costList>
+		<resourcesFractionWhenDeconstructed>.5</resourcesFractionWhenDeconstructed>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<fillPercent>0.0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase" Name="ShipHeatConduit">
+		<defName>BioHeatConduitWithered</defName>
+		<label>thermal bile duct</label>
+		<description>A duct for moving thermal bile around a starship.</description>
+		<thingClass>SaveOurShip2.Building_ShipConduit</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/Atlas_CoolantConduit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom4</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshOnly</drawerType>
+		<uiIconPath>Things/Building/Ship/CoolantConduit_MenuIcon</uiIconPath>
+		<uiIconScale>0.7</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/Blueprint_Atlas_CoolantConduit</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>Conduits</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>50</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>1</Steel>
+			<Plasteel>1</Plasteel>
+			<Neutromine>1</Neutromine>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+			</li>
+			<li Class="CompProperties_Scaffold">
+				<species>bioship</species>
+				<transformString>BioHeatConduit</transformString>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipHeatConduit</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+	</ThingDef>
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>WhitheredAirlock</defName>
 		<label>withered bioship sphintcer</label>

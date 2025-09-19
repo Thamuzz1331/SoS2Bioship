@@ -1,0 +1,16 @@
+<Defs>
+	<HediffDef>
+		<defName>ShipDrone</defName>
+		<label>drone</label>
+		<description>Creature is a short lived drone in service to a greater organism.</description>
+		<descriptionShort>Creature is a short lived drone in service to a greater organism.</descriptionShort>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_KillAfterDays">
+				<days>3</days>
+			</li>
+		</comps>
+	</HediffDef>
+</Defs>

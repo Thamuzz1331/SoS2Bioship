@@ -52,12 +52,26 @@ namespace RimWorld
 				damage = 120;
 			}
 			GenExplosion.DoExplosion(
-				corpse.Position, 
-				corpse.Map, 
-				radius, 
-				ShipDamageDefOf.ShipBioAcid, 
-				corpse.InnerPawn, 
-				damage, 50f, null, null, null, null, null, 0f, 1, null, false, null, 0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
+                center:corpse.Position,
+                map:corpse.Map,
+                radius:radius,
+                damType:ShipDamageDefOf.ShipBioAcid,
+                instigator:corpse.InnerPawn,
+                damAmount:damage,
+                armorPenetration:50f,
+                explosionSound:null,
+                weapon:null,
+                projectile:null,
+                intendedTarget:null,
+                postExplosionSpawnThingDef:null,
+                postExplosionSpawnChance:0f,
+                postExplosionSpawnThingCount:0,
+                postExplosionGasType:null,
+                postExplosionGasRadiusOverride:null,
+                postExplosionGasAmount: 0,
+                false, 
+				null, 
+				0f, 1, 0f, false, null, null, null, true, 1f, 0f, true, null, 1f, null, null);
 		}
 	}
 }

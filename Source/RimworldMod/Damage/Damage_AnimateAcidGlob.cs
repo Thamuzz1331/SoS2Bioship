@@ -11,7 +11,7 @@ namespace RimWorld
 	class AnimateAcidGlob : AcidGlob
 	{
 		bool canSpawn = true;
-		public override void Tick()
+		protected override void Tick()
         {
 			if (damageCountdown <= 0 && canSpawn && this.damageRemaining > 240f)
             {

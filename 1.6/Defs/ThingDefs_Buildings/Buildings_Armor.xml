@@ -1,0 +1,168 @@
+<Defs>
+	<ThingDef ParentName="BuildingBase" Name="ArmorBase" Abstract="True">
+		<thingClass>Building_Armor</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<rotatable>false</rotatable>
+		<building>
+			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Armor_Unpowered</li>
+			</relatedBuildCommands>
+		</building>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<designationHotKey>Misc1</designationHotKey>
+		<holdsRoof>true</holdsRoof>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
+	</ThingDef>
+	
+	<ThingDef ParentName="ArmorBase">
+		<defName>CoralArmor</defName>
+		<label>coral armor</label>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/CoralArmorWall_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A layer of coral armor.</description>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>CoralArmor</regenDef>
+				<species>bioship</species>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>false</roof>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="ArmorBase">
+		<defName>BoneArmor</defName>
+		<label>bone armor</label>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/BoneArmorAtlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A layer of bone plate.</description>
+		<building>
+			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>Scaffold_Armor_Unpowered</li>
+			</relatedBuildCommands>
+		</building>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>BoneArmor</regenDef>
+				<species>bioship</species>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>false</roof>
+			</li>
+		</comps>
+	</ThingDef>
+	<ThingDef ParentName="ArmorBase">
+		<defName>DragonscaleArmor</defName>
+		<label>dragonscale armor</label>
+		<designationCategory></designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/ScaleArmorWall_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0</Flammability>
+		</statBases>
+		<description>A scales laced with an organic plasteel matrix.  Highly resistant to plasma weapons.</description>
+		<comps>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<regenDef>DragonscaleArmor</regenDef>
+				<species>bioship</species>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<roof>false</roof>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

@@ -22,7 +22,7 @@ namespace RimWorld
 			Scribe_Values.Look<float>(ref damageRemaining, "damageRemaining", 0f, false);
 		}
 
-		public override void Tick()
+		protected override void Tick()
         {
 			if (damageCountdown <= 0)
             {

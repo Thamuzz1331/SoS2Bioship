@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- heart -->
+	<DesignatorDropdownGroupDef>
+		<defName>Ship_Heart</defName>
+	</DesignatorDropdownGroupDef>
+	<ThingDef ParentName="BuildingBase" Name="ShipHeart" Abstract="True">
+		<defName>AbstractHeart</defName>
+		<label>ship heart</label>
+		<thingClass>Building_ShipHeart</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1</fillPercent>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>1500</MaxHitPoints>
+			<Flammability>0</Flammability>
+			<WorkToBuild>16000</WorkToBuild>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<description>The beating heart of a ship.  Capable of converting protien scaffold to flesh and revitalizing withered flesh.\nSustains a livable environment within the ship's interior caveties.</description>
+		<size>(5,5)</size>
+		<inspectorTabs>
+			<li>ITab_Stats</li>
+			<li>ITab_ShipGenes</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart"/>
+			<li Class="SaveOurShip2.CompProps_LifeSupport"/>
+			<li Class="CompProperties_ShipPart"/>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>CompHeartHeat</compClass>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>0</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Aggression">
+				<baseAggression>1</baseAggression>
+			</li>
+			<li Class="CompProperties_RegenWorker">
+				<regenCost>1.75</regenCost>
+				<regenInterval>90</regenInterval>
+			</li>
+			<li Class="CompProperties_ShipScaffoldConverter">
+				<conversionInterval>45</conversionInterval>
+				<conversionCost>0.75</conversionCost>
+			</li>
+			<li Class="CompProperties_ShipNutritionStore">
+				<nutrientCapacity>50</nutrientCapacity>
+				<initialNutrition>50</initialNutrition>
+			</li>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>LuciferiumInjector</li>
+					<li>WakeUpInjector</li>
+					<li>GoJuiceInjector</li>
+					<li>NutrientInjector</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<placeWorkers>
+			<li>PlaceWorker_OnScaffOnly</li>
+		</placeWorkers>
+		<costList>
+			<HeartSeed>1</HeartSeed>
+			<ProtienPutty>100</ProtienPutty>
+		</costList>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<designationHotKey>Misc3</designationHotKey>
+		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<killedLeavings>
+		</killedLeavings>
+	</ThingDef>
+
+	<ThingDef ParentName="ShipHeart">
+		<defName>Ship_Heart</defName>
+		<label>ship heart</label>
+		<designatorDropdown>Ship_Heart</designatorDropdown>
+		<designationCategory>Bioship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Ship/ShipHeart7</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5,5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<researchPrerequisites>
+			<li>StructuralScaffold</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_ShipHeart">
+				<species>bioship</species>
+				<shipspecies>bioship</shipspecies>
+				<geneline>AstralCniderianGeneline</geneline>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>ShipfleshAnalysisStation</defName>
+		<label>flesh codex</label>
+		<description>An analysis station where the secrets of the organ seed can be unraveled.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/FleshCodex</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.46875</drawSize>
+		</graphicData>
+		<uiIconScale>0.85</uiIconScale>
+		<size>(2,2)</size>
+		<rotatable>false</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.5</fillPercent>
+		<designationHotKey>Misc4</designationHotKey>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>1200</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Mass>60</Mass>
+			<Flammability>0</Flammability>
+		</statBases>
+		<costList>
+			<Plasteel>250</Plasteel>
+			<ComponentSpacer>8</ComponentSpacer>
+			<OrganSeed>1</OrganSeed>
+		</costList>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+		</building>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<shortCircuitInRain>true</shortCircuitInRain>
+				<basePowerConsumption>200</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Facility">
+				<statOffsets>
+					<ResearchSpeedFactor>0.2</ResearchSpeedFactor>
+				</statOffsets>
+				<maxSimultaneous>1</maxSimultaneous>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<constructionSkillPrerequisite>15</constructionSkillPrerequisite>
+		<designationCategory>Bioship</designationCategory>
+		<researchPrerequisites>
+			<li>MicroelectronicsBasics</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase" Name="NerveStaple">
+		<defName>NerveStaple</defName>
+		<label>nerve staple</label>
+		<description>A series of implants that deaden the senses of shipflesh, preventing unwanted growth and aggression.</description>
+		<thingClass>Building_NerveStaple</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/Atlas_NerveStaple</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom4</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshOnly</drawerType>
+		<uiIconPath>Things/Building/Ship/NerveStaple_MenuIcon</uiIconPath>
+		<uiIconScale>0.7</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/Blueprint_Atlas_CoolantConduit</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>Conduits</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>35</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>1</Steel>
+			<Plasteel>1</Plasteel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Neutroamine>2</Neutroamine>
+		</costList>
+		<comps>
+		</comps>
+		<placeWorkers>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Bioship</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<clearBuildingArea>false</clearBuildingArea>
+		<researchPrerequisites>
+			<li>NerveStapling</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>NutrientInjector</defName>
+		<label>nutrient injector</label>
+		<description>Kickstart your heart, refilling its internal fat stores.  Warning: Excess nutrition will be lost.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/NutritionInjector</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<staticSunShadowHeight>0.35</staticSunShadowHeight>
+		<fillPercent>0.5</fillPercent>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>1800</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(1,1)</size>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Small</destroySound>
+		</building>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+		<designationCategory>Bioship</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>1.0</fuelCapacity>
+				<fuelConsumptionRate>0</fuelConsumptionRate>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<fuelFilter>
+					<thingDefs>
+						<li>NutrientPod</li>
+					</thingDefs>
+				</fuelFilter>
+				<autoRefuelPercent>100</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_NutrientInjector">
+				<maxSimultaneous>1</maxSimultaneous>
+			</li>
+		</comps>
+		<designationHotKey>Misc6</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="GeneBuildingBase">
+		<defName>GeneBankShipHeart</defName>
+		<label>heartseed bank</label>
+		<description>This building can store heartseeds and make them usable to breed new ones, when placed near a heart breeder.</description>
+		<researchPrerequisites>
+			<li>BioshipGenetics</li>
+		</researchPrerequisites>
+		<designationCategory>Bioship</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Misc/HeartContainer</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2, 1)</drawSize>
+			<shadowData>
+				<volume>(1.7, 0.3, 0.85)</volume>
+			</shadowData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<tickerType>Rare</tickerType>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(2, 1)</size>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_ContentsHeartseedHolder</li>
+		</inspectorTabs>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<descriptionHyperlinks>
+			<ThingDef>HeartSeed</ThingDef>
+			<ThingDef>ShipGeneAssembler</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_ShipGeneContainer">
+				<maxCapacity>4</maxCapacity>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>40</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>100</maxSimultaneous>
+				<maxDistance>12.9</maxDistance>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="GeneBuildingBase">
+		<defName>ShipGeneAssembler</defName>
+		<label>heartseed breeder</label>
+		<description>A facility where heartseeds can be crossbred.</description>
+		<thingClass>Building_ShipGeneAssembler</thingClass>
+		<researchPrerequisites>
+			<li>BioshipGenetics</li>
+		</researchPrerequisites>
+		<designationCategory>Bioship</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneAssembler/GeneAssembler</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 2)</drawSize>
+			<shadowData>
+				<volume>(2.55, 0.75, 1.7)</volume>
+			</shadowData>
+		</graphicData>
+		<descriptionHyperlinks>
+			<ThingDef>GeneBankShipHeart</ThingDef>
+			<ThingDef>GeneProcessor</ThingDef>
+		</descriptionHyperlinks>
+		<tickerType>Normal</tickerType>
+		<size>(3, 2)</size>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0, 0, 2)</interactionCellOffset>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>35</Mass>
+			<Flammability>0.5</Flammability>
+			<AssemblySpeedFactor>1.0</AssemblySpeedFactor>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<idlePowerDraw>25</idlePowerDraw>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>GeneBankShipHeart</li>
+					<li>GeneProcessor</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+	</ThingDef>
+</Defs>

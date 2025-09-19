@@ -1,0 +1,25 @@
+<Defs>
+	<BuildingHediffDef>
+		<defName>ShipToxBuildup</defName>
+		<label>toxic buildup</label>
+		<description>Poison in the bloodstream. This can come from various sources, including environmental toxins, venomous bites, or poisoned weapons.
+			\nAt high doses, toxic buildup is lethal.</description>
+		<displayColor>(0.7, 1.0, 0.7)</displayColor>
+		<buildingHediffClass>BuildingHediff_ToxicBuildup</buildingHediffClass>
+		<isBad>true</isBad>
+		<comps>
+		</comps>
+	</BuildingHediffDef>
+
+	<BuildingHediffDef>
+		<defName>PsiReflect</defName>
+		<label>psi reflect</label>
+		<description>Shields have a small chance to return incoming attacks to their source.</description>
+		<displayColor>(0.7, 1.0, 0.7)</displayColor>
+		<buildingHediffClass>BuildingHediff_Reflect</buildingHediffClass>
+		<isBad>false</isBad>
+		<comps>
+		</comps>
+	</BuildingHediffDef>
+
+</Defs>

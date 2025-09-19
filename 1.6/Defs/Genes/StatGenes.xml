@@ -1,0 +1,214 @@
+<Defs>
+	<GeneCategoryDef>
+		<defName>StatGene</defName>
+		<label>stat</label>
+		<displayPriorityInXenotype>910</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<BuildingGeneDef>
+		<defName>ToxResistanceGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_SensitivityB</iconPath>
+		<label>toxic resistance</label>
+		<description>This organism is particularly resistant to toxic buildup.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<props>
+			<li>toxSensitivity:0.5</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>toxSensitivity</li>
+		</tags>
+		<metabolicCost>-1</metabolicCost>
+		<geneOverrides>
+			<li>ToxVulnerabilityGene</li>
+		</geneOverrides>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>ToxVulnerabilityGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_SensitivityC</iconPath>
+		<label>toxic vulnerability</label>
+		<description>This organism is particularly vulnerable to toxic buildup.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>10</displayOrderInCategory>
+		<props>
+			<li>toxSensitivity:2</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>toxSensitivity</li>
+		</tags>
+		<metabolicCost>1</metabolicCost>
+		<geneOverrides>
+			<li>ToxResistanceGene</li>
+		</geneOverrides>
+	</BuildingGeneDef>
+	
+	<BuildingGeneDef>
+		<defName>FastRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenB</iconPath>
+		<label>rapid regeneration</label>
+		<description>This organism's wounds close particularly quickly.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>15</displayOrderInCategory>
+		<props>
+			<li>regenSpeed:1.25</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>regenSpeed</li>
+		</tags>
+		<metabolicCost>-2</metabolicCost>
+		<geneOverrides>
+			<li>SlowRegenGene</li>
+		</geneOverrides>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>SlowRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenC</iconPath>
+		<label>slow regeneration</label>
+		<description>This organism's wounds close particularly slowly.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<props>
+			<li>regenSpeed:0.75</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>regenSpeed</li>
+		</tags>
+		<metabolicCost>2</metabolicCost>
+		<geneOverrides>
+			<li>FastRegenGene</li>
+		</geneOverrides>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>EfficientRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenB</iconPath>
+		<label>efficient regeneration</label>
+		<description>This organism is particularly efficient in converting nutrition into scar tissue.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>16</displayOrderInCategory>
+		<props>
+			<li>regenEfficiency:1.25</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>regenEfficiency</li>
+		</tags>
+		<metabolicCost>-2</metabolicCost>
+		<geneOverridesTags>
+			<li>regenEfficiency</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>InefficentRegenGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_RegenC</iconPath>
+		<label>inefficient regeneration</label>
+		<description>This organism converts nutrition to scar tissue inefficiently.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>17</displayOrderInCategory>
+		<props>
+			<li>regenEfficiency:0.75</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>regenEfficiency</li>
+		</tags>
+		<metabolicCost>2</metabolicCost>
+		<geneOverridesTags>
+			<li>regenEfficiency</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>StrongShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldB</iconPath>
+		<label>strong shields</label>
+		<description>This organism's shields are particularly strong.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>25</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:2</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>-3</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>VeryStrongShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldA</iconPath>
+		<label>very strong shields</label>
+		<description>This organism's shields are extremely powerful.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>30</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:3.5</li>
+		</props>
+		<tags>
+			<li>statBuff</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>-7</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>WeakShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldC</iconPath>
+		<label>weak shields</label>
+		<description>This organism's shields are particularly weak.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>35</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:0.55</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>3</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>PatheticShieldGene</defName>
+		<buildingGeneClass>StatSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldD</iconPath>
+		<label>pathetic shields</label>
+		<description>This organism's shields are pathetic.</description>
+		<displayCategory>StatGene</displayCategory>
+		<displayOrderInCategory>40</displayOrderInCategory>
+		<props>
+			<li>shieldStrength:0.25</li>
+		</props>
+		<tags>
+			<li>statMalus</li>
+			<li>shieldStrength</li>
+		</tags>
+		<metabolicCost>7</metabolicCost>
+		<geneOverridesTags>
+			<li>shieldStrength</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+</Defs>

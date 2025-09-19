@@ -1,0 +1,158 @@
+<Defs>
+	<ThingDef ParentName="BuildingBase">
+		<defName>BioShieldGeneratorMotive</defName>
+		<label>motive psi shield ganglia</label>
+		<description>A cluster of specialized neurons specialized for projecting a skip shield. Shots can go out, but not in.\nA mutation has added the effect of folding space, allowing the ship to move without the need for reaction mass.\n\nGenerates heat when it blocks attacks. If no heatsink capacity is available, the shield will be damaged and require repairs.\n\nShip radiators cannot disperse heat while shields are up. Captains are advised to drop shields once heatsinks are close to capacity, or risk their ships turning into ovens.</description>
+		<size>(3,3)</size>
+		<receivesSignals>true</receivesSignals>
+		<designationCategory></designationCategory>
+		<statBases>
+			<WorkToBuild>200</WorkToBuild>
+			<MaxHitPoints>600</MaxHitPoints>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Building/Ship/BioShipShieldGenerator</texPath>
+			<graphicClass>SaveOurShip2.Graphic_SingleOnOff</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(2.6, 0.8, 2.6)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.2, 0.2, 2.8, 2.8)</rect>
+			</damageData>
+		</graphicData>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+			</li>
+			<li Class="CompProperties_ShipBodyPart">
+				<species>bioship</species>
+				<whitherTo>WhitheredShieldGenerator</whitherTo>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatShield</compClass>
+				<heatMultiplier>0.1</heatMultiplier>
+				<color>(0,255,100)</color>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>1000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_NutritionRefueler">
+				<refuelInterval>60</refuelInterval>
+				<refuelCost>0.01</refuelCost>
+				<refuelAmmount>5</refuelAmmount>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>500.0</fuelCapacity>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<fuelFilter>
+					<thingDefs>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>100</autoRefuelPercent>
+				<showFuelGizmo>false</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>false</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="CompProperties_ReactionlessEngine">
+				<thrust>4</thrust>
+				<fuelUse>1</fuelUse>
+				<reactionless>true</reactionless>
+			</li>
+		</comps>
+		<building>
+			<shipPart>true</shipPart>
+			<relatedBuildCommands>
+				<li>ScaffoldShieldGenerator</li>
+			</relatedBuildCommands>
+		</building>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<tickerType>Normal</tickerType>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<costList>
+			<ShipMeat>180</ShipMeat>
+			<OrganSeed>3</OrganSeed>
+		</costList>
+		<seeThroughFog>true</seeThroughFog>
+	</ThingDef>
+
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>ThirdEye</defName>
+		<label>third eye</label>
+		<designationCategory></designationCategory>
+		<description>A focus for the psychic might of the ship.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/SpinalMountBarrel_Laser</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(5,4.2)</drawSize>
+		</graphicData>
+		<size>(5,4)</size>
+		<rotatable>true</rotatable>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>false</castEdgeShadows>
+		<designationHotKey>Misc12</designationHotKey>
+		<fillPercent>1</fillPercent>
+		<statBases>
+			<MaxHitPoints>1250</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<RangedWeapon_DamageMultiplier>1.01</RangedWeapon_DamageMultiplier>
+		</statBases>
+		<costList>
+			<ShipMeat>300</ShipMeat>
+			<OrganSeed>8</OrganSeed>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_SpinalMount">
+				<emits>false</emits>
+				<receives>true</receives>
+				<color>(0.5,0,0)</color>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
+				<heatPerPulse>120</heatPerPulse>
+				<energyToFire>360</energyToFire>
+				<maxRange>50</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<singleFireSound>ShipCombatLaser</singleFireSound>
+				<threat>100</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<researchPrerequisites>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<uiIconScale>0.65</uiIconScale>
+		<building>
+			<turretGunDef>ShipTurret_SpinalMountTopLaser</turretGunDef>
+			<turretBurstWarmupTime>2</turretBurstWarmupTime>
+			<turretBurstCooldownTime>45.0</turretBurstCooldownTime>
+		</building>
+	</ThingDef>
+
+</Defs>

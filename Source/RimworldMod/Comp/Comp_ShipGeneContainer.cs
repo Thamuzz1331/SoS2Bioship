@@ -101,7 +101,7 @@ namespace RimWorld
 			base.PostDestroy(mode, previousMap);
 		}
 
-		public override void PostDeSpawn(Map map)
+		public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
 		{
 			this.EjectContents(map);
 			for (int i = 0; i < this.leftToLoad.Count; i++)
@@ -122,15 +122,16 @@ namespace RimWorld
 			}
 		}
 
-		public override void CompTick()
-		{
-			this.innerContainer.ThingOwnerTick(true);
-		}
-
 		public override void CompTickRare()
 		{
-			this.innerContainer.ThingOwnerTickRare(true);
-		}
+            if (this.innerContainer != null)
+            {
+                for (int i = 0; i < this.innerContainer.Count; i++)
+                {
+                    this.innerContainer[i].TickRare();
+                }
+            }
+        }
 
 		public void EjectContents(Map destMap = null)
 		{

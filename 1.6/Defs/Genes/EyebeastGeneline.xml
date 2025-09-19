@@ -1,0 +1,104 @@
+<Defs>
+	<ShipGenelineDef>
+		<defName>MutantEyebeastGeneline</defName>
+		<shipGenelineClass>ShipGeneline</shipGenelineClass>
+		<label>Mutant Eyebeast</label>
+		<description>Flesh grown riot.</description>
+		<smallTurret>SmallEyelaserGene</smallTurret>
+		<mediumTurret>MediumEyelaserGene</mediumTurret>
+		<largeTurret>LargeEyelaserGene</largeTurret>
+		<spinalTurret>CollosalEyelaserGene</spinalTurret>
+		<armor>ThickHide</armor>
+		<miscGenes>
+			<li>FastRegenGene</li>
+		</miscGenes>
+	</ShipGenelineDef>
+	<BuildingGeneDef>
+		<defName>SmallEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeS</iconPath>
+		<label>small eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>35</displayOrderInCategory>
+		<props>
+			<li>smallTurretOptions:ShipTurret_SmallEyeLaser</li>
+		</props>
+		<tags>
+			<li>smallWeapon</li>
+		</tags>
+		<geneOverridesTags>
+			<li>smallWeapon</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>MediumEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeM</iconPath>
+		<label>medium eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>40</displayOrderInCategory>
+		<props>
+			<li>mediumTurretOptions:ShipTurret_MediumEyeLaser</li>
+		</props>
+			<tags>
+			<li>mediumWeapon</li>
+		</tags>
+		<geneOverridesTags>
+			<li>mediumWeapon</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>LargeEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeL</iconPath>
+		<label>heavy eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>45</displayOrderInCategory>
+		<props>
+			<li>largeTurretOptions:ShipTurret_LargeEyeLaser</li>
+		</props>
+		<tags>
+			<li>largeWeapon</li>
+		</tags>
+		<geneOverridesTags>
+			<li>largeWeapon</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>CollosalEyelaserGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_LaserEyeX</iconPath>
+		<label>collosal eye laser</label>
+		<description>A plasteel laced tapetum lucidum focuses light into a devestating beam</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>50</displayOrderInCategory>
+		<props>
+			<li>spinalTurretOptions:GiantEyeLaser</li>
+		</props>
+		<tags>
+			<li>spinalWeapon</li>
+		</tags>
+		<geneOverridesTags>
+			<li>spinalWeapon</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+	<BuildingGeneDef>
+		<defName>ThickHide</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ArmorHide</iconPath>
+		<label>hide</label>
+		<description>Thick hide</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>55</displayOrderInCategory>
+		<props>
+			<li>armor:Bio_Ship_Beam_Unpowered</li>
+		</props>
+		<tags>
+			<li>armor</li>
+		</tags>
+		<metabolicCost>1</metabolicCost>
+	</BuildingGeneDef>
+</Defs>

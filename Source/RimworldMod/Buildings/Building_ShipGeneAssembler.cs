@@ -185,20 +185,19 @@ namespace RimWorld
 			this.innerContainer = new ThingOwner<Thing>(this);
 		}
 
-		public override void Tick()
+		protected override void Tick()
 		{
-			base.Tick();
-			this.innerContainer.ThingOwnerTick(true);
-			if (this.IsHashIntervalTick(250))
-			{
-				bool flag = this.lastWorkedTick + 250 + 2 >= Find.TickManager.TicksGame;
-				this.PowerTraderComp.PowerOutput = (flag ? (-base.PowerComp.Props.PowerConsumption) : (-base.PowerComp.Props.idlePowerDraw));
-			}
-			if (this.Working && this.IsHashIntervalTick(180))
-			{
-				this.CheckAllContainersValid();
-			}
-		}
+            base.Tick();
+            if (this.IsHashIntervalTick(250))
+            {
+                bool flag = this.lastWorkedTick + 250 + 2 >= Find.TickManager.TicksGame;
+                this.PowerTraderComp.PowerOutput = (flag ? (-base.PowerComp.Props.PowerConsumption) : (-base.PowerComp.Props.idlePowerDraw));
+            }
+            if (this.Working && this.IsHashIntervalTick(180))
+            {
+                this.CheckAllContainersValid();
+            }
+        }
 
 		public void Start(List<CompHeartSeed> packs, int architesRequired, string xenotypeName, XenotypeIconDef iconDef)
 		{

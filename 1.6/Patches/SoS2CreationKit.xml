@@ -1,0 +1,35 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Save Our Ship Creation Kit</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[comps/li[@Class="CompProperties_ShipBodyPart"]]/designationCategory</xpath>
+			<value>
+				<designationCategory>ShipDesign</designationCategory>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Save Our Ship Creation Kit</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[comps/li[@Class="CompProperties_ShipBodyPart"]]/costList</xpath>
+			<value>
+				<costList></costList>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Save Our Ship Creation Kit</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[comps/li[@Class="CompProperties_ShipHeart"]]/designationCategory</xpath>
+			<value>
+				<designationCategory>ShipDesign</designationCategory>
+			</value>
+		</match>
+	</Operation>
+</Patch>

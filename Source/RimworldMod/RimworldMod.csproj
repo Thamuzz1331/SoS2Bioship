@@ -7,14 +7,14 @@
     <OutputType>Library</OutputType>
     <RootNamespace>RimworldMod</RootNamespace>
     <AssemblyName>SoS2Bioship</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,7 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
     <Optimize>true</Optimize>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,12 +60,11 @@
       <Private>False</Private>
     </Reference>
 	  <Reference Include="SaveOurShip2">
-		  <!--		  <HintPath>K:\Steam\steamapps\workshop\content\294100\1909914131\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>-->
-		  <HintPath>..\..\..\SaveOurShip2\1.5\Assemblies\ShipsHaveInsides.dll</HintPath>
+		  <HintPath>..\..\..\SaveOurShip2\1.6\Assemblies\ShipsHaveInsides.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
 	  <Reference Include="LivingBuildingFramework">
-		  <HintPath>..\..\..\LivingBuildingFramework\1.5\Assemblies\LivingBuildingFramework.dll</HintPath>
+		  <HintPath>..\..\..\LivingBuildingFramework\1.6\Assemblies\LivingBuildingFramework.dll</HintPath>
 		  <Private>False</Private>
 	  </Reference>
 	  <Reference Include="System" />

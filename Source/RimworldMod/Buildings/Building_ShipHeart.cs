@@ -16,7 +16,7 @@ namespace RimWorld
 	{
         public bool recentReplace = false;
 
-        public override void Tick()
+        protected override void Tick()
         {
             if (this.recentReplace)
             {

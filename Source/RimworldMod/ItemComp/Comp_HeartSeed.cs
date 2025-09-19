@@ -135,7 +135,7 @@ namespace RimWorld
             Scribe_Collections.Look(ref heartGenes, "heartGenes", LookMode.Def);
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             ((CorpseMawTracker)map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).heartSeeds.Remove(this);
             base.PostDeSpawn(map);

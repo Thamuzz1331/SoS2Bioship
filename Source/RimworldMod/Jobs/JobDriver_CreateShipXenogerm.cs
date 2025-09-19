@@ -28,20 +28,20 @@ namespace RimWorld
 			this.FailOn(() => !this.Xenogerminator.CanBeWorkedOnNow.Accepted);
 			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
 			Toil toil = ToilMaker.MakeToil("MakeNewToils");
-			toil.tickAction = delegate ()
-			{
-				float workAmount = this.pawn.GetStatValue(StatDefOf.ResearchSpeed, true, -1) * this.Xenogerminator.GetStatValue(StatDefOf.AssemblySpeedFactor, true, -1);
-				this.Xenogerminator.DoWork(workAmount);
-				this.pawn.skills.Learn(SkillDefOf.Intellectual, 0.1f, false);
-				this.pawn.GainComfortFromCellIfPossible(true);
-				if (this.Xenogerminator.ProgressPercent >= 1f)
-				{
-					this.Xenogerminator.Finish();
-					this.pawn.jobs.EndCurrentJob(JobCondition.Succeeded, true, true);
-					return;
-				}
-			};
-			toil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
+            toil.tickIntervalAction = delegate (int delta)
+            {
+                float workAmount = this.pawn.GetStatValue(StatDefOf.ResearchSpeed, true, -1) * this.Xenogerminator.GetStatValue(StatDefOf.AssemblySpeedFactor, true, -1) * (float)delta;
+                this.Xenogerminator.DoWork(workAmount);
+                this.pawn.skills.Learn(SkillDefOf.Intellectual, 0.1f * (float)delta, false, false);
+                this.pawn.GainComfortFromCellIfPossible(delta, true);
+                if (this.Xenogerminator.ProgressPercent >= 1f)
+                {
+                    this.Xenogerminator.Finish();
+                    this.pawn.jobs.EndCurrentJob(JobCondition.Succeeded, true, true);
+                    return;
+                }
+            };
+            toil.FailOnCannotTouch(TargetIndex.A, PathEndMode.InteractionCell);
 			toil.WithEffect(EffecterDefOf.GeneAssembler_Working, TargetIndex.A, null);
 			toil.WithProgressBar(TargetIndex.A, () => this.Xenogerminator.ProgressPercent, false, 0f, false);
 			toil.defaultCompleteMode = ToilCompleteMode.Never;

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<TerrainDef ParentName="ShipFloorBase">
+		<defName>FakeFloorScaffold</defName>
+		<label>protein scaffold</label>
+		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+	</TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
+		<layerable>true</layerable>
+		<defName>FakeFloorShipflesh</defName>
+		<label>shipflesh</label>
+		<texturePath>Terrain/Surfaces/FleshTexture</texturePath>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+	</TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
+		<defName>FakeFloorShipscar</defName>
+		<label>shipscar</label>
+		<texturePath>Terrain/Surfaces/ScarFloor</texturePath>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+	</TerrainDef>
+	<TerrainDef ParentName="ShipFloorBase">
+		<defName>FakeFloorShipwhithered</defName>
+		<label>shipflesh</label>
+		<texturePath>Terrain/Surfaces/WhitheredFloor</texturePath>
+		<statBases>
+			<Cleanliness>0</Cleanliness>
+			<Beauty>0</Beauty>
+		</statBases>
+	</TerrainDef>
+</Defs>

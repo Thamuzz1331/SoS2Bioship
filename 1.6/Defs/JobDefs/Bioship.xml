@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<JobDef>
+		<defName>RefuelButcherScalable</defName>
+		<driverClass>JobDriver_RefuleButcherableScaling</driverClass>
+		<reportString>Feeding Corpse Maw.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>CreateShipXenogerm</defName>
+		<driverClass>JobDriver_CreateShipXenogerm</driverClass>
+		<reportString>creating heartseed.</reportString>
+		<allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+	</JobDef>
+	<JobDef>
+		<defName>ImplantHeartSeed</defName>
+		<driverClass>JobDriver_ImplantHeartSeed</driverClass>
+		<reportString>implanting heartseed.</reportString>
+	</JobDef>
+	<JobDef>
+		<defName>HaulHeartToBank</defName>
+		<driverClass>JobDriver_HaulHeartToBank</driverClass>
+		<reportString>banking heartseed.</reportString>
+	</JobDef>
+
+</Defs>

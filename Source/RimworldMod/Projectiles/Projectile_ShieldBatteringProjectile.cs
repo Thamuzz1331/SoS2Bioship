@@ -11,7 +11,7 @@ namespace RimWorld
     [StaticConstructorOnStartup]
     public class Projectile_ShieldBatteringProjectile : Projectile_ExplosiveShip
     {
-        public override void Tick()
+        protected override void Tick()
         {
             Map m = this.Map;
             base.Tick();

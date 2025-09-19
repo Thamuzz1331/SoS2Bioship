@@ -1,0 +1,103 @@
+<Defs>
+	<ThingDef ParentName="AnimalThingBase" Name="Bioship_Haulbeast">
+		<defName>Bioship_Haulbeast</defName>
+		<label>haulbeast</label>
+		<statBases>
+			<MoveSpeed>3.8</MoveSpeed>
+			<ComfyTemperatureMin>-200</ComfyTemperatureMin>
+			<ComfyTemperatureMax>100</ComfyTemperatureMax>
+			<HypoxiaResistance>1</HypoxiaResistance>
+			<DecompressionResistance>1</DecompressionResistance>
+			<MarketValue>700</MarketValue>
+			<FilthRate>4</FilthRate>
+			<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.30</ArmorRating_Heat>
+		</statBases>
+		<uiIconScale>1.15</uiIconScale>
+		<tools>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+		<race>
+			<thinkTreeMain>Bioship_HaulBeast</thinkTreeMain>
+			<herdAnimal>false</herdAnimal>
+			<predator>false</predator>
+			<body>Bioship_Haulbeast</body>
+			<baseHungerRate>0.35</baseHungerRate>
+			<baseBodySize>.9</baseBodySize>
+			<baseHealthScale>1.25</baseHealthScale>
+			<foodType></foodType>
+			<wildness>0.0</wildness>
+			<lifeExpectancy>.05</lifeExpectancy>
+			<trainability>Advanced</trainability>
+			<manhunterOnDamageChance>1.00</manhunterOnDamageChance>
+			<lifeStageAges>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Bear_Injured</soundWounded>
+					<soundDeath>Pawn_Bear_Death</soundDeath>
+					<soundCall>Pawn_Bear_Call</soundCall>
+					<soundAngry>Pawn_Bear_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+		</race>
+		<tradeTags>
+			<li>AnimalInsectSpace</li>
+		</tradeTags>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>Bioship_Haulbeast</defName>
+		<label>haul beast</label>
+		<race>Bioship_Haulbeast</race>
+		<combatPower>50</combatPower>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/HaulBeast/HaulBeast</texPath>
+					<drawSize>1.75</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+</Defs>

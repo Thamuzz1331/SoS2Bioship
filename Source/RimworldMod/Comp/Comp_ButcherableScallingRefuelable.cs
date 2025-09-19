@@ -20,7 +20,7 @@ namespace RimWorld
             ((CorpseMawTracker)this.parent.Map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).corpseMaws.Add(parent);
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             base.PostDeSpawn(map);
             ((CorpseMawTracker)map.components.Where(t => t is CorpseMawTracker).FirstOrDefault()).corpseMaws.Remove(parent);

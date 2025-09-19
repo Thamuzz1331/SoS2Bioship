@@ -1,0 +1,85 @@
+<Defs>
+	<GeneCategoryDef>
+		<defName>GiantBrainGenes</defName>
+		<label>gbfos</label>
+		<displayPriorityInXenotype>811</displayPriorityInXenotype>
+	</GeneCategoryDef>
+	<BuildingGeneDef>
+		<defName>BoneArmor</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ArmorBone</iconPath>
+		<label>bone</label>
+		<description>Bone armor</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>55</displayOrderInCategory>
+		<props>
+			<li>armor:BoneArmor</li>
+		</props>
+		<tags>
+			<li>armor</li>
+		</tags>
+		<metabolicCost>1</metabolicCost>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>MotiveGangliaGene</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldNeural</iconPath>
+		<label>motive ganglia</label>
+		<description>Shield generators double as reactionless drives, allowing the bioship to move via willpower alone.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<architeCost>8</architeCost>
+		<props>
+			<li>shieldEmitter:BioShieldGeneratorMotive</li>
+		</props>
+		<tags>
+			<li>shieldEmitter</li>
+		</tags>
+		<geneOverridesTags>
+			<li>shieldEmitter</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>UVEyeLaser</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_UVLaserL</iconPath>
+		<label>ultraviolet eye laser</label>
+		<description>Large weapon scaffolds grow into UV eye lasers, devestating weapons with extreme range, precision, and damage.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<architeCost>16</architeCost>
+		<metabolicCost>-4</metabolicCost>
+		<props>
+			<li>largeTurretOptions:ShipTurret_UVEyeLaser</li>
+		</props>
+		<tags>
+			<li>largeTurretOptions</li>
+		</tags>
+		<geneOverridesTags>
+			<li>largeTurretOptions</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+	<BuildingGeneDef>
+		<defName>VSEyeLaser</defName>
+		<buildingGeneClass>DefSetterGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_VisualLaserM</iconPath>
+		<label>visual spectrum eye laser</label>
+		<description>Medium weapon scaffolds grow into visual spectrum eye lasers, devestating weapons with medium range, precision, and damage.</description>
+		<displayCategory>Geneline</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<architeCost>8</architeCost>
+		<metabolicCost>-1</metabolicCost>
+		<props>
+			<li>mediumTurretOptions:ShipTurret_VSEyeLaser</li>
+		</props>
+		<tags>
+			<li>mediumTurretOptions</li>
+		</tags>
+		<geneOverridesTags>
+			<li>mediumTurretOptions</li>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+</Defs>

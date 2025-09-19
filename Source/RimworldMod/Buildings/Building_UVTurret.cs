@@ -24,7 +24,7 @@ namespace RimWorld
             Scribe_Values.Look<bool>(ref wasFiring, "wasFiring", false);
         }
 
-        public override void Tick()
+        protected override void Tick()
         {
             base.Tick();
             if (AttackVerb.state == VerbState.Bursting)
@@ -34,8 +34,13 @@ namespace RimWorld
             {
                 wasFiring = false;
                 
-//                this.TakeDamage();
+                this.TakeDamage();
             }
+        }
+
+        public virtual void TakeDamage()
+        {
+            this.TakeDamage(new DamageInfo(ShipDamageDefOf.UVEyeLaser, 200, 1.0f, -1f, this));
         }
 
     }

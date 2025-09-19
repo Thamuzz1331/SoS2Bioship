@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<BodyDef>
+		<defName>Shipbeast_VoidJelly</defName>
+		<label>void jelly</label>
+		<corePart>
+			<def>Bioship_JellyHood</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Head</def>
+					<customLabel>membrane</customLabel>
+					<coverage>0.05</coverage>
+					<parts>
+						<li>
+							<def>Eye</def>
+							<customLabel>first eye spot</customLabel>
+							<coverage>0.02</coverage>
+						</li>
+						<li>
+							<def>Eye</def>
+							<customLabel>second eye spot</customLabel>
+							<coverage>0.02</coverage>
+						</li>
+						<li>
+							<def>Eye</def>
+							<customLabel>third eye spot</customLabel>
+							<coverage>0.02</coverage>
+						</li>
+						<li>
+							<def>Eye</def>
+							<customLabel>fourth eye spot</customLabel>
+							<coverage>0.02</coverage>
+						</li>
+						<li>
+							<def>Eye</def>
+							<customLabel>fifth eye spot</customLabel>
+							<coverage>0.02</coverage>
+						</li>
+						<li>
+							<def>Eye</def>
+							<customLabel>sixth eye spot</customLabel>
+							<coverage>0.02</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Heart</def>
+					<customLabel>gastrodermis cavity</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<customLabel>gastrodermis cavity</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<customLabel>gastrodermis cavity</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<customLabel>gastrodermis cavity</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+				<li>
+					<def>Bioship_JellyLappet</def>
+					<customLabel>tentacle</customLabel>
+					<groups>
+						<li>Arms</li>
+					</groups>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+
+	<BodyPartDef>
+		<defName>Bioship_JellyHood</defName>
+		<label>hood</label>
+		<hitPoints>15</hitPoints>
+		<skinCovered>true</skinCovered>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+	</BodyPartDef>
+	<BodyPartDef>
+		<defName>Bioship_JellyLappet</defName>
+		<label>tentacle</label>
+		<hitPoints>7</hitPoints>
+		<frostbiteVulnerability>0.1</frostbiteVulnerability>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<skinCovered>true</skinCovered>
+		<tags>
+			<li>MovingLimbCore</li>
+			<li>ManipulationLimbCore</li>
+		</tags>
+	</BodyPartDef>
+</Defs>

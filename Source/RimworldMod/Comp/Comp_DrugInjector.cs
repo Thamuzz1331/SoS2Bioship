@@ -48,6 +48,9 @@ namespace RimWorld
 
         public void ApplyDrug(CompShipHeart bp, float requiredDosage)
         {
+            if (bp.hediffs.FirstIndexOf(tDiff => tDiff.def == drugDef) != -1) {
+                return;
+            }
             BuildingHediff_Drug drug = (BuildingHediff_Drug)BuildingHediffMaker.MakeBuildingHediff(drugDef);
             drug.durationTicks = InjectorProps.drugDuration;
             bp.AddHediff(drug);
@@ -83,7 +86,7 @@ namespace RimWorld
             curTick++;
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             foreach (Thing heart in this.LinkedBuildings)
             {

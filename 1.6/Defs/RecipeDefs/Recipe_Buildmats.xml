@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef>
+		<defName>MakeProteinCLay</defName>
+		<label>make protein clay</label>
+		<description>Craft 1 protein clay.</description>
+		<jobString>Making protein clay.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>250</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<ProtienPutty>1</ProtienPutty>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>MakeProteinClayBulk</defName>
+		<label>make protein clay x10</label>
+		<description>Craft 10 protein clay.</description>
+		<jobString>Making protein clay.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>2300</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>180</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<ProtienPutty>10</ProtienPutty>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>NutrientSolution</defName>
+		<label>create superconcentrated nutrient solution</label>
+		<description>Create superconcentrated nutrient solution</description>
+		<jobString>Rendering superconcentrated nutrient solution</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>500</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>FoodRaw</li>
+					</categories>
+				</filter>
+				<count>50</count>
+			</li>
+		</ingredients>
+		<products>
+			<NutrientPod>1</NutrientPod>
+		</products>
+		<fixedIngredientFilter>
+			<categories>
+				<li>FoodRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeOrganSeed</defName>
+		<label>breed organ seed</label>
+		<description>Breeds an organ seed into two.</description>
+		<jobString>Breeding organ seeds.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>4000</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>MeatRaw</li>
+					</categories>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OrganSeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>MeatRaw</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<OrganSeed>2</OrganSeed>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>JuiceOrganSeed</defName>
+		<label>juice organ seed</label>
+		<description>Juices an organseed for neutroamine.</description>
+		<jobString>Juicing organseed.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<allowMixingIngredients>true</allowMixingIngredients>
+		<workAmount>4000</workAmount>
+		<targetCountAdjustment>5</targetCountAdjustment>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>OrganSeed</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<Neutroamine>50</Neutroamine>
+		</products>
+		<workSkill>Crafting</workSkill>
+		<recipeUsers>
+			<li>DrugLab</li>
+		</recipeUsers>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</RecipeDef>
+</Defs>

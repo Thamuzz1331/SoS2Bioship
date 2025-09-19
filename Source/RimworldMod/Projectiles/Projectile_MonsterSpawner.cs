@@ -12,7 +12,7 @@ namespace RimWorld
     {
         bool hasSpawned = false;
 
-        public override void Tick()
+        protected override void Tick()
         {
             Map m = this.Map;
             IntVec3 p = this.Position;

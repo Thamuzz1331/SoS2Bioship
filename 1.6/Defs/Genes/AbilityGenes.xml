@@ -1,0 +1,25 @@
+<Defs>
+	<GeneCategoryDef>
+		<defName>AbilityGene</defName>
+		<label>ability</label>
+		<displayPriorityInXenotype>810</displayPriorityInXenotype>
+	</GeneCategoryDef>
+
+	<BuildingGeneDef>
+		<defName>PsiRefelct</defName>
+		<buildingGeneClass>HediffGiverGene</buildingGeneClass>
+		<iconPath>UI_Elements/Gene_ShieldReflect</iconPath>
+		<label>psi reflect</label>
+		<description>Bioship's psionic shields have a small chance to open a skipgate redirecting an incomming shot back to its source.</description>
+		<displayCategory>AbilityGene</displayCategory>
+		<displayOrderInCategory>60</displayOrderInCategory>
+		<props>
+			<li>apply:PsiReflect</li>
+		</props>
+		<tags>
+		</tags>
+		<geneOverridesTags>
+		</geneOverridesTags>
+	</BuildingGeneDef>
+
+</Defs>

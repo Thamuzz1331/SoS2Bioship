@@ -13,7 +13,7 @@ namespace RimWorld
 		public static HashSet<MotileAcidGlob> seenGlobs = new HashSet<MotileAcidGlob>();
 		public float spreadCountdown = 0;
 		private float spreadInterval = 30f;
-		public override void Tick()
+		protected override void Tick()
         {
 			if (this.damageRemaining > 30f && spreadCountdown <= 0)
             {

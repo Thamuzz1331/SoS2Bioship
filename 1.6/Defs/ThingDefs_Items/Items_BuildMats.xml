@@ -1,0 +1,149 @@
+<Defs>
+		<!--  Bases  -->
+	<ThingDef Name="ShipMeatBase" Abstract="True" ParentName="OrganicProductBase">
+		<label>Base meat properties</label>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>2</daysToRotStart>
+				<rotDestroys>True</rotDestroys>
+			</li>
+		</comps>
+		<statBases>
+			<Nutrition>0.05</Nutrition>
+			<Flammability>0.5</Flammability>
+			<FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<foodType>Meat</foodType>
+			<preferability>DesperateOnly</preferability>
+			<ingestEffect>EatMeat</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>		
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<!--  Processed meat  -->
+
+	<ThingDef ParentName="ShipMeatBase">
+		<defName>ShipMeat</defName>
+		<label>shipflesh</label>
+		<description>The butchered flesh of a living ship.  Disconcertingly, even when cooked it still feels like its trying to eat you back.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/MeatFoodRaw/Meat_Big</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<Mass>0.03</Mass>
+			<MarketValue>2</MarketValue>
+		</statBases>
+		<ingestible>
+			<specialThoughtDirect>AteRawFood</specialThoughtDirect>
+		</ingestible>
+	</ThingDef>
+		
+	
+	<ThingDef ParentName="ResourceBase">
+		<defName>ProtienPutty</defName>
+		<label>protein putty</label>
+		<description>A claylike substance that when allowed to harden can guide the growth of shipflesh.  Deteriates quickly when exposed to the elements.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/ProteinBlocks</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<stackLimit>50</stackLimit>
+		<statBases>
+			<MaxHitPoints>5</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>10.0</Flammability>
+			<DeteriorationRate>10.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>NutrientPod</defName>
+		<label>superconcentrated nutrient solution</label>
+		<description>A canister of superconcentrated nutrient solution.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/ShuttleFuelPod</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+			<li>ProtienRendering</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>HeartSeed</defName>
+		<label>heart seed</label>
+		<description>A node of flesh from which a shipheart will grow.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/HeartSeed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>1</stackLimit>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_HeartSeed">
+				
+			</li>
+		</comps>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>OrganSeed</defName>
+		<label>organ seed</label>
+		<description>A node of flesh from which a ship organ will grow.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Resource/OrganSeed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>15</stackLimit>
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<MarketValue>0.33</MarketValue>
+			<Mass>0.05</Mass>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>1.0</DeteriorationRate>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<researchPrerequisites>
+		</researchPrerequisites>
+	</ThingDef>	
+</Defs>

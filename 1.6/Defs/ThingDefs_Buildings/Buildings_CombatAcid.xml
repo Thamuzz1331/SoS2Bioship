@@ -1,0 +1,94 @@
+<Defs>
+
+
+
+	<ThingDef ParentName="FakeAcidProj" Name="PotentAcidFake">
+		<defName>Bullet_Fake_PotentAcid</defName>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+	</ThingDef>
+	<ThingDef ParentName="BaseGrenadeProjectile" Name="PotentAcidReal">
+		<defName>Proj_PotentAcid</defName>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>7.9</explosionRadius>
+			<damageDef>ShipPotentAcid</damageDef>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef ParentName="ShipBioAcid"  Name="ShipPotentAcid">
+		<defName>ShipPotentAcid</defName>
+		<workerClass>DamageWorker_PotentAcid</workerClass>
+		<defaultDamage>140</defaultDamage>
+	</DamageDef>
+
+	<ThingDef ParentName="PotentAcidFake" Name="MotileAcidFake">
+		<defName>Bullet_Fake_MotileAcid</defName>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+
+	</ThingDef>
+	<ThingDef ParentName="PotentAcidReal" Name="MotileAcidReal">
+		<defName>Proj_MotileAcid</defName>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+
+		<projectile>
+			<explosionRadius>7.9</explosionRadius>
+			<damageDef>ShipMotileAcid</damageDef>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef ParentName="ShipPotentAcid"  Name="ShipMotileAcid">
+		<defName>ShipMotileAcid</defName>
+		<workerClass>DamageWorker_MotileAcid</workerClass>
+		<defaultDamage>140</defaultDamage>
+	</DamageDef>
+	
+	<ThingDef ParentName="MotileAcidFake" Name="AnimateAcidFake">
+		<defName>Bullet_Fake_AnimateAcid</defName>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+
+	</ThingDef>
+	<ThingDef ParentName="MotileAcidReal" Name="AnimateAcidReal">
+		<defName>Proj_AnimateAcid</defName>
+		<graphicData>
+			<texPath>Things/Projectile/ShipTurretPlasma</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<projectile>
+			<explosionRadius>7.9</explosionRadius>
+			<damageDef>ShipAnimateAcid</damageDef>
+			<speed>100</speed>
+		</projectile>
+	</ThingDef>
+	<DamageDef ParentName="ShipMotileAcid"  Name="ShipAnimateAcid">
+		<defName>ShipAnimateAcid</defName>
+		<workerClass>DamageWorker_AnimateAcid</workerClass>
+		<defaultDamage>140</defaultDamage>
+	</DamageDef>
+</Defs>

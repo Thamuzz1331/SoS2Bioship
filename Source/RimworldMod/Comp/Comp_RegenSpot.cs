@@ -12,6 +12,7 @@ using LivingBuildings;
 
 namespace RimWorld
 {
+
     [StaticConstructorOnStartup]
     public class CompRegenSpot : ThingComp
     {
@@ -59,7 +60,6 @@ namespace RimWorld
                             adj.TryGetComp<CompShipBodyPart>().bodyId == heart.TryGetComp<CompShipHeart>().bodyId &&
                             heart.TryGetComp<CompShipHeart>().body.RequestNutrition(heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenCost()))
                         {
-                            Log.Message("Regenerating");
                             replacement = ThingMaker.MakeThing(regenDef);
                             CompShipBodyPart bodyPart = replacement.TryGetComp<CompShipBodyPart>();
                             if (bodyPart != null)
@@ -85,6 +85,10 @@ namespace RimWorld
                         adj.regenCountdown = heart.TryGetComp<CompShipHeart>().regenWorker.GetRegenInterval();
                     }
                     replacement.SpawnSetup(parent.Map, false);
+                    if (replacement.def.building?.turretGunDef != null)
+                    {
+                        Log.Message("Cooldown " + replacement.def.building.turretBurstCooldownTime);
+                    }
                     CellRect occupies = replacement.OccupiedRect();
                     List<Thing> toDestroy = new List<Thing>();
                     if (replacement.def.passability == Traversability.Impassable)
@@ -93,7 +97,7 @@ namespace RimWorld
                        {
                             foreach (Thing t in cell.GetThingList(this.parent.Map))
                             {
-                                if (t != replacement && t != parent && !(t is Pawn))
+                                if (t != replacement && t != parent && !(t is Pawn) && !(t is Building) && !t.Destroyed)
                                 {
                                     Log.Message(t + " should not be here");
                                     toDestroy.Add(t);

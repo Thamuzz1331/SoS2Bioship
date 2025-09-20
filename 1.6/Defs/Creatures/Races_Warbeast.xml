@@ -4,6 +4,7 @@
 		<label>warbeast</label>
 		<statBases>
 			<MoveSpeed>2.8</MoveSpeed>
+			<Wildness>0</Wildness>
 			<ComfyTemperatureMin>-200</ComfyTemperatureMin>
 			<HypoxiaResistance>1</HypoxiaResistance>
 			<DecompressionResistance>1</DecompressionResistance>

@@ -3,6 +3,7 @@
 		<defName>Bioship_Haulbeast</defName>
 		<label>haulbeast</label>
 		<statBases>
+			<Wildness>0</Wildness>
 			<MoveSpeed>3.8</MoveSpeed>
 			<ComfyTemperatureMin>-200</ComfyTemperatureMin>
 			<ComfyTemperatureMax>100</ComfyTemperatureMax>

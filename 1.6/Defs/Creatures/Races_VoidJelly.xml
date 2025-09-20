@@ -5,6 +5,7 @@
 		<description>A motile blob of acidic mucus.</description>
 		<statBases>
 			<MoveSpeed>10</MoveSpeed>
+			<Wildness>0</Wildness>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>65</ComfyTemperatureMax>
 			<HypoxiaResistance>1</HypoxiaResistance>

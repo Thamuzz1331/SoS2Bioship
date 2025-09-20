@@ -36,7 +36,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>Withered wall.  Connect to a well fed heart to restore its vitality</description>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
@@ -111,7 +111,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>Withered wall.  Connect to a well fed heart to revitalize</description>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
@@ -170,7 +170,7 @@
 			<WorkToBuild>200</WorkToBuild>
 			<Flammability>0</Flammability>
 		</statBases>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<placeWorkers>
 		</placeWorkers>
 		<rotatable>true</rotatable>
@@ -360,7 +360,7 @@
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
-		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<drawStyleCategory>Foundations</drawStyleCategory>
 		<statBases>
 			<MaxHitPoints>75</MaxHitPoints>
 			<Flammability>0.0</Flammability>
@@ -414,7 +414,7 @@
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
-		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<drawStyleCategory>Foundations</drawStyleCategory>
 		<statBases>
 			<MaxHitPoints>75</MaxHitPoints>
 			<Flammability>0.0</Flammability>
@@ -486,7 +486,7 @@
 			<Flammability>0.7</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<costList>
 			<Steel>1</Steel>
 			<Plasteel>1</Plasteel>

@@ -8,7 +8,7 @@
 		<fillPercent>1</fillPercent>
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<rotatable>false</rotatable>
 		<building>
 			<shipPart>true</shipPart>

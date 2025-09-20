@@ -48,7 +48,6 @@
 			<baseHungerRate>2</baseHungerRate>
 			<hasGenders>false</hasGenders>
 			<foodType></foodType>
-			<wildness>1.0</wildness>
 			<manhunterOnTameFailChance>1.00</manhunterOnTameFailChance>
 			<manhunterOnDamageChance>1.00</manhunterOnDamageChance>
 			<trainability>None</trainability>

@@ -45,7 +45,7 @@
 		</statBases>
 		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh.</description>
 		<designationCategory>Bioship</designationCategory>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
@@ -121,7 +121,7 @@
 		</statBases>
 		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to shipflesh. Does not include conduits for power or coolant.</description>
 		<designationCategory>Bioship</designationCategory>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
@@ -187,7 +187,7 @@
 		</statBases>
 		<description>A scaffold to guide the growth of a living ship.  The shipheart will consume nutrition to convert scaffold to armor.</description>
 		<designationCategory>Bioship</designationCategory>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<roof>true</roof>
@@ -249,7 +249,7 @@
 			<Flammability>0</Flammability>
 			<WorkToBuild>400</WorkToBuild>
 		</statBases>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<rotatable>true</rotatable>
 		<building>
 			<shipPart>true</shipPart>
@@ -450,7 +450,7 @@
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
-		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<drawStyleCategory>Foundations</drawStyleCategory>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Flammability>0.0</Flammability>
@@ -506,7 +506,7 @@
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
-		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<drawStyleCategory>Foundations</drawStyleCategory>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<Flammability>0.0</Flammability>
@@ -575,7 +575,7 @@
 			<Flammability>0.7</Flammability>
 			<Beauty>-2</Beauty>
 		</statBases>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<costList>
 			<Steel>1</Steel>
 			<Plasteel>1</Plasteel>

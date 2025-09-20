@@ -59,7 +59,6 @@
 			<baseBodySize>.9</baseBodySize>
 			<baseHealthScale>2.25</baseHealthScale>
 			<foodType></foodType>
-			<wildness>0.0</wildness>
 			<lifeExpectancy>1</lifeExpectancy>
 			<trainability>Advanced</trainability>
 			<manhunterOnDamageChance>1.00</manhunterOnDamageChance>

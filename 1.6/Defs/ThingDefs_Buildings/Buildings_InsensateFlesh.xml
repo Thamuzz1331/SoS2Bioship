@@ -35,7 +35,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
@@ -110,7 +110,7 @@
 			<Flammability>0</Flammability>
 		</statBases>
 		<description>The flesh of a a bioship.  Grown from the Shipheart, guided by protein scaffolds.\n\nThis has been nerve stapled and will not regenerate or spread.</description>
-		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<drawStyleCategory>Walls</drawStyleCategory>
 		<comps>
 			<li Class="SaveOurShip2.CompProps_ShipCachePart">
 				<isHull>true</isHull>
@@ -266,7 +266,7 @@
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
-		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<drawStyleCategory>Foundations</drawStyleCategory>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<WorkToBuild>200</WorkToBuild>
@@ -318,7 +318,7 @@
 		<coversFloor>false</coversFloor>
 		<altitudeLayer>LowPlant</altitudeLayer>
 		<passability>Standable</passability>
-		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<drawStyleCategory>Foundations</drawStyleCategory>
 		<statBases>
 			<MaxHitPoints>150</MaxHitPoints>
 			<WorkToBuild>200</WorkToBuild>
